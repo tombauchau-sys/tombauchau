@@ -502,7 +502,7 @@ html.calm .dz [data-r]{opacity:1!important;transform:none!important}
 .rr .bw.neg .bar{left:50%;width:calc(var(--w) / 2)}
 .rr .bw.neg .bar.m{left:auto;right:50%;transform-origin:right}
 .rr .vv{text-align:right;font-size:16px;white-space:nowrap}
-.rr.a .bar{background:var(--red)}.rr.a .cn{color:var(--red)}
+.rr.a .bar{background:var(--red)}.rr.a .cn{color:#C0341E}
 .rr.b .bar{background:var(--line)}
 .rr.eu{cursor:default;background:repeating-linear-gradient(90deg,transparent 0 6px,rgba(0,0,0,.04) 6px 12px)}
 .rr.eu .cn{font-family:var(--serif);font-weight:400;font-size:18px}
@@ -577,8 +577,16 @@ html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important
 @media (prefers-reduced-motion:reduce){.gate .go,.gate .here,.flowlab{opacity:1!important}}
 .gate[hidden]{display:none!important}
 
+/* Classement : un vrai bouton par ligne (accessibilité) */
+.rr{position:relative}
+.rrb{position:absolute;inset:0;width:100%;border:0;background:none;padding:0;cursor:pointer;z-index:1}
+.rrb:focus-visible{outline:3px solid var(--copper);outline-offset:2px}
+
 .grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}
 </style>
+</head>
+<body>
+
 
 <div class="gate grain" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateT">
   <div class="gbar"><span><b>Référentiel</b> de chiffres vérifiés</span><span>Europe · la Belgique d’abord · FR</span></div>
@@ -607,7 +615,7 @@ html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important
 <section class="atlas grain" id="atlas" aria-labelledby="atT">
   <div class="in">
     <div class="mapcol">
-      <div class="mframe"><svg id="map" role="img" aria-label="Carte des 27 pays de l’Union européenne"></svg></div>
+      <div class="mframe"><svg id="map" role="group" aria-label="Carte des 27 pays de l’Union européenne. Utilisez Tab pour parcourir les pays et Entrée pour en choisir un. Le classement plus bas donne les mêmes valeurs sous forme de liste."></svg></div>
     </div>
     <div class="side-col">
       <div class="switch" id="switch" role="group" aria-label="Mode">
@@ -1274,7 +1282,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
     rows.forEach(function(r,i){
       if(!euPlaced&&ord(euv,r.v)<0){html+=euRow();euPlaced=true}
       var bv=it.id==='rating'?11-r.v:r.v,cls=r.c===st.a?' a':(r.c===st.b?' b':'');
-      html+='<li class="rr'+cls+'" data-c="'+r.c+'" tabindex="0" role="button" aria-label="'+name(r.c)+', '+it.fmt(r.v,r.c)+'"><span class="n">'+(i+1)+'</span><span class="cn">'+name(r.c)+(ys.length>1?'<small>'+r.y+'</small>':'')+'</span><span class="bw'+(neg?' neg':'')+'"><span class="bar'+(bv<0?' m':'')+'" style="--w:'+W(bv).toFixed(1)+'%"></span></span><b class="vv">'+it.fmt(r.v,r.c)+'</b></li>';
+      html+='<li class="rr'+cls+'" data-c="'+r.c+'"><button type="button" class="rrb" aria-label="'+name(r.c)+', '+it.fmt(r.v,r.c)+', rang '+(i+1)+'. Choisir ce pays sur la carte"></button><span class="n">'+(i+1)+'</span><span class="cn">'+name(r.c)+(ys.length>1?'<small>'+r.y+'</small>':'')+'</span><span class="bw'+(neg?' neg':'')+'"><span class="bar'+(bv<0?' m':'')+'" style="--w:'+W(bv).toFixed(1)+'%"></span></span><b class="vv">'+it.fmt(r.v,r.c)+'</b></li>';
     });
     if(!euPlaced)html+=euRow();
     function euRow(){return '<li class="rr eu"><span class="n"></span><span class="cn">Union européenne</span><span class="bw'+(neg?' neg':'')+'"><span class="bar'+(euv<0?' m':'')+'" style="--w:'+W(euv).toFixed(1)+'%"></span></span><b class="vv">'+it.fmt(euv)+'</b></li>'}
@@ -1283,7 +1291,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
     D.getElementById('rkD').innerHTML=it.def+' <span class="src">Source : '+linkify(it.src)+' · '+CONSULT+'.</span>'+(it.note?'<span class="nt">'+it.note+'</span>':'');
     D.getElementById('rkDir').textContent=(rk.dir<0)?(it.inv?'Du mieux noté au moins bien noté':'Du plus élevé au plus bas'):(it.inv?'Du moins bien noté au mieux noté':'Du plus bas au plus élevé');
     var ol=D.getElementById('rkL');ol.innerHTML=html;ol.classList.remove('go');void ol.offsetWidth;ol.classList.add('go');
-    ol.querySelectorAll('.rr[data-c]').forEach(function(li){function go(){var c=li.dataset.c;if(st.mode==='A'){st.a=c}else{if(c===st.a){}else if(!st.b)st.b=c;else st.b=c}update(true);renderRanks()}li.onclick=go;li.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}}});
+    ol.querySelectorAll('.rr[data-c]').forEach(function(li){function go(){var c=li.dataset.c;if(st.mode==='A'){st.a=c}else{if(c===st.a){}else if(!st.b)st.b=c;else st.b=c}update(true);renderRanks()}li.querySelector('.rrb').onclick=go});
     D.querySelectorAll('#rkI button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.id===rk.id)});
   }
   (function(){
@@ -1329,6 +1337,5 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
 })();
 })();
 </script>
-
 </body>
 </html>

@@ -1,0 +1,242 @@
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 03 · Pensions et vieillissement · avant de lire</span>
+    <h1 class="q" id="q0">En 1960, il y avait 5,4 personnes en âge de travailler pour chaque Belge de 65 ans ou plus. Combien en 2070, selon les projections ?</h1>
+    <output class="out" id="gOut" for="guess">3,0</output>
+    <input class="range" type="range" id="guess" min="1" max="5" step="0.1" value="3" aria-label="Votre estimation, en nombre de personnes de 15 à 64 ans par personne de 65 ans ou plus">
+    <div class="scale" aria-hidden="true"><span>1</span><span>3</span><span>5</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button">Voir la projection <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 03 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Pensions et vieillissement"><span class="t1">Pensions </span><span class="t2">et vieillissement</span></h2></div>
+    <p class="lede hq" data-r>Y aura-t-il encore des pensions demain, et à quel niveau ? Un système expliqué, un siècle d’histoire, trois fiches, l’état de la recherche et huit lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>10,2 %</b><span>du PIB pour la vieillesse, contre 10,7 % dans l’Union</span><span class="src">Eurostat gov_10a_exp, 2024, provisoire</span></div>
+      <div><b>31,8</b><span>personnes de 65 ans et plus pour 100 de 15 à 64 ans</span><span class="src">Eurostat demo_pjanind, 2025</span></div>
+      <div><b>9,3 %</b><span>des 65 ans et plus à risque de pauvreté, contre 16,3 % dans l’Union</span><span class="src">Eurostat ilc_li02, 2025</span></div>
+      <div><b>48 %</b><span>taux de remplacement, contre 60 % dans l’Union</span><span class="src">Eurostat ilc_pnp3, 2025</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : rapport du Comité d’étude sur le vieillissement (juillet 2027)</p>
+  </div>
+</section>
+
+<!-- 1b. Préambule : comment ça marche -->
+<section class="band grain preamb" style="background:var(--cream)" aria-labelledby="tP">
+  <div class="wrap">
+    <span class="kick dark" data-r>Avant tout</span>
+    <h2 class="giant ink" id="tP" data-r>Votre pension n’est pas <span>sur un compte à votre nom.</span></h2>
+    <p class="lede ink" data-r>La pension légale belge fonctionne par répartition : les cotisations des travailleurs d’aujourd’hui paient les pensions d’aujourd’hui. C’est un contrat entre générations, pas une épargne individuelle. Deux autres étages, financés par capitalisation, complètent cette base.</p>
+    <ol class="three-q">
+      <li data-r style="--rot:-1.5deg"><span class="n">1</span><h3>Le 1<sup>er</sup> pilier : la pension légale</h3><p>Financée par répartition (cotisations et impôts), versée par l’État. C’est le cœur du système pour la grande majorité des pensionnés.</p></li>
+      <li data-r style="--rot:1deg"><span class="n">2</span><h3>Le 2<sup>e</sup> pilier : la pension complémentaire</h3><p>Constituée par l’employeur ou le secteur, placée et capitalisée. Tout le monde n’en a pas, et les montants varient beaucoup.</p></li>
+      <li data-r style="--rot:-.5deg"><span class="n">3</span><h3>Le 3<sup>e</sup> pilier : l’épargne individuelle</h3><p>Épargne-pension et assurances-vie, encouragées par un avantage fiscal. Elle dépend de la capacité de chacun à épargner.</p></li>
+    </ol>
+    <p class="hand-note note" data-r>→ en répartition, ce qui compte est le nombre de cotisants par pensionné… et la productivité de chacun</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-cout"><span class="n">01</span><h3>Le coût</h3><p>Combien coûtent les pensions, et combien coûteront-elles ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-niveau"><span class="n">02</span><h3>Le niveau</h3><p>Les pensionnés belges vivent-ils correctement ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-age"><span class="n">03</span><h3>L’âge</h3><p>Quand part-on, et que change la réforme de 2026 ?</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · un siècle de pensions</span>
+    <h2 class="giant" id="tH" data-r>Le vieillissement n’est pas <span>une surprise : il était prévu.</span></h2>
+    <p class="lede" data-r>Le nombre de personnes âgées pour 100 personnes en âge de travailler monte depuis le milieu des années 1980, sous l’effet de l’allongement de la vie, de la baisse de la natalité et, depuis les années 2010, de l’arrivée à 65 ans des générations nombreuses nées après 1945. Les projections prolongent la tendance jusqu’en 2070.</p>
+    <div class="chart" id="depChart"></div>
+    <p class="srcl">Personnes de 65 ans et plus pour 100 personnes de 15 à 64 ans. 1960-2025 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=fr" target="_blank" rel="noopener">demo_pjanind</a> (rupture en 2011) ; 2025-2070 : projections Eurostat EUROPOP2023, scénario de base, <a href="https://ec.europa.eu/eurostat/databrowser/view/proj_23ndbi/default/table?lang=fr" target="_blank" rel="noopener">proj_23ndbi</a>. Une projection n’est pas une prévision : elle dépend d’hypothèses sur la fécondité, la mortalité et les migrations.</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1900</span><h3>L’État subsidie</h3><p>La loi du 10 mai 1900 instaure une aide de l’État à l’épargne-retraite, qui reste facultative.</p></li>
+      <li data-r><span class="yr">1924-1925</span><h3>L’assurance obligatoire</h3><p>Pension obligatoire pour les ouvriers (1924) puis les employés (1925), fondée sur les cotisations versées par les travailleurs.</p></li>
+      <li data-r><span class="yr">1953</span><h3>Fin de la capitalisation individuelle</h3><p>La loi du 29 décembre 1953 sur la pension des ouvriers abandonne la capitalisation individuelle : la logique de répartition s’impose.</p></li>
+      <li data-r><span class="yr">2009-2030</span><h3>L’âge recule</h3><p>Âge des femmes aligné sur celui des hommes (65 ans) en 2009 ; 66 ans en 2025, 67 ans en 2030. Réforme bonus-malus votée en mai 2026.</p></li>
+    </ol>
+    <p class="srcl">1900-1953 : J.-P. Sanderson (2015), « <a href="https://www.journalbelgianhistory.be/en/system/files/article_pdf/009_Sanderson_JeanPaul_2015_2_3.pdf" target="_blank" rel="noopener">Vieillissement de la population et retraites en Belgique, XIX<sup>e</sup>-XX<sup>e</sup> siècles</a> », <i>Revue belge d’histoire contemporaine</i>. Âges légaux : BNB, Minne et Saks (2023). Réforme 2026 : <a href="https://www.lalibre.be/belgique/politique-belge/2026/05/29/la-reforme-des-pensions-a-ete-adoptee-cette-nuit-par-la-chambre-RIVYRRT74ZHWTOOKGQMT5DT3QM/" target="_blank" rel="noopener">La Libre, 29 mai 2026</a> (presse, pour dater l’événement).</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« Il n’y aura plus de pensions pour les jeunes. »</h4><p><b>Faux, mais…</b> En répartition, tant qu’il y a des travailleurs et des cotisations, des pensions sont versées. Les projections officielles annoncent un coût plus élevé, pas une disparition. La vraie question est le niveau des pensions et qui paie la hausse.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« Les pensionnés belges sont pauvres. »</h4><p><b>Vrai mais en recul.</b> Le risque de pauvreté des 65 ans et plus est tombé de 15,7 % en 2023 à 9,3 % en 2025, sous la moyenne européenne. Mais le taux de remplacement reste bas (48 %) et les femmes touchent nettement moins.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Reculer l’âge suffit à faire travailler plus longtemps. »</h4><p><b>À nuancer.</b> En Autriche, reculer l’âge de la retraite anticipée a augmenté l’emploi des aînés, mais aussi fortement leur chômage. <a href="#recherche">Voir la recherche</a>.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : le coût -->
+<section class="sec papier" id="f-cout" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>10,2 % <span>du PIB.</span></h2>
+    <p class="lede" data-r>Les dépenses publiques consacrées à la vieillesse sont passées de 6,8 % du PIB en 2001 à 10,2 % en 2024. Elles restent un peu sous la moyenne européenne (10,7 %), qui part de plus haut. Le Comité d’étude sur le vieillissement prévoit une hausse supplémentaire des pensions de 0,7 point de PIB d’ici 2070, après la réforme récente.</p>
+    <div class="chart" id="costChart"></div>
+    <p class="srcl">Dépenses publiques « vieillesse » (fonction COFOG 10.2 : pensions de retraite et services aux personnes âgées), en % du PIB. Belgique 2001-2024, Union 2010-2024 (données disponibles). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_exp</a>, mise à jour du 16 septembre 2026. Projection : Comité d’étude sur le vieillissement, rapport de juillet 2026, relayé par <a href="https://blog.forumforthefuture.be/fr/article/vieillissement-en-belgique-a-lhorizon-2070-les-depenses-sociales-augmentent-jusquen-2050-puis-se-stabilisent-.../31873" target="_blank" rel="noopener">Forum for the Future</a>.</p>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : le niveau -->
+<section class="sec brun grain" id="f-niveau" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Moins de pauvreté, <span>mais des pensions plus basses qu’ailleurs.</span></h2>
+    <p class="lede" data-r>Deux chiffres semblent se contredire. Le risque de pauvreté des aînés a fortement baissé et passe sous la moyenne européenne. Mais la pension médiane ne remplace que 48 % du revenu des personnes en fin de carrière, contre 60 % dans l’Union.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Risque de pauvreté des 65 ans et plus</b><span>en %, revenu sous 60 % du revenu médian</span></figcaption><div class="chart sm" id="povChart"></div></figure>
+      <figure data-r><figcaption><b>Écart de pension femmes-hommes</b><span>65-79 ans, en % de la pension moyenne des hommes</span></figcaption><div class="chart sm" id="gapChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=fr" target="_blank" rel="noopener">ilc_li02</a> (pauvreté, rupture en 2019), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_pnp13/default/table?lang=fr" target="_blank" rel="noopener">ilc_pnp13</a> (écart de pension), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_pnp3/default/table?lang=fr" target="_blank" rel="noopener">ilc_pnp3</a> (taux de remplacement agrégé : pension médiane des 65-74 ans rapportée au revenu médian du travail des 50-59 ans), consulté le 11 octobre 2026. Enquête SILC : l’année indiquée est celle de l’enquête, les revenus portent sur l’année précédente.</p>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>L’écart de pension belge varie fortement d’une année à l’autre (de 23 % à 35 %) : il vient d’une enquête par échantillon. Mieux vaut retenir l’ordre de grandeur, un quart à un tiers de moins pour les femmes, qu’un chiffre annuel précis.</p></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : l'âge -->
+<section class="band grain" id="f-age" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>66 ans, <span>puis 67 en 2030.</span></h2>
+    <p class="lede ink" data-r>L’âge légal de la pension est de 66 ans depuis 2025 et passera à 67 ans en 2030. Mais l’âge auquel on part réellement est plus bas : 60,7 ans en moyenne selon l’enquête SHARE de 2019-2020. Le taux d’emploi des 55-64 ans a pourtant presque triplé depuis 1993.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Âge légal</h3><b class="big">66 → 67</b><p>2025 → 2030</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Âge effectif moyen</h3><b class="big">60,7</b><p>enquête SHARE, 2019-2020</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Emploi des 55-64 ans</h3><b class="big">22 → 61,5 %</b><p>1993 → 2025</p></div>
+    </div>
+    <div class="snow light" data-r>
+      <h3 class="sub">La réforme votée en mai 2026</h3>
+      <p>Adoptée par la Chambre dans la nuit du 28 au 29 mai 2026. Elle introduit un <b>bonus</b> pour ceux qui travaillent au-delà de l’âge légal (jusqu’à 5 % par année supplémentaire pour les personnes nées en 1973 ou après) et un <b>malus</b> à partir de 2027 pour les départs anticipés sans carrière suffisante (35 ans d’au moins 156 jours, soit 7 020 jours de travail effectif). Selon l’accord présenté en mars 2026, le malus irait de 2 à 5 % par année d’anticipation selon l’année de naissance.</p>
+      <p class="srcl ink">Sources : BNB, Minne et Saks (2023) pour les âges ; Eurostat lfsi_emp_a_h et lfsi_emp_a pour l’emploi ; réforme : <a href="https://www.lalibre.be/belgique/politique-belge/2026/05/29/la-reforme-des-pensions-a-ete-adoptee-cette-nuit-par-la-chambre-RIVYRRT74ZHWTOOKGQMT5DT3QM/" target="_blank" rel="noopener">La Libre, 29 mai 2026</a>, <a href="https://www.rtbf.be/article/ce-qui-change-en-2026-le-bonus-pension-oui-le-malus-c-est-pour-2027-11651253" target="_blank" rel="noopener">RTBF, 20 décembre 2025</a>, <a href="https://www.lavenir.net/actu/belgique/politique/2026/03/06/accord-final-sur-la-reforme-des-pensions-malus-seuil-de-156-jours-ce-qui-va-concretement-changer-ISG37766QNAIHJM2HLZFV2MI6Y/" target="_blank" rel="noopener">L’Avenir, 6 mars 2026</a>. Ce sont des sources de presse : le texte publié au Moniteur belge fera foi et sera ajouté dès sa consultation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="__HOME__#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>Que doit-on à ceux <span>qui ont fini de travailler ?</span></h2>
+    <p class="lede" data-r>Une pension doit-elle remplacer un salaire, garantir un minimum, ou récompenser une épargne ? Huit traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>des pensions ?</span></h2>
+    <p class="lede ink" data-r>Les pensions légales relèvent de l’État fédéral, mais d’autres acteurs comptent pour les deuxième et troisième piliers et pour la vie des aînés.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>État fédéral</h3><ul><li>Pensions légales des salariés, des indépendants et des fonctionnaires</li><li>Âge légal, conditions de carrière, bonus et malus</li><li>Avantage fiscal de l’épargne-pension</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Partenaires sociaux</h3><ul><li>Pensions complémentaires d’entreprise et de secteur (2<sup>e</sup> pilier)</li><li>Gestion paritaire de la sécurité sociale</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Communautés et Régions</h3><ul><li>Maisons de repos, aide aux personnes âgées, allocations pour l’aide aux personnes âgées</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Union européenne</h3><ul><li>Les pensions restent une compétence nationale</li><li>Recommandations dans le cadre du Semestre européen, projections communes du vieillissement</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Confondre projection et prévision</h3><p>Les chiffres pour 2070 reposent sur des hypothèses de fécondité, de mortalité, de migrations et de productivité. Avec une productivité plus faible, le coût du vieillissement double presque (de 1,5 à 3,3 points de PIB selon le Comité d’étude sur le vieillissement).</p></li>
+      <li data-r><span class="g">2</span><h3>Lire le taux de dépendance comme un ratio cotisants-pensionnés</h3><p>Il compare des âges, pas des statuts. Tous les 15-64 ans ne travaillent pas, et de plus en plus de 65 ans et plus travaillent encore.</p></li>
+      <li data-r><span class="g">3</span><h3>Oublier le logement dans la pauvreté</h3><p>Le revenu utilisé ne compte pas l’avantage d’être propriétaire de son logement, fréquent chez les aînés. Un même revenu ne donne pas le même niveau de vie selon qu’on paie un loyer ou non.</p></li>
+      <li data-r><span class="g">4</span><h3>Prendre une moyenne pour la règle</h3><p>La pension moyenne mélange des carrières complètes et incomplètes, des salariés, des indépendants et des fonctionnaires, aux régimes très différents.</p></li>
+      <li data-r><span class="g">5</span><h3>Comparer les dépenses sans regarder les piliers</h3><p>Un pays peut dépenser peu en pensions publiques parce que ses pensions privées sont développées. Les chiffres publics ne disent pas tout du revenu des retraités.</p></li>
+      <li data-r><span class="g">6</span><h3>Lire un chiffre d’enquête au dixième près</h3><p>Pauvreté et écart de pension viennent d’échantillons : les variations d’une année à l’autre peuvent être du bruit statistique.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="dep" aria-pressed="true">Vieillissement</button>
+        <button type="button" data-k="cout" aria-pressed="false">Coût</button>
+        <button type="button" data-k="pov" aria-pressed="false">Pauvreté</button>
+        <button type="button" data-k="rep" aria-pressed="false">Remplacement</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées les 10 et 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat : <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_exp</a> (dépenses par fonction), <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=fr" target="_blank" rel="noopener">demo_pjanind</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/proj_23ndbi/default/table?lang=fr" target="_blank" rel="noopener">proj_23ndbi</a> (démographie), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=fr" target="_blank" rel="noopener">ilc_li02</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_pnp3/default/table?lang=fr" target="_blank" rel="noopener">ilc_pnp3</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_pnp13/default/table?lang=fr" target="_blank" rel="noopener">ilc_pnp13</a> (revenus et pensions), lfsi_emp_a et lfsi_emp_a_h (emploi).</li>
+      </ol>
+      <h3 class="mt">Niveau 3 · institutions publiques</h3><ol>
+        <li>Comité d’étude sur le vieillissement (2026). Rapport annuel de juillet 2026, relayé par <a href="https://blog.forumforthefuture.be/fr/article/vieillissement-en-belgique-a-lhorizon-2070-les-depenses-sociales-augmentent-jusquen-2050-puis-se-stabilisent-.../31873" target="_blank" rel="noopener">Forum for the Future</a> (site du Bureau du Plan non accessible lors de la vérification).</li>
+        <li>Minne, G. et Saks, Y. (2023). « <a href="https://www.nbb.be/doc/ts/publications/economicreview/2023/ecorevi2023_h15.pdf" target="_blank" rel="noopener">Older workers and retirement decisions in Belgium</a> ». <i>NBB Economic Review</i>, 2023/15.</li>
+      </ol>
+      <h3 class="mt">Histoire</h3><ol>
+        <li>Sanderson, J.-P. (2015). « <a href="https://www.journalbelgianhistory.be/en/system/files/article_pdf/009_Sanderson_JeanPaul_2015_2_3.pdf" target="_blank" rel="noopener">Vieillissement de la population et retraites en Belgique, XIX<sup>e</sup>-XX<sup>e</sup> siècles</a> ». <i>Revue belge d’histoire contemporaine</i>.</li>
+      </ol>
+      <h3 class="mt">Niveau 6 · presse (pour dater la réforme de 2026)</h3><ol>
+        <li><a href="https://www.lalibre.be/belgique/politique-belge/2026/05/29/la-reforme-des-pensions-a-ete-adoptee-cette-nuit-par-la-chambre-RIVYRRT74ZHWTOOKGQMT5DT3QM/" target="_blank" rel="noopener">La Libre, 29 mai 2026</a> ; <a href="https://www.rtbf.be/article/ce-qui-change-en-2026-le-bonus-pension-oui-le-malus-c-est-pour-2027-11651253" target="_blank" rel="noopener">RTBF, 20 décembre 2025</a> ; <a href="https://www.lavenir.net/actu/belgique/politique/2026/03/06/accord-final-sur-la-reforme-des-pensions-malus-seuil-de-156-jours-ce-qui-va-concretement-changer-ISG37766QNAIHJM2HLZFV2MI6Y/" target="_blank" rel="noopener">L’Avenir, 6 mars 2026</a>.</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Barr, N. (2002). « <a href="https://ideas.repec.org/a/wly/intssr/v55y2002i2p3-36.html" target="_blank" rel="noopener">Reforming Pensions: Myths, Truths, and Policy Choices</a> ». <i>International Social Security Review</i>, 55(2), 3-36.</li>
+        <li>Samuelson, P. (1958). « <a href="https://www.journals.uchicago.edu/doi/10.1086/258100" target="_blank" rel="noopener">An Exact Consumption-Loan Model of Interest with or without the Social Contrivance of Money</a> ». <i>Journal of Political Economy</i>, 66(6), 467-482.</li>
+        <li>Staubli, S. et Zweimüller, J. (2013). « <a href="https://ideas.repec.org/a/eee/pubeco/v108y2013icp17-32.html" target="_blank" rel="noopener">Does Raising the Early Retirement Age Increase Employment of Older Workers?</a> ». <i>Journal of Public Economics</i>, 108, 17-32.</li>
+        <li>Feldstein, M. (1974). « Social Security, Induced Retirement, and Aggregate Capital Accumulation ». <i>Journal of Political Economy</i>, 82(5) ; correction : <a href="https://www.nber.org/papers/w0579" target="_blank" rel="noopener">NBER Working Paper 579</a>.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Beveridge, W. (1942). <i>Social Insurance and Allied Services</i>. HMSO.</li>
+        <li>Burke, E. (1790). <i>Reflections on the Revolution in France</i>.</li>
+        <li>Esping-Andersen, G. (1990). <i>The Three Worlds of Welfare Capitalism</i>. Polity Press.</li>
+        <li>Friedman, M. (1962). <i>Capitalism and Freedom</i>. University of Chicago Press.</li>
+        <li>Friot, B. (2010). <i>L’enjeu des retraites</i>. La Dispute.</li>
+        <li>Modigliani, F. et Brumberg, R. (1954). « Utility Analysis and the Consumption Function ». Dans K. Kurihara (dir.), <i>Post-Keynesian Economics</i>.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="__HOME__#methode">page Méthode</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 03 · Pensions et vieillissement · vérifié le 11 octobre 2026</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>

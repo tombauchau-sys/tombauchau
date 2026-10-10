@@ -1,0 +1,128 @@
+<nav class="top" aria-label="Navigation principale">
+  <a href="#atlas" class="on"><span class="lbl" data-t="Carte">Carte</span></a>
+  <a href="#classements"><span class="lbl" data-t="Classements">Classements</span></a>
+  <a href="#atlas" class="mark" aria-label="Chiffre Juste, retour à la carte"><span></span></a>
+  <a href="#dossiers" id="ddBtn" aria-haspopup="true" aria-expanded="false" aria-controls="ddP"><span class="lbl" data-t="Dossiers ▾">Dossiers ▾</span></a>
+  <a href="#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
+  <a href="#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
+  <div class="ddp" id="ddP" hidden><p class="ddh">Dix dossiers · une question du débat par dossier</p><div class="ddg"><a href="__EMPLOI__" class="ddi"><span class="n">01</span><span class="t">Emploi et inactivité</span><span class="st">Ouvert</span></a><a href="__FINANCES__" class="ddi"><span class="n">02</span><span class="t">Finances publiques</span><span class="st">Ouvert</span></a><a href="__PENSIONS__" class="ddi"><span class="n">03</span><span class="t">Pensions et vieillissement</span><span class="st">Ouvert</span></a><a href="#d-immigration" class="ddi soon"><span class="n">04</span><span class="t">Immigration et asile</span><span class="st">Bientôt</span></a><a href="#d-justice" class="ddi soon"><span class="n">05</span><span class="t">Justice et sécurité</span><span class="st">Bientôt</span></a><a href="#d-sante" class="ddi soon"><span class="n">06</span><span class="t">Santé</span><span class="st">Bientôt</span></a><a href="#d-education" class="ddi soon"><span class="n">07</span><span class="t">Éducation</span><span class="st">Bientôt</span></a><a href="#d-pauvrete" class="ddi soon"><span class="n">08</span><span class="t">Inégalités et pauvreté</span><span class="st">Bientôt</span></a><a href="#d-climat" class="ddi soon"><span class="n">09</span><span class="t">Climat et énergie</span><span class="st">Bientôt</span></a><a href="#d-logement" class="ddi soon"><span class="n">10</span><span class="t">Logement</span><span class="st">Bientôt</span></a></div><a class="ddall" href="#dossiers">Voir tous les dossiers ↓</a></div>
+</nav>
+
+<main id="top">
+<section class="atlas grain" id="atlas" aria-labelledby="atT">
+  <div class="in">
+    <div class="mapcol">
+      <div class="frame"><svg id="map" role="group" aria-label="Carte des 27 pays de l’Union européenne. Utilisez Tab pour parcourir les pays et Entrée pour en choisir un. Le classement plus bas donne les mêmes valeurs sous forme de liste."></svg></div>
+    </div>
+    <div class="side-col">
+      <div class="switch" id="switch" role="group" aria-label="Mode">
+        <span class="thumb" aria-hidden="true"></span>
+        <button type="button" id="mA" aria-pressed="true">Analyser un pays</button>
+        <button type="button" id="mC" aria-pressed="false">Comparer deux pays</button>
+      </div>
+      <div>
+        <p class="kicker">Union européenne · 27 pays · Eurostat</p>
+        <h1 id="atT">Choisissez <span>un pays.</span></h1>
+        <p class="note hint" id="hint" aria-hidden="true">cliquez sur la carte ←</p>
+      </div>
+      <div class="mapctl">
+        <div class="chips" id="chips" role="group" aria-label="Colorer la carte"><span class="lab">Colorer la carte :</span></div>
+        <div class="legend" id="legend" aria-live="polite"></div>
+      </div>
+      <article class="bulle" id="bulle" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<div class="dossier" id="dossier" aria-live="polite"></div>
+
+<section class="dz papier ranks" id="classements" aria-labelledby="rkH">
+  <div class="w">
+    <p class="kicker" data-r>Classements · 27 pays · 43 indicateurs · Eurostat et agences de notation</p>
+    <h2 id="rkH" data-r>Les 27, <span class="s">en classements.</span></h2>
+    <p class="lede" data-r>Un classement ordonne, il ne juge pas : être premier en dépenses, en dette ou en exportations n’est ni un bon ni un mauvais point en soi. Chaque classement est daté, sourcé et accompagné de sa définition.</p>
+    <div class="rkbar" data-r>
+      <div class="rkth" id="rkTh" role="group" aria-label="Thème"></div>
+      <div class="rki" id="rkI" role="group" aria-label="Indicateur"></div>
+    </div>
+    <div class="rkcard" data-r>
+      <div class="rkhead"><div><p class="kicker" id="rkK"></p><h3 id="rkT"></h3><p class="rkd" id="rkD"></p></div><button type="button" class="rkdir" id="rkDir"></button></div>
+      <ol class="rkl" id="rkL"></ol>
+      <p class="rkfoot">Cliquez sur un pays pour l’analyser sur la carte. En mode « Comparer », le clic ajoute le second pays.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="themes" id="dossiers" aria-labelledby="th">
+  <div class="in">
+    <div class="ttl" data-r>
+      <h2 id="th">Dix <span>dossiers</span></h2>
+      <svg class="arc" viewBox="0 0 240 70" aria-hidden="true"><defs><path id="arcp" d="M10 18 Q120 82 230 18"/></defs><text style="font-family:var(--sans);font-size:15px;fill:var(--ink)"><textPath href="#arcp" startOffset="50%" text-anchor="middle">pour lire le débat public</textPath></text></svg>
+    </div>
+    <p class="dlede" data-r>Chaque dossier part d’une question du débat et réunit plusieurs fiches courtes, toutes construites de la même façon : le chiffre, sa définition, son évolution, la comparaison européenne, qui décide en Belgique, ses limites et ses sources.</p>
+    <ul class="rows">
+      <li data-r id="d-emploi" style="--cc:var(--c-job)"><span class="k">01</span><h3>Emploi et inactivité</h3><p>Chômeurs, demandeurs d’emploi, malades de longue durée : qui travaille, qui ne travaille pas ?</p><a class="skew" href="__EMPLOI__" data-cursor="Lire"><span>Lire le dossier</span></a><span class="glyph" aria-hidden="true">±</span></li>
+      <li data-r id="d-finances" style="--cc:var(--c-fin)"><span class="k">02</span><h3>Finances publiques</h3><p>Une dette de 108 % du PIB, est-ce beaucoup ?</p><a class="skew" href="__FINANCES__" data-cursor="Lire"><span>Lire le dossier</span></a><span class="glyph" aria-hidden="true">%</span></li>
+      <li data-r id="d-pensions" style="--cc:var(--c-eco)"><span class="k">03</span><h3>Pensions et vieillissement</h3><p>Combien coûtent les pensions, et qui les paie ?</p><a class="skew" href="__PENSIONS__" data-cursor="Lire"><span>Lire le dossier</span></a><span class="glyph" aria-hidden="true">∞</span></li>
+      <li data-r id="d-immigration" style="--cc:var(--c-pop)"><span class="k">04</span><h3>Immigration et asile</h3><p>Né à l’étranger, étranger, demandeur d’asile : de qui parle-t-on ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">+</span></li>
+      <li data-r id="d-justice" style="--cc:var(--c-ineq)"><span class="k">05</span><h3>Justice et sécurité</h3><p>Que comptent vraiment les statistiques de la criminalité ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">§</span></li>
+      <li data-r id="d-sante" style="--cc:var(--c-cli)"><span class="k">06</span><h3>Santé</h3><p>Vit-on plus longtemps en bonne santé ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">♡</span></li>
+      <li data-r id="d-education" style="--cc:var(--c-job)"><span class="k">07</span><h3>Éducation</h3><p>Combien de jeunes quittent l’école sans diplôme ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">Ω</span></li>
+      <li data-r id="d-pauvrete" style="--cc:var(--c-ineq)"><span class="k">08</span><h3>Inégalités et pauvreté</h3><p>Que veut dire « à risque de pauvreté » ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">≠</span></li>
+      <li data-r id="d-climat" style="--cc:var(--c-cli)"><span class="k">09</span><h3>Climat et énergie</h3><p>Que comptent les émissions d’un pays ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">↓</span></li>
+      <li data-r id="d-logement" style="--cc:var(--c-pop)"><span class="k">10</span><h3>Logement</h3><p>Se loger coûte-t-il plus cher qu’avant ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">⌂</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="dz brun methode" id="methode" aria-labelledby="mtH">
+  <div class="w">
+    <p class="kicker" data-r>Méthode · sources · limites</p>
+    <h2 id="mtH" data-r>D’où viennent <span class="s">ces chiffres ?</span></h2>
+    <p class="lede" data-r>Un chiffre n’a de valeur que si l’on sait d’où il vient, ce qu’il compte et ce qu’il ne dit pas. Cette page l’explique pour tout le site.</p>
+    <div class="mtg">
+      <div class="mtb" data-r><span class="n">01</span><h3>Les sources</h3>
+        <p><b>Eurostat</b>, l’office statistique de l’Union européenne, pour tout ce qui compare les 27 pays. Il rassemble les données transmises par les instituts nationaux (en Belgique, Statbel et la Banque nationale) selon des définitions communes.</p>
+        <p><b>Les trois grandes agences de notation</b> (S&amp;P Global, Moody’s, Fitch) pour les notes des États, d’après leurs propres communiqués.</p>
+        <p>Les dossiers belges ajouteront les sources nationales : Statbel, BNB, Bureau fédéral du Plan, ONEM, INAMI, SPF.</p></div>
+      <div class="mtb" data-r><span class="n">02</span><h3>Les vérifications</h3>
+        <p>Chaque chiffre est daté et relié à la table d’origine : un clic sur le code (par exemple <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a>) ouvre la source.</p>
+        <p>Les données sont recoupées : le budget détaillé par fonction doit retomber sur le total, recettes moins dépenses sur le déficit, et les exportations d’un pays vers un autre sont comparées aux importations déclarées par l’autre.</p>
+        <p>Aucune donnée manquante n’est estimée : elle apparaît hachurée sur la carte et signalée comme absente.</p></div>
+      <div class="mtb" data-r><span class="n">03</span><h3>Les limites</h3>
+        <p><b>Une moyenne cache des écarts.</b> Le PIB par habitant ne dit rien de la façon dont la richesse est répartie.</p>
+        <p><b>Comparer n’est pas toujours possible.</b> Les définitions européennes sont communes, mais les pays ne mesurent pas tout de la même manière, et les chiffres récents sont souvent révisés.</p>
+        <p><b>Corrélation n’est pas causalité.</b> Deux chiffres qui évoluent ensemble ne prouvent pas que l’un explique l’autre.</p>
+        <p><b>Un classement ordonne, il ne juge pas.</b></p></div>
+      <div class="mtb" data-r><span class="n">04</span><h3>Petit lexique</h3>
+        <dl>
+          <dt>PIB</dt><dd>Valeur de tout ce qui est produit dans un pays en un an.</dd>
+          <dt>SPA</dt><dd>Standard de pouvoir d’achat : une monnaie fictive qui corrige les écarts de prix entre pays.</dd>
+          <dt>Chômeur (BIT)</dt><dd>Personne sans emploi, qui en cherche activement un et peut commencer dans les deux semaines. Ce n’est pas la même chose qu’un demandeur d’emploi inscrit.</dd>
+          <dt>Déficit public</dt><dd>Ce que l’ensemble des administrations (État, Régions, communes, sécurité sociale) dépense de plus qu’il ne perçoit sur l’année.</dd>
+          <dt>Médiane</dt><dd>La valeur qui coupe la population en deux moitiés égales.</dd>
+          <dt>Quintile</dt><dd>Un cinquième d’un ensemble classé. La carte colore les pays en cinq groupes de même taille.</dd>
+          <dt>COFOG</dt><dd>Classement international des dépenses publiques en dix fonctions (santé, enseignement, protection sociale…).</dd>
+        </dl></div>
+    </div>
+  </div>
+</section>
+<div class="marquee" id="marquee" aria-label="Chiffres vérifiés, Belgique">
+  <div class="track" id="track"></div>
+</div>
+
+<section class="intro" id="apropos">
+  <p class="lead" id="lead">Des chiffres vérifiés pour le débat européen. Chaque chiffre est relié à sa source primaire, daté, et livré avec ses limites et les lectures qu’en font les chercheurs.</p>
+  <div class="side-note" data-r>
+    <p>La forme sert le fond : les faits sont en grotesque, les lectures en serif. Un coup d’œil suffit pour savoir ce que l’on regarde.</p>
+    <a class="pill" href="#atlas" data-cursor="Explorer" data-magnet>Retour à la carte <span class="arr" aria-hidden="true">↑</span></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Bruxelles · 2026 · <a href="#apropos">À propos</a> · <a href="#methode">Méthode</a></span><span>Carte : Natural Earth · Données : Eurostat (gov_10a_exp, gov_10dd_edpt1, gov_10a_main, nama_10_gdp, tps00001, une_rt_a, prc_hicp_aind, tec00115, ilc_peps01n, ilc_di12, demo_mlexpec, Comext DS-045409), consultées le 10 octobre 2026</span></div>
+  <div class="wordmark split" id="fw" aria-hidden="true">Chiffre Juste</div>
+</footer>

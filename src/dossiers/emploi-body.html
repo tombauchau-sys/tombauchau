@@ -1,0 +1,270 @@
+<main id="top">
+
+<!-- 0. Seuil : le pari -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 01 · Emploi et inactivité · avant de lire</span>
+    <h1 class="q" id="q0">En Belgique, y a-t-il plus de chômeurs ou plus de personnes en invalidité ?</h1>
+    <div class="bet" role="group" aria-label="Votre pari">
+      <button type="button" class="betb" data-b="c"><span>Plus de chômeurs</span></button>
+      <button type="button" class="betb" data-b="e"><span>À peu près autant</span></button>
+      <button type="button" class="betb" data-b="i"><span>Plus d’invalides</span></button>
+    </div>
+    <div class="duel" id="duel" hidden>
+      <div class="side-c"><b id="nC">—</b><span>chômeurs au sens du BIT, moyenne 2025</span><small>enquête Statbel, 15-74 ans · Eurostat une_rt_a</small></div>
+      <div class="vs" aria-hidden="true">vs</div>
+      <div class="side-i"><b id="nI">—</b><span>personnes en invalidité au 31 décembre 2025</span><small>registres de l’INAMI, salariés, chômeurs et indépendants · provisoire</small></div>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <a class="skew passer" href="#dossier"><span>Passer</span></a>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 01 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Emploi et inactivité"><span class="t1">Emploi </span><span class="t2">et inactivité</span></h2></div>
+    <p class="lede hq" data-r>Qui travaille, qui ne travaille pas, et pourquoi ? Trois façons de compter, quatre fiches, l’état de la recherche et neuf lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>72,8 %</b><span>des 20-64 ans ont un emploi, 23<sup>e</sup> sur 27</span><span class="src">Eurostat lfsi_emp_a, 2025</span></div>
+      <div><b>6,2 %</b><span>de chômage, contre 6,0 % dans l’Union</span><span class="src">Eurostat une_rt_a, 2025</span></div>
+      <div><b>576 643</b><span>personnes en invalidité, +19 % depuis 2021</span><span class="src">INAMI, 31 déc. 2025, provisoire</span></div>
+      <div><b>63,9 → 77,3 %</b><span>de taux d’emploi, de Bruxelles à la Flandre</span><span class="src">Eurostat lfst_r_lfe2emprt, 2025</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 10 octobre 2026 · prochaine mise à jour : chiffres annuels 2026 (printemps 2027)</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--orange)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Quatre fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-emploi"><span class="n">01</span><h3>Le taux d’emploi</h3><p>Où se situe l’écart avec la moyenne européenne ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="__FICHE__"><span class="n">02</span><h3>Le chômage</h3><p>6,2 % : que compte vraiment ce chiffre ?</p><span class="go">Fiche complète →</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--lilac)"><a href="#f-invalidite"><span class="n">03</span><h3>Les malades de longue durée</h3><p>Pourquoi le nombre de personnes en invalidité augmente-t-il ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:2deg;--bg:var(--mint)"><a href="#f-duree"><span class="n">04</span><h3>Le chômage qui dure</h3><p>Jeunes et chômeurs de longue durée : où en est-on ?</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Trois façons de compter -->
+<section class="sec papier" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois façons <span>de compter.</span></h2>
+    <p class="lede" data-r>Les chiffres de l’emploi viennent de trois sources qui ne mesurent pas la même chose. Les mélanger est la première erreur du débat public.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Enquête</span><h3>L’enquête sur les forces de travail</h3><p class="who">Statbel, pour Eurostat</p><p>Un échantillon de ménages répond à un questionnaire européen commun. On y est <b>en emploi</b> si l’on a travaillé au moins une heure la semaine de référence, <b>chômeur</b> si l’on n’a pas travaillé, a cherché activement et peut commencer dans les deux semaines. Tous les autres sont <b>inactifs</b>.</p><p class="use">Sert à : taux d’emploi, taux de chômage, comparaisons européennes.</p></article>
+      <article data-r><span class="tag p">Registres régionaux</span><h3>Les demandeurs d’emploi inscrits</h3><p class="who">Actiris, Forem, VDAB, ADG</p><p>Les personnes inscrites auprès du service régional de l’emploi. On peut être inscrit sans être chômeur au sens de l’enquête (par exemple en travaillant quelques heures), et chômeur sans être inscrit.</p><p class="use">Sert à : suivre l’accompagnement dans chaque Région.</p></article>
+      <article data-r><span class="tag u">Sécurité sociale</span><h3>Les bénéficiaires d’allocations</h3><p class="who">ONEM (chômage), INAMI (maladie)</p><p>Les personnes qui reçoivent une allocation. Après un an d’incapacité de travail reconnue, un salarié passe de l’<b>incapacité primaire</b> à l’<b>invalidité</b>. Ces chiffres dépendent des règles d’accès : une réforme change le nombre sans que la réalité change.</p><p class="use">Sert à : mesurer le coût et l’effet des règles.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ c’est pour ça que le pari du début compare deux choses différentes</p>
+  </div>
+</section>
+
+<!-- 3b. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · trente ans d’emploi en Belgique</span>
+    <h2 class="giant" id="tH" data-r>Les femmes et les 55-64 ans <span>ont changé la donne.</span></h2>
+    <p class="lede" data-r>En 1993, à peine plus de six Belges de 20 à 64 ans sur dix travaillaient. Ils sont plus de sept sur dix aujourd’hui. Presque toute la hausse vient des femmes et des travailleurs âgés : le taux d’emploi des hommes, lui, a peu bougé.</p>
+    <div class="chart" id="slopeChart"></div>
+    <p class="srcl">Taux d’emploi en 1993 et en 2025, en %. 1993 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a_h/default/table?lang=fr" target="_blank" rel="noopener">lfsi_emp_a_h</a> (série historique, valeurs estimées) ; 2025 : Eurostat, lfsi_emp_a. Les deux séries coïncident sur les années communes (67,2 % en 2015). Ruptures de série en 1999, 2001, 2017 et 2021.</p>
+    <h3 class="sub" data-r>Le chômage depuis 1993</h3>
+    <div class="chart" id="uChart"></div>
+    <p class="srcl">Taux de chômage au sens du BIT, 15-74 ans, en %. 1993-2014 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/une_rt_a_h/default/table?lang=fr" target="_blank" rel="noopener">une_rt_a_h</a> (ancienne méthode) ; 2015-2025 : une_rt_a. En 2015, les deux méthodes donnent 8,5 % et 8,7 %.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« Le chômage n’a jamais été aussi haut. »</h4><p><b>Faux.</b> Il atteignait 9,5 % au milieu des années 1990 et 8,5 % encore en 2014-2015, contre 6,2 % en 2025. Il remonte depuis 2023, mais reste sous ses niveaux passés.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« On travaille de moins en moins en Belgique. »</h4><p><b>Faux.</b> Le taux d’emploi est passé de 61,2 % en 1993 à 72,8 % en 2025. Celui des femmes a gagné 20 points, celui des 55-64 ans a presque triplé (22,2 % à 61,5 %).</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Les malades de longue durée sont des chômeurs déguisés. »</h4><p><b>À nuancer.</b> Une partie des entrées en invalidité vient du chômage, surtout après la réforme de 2012. Mais l’ampleur de ce passage n’est pas mesurée précisément, et les troubles psychosociaux, l’âge et les conditions de travail jouent aussi. <a href="#recherche">Voir la recherche</a>.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : le taux d'emploi -->
+<section class="sec brun grain" id="f-emploi" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>72,8 % <span>des 20-64 ans travaillent.</span></h2>
+    <p class="lede" data-r>C’est 3,3 points de moins que la moyenne de l’Union (76,1 %). Le chiffre progresse depuis dix ans, mais l’écart avec l’Europe ne se referme pas, et les trois Régions vivent des réalités très différentes.</p>
+    <div class="evs" role="group" aria-label="Choisir les courbes" id="empTg">
+      <button type="button" data-k="reg" aria-pressed="true">Les trois Régions</button>
+      <button type="button" data-k="eu" aria-pressed="false">Belgique et Union</button>
+    </div>
+    <div class="chart" id="empChart"></div>
+    <p class="srcl">Taux d’emploi des 20-64 ans, en %. Croix rouges : ruptures de série (2017, 2021). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=fr" target="_blank" rel="noopener">lfsi_emp_a</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_r_lfe2emprt/default/table?lang=fr" target="_blank" rel="noopener">lfst_r_lfe2emprt</a>, mise à jour du 10 septembre 2026, consulté le 10 octobre 2026.</p>
+    <div class="gapwrap">
+      <h3 class="sub" data-r>Où se situe l’écart ?</h3>
+      <p class="lede sm" data-r>L’écart avec l’Union n’est pas le même pour tous. Il est presque nul chez les diplômés du supérieur (−0,8 point). Il se creuse chez les diplômés du secondaire, les 55-64 ans, les personnes nées hors de l’Union et surtout chez les peu diplômés (−11,4 points).</p>
+      <div class="chart" id="gapChart"></div>
+      <p class="srcl">Taux d’emploi 2025, Belgique moins Union européenne, en points de pourcentage (20-64 ans, sauf 55-64 ans). Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsa_ergaed/default/table?lang=fr" target="_blank" rel="noopener">lfsa_ergaed</a> (diplôme), <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsa_ergacob/default/table?lang=fr" target="_blank" rel="noopener">lfsa_ergacob</a> (pays de naissance), <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=fr" target="_blank" rel="noopener">lfsi_emp_a</a> (âge, sexe), consulté le 10 octobre 2026.</p>
+      <div class="trap dark-trap" data-r><span class="note">attention</span><p>Ce graphique dit <i>où</i> se trouve l’écart, pas <i>pourquoi</i>. Il ne s’additionne pas non plus : une même personne peut être peu diplômée, née hors de l’Union et âgée de 58 ans. Plusieurs pistes (règles des allocations, santé, formation) sont discutées dans la partie Recherche ; aucune ne l’explique seule.</p></div>
+    </div>
+    <div class="europe-wrap">
+      <h3 class="sub" data-r>Les 27, du plus bas au plus haut</h3>
+      <div class="chart" id="empEU"></div>
+      <p class="srcl">Taux d’emploi des 20-64 ans en 2025. * Espagne et France : définition différente, signalée par Eurostat. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=fr" target="_blank" rel="noopener">lfsi_emp_a</a>, consulté le 10 octobre 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Fiche 03 : invalidité -->
+<section class="band grain inval" id="f-invalidite" style="background:var(--lilac)" aria-labelledby="tI">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tI" data-r>576 643 <span>personnes en invalidité.</span></h2>
+    <p class="lede ink" data-r>Fin 2025, plus d’une demi-million de personnes étaient reconnues incapables de travailler depuis plus d’un an. Leur nombre a plus que doublé depuis 2008 (250 705).</p>
+    <div class="invgrid">
+      <div class="chart" id="invChart"></div>
+      <ul class="stickers">
+        <li data-r style="--rot:-2deg"><b>61 %</b><span>sont des femmes</span><small>salariés et chômeurs, 2025</small></li>
+        <li data-r style="--rot:1.5deg"><b>47 %</b><span>ont 55 ans ou plus</span><small>salariés et chômeurs, 2025</small></li>
+        <li data-r style="--rot:-1deg"><b>36 %</b><span>pour des troubles psychosociaux</span><small>fin 2021, dont deux tiers de dépressions et de burn-out</small></li>
+      </ul>
+    </div>
+    <p class="srcl ink">Personnes en invalidité au 31 décembre, salariés et chômeurs, indépendants et conjoints aidants. 2024 et 2025 provisoires. Sources : INAMI, <a href="https://www.riziv.fgov.be/SiteCollectionDocuments/stat_si2025_1_invalidite.pdf" target="_blank" rel="noopener">salariés et chômeurs 2021-2025</a> et <a href="https://www.riziv.fgov.be/SiteCollectionDocuments/stat_si2025_1_invalidite_independant.pdf" target="_blank" rel="noopener">indépendants 2021-2025</a> ; 2008 et causes 2021 : INAMI, <a href="https://www.inami.fgov.be/SiteCollectionDocuments/PSYA_etude_avril_2024.pdf" target="_blank" rel="noopener">étude sur l’incapacité de longue durée due à des troubles psychosociaux</a>, avril 2024. Consulté le 10 octobre 2026.</p>
+    <div class="regs" data-r>
+      <h3 class="sub ink">Où vivent-elles ? <span class="note">en nombre, pas en proportion</span></h3>
+      <div class="chart" id="invReg"></div>
+      <p class="srcl ink">Salariés et chômeurs en invalidité au 31 décembre 2025, par Région de résidence. Source : INAMI, même tableau. Ce sont des effectifs : la Flandre compte plus d’habitants, elle a donc plus de personnes en invalidité sans que le risque y soit plus élevé.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Fiche 04 : chômage de longue durée et jeunes -->
+<section class="sec papier" id="f-duree" aria-labelledby="tD">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 04 · fait</span>
+    <h2 class="giant" id="tD" data-r>Le chômage <span>qui dure.</span></h2>
+    <p class="lede" data-r>Le chômage de longue durée a été divisé par deux en dix ans et rejoint la moyenne européenne. Le chômage des jeunes, lui, reste au-dessus.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Chômage de longue durée</b><span>chômeurs depuis un an ou plus, en % des actifs</span></figcaption><div class="chart sm" id="ltuChart"></div></figure>
+      <figure data-r><figcaption><b>Chômage des 15-24 ans</b><span>en % des jeunes actifs, pas de tous les jeunes</span></figcaption><div class="chart sm" id="youChart"></div></figure>
+    </div>
+    <p class="srcl">Belgique en couleur, Union européenne en pointillés, 2015-2025. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/une_ltu_a/default/table?lang=fr" target="_blank" rel="noopener">une_ltu_a</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table?lang=fr" target="_blank" rel="noopener">une_rt_a</a>, consulté le 10 octobre 2026.</p>
+    <div class="trap" data-r><span class="note">piège !</span><p>« 17,4 % des jeunes sont au chômage » est faux. Ce sont 17,4 % des jeunes <i>actifs</i>, c’est-à-dire de ceux qui travaillent ou cherchent. La plupart des 15-24 ans étudient et ne sont pas comptés.</p></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec brun grain" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (grille du GIEC) et chaque étude son niveau sur l’échelle de Maryland, de 1 (simple comparaison) à 5 (tirage au sort). <a href="__HOME__#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq"></div>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec papier" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>Que doit la société <span>à ceux qui ne travaillent pas, et qu’attend-elle d’eux ?</span></h2>
+    <p class="lede" data-r>Les données ne tranchent pas cette question : elle dépend de ce qu’on juge juste. Neuf traditions y répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--mint)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>en Belgique ?</span></h2>
+    <p class="lede ink" data-r>Depuis la sixième réforme de l’État, l’emploi est partagé entre plusieurs niveaux de pouvoir. Savoir qui décide évite de reprocher à un gouvernement ce qui relève d’un autre.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>État fédéral</h3><ul><li><b>ONEM</b> : règles et paiement des allocations de chômage</li><li><b>INAMI</b> : indemnités d’incapacité et d’invalidité</li><li>Droit du travail, fiscalité, cotisations sociales</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Régions</h3><ul><li><b>Actiris, Forem, VDAB</b> et <b>ADG</b> (Communauté germanophone) : accompagnement, placement</li><li><b>Contrôle de la disponibilité</b> des chômeurs : transféré en 2014, exercé depuis 2016 (2017 à Bruxelles)</li><li>Aides à l’emploi, formation professionnelle</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Partenaires sociaux</h3><ul><li>Syndicats et organisations patronales gèrent la sécurité sociale avec l’État</li><li>Conventions collectives de travail</li><li>Les syndicats versent une partie des allocations de chômage</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Mutualités</h3><ul><li>Leurs médecins-conseils reconnaissent l’incapacité de travail</li><li>Elles versent les indemnités</li></ul></div>
+    </div>
+    <p class="srcl ink">Transfert du contrôle de la disponibilité : DULBEA (ULB), <a href="https://dulbea.ulb.be/wp-content/uploads/2019/11/Dulbea_PolicyBrief_19.01.pdf" target="_blank" rel="noopener">Policy Brief 19.01</a>, Rennoir et Tojerow, 2020.</p>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Comparer des chiffres qui ne comptent pas pareil</h3><p>Les chômeurs viennent d’une enquête (15-74 ans), les invalides des registres de l’INAMI (tous âges, indépendants compris). Le pari du début montre un ordre de grandeur, pas une comparaison exacte.</p></li>
+      <li data-r><span class="g">2</span><h3>Croire qu’une invalidité est toujours totale et définitive</h3><p>La loi reconnaît l’incapacité quand la capacité de gain tombe au tiers ou moins de celle d’une personne de même formation, en tenant compte des autres métiers que la personne pourrait exercer. Une reprise partielle du travail est possible avec l’autorisation du médecin-conseil (<a href="https://www.riziv-inami.fgov.be/SiteCollectionDocuments/bi2015_1_etude_I_incapacite_travail.pdf" target="_blank" rel="noopener">INAMI, 2015</a>).</p></li>
+      <li data-r><span class="g">3</span><h3>Lire le taux d’emploi comme un indicateur de bien-être</h3><p>Une heure de travail dans la semaine suffit pour être compté en emploi. Le taux ne dit rien du temps partiel, du salaire ni de la qualité du travail.</p></li>
+      <li data-r><span class="g">4</span><h3>Ignorer les ruptures de série</h3><p>L’enquête a changé en 2017 et en 2021 : une partie des variations de ces années-là vient de l’instrument, pas de la réalité.</p></li>
+      <li data-r><span class="g">5</span><h3>Oublier les navetteurs</h3><p>Les taux régionaux sont calculés selon le lieu de <i>résidence</i>. En 2023, 48 % des emplois situés à Bruxelles étaient occupés par des habitants de Flandre ou de Wallonie (Statbel, cité par <a href="https://blog.forumforthefuture.be/fr/article/nouvelle-evolution-positive-de-lemploi-en-region-bruxelloise-en-2023/23244" target="_blank" rel="noopener">Forum for the Future</a>).</p></li>
+      <li data-r><span class="g">6</span><h3>Classer les pays sur l’invalidité</h3><p>Chaque pays organise différemment la protection en cas de maladie, de chômage ou de fin de carrière. Un pays qui a peu d’invalides peut avoir beaucoup de préretraités. L’OCDE invite à ne pas lire ces catégories séparément.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="emp" aria-pressed="true">Taux d’emploi</button>
+        <button type="button" data-k="inv" aria-pressed="false">Invalidité</button>
+        <button type="button" data-k="reg" aria-pressed="false">Régions</button>
+        <button type="button" data-k="alm" aria-pressed="false">Recherche</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · toutes consultées le 10 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=fr" target="_blank" rel="noopener">lfsi_emp_a</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_r_lfe2emprt/default/table?lang=fr" target="_blank" rel="noopener">lfst_r_lfe2emprt</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table?lang=fr" target="_blank" rel="noopener">une_rt_a</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/une_ltu_a/default/table?lang=fr" target="_blank" rel="noopener">une_ltu_a</a> ; mise à jour du 10 septembre 2026.</li>
+        <li>INAMI, <a href="https://www.riziv.fgov.be/SiteCollectionDocuments/stat_si2025_1_invalidite.pdf" target="_blank" rel="noopener">travailleurs salariés et chômeurs en invalidité, 2021-2025</a>.</li>
+        <li>INAMI, <a href="https://www.riziv.fgov.be/SiteCollectionDocuments/stat_si2025_1_invalidite_independant.pdf" target="_blank" rel="noopener">travailleurs indépendants en invalidité, 2021-2025</a>.</li>
+      </ol>
+      <h3 class="mt">Niveau 3 · institutions publiques</h3><ol>
+        <li>INAMI (2024). <a href="https://www.inami.fgov.be/SiteCollectionDocuments/PSYA_etude_avril_2024.pdf" target="_blank" rel="noopener"><i>Incapacité de travail de longue durée et invalidité dues à des troubles psychosociaux</i></a>.</li>
+        <li>Nuyts, N., Segaert, M. et Votquenne, S. (2022). « <a href="https://socialsecurity.belgium.be/sites/default/files/content/docs/fr/publications/rbss/2022/02-dix-ans-de-degressivite-renforcee-des-allocations-de-chomage-une-evaluation.pdf" target="_blank" rel="noopener">Dix ans de dégressivité renforcée des allocations de chômage – Une évaluation</a> ». <i>Revue belge de sécurité sociale</i>, 1-2022 (ONEM).</li>
+        <li>Minne, G. et Saks, Y. (2023). « <a href="https://www.nbb.be/doc/ts/publications/economicreview/2023/ecorevi2023_h15.pdf" target="_blank" rel="noopener">Older workers and retirement decisions in Belgium</a> ». <i>NBB Economic Review</i>, 2023/15.</li>
+        <li>OCDE (2010). <a href="https://search.oecd.org/els/sickness-disability-and-work-breaking-the-barriers-9789264088856-en.htm" target="_blank" rel="noopener"><i>Sickness, Disability and Work: Breaking the Barriers</i></a>. Paris, OCDE.</li>
+        <li>Rennoir, M. et Tojerow, I. (2020). <a href="https://dulbea.ulb.be/wp-content/uploads/2019/11/Dulbea_PolicyBrief_19.01.pdf" target="_blank" rel="noopener">Policy Brief 19.01</a>. DULBEA, ULB.</li>
+      </ol>
+      <h3 class="mt">Niveau 6 · presse (pour dater un événement)</h3><ol>
+        <li>RTBF (2025, mis à jour le 31 mars 2026). « <a href="https://www.rtbf.be/article/limitation-dans-le-temps-des-allocations-de-chomage-qui-sera-exclu-et-quand-11623311" target="_blank" rel="noopener">Limitation dans le temps des allocations de chômage, qui sera exclu et quand ?</a> »</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Card, D., Kluve, J. et Weber, A. (2018). « <a href="https://academic.oup.com/jeea/article-abstract/16/3/894/4430618" target="_blank" rel="noopener">What Works? A Meta Analysis of Recent Active Labor Market Program Evaluations</a> ». <i>Journal of the European Economic Association</i>, 16(3), 894-931.</li>
+        <li>De Brouwer, O. et Tojerow, I. (2023). « <a href="https://ideas.repec.org/p/iza/izadps/dp16376.html" target="_blank" rel="noopener">The Growth of Disability Insurance in Belgium: Determinants and Policy Implications</a> ». IZA Discussion Paper 16376 <i>(non encore publié en revue)</i>.</li>
+        <li>Nekoei, A. et Weber, A. (2017). « <a href="https://research.ceu.edu/en/publications/does-extending-unemployment-benefits-improve-job-quality/" target="_blank" rel="noopener">Does Extending Unemployment Benefits Improve Job Quality?</a> ». <i>American Economic Review</i>, 107(2), 527-561.</li>
+        <li>Schmieder, J. F. et von Wachter, T. (2016). « <a href="https://www.nber.org/papers/w22564" target="_blank" rel="noopener">The Effects of Unemployment Insurance Benefits: New Evidence and Interpretation</a> ». <i>Annual Review of Economics</i>, 8, 547-581.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Doeringer, P. et Piore, M. (1971). <i>Internal Labor Markets and Manpower Analysis</i>.</li>
+        <li>Esping-Andersen, G. (1990). <i>The Three Worlds of Welfare Capitalism</i>. Polity Press.</li>
+        <li>Friedman, M. (1968). « The Role of Monetary Policy ». <i>American Economic Review</i>, 58(1), 1-17.</li>
+        <li>Gorz, A. (1988). <i>Métamorphoses du travail. Quête du sens</i>. Galilée.</li>
+        <li>Jahoda, M., Lazarsfeld, P. et Zeisel, H. (1933). <i>Die Arbeitslosen von Marienthal</i>.</li>
+        <li>Keynes, J. M. (1936). <i>The General Theory of Employment, Interest and Money</i>. Macmillan.</li>
+        <li>Marx, K. (1867). <i>Das Kapital</i>, livre I.</li>
+        <li>Mead, L. M. (1986). <i>Beyond Entitlement: The Social Obligations of Citizenship</i>. Free Press.</li>
+        <li>Pie XI (1931). Encyclique <i>Quadragesimo anno</i>.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="__HOME__#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 10 octobre 2026 : ajout de la partie historique 1993-2025 et de trois idées reçues ; ajout de l’analyse « Où se situe l’écart ? », note sur les définitions espagnole et française, source ajoutée pour les navetteurs, niveaux de preuve de deux études revus.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 01 · Emploi et inactivité · vérifié le 10 octobre 2026</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>

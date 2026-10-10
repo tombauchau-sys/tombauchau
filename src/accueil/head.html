@@ -1,0 +1,542 @@
+<title>Atlas Chiffre Juste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&display=swap">
+<style>
+/* ADN Chiffre Juste. Univers : brun (faits), papier (lecture), aplats de chapitre (exploration). Mouvement : tracer, monter, défiler, glisser ; jamais animer la valeur d'un chiffre. Un seul univers visuel, identique en thème clair et sombre. */
+:root{
+  --brown:#1E1914; --cream:#EDE6DC; --cream-dim:#A69C8F; --hair:#3B332B; --copper:#C9773A;
+  --lilac:#9C98F0; --land:#FFF4E2; --red:#E2402B; --pink:#EFA3CB; --line:#1A1A1A;
+  --off:#F7F6F2; --ink:#222222; --grey:#6A665F; --rule:#D7D4CC;
+  --c-pop:#9C98F0; --c-eco:#F2A07B; --c-fin:#7FB6A3; --c-job:#F09A3E; --c-ineq:#EFA3CB; --c-cli:#7E9CC4;
+  --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --main:"Caveat","Segoe Print","Bradley Hand",cursive;
+  --ease:cubic-bezier(.2,.7,.2,1); --ease-io:cubic-bezier(.6,0,.2,1);
+  --xgrid:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><path d='M21 21l6 6m0-6l-6 6' stroke='%23453B31' stroke-width='1.2' fill='none'/></svg>");
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--brown);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+.note{font-family:var(--main);font-weight:600}
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.06;pointer-events:none;z-index:0;mix-blend-mode:overlay}
+.grain>*{position:relative;z-index:1}
+
+/* ---------- Seuil d'entrée : la carte du monde (Ponpon Mania × Sun Metalon) ---------- */
+.gate{position:fixed;inset:0;z-index:50;background:var(--brown);color:var(--cream);display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;overflow:hidden;transition:clip-path 1.1s var(--ease-io)}
+.gate::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M20 20l8 8m0-8l-8 8' stroke='%233B332B' stroke-width='1.2'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.gate>*{position:relative;z-index:1}
+.gate.out{clip-path:inset(0 0 100% 0);pointer-events:none}
+.gate .gbar{display:flex;justify-content:space-between;gap:16px;padding:18px clamp(16px,3vw,32px);border-bottom:1px solid var(--hair);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-dim)}
+.gate .gbar b{color:var(--cream);font-weight:600}
+.gate .gstage{display:grid;place-items:center;align-self:stretch;padding:clamp(12px,2.4vh,28px) clamp(16px,3vw,32px) 0;min-height:0}
+.gate .world{width:min(1040px,92vw,calc((100svh - 410px) * 1.8));aspect-ratio:1080/600;height:auto;overflow:visible;display:block}
+.gate .wmap{transform-origin:50% 50%;animation:wIn 1.1s var(--ease) .1s both}
+@keyframes wIn{from{transform:scale(.94);opacity:0}}
+.gate .pin{transform-box:fill-box;transform-origin:50% 100%;animation:pinDrop .7s cubic-bezier(.3,1.4,.5,1) 1s both}
+@keyframes pinDrop{from{transform:translateY(-70px) scaleY(1.2);opacity:0}60%{opacity:1}}
+.gate .here{animation:gfade .5s ease 1.6s both}
+@keyframes gfade{from{opacity:0}to{opacity:1}}
+.gate .puff{animation:drift 38s linear infinite}
+.gate .puff.b{animation-duration:52s;animation-delay:-20s}
+@keyframes drift{from{transform:translateX(-260px)}to{transform:translateX(1160px)}}
+.gate .go{display:flex;gap:20px;align-items:center;justify-content:center;padding:clamp(14px,2.6vh,26px) 16px 0;animation:gfade .6s ease 1.4s both}
+.gate .enter{background:var(--cream);color:var(--brown);border:0;border-radius:999px;padding:14px 28px;font-weight:600;font-size:15px;display:inline-flex;gap:10px;align-items:center;letter-spacing:0;text-transform:none}
+.gate .enter:focus-visible,.gate .skip:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+.gate .skip{background:none;border:0;color:var(--cream-dim);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px}
+.gate .mark{font-weight:700;font-size:clamp(52px,min(12.4vw,17svh),184px);letter-spacing:-.045em;line-height:.92;white-space:nowrap;text-align:center;margin:clamp(8px,1.6vh,18px) 0 clamp(18px,4vh,40px);color:var(--cream);user-select:none}
+.gate .mark .q{display:inline-block;position:relative;width:.56em;text-align:center;perspective:400px}
+.gate .mark .q i{font-style:normal;display:inline-block;transform-origin:50% 60%}
+.gate .mark .q .qq{color:var(--red);animation:wob 2.4s ease-in-out infinite}
+.gate .mark .q .uu{position:absolute;left:0;right:0;top:0;transform:rotateX(90deg);opacity:0}
+@keyframes wob{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg) translateY(-.03em)}}
+.gate.flip .mark .q .qq{animation:none;transform:rotateX(-90deg);opacity:0;transition:transform .32s var(--ease-io),opacity .1s linear .22s}
+.gate.flip .mark .q .uu{transform:none;opacity:1;transition:transform .4s var(--ease) .3s,opacity .1s linear .3s}
+@media (hover:hover){.gate .enter{transition:transform .25s var(--ease)}.gate .enter:hover{transform:translateY(-2px)}}
+@media (max-width:700px){
+  .gate .gbar span:last-child{display:none}
+  .gate .world{width:min(calc(100vw - 32px),calc((100svh - 430px) * .97));aspect-ratio:580/600}
+  .gate .go{flex-direction:column;gap:12px}
+  .gate .mark{font-size:min(21vw,11svh);white-space:normal;line-height:.9}
+  .gate .mark .l2{display:block}
+}
+html.calm .gate *{animation:none!important}
+@keyframes fade{to{opacity:1}}
+@keyframes trace{to{stroke-dashoffset:0}}
+
+/* ---------- Navigation : grille de filets (Sun Metalon) ---------- */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--brown);display:grid;grid-template-columns:repeat(2,1fr) 110px repeat(3,1fr);border-bottom:1px solid var(--hair)}
+nav.top a{display:flex;align-items:center;justify-content:center;height:56px;text-decoration:none;font-weight:500;font-size:15px;border-right:1px solid var(--hair);position:relative;overflow:hidden}
+nav.top a:last-child{border-right:0}
+nav.top a .lbl{display:block;transition:transform .45s var(--ease)}
+nav.top a .lbl::after{content:attr(data-t);position:absolute;left:0;right:0;top:100%;text-align:center;color:var(--copper)}
+nav.top a:hover .lbl{transform:translateY(-100%)}
+nav.top a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+nav.top a.on::after{transform:scaleX(1)}
+nav.top .mark span{width:30px;height:30px;border-radius:50%;border:6px solid var(--cream);border-right-color:transparent;transform:rotate(-30deg);transition:transform .8s var(--ease)}
+nav.top .mark:hover span{transform:rotate(330deg)}
+
+/* ---------- Héros : triptyque ---------- */
+.hero{padding-top:40px;overflow:hidden;background-image:var(--xgrid);background-position:center top}
+.stage{position:relative;max-width:1240px;margin:0 auto;height:min(560px,62vw);min-height:330px}
+.stage svg.discs{position:absolute;left:50%;top:0;height:100%;transform:translateX(-50%);overflow:visible}
+.disc{transition:transform .9s var(--ease)}
+.stage .row{position:absolute;left:20px;right:20px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:14px;z-index:2;pointer-events:none}
+.side{font-family:var(--serif);font-size:clamp(26px,3.6vw,48px);line-height:1;white-space:nowrap}
+.conn{flex:1;height:1px;background:var(--cream-dim);opacity:.6;position:relative;min-width:20px;transform-origin:left;animation:grow 1.2s var(--ease) .4s both}
+.conn.r{transform-origin:right}
+@keyframes grow{from{transform:scaleX(0)}}
+.conn::after{content:"×";position:absolute;top:-11px;right:-4px;font-size:16px;color:var(--cream-dim)}
+.conn.r::after{right:auto;left:-4px}
+.stage .gap{flex:0 0 calc(max(330px,min(560px,62vw)) * .93)}
+.draw{stroke-dasharray:1200;stroke-dashoffset:1200}
+.play .draw{animation:trace 2.6s var(--ease-io) .3s forwards}
+.wordmark{font-weight:700;font-size:clamp(70px,17.5vw,232px);letter-spacing:-.05em;line-height:.76;white-space:nowrap;text-align:center;margin:10px 0 -.17em;color:var(--cream)}
+.wordmark .ch{display:inline-block}
+.split .ch{transform:translateY(105%)}
+.split.go .ch{transform:none;transition:transform 1s var(--ease)}
+
+/* ---------- Bandeau défilant (Lando Norris) ---------- */
+.marquee{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);overflow:hidden;padding-block:14px;white-space:nowrap}
+.track{display:inline-flex;gap:0;animation:slide 48s linear infinite}
+.marquee.rev .track{animation-direction:reverse}
+@keyframes slide{to{transform:translateX(-50%)}}
+.track>span{font-size:clamp(28px,4vw,52px);line-height:1.1;padding-inline:22px;display:inline-flex;align-items:center;gap:22px}
+.track .f{font-weight:700;letter-spacing:-.02em}
+.track .s{font-family:var(--serif);color:var(--cream-dim)}
+.track .x{color:var(--copper);font-size:.6em}
+
+/* ---------- Introduction : mots révélés au défilement ---------- */
+.intro{padding:72px 20px 90px;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:40px;align-items:end}
+.intro .lead{font-size:clamp(26px,3.1vw,42px);line-height:1.2;letter-spacing:-.01em}
+.intro .lead .w{color:var(--cream-dim);transition:color .35s ease}
+.intro .lead .w.lit{color:var(--cream)}
+.intro .side-note{color:var(--cream-dim);font-size:15.5px;display:grid;gap:18px;justify-items:start}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--cream);color:var(--brown);border-radius:999px;padding:13px 24px;font-weight:600;font-size:15px;text-decoration:none;border:0;transition:transform .35s var(--ease)}
+.pill .arr{display:inline-block;transition:transform .35s var(--ease)}
+.pill:hover .arr{transform:translateX(5px)}
+
+/* ---------- Carte (Ponpon Mania) ---------- */
+.mapzone{background:var(--lilac);color:var(--line);padding:64px 20px 80px;overflow:hidden}
+.mapzone .in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:center}
+.mapzone h2{font-family:var(--serif);font-size:clamp(48px,7vw,104px);line-height:.9;color:var(--line);text-align:center}
+.map-note{text-align:center;color:var(--line);font-size:26px;margin:4px 0 18px;transform:rotate(-3deg)}
+.frame{position:relative;transition:transform 1.1s var(--ease),opacity 1.1s var(--ease)}
+.frame svg{display:block;width:100%;height:auto}
+.c{fill:var(--land);stroke:var(--line);stroke-width:1.1;cursor:pointer;transition:fill .2s ease,opacity .5s ease}
+.c:hover{fill:#FFFFFF}
+.c.sel{fill:var(--red)}
+.o{fill:var(--pink);stroke:var(--line);stroke-width:.6;opacity:.75;pointer-events:none;transition:opacity .5s ease}
+.tile{transition:transform .8s var(--ease-io),opacity .5s ease;cursor:pointer}
+.tile rect{fill:var(--land);stroke:var(--line);stroke-width:2.2}
+.tile.sel rect{fill:var(--red)}
+.tile text{font-family:var(--sans);font-weight:700;font-size:15px;fill:var(--line);pointer-events:none}
+.tile .tv{font-weight:500;font-size:12px}
+.tile.sel text{fill:#FFFFFF}
+.maptag{font-family:var(--sans);font-weight:700;font-size:17px;fill:var(--line);paint-order:stroke;stroke:#FFFFFF;stroke-width:5px;pointer-events:none}
+.ctl{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.ctl button{border:2px solid var(--line);background:#FFFFFF;color:var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:14px;transition:transform .25s var(--ease),background .2s ease}
+.ctl button:hover{transform:translateY(-2px)}
+.ctl button[aria-pressed="true"]{background:var(--line);color:#FFFFFF}
+.legend{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;margin-top:10px}
+.legend .sw{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}.legend .sw span{width:26px;height:12px}
+
+.panel{background:#FFFFFF;color:var(--line);border:2.5px solid var(--line);border-radius:28px;padding:26px 26px 22px;box-shadow:8px 8px 0 var(--line);transition:transform .5s var(--ease)}
+.panel.pop{animation:pop .5s var(--ease)}
+@keyframes pop{0%{transform:translateY(10px) rotate(-1deg)}100%{transform:none}}
+.panel .head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.panel h3{font-family:var(--serif);font-size:44px;line-height:1}
+.badge{border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.badge.full{background:var(--red);color:#FFFFFF}.badge.eu{border:1.5px solid var(--line)}
+.kf{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;align-items:end;margin-top:16px}
+.kf .v{font-family:var(--serif);font-size:84px;line-height:.8}
+.kf .t{font-size:14.5px;line-height:1.35}
+.crowd{display:flex;flex-wrap:wrap;gap:3px;margin-top:16px}
+.crowd i{width:9px;height:9px;border-radius:50%;background:#D8D4CC;display:block;transform:scale(0);animation:dot .35s var(--ease) forwards}
+.crowd i.on{background:var(--red)}
+@keyframes dot{to{transform:scale(1)}}
+.crowdcap{font-size:13.5px;color:var(--grey);margin-top:6px}
+.chapters{list-style:none;margin:18px 0 0;padding:0}
+.chapters li{display:flex;justify-content:space-between;gap:12px;align-items:center;min-height:44px;border-top:1.5px solid var(--line);font-size:15px}
+.chapters .n{font-weight:600}
+.chapters .x{text-align:right}
+.chapters .x.wait{color:var(--grey);font-size:13.5px}
+.chapters a.x{font-weight:700;text-decoration:none;background:var(--line);color:#FFFFFF;border-radius:999px;padding:5px 12px;font-size:13.5px}
+.panel .foot{font-size:12.5px;color:var(--grey);margin-top:12px}
+
+/* ---------- Thèmes (Ribbit + Microsoft AI) ---------- */
+.themes{background:var(--off);color:var(--ink);padding:80px 20px 90px;overflow:hidden}
+.themes .in{max-width:1240px;margin:0 auto}
+.themes .ttl{text-align:center}
+.themes h2{font-family:var(--serif);font-size:clamp(76px,15vw,210px);line-height:.86;letter-spacing:-.02em}
+.themes h2 span{color:var(--grey)}
+.themes .arc{display:block;width:240px;height:70px;margin:-6px auto 34px}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.rows li{position:relative;display:grid;grid-template-columns:60px minmax(0,1.3fr) minmax(0,1fr) 170px;gap:20px;align-items:center;padding:24px 0;border-bottom:1px solid var(--rule);overflow:hidden}
+.rows li::before{content:"";position:absolute;inset:0;background:var(--cc);transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease);z-index:0}
+.rows li>*{position:relative;z-index:1}
+
+.rows .k{font-size:13px;color:var(--grey);padding-left:10px}
+.rows h3{font-family:var(--serif);font-size:clamp(30px,3.6vw,52px);line-height:1;transition:transform .55s var(--ease)}
+
+.rows p{font-size:15.5px;color:#4A4741}
+
+.rows li>.glyph{position:absolute;right:230px;top:50%;font-family:var(--serif);font-size:190px;line-height:1;color:var(--ink);opacity:0;transform:translate(0,-40%) rotate(-8deg);transition:opacity .4s ease,transform .6s var(--ease);pointer-events:none;z-index:0}
+@media (hover:hover){.rows li:hover::before{transform:scaleX(1)}.rows li:hover h3{transform:translateX(14px)}.rows li:hover p{color:var(--ink)}.rows li:hover .glyph{opacity:.16;transform:translate(0,-50%) rotate(0)}}
+
+.skew{justify-self:end;display:inline-block;border:1.5px solid var(--ink);padding:9px 14px;font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transform:skewX(-10deg);transition:background .2s ease,color .2s ease;margin-right:10px;background:var(--off)}
+.skew span{display:inline-block;transform:skewX(10deg)}
+a.skew:hover{background:var(--ink);color:var(--off)}
+.skew.soon{border-color:#BFBBB2;color:var(--grey)}
+
+/* ---------- Pied ---------- */
+footer{border-top:1px solid var(--hair);overflow:hidden}
+footer .meta{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 20px;font-size:14px;color:var(--cream-dim)}
+footer .wordmark{margin-top:16px}
+
+/* ---------- Révélations ---------- */
+.js [data-r]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-r].in{opacity:1;transform:none}
+.js .frame:not(.in){opacity:0;transform:scale(.9) rotate(-2deg)}
+
+/* ---------- Curseur ---------- */
+.cursor{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--copper);pointer-events:none;z-index:60;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s ease;display:none;mix-blend-mode:normal}
+.cursor.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(201,119,58,.25);border:1.5px solid var(--copper)}
+@media (pointer:fine){.cursor{display:block}}.cursor{opacity:0}.cursor.on{opacity:1}
+
+/* ---------- Accessibilité ---------- */
+.a11y{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:8px;background:var(--off);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:4px 14px 4px 4px;font-size:13px;font-weight:600}
+.a11y b{background:var(--line);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px}
+.a11y[aria-pressed="true"] b{background:var(--red)}
+html.calm *{animation:none!important;transition:none!important}
+html.calm .draw,html.calm .gate .gl{stroke-dashoffset:0!important}
+html.calm .split .ch{transform:none!important}
+html.calm [data-r],html.calm .frame{opacity:1!important;transform:none!important}
+html.calm .crowd i{transform:none}
+html.calm .cursor{display:none!important}
+html.calm .grain::before{display:none}
+html.calm .hero{background-image:none}
+html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
+html.calm .intro .lead .w{color:var(--cream)}
+
+@media (max-width:900px){
+  .mapzone .in,.intro{grid-template-columns:1fr}
+  .rows li{grid-template-columns:40px minmax(0,1fr);row-gap:8px}
+  .rows p{grid-column:2}
+  .rows .skew{grid-column:2;justify-self:start}
+  .glyph{display:none}
+  .stage .row{top:auto;bottom:-6px;transform:none;justify-content:space-between}
+  .stage .gap,.conn{display:none}
+  .side{font-size:24px}
+  .hero .wordmark{margin-top:48px}
+}
+@media (max-width:600px){
+  nav.top{grid-template-columns:1fr 1fr 64px 1fr 1fr}
+  nav.top a{font-size:12.5px;height:48px;text-align:center}
+  nav.top a.lang{display:none}
+  .panel{padding:20px 18px;box-shadow:5px 5px 0 var(--line)}
+  .kf .v{font-size:64px}
+  .stage{height:300px}
+  .a11y{font-size:11.5px;padding:3px 10px 3px 3px}
+  .gate .t{grid-template-columns:1fr;gap:6px}
+  .gate .t span{text-align:center!important}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.draw,.gate .gl{stroke-dashoffset:0!important}.split .ch{transform:none!important}.js [data-r],.js .frame{opacity:1!important;transform:none!important}.crowd i{transform:none}}
+</style>
+
+<div class="gate grain" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateT">
+  <div class="gbar"><span><b>Référentiel</b> de chiffres vérifiés</span><span>Europe · la Belgique d’abord · FR</span></div>
+  <div class="gstage"><svg class="world" id="world" viewBox="-40 -40 1080 600" role="img" aria-label="Carte du monde ; la Belgique est signalée en rouge"></svg></div>
+  <div class="go">
+    <button class="enter" id="enter" type="button" data-magnet>Entrer <span aria-hidden="true">→</span></button>
+    <button class="skip" id="skip" type="button">Entrer sans animation</button>
+  </div>
+  <p class="mark" id="gateT" aria-label="Chiffre Juste"><span aria-hidden="true">Chiffre <span class="l2">J<span class="q"><i class="qq">?</i><i class="uu">u</i></span>ste</span></span></p>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+
+<nav class="top" aria-label="Navigation principale">
+  <a href="#carte" class="on"><span class="lbl" data-t="Par pays">Par pays</span></a>
+  <a href="#themes"><span class="lbl" data-t="Par thème">Par thème</span></a>
+  <a href="#top" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="__FICHE__" data-cursor="Ouvrir"><span class="lbl" data-t="Fiche modèle">Fiche modèle</span></a>
+  <a href="#apropos"><span class="lbl" data-t="À propos">À propos</span></a>
+  <a href="#top" class="lang"><span class="lbl" data-t="FR">FR</span></a>
+</nav>
+
+<main id="top">
+<section class="hero grain" aria-labelledby="h1">
+  <div class="stage">
+    <div class="row" aria-hidden="true"><span class="side">Un chiffre.</span><span class="conn"></span><span class="gap"></span><span class="conn r"></span><span class="side">Son contexte.</span></div>
+    <svg class="discs" viewBox="0 0 560 560" role="img" aria-label="Deux disques : à gauche le chiffre, 6,2 % de chômage en Belgique en 2025 ; à droite sa courbe depuis 2009, en hausse de 0,5 point en un an" id="discs"></svg>
+  </div>
+  <h1 class="wordmark split" id="h1" aria-label="Chiffre Juste">Chiffre Juste</h1>
+</section>
+
+<div class="marquee" id="marquee" aria-label="Chiffres vérifiés, Belgique">
+  <div class="track" id="track"></div>
+</div>
+
+<section class="intro" id="apropos">
+  <p class="lead" id="lead">Des chiffres vérifiés pour le débat européen. Chaque chiffre est relié à sa source primaire, daté, et livré avec ses limites et les lectures qu’en font les chercheurs.</p>
+  <div class="side-note" data-r>
+    <p>La forme sert le fond : les faits sont en grotesque, les lectures en serif. Un coup d’œil suffit pour savoir ce que l’on regarde.</p>
+    <a class="pill" href="#carte" data-cursor="Explorer" data-magnet>Explorer la carte <span class="arr" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="mapzone grain" id="carte" aria-labelledby="h2map">
+  <h2 id="h2map" data-r>Choisissez un pays</h2>
+  <p class="note map-note" aria-hidden="true" data-r>cliquez sur la carte ↓</p>
+  <div class="in">
+    <div>
+      <div class="frame" id="frame"><svg id="map" role="img" aria-label="Carte des 27 pays de l’Union européenne. Cliquez sur un pays pour ouvrir sa fiche." data-cursor="Ouvrir"></svg></div>
+      <div class="ctl">
+        <button type="button" id="mGeo" aria-pressed="true">Carte</button>
+        <button type="button" id="mTile" aria-pressed="false">Une case par pays</button>
+        <button type="button" id="cUnemp" aria-pressed="false">Colorer : chômage 2025</button>
+      </div>
+      <div class="legend" id="legend" hidden><span class="sw" id="sw"></span><span>de moins de 4 % à 10 % et plus</span></div>
+    </div>
+    <article class="panel" id="panel" aria-live="polite"></article>
+  </div>
+</section>
+
+<section class="themes" id="themes" aria-labelledby="th">
+  <div class="in">
+    <div class="ttl" data-r>
+      <h2 id="th">Six <span>thèmes</span></h2>
+      <svg class="arc" viewBox="0 0 240 70" aria-hidden="true"><defs><path id="arcp" d="M10 18 Q120 82 230 18"/></defs><text style="font-family:var(--sans);font-size:15px;fill:var(--ink)"><textPath href="#arcp" startOffset="50%" text-anchor="middle">pour lire le débat public</textPath></text></svg>
+    </div>
+    <ul class="rows">
+      <li data-r style="--cc:var(--c-pop)"><span class="k">01</span><h3>Population et migrations</h3><p>Pourquoi la population augmente-t-elle encore ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">+</span></li>
+      <li data-r style="--cc:var(--c-eco)"><span class="k">02</span><h3>Économie</h3><p>Que mesure vraiment le PIB ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">∆</span></li>
+      <li data-r style="--cc:var(--c-fin)"><span class="k">03</span><h3>Finances publiques</h3><p>Une dette de 108 % du PIB, est-ce beaucoup ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">%</span></li>
+      <li data-r style="--cc:var(--c-job)"><span class="k">04</span><h3>Emploi</h3><p>Chômeurs ou demandeurs d’emploi : quelle différence ?</p><a class="skew" href="__FICHE__" data-cursor="Lire"><span>Lire la fiche</span></a><span class="glyph" aria-hidden="true">±</span></li>
+      <li data-r style="--cc:var(--c-ineq)"><span class="k">05</span><h3>Inégalités et pauvreté</h3><p>Que veut dire « à risque de pauvreté » ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">≠</span></li>
+      <li data-r style="--cc:var(--c-cli)"><span class="k">06</span><h3>Climat et énergie</h3><p>Que comptent les émissions d’un pays ?</p><span class="skew soon"><span>Bientôt</span></span><span class="glyph" aria-hidden="true">↓</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Bruxelles · 2026</span><span>Carte : Natural Earth · Chômage : Eurostat, une_rt_a · Population : Statbel · Dette : Eurostat · Pauvreté : Statbel, SILC 2024</span></div>
+  <div class="wordmark split" id="fw" aria-hidden="true">Chiffre Juste</div>
+</footer>
+
+<script>
+var MAP=__MAP__;
+(function(){
+  var D=document, H=D.documentElement, NS='http://www.w3.org/2000/svg';
+  H.classList.add('js');
+  function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
+  function fr(v){return v.toLocaleString('fr-BE',{minimumFractionDigits:1,maximumFractionDigits:1})}
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var calm=false;try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}
+  var BE=[8.0,8.4,7.2,7.6,8.6,8.7,8.7,7.9,7.2,6.0,5.5,5.8,6.3,5.6,5.5,5.7,6.2];
+
+  /* Mode accessibilité */
+  var ab=D.getElementById('a11y');
+  function setCalm(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}
+  setCalm(calm); ab.addEventListener('click',function(){setCalm(!calm)});
+
+  /* Lettres à faire monter */
+  ['h1','fw'].forEach(function(id){
+    var n=D.getElementById(id),t=n.textContent;n.textContent='';
+    t.split('').forEach(function(c,i){var s=D.createElement('span');s.className='ch';s.textContent=c===' '?' ':c;s.setAttribute('aria-hidden','true');s.style.transitionDelay=(i*0.045)+'s';n.appendChild(s)});
+  });
+
+  /* Seuil d'entrée : carte du monde, « J?ste » devient « Juste » */
+  (function(){
+    var g=D.getElementById('gate'),s=D.getElementById('world'),M=__WORLD__;
+    var mob=innerWidth<700,x0=mob?300:0,y0=0,x1=mob?800:1000,y1=520,step=mob?64:72,bump=mob?18:22,pts=[],d='';
+    if(mob)s.setAttribute('viewBox',(x0-40)+' -40 '+(x1-x0+80)+' 600');
+    function edge(ax,ay,bx,by,nx,ny){var L=Math.hypot(bx-ax,by-ay),n=Math.max(1,Math.round(L/step));for(var i=0;i<n;i++){var t0=i/n,t1=(i+1)/n,tm=(t0+t1)/2;pts.push([ax+(bx-ax)*tm+nx*bump*2,ay+(by-ay)*tm+ny*bump*2,ax+(bx-ax)*t1,ay+(by-ay)*t1])}}
+    edge(x0,y0,x1,y0,0,-1);edge(x1,y0,x1,y1,1,0);edge(x1,y1,x0,y1,0,1);edge(x0,y1,x0,y0,-1,0);
+    d='M'+x0+' '+y0+pts.map(function(p){return ' Q'+p[0].toFixed(1)+' '+p[1].toFixed(1)+' '+p[2].toFixed(1)+' '+p[3].toFixed(1)}).join('')+'Z';
+    var defs=el('defs',{}),cp=el('clipPath',{id:'wclip'});cp.appendChild(el('path',{d:d}));defs.appendChild(cp);s.appendChild(defs);
+    s.appendChild(el('path',{d:d,fill:'#EDE6DC',stroke:'#1A1A1A','stroke-width':3,transform:'translate(14 14)','class':'wsh'}));
+    var mg=el('g',{'class':'wmap'}),cl=el('g',{'clip-path':'url(#wclip)'});
+    cl.appendChild(el('rect',{x:-60,y:-60,width:1120,height:640,fill:'#9C98F0'}));
+    cl.appendChild(el('path',{d:M.grat,fill:'none',stroke:'#1A1A1A','stroke-width':.8,opacity:.22}));
+    cl.appendChild(el('path',{d:M.sphere,fill:'none',stroke:'#1A1A1A','stroke-width':1.4,'stroke-dasharray':'2 6',opacity:.5}));
+    var lg=el('g',{stroke:'#1A1A1A','stroke-width':1.6,'stroke-linejoin':'round'});
+    M.land.forEach(function(p){lg.appendChild(el('path',{d:p,fill:'#FFF4E2'}))});
+    M.eu.forEach(function(p){lg.appendChild(el('path',{d:p,fill:'#F09A3E'}))});
+    lg.appendChild(el('path',{d:M.be,fill:'#E2402B','stroke-width':2}));
+    cl.appendChild(lg);
+    function puff(cx,cy,k,c){var p=el('g',{'class':'puff'+(c?' '+c:'')}),gg=el('g',{transform:'translate('+cx+' '+cy+') scale('+k+')'});
+      gg.appendChild(el('path',{d:'M0 30 Q-4 6 22 8 Q30 -14 56 -2 Q76 -14 90 8 Q116 6 110 30 Z',fill:'#fff',stroke:'#1A1A1A','stroke-width':2.4/k,'stroke-linejoin':'round'}));p.appendChild(gg);return p}
+    cl.appendChild(puff(0,420,1,''));cl.appendChild(puff(0,90,.75,'b'));
+    mg.appendChild(cl);
+    mg.appendChild(el('path',{d:d,fill:'none',stroke:'#1A1A1A','stroke-width':3.5,'stroke-linejoin':'round'}));
+    var bx=M.bx,by=M.by,pin=el('g',{'class':'pin'});
+    pin.appendChild(el('path',{d:'M'+bx+' '+(by-2)+' C '+(bx-6)+' '+(by-14)+', '+(bx-15)+' '+(by-22)+', '+(bx-15)+' '+(by-33)+' A15 15 0 1 1 '+(bx+15)+' '+(by-33)+' C '+(bx+15)+' '+(by-22)+', '+(bx+6)+' '+(by-14)+', '+bx+' '+(by-2)+'Z',fill:'#E2402B',stroke:'#1A1A1A','stroke-width':2.5,'stroke-linejoin':'round'}));
+    pin.appendChild(el('circle',{cx:bx,cy:by-33,r:5.5,fill:'#fff',stroke:'#1A1A1A','stroke-width':2}));
+    mg.appendChild(pin);
+    var here=el('g',{'class':'here'});
+    here.appendChild(el('text',{x:bx+70,y:by-92,style:'font-family:var(--main);font-weight:600;font-size:30px;fill:#1A1A1A'},'on commence ici'));
+    here.appendChild(el('path',{d:'M'+(bx+64)+' '+(by-96)+' C '+(bx+30)+' '+(by-100)+', '+(bx+20)+' '+(by-80)+', '+(bx+19)+' '+(by-56),fill:'none',stroke:'#1A1A1A','stroke-width':2.2,'stroke-linecap':'round'}));
+    here.appendChild(el('path',{d:'M'+(bx+19)+' '+(by-56)+' l-6 -9 M'+(bx+19)+' '+(by-56)+' l7 -8',fill:'none',stroke:'#1A1A1A','stroke-width':2.2,'stroke-linecap':'round'}));
+    mg.appendChild(here);
+    s.appendChild(mg);
+    var done=false;
+    function open(fast){if(g.classList.contains('out')||g.hidden&&getComputedStyle(g).display==='none')return;done=true;
+      if(fast){g.classList.add('out');setTimeout(function(){g.hidden=true},1150);startHero();return}
+      g.classList.add('flip');setTimeout(function(){g.classList.add('out');startHero()},1100);setTimeout(function(){g.hidden=true},2300)}
+    D.getElementById('enter').addEventListener('click',function(){open(false)});
+    D.getElementById('skip').addEventListener('click',function(){open(true)});
+    D.addEventListener('keydown',function(e){if(!done&&(e.key==='Escape'))open(true)});
+    var seen=false;try{seen=sessionStorage.getItem('cj-gate')==='1';sessionStorage.setItem('cj-gate','1')}catch(e){}
+    D.documentElement.style.overflow='hidden';new MutationObserver(function(){if(g.classList.contains('out'))D.documentElement.style.overflow=''}).observe(g,{attributes:true});
+  })();
+
+  /* Héros : disques, courbe, annotation */
+  function startHero(){
+    D.querySelector('.hero').classList.add('play');
+    requestAnimationFrame(function(){D.getElementById('h1').classList.add('go')});
+  }
+  (function(){
+    var s=D.getElementById('discs');
+    var defs=el('defs',{}),pat=el('pattern',{id:'grainDots',width:7,height:7,patternUnits:'userSpaceOnUse'});
+    pat.appendChild(el('circle',{cx:2,cy:2,r:1.2,fill:'#6E6255'}));pat.appendChild(el('circle',{cx:5.5,cy:5,r:.8,fill:'#8A7B6B'}));defs.appendChild(pat);
+    var cp=el('clipPath',{id:'rdisc'});cp.appendChild(el('circle',{cx:350,cy:280,r:190}));defs.appendChild(cp);s.appendChild(defs);
+    var gL=el('g',{'class':'disc'}),gR=el('g',{'class':'disc'});
+    gL.appendChild(el('circle',{cx:210,cy:280,r:190,fill:'url(#grainDots)'}));
+    gR.appendChild(el('circle',{cx:350,cy:280,r:190,fill:'#2A231C',stroke:'#4A3F34','stroke-width':1}));
+    s.appendChild(gL);s.appendChild(gR);
+    s.appendChild(el('text',{x:135,y:296,'text-anchor':'middle',style:'font-family:var(--serif);font-size:74px;fill:#EDE6DC'},'6,2 %'));
+    s.appendChild(el('text',{x:135,y:330,'text-anchor':'middle',style:'font-family:var(--sans);font-size:15px;fill:#A69C8F'},'Belgique, 2025'));
+    function X(i){return 300+i*(510-300)/16} function Y(v){return 330-(v-5)*36}
+    var d=BE.map(function(v,i){return (i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)}).join(' ');
+    var g=el('g',{'clip-path':'url(#rdisc)'});
+    g.appendChild(el('path',{d:d,'class':'draw',fill:'none',stroke:'#C9773A','stroke-width':3,'stroke-linejoin':'round'}));
+    g.appendChild(el('circle',{cx:X(16),cy:Y(6.2),r:6,fill:'#C9773A'}));s.appendChild(g);
+    s.appendChild(el('text',{x:392,y:204,style:'font-family:var(--main);font-weight:600;font-size:27px;fill:#EDE6DC'},'+0,5 pt en un an'));
+    s.appendChild(el('path',{d:'M468 214 C 492 228, 500 240, '+(X(16)-6).toFixed(0)+' '+(Y(6.2)-10).toFixed(0),'class':'draw',fill:'none',stroke:'#EDE6DC','stroke-width':2,'stroke-linecap':'round'}));
+    s.appendChild(el('text',{x:300,y:380,style:'font-family:var(--sans);font-size:13px;fill:#A69C8F'},'2009'));
+    s.appendChild(el('text',{x:510,y:380,'text-anchor':'end',style:'font-family:var(--sans);font-size:13px;fill:#A69C8F'},'2025'));
+    /* parallaxe douce des disques */
+    D.querySelector('.stage').addEventListener('pointermove',function(e){
+      if(calm||reduce)return;var r=this.getBoundingClientRect(),dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;
+      gL.style.transform='translate('+(-dx*14)+'px,'+(-dy*10)+'px)';gR.style.transform='translate('+(dx*14)+'px,'+(dy*10)+'px)';
+    });
+  })();
+
+  /* Bandeau défilant : chiffres vérifiés, sens qui suit le défilement */
+  (function(){
+    var items=[['6,2 %','de chômage en 2025'],['11 867 634','habitants au 1er janvier 2026'],['107,9 %','de dette publique, fin 2025'],['18,3 %','à risque de pauvreté ou d’exclusion'],['−32,6 %','d’émissions depuis 1990'],['72,8 %','des 20-64 ans en emploi']];
+    var h='';for(var k=0;k<2;k++)items.forEach(function(it){h+='<span><b class="f">'+it[0]+'</b><span class="s">'+it[1]+'</span><span class="x" aria-hidden="true">×</span></span>'});
+    var t=D.getElementById('track');t.innerHTML=h;
+    var last=window.scrollY,m=D.getElementById('marquee');
+    window.addEventListener('scroll',function(){var y=window.scrollY;if(Math.abs(y-last)>4){m.classList.toggle('rev',y<last);last=y}},{passive:true});
+  })();
+
+  /* Introduction : mots qui s'allument au défilement */
+  (function(){
+    var p=D.getElementById('lead'),words=p.textContent.trim().split(/\s+/);p.textContent='';
+    var spans=words.map(function(w,i){var s=D.createElement('span');s.className='w';s.textContent=w;p.appendChild(s);p.appendChild(D.createTextNode(' '));return s});
+    function upd(){var r=p.getBoundingClientRect(),vh=innerHeight,pr=Math.min(1,Math.max(0,(vh*.85-r.top)/(r.height+vh*.35)));var n=Math.round(pr*spans.length);spans.forEach(function(s,i){s.classList.toggle('lit',i<n)})}
+    window.addEventListener('scroll',upd,{passive:true});upd();
+  })();
+
+  /* Révélations au défilement */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');if(e.target.id==='fw')e.target.classList.add('go');io.unobserve(e.target)}})},{threshold:.15});
+  D.querySelectorAll('[data-r]').forEach(function(n,i){n.style.transitionDelay=(n.closest('.rows')?(i%6)*0.07:0)+'s';io.observe(n)});
+  io.observe(D.getElementById('frame'));io.observe(D.getElementById('fw'));
+
+  /* Curseur et boutons magnétiques */
+  (function(){
+    var c=D.getElementById('cursor'),x=innerWidth/2,y=innerHeight/2,cx=x,cy=y;
+    D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');var t=e.target.closest&&e.target.closest('a,button,[data-cursor],.c,.tile');c.classList.toggle('big',!!t)});
+    (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
+    D.querySelectorAll('[data-magnet]').forEach(function(b){
+      b.addEventListener('pointermove',function(e){if(calm||reduce)return;var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.25)+'px,'+((e.clientY-r.top-r.height/2)*.35)+'px)'});
+      b.addEventListener('pointerleave',function(){b.style.transform=''});
+    });
+  })();
+
+  /* Carte */
+  var NAMES={AT:'Autriche',BE:'Belgique',BG:'Bulgarie',HR:'Croatie',CY:'Chypre',CZ:'Tchéquie',DK:'Danemark',EE:'Estonie',FI:'Finlande',FR:'France',DE:'Allemagne',GR:'Grèce',HU:'Hongrie',IE:'Irlande',IT:'Italie',LV:'Lettonie',LT:'Lituanie',LU:'Luxembourg',MT:'Malte',NL:'Pays-Bas',PL:'Pologne',PT:'Portugal',RO:'Roumanie',SK:'Slovaquie',SI:'Slovénie',ES:'Espagne',SE:'Suède'};
+  var U={BE:6.2,BG:3.5,CZ:2.8,DK:6.4,DE:3.8,EE:7.5,IE:4.7,GR:8.9,ES:10.5,FR:7.7,HR:4.9,IT:6.1,CY:4.4,LV:6.9,LT:6.9,LU:6.5,HU:4.4,MT:3.1,NL:3.9,AT:5.7,PL:3.1,PT:6.0,RO:6.1,SI:3.9,SK:5.4,FI:9.7,SE:8.8};
+  var DIFF={ES:1,FR:1};
+  var GRID={SE:[4,0],FI:[5,0],IE:[0,1],DK:[3,1],EE:[5,1],NL:[2,2],DE:[3,2],PL:[4,2],LV:[5,2],BE:[2,3],LU:[3,3],CZ:[4,3],LT:[5,3],FR:[1,4],AT:[3,4],SK:[4,4],PT:[0,5],ES:[1,5],IT:[2,5],SI:[3,5],HU:[4,5],RO:[5,5],HR:[3,6],BG:[5,6],MT:[2,7],GR:[4,7],CY:[6,7]};
+  var FICHE='__FICHE__';
+  var BE_FULL=[['Population','11 867 634 hab.'],['Économie','PIB +1,0 %'],['Finances publiques','Dette 107,9 % du PIB'],['Emploi','Chômage 6,2 %',FICHE],['Inégalités','Pauvreté ou exclusion 18,3 %'],['Climat','Émissions −32,6 % depuis 1990']];
+  var svg=D.getElementById('map'),W=MAP.W,Hh=MAP.H,pad=95;
+  svg.setAttribute('viewBox',(-pad)+' '+(-pad)+' '+(W+2*pad)+' '+(Hh+2*pad));
+  var defs=el('defs',{}),lg=el('linearGradient',{id:'sky',x1:0,y1:0,x2:0,y2:1});
+  lg.appendChild(el('stop',{offset:'0',style:'stop-color:#F7B54A'}));lg.appendChild(el('stop',{offset:'1',style:'stop-color:#EE8A3A'}));defs.appendChild(lg);
+  var cx0=W/2,cy0=Hh/2,R=Math.min(W,Hh)/2-5,bumps=11,cloud='';
+  for(var i=0;i<=bumps;i++){var a0=i/bumps*Math.PI*2-Math.PI/2,a1=(i+1)/bumps*Math.PI*2-Math.PI/2,am=(a0+a1)/2;
+    var x0=cx0+R*Math.cos(a0)*1.02,y0=cy0+R*Math.sin(a0)*1.08,x1=cx0+R*Math.cos(a1)*1.02,y1=cy0+R*Math.sin(a1)*1.08,qx=cx0+(R+70)*Math.cos(am)*1.02,qy=cy0+(R+70)*Math.sin(am)*1.08;
+    cloud+=(i?'':'M'+x0.toFixed(1)+' '+y0.toFixed(1))+(i<bumps?' Q'+qx.toFixed(1)+' '+qy.toFixed(1)+' '+x1.toFixed(1)+' '+y1.toFixed(1):'')}
+  cloud+='Z';
+  var cl=el('clipPath',{id:'cloud'});cl.appendChild(el('path',{d:cloud}));defs.appendChild(cl);svg.appendChild(defs);
+  svg.appendChild(el('path',{d:cloud,fill:'url(#sky)',stroke:'#1A1A1A','stroke-width':3}));
+  var root=el('g',{'clip-path':'url(#cloud)'}),gO=el('g',{}),gC=el('g',{}),gT=el('g',{}),gLb=el('g',{});
+  MAP.other.forEach(function(d){gO.appendChild(el('path',{d:d,'class':'o'}))});
+  var by={},st={mode:'geo',color:false,sel:'BE'},cell=72,gx=(W-7*cell)/2,gy=(Hh-8*cell)/2;
+  MAP.eu.forEach(function(c){
+    var p=el('path',{d:c.d,'class':'c',tabindex:0,role:'button','aria-label':NAMES[c.code]});p.appendChild(el('title',{},NAMES[c.code]));
+    var g=GRID[c.code],t=el('g',{'class':'tile',tabindex:-1,role:'button','aria-label':NAMES[c.code]});
+    t.appendChild(el('rect',{x:-31,y:-31,width:62,height:62,rx:14}));t.appendChild(el('text',{x:0,y:-2,'text-anchor':'middle'},c.code));
+    var tv=el('text',{x:0,y:16,'text-anchor':'middle','class':'tv'},'');t.appendChild(tv);t.appendChild(el('title',{},NAMES[c.code]));
+    by[c.code]={p:p,t:t,tv:tv,cx:c.cx,cy:c.cy,tx:gx+g[0]*cell+cell/2,ty:gy+g[1]*cell+cell/2,gx:g[0],gy:g[1]};
+    [p,t].forEach(function(n){n.addEventListener('click',function(){select(c.code)});n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(c.code)}})});
+    gC.appendChild(p);gT.appendChild(t);
+  });
+  var tag=el('text',{'class':'maptag','text-anchor':'middle'});gLb.appendChild(tag);
+  root.appendChild(gO);root.appendChild(gC);root.appendChild(gT);root.appendChild(gLb);svg.appendChild(root);
+  var STEPS=[[4,15],[6,38],[8,60],[10,82],[99,100]];
+  function shade(v){for(var i=0;i<STEPS.length;i++)if(v<STEPS[i][0])return 'color-mix(in srgb,#E2402B '+STEPS[i][1]+'%,#FFF4E2)'}
+  D.getElementById('sw').innerHTML=STEPS.map(function(s){return '<span style="background:color-mix(in srgb,#E2402B '+s[1]+'%,#FFF4E2)"></span>'}).join('');
+  function paint(){
+    Object.keys(by).forEach(function(k){
+      var o=by[k],sel=k===st.sel,geo=st.mode==='geo',r=o.t.querySelector('rect');
+      o.p.classList.toggle('sel',sel&&!st.color);o.t.classList.toggle('sel',sel&&!st.color);
+      var f=st.color?shade(U[k]):'';o.p.style.fill=f;r.style.fill=f;
+      o.p.style.strokeWidth=(sel&&st.color)?'3.2':'';r.style.strokeWidth=(sel&&st.color)?'4.5':'';
+      o.tv.textContent=st.color?fr(U[k])+' %':'';
+      var w=st.color&&U[k]>=8;o.t.querySelectorAll('text').forEach(function(x){x.style.fill=w?'#FFFFFF':''});
+      o.p.style.opacity=geo?1:0;o.p.style.pointerEvents=geo?'auto':'none';o.p.setAttribute('tabindex',geo?0:-1);o.t.setAttribute('tabindex',geo?-1:0);
+      o.t.style.transitionDelay=geo?'0s':((o.gx+o.gy)*0.04)+'s';
+      o.t.style.transform='translate('+(geo?o.cx:o.tx)+'px,'+(geo?o.cy:o.ty)+'px) scale('+(geo?.25:1)+')';o.t.style.opacity=geo?0:1;o.t.style.pointerEvents=geo?'none':'auto';
+    });
+    D.querySelectorAll('.o').forEach(function(o){o.style.opacity=st.mode==='geo'?'':0});
+    var s=by[st.sel];if(st.mode==='geo'){tag.textContent=NAMES[st.sel];tag.setAttribute('x',s.cx);tag.setAttribute('y',s.cy-16);tag.style.opacity=1}else tag.style.opacity=0;
+    D.getElementById('legend').hidden=!st.color;
+  }
+  function select(code){
+    st.sel=code;paint();
+    var v=U[code],full=code==='BE',n=Math.round(100/v),dots='';
+    for(var i=0;i<n;i++)dots+='<i'+(i===0?' class="on"':'')+' style="animation-delay:'+(i*0.02)+'s"></i>';
+    var d=v-6.0,cmp=Math.abs(d)<0.05?'au niveau de la moyenne européenne (6,0 %)':fr(Math.abs(d))+' point'+(Math.abs(d)>=2?'s':'')+(d>0?' au-dessus':' en dessous')+' de la moyenne européenne (6,0 %)';
+    var rows=(full?BE_FULL:[['Population'],['Économie'],['Finances publiques'],['Emploi','Chômage '+fr(v)+' %'],['Inégalités'],['Climat']]).map(function(r){
+      var x=r[2]?'<a class="x" href="'+r[2]+'" target="_blank" rel="noopener">'+r[1]+' →</a>':(r[1]?'<span class="x">'+r[1]+'</span>':'<span class="x wait">en préparation</span>');
+      return '<li><span class="n">'+r[0]+'</span>'+x+'</li>';
+    }).join('');
+    var p=D.getElementById('panel');
+    p.innerHTML='<div class="head"><h3>'+NAMES[code]+'</h3><span class="badge '+(full?'full':'eu')+'">'+(full?'Fiche détaillée':'Indicateurs européens')+'</span></div>'+
+      '<div class="kf"><span class="v">'+fr(v)+' %</span><span class="t">des actifs au chômage en 2025, '+cmp+'.'+(DIFF[code]?' Définition légèrement différente selon Eurostat.':'')+'</span></div>'+
+      '<div class="crowd" aria-hidden="true">'+dots+'</div><p class="crowdcap">Environ 1 actif sur '+n+'.</p><ul class="chapters">'+rows+'</ul>'+
+      '<p class="foot">'+(full?'Sources : Statbel, ICN, Eurostat. Vérifié le 10 octobre 2026.':'Source : Eurostat, une_rt_a, 15-74 ans.')+'</p>';
+    p.classList.remove('pop');void p.offsetWidth;p.classList.add('pop');
+  }
+  function setMode(m){st.mode=m;D.getElementById('mGeo').setAttribute('aria-pressed',m==='geo');D.getElementById('mTile').setAttribute('aria-pressed',m!=='geo');paint()}
+  D.getElementById('mGeo').onclick=function(){setMode('geo')};D.getElementById('mTile').onclick=function(){setMode('tile')};
+  D.getElementById('cUnemp').onclick=function(){st.color=!st.color;this.setAttribute('aria-pressed',st.color);paint()};
+  select('BE');
+})();
+</script>

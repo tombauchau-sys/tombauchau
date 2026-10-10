@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.">
+<meta property="og:title" content="Pensions et vieillissement · Chiffre Juste">
+<meta property="og:description" content="Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.">
 <title>Pensions et vieillissement · Chiffre Juste</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +15,7 @@
 :root{
   --brown:#1E1914; --cream:#EDE6DC; --cream-dim:#A69C8F; --hair:#3B332B; --copper:#C9773A;
   --off:#F7F6F2; --ink:#222222; --grey:#6A665F; --rule:#D7D4CC;
-  --red:#E2402B; --line:#1A1A1A; --lilac:#9C98F0; --orange:#F09A3E; --pink:#EFA3CB; --mint:#7FB6A3; --blue:#7E9CC4; --peach:#F2A07B;
+  --red:#E2402B; --red-ink:#C0341E; --line:#1A1A1A; --lilac:#9C98F0; --orange:#F09A3E; --pink:#EFA3CB; --mint:#7FB6A3; --blue:#7E9CC4; --peach:#F2A07B;
   --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
   --serif:"Instrument Serif","Times New Roman",Georgia,serif;
   --main:"Caveat","Segoe Print","Bradley Hand",cursive;
@@ -127,7 +129,7 @@ nav.top .mark:hover span{transform:rotate(330deg)}
 .bulle .path{font-size:13.5px;color:var(--grey);margin-top:14px}
 .bulle .again{margin-top:16px;border:0;background:none;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .tag{display:inline-block;border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700}
-.tag.u{background:var(--red);color:#fff}.tag.e{background:var(--line);color:#fff}.tag.p{background:var(--orange);color:var(--line)}.tag.i{border:1.5px solid var(--line)}
+.tag.u{background:var(--red-ink);color:#fff}.tag.e{background:var(--line);color:#fff}.tag.p{background:var(--orange);color:var(--line)}.tag.i{border:1.5px solid var(--line)}
 .bulle.pop{animation:pop .45s var(--ease)}
 @keyframes pop{from{transform:translateY(10px) rotate(-1deg)}}
 
@@ -142,7 +144,7 @@ nav.top .mark:hover span{transform:rotate(330deg)}
 .srcs .hand{position:absolute;right:190px;top:-14px;color:var(--red);font-size:26px;transform:rotate(-4deg);white-space:nowrap}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
 .two h4{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
-.two .ok h4{color:var(--grey)} .two .ko h4{color:var(--red)}
+.two .ok h4{color:var(--grey)} .two .ko h4{color:var(--red-ink)}
 .two p{font-family:var(--serif);font-size:22px;line-height:1.3}
 
 /* 4. Réforme */
@@ -183,7 +185,7 @@ nav.top .mark:hover span{transform:rotate(330deg)}
 .read .w{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--grey);margin-top:4px}
 .read .th{font-family:var(--serif);font-size:22px;line-height:1.3;margin-top:14px}
 .read .so{font-size:15px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule)}
-.read .so b{font-weight:700;color:var(--red);margin-right:6px}
+.read .so b{font-weight:700;color:var(--red-ink);margin-right:6px}
 
 /* 8. Citer */
 .cite .bulle .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
@@ -435,7 +437,7 @@ html.calm .chart .fadein{opacity:1}
 .myths article{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:20px 22px;box-shadow:6px 6px 0 var(--red);rotate:var(--rot)}
 .myths h4{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2vw,28px);line-height:1.1;margin:12px 0 10px}
 .myths p{font-size:15.5px;color:#3D3A35}
-.myths b{color:var(--red)}
+.myths b{color:var(--red-ink)}
 .myths a{color:var(--ink);font-weight:700}
 @media (max-width:900px){.epochs,.myths{grid-template-columns:1fr}.epochs li,.epochs li+li{padding:18px 0;border-right:0;border-bottom:1px solid var(--hair)}}
 
@@ -445,6 +447,10 @@ html.calm .chart .fadein{opacity:1}
 .agegrid .lv p{font-size:14px;color:var(--grey)}
 .snow.light{margin-top:36px}
 @media (max-width:900px){.cards.c3,.agegrid{grid-template-columns:1fr}}
+
+/* Contraste AA : rouge foncé pour les petits textes sur fond clair */
+.rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
+.key-dots .kd.be{background:var(--red-ink)}
 </style>
 </head>
 <body>

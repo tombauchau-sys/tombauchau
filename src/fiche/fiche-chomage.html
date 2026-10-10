@@ -1,0 +1,657 @@
+<title>Chômage · Chiffre Juste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&display=swap">
+<style>
+/* ADN Chiffre Juste, fiche modèle. Univers alternés : brun (faits), papier (lecture), aplats de chapitre (exploration). Le fait en grotesque, la lecture en serif, les pièges à la main. Un seul univers visuel, identique en thème clair et sombre. */
+:root{
+  --brown:#1E1914; --cream:#EDE6DC; --cream-dim:#A69C8F; --hair:#3B332B; --copper:#C9773A;
+  --off:#F7F6F2; --ink:#222222; --grey:#6A665F; --rule:#D7D4CC;
+  --red:#E2402B; --red-ink:#C0341E; --line:#1A1A1A; --lilac:#9C98F0; --orange:#F09A3E; --pink:#EFA3CB; --mint:#7FB6A3; --blue:#7E9CC4; --peach:#F2A07B;
+  --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --main:"Caveat","Segoe Print","Bradley Hand",cursive;
+  --ease:cubic-bezier(.2,.7,.2,1); --ease-io:cubic-bezier(.6,0,.2,1);
+  --xgrid:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><path d='M21 21l6 6m0-6l-6 6' stroke='%23453B31' stroke-width='1.2' fill='none'/></svg>");
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--brown);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+p{margin:0}
+h1,h2,h3,h4{margin:0;font-weight:400;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+sup{font-size:.65em;line-height:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+.note{font-family:var(--main);font-weight:600;line-height:1.05}
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.06;pointer-events:none;z-index:0;mix-blend-mode:overlay}
+.grain>*{position:relative;z-index:1}
+.sec{padding-block:96px}
+.brun{background:var(--brown);color:var(--cream)}
+.papier{background:var(--off);color:var(--ink)}
+.kick{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.brun .kick{color:var(--copper)} .papier .kick{color:var(--grey)}
+.giant{font-family:var(--serif);font-size:clamp(56px,9vw,132px);line-height:.9;letter-spacing:-.02em}
+.giant span{color:var(--grey)} .brun .giant span{color:var(--cream-dim)}
+.lede{font-size:clamp(19px,1.9vw,24px);line-height:1.35;max-width:46ch}
+.papier .lede{color:#3D3A35}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 22px;font-weight:600;font-size:15px;text-decoration:none;border:0;transition:transform .35s var(--ease)}
+.pill.cream{background:var(--cream);color:var(--brown)} .pill.ink{background:var(--line);color:#fff}
+.pill .arr{transition:transform .35s var(--ease)} .pill:hover .arr{transform:translateX(5px)}
+.skew{display:inline-block;border:1.5px solid currentColor;padding:9px 14px;font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transform:skewX(-10deg);background:none}
+.skew span{display:inline-block;transform:skewX(10deg)}
+.skew[aria-pressed="true"]{background:currentColor}
+.skew[aria-pressed="true"] span{color:var(--brown)}
+
+/* Navigation */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--brown);display:grid;grid-template-columns:repeat(2,1fr) 110px repeat(3,1fr);border-bottom:1px solid var(--hair)}
+nav.top a{display:flex;align-items:center;justify-content:center;height:56px;text-decoration:none;font-weight:500;font-size:15px;border-right:1px solid var(--hair);position:relative;overflow:hidden}
+nav.top a:last-child{border-right:0}
+nav.top a .lbl{display:block;transition:transform .45s var(--ease)}
+nav.top a .lbl::after{content:attr(data-t);position:absolute;left:0;right:0;top:100%;text-align:center;color:var(--copper)}
+nav.top a:hover .lbl{transform:translateY(-100%)}
+nav.top a.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--copper)}
+nav.top .mark span{width:30px;height:30px;border-radius:50%;border:6px solid var(--cream);border-right-color:transparent;transform:rotate(-30deg);transition:transform .8s var(--ease)}
+nav.top .mark:hover span{transform:rotate(330deg)}
+
+/* 0. Seuil : devinez d'abord */
+.seuil{background-image:var(--xgrid);min-height:calc(100vh - 56px);display:grid;place-items:center;padding-block:64px;text-align:center}
+.seuil .q{font-family:var(--serif);font-size:clamp(30px,4vw,56px);line-height:1.05;max-width:20ch;margin:14px auto 0}
+.seuil .out{display:block;font-weight:700;font-size:clamp(96px,19vw,250px);line-height:.85;letter-spacing:-.05em;margin:24px 0 8px;font-variant-numeric:tabular-nums}
+.range{width:min(560px,86vw);margin:8px auto 0;display:block;appearance:none;-webkit-appearance:none;background:transparent;height:34px}
+.range::-webkit-slider-runnable-track{height:2px;background:var(--cream-dim)}
+.range::-moz-range-track{height:2px;background:var(--cream-dim)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--copper);margin-top:-12px;border:3px solid var(--brown);box-shadow:0 0 0 1.5px var(--copper)}
+.range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--copper);border:3px solid var(--brown)}
+.scale{display:flex;justify-content:space-between;width:min(560px,86vw);margin:0 auto;font-size:12.5px;color:var(--cream-dim)}
+.seuil .acts{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:30px}
+.seuil .skew{color:var(--cream-dim)}
+.verdict{max-width:34ch;margin:28px auto 0;font-size:28px;color:var(--cream)}
+.verdict .down{display:block;font-size:40px;margin-top:6px;animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* 1. Héros : triptyque */
+.hero{background-image:var(--xgrid);padding-top:60px;overflow:hidden}
+.hero .stage{position:relative;height:min(480px,52vw);min-height:300px}
+.hero svg.discs{position:absolute;left:50%;top:0;height:100%;transform:translateX(-50%);overflow:visible}
+.hero .row{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:14px;pointer-events:none}
+.side{font-family:var(--serif);font-size:clamp(26px,3.6vw,48px);line-height:1;white-space:nowrap}
+.conn{flex:1;height:1px;background:var(--cream-dim);opacity:.6;position:relative;min-width:20px}
+.conn::after{content:"×";position:absolute;top:-11px;right:-4px;font-size:16px;color:var(--cream-dim)}
+.conn.r::after{right:auto;left:-4px}
+.hero .gap{flex:0 0 calc(max(300px,min(480px,52vw)) * .93)}
+.title{font-weight:700;font-size:clamp(54px,10.5vw,150px);line-height:.86;letter-spacing:-.045em;margin-top:40px}
+.title .t2{color:var(--cream-dim)}
+.title .ch{display:inline-block}.title .wd{display:inline-block;white-space:nowrap}
+.split .ch{transform:translateY(105%);opacity:0}
+.split.go .ch{transform:none;opacity:1;transition:transform .9s var(--ease),opacity .9s var(--ease)}
+.titlebox{overflow:hidden;padding-bottom:.08em}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:48px}
+.facts div{padding:26px 22px 28px;border-right:1px solid var(--hair)}
+.facts div:first-child{padding-left:0}
+.facts div:last-child{border-right:0}
+.facts b{display:block;white-space:nowrap;font-weight:700;font-size:clamp(26px,3vw,44px);letter-spacing:-.02em;line-height:1}
+.facts span{display:block;font-size:14.5px;color:var(--cream-dim);margin-top:10px}
+.facts .src{font-size:12px;margin-top:6px;opacity:.8}
+
+/* 2. Définition */
+.crit{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.crit li{display:grid;grid-template-columns:80px minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--rule)}
+.crit .n{font-family:var(--serif);font-style:italic;font-size:44px;line-height:1;color:var(--red)}
+.crit h3{font-weight:700;font-size:clamp(26px,3vw,40px);letter-spacing:-.02em;line-height:1}
+.crit p{font-size:16px;color:#3D3A35}
+.aside-note{margin-top:22px;color:var(--grey);font-size:15.5px;max-width:60ch}
+
+/* Bande d'exploration (aplat) */
+.band{padding-block:80px;color:var(--line)}
+.band .bandin{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
+.band h2{font-family:var(--serif);font-size:clamp(46px,6vw,84px);line-height:.92}
+.band .hint{font-size:30px;margin-top:14px;transform:rotate(-3deg);display:inline-block}
+.bulle{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:28px;padding:28px;box-shadow:8px 8px 0 var(--line)}
+.bulle .step{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.bulle .qq{font-family:var(--serif);font-size:clamp(26px,2.8vw,36px);line-height:1.1;margin:10px 0 20px}
+.bulle .opts{display:flex;gap:10px;flex-wrap:wrap}
+.bulle .opts button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:10px 26px;font-weight:700;font-size:15px;transition:transform .2s var(--ease),background .2s ease}
+.bulle .opts button:hover{background:var(--line);color:#fff;transform:translateY(-2px)}
+.bulle .res{font-weight:700;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.02em;line-height:1;margin:8px 0 12px}
+.bulle .path{font-size:13.5px;color:var(--grey);margin-top:14px}
+.bulle .again{margin-top:16px;border:0;background:none;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.tag{display:inline-block;border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700}
+.tag.u{background:var(--red-ink);color:#fff}.tag.e{background:var(--line);color:#fff}.tag.p{background:var(--orange);color:var(--line)}.tag.i{border:1.5px solid var(--line)}
+.bulle.pop{animation:pop .45s var(--ease)}
+@keyframes pop{from{transform:translateY(10px) rotate(-1deg)}}
+
+/* 3. Sources */
+.srcs{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.srcs li{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) 170px;gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid var(--rule)}
+.srcs h3{font-family:var(--serif);font-size:clamp(26px,2.8vw,38px);line-height:1}
+.srcs .who{font-weight:600;font-size:15px}
+.srcs .how{font-size:15px;color:#3D3A35}
+.srcs .val{font-weight:700;font-size:clamp(28px,3vw,42px);letter-spacing:-.02em;text-align:right;line-height:1}
+.srcs .val small{display:block;font-weight:500;font-size:12.5px;letter-spacing:0;color:var(--grey);margin-top:6px}
+.srcs .hand{position:absolute;right:190px;top:-14px;color:var(--red);font-size:26px;transform:rotate(-4deg);white-space:nowrap}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.two h4{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.two .ok h4{color:var(--grey)} .two .ko h4{color:var(--red-ink)}
+.two p{font-family:var(--serif);font-size:22px;line-height:1.3}
+
+/* 4. Réforme */
+.reform .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:44px}
+.reform .grid3 div{padding:30px 24px 32px;border-right:1px solid var(--hair)}
+.reform .grid3 div:first-child{padding-left:0}.reform .grid3 div:last-child{border-right:0}
+.reform b{display:block;font-weight:700;font-size:clamp(44px,5.6vw,80px);letter-spacing:-.04em;line-height:.9}
+.reform span{display:block;color:var(--cream-dim);font-size:15px;margin-top:12px;max-width:28ch}
+
+/* Graphiques */
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart{margin-top:44px}
+.seg-bar rect.s{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform 1s var(--ease)}
+.seg-bar.play rect.s{transform:none}
+.drawline{stroke-dasharray:2000;stroke-dashoffset:2000}
+.play .drawline{transition:stroke-dashoffset 2.6s var(--ease-io);stroke-dashoffset:0}
+.fadein{opacity:0;transition:opacity .6s ease 2.2s}
+.play .fadein{opacity:1}
+.evs{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.evs button{border:1.5px solid var(--cream-dim);background:none;color:var(--cream);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;transition:background .2s ease}
+.evs button[aria-pressed="true"]{background:var(--cream);color:var(--brown);border-color:var(--cream)}
+.evtext{font-family:var(--serif);font-size:24px;line-height:1.3;margin-top:22px;max-width:52ch;min-height:4em}
+.pills .bar{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease)}
+.pills.play .bar{transform:none}
+
+/* 6. Limites */
+.lim{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.lim li{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr) minmax(0,1.2fr);gap:20px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--rule);overflow:hidden}
+.lim .g{font-family:var(--serif);font-size:56px;line-height:.8;color:var(--red)}
+.lim h3{font-family:var(--serif);font-size:clamp(28px,3vw,42px);line-height:1}
+.lim p{font-size:16px;color:#3D3A35}
+
+/* 7. Lectures */
+.reads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin-top:48px}
+.read{border-top:1px solid var(--ink);padding:22px 0 34px}
+.read .trad{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.read h3{font-family:var(--serif);font-size:clamp(28px,2.8vw,38px);line-height:1.05;margin-top:8px}
+.read .w{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--grey);margin-top:4px}
+.read .th{font-family:var(--serif);font-size:22px;line-height:1.3;margin-top:14px}
+.read .so{font-size:15px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule)}
+.read .so b{font-weight:700;color:var(--red-ink);margin-right:6px}
+
+/* 8. Citer */
+.cite .bulle .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.cite .bulle .chips button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:13.5px}
+.cite .bulle .chips button[aria-pressed="true"]{background:var(--line);color:#fff}
+.cite .quote{font-family:var(--serif);font-size:clamp(22px,2.3vw,28px);line-height:1.3}
+.cite .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:20px}
+.copied{font-size:14px;font-weight:600}
+
+/* 9. Sources + pied */
+.biblio{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.biblio ol,.biblio ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:14.5px;color:var(--cream-dim)}
+.biblio ul{list-style:none;padding:0}
+.biblio a{color:var(--cream)}
+.biblio h3{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin-bottom:14px}
+footer{border-top:1px solid var(--hair);overflow:hidden}
+footer .meta{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 20px;font-size:14px;color:var(--cream-dim)}
+footer .wm{font-weight:700;font-size:clamp(70px,17.5vw,232px);letter-spacing:-.05em;line-height:.76;white-space:nowrap;text-align:center;margin:16px 0 -.17em}
+
+/* Révélations, curseur, accessibilité */
+.js [data-r]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-r].in{opacity:1;transform:none}
+.cursor{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--copper);pointer-events:none;z-index:60;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s ease;display:none}
+.cursor.big{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(201,119,58,.22);border:1.5px solid var(--copper)}
+@media (pointer:fine){.cursor{display:block}}.cursor{opacity:0}.cursor.on{opacity:1}
+.a11y{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:8px;background:var(--off);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:4px 14px 4px 4px;font-size:13px;font-weight:600}
+.a11y b{background:var(--line);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px}
+.a11y[aria-pressed="true"] b{background:var(--red)}
+html.calm *{animation:none!important;transition:none!important}
+html.calm .drawline{stroke-dashoffset:0!important}
+html.calm .split .ch{transform:none!important;opacity:1!important}
+html.calm [data-r],html.calm .fadein{opacity:1!important;transform:none!important}
+html.calm .seg-bar rect.s,html.calm .pills .bar{transform:none!important}
+html.calm .cursor{display:none!important}
+html.calm .grain::before{display:none}
+html.calm .seuil,html.calm .hero{background-image:none}
+html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
+
+@media (max-width:900px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(3){padding-left:0;border-top:1px solid var(--hair)}
+  .facts div:nth-child(4){border-top:1px solid var(--hair)}
+  .crit li,.lim li{grid-template-columns:56px minmax(0,1fr)}
+  .crit p,.lim p{grid-column:2}
+  .band .bandin,.two,.reads,.biblio{grid-template-columns:1fr}
+  .srcs li{grid-template-columns:1fr 1fr}
+  .srcs .val{text-align:left}
+  .srcs .hand{right:0}
+  .reform .grid3{grid-template-columns:1fr}
+  .reform .grid3 div{padding-left:0;border-right:0;border-bottom:1px solid var(--hair)}
+  .hero .row{top:auto;bottom:-6px;transform:none;justify-content:space-between}
+  .hero .gap,.conn{display:none}
+  .side{font-size:24px}
+  .title{margin-top:60px}
+}
+@media (max-width:600px){
+  nav.top{grid-template-columns:1fr 1fr 64px 1fr 1fr}
+  nav.top a{font-size:12.5px;height:48px;text-align:center}
+  nav.top a.lang{display:none}
+  .sec{padding-block:68px}
+  .bulle{padding:20px;box-shadow:5px 5px 0 var(--line)}
+  .facts div{padding:20px 12px 22px}
+  .a11y{font-size:11.5px;padding:3px 10px 3px 3px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.drawline{stroke-dashoffset:0!important}.split .ch{transform:none!important;opacity:1!important}.js [data-r],.fadein{opacity:1!important;transform:none!important}.seg-bar rect.s,.pills .bar{transform:none!important}}
+</style>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+
+<nav class="top" aria-label="Navigation principale">
+  <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
+  <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
+  <a href="__HOME__" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="__EMPLOI__" class="on"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
+  <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
+  <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
+</nav>
+
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Emploi · Belgique · avant de lire</span>
+    <h1 class="q" id="q0">Selon vous, quelle part des Belges actifs est au chômage ?</h1>
+    <output class="out" id="gOut" for="guess">12,0 %</output>
+    <input class="range" type="range" id="guess" min="0" max="30" step="0.5" value="12" aria-label="Votre estimation, en pour cent">
+    <div class="scale" aria-hidden="true"><span>0 %</span><span>15 %</span><span>30 %</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-magnet>Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#fiche"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="fiche" aria-labelledby="t1">
+  <div class="wrap">
+    <div class="stage">
+      <div class="row" aria-hidden="true"><span class="side">Le chiffre.</span><span class="conn"></span><span class="gap"></span><span class="conn r"></span><span class="side">Ses limites.</span></div>
+      <svg class="discs" viewBox="0 0 560 560" role="img" aria-label="6,2 % de chômage en Belgique en 2025 ; courbe 2009-2025" id="discs"></svg>
+    </div>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Chômage en Belgique, 2025"><span class="t1">Chômage </span><span class="t2">en Belgique, 2025</span></h2></div>
+    <div class="facts" data-r>
+      <div><b>6,2 %</b><span>des actifs, soit environ 339 000 personnes</span><span class="src">Statbel · Eurostat</span></div>
+      <div><b>6,0 %</b><span>moyenne de l’Union européenne</span><span class="src">Eurostat</span></div>
+      <div><b>4,3 → 12,7 %</b><span>de la Flandre à Bruxelles</span><span class="src">IWEPS d’après Statbel</span></div>
+      <div><b>12,6 %</b><span>de sous-utilisation du travail, le double</span><span class="src">Eurostat</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Définition -->
+<section class="sec papier" aria-labelledby="t2">
+  <div class="wrap">
+    <span class="kick" data-r>La définition · OIT, 2013, amendée en 2023</span>
+    <h2 class="giant" id="t2" data-r>Trois conditions, <span>en même temps.</span></h2>
+    <ol class="crit">
+      <li data-r><span class="n">i.</span><h3>Sans emploi</h3><p>Pas une seule heure de travail rémunéré pendant la semaine de référence.</p></li>
+      <li data-r><span class="n">ii.</span><h3>En recherche active</h3><p>Des démarches concrètes au cours des quatre dernières semaines.</p></li>
+      <li data-r><span class="n">iii.</span><h3>Disponible</h3><p>Pouvoir commencer à travailler dans les deux semaines.</p></li>
+    </ol>
+    <p class="aside-note" data-r>Être inscrit comme demandeur d’emploi ou toucher des allocations ne fait pas partie de la définition.</p>
+  </div>
+</section>
+
+<section class="band grain" style="background:var(--orange)" aria-labelledby="tq">
+  <div class="wrap bandin">
+    <div data-r>
+      <h2 id="tq">Et vous, que diriez-vous à l’enquêteur ?</h2>
+      <span class="hint note">trois questions, pas plus →</span>
+    </div>
+    <div class="bulle" id="quiz" aria-live="polite" data-r></div>
+  </div>
+</section>
+
+<!-- 3. Sources croisées -->
+<section class="sec papier" aria-labelledby="t3">
+  <div class="wrap">
+    <span class="kick" data-r>Croiser les sources primaires</span>
+    <h2 class="giant" id="t3" data-r>Quatre sources, <span>quatre chômages.</span></h2>
+    <ul class="srcs">
+      <li data-r><h3>Enquête sur les forces de travail</h3><span class="who">Statbel</span><span class="how">Échantillon de ménages · chômeurs au sens de l’OIT, 15-64 ans</span><span class="val">6,2 %<small>Belgique, 2025</small></span></li>
+      <li data-r><h3>Statistiques harmonisées</h3><span class="who">Eurostat</span><span class="how">La même enquête, harmonisée pour 27 pays · 15-74 ans</span><span class="val">6,2 %<small>Belgique, 2025</small></span></li>
+      <li data-r><span class="hand note" aria-hidden="true">pas comparable !</span><h3>Registres régionaux</h3><span class="who">Actiris · Forem · VDAB</span><span class="how">Inscriptions administratives · demandeurs d’emploi inoccupés</span><span class="val">16,0 %<small>Bruxelles, août 2026</small></span></li>
+      <li data-r><h3>Allocations de chômage</h3><span class="who">ONEM</span><span class="how">Fichiers des paiements · chômeurs indemnisés</span><span class="val">−55 246<small>sorties au 31 mars 2026</small></span></li>
+    </ul>
+    <div class="two">
+      <div class="ok" data-r><h4>Ce qui converge</h4><p>Statbel et Eurostat donnent le même taux belge en 2025, et toutes les sources s’accordent sur la hiérarchie : Bruxelles, puis la Wallonie, puis la Flandre.</p></div>
+      <div class="ko" data-r><h4>Ce qui diverge</h4><p>Les niveaux. À Bruxelles, Actiris compte 16,0 % en août 2026, l’enquête 13,4 % au premier trimestre. Un inscrit peut avoir travaillé une heure : il est dans le registre, pas dans l’enquête.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Réforme -->
+<section class="sec brun grain reform" aria-labelledby="t4">
+  <div class="wrap">
+    <span class="kick" data-r>Cas d’étude · Loi-programme du 18 juillet 2025</span>
+    <h2 class="giant" id="t4" data-r>Une réforme, <span>trois chiffres qui bougent.</span></h2>
+    <p class="lede" style="margin-top:22px;color:var(--cream-dim)" data-r>Les allocations de chômage sont limitées dans le temps, par vagues, du 1<sup>er</sup> janvier 2026 au 30 juin 2030. Un indicateur baisse, un autre gonfle ; l’effet sur le taux d’enquête reste à mesurer.</p>
+    <div class="grid3" data-r>
+      <div><b>55 246</b><span>personnes sorties des allocations au 31 mars 2026 (ONEM)</span></div>
+      <div><b>23 322</b><span>ont obtenu un revenu d’intégration au premier trimestre 2026 (ONEM)</span></div>
+      <div><b>+82,6 %</b><span>d’inscrits venus des CPAS chez Actiris en un an, août 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5a. Sous-utilisation -->
+<section class="sec papier" aria-labelledby="t5">
+  <div class="wrap">
+    <span class="kick" data-r>Au-delà du chômage · Eurostat, 2025, 15-74 ans</span>
+    <h2 class="giant" id="t5" data-r>712 000 personnes <span>voudraient travailler plus.</span></h2>
+    <div class="chart seg-bar" id="slack"></div>
+  </div>
+</section>
+
+<!-- 5b. Série -->
+<section class="sec brun grain" aria-labelledby="t6">
+  <div class="wrap">
+    <span class="kick" data-r>Belgique et Union européenne · 2009-2025 · Eurostat</span>
+    <h2 class="giant" id="t6" data-r>Seize ans, <span>trois changements d’instrument.</span></h2>
+    <div class="chart" id="series"></div>
+    <div class="evs" role="group" aria-label="Moments clés">
+      <button type="button" data-e="0">2013 · Crise des dettes</button>
+      <button type="button" data-e="1">2017 · Nouvelle enquête</button>
+      <button type="button" data-e="2">2020 · Covid</button>
+      <button type="button" data-e="3">2021 · Règlement européen</button>
+      <button type="button" data-e="4" aria-pressed="true">2025 · Dernière valeur</button>
+    </div>
+    <p class="evtext" id="evText"></p>
+  </div>
+</section>
+
+<!-- 5c. Europe -->
+<section class="band grain" style="background:var(--lilac);padding-block:96px" aria-labelledby="t7">
+  <div class="wrap">
+    <span class="kick" style="color:var(--line)" data-r>Taux de chômage 2025 · 15-74 ans · Eurostat</span>
+    <h2 class="giant" id="t7" data-r style="color:var(--line)">Pile dans <span style="color:#3E3A8C">la moyenne.</span></h2>
+    <div class="chart pills" id="europe"></div>
+    <p style="font-size:13.5px;margin-top:10px">* Espagne et France : définition légèrement différente selon Eurostat.</p>
+  </div>
+</section>
+
+<!-- 6. Limites -->
+<section class="sec papier" aria-labelledby="t8">
+  <div class="wrap">
+    <span class="kick" data-r>Avant de citer le chiffre</span>
+    <h2 class="giant" id="t8" data-r>Six limites, <span>à garder en tête.</span></h2>
+    <ul class="lim">
+      <li data-r><span class="g">±</span><h3>L’échantillon</h3><p>Au 3<sup>e</sup> trimestre 2024, Statbel estimait 6,0 %, dans un intervalle de 5,4 % à 6,5 % ; à Bruxelles, 11,1 %, entre 9,3 % et 12,9 %. Quelques dixièmes ne prouvent rien.</p></li>
+      <li data-r><span class="g">÷</span><h3>Le dénominateur</h3><p>Les chômeurs sont rapportés aux actifs, pas à la population. Une baisse peut venir de personnes qui quittent la population active.</p></li>
+      <li data-r><span class="g">?</span><h3>Les découragés</h3><p>Qui cesse de chercher sort du chômage sans avoir trouvé d’emploi. Lisez le taux avec le taux d’emploi.</p></li>
+      <li data-r><span class="g">≈</span><h3>La qualité</h3><p>Rien sur la durée du chômage, la qualité des emplois, les salaires ni le temps partiel subi.</p></li>
+      <li data-r><span class="g">⊂</span><h3>Le périmètre</h3><p>Les ménages collectifs ne sont pas interrogés ; les tranches d’âge varient selon les publications.</p></li>
+      <li data-r><span class="g">≠</span><h3>Le temps</h3><p>Ruptures de série en 1999, 2011, 2017 et 2021 : ne comparez que des années mesurées avec le même instrument.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 7. Lectures -->
+<section class="sec papier" style="padding-top:0" aria-labelledby="t9">
+  <div class="wrap">
+    <span class="kick" data-r>Les lectures · l’ordre change à chaque visite</span>
+    <h2 class="giant" id="t9" data-r>Un chiffre, <span>sept lectures.</span></h2>
+    <div class="reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 8. Citer -->
+<section class="band grain cite" style="background:var(--mint)" aria-labelledby="t10">
+  <div class="wrap bandin">
+    <div data-r>
+      <h2 id="t10">Une phrase qui résiste à la contradiction.</h2>
+      <span class="hint note">le chiffre, sa date, sa source, sa limite →</span>
+    </div>
+    <div class="bulle" data-r>
+      <div class="chips" role="group" aria-label="Ce que je veux dire" id="chips">
+        <button type="button" data-k="be" aria-pressed="true">En Belgique</button>
+        <button type="button" data-k="eu" aria-pressed="false">Face à l’Europe</button>
+        <button type="button" data-k="bxl" aria-pressed="false">À Bruxelles</button>
+        <button type="button" data-k="slack" aria-pressed="false">Le chômage « réel »</button>
+        <button type="button" data-k="reform" aria-pressed="false">La réforme</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button class="pill ink" type="button" id="copy" data-magnet>Copier la phrase</button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="t11">
+  <div class="wrap">
+    <span class="kick">Consultées le 10 octobre 2026</span>
+    <h2 class="giant" id="t11">Sources</h2>
+    <div class="biblio">
+      <div><h3>Sources primaires</h3><ol>
+        <li>OIT, <a href="http://www.ilo.org/wcmsp5/groups/public/---dgreports/---stat/documents/normativeinstrument/wcms_230304.pdf" target="_blank" rel="noopener">résolution sur les statistiques du travail et de la sous-utilisation de la main-d’œuvre</a>, 19<sup>e</sup> CIST (2013), amendée en 2023.</li>
+        <li>Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table" target="_blank" rel="noopener">une_rt_a</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_sla_a/default/table" target="_blank" rel="noopener">lfsi_sla_a</a>, mise à jour du 10 septembre 2026.</li>
+        <li>IWEPS d’après Statbel, <a href="https://www.iweps.be/wp-content/uploads/2026/09/L031-TX.CHO_.BIT_.EUR-092026_Full1.pdf" target="_blank" rel="noopener">fiche L031</a>, septembre 2026.</li>
+        <li>Statbel, <a href="https://bestat.statbel.fgov.be/bestat/api/views/38d7484d-0d42-4464-8cdb-835a0dd3dff7/result/PDF" target="_blank" rel="noopener">résultats trimestriels</a> et <a href="https://statbel.fgov.be/en/news/youth-unemployment-rate-nears-20-third-quarter-2024" target="_blank" rel="noopener">intervalles de confiance</a>.</li>
+        <li>Statbel, <a href="https://ec.europa.eu/eurostat/documents/1978984/13018421/BE.pdf" target="_blank" rel="noopener">note sur les ruptures de série</a>.</li>
+        <li>ONEM, <a href="https://www.onem.be/file/cc73d96153bbd5448a56f19d925d05b1379c7f21/91c0ceb859f0b0a98bc971b7d1b5050d0bf6c6ed/monitoringfr202603-kerncijfers.pdf" target="_blank" rel="noopener">monitoring de mars 2026</a>.</li>
+        <li>Actiris, chiffres d’août 2026, via <a href="https://www.dhnet.be/dernieres-depeches/2026/09/03/le-taux-de-chomage-dans-la-region-bruxelloise-etait-de-16-en-aout-IMAJSKFAVJHDNFFNLXHYB45FTE/" target="_blank" rel="noopener">Belga</a>.</li>
+      </ol></div>
+      <div><h3>Bibliographie</h3><ul>
+        <li>Beveridge, W. (1944). <i>Full Employment in a Free Society</i>. Allen &amp; Unwin.</li>
+        <li>Blanchard, O. et Summers, L. (1986). « Hysteresis and the European Unemployment Problem ». <i>NBER Macroeconomics Annual</i>.</li>
+        <li>Friedman, M. (1968). « The Role of Monetary Policy ». <i>American Economic Review</i>, 58(1).</li>
+        <li>Jahoda, M., Lazarsfeld, P. et Zeisel, H. (1981 [1933]). <i>Les chômeurs de Marienthal</i>. Minuit.</li>
+        <li>Keynes, J. M. (1936). <i>The General Theory of Employment, Interest and Money</i>. Macmillan.</li>
+        <li>Marx, K. (1867). <i>Das Kapital</i>, livre I. Meissner.</li>
+        <li>Salais, R., Baverez, N. et Reynaud, B. (1986). <i>L’invention du chômage</i>. PUF.</li>
+        <li>Topalov, C. (1994). <i>Naissance du chômeur, 1880-1910</i>. Albin Michel.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Fiche Emploi n° 1 · vérifiée le 10 octobre 2026</span><a href="__HOME__">Retour à l’accueil →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
+
+<script>
+(function(){
+  var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg';
+  H.classList.add('js');
+  function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
+  function fr(v,d){d=d==null?1:d;return v.toLocaleString('fr-BE',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,calm=false;
+  try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}
+  var ab=D.getElementById('a11y');
+  function setCalm(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}
+  setCalm(calm);ab.addEventListener('click',function(){setCalm(!calm)});
+  var BE=[8.0,8.4,7.2,7.6,8.6,8.7,8.7,7.9,7.2,6.0,5.5,5.8,6.3,5.6,5.5,5.7,6.2];
+  var EU=[9.3,10.1,10.1,11.1,11.6,11.0,10.2,9.3,8.3,7.4,6.8,7.2,7.1,6.2,6.1,6.0,6.0];
+
+  /* Seuil */
+  var g=D.getElementById('guess'),go=D.getElementById('gOut'),vd=D.getElementById('verdict');
+  g.addEventListener('input',function(){go.textContent=fr(+g.value)+' %'});
+  D.getElementById('reveal').addEventListener('click',function(){
+    var v=+g.value,d=v-6.2,a=Math.abs(d);
+    vd.innerHTML=(a<0.5?'Bien vu : c’est 6,2 %.':'Vous avez dit '+fr(v)+' %. C’est 6,2 % : '+fr(a)+' point'+(a>=2?'s':'')+(d>0?' de moins.':' de plus.'))+(d>2?' On surestime souvent le chômage en pensant aux demandeurs d’emploi inscrits.':'')+'<span class="down" aria-hidden="true">↓</span>';
+    vd.hidden=false;go.textContent='6,2 %';g.value=6.2;
+    setTimeout(function(){D.getElementById('fiche').scrollIntoView({behavior:(calm||reduce)?'auto':'smooth'})},1800);
+  });
+
+  /* Titre lettre à lettre */
+  var t=D.getElementById('t1'),parts=t.querySelectorAll('span'),idx=0;
+  parts.forEach(function(p){var txt=p.textContent;p.textContent='';txt.split(/(\s+)/).forEach(function(wd){if(!wd)return;if(/^\s+$/.test(wd)){p.appendChild(D.createTextNode(' '));return}var g=D.createElement('span');g.className='wd';g.setAttribute('aria-hidden','true');wd.split('').forEach(function(c){var s=D.createElement('span');s.className='ch';s.textContent=c;s.style.transitionDelay=(idx++*0.035)+'s';g.appendChild(s)});p.appendChild(g)})});
+
+  /* Disques du héros */
+  (function(){
+    var s=D.getElementById('discs'),defs=el('defs',{}),pat=el('pattern',{id:'gd',width:7,height:7,patternUnits:'userSpaceOnUse'});
+    pat.appendChild(el('circle',{cx:2,cy:2,r:1.2,fill:'#6E6255'}));pat.appendChild(el('circle',{cx:5.5,cy:5,r:.8,fill:'#8A7B6B'}));defs.appendChild(pat);
+    var cp=el('clipPath',{id:'rd'});cp.appendChild(el('circle',{cx:350,cy:280,r:190}));defs.appendChild(cp);s.appendChild(defs);
+    s.appendChild(el('circle',{cx:210,cy:280,r:190,fill:'url(#gd)'}));
+    s.appendChild(el('circle',{cx:350,cy:280,r:190,fill:'#2A231C',stroke:'#4A3F34'}));
+    s.appendChild(el('text',{x:135,y:296,'text-anchor':'middle',style:'font-family:var(--serif);font-size:74px;fill:#EDE6DC'},'6,2 %'));
+    s.appendChild(el('text',{x:135,y:330,'text-anchor':'middle',style:'font-family:var(--sans);font-size:15px;fill:#A69C8F'},'1 actif sur 16'));
+    function X(i){return 300+i*(510-300)/16} function Y(v){return 330-(v-5)*36}
+    var gg=el('g',{'clip-path':'url(#rd)'});
+    gg.appendChild(el('path',{d:BE.map(function(v,i){return (i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)}).join(' '),'class':'drawline',fill:'none',stroke:'#C9773A','stroke-width':3,'stroke-linejoin':'round'}));
+    gg.appendChild(el('circle',{cx:X(16),cy:Y(6.2),r:6,fill:'#C9773A','class':'fadein'}));s.appendChild(gg);
+    var w=el('g',{'class':'fadein'});
+    w.appendChild(el('text',{x:552,y:172,'text-anchor':'end',style:'font-family:var(--main);font-weight:600;font-size:27px;fill:#EDE6DC'},'le plus haut depuis 2021'));
+    w.appendChild(el('path',{d:'M512 184 C 528 210, 520 240, '+(X(16)-4).toFixed(0)+' '+(Y(6.2)-12).toFixed(0),fill:'none',stroke:'#EDE6DC','stroke-width':2,'stroke-linecap':'round'}));
+    s.appendChild(w);
+  })();
+
+  /* Test OIT */
+  (function(){
+    var box=D.getElementById('quiz'),path=[];
+    var Q={q1:{t:'La semaine dernière, avez-vous travaillé contre rémunération, ne serait-ce qu’une heure ?',y:'E',n:'q2'},q2:{t:'Au cours des quatre dernières semaines, avez-vous cherché activement un emploi ?',y:'q3',n:'q4'},q3:{t:'Pourriez-vous commencer à travailler dans les deux semaines ?',y:'U',n:'P1'},q4:{t:'Souhaitez-vous travailler, et pourriez-vous commencer dans les deux semaines ?',y:'P2',n:'I'}};
+    var R={E:['e','En emploi','Une heure suffit. Même si vous cherchez un temps plein, vous n’êtes pas chômeur. Si vous voulez travailler davantage, vous êtes en temps partiel subi.'],
+      U:['u','Chômeur au sens de l’OIT','Vous remplissez les trois conditions, inscrit ou non, indemnisé ou non.'],
+      P1:['p','Main-d’œuvre potentielle','Vous cherchez, mais vous n’êtes pas disponible tout de suite. Pas chômeur, mais dans la sous-utilisation du travail.'],
+      P2:['p','Main-d’œuvre potentielle','Vous voudriez travailler mais ne cherchez pas, par exemple par découragement. Classé inactif, mais dans la sous-utilisation du travail.'],
+      I:['i','Inactif','Ni en emploi, ni en recherche, ni disponible : vous n’entrez pas dans le calcul du taux.']};
+    function ask(k){var q=Q[k];box.innerHTML='<span class="step">Question '+(path.length+1)+'</span><p class="qq">'+q.t+'</p><div class="opts"><button type="button" data-a="y">Oui</button><button type="button" data-a="n">Non</button></div>';
+      box.querySelectorAll('button').forEach(function(b){b.onclick=function(){path.push(b.dataset.a==='y'?'oui':'non');var nx=b.dataset.a==='y'?q.y:q.n;Q[nx]?ask(nx):show(nx)}});pop()}
+    function show(k){var r=R[k];box.innerHTML='<span class="step">Selon l’OIT, vous êtes</span><p class="res">'+r[1]+'</p><span class="tag '+r[0]+'">'+(r[0]==='u'?'compté dans le taux':r[0]==='p'?'compté dans la sous-utilisation':'hors du taux')+'</span><p style="margin-top:14px;font-size:16px">'+r[2]+'</p><p class="path">Vos réponses : '+path.join(' · ')+'</p><button type="button" class="again">Recommencer</button>';
+      box.querySelector('.again').onclick=function(){path=[];ask('q1')};pop()}
+    function pop(){box.classList.remove('pop');void box.offsetWidth;box.classList.add('pop')}
+    ask('q1');
+  })();
+
+  var MOB=innerWidth<700;
+  /* Sous-utilisation */
+  (function(){
+    var box=D.getElementById('slack'),parts=[['Chômeurs au sens de l’OIT',339,6.0,'#E2402B'],['Temps partiel subi',216,3.8,'#F09A3E'],['Disponibles, ne cherchent pas',112,2.0,'#9C98F0'],['Cherchent, pas disponibles',45,0.8,'#EFA3CB']];
+    if(MOB){
+      var W=400,y=10,h=60,sc=W/712,x=0,s=el('svg',{viewBox:'0 0 400 330',role:'img','aria-label':'712 000 personnes : 339 000 chômeurs, 216 000 en temps partiel subi, 112 000 disponibles sans chercher, 45 000 cherchant sans être disponibles'});
+      parts.forEach(function(p,i){var w=p[1]*sc;s.appendChild(el('rect',{x:x+1.5,y:y,width:w-1.5,height:h,rx:i===0?12:0,fill:p[3],stroke:'#1A1A1A','stroke-width':2.5,'class':'s',style:'transition-delay:'+(i*0.18)+'s'}));x+=w;
+        var ly=150+i*46;s.appendChild(el('rect',{x:2,y:ly-16,width:18,height:18,rx:i===0?5:0,fill:p[3],stroke:'#1A1A1A','stroke-width':2}));
+        s.appendChild(el('text',{x:32,y:ly,style:'font-family:var(--sans);font-weight:700;font-size:21px;fill:#222'},fr(p[2])+' %'));
+        s.appendChild(el('text',{x:112,y:ly-2,style:'font-family:var(--sans);font-size:14px;fill:#4A4741'},p[0]));
+        s.appendChild(el('text',{x:112,y:ly+15,style:'font-family:var(--sans);font-size:12.5px;fill:#6A665F'},p[1]+' 000 personnes'))});
+      s.appendChild(el('text',{x:6,y:y+h+42,style:'font-family:var(--main);font-weight:600;font-size:23px;fill:#E2402B'},'↑ le chômage, c’est seulement ça'));
+      box.appendChild(s);return}
+    var W=1000,Hh=300,L=0,R=1000,y=110,h=80,sc=(R-L)/712,x=L;
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'712 000 personnes : 339 000 chômeurs, 216 000 en temps partiel subi, 112 000 disponibles sans chercher, 45 000 cherchant sans être disponibles'});
+    parts.forEach(function(p,i){
+      var w=p[1]*sc,cx=x+w/2,up=i%2===0;
+      s.appendChild(el('rect',{x:x,y:y,width:w,height:h,rx:i===0?16:0,fill:p[3],stroke:'#1A1A1A','stroke-width':2.5,'class':'s',style:'transition-delay:'+(i*0.18)+'s'}));
+      var tx=i===3?R:cx,anc=i===3?'end':'middle',ty=up?y-48:(i===3?y+h+92:y+h+40);
+      s.appendChild(el('line',{x1:cx,x2:cx,y1:up?y:y+h,y2:up?y-24:(i===3?y+h+66:y+h+14),stroke:'#222','stroke-width':1}));
+      s.appendChild(el('text',{x:tx,y:ty,'text-anchor':anc,style:'font-family:var(--sans);font-weight:700;font-size:30px;fill:#222'},fr(p[2])+' %'));
+      s.appendChild(el('text',{x:tx,y:ty+(up?-34:24),'text-anchor':anc,style:'font-family:var(--sans);font-size:15px;fill:#4A4741'},p[0]+' · '+p[1]+' 000'));
+      x+=w;
+    });
+    var note=el('g',{});note.appendChild(el('text',{x:24,y:y+h+46,style:'font-family:var(--main);font-weight:600;font-size:28px;fill:#E2402B'},'↑ le chômage, c’est seulement ça'));
+    s.appendChild(note);
+    box.appendChild(s);
+  })();
+
+  /* Série */
+  (function(){
+    var box=D.getElementById('series'),txt=D.getElementById('evText');
+    var EV=[[2013,'Crise des dettes dans la zone euro : 11,6 % de chômage dans l’Union. La Belgique, à 8,6 %, reste nettement en dessous.'],
+      [2017,'Nouvelle enquête : un panel interrogé quatre fois en quinze mois et un nouveau calage. La baisse de 2016 à 2017 mêle réalité et changement d’instrument.'],
+      [2020,'Jusqu’à 1 415 628 salariés en chômage temporaire en avril 2020. Statbel a corrigé 2020 selon les règles de 2021, mais ceux qui ne cherchaient pas d’emploi sont inactifs : le taux seul ne montre pas le choc.'],
+      [2021,'Règlement européen 2019/1700 : nouveau questionnaire, les recherches passives ne comptent plus, une absence de plus de trois mois ne vaut plus emploi.'],
+      [2025,'6,2 % en Belgique, 6,0 % dans l’Union : le plus haut niveau belge depuis 2021 (6,3 %).']];
+    var W=MOB?420:1000,Hh=MOB?340:440,L=MOB?36:48,R=MOB?408:960,T=30,B=MOB?296:390,mx=12,fs=MOB?12:13;
+    function X(y){return L+(y-2009)/16*(R-L)} function Y(v){return B-v/mx*(B-T)}
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Taux de chômage 2009-2025, Belgique et Union européenne, ruptures de série en 2011, 2017 et 2021'});
+    [0,4,8,12].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v?'#3B332B':'#A69C8F'}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:'font-family:var(--sans);font-size:'+fs+'px;fill:#A69C8F'},v+' %'))});
+    [2009,2013,2017,2021,2025].forEach(function(y){s.appendChild(el('text',{x:X(y),y:Hh-14,'text-anchor':MOB&&y===2025?'end':MOB&&y===2009?'start':'middle',style:'font-family:var(--sans);font-size:'+fs+'px;fill:#A69C8F'},y))});
+    [2010.5,2016.5,2020.5].forEach(function(b){s.appendChild(el('text',{x:X(b),y:T-6,'text-anchor':'middle',style:'font-size:20px;fill:#E2402B'},'×'));s.appendChild(el('line',{x1:X(b),x2:X(b),y1:T,y2:B,stroke:'#E2402B','stroke-dasharray':'2 6'}))});
+    function d(a){return a.map(function(v,i){return (i?'L':'M')+X(2009+i).toFixed(1)+' '+Y(v).toFixed(1)}).join(' ')}
+    var gp=el('g',{});
+    gp.appendChild(el('path',{d:d(EU),'class':'fadein',fill:'none',stroke:'#A69C8F','stroke-width':2,'stroke-dasharray':'6 6'}));
+    gp.appendChild(el('path',{d:d(BE),'class':'drawline',fill:'none',stroke:'#C9773A','stroke-width':4,'stroke-linejoin':'round'}));
+    s.appendChild(gp);
+    var lab=el('g',{'class':'fadein'});
+    lab.appendChild(el('text',{x:X(2013.3),y:Y(11.6)-14,style:'font-family:var(--serif);font-size:'+(MOB?16:22)+'px;fill:#A69C8F'},'Union européenne'));
+    lab.appendChild(el('text',{x:X(2011.2),y:Y(7.2)+36,style:'font-family:var(--serif);font-size:'+(MOB?16:22)+'px;fill:#C9773A'},'Belgique'));
+    lab.appendChild(el('text',{x:X(2017.1),y:Y(9.4),style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?20:26)+'px;fill:#EDE6DC'},'rupture ici !'));
+    lab.appendChild(el('path',{d:'M'+X(2017.1)+' '+(Y(9.4)-8)+' C '+(X(2016.6))+' '+(Y(9.8))+', '+X(2016.5)+' '+Y(10.6)+', '+(X(2016.5)+2)+' '+(Y(11.3)),fill:'none',stroke:'#EDE6DC','stroke-width':2,'stroke-linecap':'round'}));
+    s.appendChild(lab);
+    var cur=el('line',{y1:T,y2:B,stroke:'#EDE6DC','stroke-width':1,opacity:.6}),d1=el('circle',{r:7,fill:'#C9773A',stroke:'#1E1914','stroke-width':3}),d2=el('circle',{r:6,fill:'#A69C8F',stroke:'#1E1914','stroke-width':3}),tl=el('text',{style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:15)+'px;fill:#EDE6DC'});
+    [cur,d1,d2,tl].forEach(function(n){s.appendChild(n)});
+    function focus(y){var i=y-2009,x=X(y);cur.setAttribute('x1',x);cur.setAttribute('x2',x);d1.setAttribute('cx',x);d1.setAttribute('cy',Y(BE[i]));d2.setAttribute('cx',x);d2.setAttribute('cy',Y(EU[i]));var r=x>R-(MOB?110:230);tl.setAttribute('x',r?x-12:x+12);tl.setAttribute('text-anchor',r?'end':'start');tl.setAttribute('y',B-14);tl.textContent=y+' · Belgique '+fr(BE[i])+' % · UE '+fr(EU[i])+' %'}
+    s.addEventListener('pointermove',function(e){var r=s.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W;focus(Math.max(2009,Math.min(2025,Math.round(2009+(px-L)/(R-L)*16))))});
+    box.appendChild(s);
+    var bs=D.querySelectorAll('.evs button');
+    function pick(k){focus(EV[k][0]);txt.textContent=EV[k][1];bs.forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.e===k?'true':'false')})}
+    bs.forEach(function(b){b.addEventListener('click',function(){pick(+b.dataset.e)})});pick(4);
+  })();
+
+  /* Europe */
+  (function(){
+    var raw=[['Belgique',6.2],['Bulgarie',3.5],['Tchéquie',2.8],['Danemark',6.4],['Allemagne',3.8],['Estonie',7.5],['Irlande',4.7],['Grèce',8.9],['Espagne*',10.5],['France*',7.7],['Croatie',4.9],['Italie',6.1],['Chypre',4.4],['Lettonie',6.9],['Lituanie',6.9],['Luxembourg',6.5],['Hongrie',4.4],['Malte',3.1],['Pays-Bas',3.9],['Autriche',5.7],['Pologne',3.1],['Portugal',6.0],['Roumanie',6.1],['Slovénie',3.9],['Slovaquie',5.4],['Finlande',9.7],['Suède',8.8]];
+    var dd=raw.slice().sort(function(a,b){return b[1]-a[1]}),box=D.getElementById('europe');
+    var W=MOB?400:1000,row=MOB?24:26,T=10,L=MOB?94:150,R=MOB?362:900,mx=11,Hh=T+dd.length*row+34;
+    function X(v){return L+v/mx*(R-L)}
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Taux de chômage 2025 des 27 pays de l’Union, Belgique 6,2 %, moyenne 6,0 %'});
+    dd.forEach(function(c,i){
+      var y=T+i*row,be=c[0]==='Belgique';
+      s.appendChild(el('rect',{x:L,y:y+4,width:X(c[1])-L,height:row-8,rx:(row-8)/2,fill:be?'#E2402B':'#FFFFFF',stroke:'#1A1A1A','stroke-width':2,'class':'bar',style:'transition-delay:'+(i*0.03)+'s'}));
+      s.appendChild(el('text',{x:L-12,y:y+row/2+5,'text-anchor':'end',style:'font-family:var(--sans);font-weight:'+(be?700:500)+';font-size:'+(MOB?13:15)+'px;fill:#1A1A1A'},c[0]));
+      s.appendChild(el('text',{x:X(c[1])+10,y:y+row/2+5,style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:#1A1A1A'},fr(c[1])));
+    });
+    var xe=X(6.0);s.appendChild(el('line',{x1:xe,x2:xe,y1:T-4,y2:Hh-28,stroke:'#1A1A1A','stroke-width':1.5,'stroke-dasharray':'4 4'}));
+    s.appendChild(el('text',{x:xe,y:Hh-8,'text-anchor':'middle',style:'font-family:var(--sans);font-weight:700;font-size:13px;fill:#1A1A1A'},'moyenne UE 6,0 %'));
+    var bi=dd.findIndex(function(c){return c[0]==='Belgique'}),by=T+bi*row+row/2;
+    s.appendChild(el('text',{x:X(6.2)+(MOB?26:70),y:by+7,style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?19:28)+'px;fill:#1A1A1A'},'← nous voilà'));
+    box.appendChild(s);
+  })();
+
+  /* Lectures */
+  (function(){
+    var Lx=[['Sociologie historique','Salais, Baverez, Reynaud ; Topalov','L’invention du chômage, 1986 · Naissance du chômeur, 1994','Le chômage est une catégorie construite entre la fin du XIXe siècle et 1914, par la statistique, le droit et les politiques sociales.','Le chiffre dépend des institutions qui le produisent : l’écart entre enquête et registres l’illustre.'],
+      ['Sociologie de l’expérience','Jahoda, Lazarsfeld, Zeisel','Les chômeurs de Marienthal, 1933','Le chômage prolongé produit la résignation plus que la révolte, et défait le rythme du temps.','Le taux ne mesure ni la durée ni les effets sociaux ; les découragés sortent de la statistique.'],
+      ['Économie keynésienne','John Maynard Keynes','Théorie générale, 1936','Le chômage peut être involontaire et durable, faute d’une demande suffisante.','Une hausse signale d’abord une demande insuffisante, qui appelle une politique macroéconomique.'],
+      ['Économie monétariste','Milton Friedman','« The Role of Monetary Policy », 1968','Il existe un taux « naturel », fixé par les structures, que la politique monétaire ne peut réduire durablement.','Une partie du chômage est structurelle : elle relève des institutions et des incitations.'],
+      ['Hystérèse','Olivier Blanchard, Lawrence Summers','« Hysteresis and the European Unemployment Problem », 1986','Un choc temporaire peut laisser un chômage durablement plus élevé, notamment en Europe.','Il faut regarder le chômage de longue durée, pas seulement le niveau.'],
+      ['Critique marxiste','Karl Marx','Le Capital, livre I, 1867','L’« armée industrielle de réserve » est fonctionnelle au capitalisme : elle pèse sur les salaires.','Le niveau du chômage renvoie au rapport de force entre travail et capital.'],
+      ['Réformisme social','William Beveridge','Full Employment in a Free Society, 1944','Le plein emploi est une responsabilité de l’État, compatible avec une société libre.','Le taux devient un objectif de politique publique, pas seulement un constat.']];
+    for(var i=Lx.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),tt=Lx[i];Lx[i]=Lx[j];Lx[j]=tt}
+    D.getElementById('reads').innerHTML=Lx.map(function(r){return '<article class="read" data-r><span class="trad">'+r[0]+'</span><h3>'+r[1]+'</h3><p class="w">'+r[2]+'</p><p class="th">'+r[3]+'</p><p class="so"><b>Pour lire le chiffre</b>'+r[4]+'</p></article>'}).join('');
+  })();
+
+  /* Citer */
+  (function(){
+    var T={be:'En 2025, 6,2 % des actifs étaient au chômage en Belgique au sens de l’OIT, soit environ 339 000 personnes (Statbel ; Eurostat). Ce taux vient d’une enquête et ne correspond pas au nombre de demandeurs d’emploi inscrits.',
+      eu:'En 2025, le taux de chômage était de 6,2 % en Belgique contre 6,0 % dans l’Union européenne (Eurostat, 15-74 ans), entre la Tchéquie (2,8 %) et l’Espagne (10,5 %).',
+      bxl:'Selon Statbel, le taux de chômage était de 12,7 % à Bruxelles en 2025, contre 4,3 % en Flandre et 7,9 % en Wallonie. Le taux d’Actiris (16,0 % en août 2026) compte les inscrits : les deux mesures ne sont pas comparables.',
+      slack:'En 2025, la sous-utilisation du travail touchait 712 000 personnes en Belgique, soit 12,6 % de la main-d’œuvre élargie : 339 000 chômeurs, 216 000 temps partiels subis et 157 000 personnes qui voudraient travailler (Eurostat).',
+      reform:'Au 31 mars 2026, 55 246 personnes avaient perdu leurs allocations de chômage du fait de leur limitation dans le temps (ONEM, chiffres provisoires, qui ne constituent pas une évaluation de la réforme).'};
+    var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');
+    function set(k){q.textContent=T[k];c.textContent='';cs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}
+    cs.forEach(function(b){b.onclick=function(){set(b.dataset.k)}});set('be');
+    D.getElementById('copy').onclick=function(){function fb(){var r=D.createRange();r.selectNodeContents(q);var s=getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Texte sélectionné : copiez-le.'}try{navigator.clipboard.writeText(q.textContent).then(function(){c.textContent='Copié.'},fb)}catch(e){fb()}};
+  })();
+
+  /* Révélations et tracés au défilement */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.2});
+  D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
+  ['t1','slack','series','europe'].forEach(function(id){io.observe(D.getElementById(id))});
+  io.observe(D.querySelector('.hero'));
+
+  /* Curseur et boutons magnétiques */
+  (function(){
+    var c=D.getElementById('cursor'),x=0,y=0,cx=0,cy=0;
+    D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,svg[role=img]')))});
+    (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
+    D.querySelectorAll('[data-magnet]').forEach(function(b){b.addEventListener('pointermove',function(e){if(calm||reduce)return;var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.25)+'px,'+((e.clientY-r.top-r.height/2)*.35)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});
+  })();
+})();
+</script>

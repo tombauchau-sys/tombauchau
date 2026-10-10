@@ -1,0 +1,307 @@
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 02 · Finances publiques · avant de lire</span>
+    <h1 class="q" id="q0">Selon vous, combien les pouvoirs publics belges ont-ils payé d’intérêts sur leur dette en 2025 ?</h1>
+    <output class="out" id="gOut" for="guess">5 Md€</output>
+    <input class="range" type="range" id="guess" min="0" max="40" step="0.5" value="5" aria-label="Votre estimation, en milliards d’euros">
+    <div class="scale" aria-hidden="true"><span>0</span><span>20 milliards</span><span>40 milliards</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 02 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Finances publiques"><span class="t1">Finances </span><span class="t2">publiques</span></h2></div>
+    <p class="lede hq" data-r>Une dette de 108 % du PIB, est-ce beaucoup ? Tout dépend de ce qu’elle finance, de ce qu’elle coûte et de la capacité à la porter. Trois notions, cinq fiches, quatre questions de recherche et neuf lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>107,9 %</b><span>de dette publique, contre 81,7 % dans l’Union</span><span class="src">Eurostat gov_10dd_edpt1, 2025</span></div>
+      <div><b>−5,2 %</b><span>de déficit, contre −3,1 % dans l’Union</span><span class="src">Eurostat gov_10dd_edpt1, 2025</span></div>
+      <div><b>14,3 Md€</b><span>d’intérêts payés, +66 % depuis 2021</span><span class="src">Eurostat gov_10a_main, 2025, provisoire</span></div>
+      <div><b>AA- · A1 · A+</b><span>notes de S&amp;P, Moody’s et Fitch</span><span class="src">communiqués des agences, 2026</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 10 octobre 2026 · prochaine mise à jour : notification d’avril 2027</p>
+  </div>
+</section>
+
+<!-- 1b. Préambule -->
+<section class="band grain preamb" style="background:var(--cream)" aria-labelledby="tP">
+  <div class="wrap">
+    <span class="kick dark" data-r>Avant tout</span>
+    <h2 class="giant ink" id="tP" data-r>La dette n’est ni bonne <span>ni mauvaise en soi.</span></h2>
+    <p class="lede ink" data-r>Un État qui emprunte pour construire une école, un réseau ferré ou une centrale finance des services qui serviront pendant des décennies, et en étale le coût sur ceux qui en profiteront. Sans dette, une grande partie de l’investissement public serait impossible. Ce qui compte n’est donc pas d’avoir une dette, mais de répondre à trois questions.</p>
+    <ol class="three-q">
+      <li data-r style="--rot:-1.5deg"><span class="n">1</span><h3>À quoi sert-elle ?</h3><p>Financer un investissement qui rapportera (infrastructures, transition énergétique, recherche) n’a pas le même sens que financer les dépenses courantes de l’année. <a href="#f-invest">Fiche 05</a></p></li>
+      <li data-r style="--rot:1deg"><span class="n">2</span><h3>Combien coûte-t-elle ?</h3><p>Une dette bon marché, quand le taux d’intérêt est inférieur à la croissance, pèse peu. Quand les taux montent, chaque euro emprunté coûte plus cher. <a href="#f-interets">Fiche 04</a></p></li>
+      <li data-r style="--rot:-.5deg"><span class="n">3</span><h3>Peut-on la porter ?</h3><p>Une dette est soutenable si elle ne grimpe pas sans fin par rapport à la richesse produite, et si les prêteurs continuent d’avoir confiance. <a href="#recherche">Recherche</a></p></li>
+    </ol>
+    <p class="hand-note note" data-r>→ et un État n’est pas tout à fait un ménage (voir fiche 05)</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--mint)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Cinq fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-dette"><span class="n">01</span><h3>La dette</h3><p>Combien, depuis quand, et qui la porte ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-deficit"><span class="n">02</span><h3>Le déficit</h3><p>Qui dépense plus qu’il ne perçoit ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--orange)"><a href="#f-depenses"><span class="n">03</span><h3>Où va l’argent</h3><p>Les dépenses publiques, fonction par fonction.</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:2deg;--bg:var(--lilac)"><a href="#f-interets"><span class="n">04</span><h3>Intérêts et notes</h3><p>Ce que coûte la dette, et ce qu’en pensent les agences.</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1.5deg;--bg:var(--peach)"><a href="#f-invest"><span class="n">05</span><h3>Investir ou consommer ?</h3><p>Ce que la dette finance compte plus que son montant.</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Trois notions -->
+<section class="sec papier" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois notions <span>à ne pas confondre.</span></h2>
+    <p class="lede" data-r>Le déficit et la dette sont souvent mélangés dans le débat. L’un est un flux, l’autre un stock, et un troisième chiffre explique le lien entre les deux.</p>
+    <div class="count3">
+      <article data-r><span class="tag u">Flux</span><h3>Le déficit</h3><p class="who">ce qui manque sur une année</p><p>Les dépenses de l’année moins les recettes de l’année, pour l’ensemble des pouvoirs publics : État fédéral, Communautés, Régions, communes et sécurité sociale. En 2025, il atteint <b>5,2 % du PIB</b>.</p><p class="use">Comme un compte courant qui finit l’année dans le rouge.</p></article>
+      <article data-r><span class="tag e">Stock</span><h3>La dette</h3><p class="who">l’accumulation des déficits passés</p><p>Tout ce que les pouvoirs publics doivent encore rembourser, au sens du traité de Maastricht (dette brute consolidée). Fin 2025 : <b>692 milliards d’euros</b>, soit 107,9 % du PIB.</p><p class="use">Comme le solde restant d’un emprunt.</p></article>
+      <article data-r><span class="tag p">Hors intérêts</span><h3>Le solde primaire</h3><p class="who">le déficit sans les intérêts</p><p>Le déficit une fois retirés les intérêts de la dette. En 2025 : 5,2 % de déficit dont 2,2 % d’intérêts, soit un <b>déficit primaire de 3,0 % du PIB</b>. C’est la partie qui dépend des choix de l’année.</p><p class="use">Ce qu’on dépense de trop, avant même de payer la dette.</p></article>
+    </div>
+    <div class="snow" data-r>
+      <h3 class="sub">L’effet boule de neige, en une phrase</h3>
+      <p>La dette, rapportée au PIB, baisse quand l’économie grandit plus vite que le taux d’intérêt moyen payé sur la dette, et quand le solde primaire est positif. Elle monte dans le cas inverse.</p>
+      <pre class="formula" aria-label="Variation de la dette en pourcentage du PIB égale taux d’intérêt moins croissance, divisé par un plus croissance, fois la dette, moins le solde primaire">Δ dette ≈ (r − g) / (1 + g) × dette − solde primaire</pre>
+      <p class="srcl">r : taux d’intérêt moyen payé sur la dette · g : croissance du PIB en valeur (inflation comprise). Identité comptable standard ; il faut y ajouter des « ajustements » (achats d’actifs, prêts, écarts de calendrier) qui expliquent que le calcul ne tombe jamais exactement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3b. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · quarante-cinq ans de dette belge</span>
+    <h2 class="giant" id="tH" data-r>La Belgique a déjà <span>réduit sa dette de 50 points.</span></h2>
+    <p class="lede" data-r>Dans les années 1980, la Belgique a connu des déficits énormes (16 % du PIB en 1981) et des taux d’intérêt élevés : la dette a fait boule de neige jusqu’à près de 139 % du PIB en 1993. Elle est ensuite redescendue à 87 % en 2007, avant de remonter avec la crise bancaire et la pandémie.</p>
+    <div class="chart" id="histChart"></div>
+    <p class="srcl">Dette brute des administrations publiques, en % du PIB, 1980-2025. 1980-1994 : FMI, <a href="https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/BEL" target="_blank" rel="noopener">Perspectives de l’économie mondiale (DataMapper)</a> ; 1995-2025 : Eurostat, gov_10dd_edpt1. Les deux sources concordent en 1995 (131,3 % et 131,5 %). Déficit de 1981 : FMI, GGXCNL_NGDP. Consulté le 10 octobre 2026.</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1980-1993</span><h3>La boule de neige</h3><p>Déficits élevés et taux d’intérêt supérieurs à la croissance : les intérêts eux-mêmes creusent la dette. Un premier assainissement (1982-1987) ne suffit pas à l’arrêter.</p></li>
+      <li data-r><span class="yr">1993-2007</span><h3>L’assainissement</h3><p>Dans la perspective de l’euro et des critères de Maastricht, la Belgique réduit son déficit, d’abord par des recettes plus élevées ; la baisse des taux allège ensuite les intérêts. La dette perd plus de 50 points de PIB en quatorze ans.</p></li>
+      <li data-r><span class="yr">2008-2011</span><h3>Le sauvetage des banques</h3><p>Les interventions publiques en faveur de plusieurs institutions financières font remonter la dette, puis l’achat de Dexia Banque Belgique par l’État (4 milliards d’euros) en 2011.</p></li>
+      <li data-r><span class="yr">2020-2025</span><h3>La pandémie, puis les taux</h3><p>La dette bondit de 14 points en 2020, redescend avec la reprise et la hausse des prix, qui gonfle le PIB, puis remonte depuis 2023 avec des déficits durables et le retour des taux.</p></li>
+    </ol>
+    <p class="srcl">Périodes d’assainissement et effets des sauvetages bancaires : Banque nationale de Belgique, <a href="https://nbb.be/doc/ts/enterprise/press/2015/cp150605frc.pdf" target="_blank" rel="noopener">Revue économique, juin 2015</a> et <a href="https://nbb.be/doc/ts/Publications/NBBreport/2011/FR/T1/rapport2011_TII_H6.pdf" target="_blank" rel="noopener">Rapport 2011</a>. À l’époque, la BNB situait le pic de 1993 à 133,9 % : le PIB a été révisé depuis, ce qui change le ratio.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« La dette belge n’a jamais baissé. »</h4><p><b>Faux.</b> De 1993 à 2007, elle est passée de 138,9 % à 87,3 % du PIB (FMI), grâce à des excédents hors intérêts et à la baisse des taux.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« On n’a jamais payé autant d’intérêts. »</h4><p><b>Faux.</b> En 1995, les intérêts coûtaient 19,8 milliards d’euros, soit 9,0 % du PIB. En 2025 : 14,3 milliards, soit 2,2 % du PIB. La charge remonte depuis 2022, mais reste quatre fois plus légère qu’il y a trente ans, rapportée à la richesse produite.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Toute dette est un fardeau pour nos enfants. »</h4><p><b>À nuancer.</b> Les générations futures héritent de la dette, mais aussi des écoles, routes et réseaux qu’elle a financés. Tout dépend de ce qu’elle paie : <a href="#f-invest">voir la fiche 05</a>.</p></article>
+    </div>
+    <p class="srcl">Intérêts : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_main</a> (D41PAY), en euros courants et en % du PIB.</p>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : la dette -->
+<section class="sec brun grain" id="f-dette" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>107,9 % <span>du PIB.</span></h2>
+    <p class="lede" data-r>La dette belge est revenue au niveau du début des années 2000, après une longue baisse jusqu’en 2007 puis deux chocs : la crise financière de 2008 et la pandémie de 2020. Elle remonte depuis 2023, plus vite que la moyenne de l’Union.</p>
+    <div class="chart" id="debtChart"></div>
+    <p class="srcl">Dette brute consolidée des administrations publiques, en % du PIB, 2000-2025. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a>, notification d’avril 2026 (mise à jour du 22 avril 2026), consulté le 10 octobre 2026.</p>
+    <h3 class="sub" data-r>Qui porte la dette ?</h3>
+    <p class="lede sm" data-r>L’essentiel est dû par l’État fédéral. Mais la dette des Communautés et des Régions a presque doublé en dix ans, de 12,6 % à 20,4 % du PIB.</p>
+    <div class="chart" id="subChart"></div>
+    <p class="srcl">Dette de chaque niveau de pouvoir, en % du PIB, 2015 et 2025. Les quatre montants font 111,7 %, plus que le total de 107,9 % : quand un niveau de pouvoir prête à un autre, la dette n’est comptée qu’une fois dans le total (on dit qu’elle est « consolidée »). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a>, secteurs S1311 à S1314.</p>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : le déficit -->
+<section class="sec papier" id="f-deficit" aria-labelledby="tD">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tD" data-r>−5,2 % <span>en 2025.</span></h2>
+    <p class="lede" data-r>La Belgique a été en équilibre autour de 2000 et en 2006-2007. Depuis 2020, son déficit reste nettement plus élevé que la moyenne européenne. En juillet 2024, le Conseil de l’Union a constaté un « déficit excessif », ce qui oblige à une trajectoire de correction.</p>
+    <div class="chart" id="defChart"></div>
+    <p class="srcl">Solde des administrations publiques, en % du PIB. Ligne rouge : valeur de référence européenne de −3 %. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a> ; décision du Conseil : <a href="https://data.consilium.europa.eu/doc/document/ST-12164-2024-INIT/fr/pdf" target="_blank" rel="noopener">document 12164/24</a>.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Qui fait le déficit en 2025 ?</b><span>solde de chaque niveau de pouvoir, en % du PIB</span></figcaption><div class="chart sm" id="subDef"></div></figure>
+      <figure data-r><figcaption><b>Recettes et dépenses, 2025</b><span>en % du PIB, Belgique et Union</span></figcaption><div class="chart sm" id="revExp"></div></figure>
+    </div>
+    <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a> (soldes par sous-secteur), <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_main</a> (recettes et dépenses, mise à jour du 21 juillet 2026, 2025 provisoire).</p>
+    <div class="trap" data-r><span class="note">piège !</span><p>Le déficit de 2023 était de 4,4 % du PIB quand l’Union a ouvert la procédure en 2024. Il vaut aujourd’hui 4,1 % : les comptes publics sont révisés pendant plusieurs années. Un chiffre récent doit toujours être daté.</p></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : où va l'argent -->
+<section class="band grain" id="f-depenses" style="background:var(--orange);padding-block:96px" aria-labelledby="tF">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tF" data-r>54,1 % <span>du PIB dépensés.</span></h2>
+    <p class="lede ink" data-r>En 2024, les pouvoirs publics belges ont dépensé 5 points de PIB de plus que la moyenne de l’Union. La protection sociale (pensions, chômage, allocations) en représente plus du tiers. Les plus gros écarts avec l’Europe concernent l’enseignement, les affaires économiques et les services généraux.</p>
+    <div class="chart" id="cofChart"></div>
+    <p class="srcl ink">Dépenses des administrations publiques par fonction (classification COFOG), en % du PIB, 2024, provisoire. Les intérêts de la dette sont comptés dans les « services généraux ». Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_exp</a>, consulté le 10 octobre 2026. La somme des dix fonctions belges (54,0 %) diffère du total (54,1 %) par les arrondis.</p>
+  </div>
+</section>
+
+<!-- 7. Fiche 04 : intérêts et notes -->
+<section class="sec brun grain" id="f-interets" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 04 · fait</span>
+    <h2 class="giant" id="tN" data-r>14,3 milliards <span>d’intérêts.</span></h2>
+    <p class="lede" data-r>Avec la baisse des taux, la charge d’intérêts avait reculé jusqu’en 2021 (8,6 milliards). La remontée des taux depuis 2022 la fait repartir : 13,5 milliards en 2024, soit plus que les dépenses de défense (environ 8 milliards la même année).</p>
+    <div class="chart" id="intChart"></div>
+    <p class="srcl">Intérêts payés par les administrations publiques, en millions d’euros, 2015-2025 (2024 et 2025 provisoires). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_main</a> (D41PAY), mise à jour du 21 juillet 2026. Défense : 1,3 % du PIB en 2024 (<a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_exp</a>, GF02).</p>
+    <h3 class="sub" data-r>Les notes des agences</h3>
+    <div class="agrid3">
+      <div class="ag" data-r><span class="who">S&amp;P Global</span><b>AA-</b><span>perspective stable · avril 2026</span></div>
+      <div class="ag" data-r><span class="who">Moody’s</span><b>A1</b><span>perspective stable · avril 2026</span></div>
+      <div class="ag" data-r><span class="who">Fitch</span><b>A+</b><span>perspective stable · mai 2026</span></div>
+    </div>
+    <p class="srcl">Notes de la dette publique à long terme, vérifiées le 10 octobre 2026 dans les communiqués des agences. Une note est une <b>opinion</b> d’une entreprise privée sur le risque de défaut, pas un fait mesuré : les trois agences ne donnent d’ailleurs pas la même note. Détail et méthode : fiche pays sur la <a href="__HOME__#pays-BE">carte</a>.</p>
+  </div>
+</section>
+
+<!-- 7b. Fiche 05 : investir ou consommer -->
+<section class="sec papier" id="f-invest" aria-labelledby="tV">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 05 · fait et débat</span>
+    <h2 class="giant" id="tV" data-r>Investir <span>ou consommer ?</span></h2>
+    <p class="lede" data-r>En 2025, les pouvoirs publics belges ont investi 3,1 % du PIB (bâtiments, routes, équipements, logiciels…), contre 3,9 % en moyenne dans l’Union. La Belgique est sous la moyenne européenne depuis au moins 2000 : l’écart, de 1,7 point en 2008, est de 0,8 point en 2025.</p>
+    <div class="chart" id="invChart"></div>
+    <p class="srcl">Investissement public (formation brute de capital fixe des administrations publiques), en % du PIB, 2000-2025 (2024-2025 provisoires ; rupture de série en 2009). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_main</a> (P51G), mise à jour du 21 juillet 2026, consulté le 10 octobre 2026.</p>
+    <div class="duo two-cols">
+      <div data-r><h3 class="sub nm">La « règle d’or »</h3><p class="body">N’emprunter que pour investir, jamais pour les dépenses courantes. L’idée : une génération qui profite d’une infrastructure en partage le coût avec les suivantes. Olivier Blanchard et Francesco Giavazzi ont proposé en 2004 de sortir l’investissement net du calcul du déficit européen ; le Bureau fédéral du Plan a repris la discussion pour la Belgique en 2016.</p></div>
+      <div data-r><h3 class="sub nm">Ses limites</h3><p class="body">Elle n’a pas été retenue lors de la réforme du pacte de stabilité de 2005, et des économistes la jugent séduisante mais inadaptée (Balassone et Franco, 2000). La frontière est floue : un salaire d’enseignant est une dépense courante dans les comptes, mais il construit le capital humain de demain. Et un investissement mal choisi peut ne rien rapporter.</p></div>
+    </div>
+    <div class="trap" data-r><span class="note">piège !</span><p>« L’État doit gérer son budget comme un ménage. » Un ménage emprunte bien pour acheter une maison, mais un État ne meurt pas, lève l’impôt et refinance sa dette en continu. La comparaison aide à comprendre l’idée d’investir, pas à fixer un niveau de dette.</p></div>
+  </div>
+</section>
+
+<!-- 8. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Quatre questions, <span>quatre niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="__HOME__#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- 9. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>Faut-il réduire la dette, <span>et qui doit payer ?</span></h2>
+    <p class="lede" data-r>Les chiffres disent où en est la dette, pas ce qu’il faut en faire. Neuf traditions y répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 10. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>du budget ?</span></h2>
+    <p class="lede ink" data-r>Il n’y a pas un budget belge mais plusieurs, et l’Union européenne fixe le cadre commun. Savoir qui décide évite d’attribuer à un gouvernement le déficit d’un autre.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>État fédéral</h3><ul><li>Budget fédéral et <b>sécurité sociale</b> (pensions, chômage, soins de santé)</li><li>Principaux impôts : TVA, impôt des sociétés, l’essentiel de l’impôt des personnes physiques</li><li>Porte 86,9 % du PIB de dette</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Communautés et Régions</h3><ul><li>Enseignement, emploi, économie, logement, mobilité…</li><li>Leurs propres budgets et leur propre dette (20,4 % du PIB)</li><li>Leur déficit pèse 1,4 % du PIB en 2025</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Communes et provinces</h3><ul><li>Leurs budgets, sous tutelle régionale</li><li>Dette de 4,3 % du PIB</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Union européenne</h3><ul><li>Valeurs de référence : 3 % de déficit, 60 % de dette</li><li>Cadre réformé en 2024 : plans nationaux à moyen terme et trajectoire de dépenses sur 4 à 7 ans</li><li>Procédure pour déficit excessif ouverte en 2024 pour la Belgique</li></ul></div>
+    </div>
+    <p class="srcl ink">Cadre européen : Parlement européen, <a href="https://oeil.europarl.europa.eu/oeil/fr/document-summary?id=1742328" target="_blank" rel="noopener">fiche de procédure 2023/0138(COD)</a> ; décision du Conseil, <a href="https://data.consilium.europa.eu/doc/document/ST-12164-2024-INIT/fr/pdf" target="_blank" rel="noopener">12164/24</a>. Dettes et soldes par niveau : Eurostat gov_10dd_edpt1.</p>
+  </div>
+</section>
+
+<!-- 11. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Sept pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Confondre dette brute et dette nette</h3><p>Le chiffre européen est une dette <i>brute</i> : il ne déduit pas ce que possèdent les pouvoirs publics (bâtiments, participations, créances). Il permet la comparaison, pas un bilan complet.</p></li>
+      <li data-r><span class="g">2</span><h3>Oublier que le PIB bouge aussi</h3><p>En 2020, la dette a bondi de 97,7 % à 111,4 % du PIB, en partie parce que le PIB a reculé. Un ratio peut monter sans nouvel emprunt, et baisser grâce à l’inflation.</p></li>
+      <li data-r><span class="g">3</span><h3>Additionner les dettes des niveaux de pouvoir</h3><p>Fédéral, entités fédérées, communes et sécurité sociale font 111,7 %, contre 107,9 % au total : les prêts entre administrations ne sont comptés qu’une fois.</p></li>
+      <li data-r><span class="g">4</span><h3>Prendre un chiffre récent pour définitif</h3><p>Les comptes publics sont révisés : le déficit 2023 est passé de 4,4 % à 4,1 % du PIB entre 2024 et 2026.</p></li>
+      <li data-r><span class="g">5</span><h3>Diviser la dette par habitant</h3><p>692 milliards pour 11,9 millions d’habitants font environ 58 000 € chacun. Mais personne ne doit cette somme : la dette est remboursée par l’impôt, au fil du temps, et elle est détenue par des créanciers belges comme étrangers.</p></li>
+      <li data-r><span class="g">6</span><h3>Comparer les dépenses sans regarder qui paie quoi</h3><p>Un pays peut dépenser moins en santé parce que les ménages paient davantage via des assurances privées. Un chiffre public plus bas ne veut pas dire un coût total plus bas.</p></li>
+      <li data-r><span class="g">7</span><h3>Lire une note d’agence comme un fait</h3><p>C’est l’opinion d’une entreprise privée, dont le modèle économique repose en grande partie sur la rémunération par les émetteurs de dette. Les trois agences ne s’accordent d’ailleurs pas sur la Belgique.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 12. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="dette" aria-pressed="true">Dette</button>
+        <button type="button" data-k="def" aria-pressed="false">Déficit</button>
+        <button type="button" data-k="int" aria-pressed="false">Intérêts</button>
+        <button type="button" data-k="ent" aria-pressed="false">Entités fédérées</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · toutes consultées le 10 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a> (dette et solde, notification d’avril 2026), <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_main</a> (recettes, dépenses, intérêts), <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_exp</a> (dépenses par fonction).</li>
+        <li>S&amp;P Global, Moody’s et Fitch : communiqués sur la Belgique (avril et mai 2026), vérifiés le 10 octobre 2026.</li>
+      </ol>
+      <h3 class="mt">Niveau 3 · institutions publiques</h3><ol>
+        <li>Conseil de l’Union européenne (2024). <a href="https://data.consilium.europa.eu/doc/document/ST-12164-2024-INIT/fr/pdf" target="_blank" rel="noopener">Décision sur l’existence d’un déficit excessif en Belgique</a>, document 12164/24.</li>
+        <li>Parlement européen, Observatoire législatif. <a href="https://oeil.europarl.europa.eu/oeil/fr/document-summary?id=1742328" target="_blank" rel="noopener">Coordination efficace des politiques économiques et surveillance budgétaire multilatérale</a>, 2023/0138(COD).</li>
+        <li>Comité d’étude sur le vieillissement (2026). Rapport annuel de juillet 2026, communiqué du Bureau fédéral du Plan du 9 juillet 2026, relayé par <a href="https://blog.forumforthefuture.be/fr/article/vieillissement-en-belgique-a-lhorizon-2070-les-depenses-sociales-augmentent-jusquen-2050-puis-se-stabilisent-.../31873" target="_blank" rel="noopener">Forum for the Future</a> (le site du Bureau du Plan n’a pas pu être consulté directement).</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Alesina, A., Favero, C. et Giavazzi, F. (2019). <i>Austerity: When It Works and When It Doesn’t</i>. Princeton University Press.</li>
+        <li>Blanchard, O. (2019). « <a href="https://ideas.repec.org/a/aea/aecrev/v109y2019i4p1197-1229.html" target="_blank" rel="noopener">Public Debt and Low Interest Rates</a> ». <i>American Economic Review</i>, 109(4), 1197-1229.</li>
+        <li>Blanchard, O. et Leigh, D. (2013). « <a href="https://nber.org/papers/w18779" target="_blank" rel="noopener">Growth Forecast Errors and Fiscal Multipliers</a> ». <i>American Economic Review</i>, 103(3), 117-120.</li>
+        <li>Eberhardt, M. et Presbitero, A. (2013). « <a href="https://www.gov.uk/research-for-development-outputs/this-time-they-are-different-heterogeneity-and-nonlinearity-in-the-relationship-between-debt-and-growth" target="_blank" rel="noopener">This Time They Are Different: Heterogeneity and Nonlinearity in the Relationship Between Debt and Growth</a> ». IMF Working Paper 13/248.</li>
+        <li>Herndon, T., Ash, M. et Pollin, R. (2014). « <a href="https://peri.umass.edu/publication/does-high-public-debt-consistently-stifle-economic-growth-a-critique-of-reinhart-and-rogoff/" target="_blank" rel="noopener">Does High Public Debt Consistently Stifle Economic Growth? A Critique of Reinhart and Rogoff</a> ». <i>Cambridge Journal of Economics</i>, 38(2).</li>
+        <li>Reinhart, C. et Rogoff, K. (2010). « <a href="https://doi.org/10.1257/aer.100.2.573" target="_blank" rel="noopener">Growth in a Time of Debt</a> ». <i>American Economic Review</i>, 100(2), 573-578.</li>
+      </ul>
+      <h3 class="mt">Investissement public</h3><ul>
+        <li>Abiad, A., Furceri, D. et Topalova, P. (2016). « <a href="https://ideas.repec.org/a/eee/jmacro/v50y2016icp224-240.html" target="_blank" rel="noopener">The Macroeconomic Effects of Public Investment: Evidence from Advanced Economies</a> ». <i>Journal of Macroeconomics</i>, 50, 224-240.</li>
+        <li>Balassone, F. et Franco, D. (2000). « <a href="https://ideas.repec.org/a/ifs/fistud/v21y2000i2p207-229.html" target="_blank" rel="noopener">Public Investment, the Stability Pact and the “Golden Rule”</a> ». <i>Fiscal Studies</i>, 21(2), 207-229.</li>
+        <li>Blanchard, O. et Giavazzi, F. (2004). « <a href="https://cepr.org/publications/dp4220" target="_blank" rel="noopener">Improving the SGP Through a Proper Accounting of Public Investment</a> ». CEPR Discussion Paper 4220.</li>
+        <li>Bogaert, H. (2016). <a href="https://ideas.repec.org/p/fpb/wpaper/201601.html" target="_blank" rel="noopener">Working Paper 1-16</a>. Bureau fédéral du Plan.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Buchanan, J. et Wagner, R. (1977). <i>Democracy in Deficit: The Political Legacy of Lord Keynes</i>. Academic Press.</li>
+        <li>Burke, E. (1790). <i>Reflections on the Revolution in France</i>.</li>
+        <li>Kelton, S. (2020). <i>The Deficit Myth</i>. PublicAffairs.</li>
+        <li>Keynes, J. M. (1936). <i>The General Theory of Employment, Interest and Money</i>. Macmillan.</li>
+        <li>Musgrave, R. (1959). <i>The Theory of Public Finance</i>. McGraw-Hill.</li>
+        <li>O’Connor, J. (1973). <i>The Fiscal Crisis of the State</i>. St. Martin’s Press.</li>
+        <li>Piketty, T. (2013). <i>Le capital au XXI<sup>e</sup> siècle</i>. Seuil.</li>
+        <li>Raworth, K. (2017). <i>Doughnut Economics</i>. Random House Business.</li>
+        <li>Smith, A. (1776). <i>An Inquiry into the Nature and Causes of the Wealth of Nations</i>, livre V.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Journal des corrections · 10 octobre 2026 : ajout de l’encadré « La dette n’est ni bonne ni mauvaise en soi », de la partie historique 1980-2025 et de trois idées reçues, de la fiche 05 sur l’investissement public et d’une quatrième question de recherche.</p>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="__HOME__#methode">page Méthode</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 02 · Finances publiques · vérifié le 10 octobre 2026</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
