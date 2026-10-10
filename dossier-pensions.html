@@ -451,6 +451,70 @@ html.calm .chart .fadein{opacity:1}
 /* Contraste AA : rouge foncé pour les petits textes sur fond clair */
 .rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
 .key-dots .kd.be{background:var(--red-ink)}
+
+/* ===== V2 : composants pédagogiques ===== */
+/* Niveau 1 : comprendre en deux minutes */
+.twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
+.twomin .tm{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:44px;align-items:start}
+.twomin .kick{color:var(--grey)}
+.twomin h2{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1;margin-top:10px}
+.twomin .ans{font-size:clamp(18px,1.6vw,21px);line-height:1.45;margin-top:18px;color:#2E2B27}
+.twomin .keys{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px;counter-reset:k}
+.twomin .keys li{counter-increment:k;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;font-size:16.5px;line-height:1.45}
+.twomin .keys li::before{content:counter(k);font-family:var(--serif);font-style:italic;font-size:30px;line-height:.9;color:var(--red-ink)}
+.twomin aside{display:grid;gap:16px}
+.tm-num{background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line)}
+.tm-num b{display:block;font-weight:700;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.04em;line-height:.95}
+.tm-num span{display:block;font-size:15px;margin-top:8px}
+.tm-num small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.tm-warn{border-left:4px solid var(--red-ink);padding:4px 0 4px 14px;font-size:15.5px;line-height:1.45}
+.tm-warn b{color:var(--red-ink)}
+.tm-concl{font-family:var(--serif);font-size:21px;line-height:1.3;border-top:1px solid var(--rule);padding-top:14px}
+.deeper{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:4px}
+/* Ce que ce chiffre permet de dire */
+.canwhat{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid currentColor;border-radius:22px;overflow:hidden}
+.canwhat>div{padding:20px 22px 22px}
+.canwhat>div+div{border-left:2px solid currentColor}
+.canwhat h4{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+.canwhat ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:15.5px;line-height:1.45}
+.canwhat .cw-t{grid-column:1/-1;border-bottom:2px solid currentColor;padding:14px 22px;font-family:var(--serif);font-size:22px}
+.canwhat .cw-t+div{border-left:0}
+.brun .canwhat .cw-no h4,.papier .canwhat .cw-no h4{color:inherit}
+.canwhat .cw-yes h4::before{content:"✓ "}
+.canwhat .cw-no h4::before{content:"✗ "}
+.canwhat .cw-more h4::before{content:"→ "}
+/* Explication après le pari */
+.why{max-width:760px;margin:26px auto 0;text-align:left;background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:7px 7px 0 var(--copper)}
+.why h3{font-weight:700;font-size:18px;margin:14px 0 4px}
+.why h3:first-child{margin-top:0}
+.why p{font-size:16px;line-height:1.5;color:#2E2B27}
+/* Questions de transfert */
+.check{padding-block:88px}
+.check .qz{border-top:1px solid var(--ink);padding:26px 0 30px}
+.check .qq{font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);line-height:1.2;max-width:58ch}
+.qopts{display:grid;gap:10px;margin-top:18px;max-width:780px}
+.qopts button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px 16px;font-size:16px;line-height:1.35;color:var(--line)}
+.qopts button:hover{background:#F0EEE8}
+.qopts button.is-ok{border-color:#2F7A5E;background:#E6F3EC}
+.qopts button.is-ko{border-color:var(--red-ink);background:#FBE9E6}
+.qfb,.qmech{max-width:780px;margin-top:14px;font-size:16px;line-height:1.5}
+.qfb b,.qmech b{font-weight:700}
+.qmech{border-left:4px solid var(--line);padding-left:14px}
+.qlive{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Du chiffre à la décision */
+.decide .opts4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:40px}
+.decide .opt{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:6px 6px 0 var(--line)}
+.decide .opt h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.05}
+.decide .opt dl{margin:14px 0 0;display:grid;gap:10px}
+.decide .opt dt{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.decide .opt dd{margin:2px 0 0;font-size:15.5px;line-height:1.45}
+.decide .opt .ev{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;margin-right:6px;vertical-align:1px}
+.ev.doc{background:#DCEFE6;color:#1F5C45}.ev.hyp{background:#FBE7D3;color:#7A4214}
+.decide .trade{margin-top:40px}
+.decide .trade table{width:100%;border-collapse:collapse;font-size:15.5px}
+.decide .trade th,.decide .trade td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
+.decide .trade th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper)}
+@media (max-width:900px){.twomin .tm,.canwhat,.decide .opts4{grid-template-columns:1fr}.canwhat>div+div{border-left:0;border-top:2px solid currentColor}.decide .trade{overflow-x:auto}}
 </style>
 </head>
 <body>
@@ -476,10 +540,11 @@ html.calm .chart .fadein{opacity:1}
     <input class="range" type="range" id="guess" min="1" max="5" step="0.1" value="3" aria-label="Votre estimation, en nombre de personnes de 15 à 64 ans par personne de 65 ans ou plus">
     <div class="scale" aria-hidden="true"><span>1</span><span>3</span><span>5</span></div>
     <div class="acts">
-      <button class="pill cream" id="reveal" type="button">Voir la projection <span class="arr" aria-hidden="true">↓</span></button>
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir la projection <span class="arr" aria-hidden="true">↓</span></button>
       <a class="skew" href="#dossier"><span>Passer</span></a>
     </div>
     <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>Deux tendances se cumulent : on vit plus longtemps, et les générations nombreuses nées après 1945 arrivent à 65 ans, tandis que les suivantes sont moins nombreuses.</p><h3>Pourquoi cela ne signifie pas la faillite</h3><p>En répartition, le financement dépend du nombre de personnes qui travaillent réellement et de ce qu’elles produisent, pas seulement de leur âge. Plus d’emploi ou plus de productivité compensent en partie le vieillissement.</p><h3>Pour réutiliser cette idée</h3><p>Devant un ratio démographique, demandez toujours : combien de ces personnes travaillent, et combien produisent-elles ?</p></div>
   </div>
 </section>
 
@@ -498,6 +563,25 @@ html.calm .chart .fadein{opacity:1}
     <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : rapport du Comité d’étude sur le vieillissement (juillet 2027)</p>
   </div>
 </section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">Y aura-t-il encore des pensions demain, et à quel niveau ?</h2>
+      <p class="ans">Oui : la pension légale fonctionne par répartition, et les projections officielles annoncent un coût plus élevé, pas une disparition. Le vieillissement est réel (31,8 personnes de 65 ans et plus pour 100 de 15 à 64 ans en 2025, 48,3 projetées en 2070) et prévu de longue date. Le risque de pauvreté des aînés a fortement baissé (9,3 %), mais la pension remplace une part plus faible du revenu de fin de carrière qu’ailleurs en Europe (48 % contre 60 %).</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>En répartition, les cotisations d’aujourd’hui paient les pensions d’aujourd’hui : c’est un contrat entre générations.</li><li>Le coût futur dépend autant de l’emploi et de la productivité que de la démographie.</li><li>Reculer l’âge augmente l’emploi des aînés, mais une partie des personnes passe par le chômage ou la maladie.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>31,8 → 48,3</b><span>personnes de 65 ans et plus pour 100 de 15 à 64 ans, 2025 puis 2070 (projection)</span><small>Eurostat, demo_pjanind et proj_23ndbi</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> lire le taux de dépendance comme le nombre de cotisants par pensionné : il compare des âges, pas des personnes qui travaillent.</p>
+      <p class="tm-concl">La question n’est pas « pension ou pas », mais quel niveau, pour qui, et qui finance la hausse : un choix de valeurs autant que de chiffres.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
 
 <!-- 1b. Préambule : comment ça marche -->
 <section class="band grain preamb" style="background:var(--cream)" aria-labelledby="tP">
@@ -535,7 +619,9 @@ html.calm .chart .fadein{opacity:1}
     <p class="lede" data-r>Le nombre de personnes âgées pour 100 personnes en âge de travailler monte depuis le milieu des années 1980, sous l’effet de l’allongement de la vie, de la baisse de la natalité et, depuis les années 2010, de l’arrivée à 65 ans des générations nombreuses nées après 1945. Les projections prolongent la tendance jusqu’en 2070.</p>
     <div class="chart" id="depChart"></div>
     <p class="srcl">Personnes de 65 ans et plus pour 100 personnes de 15 à 64 ans. 1960-2025 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=fr" target="_blank" rel="noopener">demo_pjanind</a> (rupture en 2011) ; 2025-2070 : projections Eurostat EUROPOP2023, scénario de base, <a href="https://ec.europa.eu/eurostat/databrowser/view/proj_23ndbi/default/table?lang=fr" target="_blank" rel="noopener">proj_23ndbi</a>. Une projection n’est pas une prévision : elle dépend d’hypothèses sur la fécondité, la mortalité et les migrations.</p>
-    <ol class="epochs">
+    
+    <div class="canwhat" data-r><p class="cw-t">Le taux de dépendance des âgés</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Comment évolue la structure par âge de la population.</li><li>Comment la Belgique se compare à d’autres pays, avec la même définition.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Combien de personnes cotisent réellement et combien touchent une pension.</li><li>Ce que chaque travailleur produira : la productivité compte autant que le nombre.</li><li>Le coût futur des pensions, qui dépend aussi des règles et des montants.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le taux d’emploi par âge.</li><li>Le rapport entre cotisants et pensionnés.</li><li>Les projections de coût du Comité d’étude sur le vieillissement.</li></ul></div></div>
+<ol class="epochs">
       <li data-r><span class="yr">1900</span><h3>L’État subsidie</h3><p>La loi du 10 mai 1900 instaure une aide de l’État à l’épargne-retraite, qui reste facultative.</p></li>
       <li data-r><span class="yr">1924-1925</span><h3>L’assurance obligatoire</h3><p>Pension obligatoire pour les ouvriers (1924) puis les employés (1925), fondée sur les cotisations versées par les travailleurs.</p></li>
       <li data-r><span class="yr">1953</span><h3>Fin de la capitalisation individuelle</h3><p>La loi du 29 décembre 1953 sur la pension des ouvriers abandonne la capitalisation individuelle : la logique de répartition s’impose.</p></li>
@@ -573,7 +659,9 @@ html.calm .chart .fadein{opacity:1}
       <figure data-r><figcaption><b>Écart de pension femmes-hommes</b><span>65-79 ans, en % de la pension moyenne des hommes</span></figcaption><div class="chart sm" id="gapChart"></div></figure>
     </div>
     <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=fr" target="_blank" rel="noopener">ilc_li02</a> (pauvreté, rupture en 2019), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_pnp13/default/table?lang=fr" target="_blank" rel="noopener">ilc_pnp13</a> (écart de pension), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_pnp3/default/table?lang=fr" target="_blank" rel="noopener">ilc_pnp3</a> (taux de remplacement agrégé : pension médiane des 65-74 ans rapportée au revenu médian du travail des 50-59 ans), consulté le 11 octobre 2026. Enquête SILC : l’année indiquée est celle de l’enquête, les revenus portent sur l’année précédente.</p>
-    <div class="trap dark-trap" data-r><span class="note">attention</span><p>L’écart de pension belge varie fortement d’une année à l’autre (de 23 % à 35 %) : il vient d’une enquête par échantillon. Mieux vaut retenir l’ordre de grandeur, un quart à un tiers de moins pour les femmes, qu’un chiffre annuel précis.</p></div>
+    
+    <div class="canwhat" data-r><p class="cw-t">Le risque de pauvreté des 65 ans et plus</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Quelle part des aînés a un revenu inférieur à 60 % du revenu médian du pays.</li><li>Comment cette part évolue et se compare à l’Europe.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si les aînés vivent mieux en absolu : le seuil est relatif et bouge avec les revenus des autres.</li><li>Ce que rapporte le fait d’être propriétaire de son logement, non compté dans le revenu.</li><li>Le patrimoine ou les privations réelles.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La privation matérielle et sociale.</li><li>Les revenus selon les trois piliers.</li><li>Le patrimoine des ménages âgés.</li></ul></div></div>
+<div class="trap dark-trap" data-r><span class="note">attention</span><p>L’écart de pension belge varie fortement d’une année à l’autre (de 23 % à 35 %) : il vient d’une enquête par échantillon. Mieux vaut retenir l’ordre de grandeur, un quart à un tiers de moins pour les femmes, qu’un chiffre annuel précis.</p></div>
   </div>
 </section>
 
@@ -604,6 +692,18 @@ html.calm .chart .fadein{opacity:1}
     <p class="lede" data-r>Chaque conclusion porte un badge (grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="index.html#methode">Voir la méthode</a>.</p>
     <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
     <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Dans un système par répartition, il n’existe que quelques leviers pour équilibrer les comptes. Pour chacun : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Travailler plus longtemps</h3><dl><dt>Le mécanisme</dt><dd>Reculer l’âge ou rendre les départs anticipés moins avantageux : plus de cotisants, moins d’années de pension.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> En Autriche, reculer l’âge de retraite anticipée a augmenté l’emploi des aînés, mais aussi fortement leur chômage (Staubli et Zweimüller, 2013). La Belgique passe à 67 ans en 2030 et a voté un bonus-malus en 2026.</dd><dt>Ce qui reste incertain</dt><dd>Les effets de la réforme belge de 2026 ne sont pas encore observables.</dd><dt>Ce qu’on sacrifie</dt><dd>Les personnes aux carrières pénibles ou en moins bonne santé, qui peuvent difficilement travailler plus longtemps.</dd></dl></article><article class="opt" data-r><h3>Augmenter les recettes</h3><dl><dt>Le mécanisme</dt><dd>Plus de cotisations ou plus d’impôts affectés aux pensions.</dd><dt>Ce qui est documenté</dt><dd>Les recettes publiques belges sont déjà élevées (49,0 % du PIB en 2025, contre 46,4 % dans l’Union).</dd><dt>Ce qui reste incertain</dt><dd>L’effet sur l’emploi dépend de la manière de prélever : cotisations sur le travail ou impôts plus larges.</dd><dt>Ce qu’on sacrifie</dt><dd>Le pouvoir d’achat des actifs, ou d’autres dépenses publiques.</dd></dl></article><article class="opt" data-r><h3>Ajuster le niveau des pensions</h3><dl><dt>Le mécanisme</dt><dd>Indexer moins vite ou revoir le calcul des pensions.</dd><dt>Ce qui est documenté</dt><dd>La pension remplace déjà une part plus faible du revenu qu’ailleurs (48 % contre 60 % dans l’Union, Eurostat).</dd><dt>Ce qui reste incertain</dt><dd>L’effet sur la pauvreté des aînés, qui vient de baisser fortement.</dd><dt>Ce qu’on sacrifie</dt><dd>Le niveau de vie des pensionnés, surtout des femmes, dont les pensions sont déjà plus basses.</dd></dl></article><article class="opt" data-r><h3>Augmenter l’emploi et la productivité</h3><dl><dt>Le mécanisme</dt><dd>Plus de personnes au travail et plus de richesse produite par travailleur : plus de cotisations sans changer les règles.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Selon le Comité d’étude sur le vieillissement, une productivité plus faible ferait passer le coût du vieillissement de 1,5 à 3,3 points de PIB d’ici 2070 (simulation).</dd><dt>Ce qui reste incertain</dt><dd>Il est difficile de garantir une hausse de la productivité par la politique publique.</dd><dt>Ce qu’on sacrifie</dt><dd>Des investissements (formation, innovation) dont le rendement est lent et incertain.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Garantir des pensions élevées</td><td>Un coût plus lourd pour les actifs</td></tr><tr><td>Alléger la charge des actifs</td><td>Le niveau de vie des pensionnés</td></tr><tr><td>Un âge de départ identique pour tous</td><td>La prise en compte des métiers pénibles et des carrières courtes</td></tr><tr><td>L’équité entre générations</td><td>La stabilité des règles pour ceux qui approchent de la pension</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
   </div>
 </section>
 
@@ -644,6 +744,17 @@ html.calm .chart .fadein{opacity:1}
       <li data-r><span class="g">5</span><h3>Comparer les dépenses sans regarder les piliers</h3><p>Un pays peut dépenser peu en pensions publiques parce que ses pensions privées sont développées. Les chiffres publics ne disent pas tout du revenu des retraités.</p></li>
       <li data-r><span class="g">6</span><h3>Lire un chiffre d’enquête au dixième près</h3><p>Pauvreté et écart de pension viennent d’échantillons : les variations d’une année à l’autre peuvent être du bruit statistique.</p></li>
     </ol>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="a" data-r><p class="qq">1. Deux pays ont le même taux de dépendance : 35 personnes de 65 ans et plus pour 100 de 15 à 64 ans. Dans le pays A, 80 % des 15-64 ans travaillent ; dans le pays B, 60 %. Lequel finance le plus facilement ses pensions par répartition ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Le pays A.</button><button type="button" data-k="b" aria-pressed="false">Le pays B.</button><button type="button" data-k="c" aria-pressed="false">Aucune différence : le taux de dépendance est le même.</button></div><p class="qfb" data-k="a" hidden><b>Exact.</b> Avec plus de personnes en emploi, il y a plus de cotisants pour chaque pensionné.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> Moins de personnes travaillent : chaque pension repose sur moins de cotisants.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Le taux de dépendance compare des âges ; ce qui finance les pensions, ce sont les personnes qui travaillent.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> en répartition, ce qui compte est le rapport entre ceux qui travaillent et ceux qui sont pensionnés, et ce que produit chaque travailleur. Augmenter l’emploi est un levier aussi puissant que la démographie.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="b" data-r><p class="qq">2. Le risque de pauvreté des aînés passe de 15 % à 9 % en deux ans. Peut-on en conclure que les pensionnés vivent mieux ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Oui, c’est certain.</button><button type="button" data-k="b" aria-pressed="false">Probablement en partie, mais il faut vérifier : le seuil dépend aussi des revenus du reste de la population, et le logement n’est pas compté.</button><button type="button" data-k="c" aria-pressed="false">Non, cet indicateur ne dit rien des pensionnés.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Pas forcément : l’indicateur est relatif et peut bouger sans que la situation des aînés change.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> C’est la lecture prudente : il faut croiser avec la privation matérielle ou les montants des pensions.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Il dit quelque chose d’important, mais pas tout.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un indicateur relatif (« moins de 60 % du revenu médian ») mesure une position par rapport aux autres, pas un niveau de vie absolu. Il faut le lire avec d’autres indicateurs.</p><p class="qlive" aria-live="polite"></p></div>
   </div>
 </section>
 
@@ -832,6 +943,36 @@ html.calm .chart .fadein{opacity:1}
     D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,svg[role=img]')))});
     (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
   })();
+})();
+
+/* Composants pédagogiques communs aux dossiers :
+   - explication après le pari d'ouverture (data-reveal),
+   - questions de transfert avec correction expliquée (.qz). */
+(function(){
+  var D=document;
+  /* Après le pari : afficher l'explication détaillée */
+  D.querySelectorAll('[data-reveal]').forEach(function(b){
+    b.addEventListener('click',function(){var t=D.getElementById(b.getAttribute('data-reveal'));if(t)t.hidden=false});
+  });
+  /* Questions de transfert */
+  D.querySelectorAll('.qz').forEach(function(q){
+    var ok=q.getAttribute('data-ok'),opts=q.querySelectorAll('.qopts button'),mech=q.querySelector('.qmech');
+    opts.forEach(function(b){
+      b.addEventListener('click',function(){
+        var k=b.getAttribute('data-k');
+        opts.forEach(function(o){
+          var good=o.getAttribute('data-k')===ok;
+          o.setAttribute('aria-pressed',o===b?'true':'false');
+          o.classList.toggle('is-ok',good);
+          o.classList.toggle('is-ko',o===b&&!good);
+        });
+        q.querySelectorAll('.qfb').forEach(function(f){f.hidden=f.getAttribute('data-k')!==k});
+        if(mech)mech.hidden=false;
+        var live=q.querySelector('.qlive');
+        if(live)live.textContent=k===ok?'Bonne réponse.':'Ce n’est pas la bonne réponse : lisez l’explication.';
+      });
+    });
+  });
 })();
 </script>
 </body>

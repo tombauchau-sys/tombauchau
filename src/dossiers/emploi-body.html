@@ -6,9 +6,9 @@
     <span class="kick">Dossier 01 · Emploi et inactivité · avant de lire</span>
     <h1 class="q" id="q0">En Belgique, y a-t-il plus de chômeurs ou plus de personnes en invalidité ?</h1>
     <div class="bet" role="group" aria-label="Votre pari">
-      <button type="button" class="betb" data-b="c"><span>Plus de chômeurs</span></button>
-      <button type="button" class="betb" data-b="e"><span>À peu près autant</span></button>
-      <button type="button" class="betb" data-b="i"><span>Plus d’invalides</span></button>
+      <button type="button" class="betb" data-b="c" data-reveal="why"><span>Plus de chômeurs</span></button>
+      <button type="button" class="betb" data-b="e" data-reveal="why"><span>À peu près autant</span></button>
+      <button type="button" class="betb" data-b="i" data-reveal="why"><span>Plus d’invalides</span></button>
     </div>
     <div class="duel" id="duel" hidden>
       <div class="side-c"><b id="nC">—</b><span>chômeurs au sens du BIT, moyenne 2025</span><small>enquête Statbel, 15-74 ans · Eurostat une_rt_a</small></div>
@@ -16,6 +16,7 @@
       <div class="side-i"><b id="nI">—</b><span>personnes en invalidité au 31 décembre 2025</span><small>registres de l’INAMI, salariés, chômeurs et indépendants · provisoire</small></div>
     </div>
     <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Pourquoi la réponse surprend</h3><p>On pense spontanément au chômage comme principale forme de non-emploi. En Belgique, les personnes en incapacité de travail de longue durée sont pourtant plus nombreuses que les chômeurs.</p><h3>La confusion à éviter</h3><p>Les deux chiffres ne viennent pas de la même source : le chômage vient d’une enquête auprès des ménages (15-74 ans), l’invalidité des registres de l’INAMI (tous âges, indépendants compris). Le rapport de 1,7 donne un ordre de grandeur, pas une comparaison exacte.</p><h3>Le mécanisme</h3><p>Pour être « chômeur » au sens du BIT, il faut chercher un emploi et être disponible. Une personne malade de longue durée ne cherche pas : elle est comptée comme « inactive ». C’est pourquoi le chômage peut baisser sans que l’emploi augmente.</p><h3>Pour réutiliser cette idée</h3><p>Face à un taux de chômage qui baisse, demandez toujours : le taux d’emploi a-t-il augmenté, ou des personnes sont-elles sorties de la population active ?</p></div>
     <a class="skew passer" href="#dossier"><span>Passer</span></a>
   </div>
 </section>
@@ -35,6 +36,25 @@
     <p class="maj">Dossier vérifié le 10 octobre 2026 · prochaine mise à jour : chiffres annuels 2026 (printemps 2027)</p>
   </div>
 </section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">Qui travaille en Belgique, qui ne travaille pas, et pourquoi ?</h2>
+      <p class="ans">En 2025, 72,8 % des 20-64 ans ont un emploi, contre 76,1 % dans l’Union. Le chômage (6,2 %) étant proche de la moyenne européenne, l’écart vient surtout d’un plus grand nombre de personnes inactives, ni en emploi ni au chômage, parmi lesquelles les personnes en invalidité, en forte hausse (576 643 fin 2025). Il se concentre chez les peu diplômés, les personnes nées hors de l’Union et les 55-64 ans.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Chômage et inactivité sont deux choses différentes : une personne en invalidité ne cherche pas d’emploi, elle n’est donc pas « chômeuse ».</li><li>Le taux d’emploi progresse depuis trente ans (61,2 % en 1993), presque entièrement grâce aux femmes et aux 55-64 ans.</li><li>Les trois Régions vivent des réalités très différentes : 77,3 % d’emploi en Flandre, 67,9 % en Wallonie, 63,9 % à Bruxelles.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>72,8 %</b><span>des 20-64 ans en emploi en 2025 (Union : 76,1 %)</span><small>Eurostat, lfsi_emp_a</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> comparer directement chômeurs et invalides, ou le chômage de Statbel et celui des services régionaux : ils ne comptent pas la même chose.</p>
+      <p class="tm-concl">L’écart avec l’Europe tient moins au chômage qu’au nombre de personnes hors de l’emploi ; ses causes sont débattues.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
 
 <!-- 2. Sommaire -->
 <section class="band grain sommaire" style="background:var(--orange)" aria-labelledby="tS">
@@ -97,7 +117,9 @@
     </div>
     <div class="chart" id="empChart"></div>
     <p class="srcl">Taux d’emploi des 20-64 ans, en %. Croix rouges : ruptures de série (2017, 2021). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=fr" target="_blank" rel="noopener">lfsi_emp_a</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_r_lfe2emprt/default/table?lang=fr" target="_blank" rel="noopener">lfst_r_lfe2emprt</a>, mise à jour du 10 septembre 2026, consulté le 10 octobre 2026.</p>
-    <div class="gapwrap">
+    
+    <div class="canwhat" data-r><p class="cw-t">Le taux d’emploi</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Quelle part des 20-64 ans a travaillé au moins une heure pendant la semaine de référence.</li><li>Comment la Belgique et ses Régions se situent, avec une définition commune à toute l’Union.</li><li>L’évolution dans le temps, en tenant compte des ruptures de série.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si les emplois sont à temps plein, bien payés ou de bonne qualité.</li><li>Pourquoi un groupe travaille moins qu’un autre.</li><li>Si la population vit mieux : un taux d’emploi plus élevé ne prouve ni de meilleurs salaires ni moins d’inégalités.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le temps partiel et les heures travaillées.</li><li>Le taux d’emploi en équivalent temps plein.</li><li>Les salaires et la pauvreté des travailleurs.</li></ul></div></div>
+<div class="gapwrap">
       <h3 class="sub" data-r>Où se situe l’écart ?</h3>
       <p class="lede sm" data-r>L’écart avec l’Union n’est pas le même pour tous. Il est presque nul chez les diplômés du supérieur (−0,8 point). Il se creuse chez les diplômés du secondaire, les 55-64 ans, les personnes nées hors de l’Union et surtout chez les peu diplômés (−11,4 points).</p>
       <div class="chart" id="gapChart"></div>
@@ -127,7 +149,9 @@
       </ul>
     </div>
     <p class="srcl ink">Personnes en invalidité au 31 décembre, salariés et chômeurs, indépendants et conjoints aidants. 2024 et 2025 provisoires. Sources : INAMI, <a href="https://www.riziv.fgov.be/SiteCollectionDocuments/stat_si2025_1_invalidite.pdf" target="_blank" rel="noopener">salariés et chômeurs 2021-2025</a> et <a href="https://www.riziv.fgov.be/SiteCollectionDocuments/stat_si2025_1_invalidite_independant.pdf" target="_blank" rel="noopener">indépendants 2021-2025</a> ; 2008 et causes 2021 : INAMI, <a href="https://www.inami.fgov.be/SiteCollectionDocuments/PSYA_etude_avril_2024.pdf" target="_blank" rel="noopener">étude sur l’incapacité de longue durée due à des troubles psychosociaux</a>, avril 2024. Consulté le 10 octobre 2026.</p>
-    <div class="regs" data-r>
+    
+    <div class="canwhat" data-r><p class="cw-t">Le nombre de personnes en invalidité</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Combien de personnes sont reconnues incapables de travailler depuis plus d’un an et indemnisées par l’INAMI.</li><li>Comment ce nombre évolue, et quelles grandes causes médicales sont déclarées.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Combien de ces personnes pourraient travailler, et à quelles conditions.</li><li>Ce qui vient de la santé, des conditions de travail ou des règles des autres régimes (chômage, pensions).</li><li>Si la Belgique fait « pire » que ses voisins : chaque pays organise autrement la protection en cas de maladie.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les entrées et sorties d’invalidité chaque année.</li><li>Les reprises partielles du travail autorisées.</li><li>Les données par secteur et par métier.</li></ul></div></div>
+<div class="regs" data-r>
       <h3 class="sub ink">Où vivent-elles ? <span class="note">en nombre, pas en proportion</span></h3>
       <div class="chart" id="invReg"></div>
       <p class="srcl ink">Salariés et chômeurs en invalidité au 31 décembre 2025, par Région de résidence. Source : INAMI, même tableau. Ce sont des effectifs : la Flandre compte plus d’habitants, elle a donc plus de personnes en invalidité sans que le risque y soit plus élevé.</p>
@@ -158,6 +182,18 @@
     <p class="lede" data-r>Chaque conclusion porte un badge (grille du GIEC) et chaque étude son niveau sur l’échelle de Maryland, de 1 (simple comparaison) à 5 (tirage au sort). <a href="__HOME__#methode">Voir la méthode</a>.</p>
     <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
     <div id="rq"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Que peuvent faire <span>les pouvoirs publics ?</span></h2>
+    <p class="lede" data-r>Trois grands leviers sont discutés dans le débat belge. Pour chacun : ce qu’on sait de ses effets, ce qui reste incertain, et ce qu’il coûte en contrepartie. Le site ne recommande aucune option.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Accompagner et former les chercheurs d’emploi</h3><dl><dt>Le mécanisme</dt><dd>Aider à trouver un emploi ou à acquérir des compétences (compétence des Régions).</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Effet moyen faible à court terme, plus positif deux à trois ans après, surtout pour la formation, les femmes et les chômeurs de longue durée (Card, Kluve et Weber, 2018).</dd><dt>Ce qui reste incertain</dt><dd>L’efficacité des programmes belges précis est peu évaluée publiquement.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût budgétaire immédiat pour un effet différé.</dd></dl></article><article class="opt" data-r><h3>Limiter ou réduire les allocations</h3><dl><dt>Le mécanisme</dt><dd>Rendre la recherche d’emploi plus urgente (compétence fédérale).</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Des allocations plus longues allongent en général la période sans emploi (Schmieder et von Wachter, 2016). <span class="ev doc">documenté</span> La dégressivité renforcée de 2012 n’a pas augmenté les sorties vers l’emploi en Belgique (ONEM, 2022).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Une partie des personnes pourrait basculer vers l’invalidité (lien suggéré par la chronologie, De Brouwer et Tojerow, 2023). Les effets de la limitation de 2026 ne sont pas encore connus.</dd><dt>Ce qu’on sacrifie</dt><dd>La protection des revenus, et parfois la qualité de l’emploi retrouvé (Nekoei et Weber, 2017).</dd></dl></article><article class="opt" data-r><h3>Prévenir et réintégrer les malades de longue durée</h3><dl><dt>Le mécanisme</dt><dd>Agir sur les conditions de travail et le retour progressif à l’emploi (fédéral, mutualités, employeurs).</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Les règles et les incitants des systèmes de maladie influencent les sorties durables de l’emploi (OCDE, 2010).</dd><dt>Ce qui reste incertain</dt><dd>L’effet des trajets de réintégration belges n’est pas encore établi par des évaluations publiées.</dd><dt>Ce qu’on sacrifie</dt><dd>Un contrôle accru peut être vécu comme de la méfiance envers des personnes réellement malades.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Inciter à reprendre vite un emploi</td><td>La protection des revenus et le temps de trouver un emploi adapté</td></tr><tr><td>Contrôler davantage</td><td>La confiance et l’accompagnement</td></tr><tr><td>Réduire la dépense à court terme</td><td>L’investissement dans la formation, qui paie plus tard</td></tr></tbody></table></div>
+    <p class="maj">Les effets cités viennent de la partie Recherche, avec leurs sources. « Documenté » signifie établi par des études ; « hypothèse » signifie plausible mais non démontré.</p>
   </div>
 </section>
 
@@ -199,6 +235,17 @@
       <li data-r><span class="g">5</span><h3>Oublier les navetteurs</h3><p>Les taux régionaux sont calculés selon le lieu de <i>résidence</i>. En 2023, 48 % des emplois situés à Bruxelles étaient occupés par des habitants de Flandre ou de Wallonie (Statbel, cité par <a href="https://blog.forumforthefuture.be/fr/article/nouvelle-evolution-positive-de-lemploi-en-region-bruxelloise-en-2023/23244" target="_blank" rel="noopener">Forum for the Future</a>).</p></li>
       <li data-r><span class="g">6</span><h3>Classer les pays sur l’invalidité</h3><p>Chaque pays organise différemment la protection en cas de maladie, de chômage ou de fin de carrière. Un pays qui a peu d’invalides peut avoir beaucoup de préretraités. L’OCDE invite à ne pas lire ces catégories séparément.</p></li>
     </ol>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="b" data-r><p class="qq">1. Dans un pays, le taux de chômage passe de 8 % à 6 %, mais le taux d’emploi ne bouge pas. Que s’est-il le plus probablement passé ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Davantage de personnes ont trouvé un emploi.</button><button type="button" data-k="b" aria-pressed="false">Des chômeurs ont cessé de chercher un emploi ou sont passés en inactivité (maladie, études, découragement).</button><button type="button" data-k="c" aria-pressed="false">La population totale a diminué.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Si c’était le cas, le taux d’emploi aurait augmenté. Il est resté stable.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> Ces personnes ne sont plus comptées dans la population active : le chômage baisse sans création d’emploi.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Les deux indicateurs sont des proportions : une baisse de population ne fait pas baisser l’un sans l’autre.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> le chômage est une part de la population active (ceux qui travaillent ou cherchent). Quitter la population active fait baisser le chômage sans créer d’emploi. Il faut donc toujours lire chômage et emploi ensemble.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="c" data-r><p class="qq">2. Pour une même commune, le service régional de l’emploi publie 12 % de demandeurs d’emploi et l’enquête de Statbel 8 % de chômage. Qui se trompe ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Le service régional, qui gonfle les chiffres.</button><button type="button" data-k="b" aria-pressed="false">Statbel, dont l’enquête repose sur un échantillon.</button><button type="button" data-k="c" aria-pressed="false">Personne : les deux chiffres ne mesurent pas la même chose.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Il ne se trompe pas : il compte les personnes inscrites, ce qui n’est pas la même population.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> L’échantillon introduit une marge d’erreur, mais pas un écart systématique de cette taille.</p><p class="qfb" data-k="c" hidden><b>Exact.</b> Le premier compte les inscrits (dont certains travaillent quelques heures), le second les personnes sans emploi qui cherchent et sont disponibles.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> avant de comparer deux chiffres qui portent le même nom, vérifiez leur source et leur définition. « Chômage » peut désigner un registre administratif ou une enquête.</p><p class="qlive" aria-live="polite"></p></div>
   </div>
 </section>
 

@@ -197,3 +197,67 @@ html.calm .chart .fadein{opacity:1}
 /* Contraste AA : rouge foncé pour les petits textes sur fond clair */
 .rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
 .key-dots .kd.be{background:var(--red-ink)}
+
+/* ===== V2 : composants pédagogiques ===== */
+/* Niveau 1 : comprendre en deux minutes */
+.twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
+.twomin .tm{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:44px;align-items:start}
+.twomin .kick{color:var(--grey)}
+.twomin h2{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1;margin-top:10px}
+.twomin .ans{font-size:clamp(18px,1.6vw,21px);line-height:1.45;margin-top:18px;color:#2E2B27}
+.twomin .keys{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px;counter-reset:k}
+.twomin .keys li{counter-increment:k;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;font-size:16.5px;line-height:1.45}
+.twomin .keys li::before{content:counter(k);font-family:var(--serif);font-style:italic;font-size:30px;line-height:.9;color:var(--red-ink)}
+.twomin aside{display:grid;gap:16px}
+.tm-num{background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line)}
+.tm-num b{display:block;font-weight:700;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.04em;line-height:.95}
+.tm-num span{display:block;font-size:15px;margin-top:8px}
+.tm-num small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.tm-warn{border-left:4px solid var(--red-ink);padding:4px 0 4px 14px;font-size:15.5px;line-height:1.45}
+.tm-warn b{color:var(--red-ink)}
+.tm-concl{font-family:var(--serif);font-size:21px;line-height:1.3;border-top:1px solid var(--rule);padding-top:14px}
+.deeper{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:4px}
+/* Ce que ce chiffre permet de dire */
+.canwhat{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid currentColor;border-radius:22px;overflow:hidden}
+.canwhat>div{padding:20px 22px 22px}
+.canwhat>div+div{border-left:2px solid currentColor}
+.canwhat h4{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+.canwhat ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:15.5px;line-height:1.45}
+.canwhat .cw-t{grid-column:1/-1;border-bottom:2px solid currentColor;padding:14px 22px;font-family:var(--serif);font-size:22px}
+.canwhat .cw-t+div{border-left:0}
+.brun .canwhat .cw-no h4,.papier .canwhat .cw-no h4{color:inherit}
+.canwhat .cw-yes h4::before{content:"✓ "}
+.canwhat .cw-no h4::before{content:"✗ "}
+.canwhat .cw-more h4::before{content:"→ "}
+/* Explication après le pari */
+.why{max-width:760px;margin:26px auto 0;text-align:left;background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:7px 7px 0 var(--copper)}
+.why h3{font-weight:700;font-size:18px;margin:14px 0 4px}
+.why h3:first-child{margin-top:0}
+.why p{font-size:16px;line-height:1.5;color:#2E2B27}
+/* Questions de transfert */
+.check{padding-block:88px}
+.check .qz{border-top:1px solid var(--ink);padding:26px 0 30px}
+.check .qq{font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);line-height:1.2;max-width:58ch}
+.qopts{display:grid;gap:10px;margin-top:18px;max-width:780px}
+.qopts button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px 16px;font-size:16px;line-height:1.35;color:var(--line)}
+.qopts button:hover{background:#F0EEE8}
+.qopts button.is-ok{border-color:#2F7A5E;background:#E6F3EC}
+.qopts button.is-ko{border-color:var(--red-ink);background:#FBE9E6}
+.qfb,.qmech{max-width:780px;margin-top:14px;font-size:16px;line-height:1.5}
+.qfb b,.qmech b{font-weight:700}
+.qmech{border-left:4px solid var(--line);padding-left:14px}
+.qlive{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Du chiffre à la décision */
+.decide .opts4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:40px}
+.decide .opt{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:6px 6px 0 var(--line)}
+.decide .opt h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.05}
+.decide .opt dl{margin:14px 0 0;display:grid;gap:10px}
+.decide .opt dt{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.decide .opt dd{margin:2px 0 0;font-size:15.5px;line-height:1.45}
+.decide .opt .ev{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;margin-right:6px;vertical-align:1px}
+.ev.doc{background:#DCEFE6;color:#1F5C45}.ev.hyp{background:#FBE7D3;color:#7A4214}
+.decide .trade{margin-top:40px}
+.decide .trade table{width:100%;border-collapse:collapse;font-size:15.5px}
+.decide .trade th,.decide .trade td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
+.decide .trade th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper)}
+@media (max-width:900px){.twomin .tm,.canwhat,.decide .opts4{grid-template-columns:1fr}.canwhat>div+div{border-left:0;border-top:2px solid currentColor}.decide .trade{overflow-x:auto}}

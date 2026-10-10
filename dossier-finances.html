@@ -451,6 +451,70 @@ html.calm .chart .fadein{opacity:1}
 /* Contraste AA : rouge foncé pour les petits textes sur fond clair */
 .rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
 .key-dots .kd.be{background:var(--red-ink)}
+
+/* ===== V2 : composants pédagogiques ===== */
+/* Niveau 1 : comprendre en deux minutes */
+.twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
+.twomin .tm{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:44px;align-items:start}
+.twomin .kick{color:var(--grey)}
+.twomin h2{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1;margin-top:10px}
+.twomin .ans{font-size:clamp(18px,1.6vw,21px);line-height:1.45;margin-top:18px;color:#2E2B27}
+.twomin .keys{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px;counter-reset:k}
+.twomin .keys li{counter-increment:k;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;font-size:16.5px;line-height:1.45}
+.twomin .keys li::before{content:counter(k);font-family:var(--serif);font-style:italic;font-size:30px;line-height:.9;color:var(--red-ink)}
+.twomin aside{display:grid;gap:16px}
+.tm-num{background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line)}
+.tm-num b{display:block;font-weight:700;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.04em;line-height:.95}
+.tm-num span{display:block;font-size:15px;margin-top:8px}
+.tm-num small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.tm-warn{border-left:4px solid var(--red-ink);padding:4px 0 4px 14px;font-size:15.5px;line-height:1.45}
+.tm-warn b{color:var(--red-ink)}
+.tm-concl{font-family:var(--serif);font-size:21px;line-height:1.3;border-top:1px solid var(--rule);padding-top:14px}
+.deeper{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:4px}
+/* Ce que ce chiffre permet de dire */
+.canwhat{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid currentColor;border-radius:22px;overflow:hidden}
+.canwhat>div{padding:20px 22px 22px}
+.canwhat>div+div{border-left:2px solid currentColor}
+.canwhat h4{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+.canwhat ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:15.5px;line-height:1.45}
+.canwhat .cw-t{grid-column:1/-1;border-bottom:2px solid currentColor;padding:14px 22px;font-family:var(--serif);font-size:22px}
+.canwhat .cw-t+div{border-left:0}
+.brun .canwhat .cw-no h4,.papier .canwhat .cw-no h4{color:inherit}
+.canwhat .cw-yes h4::before{content:"✓ "}
+.canwhat .cw-no h4::before{content:"✗ "}
+.canwhat .cw-more h4::before{content:"→ "}
+/* Explication après le pari */
+.why{max-width:760px;margin:26px auto 0;text-align:left;background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:7px 7px 0 var(--copper)}
+.why h3{font-weight:700;font-size:18px;margin:14px 0 4px}
+.why h3:first-child{margin-top:0}
+.why p{font-size:16px;line-height:1.5;color:#2E2B27}
+/* Questions de transfert */
+.check{padding-block:88px}
+.check .qz{border-top:1px solid var(--ink);padding:26px 0 30px}
+.check .qq{font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);line-height:1.2;max-width:58ch}
+.qopts{display:grid;gap:10px;margin-top:18px;max-width:780px}
+.qopts button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px 16px;font-size:16px;line-height:1.35;color:var(--line)}
+.qopts button:hover{background:#F0EEE8}
+.qopts button.is-ok{border-color:#2F7A5E;background:#E6F3EC}
+.qopts button.is-ko{border-color:var(--red-ink);background:#FBE9E6}
+.qfb,.qmech{max-width:780px;margin-top:14px;font-size:16px;line-height:1.5}
+.qfb b,.qmech b{font-weight:700}
+.qmech{border-left:4px solid var(--line);padding-left:14px}
+.qlive{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Du chiffre à la décision */
+.decide .opts4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:40px}
+.decide .opt{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:6px 6px 0 var(--line)}
+.decide .opt h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.05}
+.decide .opt dl{margin:14px 0 0;display:grid;gap:10px}
+.decide .opt dt{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.decide .opt dd{margin:2px 0 0;font-size:15.5px;line-height:1.45}
+.decide .opt .ev{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;margin-right:6px;vertical-align:1px}
+.ev.doc{background:#DCEFE6;color:#1F5C45}.ev.hyp{background:#FBE7D3;color:#7A4214}
+.decide .trade{margin-top:40px}
+.decide .trade table{width:100%;border-collapse:collapse;font-size:15.5px}
+.decide .trade th,.decide .trade td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
+.decide .trade th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper)}
+@media (max-width:900px){.twomin .tm,.canwhat,.decide .opts4{grid-template-columns:1fr}.canwhat>div+div{border-left:0;border-top:2px solid currentColor}.decide .trade{overflow-x:auto}}
 </style>
 </head>
 <body>
@@ -476,10 +540,11 @@ html.calm .chart .fadein{opacity:1}
     <input class="range" type="range" id="guess" min="0" max="40" step="0.5" value="5" aria-label="Votre estimation, en milliards d’euros">
     <div class="scale" aria-hidden="true"><span>0</span><span>20 milliards</span><span>40 milliards</span></div>
     <div class="acts">
-      <button class="pill cream" id="reveal" type="button">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
       <a class="skew" href="#dossier"><span>Passer</span></a>
     </div>
     <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Pourquoi on se trompe souvent</h3><p>Un montant en milliards ne dit rien seul. Le bon repère est la richesse produite : 14,3 milliards représentent 2,2 % du PIB, beaucoup moins qu’en 1995 (9,0 %).</p><h3>Le mécanisme</h3><p>La charge d’intérêts dépend du montant de la dette et du taux moyen payé. La dette est refinancée petit à petit : une hausse des taux ne se répercute que progressivement, à mesure que d’anciens emprunts bon marché sont remplacés.</p><h3>Pour réutiliser cette idée</h3><p>Devant un montant budgétaire, rapportez-le au PIB ou au budget total, et comparez-le dans le temps. C’est la seule façon de savoir s’il est « grand ».</p></div>
   </div>
 </section>
 
@@ -498,6 +563,25 @@ html.calm .chart .fadein{opacity:1}
     <p class="maj">Dossier vérifié le 10 octobre 2026 · prochaine mise à jour : notification d’avril 2027</p>
   </div>
 </section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">La dette publique belge est-elle un problème ?</h2>
+      <p class="ans">Elle est élevée (107,9 % du PIB contre 81,7 % dans l’Union) et remonte depuis 2023, avec un déficit de 5,2 % du PIB et des intérêts en hausse (14,3 milliards d’euros en 2025). Mais une dette n’est ni bonne ni mauvaise en soi : tout dépend de ce qu’elle finance, de ce qu’elle coûte et de la capacité à la porter. La Belgique a d’ailleurs déjà réduit sa dette de 50 points entre 1993 et 2007.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Le déficit est un flux (ce qui manque sur un an), la dette un stock (l’accumulation des déficits passés).</li><li>La dette baisse si la croissance dépasse le taux d’intérêt et si le budget hors intérêts est équilibré. En 2025, le déficit hors intérêts (3,0 % du PIB) la fait monter.</li><li>L’essentiel de la dette est fédéral, mais celle des Communautés et des Régions a presque doublé en dix ans.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>107,9 %</b><span>de dette publique en % du PIB, fin 2025 (Union : 81,7 %)</span><small>Eurostat, gov_10dd_edpt1</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> diviser la dette par habitant (58 000 €) comme si chacun la devait, ou lire une note d’agence comme un fait.</p>
+      <p class="tm-concl">Aucun seuil de dette « sûr » ne fait consensus : ce qui compte est la trajectoire, le coût et l’usage de l’argent emprunté.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
 
 <!-- 1b. Préambule -->
 <section class="band grain preamb" style="background:var(--cream)" aria-labelledby="tP">
@@ -582,7 +666,9 @@ html.calm .chart .fadein{opacity:1}
     <p class="lede" data-r>La dette belge est revenue au niveau du début des années 2000, après une longue baisse jusqu’en 2007 puis deux chocs : la crise financière de 2008 et la pandémie de 2020. Elle remonte depuis 2023, plus vite que la moyenne de l’Union.</p>
     <div class="chart" id="debtChart"></div>
     <p class="srcl">Dette brute consolidée des administrations publiques, en % du PIB, 2000-2025. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a>, notification d’avril 2026 (mise à jour du 22 avril 2026), consulté le 10 octobre 2026.</p>
-    <h3 class="sub" data-r>Qui porte la dette ?</h3>
+    
+    <div class="canwhat" data-r><p class="cw-t">La dette en % du PIB</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Ce que les pouvoirs publics doivent, rapporté à la richesse produite en une année.</li><li>Comment la Belgique se situe en Europe, avec la définition commune du traité de Maastricht.</li><li>La tendance sur longue période.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si la dette est soutenable : cela dépend du taux d’intérêt, de la croissance, des échéances et de la confiance des prêteurs.</li><li>Ce que possèdent les pouvoirs publics : c’est une dette brute, les actifs ne sont pas déduits.</li><li>Ce que la dette a financé : investissement ou dépenses courantes.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La charge d’intérêts et le taux moyen payé.</li><li>Le solde hors intérêts (solde primaire).</li><li>L’investissement public (fiche 05).</li></ul></div></div>
+<h3 class="sub" data-r>Qui porte la dette ?</h3>
     <p class="lede sm" data-r>L’essentiel est dû par l’État fédéral. Mais la dette des Communautés et des Régions a presque doublé en dix ans, de 12,6 % à 20,4 % du PIB.</p>
     <div class="chart" id="subChart"></div>
     <p class="srcl">Dette de chaque niveau de pouvoir, en % du PIB, 2015 et 2025. Les quatre montants font 111,7 %, plus que le total de 107,9 % : quand un niveau de pouvoir prête à un autre, la dette n’est comptée qu’une fois dans le total (on dit qu’elle est « consolidée »). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a>, secteurs S1311 à S1314.</p>
@@ -602,7 +688,9 @@ html.calm .chart .fadein{opacity:1}
       <figure data-r><figcaption><b>Recettes et dépenses, 2025</b><span>en % du PIB, Belgique et Union</span></figcaption><div class="chart sm" id="revExp"></div></figure>
     </div>
     <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a> (soldes par sous-secteur), <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_main</a> (recettes et dépenses, mise à jour du 21 juillet 2026, 2025 provisoire).</p>
-    <div class="trap" data-r><span class="note">piège !</span><p>Le déficit de 2023 était de 4,4 % du PIB quand l’Union a ouvert la procédure en 2024. Il vaut aujourd’hui 4,1 % : les comptes publics sont révisés pendant plusieurs années. Un chiffre récent doit toujours être daté.</p></div>
+    
+    <div class="canwhat" data-r><p class="cw-t">Le déficit public</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>L’écart, sur une année, entre les recettes et les dépenses de toutes les administrations.</li><li>La position de la Belgique par rapport à la valeur de référence européenne de 3 %.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Quelle part vient de la conjoncture (une récession creuse le déficit) et quelle part est durable.</li><li>Quel niveau de pouvoir est responsable, sans la répartition par sous-secteur.</li><li>Si l’argent finance des investissements ou des dépenses courantes.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le solde structurel, corrigé de la conjoncture.</li><li>Le solde primaire, hors intérêts.</li><li>Le solde de chaque niveau de pouvoir.</li></ul></div></div>
+<div class="trap" data-r><span class="note">piège !</span><p>Le déficit de 2023 était de 4,4 % du PIB quand l’Union a ouvert la procédure en 2024. Il vaut aujourd’hui 4,1 % : les comptes publics sont révisés pendant plusieurs années. Un chiffre récent doit toujours être daté.</p></div>
   </div>
 </section>
 
@@ -662,6 +750,18 @@ html.calm .chart .fadein{opacity:1}
   </div>
 </section>
 
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Réduire la dette : <span>quatre options, aucune gratuite.</span></h2>
+    <p class="lede" data-r>Pour ramener le déficit vers 3 % du PIB et stabiliser la dette, quatre grandes options sont combinables. Pour chacune : le mécanisme, ce que la recherche documente, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune option : le choix dépend des objectifs qu’on privilégie.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Réduire les dépenses</h3><dl><dt>Le mécanisme</dt><dd>Moins de dépenses publiques, donc un déficit hors intérêts plus faible.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Selon Alesina, Favero et Giavazzi (2019), les plans fondés sur la baisse des dépenses coûtent moins de croissance que ceux fondés sur les hausses d’impôts. <span class="ev doc">documenté</span> En pleine crise, l’austérité a coûté plus de croissance que prévu (Blanchard et Leigh, 2013).</dd><dt>Ce qui reste incertain</dt><dd>Les méthodes de ces études sont contestées, et aucune ne porte spécifiquement sur la Belgique. Couper dans l’investissement peut freiner la croissance future.</dd><dt>Ce qu’on sacrifie</dt><dd>Des services publics ou des prestations sociales, selon les dépenses visées.</dd></dl></article><article class="opt" data-r><h3>Augmenter les recettes</h3><dl><dt>Le mécanisme</dt><dd>Plus d’impôts ou de cotisations, donc plus de recettes.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Les recettes publiques belges sont déjà élevées : 49,0 % du PIB en 2025, contre 46,4 % dans l’Union (Eurostat). <span class="ev doc">documenté</span> Les plans fondés sur les impôts seraient plus coûteux en croissance (Alesina et al., 2019, résultat discuté).</dd><dt>Ce qui reste incertain</dt><dd>L’effet dépend de l’impôt choisi : revenus, patrimoine, consommation ou entreprises ne pèsent pas sur les mêmes personnes.</dd><dt>Ce qu’on sacrifie</dt><dd>Le pouvoir d’achat ou la compétitivité, selon qui paie.</dd></dl></article><article class="opt" data-r><h3>Miser sur la croissance et l’investissement</h3><dl><dt>Le mécanisme</dt><dd>Si l’économie croît plus vite que le taux d’intérêt, la dette baisse en % du PIB.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> L’investissement public augmente la production à court et à long terme, surtout s’il est efficace (Abiad, Furceri et Topalova, 2016).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Que la croissance suffise à compenser le déficit actuel : en 2025, elle dépassait le taux d’intérêt, mais la dette a quand même augmenté de 4 points.</dd><dt>Ce qu’on sacrifie</dt><dd>Une dette plus élevée à court terme, en pariant sur un rendement futur.</dd></dl></article><article class="opt" data-r><h3>Étaler l’ajustement dans le temps</h3><dl><dt>Le mécanisme</dt><dd>Corriger le déficit progressivement plutôt que brutalement.</dd><dt>Ce qui est documenté</dt><dd>Le cadre européen réformé en 2024 prévoit une trajectoire d’ajustement de 4 ans, prolongeable jusqu’à 7 ans.</dd><dt>Ce qui reste incertain</dt><dd>Si les taux d’intérêt montent pendant l’ajustement, la facture s’alourdit : les intérêts ont déjà augmenté de 66 % depuis 2021.</dd><dt>Ce qu’on sacrifie</dt><dd>La rapidité de la réduction de la dette, et une partie des marges en cas de nouvelle crise.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Réduire vite la dette</td><td>La croissance à court terme et l’emploi</td></tr><tr><td>Protéger les services publics et la sécurité sociale</td><td>La stabilité des prélèvements, ou la vitesse de l’ajustement</td></tr><tr><td>Léguer moins de dette aux générations futures</td><td>Les investissements faits pour elles : écoles, climat, infrastructures</td></tr><tr><td>Respecter strictement les règles européennes</td><td>Des marges budgétaires en cas de crise</td></tr></tbody></table></div>
+    <p class="maj">Les effets cités viennent de la partie Recherche et de la fiche 05, avec leurs sources. « Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré.</p>
+  </div>
+</section>
+
 <!-- 9. Lectures -->
 <section class="sec brun grain" id="lectures" aria-labelledby="tL">
   <div class="wrap">
@@ -701,6 +801,17 @@ html.calm .chart .fadein{opacity:1}
       <li data-r><span class="g">6</span><h3>Comparer les dépenses sans regarder qui paie quoi</h3><p>Un pays peut dépenser moins en santé parce que les ménages paient davantage via des assurances privées. Un chiffre public plus bas ne veut pas dire un coût total plus bas.</p></li>
       <li data-r><span class="g">7</span><h3>Lire une note d’agence comme un fait</h3><p>C’est l’opinion d’une entreprise privée, dont le modèle économique repose en grande partie sur la rémunération par les émetteurs de dette. Les trois agences ne s’accordent d’ailleurs pas sur la Belgique.</p></li>
     </ol>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="b" data-r><p class="qq">1. Un pays a une dette de 100 % du PIB. Sa croissance (inflation comprise) est de 4 %, le taux d’intérêt moyen sur sa dette de 2 %, et son budget hors intérêts est équilibré. Que devient sa dette en % du PIB ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Elle augmente, puisque le pays paie des intérêts.</button><button type="button" data-k="b" aria-pressed="false">Elle baisse, d’environ 2 points.</button><button type="button" data-k="c" aria-pressed="false">Elle reste stable.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Les intérêts augmentent la dette en euros, mais le PIB augmente plus vite : le ratio baisse.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> La croissance (4 %) dépasse le taux d’intérêt (2 %) : (2 − 4) / 1,04 × 100 ≈ −1,9 point.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Elle resterait stable si le taux d’intérêt était égal à la croissance.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> quand la croissance dépasse le taux d’intérêt, l’effet « boule de neige » joue en faveur du pays : la dette baisse en % du PIB même sans excédent. C’est l’inverse quand les taux dépassent la croissance, comme en Belgique dans les années 1980.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="b" data-r><p class="qq">2. Deux gouvernements empruntent chacun 1 milliard. Le premier construit une ligne de tram utilisée pendant 40 ans, le second paie les dépenses courantes de l’année. Qu’est-ce qui les distingue ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Rien : 1 milliard de dette reste 1 milliard de dette.</button><button type="button" data-k="b" aria-pressed="false">La dette est identique, mais le premier finance un équipement qui rendra des services à ceux qui la rembourseront.</button><button type="button" data-k="c" aria-pressed="false">Le second est interdit par les règles européennes.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> La dette est la même, mais ce qu’elle laisse aux générations suivantes ne l’est pas.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> C’est l’idée de la « règle d’or » : étaler le coût d’un investissement sur ceux qui en profitent.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Les règles européennes portent sur le déficit et la dette totaux, pas sur l’usage de l’argent emprunté.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> pour juger une dette, regardez ce qu’elle finance et ce qu’elle rapportera, pas seulement son montant. Un investissement mal choisi peut toutefois ne rien rapporter.</p><p class="qlive" aria-live="polite"></p></div>
   </div>
 </section>
 
@@ -990,6 +1101,36 @@ html.calm .chart .fadein{opacity:1}
     D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,svg[role=img]')))});
     (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
   })();
+})();
+
+/* Composants pédagogiques communs aux dossiers :
+   - explication après le pari d'ouverture (data-reveal),
+   - questions de transfert avec correction expliquée (.qz). */
+(function(){
+  var D=document;
+  /* Après le pari : afficher l'explication détaillée */
+  D.querySelectorAll('[data-reveal]').forEach(function(b){
+    b.addEventListener('click',function(){var t=D.getElementById(b.getAttribute('data-reveal'));if(t)t.hidden=false});
+  });
+  /* Questions de transfert */
+  D.querySelectorAll('.qz').forEach(function(q){
+    var ok=q.getAttribute('data-ok'),opts=q.querySelectorAll('.qopts button'),mech=q.querySelector('.qmech');
+    opts.forEach(function(b){
+      b.addEventListener('click',function(){
+        var k=b.getAttribute('data-k');
+        opts.forEach(function(o){
+          var good=o.getAttribute('data-k')===ok;
+          o.setAttribute('aria-pressed',o===b?'true':'false');
+          o.classList.toggle('is-ok',good);
+          o.classList.toggle('is-ko',o===b&&!good);
+        });
+        q.querySelectorAll('.qfb').forEach(function(f){f.hidden=f.getAttribute('data-k')!==k});
+        if(mech)mech.hidden=false;
+        var live=q.querySelector('.qlive');
+        if(live)live.textContent=k===ok?'Bonne réponse.':'Ce n’est pas la bonne réponse : lisez l’explication.';
+      });
+    });
+  });
 })();
 </script>
 </body>

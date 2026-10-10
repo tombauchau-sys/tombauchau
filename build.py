@@ -99,7 +99,7 @@ def build_dossier(name):
 </nav>
 '''
     js = read(f'dossiers/{name}.js').replace('__DATA__', read(f'dossiers/{name}-data.json'))
-    return head + nav + read(f'dossiers/{name}-body.html') + '<script>' + js + '</script>\n', title, desc
+    return head + nav + read(f'dossiers/{name}-body.html') + '<script>' + js + '\n' + read('dossiers/common.js') + '</script>\n', title, desc
 
 
 def main():
