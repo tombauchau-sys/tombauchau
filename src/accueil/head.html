@@ -50,6 +50,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 @keyframes drift{from{transform:translateX(-260px)}to{transform:translateX(1160px)}}
 .gate .go{display:flex;gap:20px;align-items:center;justify-content:center;padding:clamp(14px,2.6vh,26px) 16px 0;animation:gfade .6s ease 1.4s both}
 .gate .enter{background:var(--cream);color:var(--brown);border:0;border-radius:999px;padding:14px 28px;font-weight:600;font-size:15px;display:inline-flex;gap:10px;align-items:center;letter-spacing:0;text-transform:none}
+.gate .enter.alt{background:none;color:var(--cream);box-shadow:inset 0 0 0 1.5px var(--cream)}
 .gate .enter:focus-visible,.gate .skip:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
 .gate .skip{background:none;border:0;color:var(--cream-dim);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px}
 .gate .mark{font-weight:700;font-size:clamp(52px,min(12.4vw,17svh),184px);letter-spacing:-.045em;line-height:.92;white-space:nowrap;text-align:center;margin:clamp(8px,1.6vh,18px) 0 clamp(18px,4vh,40px);color:var(--cream);user-select:none}
@@ -256,7 +257,8 @@ html.calm .intro .lead .w{color:var(--cream)}
   <div class="gbar"><span><b>Référentiel</b> de chiffres vérifiés</span><span>Europe · la Belgique d’abord · FR</span></div>
   <div class="gstage"><svg class="world" id="world" viewBox="-40 -40 1080 600" role="img" aria-label="Carte du monde ; la Belgique est signalée en rouge"></svg></div>
   <div class="go">
-    <button class="enter" id="enter" type="button" data-magnet>Entrer <span aria-hidden="true">→</span></button>
+    <button class="enter" id="enter-topic" type="button" data-magnet>Comprendre un sujet <span aria-hidden="true">→</span></button>
+    <button class="enter alt" id="enter" type="button" data-magnet>Explorer les données <span aria-hidden="true">→</span></button>
     <button class="skip" id="skip" type="button">Entrer sans animation</button>
   </div>
   <p class="mark" id="gateT" aria-label="Chiffre Juste"><span aria-hidden="true">Chiffre <span class="l2">J<span class="q"><i class="qq">?</i><i class="uu">u</i></span>ste</span></span></p>
@@ -396,6 +398,7 @@ var MAP=__MAP__;
       if(fast){g.classList.add('out');setTimeout(function(){g.hidden=true},1150);startHero();return}
       g.classList.add('flip');setTimeout(function(){g.classList.add('out');startHero()},1100);setTimeout(function(){g.hidden=true},2300)}
     D.getElementById('enter').addEventListener('click',function(){open(false)});
+    D.getElementById('enter-topic').addEventListener('click',function(){open(false);setTimeout(function(){var t=D.getElementById('dossiers');if(t){t.scrollIntoView();var h=t.querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}},2350)});
     D.getElementById('skip').addEventListener('click',function(){open(true)});
     D.addEventListener('keydown',function(e){if(!done&&(e.key==='Escape'))open(true)});
     var seen=false;try{seen=sessionStorage.getItem('cj-gate')==='1';sessionStorage.setItem('cj-gate','1')}catch(e){}

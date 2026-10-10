@@ -79,6 +79,11 @@ def build_home():
 
 def build_fiche():
     s = read('fiche/fiche-chomage.html')
+    css = read('dossiers/dossier.css')
+    v2 = css[css.index('/* ===== V2'):]  # composants pédagogiques partagés avec les dossiers
+    s = s.replace('</style>', v2 + '</style>', 1)
+    i = s.rindex('</script>')
+    s = s[:i] + '\n' + read('dossiers/common.js') + s[i:]
     return s, 'Chômage · Chiffre Juste', FICHE_DESC
 
 
