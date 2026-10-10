@@ -1,0 +1,311 @@
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 04 · Immigration et asile · avant de lire</span>
+    <h1 class="q" id="q0">Selon vous, quelle part des habitants de la Belgique est née à l’étranger ?</h1>
+    <output class="out" id="gOut" for="guess">10,0 %</output>
+    <input class="range" type="range" id="guess" min="0" max="40" step="0.5" value="10" aria-label="Votre estimation, en pour cent de la population">
+    <div class="scale" aria-hidden="true"><span>0 %</span><span>20 %</span><span>40 %</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>« Né à l’étranger » compte toutes les personnes nées hors de Belgique, quelle que soit leur nationalité : un Belge né au Congo, une Française installée à Bruxelles, un réfugié syrien devenu belge. Quatre sur dix sont nées dans un autre pays de l’Union.</p><h3>Pourquoi le chiffre change selon qui parle</h3><p>On peut aussi compter les personnes sans nationalité belge (14,2 %) ou celles dont un parent est né étranger : ce sont trois populations différentes, et chacune donne un chiffre différent.</p><h3>Pour réutiliser cette idée</h3><p>Devant un chiffre sur « les immigrés », demandez d’abord : comptés selon le lieu de naissance, la nationalité ou l’origine des parents ?</p></div>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 04 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Immigration et asile"><span class="t1">Immigration </span><span class="t2">et asile</span></h2></div>
+    <p class="lede hq" data-r>Combien de personnes arrivent, pourquoi, et que sait-on de leurs effets ? Trois définitions à ne pas confondre, un siècle d’histoire, trois fiches, l’état de la recherche et neuf lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>20,2 %</b><span>des habitants sont nés à l’étranger, contre 14,4 % dans l’Union</span><span class="src">Eurostat migr_pop3ctb, 1<sup>er</sup> janvier 2025</span></div>
+      <div><b>14,2 %</b><span>n’ont pas la nationalité belge</span><span class="src">Eurostat migr_pop1ctz, 1<sup>er</sup> janvier 2025</span></div>
+      <div><b>27 540</b><span>premières demandes d’asile en 2025, soit 2,3 pour 1 000 habitants (Union : 1,5)</span><span class="src">Eurostat migr_asyappctza</span></div>
+      <div><b>46 %</b><span>des premiers titres de séjour délivrés pour raisons familiales</span><span class="src">Eurostat migr_resfirst, 2024</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : données d’asile 2026 d’Eurostat (printemps 2027)</p>
+  </div>
+</section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">Combien de personnes arrivent, pourquoi, et qu’est-ce que cela change ?</h2>
+      <p class="ans">Un habitant sur cinq est né à l’étranger (20,2 % en 2025), dont quatre sur dix dans un autre pays de l’Union. Depuis dix ans, la population belge augmente presque uniquement par les migrations : +606 000 personnes de solde migratoire entre 2015 et 2024, contre +40 000 pour l’excédent des naissances sur les décès. L’asile ne représente qu’une partie de ces arrivées : la famille est le premier motif des titres de séjour. La principale difficulté documentée est l’emploi : 60,7 % des personnes nées hors de l’Union travaillent, contre 75,0 % des personnes nées en Belgique.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Immigré, étranger et demandeur d’asile désignent trois populations différentes : ne les mélangez pas.</li><li>L’immigration n’est pas récente : la Belgique a recruté des travailleurs étrangers dès 1946, et comptait déjà 8,9 % d’étrangers en 1981.</li><li>La recherche trouve des effets moyens faibles sur les salaires des natifs ; l’effet sur les finances publiques dépend surtout du taux d’emploi des immigrés.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>60,7 % · 75,0 %</b><span>taux d’emploi des 20-64 ans nés hors de l’Union et nés en Belgique, 2025</span><small>Eurostat, lfsa_ergacob</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> présenter toute l’immigration comme de l’asile, ou comparer des chiffres comptés selon la nationalité avec d’autres comptés selon le lieu de naissance.</p>
+      <p class="tm-concl">Les chiffres disent qui arrive et ce qui se passe ensuite ; combien de personnes accueillir, et à quelles conditions, reste un choix politique.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- 1b. Les définitions -->
+<section class="sec papier" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois mots, <span>trois populations.</span></h2>
+    <p class="lede" data-r>Le débat public emploie souvent ces mots l’un pour l’autre. Ils ne comptent pourtant pas les mêmes personnes, et un même individu peut entrer dans une catégorie sans entrer dans l’autre.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Lieu de naissance</span><h3>L’immigré</h3><p class="who">20,2 % de la population en 2025</p><p>Une personne <b>née à l’étranger</b> qui vit en Belgique, quelle que soit sa nationalité actuelle. Elle reste « née à l’étranger » toute sa vie, même devenue belge.</p><p class="use">Exemple : une Belge née à Kinshasa est immigrée, mais pas étrangère.</p></article>
+      <article data-r><span class="tag p">Nationalité</span><h3>L’étranger</h3><p class="who">14,2 % de la population en 2025</p><p>Une personne qui <b>n’a pas la nationalité belge</b>, même si elle est née en Belgique. Ce chiffre baisse chaque fois que quelqu’un devient belge, sans que personne ne bouge.</p><p class="use">Exemple : un enfant italien né à Liège est étranger, mais pas immigré.</p></article>
+      <article data-r><span class="tag u">Procédure</span><h3>Le demandeur d’asile</h3><p class="who">27 540 premières demandes en 2025</p><p>Une personne qui demande une <b>protection internationale</b> parce qu’elle craint d’être persécutée ou de subir des atteintes graves dans son pays. Si la protection est accordée, elle devient <b>réfugiée</b> ou bénéficiaire de la protection subsidiaire.</p><p class="use">Les Ukrainiens arrivés depuis 2022 relèvent d’une autre procédure : la protection temporaire.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ c’est pour ça que le pari du début pouvait donner trois réponses</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-flux"><span class="n">01</span><h3>Combien ?</h3><p>Qui arrive, d’où, et pour quelles raisons ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-asile"><span class="n">02</span><h3>L’asile</h3><p>Combien de demandes, combien de protections accordées ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-emploi"><span class="n">03</span><h3>Le travail</h3><p>Pourquoi les immigrés travaillent-ils moins, et que peut-on y faire ?</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · un siècle d’immigration</span>
+    <h2 class="giant" id="tH" data-r>Un pays d’immigration <span>depuis bien plus longtemps qu’on ne le croit.</span></h2>
+    <p class="lede" data-r>En 1930 déjà, 3,8 % des habitants de la Belgique étaient étrangers. La part a doublé avec les recrutements de l’après-guerre, s’est stabilisée autour de 9 % pendant vingt ans, puis remonte depuis le milieu des années 2000.</p>
+    <div class="chart" id="histChart"></div>
+    <p class="srcl">Part des personnes de nationalité étrangère dans la population, en %. 1930-1991 : M. Poulain (UCLouvain, 2017), d’après les recensements et le Registre national ; 1998-2025 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_pop1ctz/default/table?lang=fr" target="_blank" rel="noopener">migr_pop1ctz</a> (rupture de série en 2011). Ligne rose pointillée : part des personnes nées à l’étranger, Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_pop3ctb/default/table?lang=fr" target="_blank" rel="noopener">migr_pop3ctb</a>, disponible depuis 2010. Consulté le 11 octobre 2026.</p>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>La part des étrangers ne dit pas combien de personnes arrivent : elle baisse quand des étrangers deviennent belges. La réforme du Code de la nationalité de 1984, puis la loi du 1<sup>er</sup> mars 2000, ont facilité l’accès à la nationalité : plus de 600 000 étrangers sont devenus belges depuis 1985 (Martiniello et Rea, 2012). C’est une raison pour laquelle la courbe stagne dans les années 1990 alors que des personnes continuent d’arriver.</p></div>
+    <ol class="epochs">
+      <li data-r><span class="yr">1946</span><h3>Le charbon contre les hommes</h3><p>Un protocole avec l’Italie prévoit 50 000 travailleurs pour les mines belges ; l’Italie reçoit en échange du charbon, payé au prix plein. Le 8 août 1956, la catastrophe du Bois du Cazier, à Marcinelle, tue 262 mineurs, dont 136 Italiens.</p></li>
+      <li data-r><span class="yr">1964</span><h3>Maroc et Turquie</h3><p>La Belgique signe des conventions de recrutement de main-d’œuvre avec le Maroc et la Turquie.</p></li>
+      <li data-r><span class="yr">1974</span><h3>L’arrêt officiel</h3><p>Le 1<sup>er</sup> août 1974, le gouvernement limite strictement l’immigration de travail. Les arrivées continuent, surtout par le regroupement familial et, plus tard, par l’asile.</p></li>
+      <li data-r><span class="yr">2000 et 2009</span><h3>Régularisations</h3><p>En janvier 2000, environ 36 000 dossiers couvrant quelque 50 000 personnes sont introduits ; une seconde campagne a lieu fin 2009. La même année 2000, devenir belge devient possible par simple déclaration.</p></li>
+      <li data-r><span class="yr">2015 et 2022</span><h3>Deux pics</h3><p>39 065 premières demandes d’asile en 2015, venant d’abord de Syrie, d’Irak et d’Afghanistan. En 2022, année de l’invasion de l’Ukraine, 63 210 personnes bénéficient de la protection temporaire en fin d’année et le solde migratoire atteint un record (127 502).</p></li>
+    </ol>
+    <p class="srcl">1946-2009 : M. Martiniello et A. Rea (2012), <a href="https://ccme.org.ma/wp-content/uploads/2013/05/Immigration_Final_26_11_12.pdf" target="_blank" rel="noopener"><i>Une brève histoire de l’immigration en Belgique</i></a>, Fédération Wallonie-Bruxelles. 2015 et 2022 : Eurostat, migr_asyappctza, migr_asytpsm et demo_gind.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« L’immigration, c’est surtout l’asile. »</h4><p><b>Faux.</b> En 2024, 38 % des personnes venues s’installer en Belgique étaient des citoyens d’un autre pays de l’Union et 10 % des Belges qui rentraient. Parmi les premiers titres de séjour donnés à des non-Européens, la famille arrive en tête (46 %). Les premières demandes d’asile équivalent à environ un cinquième des arrivées.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« L’immigration est un phénomène récent. »</h4><p><b>Faux.</b> La Belgique comptait 3,8 % d’étrangers en 1930 et 8,9 % en 1981. Elle a recruté elle-même des travailleurs en Italie, au Maroc et en Turquie. Ce qui est récent, c’est la hausse depuis 2005 et la diversité des origines.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Les immigrés prennent le travail des Belges. »</h4><p><b>Pas en moyenne, mais…</b> La recherche trouve des effets moyens très faibles sur les salaires et l’emploi des natifs. Les effets négatifs, quand il y en a, touchent surtout les immigrés déjà installés et les travailleurs peu qualifiés. <a href="#recherche">Voir la recherche</a>.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : combien -->
+<section class="sec papier" id="f-flux" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>94 % <span>de la croissance de la population.</span></h2>
+    <p class="lede" data-r>Entre le 1<sup>er</sup> janvier 2015 et le 1<sup>er</sup> janvier 2025, la Belgique a gagné 646 221 habitants. Le solde migratoire (arrivées moins départs) en explique 606 454, l’excédent des naissances sur les décès 39 767. Dans les années 1960, c’était l’inverse : la population grandissait surtout par les naissances.</p>
+    <div class="chart" id="growChart"></div>
+    <p class="srcl">Solde naturel (naissances moins décès) et solde migratoire, en milliers de personnes par an, Belgique 1960-2025. Le solde migratoire d’Eurostat inclut un « ajustement statistique » (corrections de registre, recensements), d’où des valeurs négatives isolées comme en 1961 ou 1970. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=fr" target="_blank" rel="noopener">demo_gind</a> (CNMIGRAT, NATGROW ; 2025 provisoire), consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">Le solde migratoire</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Combien la population gagne ou perd chaque année par les arrivées et les départs.</li><li>Quelle part de la croissance démographique vient des migrations plutôt que des naissances.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Combien de personnes arrivent : un solde de 70 000 peut cacher 160 000 arrivées et 90 000 départs.</li><li>Qui arrive (Belges qui rentrent, Européens, demandeurs d’asile…) ni pour quelles raisons.</li><li>Combien de personnes sont en séjour irrégulier : elles ne sont pas dans les registres.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les arrivées et départs par nationalité.</li><li>Les premiers titres de séjour par motif.</li><li>La durée de séjour des personnes arrivées.</li></ul></div></div>
+    <div class="duo">
+      <figure data-r><figcaption><b>Qui s’installe en Belgique ?</b><span>immigrations de 2024 par nationalité (162 926 personnes) : Belges, citoyens d’un autre pays de l’Union, citoyens d’un pays hors de l’Union</span></figcaption><div class="chart sm" id="immChart"></div></figure>
+      <figure data-r><figcaption><b>Pourquoi un premier titre de séjour ?</b><span>non-Européens, 2024 : Belgique et Union</span></figcaption><div class="chart sm" id="resChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_imm1ctz/default/table?lang=fr" target="_blank" rel="noopener">migr_imm1ctz</a> (immigrations par nationalité) et <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_resfirst/default/table?lang=fr" target="_blank" rel="noopener">migr_resfirst</a> (premiers titres de séjour délivrés aux citoyens de pays hors de l’Union), consulté le 11 octobre 2026. « Autres » regroupe notamment les titres accordés aux personnes reconnues réfugiées. Les citoyens de l’Union n’ont pas besoin de titre de séjour de ce type : ils n’apparaissent pas dans le second graphique.</p>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : l'asile -->
+<section class="sec brun grain" id="f-asile" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Des vagues, <span>pas une marée montante.</span></h2>
+    <p class="lede" data-r>Les premières demandes d’asile suivent les guerres et les crises : 39 065 en 2015 (Syrie, Afghanistan, Irak), 12 930 en 2020 (année de la pandémie), 27 540 en 2025. Rapportée à la population, la Belgique reçoit plus de demandes que la moyenne de l’Union (2,3 pour 1 000 habitants en 2025, contre 1,5), mais moins qu’en 2015 (3,5).</p>
+    <div class="chart" id="asyChart"></div>
+    <p class="srcl">Premières demandes de protection internationale, Belgique, 2008-2025. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_asyappctza/default/table?lang=fr" target="_blank" rel="noopener">migr_asyappctza</a>, consulté le 11 octobre 2026. Pour comparaison, les demandes (premières et ultérieures confondues) étaient de 12 897 en 1990, 26 408 en 1993 et 42 691 en 1999 (Martiniello et Rea, 2012) : la définition diffère, ces chiffres ne sont pas placés sur le graphique.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Protection accordée</h3><b class="big">29,7 %</b><p>des décisions de première instance en 2025 (Union : 39,1 %)</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Protection temporaire</h3><b class="big">96 975</b><p>personnes, surtout ukrainiennes, fin août 2026 : hors procédure d’asile</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Réseau d’accueil</h3><b class="big">93 %</b><p>des 33 677 places occupées au 1<sup>er</sup> juin 2026 ; 1 043 personnes en attente</p></div>
+    </div>
+    <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_asydcfsta/default/table?lang=fr" target="_blank" rel="noopener">migr_asydcfsta</a> (décisions de première instance ; l’Union compte aussi des statuts humanitaires nationaux qui n’existent pas en Belgique) et <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_asytpsm/default/table?lang=fr" target="_blank" rel="noopener">migr_asytpsm</a> ; Fedasil, <a href="https://www.fedasil.be/sites/default/files/content/download/files/reseau%20accueil%20Fedasil%2020260601.pdf" target="_blank" rel="noopener">Réseau d’accueil au 1<sup>er</sup> juin 2026</a>.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Part des décisions positives</b><span>première instance, Belgique, 2015-2025, en %</span></figcaption><div class="chart sm" id="recChart"></div></figure>
+      <figure data-r><figcaption><b>D’où viennent les demandeurs ?</b><span>premières demandes en 2025, neuf premières nationalités</span></figcaption><div class="chart sm" id="natChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : Eurostat, migr_asydcfsta et migr_asyappctza, consulté le 11 octobre 2026. Aucune nationalité ne représente plus de 11 % des demandes de 2025.</p>
+    <div class="canwhat" data-r><p class="cw-t">Le taux de protection</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Quelle part des décisions de première instance accorde le statut de réfugié ou la protection subsidiaire.</li><li>Comment cette part évolue, en gardant en tête qui demande.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si l’administration est devenue plus sévère : la part change aussi quand les nationalités des demandeurs changent.</li><li>Le résultat final : une partie des refus est réformée en recours devant le Conseil du contentieux des étrangers.</li><li>Ce que deviennent les personnes refusées (départ, recours, séjour irrégulier).</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les taux par nationalité.</li><li>Les décisions définitives après recours.</li><li>Les retours volontaires et forcés.</li></ul></div></div>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>La forte baisse du taux de protection en 2025 (de 48,7 % à 29,7 %) n’est pas expliquée ici : elle peut venir de changements de nationalités, de la suspension de certaines décisions ou de la politique de traitement. Aucune source vérifiée ne permet encore de trancher.</p></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : le travail -->
+<section class="band grain" id="f-emploi" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>L’écart se réduit, <span>mais reste plus large que dans l’Union.</span></h2>
+    <p class="lede ink" data-r>En 2025, 60,7 % des 20-64 ans nés hors de l’Union ont un emploi en Belgique, contre 75,0 % des personnes nées en Belgique : 14,3 points d’écart. Dans l’ensemble de l’Union, l’écart est de 8,6 points. Il s’est pourtant réduit depuis 2010 (49,3 %). Il est le plus fort chez les femmes : 51,3 % contre 72,7 %.</p>
+    <div class="chart" id="empChart"></div>
+    <p class="srcl ink">Taux d’emploi des 20-64 ans selon le pays de naissance, en %. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsa_ergacob/default/table?lang=fr" target="_blank" rel="noopener">lfsa_ergacob</a>, ruptures de série en 2011, 2017 et 2021, consulté le 11 octobre 2026. Les personnes nées dans un autre pays de l’Union ont un taux de 74,3 %, proche des natifs.</p>
+    <div class="snow light" data-r>
+      <h3 class="sub">Ce qui explique l’écart, selon la Banque nationale</h3>
+      <p>Dans une étude de 2020, la BNB constate que les caractéristiques individuelles (âge, diplôme, etc.) n’expliquent qu’environ <b>18 %</b> de l’écart d’emploi entre immigrés de première génération et natifs. Le motif d’arrivée pèse lourd : les personnes venues par regroupement familial ou pour une protection ont environ <b>30 points</b> de probabilité d’emploi en moins que les migrants venus pour travailler. La reconnaissance des diplômes, la langue, les réseaux et les discriminations à l’embauche sont cités parmi les causes.</p>
+      <p class="srcl ink">Source : A. Baeyens, D. Cornille, Ph. Delhez, C. Piton et L. Van Meensel (2020), « <a href="https://www.nbb.be/doc/ts/publications/economicreview/2020/ecorev2020_special.pdf" target="_blank" rel="noopener">The economic impact of immigration in Belgium</a> », <i>NBB Economic Review</i>, édition spéciale de novembre 2020. Les chiffres de l’étude portent sur 2019.</p>
+    </div>
+    <div class="canwhat" data-r><p class="cw-t">Le taux d’emploi selon le pays de naissance</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Quelle part des personnes nées hors de l’Union a travaillé au moins une heure la semaine de référence.</li><li>Comment la Belgique se compare à ses voisins, avec la même définition.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Pourquoi l’écart existe : il mélange des personnes arrivées l’an dernier et il y a trente ans, réfugiés et cadres expatriés.</li><li>Si les emplois occupés correspondent aux diplômes.</li><li>La situation des enfants d’immigrés nés en Belgique, comptés parmi les natifs.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>L’emploi selon la durée de séjour et le motif d’arrivée.</li><li>La surqualification des immigrés.</li><li>Le Monitoring socio-économique (SPF Emploi et Unia).</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Quatre questions, <span>quatre niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="__HOME__#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Les débats portent sur deux questions distinctes : combien de personnes admettre, et comment favoriser l’intégration de celles qui sont là. Pour chaque levier : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Ouvrir plus vite l’accès au travail</h3><dl><dt>Le mécanisme</dt><dd>Réduire l’attente avant de pouvoir travailler et la durée des procédures.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> En Allemagne, sept mois d’interdiction de travail en plus ont réduit de 20 points le taux d’emploi des réfugiés cinq ans après (Marbach et al., 2018). En Suisse, chaque année d’attente de décision réduit l’emploi de 4 à 5 points (Hainmueller et al., 2016).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> L’effet sur le nombre de demandes, que certains craignent d’augmenter.</dd><dt>Ce qu’on sacrifie</dt><dd>Une partie du contrôle sur qui travaille avant la décision définitive.</dd></dl></article><article class="opt" data-r><h3>Investir dans la langue et les diplômes</h3><dl><dt>Le mécanisme</dt><dd>Cours de langue, reconnaissance des qualifications, accompagnement vers l’emploi.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> En France, des heures de cours de langue supplémentaires augmentent la participation au marché du travail (Lochmann et al., 2019). La BNB cite la reconnaissance des diplômes comme un frein en Belgique.</dd><dt>Ce qui reste incertain</dt><dd>L’efficacité des parcours d’intégration belges, peu évalués de manière causale.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût budgétaire immédiat, pour un rendement lent.</dd></dl></article><article class="opt" data-r><h3>Combattre les discriminations à l’embauche</h3><dl><dt>Le mécanisme</dt><dd>Tests de situation, sanctions, recrutement anonymisé.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> En Belgique, pour des jeunes sortant de l’école à CV égal, un nom à consonance turque devait envoyer environ deux fois plus de candidatures dans les métiers où les candidats abondent ; l’écart disparaissait dans les métiers en pénurie (Baert et al., 2015).</dd><dt>Ce qui reste incertain</dt><dd>L’effet des instruments de contrôle sur les embauches réelles.</dd><dt>Ce qu’on sacrifie</dt><dd>Des contraintes et des contrôles supplémentaires pour les employeurs.</dd></dl></article><article class="opt" data-r><h3>Durcir les conditions d’entrée et d’accueil</h3><dl><dt>Le mécanisme</dt><dd>Règles plus strictes pour l’asile, le regroupement familial ou l’accueil.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Les politiques plus strictes ont un effet réel mais limité : environ un tiers de la baisse des demandes dans les pays développés après 2001, le reste venant de la situation dans les pays d’origine (Hatton, 2009).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Le report des demandes vers d’autres pays de l’Union, et l’effet sur l’intégration de ceux qui restent.</dd><dt>Ce qu’on sacrifie</dt><dd>Une partie des droits garantis par la Convention de Genève et la Convention européenne des droits de l’homme, qui encadrent ces choix ; en 2023, la Cour européenne des droits de l’homme a condamné la Belgique pour ne pas avoir exécuté une décision de justice ordonnant l’accueil d’un demandeur, en relevant une défaillance systémique.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Le contrôle du nombre d’arrivées</td><td>Le respect de droits individuels (protection, vie familiale) et les besoins de main-d’œuvre</td></tr><tr><td>L’accueil le plus large</td><td>La capacité des services d’accueil, de logement et d’intégration à suivre</td></tr><tr><td>L’intégration rapide par le travail</td><td>Le contrôle préalable de chaque situation</td></tr><tr><td>La sélection selon les besoins économiques</td><td>Le droit à la protection, qui ne dépend pas des diplômes</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>Qui a le droit <span>de venir, et de rester ?</span></h2>
+    <p class="lede" data-r>Un État peut-il choisir qui entre ? Que doit-on à ceux qui fuient ? Les chiffres ne tranchent pas ces questions. Neuf traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>de l’immigration ?</span></h2>
+    <p class="lede ink" data-r>L’accès au territoire relève de l’État fédéral, dans un cadre fixé par l’Union européenne et par des traités internationaux. L’intégration et le travail relèvent largement des entités fédérées.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>État fédéral</h3><ul><li>Entrée, séjour et éloignement (Office des étrangers)</li><li>Asile : Commissariat général aux réfugiés et aux apatrides, recours devant le Conseil du contentieux des étrangers</li><li>Accueil des demandeurs d’asile (Fedasil) et nationalité</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Régions et Communautés</h3><ul><li>Autorisations de travail des non-Européens</li><li>Parcours d’intégration, cours de langue</li><li>Enseignement, logement, aide sociale</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Communes et CPAS</h3><ul><li>Inscription dans les registres de population</li><li>Aide sociale et initiatives locales d’accueil</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Union et droit international</h3><ul><li>Libre circulation des citoyens de l’Union</li><li>Pacte sur la migration et l’asile : adopté en mai 2024, applicable depuis le 12 juin 2026</li><li>Convention de Genève de 1951 et Convention européenne des droits de l’homme</li></ul></div>
+    </div>
+    <p class="srcl ink">Pacte : <a href="https://www.consilium.europa.eu/fr/policies/eu-pact-migration-asylum/" target="_blank" rel="noopener">Conseil de l’Union européenne</a>. Condamnation de 2023 : Cour européenne des droits de l’homme, <i>Camara c. Belgique</i>, 18 juillet 2023, requête n° 49255/22 (violation de l’article 6), voir <a href="https://emnbelgium.be/nl/node/4202" target="_blank" rel="noopener">le résumé du Réseau européen des migrations</a>.</p>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Mélanger les définitions</h3><p>Nés à l’étranger, étrangers, « d’origine étrangère » : trois chiffres pour trois populations. Comparer l’un à l’autre, ou deux pays qui n’utilisent pas la même définition, fausse tout.</p></li>
+      <li data-r><span class="g">2</span><h3>Oublier ceux qu’aucun registre ne compte</h3><p>Les personnes en séjour irrégulier n’apparaissent dans aucune des statistiques de ce dossier. Leur nombre n’est connu que par des estimations fragiles, que nous ne reprenons pas.</p></li>
+      <li data-r><span class="g">3</span><h3>Prendre une demande d’asile pour une arrivée</h3><p>Une personne peut demander l’asile après être arrivée depuis longtemps, ou dans plusieurs pays. Et les personnes sous protection temporaire (Ukraine) ne sont pas des demandeurs d’asile.</p></li>
+      <li data-r><span class="g">4</span><h3>Lire le taux de protection comme une mesure de sévérité</h3><p>Il dépend d’abord des nationalités des demandeurs. Il porte sur la première instance : les recours peuvent changer le résultat.</p></li>
+      <li data-r><span class="g">5</span><h3>Traiter « les immigrés » comme un groupe</h3><p>Une ingénieure française, un réfugié afghan et un grand-père marocain arrivé en 1965 sont tous « nés à l’étranger ». Les moyennes cachent des situations opposées.</p></li>
+      <li data-r><span class="g">6</span><h3>Chercher un coût ou un bénéfice unique</h3><p>L’effet budgétaire dépend de la méthode (dépenses incluses, horizon, enfants comptés ou non), de l’âge et de l’emploi des personnes. Un chiffre isolé, positif ou négatif, se présente souvent sans ses hypothèses.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="a" data-r><p class="qq">1. Dans le pays A, 25 % des habitants sont nés à l’étranger mais seulement 8 % sont étrangers. Dans le pays B, ces deux parts valent 15 %. Qu’est-ce qui explique le mieux la différence ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Il est plus facile de devenir citoyen dans le pays A.</button><button type="button" data-k="b" aria-pressed="false">Le pays B accueille plus d’immigrés que le pays A.</button><button type="button" data-k="c" aria-pressed="false">Le pays A a moins de demandeurs d’asile.</button></div><p class="qfb" data-k="a" hidden><b>Exact.</b> Beaucoup de personnes nées à l’étranger y sont devenues citoyennes : elles restent « nées à l’étranger » mais ne sont plus « étrangères ».</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> C’est l’inverse : le pays A compte plus de personnes nées à l’étranger.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Les demandeurs d’asile ne sont qu’une petite partie de ces deux populations, et rien ne l’indique ici.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> la part d’étrangers dépend des règles d’accès à la nationalité autant que des migrations. Pour comparer des pays, le lieu de naissance est plus stable.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="b" data-r><p class="qq">2. Dans un pays, la part des demandes d’asile acceptées passe de 49 % à 30 % en un an. Un responsable politique affirme : « Nos agents sont devenus plus stricts. » Que faut-il vérifier d’abord ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Rien : la baisse prouve que les règles sont appliquées plus sévèrement.</button><button type="button" data-k="b" aria-pressed="false">Si les nationalités des demandeurs ont changé, en comparant le taux nationalité par nationalité.</button><button type="button" data-k="c" aria-pressed="false">Le nombre total de demandes de l’année.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> La baisse peut venir d’un changement dans qui demande, sans aucun changement de pratique.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> Si moins de demandeurs viennent de pays en guerre, le taux global baisse même à pratique inchangée.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Le nombre de demandes ne dit pas comment chacune est jugée.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un taux global mélange des groupes différents. Quand la composition change, le taux bouge même si chaque groupe est traité de la même façon : c’est un effet de composition.</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="nes" aria-pressed="true">Nés à l’étranger</button>
+        <button type="button" data-k="pop" aria-pressed="false">Croissance</button>
+        <button type="button" data-k="asy" aria-pressed="false">Asile</button>
+        <button type="button" data-k="emp" aria-pressed="false">Emploi</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées le 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat : <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_pop3ctb/default/table?lang=fr" target="_blank" rel="noopener">migr_pop3ctb</a> (pays de naissance), <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_pop1ctz/default/table?lang=fr" target="_blank" rel="noopener">migr_pop1ctz</a> (nationalité), <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=fr" target="_blank" rel="noopener">demo_gind</a> (soldes), <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_imm1ctz/default/table?lang=fr" target="_blank" rel="noopener">migr_imm1ctz</a> (immigrations), <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_resfirst/default/table?lang=fr" target="_blank" rel="noopener">migr_resfirst</a> (titres de séjour), <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_asyappctza/default/table?lang=fr" target="_blank" rel="noopener">migr_asyappctza</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_asydcfsta/default/table?lang=fr" target="_blank" rel="noopener">migr_asydcfsta</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/migr_asytpsm/default/table?lang=fr" target="_blank" rel="noopener">migr_asytpsm</a> (asile et protection temporaire), <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsa_ergacob/default/table?lang=fr" target="_blank" rel="noopener">lfsa_ergacob</a> (emploi).</li>
+      </ol>
+      <h3 class="mt">Niveau 3 · institutions publiques</h3><ol>
+        <li>Baeyens, A., Cornille, D., Delhez, Ph., Piton, C. et Van Meensel, L. (2020). « <a href="https://www.nbb.be/doc/ts/publications/economicreview/2020/ecorev2020_special.pdf" target="_blank" rel="noopener">The economic impact of immigration in Belgium</a> ». <i>NBB Economic Review</i>, édition spéciale.</li>
+        <li>OCDE, Damas de Matos, A. (2021). « <a href="https://www.oecd.org/en/publications/international-migration-outlook-2021_29f23e9d-en/full-report/component-8.html" target="_blank" rel="noopener">The fiscal impact of immigration in OECD countries since the mid-2000s</a> ». <i>International Migration Outlook 2021</i>.</li>
+        <li>National Academies of Sciences, Engineering, and Medicine (2017). <a href="https://www.nationalacademies.org/projects/DBASSE-CNSTAT-13-03/publication/23550" target="_blank" rel="noopener"><i>The Economic and Fiscal Consequences of Immigration</i></a>. National Academies Press.</li>
+        <li>Fedasil (2026). <a href="https://www.fedasil.be/sites/default/files/content/download/files/reseau%20accueil%20Fedasil%2020260601.pdf" target="_blank" rel="noopener">Réseau d’accueil au 1<sup>er</sup> juin 2026</a>.</li>
+        <li>Conseil de l’Union européenne. <a href="https://www.consilium.europa.eu/fr/policies/eu-pact-migration-asylum/" target="_blank" rel="noopener">Pacte sur la migration et l’asile</a>.</li>
+      </ol>
+      <h3 class="mt">Histoire et droit</h3><ol>
+        <li>Martiniello, M. et Rea, A. (2012). <a href="https://ccme.org.ma/wp-content/uploads/2013/05/Immigration_Final_26_11_12.pdf" target="_blank" rel="noopener"><i>Une brève histoire de l’immigration en Belgique</i></a>. Bruxelles : Fédération Wallonie-Bruxelles (1<sup>re</sup> éd. 2003).</li>
+        <li>Poulain, M. (2017). <a href="https://diocese-tournai.be/images/NEWS/2017/11_2017/Avec_et_pour_les_migrants/Intervention_Michel_Poulain_Mesvin.pdf" target="_blank" rel="noopener">« Migrations internationales et migrants aujourd’hui »</a>, présentation, UCLouvain, 28 novembre 2017 (série 1930-2016 des étrangers en Belgique).</li>
+        <li>Cour européenne des droits de l’homme, <i>Camara c. Belgique</i>, 18 juillet 2023, req. n° 49255/22 ; <a href="https://emnbelgium.be/nl/node/4202" target="_blank" rel="noopener">résumé du Réseau européen des migrations</a>.</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Baert, S., Cockx, B., Gheyle, N. et Vandamme, C. (2015). « Is There Less Discrimination in Occupations Where Recruitment Is Difficult? ». <i>ILR Review</i>, 68(3), 467-500.</li>
+        <li>Borjas, G. (2017). « The Wage Impact of the Marielitos: A Reappraisal ». <i>ILR Review</i>, 70(5), 1077-1110.</li>
+        <li>Card, D. (1990). « The Impact of the Mariel Boatlift on the Miami Labor Market ». <i>ILR Review</i>, 43(2), 245-257.</li>
+        <li>Dustmann, C., Schönberg, U. et Stuhler, J. (2016). « <a href="https://doi.org/10.1257/jep.30.4.31" target="_blank" rel="noopener">The Impact of Immigration: Why Do Studies Reach Such Different Results?</a> ». <i>Journal of Economic Perspectives</i>, 30(4), 31-56.</li>
+        <li>Hainmueller, J., Hangartner, D. et Lawrence, D. (2016). « When Lives Are Put on Hold: Lengthy Asylum Processes Decrease Employment among Refugees ». <i>Science Advances</i>, 2(8), e1600432.</li>
+        <li>Hatton, T. (2009). « <a href="https://ideas.repec.org/a/wly/econjl/v119y2009i535pf183-f213.html" target="_blank" rel="noopener">The Rise and Fall of Asylum: What Happened and Why?</a> ». <i>Economic Journal</i>, 119(535), F183-F213.</li>
+        <li>Lochmann, A., Rapoport, H. et Speciale, B. (2019). « <a href="https://doi.org/10.1016/j.euroecorev.2019.01.008" target="_blank" rel="noopener">The Effect of Language Training on Immigrants’ Economic Integration: Empirical Evidence from France</a> ». <i>European Economic Review</i>, 113, 265-296.</li>
+        <li>Marbach, M., Hainmueller, J. et Hangartner, D. (2018). « <a href="https://doi.org/10.1126/sciadv.aap9519" target="_blank" rel="noopener">The Long-Term Impact of Employment Bans on the Economic Integration of Refugees</a> ». <i>Science Advances</i>, 4(9), eaap9519.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Arendt, H. (1951). <i>The Origins of Totalitarianism</i>. Harcourt.</li>
+        <li>Borjas, G. (2016). <i>We Wanted Workers</i>. W. W. Norton.</li>
+        <li>Carens, J. (2013). <i>The Ethics of Immigration</i>. Oxford University Press.</li>
+        <li>Clemens, M. (2011). « Economics and Emigration: Trillion-Dollar Bills on the Sidewalk? ». <i>Journal of Economic Perspectives</i>, 25(3), 83-106.</li>
+        <li>Collier, P. (2013). <i>Exodus</i>. Oxford University Press.</li>
+        <li>Marx, K. (1870). Lettre à Sigfrid Meyer et August Vogt, 9 avril 1870.</li>
+        <li>Miller, D. (2016). <i>Strangers in Our Midst</i>. Harvard University Press.</li>
+        <li>Sayad, A. (1999). <i>La double absence</i>. Seuil.</li>
+        <li>Walzer, M. (1983). <i>Spheres of Justice</i>. Basic Books.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Les sites de Statbel et de Myria n’ont pas pu être consultés automatiquement lors de la vérification : les chiffres « d’origine étrangère » ne sont donc pas repris. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="__HOME__#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 04 · Immigration et asile · vérifié le 11 octobre 2026</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
