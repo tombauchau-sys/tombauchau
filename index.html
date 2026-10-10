@@ -779,10 +779,10 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
       if(fast){g.classList.add('out');setTimeout(function(){g.hidden=true},1150);startHero();return}
       g.classList.add('flip');setTimeout(function(){g.classList.add('out');startHero()},1100);setTimeout(function(){g.hidden=true},2300)}
     D.getElementById('enter').addEventListener('click',function(){open(false)});
-    D.getElementById('skip').addEventListener('click',function(){setCalm(true);open(true)});
+    D.getElementById('skip').addEventListener('click',function(){open(true)});
     D.addEventListener('keydown',function(e){if(!done&&(e.key==='Escape'))open(true)});
     var seen=false;try{seen=sessionStorage.getItem('cj-gate')==='1';sessionStorage.setItem('cj-gate','1')}catch(e){}
-    if(calm||reduce||seen){g.hidden=true;done=true;startHero()} else {D.documentElement.style.overflow='hidden';new MutationObserver(function(){if(g.classList.contains('out'))D.documentElement.style.overflow=''}).observe(g,{attributes:true})}
+    D.documentElement.style.overflow='hidden';new MutationObserver(function(){if(g.classList.contains('out'))D.documentElement.style.overflow=''}).observe(g,{attributes:true});
   })();
 
   function startHero(){var a=D.getElementById('atlas');a.classList.add('go')}
