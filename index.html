@@ -571,6 +571,10 @@ nav.top #ddBtn[aria-expanded="true"]::after{transform:scaleX(1)}
 .methode dt{font-weight:600;color:var(--cream)}
 .methode dd{margin:0;color:var(--cream-dim)}
 @media (max-width:760px){.methode .mtg{grid-template-columns:1fr}.methode .mtb,.methode .mtb:nth-child(even){padding:22px 0 24px;border-left:0}.methode dl{grid-template-columns:1fr;gap:2px}.methode dd{margin-bottom:8px}}
+/* Éléments qui n'apparaissent que par animation : visibles d'office sans animation */
+html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important}
+@media (prefers-reduced-motion:reduce){.gate .go,.gate .here,.flowlab{opacity:1!important}}
+.gate[hidden]{display:none!important}
 
 .grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}
 </style>
