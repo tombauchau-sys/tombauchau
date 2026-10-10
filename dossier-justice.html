@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Justice et sécurité en Belgique : criminalité enregistrée et chiffre noir, prisons surpeuplées, récidive, histoire pénale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.">
+<meta property="og:title" content="Justice et sécurité · Chiffre Juste">
+<meta property="og:description" content="Justice et sécurité en Belgique : criminalité enregistrée et chiffre noir, prisons surpeuplées, récidive, histoire pénale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.">
+<title>Justice et sécurité · Chiffre Juste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&display=swap">
+<style>
+/* ADN Chiffre Juste, fiche modèle. Univers alternés : brun (faits), papier (lecture), aplats de chapitre (exploration). Le fait en grotesque, la lecture en serif, les pièges à la main. Un seul univers visuel, identique en thème clair et sombre. */
+:root{
+  --brown:#1E1914; --cream:#EDE6DC; --cream-dim:#A69C8F; --hair:#3B332B; --copper:#C9773A;
+  --off:#F7F6F2; --ink:#222222; --grey:#6A665F; --rule:#D7D4CC;
+  --red:#E2402B; --red-ink:#C0341E; --line:#1A1A1A; --lilac:#9C98F0; --orange:#F09A3E; --pink:#EFA3CB; --mint:#7FB6A3; --blue:#7E9CC4; --peach:#F2A07B;
+  --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --main:"Caveat","Segoe Print","Bradley Hand",cursive;
+  --ease:cubic-bezier(.2,.7,.2,1); --ease-io:cubic-bezier(.6,0,.2,1);
+  --xgrid:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><path d='M21 21l6 6m0-6l-6 6' stroke='%23453B31' stroke-width='1.2' fill='none'/></svg>");
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--brown);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+p{margin:0}
+h1,h2,h3,h4{margin:0;font-weight:400;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+sup{font-size:.65em;line-height:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+.note{font-family:var(--main);font-weight:600;line-height:1.05}
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.06;pointer-events:none;z-index:0;mix-blend-mode:overlay}
+.grain>*{position:relative;z-index:1}
+.sec{padding-block:96px}
+.brun{background:var(--brown);color:var(--cream)}
+.papier{background:var(--off);color:var(--ink)}
+.kick{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.brun .kick{color:var(--copper)} .papier .kick{color:var(--grey)}
+.giant{font-family:var(--serif);font-size:clamp(56px,9vw,132px);line-height:.9;letter-spacing:-.02em}
+.giant span{color:var(--grey)} .brun .giant span{color:var(--cream-dim)}
+.lede{font-size:clamp(19px,1.9vw,24px);line-height:1.35;max-width:46ch}
+.papier .lede{color:#3D3A35}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 22px;font-weight:600;font-size:15px;text-decoration:none;border:0;transition:transform .35s var(--ease)}
+.pill.cream{background:var(--cream);color:var(--brown)} .pill.ink{background:var(--line);color:#fff}
+.pill .arr{transition:transform .35s var(--ease)} .pill:hover .arr{transform:translateX(5px)}
+.skew{display:inline-block;border:1.5px solid currentColor;padding:9px 14px;font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transform:skewX(-10deg);background:none}
+.skew span{display:inline-block;transform:skewX(10deg)}
+.skew[aria-pressed="true"]{background:currentColor}
+.skew[aria-pressed="true"] span{color:var(--brown)}
+
+/* Navigation */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--brown);display:grid;grid-template-columns:repeat(2,1fr) 110px repeat(3,1fr);border-bottom:1px solid var(--hair)}
+nav.top a{display:flex;align-items:center;justify-content:center;height:56px;text-decoration:none;font-weight:500;font-size:15px;border-right:1px solid var(--hair);position:relative;overflow:hidden}
+nav.top a:last-child{border-right:0}
+nav.top a .lbl{display:block;transition:transform .45s var(--ease)}
+nav.top a .lbl::after{content:attr(data-t);position:absolute;left:0;right:0;top:100%;text-align:center;color:var(--copper)}
+nav.top a:hover .lbl{transform:translateY(-100%)}
+nav.top a.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--copper)}
+nav.top .mark span{width:30px;height:30px;border-radius:50%;border:6px solid var(--cream);border-right-color:transparent;transform:rotate(-30deg);transition:transform .8s var(--ease)}
+nav.top .mark:hover span{transform:rotate(330deg)}
+
+/* 0. Seuil : devinez d'abord */
+.seuil{background-image:var(--xgrid);min-height:calc(100vh - 56px);display:grid;place-items:center;padding-block:64px;text-align:center}
+.seuil .q{font-family:var(--serif);font-size:clamp(30px,4vw,56px);line-height:1.05;max-width:20ch;margin:14px auto 0}
+.seuil .out{display:block;font-weight:700;font-size:clamp(96px,19vw,250px);line-height:.85;letter-spacing:-.05em;margin:24px 0 8px;font-variant-numeric:tabular-nums}
+.range{width:min(560px,86vw);margin:8px auto 0;display:block;appearance:none;-webkit-appearance:none;background:transparent;height:34px}
+.range::-webkit-slider-runnable-track{height:2px;background:var(--cream-dim)}
+.range::-moz-range-track{height:2px;background:var(--cream-dim)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--copper);margin-top:-12px;border:3px solid var(--brown);box-shadow:0 0 0 1.5px var(--copper)}
+.range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--copper);border:3px solid var(--brown)}
+.scale{display:flex;justify-content:space-between;width:min(560px,86vw);margin:0 auto;font-size:12.5px;color:var(--cream-dim)}
+.seuil .acts{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:30px}
+.seuil .skew{color:var(--cream-dim)}
+.verdict{max-width:34ch;margin:28px auto 0;font-size:28px;color:var(--cream)}
+.verdict .down{display:block;font-size:40px;margin-top:6px;animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* 1. Héros : triptyque */
+.hero{background-image:var(--xgrid);padding-top:60px;overflow:hidden}
+.hero .stage{position:relative;height:min(480px,52vw);min-height:300px}
+.hero svg.discs{position:absolute;left:50%;top:0;height:100%;transform:translateX(-50%);overflow:visible}
+.hero .row{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:14px;pointer-events:none}
+.side{font-family:var(--serif);font-size:clamp(26px,3.6vw,48px);line-height:1;white-space:nowrap}
+.conn{flex:1;height:1px;background:var(--cream-dim);opacity:.6;position:relative;min-width:20px}
+.conn::after{content:"×";position:absolute;top:-11px;right:-4px;font-size:16px;color:var(--cream-dim)}
+.conn.r::after{right:auto;left:-4px}
+.hero .gap{flex:0 0 calc(max(300px,min(480px,52vw)) * .93)}
+.title{font-weight:700;font-size:clamp(54px,10.5vw,150px);line-height:.86;letter-spacing:-.045em;margin-top:40px}
+.title .t2{color:var(--cream-dim)}
+.title .ch{display:inline-block}.title .wd{display:inline-block;white-space:nowrap}
+.split .ch{transform:translateY(105%);opacity:0}
+.split.go .ch{transform:none;opacity:1;transition:transform .9s var(--ease),opacity .9s var(--ease)}
+.titlebox{overflow:hidden;padding-bottom:.08em}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:48px}
+.facts div{padding:26px 22px 28px;border-right:1px solid var(--hair)}
+.facts div:first-child{padding-left:0}
+.facts div:last-child{border-right:0}
+.facts b{display:block;white-space:nowrap;font-weight:700;font-size:clamp(26px,3vw,44px);letter-spacing:-.02em;line-height:1}
+.facts span{display:block;font-size:14.5px;color:var(--cream-dim);margin-top:10px}
+.facts .src{font-size:12px;margin-top:6px;opacity:.8}
+
+/* 2. Définition */
+.crit{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.crit li{display:grid;grid-template-columns:80px minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--rule)}
+.crit .n{font-family:var(--serif);font-style:italic;font-size:44px;line-height:1;color:var(--red)}
+.crit h3{font-weight:700;font-size:clamp(26px,3vw,40px);letter-spacing:-.02em;line-height:1}
+.crit p{font-size:16px;color:#3D3A35}
+.aside-note{margin-top:22px;color:var(--grey);font-size:15.5px;max-width:60ch}
+
+/* Bande d'exploration (aplat) */
+.band{padding-block:80px;color:var(--line)}
+.band .bandin{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
+.band h2{font-family:var(--serif);font-size:clamp(46px,6vw,84px);line-height:.92}
+.band .hint{font-size:30px;margin-top:14px;transform:rotate(-3deg);display:inline-block}
+.bulle{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:28px;padding:28px;box-shadow:8px 8px 0 var(--line)}
+.bulle .step{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.bulle .qq{font-family:var(--serif);font-size:clamp(26px,2.8vw,36px);line-height:1.1;margin:10px 0 20px}
+.bulle .opts{display:flex;gap:10px;flex-wrap:wrap}
+.bulle .opts button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:10px 26px;font-weight:700;font-size:15px;transition:transform .2s var(--ease),background .2s ease}
+.bulle .opts button:hover{background:var(--line);color:#fff;transform:translateY(-2px)}
+.bulle .res{font-weight:700;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.02em;line-height:1;margin:8px 0 12px}
+.bulle .path{font-size:13.5px;color:var(--grey);margin-top:14px}
+.bulle .again{margin-top:16px;border:0;background:none;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.tag{display:inline-block;border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700}
+.tag.u{background:var(--red-ink);color:#fff}.tag.e{background:var(--line);color:#fff}.tag.p{background:var(--orange);color:var(--line)}.tag.i{border:1.5px solid var(--line)}
+.bulle.pop{animation:pop .45s var(--ease)}
+@keyframes pop{from{transform:translateY(10px) rotate(-1deg)}}
+
+/* 3. Sources */
+.srcs{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.srcs li{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) 170px;gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid var(--rule)}
+.srcs h3{font-family:var(--serif);font-size:clamp(26px,2.8vw,38px);line-height:1}
+.srcs .who{font-weight:600;font-size:15px}
+.srcs .how{font-size:15px;color:#3D3A35}
+.srcs .val{font-weight:700;font-size:clamp(28px,3vw,42px);letter-spacing:-.02em;text-align:right;line-height:1}
+.srcs .val small{display:block;font-weight:500;font-size:12.5px;letter-spacing:0;color:var(--grey);margin-top:6px}
+.srcs .hand{position:absolute;right:190px;top:-14px;color:var(--red);font-size:26px;transform:rotate(-4deg);white-space:nowrap}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.two h4{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.two .ok h4{color:var(--grey)} .two .ko h4{color:var(--red-ink)}
+.two p{font-family:var(--serif);font-size:22px;line-height:1.3}
+
+/* 4. Réforme */
+.reform .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:44px}
+.reform .grid3 div{padding:30px 24px 32px;border-right:1px solid var(--hair)}
+.reform .grid3 div:first-child{padding-left:0}.reform .grid3 div:last-child{border-right:0}
+.reform b{display:block;font-weight:700;font-size:clamp(44px,5.6vw,80px);letter-spacing:-.04em;line-height:.9}
+.reform span{display:block;color:var(--cream-dim);font-size:15px;margin-top:12px;max-width:28ch}
+
+/* Graphiques */
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart{margin-top:44px}
+.seg-bar rect.s{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform 1s var(--ease)}
+.seg-bar.play rect.s{transform:none}
+.drawline{stroke-dasharray:2000;stroke-dashoffset:2000}
+.play .drawline{transition:stroke-dashoffset 2.6s var(--ease-io);stroke-dashoffset:0}
+.fadein{opacity:0;transition:opacity .6s ease 2.2s}
+.play .fadein{opacity:1}
+.evs{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.evs button{border:1.5px solid var(--cream-dim);background:none;color:var(--cream);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;transition:background .2s ease}
+.evs button[aria-pressed="true"]{background:var(--cream);color:var(--brown);border-color:var(--cream)}
+.evtext{font-family:var(--serif);font-size:24px;line-height:1.3;margin-top:22px;max-width:52ch;min-height:4em}
+.pills .bar{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease)}
+.pills.play .bar{transform:none}
+
+/* 6. Limites */
+.lim{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.lim li{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr) minmax(0,1.2fr);gap:20px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--rule);overflow:hidden}
+.lim .g{font-family:var(--serif);font-size:56px;line-height:.8;color:var(--red)}
+.lim h3{font-family:var(--serif);font-size:clamp(28px,3vw,42px);line-height:1}
+.lim p{font-size:16px;color:#3D3A35}
+
+/* 7. Lectures */
+.reads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin-top:48px}
+.read{border-top:1px solid var(--ink);padding:22px 0 34px}
+.read .trad{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.read h3{font-family:var(--serif);font-size:clamp(28px,2.8vw,38px);line-height:1.05;margin-top:8px}
+.read .w{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--grey);margin-top:4px}
+.read .th{font-family:var(--serif);font-size:22px;line-height:1.3;margin-top:14px}
+.read .so{font-size:15px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule)}
+.read .so b{font-weight:700;color:var(--red-ink);margin-right:6px}
+
+/* 8. Citer */
+.cite .bulle .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.cite .bulle .chips button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:13.5px}
+.cite .bulle .chips button[aria-pressed="true"]{background:var(--line);color:#fff}
+.cite .quote{font-family:var(--serif);font-size:clamp(22px,2.3vw,28px);line-height:1.3}
+.cite .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:20px}
+.copied{font-size:14px;font-weight:600}
+
+/* 9. Sources + pied */
+.biblio{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.biblio ol,.biblio ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:14.5px;color:var(--cream-dim)}
+.biblio ul{list-style:none;padding:0}
+.biblio a{color:var(--cream)}
+.biblio h3{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin-bottom:14px}
+footer{border-top:1px solid var(--hair);overflow:hidden}
+footer .meta{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 20px;font-size:14px;color:var(--cream-dim)}
+footer .wm{font-weight:700;font-size:clamp(70px,17.5vw,232px);letter-spacing:-.05em;line-height:.76;white-space:nowrap;text-align:center;margin:16px 0 -.17em}
+
+/* Révélations, curseur, accessibilité */
+.js [data-r]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-r].in{opacity:1;transform:none}
+.cursor{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--copper);pointer-events:none;z-index:60;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s ease;display:none}
+.cursor.big{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(201,119,58,.22);border:1.5px solid var(--copper)}
+@media (pointer:fine){.cursor{display:block}}.cursor{opacity:0}.cursor.on{opacity:1}
+.a11y{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:8px;background:var(--off);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:4px 14px 4px 4px;font-size:13px;font-weight:600}
+.a11y b{background:var(--line);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px}
+.a11y[aria-pressed="true"] b{background:var(--red)}
+html.calm *{animation:none!important;transition:none!important}
+html.calm .drawline{stroke-dashoffset:0!important}
+html.calm .split .ch{transform:none!important;opacity:1!important}
+html.calm [data-r],html.calm .fadein{opacity:1!important;transform:none!important}
+html.calm .seg-bar rect.s,html.calm .pills .bar{transform:none!important}
+html.calm .cursor{display:none!important}
+html.calm .grain::before{display:none}
+html.calm .seuil,html.calm .hero{background-image:none}
+html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
+
+@media (max-width:900px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(3){padding-left:0;border-top:1px solid var(--hair)}
+  .facts div:nth-child(4){border-top:1px solid var(--hair)}
+  .crit li,.lim li{grid-template-columns:56px minmax(0,1fr)}
+  .crit p,.lim p{grid-column:2}
+  .band .bandin,.two,.reads,.biblio{grid-template-columns:1fr}
+  .srcs li{grid-template-columns:1fr 1fr}
+  .srcs .val{text-align:left}
+  .srcs .hand{right:0}
+  .reform .grid3{grid-template-columns:1fr}
+  .reform .grid3 div{padding-left:0;border-right:0;border-bottom:1px solid var(--hair)}
+  .hero .row{top:auto;bottom:-6px;transform:none;justify-content:space-between}
+  .hero .gap,.conn{display:none}
+  .side{font-size:24px}
+  .title{margin-top:60px}
+}
+@media (max-width:600px){
+  nav.top{grid-template-columns:1fr 1fr 64px 1fr 1fr}
+  nav.top a{font-size:12.5px;height:48px;text-align:center}
+  nav.top a.lang{display:none}
+  .sec{padding-block:68px}
+  .bulle{padding:20px;box-shadow:5px 5px 0 var(--line)}
+  .facts div{padding:20px 12px 22px}
+  .a11y{font-size:11.5px;padding:3px 10px 3px 3px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.drawline{stroke-dashoffset:0!important}.split .ch{transform:none!important;opacity:1!important}.js [data-r],.fadein{opacity:1!important;transform:none!important}.seg-bar rect.s,.pills .bar{transform:none!important}}
+/* Dossier : composants propres */
+@media (min-width:601px){nav.top{grid-template-columns:repeat(2,1fr) 110px repeat(3,1fr)}}
+.giant+.lede,h2+.lede{margin-top:20px}
+.seuil .q{max-width:24ch}
+.bet{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.betb{border:2.5px solid var(--cream);background:none;color:var(--cream);border-radius:999px;padding:14px 26px;font-weight:700;font-size:16px;transition:transform .3s var(--ease),background .2s ease,color .2s ease}
+.betb:hover{transform:translateY(-3px) rotate(-1.5deg);background:var(--cream);color:var(--brown)}
+.betb[aria-pressed="true"]{background:var(--copper);border-color:var(--copper);color:var(--brown)}
+.betb:disabled{cursor:default}
+.duel{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:24px;align-items:center;margin:44px auto 0;max-width:980px}
+.duel>div{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:28px;padding:26px 22px;box-shadow:8px 8px 0 var(--copper);text-align:left}
+.duel .side-c{transform:rotate(-1.5deg)}.duel .side-i{transform:rotate(1.5deg);background:var(--lilac)}
+.duel b{display:block;font-weight:700;font-size:clamp(44px,6.4vw,88px);letter-spacing:-.04em;line-height:.9;font-variant-numeric:tabular-nums}
+.duel span{display:block;font-size:16px;margin-top:10px;font-weight:600}
+.duel small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.duel .side-i small{color:#3D3A35}
+.duel .vs{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--cream-dim)}
+.seuil .passer{margin-top:34px;color:var(--cream-dim)}
+.verdict{max-width:40ch}
+.verdict a{color:var(--copper)}
+.hq{margin-top:28px}
+.maj{margin-top:22px;font-size:13.5px;color:var(--cream-dim)}
+.papier .maj{color:var(--grey)}
+.sommaire{padding-block:88px}
+.sommaire h2{font-family:var(--serif);font-size:clamp(56px,8vw,120px);line-height:.9}
+.sommaire .hint{font-size:30px;transform:rotate(-3deg);display:inline-block;margin-top:6px}
+.cards{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.cards li{rotate:var(--rot);transition:rotate .45s var(--ease),translate .45s var(--ease),opacity .9s var(--ease),transform .9s var(--ease)}
+.cards li:hover{rotate:0deg;translate:0 -6px}
+.cards a{display:flex;flex-direction:column;height:100%;min-height:260px;background:var(--bg);color:var(--line);border:2.5px solid var(--line);border-radius:26px;padding:22px;text-decoration:none;box-shadow:7px 7px 0 var(--line)}
+.cards .n{font-family:var(--serif);font-style:italic;font-size:46px;line-height:1;color:var(--red)}
+.cards h3{font-weight:700;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;line-height:1.05;margin-top:12px}
+.cards p{font-family:var(--serif);font-size:20px;line-height:1.2;margin-top:10px}
+.cards .go{margin-top:auto;padding-top:18px;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.count3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid var(--ink)}
+.count3 article{padding:26px 26px 30px 0;border-right:1px solid var(--rule)}
+.count3 article+article{padding-left:26px}
+.count3 article:last-child{border-right:0;padding-right:0}
+.count3 h3{font-family:var(--serif);font-size:clamp(28px,2.6vw,38px);line-height:1;margin-top:14px}
+.count3 .who{font-weight:600;font-size:14.5px;color:var(--grey);margin-top:6px}
+.count3 p{font-size:16px;color:#3D3A35;margin-top:14px}
+.count3 .use{font-weight:600;color:var(--ink);border-top:1px dashed var(--rule);padding-top:12px}
+.hand-note{font-size:28px;color:var(--red);margin-top:30px;transform:rotate(-1.5deg);display:inline-block}
+.srcl{font-size:13px;color:var(--cream-dim);margin-top:14px;max-width:110ch}
+.papier .srcl{color:var(--grey)}
+.srcl a{color:inherit;text-underline-offset:2px}
+.ink,.ink .srcl,.srcl.ink{color:var(--line)}
+.giant.ink span{color:rgba(26,26,26,.55)}
+.lede.ink{color:var(--line)}
+.kick.dark{color:var(--line)}
+.sub{font-weight:700;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em;margin-top:64px}
+.sub .note{font-size:22px;color:var(--red);margin-left:10px;font-weight:600;letter-spacing:0}
+.chart .lbl{font-family:var(--sans)}
+.inval{padding-block:96px}
+.invgrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:40px;align-items:center;margin-top:40px}
+.stickers{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.stickers li{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:24px;padding:18px 20px;box-shadow:6px 6px 0 var(--line);rotate:var(--rot)}
+.stickers b{display:block;font-weight:700;font-size:clamp(36px,4vw,54px);letter-spacing:-.04em;line-height:.9}
+.stickers span{display:block;font-weight:600;font-size:16px;margin-top:6px}
+.stickers small{display:block;font-size:12.5px;color:var(--grey);margin-top:4px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px}
+.duo figure{margin:0;border-top:1px solid var(--ink);padding-top:16px}
+.duo figcaption b{display:block;font-weight:700;font-size:20px}
+.duo figcaption span{display:block;font-size:14.5px;color:var(--grey);margin-top:2px}
+.chart.sm{margin-top:16px}
+.trap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:baseline;margin-top:40px;background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px 24px;box-shadow:6px 6px 0 var(--red);max-width:820px}
+.trap .note{font-size:32px;color:var(--red);transform:rotate(-4deg)}
+.trap p{font-family:var(--serif);font-size:22px;line-height:1.3}
+/* Recherche */
+.legend-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.bdg{display:inline-block;border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1.5px solid currentColor}
+.b-et{background:var(--mint);color:var(--line);border-color:var(--mint)}
+.b-ma{background:var(--blue);color:var(--line);border-color:var(--blue)}
+.b-de{background:var(--orange);color:var(--line);border-color:var(--orange)}
+.b-pe{background:none;color:var(--cream)}
+.rq{border-top:1px solid var(--hair);margin-top:48px;padding-top:30px}
+.rq .qh{display:grid;grid-template-columns:80px minmax(0,1fr);gap:20px;align-items:baseline}
+.rq .qn{font-family:var(--serif);font-style:italic;font-size:56px;line-height:.8;color:var(--copper)}
+.rq h3{font-family:var(--serif);font-size:clamp(30px,3.4vw,48px);line-height:1}
+.rq .verd{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.rq .verd p{font-size:17px;color:var(--cream);max-width:70ch;margin-top:10px;flex-basis:100%}
+.studies{list-style:none;margin:26px 0 0 100px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.study{border:1.5px solid var(--hair);border-radius:20px;padding:18px 20px;background:rgba(237,230,220,.03)}
+.study .meta{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--cream-dim);align-items:center}
+.study .lvl{display:inline-flex;gap:3px;align-items:center}
+.study .lvl i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--cream-dim)}
+.study .lvl i.on{background:var(--copper);border-color:var(--copper)}
+.study .lvl em{font-style:normal;margin-left:6px}
+.study h4{font-weight:700;font-size:17px;margin-top:10px;line-height:1.25}
+.study p{font-size:15.5px;color:var(--cream-dim);margin-top:8px}
+.study a{color:var(--cream);font-size:13.5px;display:inline-block;margin-top:10px}
+.unknown{margin:22px 0 0 100px;font-size:15.5px;color:var(--cream-dim);border-left:3px solid var(--copper);padding-left:14px;max-width:80ch}
+/* Lectures */
+.read .cr{font-size:15px;margin-top:10px;color:var(--grey)}
+.read .cr b{font-weight:700;color:var(--ink);margin-right:6px}
+/* Qui décide */
+.qui{padding-block:96px}
+.qui h2{font-family:var(--serif);font-size:clamp(52px,7vw,104px);line-height:.9}
+.qui h2 span{color:rgba(26,26,26,.55)}
+.levels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:40px}
+.lv{background:var(--off);color:var(--line);border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line);rotate:var(--rot)}
+.lv h3{font-family:var(--serif);font-size:30px;line-height:1}
+.lv ul{margin:14px 0 0;padding-left:18px;display:grid;gap:8px;font-size:15px}
+.biblio .mt{margin-top:30px}
+.cite{padding-block:88px}
+@media (max-width:900px){
+  .cards{grid-template-columns:1fr 1fr}
+  .count3,.invgrid,.duo{grid-template-columns:1fr}
+  .count3 article,.count3 article+article{padding:22px 0;border-right:0;border-bottom:1px solid var(--rule)}
+  .levels{grid-template-columns:1fr 1fr}
+  .studies{grid-template-columns:1fr;margin-left:0}
+  .unknown{margin-left:0}
+  .duel{grid-template-columns:1fr;gap:14px}
+  .duel .vs{text-align:center;font-size:32px}
+}
+@media (max-width:600px){
+  .cards,.levels{grid-template-columns:1fr}
+  .cards a{min-height:0}
+  .rq .qh{grid-template-columns:44px minmax(0,1fr)}
+  .rq .qn{font-size:40px}
+  .trap{grid-template-columns:1fr}
+}
+.play .seg-bar rect.s,.play .pills .bar{transform:none}
+.chart .fadein{transition-delay:1.3s}
+html.calm .chart .fadein{opacity:1}
+
+.gapwrap{margin-top:8px}
+.lede.sm{font-size:clamp(17px,1.5vw,20px);margin-top:12px;max-width:62ch}
+.dark-trap{background:var(--off);color:var(--ink)}
+.dark-trap p{color:var(--ink)}
+
+/* Finances */
+.snow{margin-top:44px;background:#fff;border:2.5px solid var(--line);border-radius:26px;padding:24px 26px;box-shadow:7px 7px 0 var(--line);max-width:900px}
+.snow .sub{margin-top:0}
+.snow p{font-size:16.5px;color:#3D3A35;margin-top:10px}
+.formula{font-family:var(--serif);font-size:clamp(22px,2.6vw,34px);line-height:1.2;color:var(--line);margin:18px 0 6px;white-space:pre-wrap;background:none;border:0;padding:0}
+.agrid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.ag{border:1.5px solid var(--hair);border-radius:22px;padding:20px 22px}
+.ag .who{display:block;font-size:13px;color:var(--cream-dim);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.ag b{display:block;font-weight:700;font-size:clamp(44px,5vw,68px);letter-spacing:-.04em;line-height:1;margin:8px 0 6px;color:var(--copper)}
+.ag span:last-child{font-size:14px;color:var(--cream-dim)}
+.key-dots{font-size:13.5px;color:var(--line);margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.kd{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--line)}
+.kd.be{background:var(--red)}.kd.eu{background:#fff;margin-left:10px}
+/* Recherche sur fond papier */
+.rq-light .rq{border-top-color:var(--rule)}
+.rq-light .rq .qn{color:var(--red)}
+.rq-light .rq .verd p{color:var(--ink)}
+.rq-light .study{border-color:var(--rule);background:#fff}
+.rq-light .study .meta,.rq-light .study p{color:var(--grey)}
+.rq-light .study .lvl i{border-color:var(--grey)}
+.rq-light .study .lvl i.on{background:var(--red);border-color:var(--red)}
+.rq-light .study a{color:var(--ink)}
+.rq-light .unknown{color:#3D3A35;border-left-color:var(--red)}
+.papier .b-pe{color:var(--ink)}
+/* Lectures sur fond brun */
+.dark-reads .read{border-top-color:var(--hair)}
+.dark-reads .read .trad,.dark-reads .read .w{color:var(--cream-dim)}
+.dark-reads .read .so{border-top-color:var(--hair)}
+.dark-reads .read .so b{color:var(--copper)}
+.dark-reads .read .cr{color:var(--cream-dim)}
+.dark-reads .read .cr b{color:var(--cream)}
+@media (max-width:900px){.agrid3{grid-template-columns:1fr}}
+
+.preamb{padding-block:96px}
+.three-q{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.three-q li{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:26px;padding:22px;box-shadow:7px 7px 0 var(--line);rotate:var(--rot)}
+.three-q .n{font-family:var(--serif);font-style:italic;font-size:46px;line-height:1;color:var(--red)}
+.three-q h3{font-weight:700;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;margin-top:8px}
+.three-q p{font-size:16px;color:#3D3A35;margin-top:10px}
+.three-q a{color:var(--line);font-weight:700}
+.two-cols .sub.nm{margin-top:0}
+.two-cols .body{font-size:16.5px;color:#3D3A35;margin-top:12px;line-height:1.55}
+@media (max-width:900px){.three-q{grid-template-columns:1fr}}
+
+.epochs{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--hair)}
+.epochs li{padding:22px 20px 26px 0;border-right:1px solid var(--hair)}
+.epochs li+li{padding-left:20px}.epochs li:last-child{border-right:0}
+.epochs .yr{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--copper)}
+.epochs h3{font-weight:700;font-size:20px;margin-top:6px}
+.epochs p{font-size:15px;color:var(--cream-dim);margin-top:8px}
+.myths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px}
+.myths article{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:20px 22px;box-shadow:6px 6px 0 var(--red);rotate:var(--rot)}
+.myths h4{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2vw,28px);line-height:1.1;margin:12px 0 10px}
+.myths p{font-size:15.5px;color:#3D3A35}
+.myths b{color:var(--red-ink)}
+.myths a{color:var(--ink);font-weight:700}
+@media (max-width:900px){.epochs,.myths{grid-template-columns:1fr}.epochs li,.epochs li+li{padding:18px 0;border-right:0;border-bottom:1px solid var(--hair)}}
+
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.agegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
+.agegrid .lv b.big{display:block;font-weight:700;font-size:clamp(38px,4.4vw,60px);letter-spacing:-.04em;line-height:1;margin:10px 0 6px;color:var(--red)}
+.agegrid .lv p{font-size:14px;color:var(--grey)}
+.snow.light{margin-top:36px}
+@media (max-width:900px){.cards.c3,.agegrid{grid-template-columns:1fr}}
+
+/* Contraste AA : rouge foncé pour les petits textes sur fond clair */
+.rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
+.key-dots .kd.be{background:var(--red-ink)}
+
+/* ===== V2 : composants pédagogiques ===== */
+/* Niveau 1 : comprendre en deux minutes */
+.twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
+.twomin .tm{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:44px;align-items:start}
+.twomin .kick{color:var(--grey)}
+.twomin h2{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1;margin-top:10px}
+.twomin .ans{font-size:clamp(18px,1.6vw,21px);line-height:1.45;margin-top:18px;color:#2E2B27}
+.twomin .keys{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px;counter-reset:k}
+.twomin .keys li{counter-increment:k;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;font-size:16.5px;line-height:1.45}
+.twomin .keys li::before{content:counter(k);font-family:var(--serif);font-style:italic;font-size:30px;line-height:.9;color:var(--red-ink)}
+.twomin aside{display:grid;gap:16px}
+.tm-num{background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line)}
+.tm-num b{display:block;font-weight:700;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.04em;line-height:.95}
+.tm-num span{display:block;font-size:15px;margin-top:8px}
+.tm-num small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.tm-warn{border-left:4px solid var(--red-ink);padding:4px 0 4px 14px;font-size:15.5px;line-height:1.45}
+.tm-warn b{color:var(--red-ink)}
+.tm-concl{font-family:var(--serif);font-size:21px;line-height:1.3;border-top:1px solid var(--rule);padding-top:14px}
+.deeper{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:4px}
+/* Ce que ce chiffre permet de dire */
+.canwhat{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid currentColor;border-radius:22px;overflow:hidden}
+.canwhat>div{padding:20px 22px 22px}
+.canwhat>div+div{border-left:2px solid currentColor}
+.canwhat h4{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+.canwhat ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:15.5px;line-height:1.45}
+.canwhat .cw-t{grid-column:1/-1;border-bottom:2px solid currentColor;padding:14px 22px;font-family:var(--serif);font-size:22px}
+.canwhat .cw-t+div{border-left:0}
+.brun .canwhat .cw-no h4,.papier .canwhat .cw-no h4{color:inherit}
+.canwhat .cw-yes h4::before{content:"✓ "}
+.canwhat .cw-no h4::before{content:"✗ "}
+.canwhat .cw-more h4::before{content:"→ "}
+/* Explication après le pari */
+.why{max-width:760px;margin:26px auto 0;text-align:left;background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:7px 7px 0 var(--copper)}
+.why h3{font-weight:700;font-size:18px;margin:14px 0 4px}
+.why h3:first-child{margin-top:0}
+.why p{font-size:16px;line-height:1.5;color:#2E2B27}
+/* Questions de transfert */
+.check{padding-block:88px}
+.check .qz{border-top:1px solid var(--ink);padding:26px 0 30px}
+.check .qq{font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);line-height:1.2;max-width:58ch}
+.qopts{display:grid;gap:10px;margin-top:18px;max-width:780px}
+.qopts button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px 16px;font-size:16px;line-height:1.35;color:var(--line)}
+.qopts button:hover{background:#F0EEE8}
+.qopts button.is-ok{border-color:#2F7A5E;background:#E6F3EC}
+.qopts button.is-ko{border-color:var(--red-ink);background:#FBE9E6}
+.qfb,.qmech{max-width:780px;margin-top:14px;font-size:16px;line-height:1.5}
+.qfb b,.qmech b{font-weight:700}
+.qmech{border-left:4px solid var(--line);padding-left:14px}
+.qlive{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Du chiffre à la décision */
+.decide .opts4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:40px}
+.decide .opt{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:6px 6px 0 var(--line)}
+.decide .opt h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.05}
+.decide .opt dl{margin:14px 0 0;display:grid;gap:10px}
+.decide .opt dt{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.decide .opt dd{margin:2px 0 0;font-size:15.5px;line-height:1.45}
+.decide .opt .ev{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;margin-right:6px;vertical-align:1px}
+.ev.doc{background:#DCEFE6;color:#1F5C45}.ev.hyp{background:#FBE7D3;color:#7A4214}
+.decide .trade{margin-top:40px}
+.decide .trade table{width:100%;border-collapse:collapse;font-size:15.5px}
+.decide .trade th,.decide .trade td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
+.decide .trade th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper)}
+@media (max-width:900px){.twomin .tm,.canwhat,.decide .opts4{grid-template-columns:1fr}.canwhat>div+div{border-left:0;border-top:2px solid currentColor}.decide .trade{overflow-x:auto}}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+<nav class="top" aria-label="Navigation principale">
+  <a href="index.html#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
+  <a href="index.html#classements"><span class="lbl" data-t="Classements">Classements</span></a>
+  <a href="index.html" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="index.html#dossiers" class="on"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
+  <a href="index.html#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
+  <a href="index.html#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
+</nav>
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 05 · Justice et sécurité · avant de lire</span>
+    <h1 class="q" id="q0">Depuis 2012, les cambriolages de logements enregistrés par la police en Belgique ont-ils augmenté ou diminué, et de combien ?</h1>
+    <output class="out" id="gOut" for="guess">+20 %</output>
+    <input class="range" type="range" id="guess" min="-80" max="80" step="1" value="20" aria-label="Votre estimation de l’évolution, en pour cent, de −80 % à +80 %">
+    <div class="scale" aria-hidden="true"><span>−80 %</span><span>0</span><span>+80 %</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>Ce chiffre compte les faits <b>enregistrés</b> par la police. Pour le cambriolage, les victimes portent plainte plus souvent que pour d’autres faits, notamment pour être indemnisées : la statistique policière suit donc mieux la réalité que pour les violences, souvent tues. La baisse va dans le même sens que celle observée dans d’autres pays européens depuis les années 1990, que des chercheurs relient à de meilleurs dispositifs de sécurité.</p><h3>Pourquoi on se trompe souvent</h3><p>L’actualité met en avant les faits marquants, pas les tendances. Et d’autres infractions augmentent : les fraudes enregistrées ont plus que doublé depuis 2016.</p><h3>Pour réutiliser cette idée</h3><p>Devant une statistique de criminalité, demandez : s’agit-il de faits commis, de faits signalés ou de faits enregistrés ? Et les victimes de cette infraction portent-elles plainte ?</p></div>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 05 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Justice et sécurité"><span class="t1">Justice </span><span class="t2">et sécurité</span></h2></div>
+    <p class="lede hq" data-r>Que comptent vraiment les statistiques de la criminalité, et que fait la prison ? Trois façons de compter, un siècle et demi d’histoire pénale, trois fiches, l’état de la recherche et neuf lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>−51 %</b><span>de cambriolages de logements enregistrés entre 2012 et 2024</span><span class="src">Eurostat crim_off_cat</span></div>
+      <div><b>1,40</b><span>homicide volontaire enregistré pour 100 000 habitants en 2024</span><span class="src">Eurostat crim_off_cat</span></div>
+      <div><b>12 976</b><span>détenus en cellule pour 11 040 places, au 31 mars 2025</span><span class="src">Conseil central de surveillance pénitentiaire</span></div>
+      <div><b>15,7 %</b><span>des victimes de violences sexuelles hors famille ont signalé les faits à la police</span><span class="src">Moniteur de sécurité 2021</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : statistiques Eurostat 2025 (printemps 2027) et premiers effets du nouveau Code pénal</p>
+  </div>
+</section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">La criminalité augmente-t-elle, et la prison nous protège-t-elle ?</h2>
+      <p class="ans">Les vols et cambriolages enregistrés ont fortement baissé depuis le début des années 2010 : −51 % pour les cambriolages de logements, −50 % pour les vols avec violence. D’autres infractions augmentent, surtout les fraudes, et les plaintes pour viol progressent, ce qui peut refléter autant une meilleure dénonciation qu’une hausse des faits. Dans le même temps, le nombre de détenus a fortement augmenté : les prisons sont surpeuplées et la Belgique a été condamnée pour cela par la Cour européenne des droits de l’homme. La recherche montre que la probabilité d’être pris dissuade davantage que la sévérité de la peine.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Une statistique policière compte des faits enregistrés, pas tous les faits commis : beaucoup de victimes ne portent pas plainte.</li><li>Plus de prisonniers ne veut pas dire plus de crimes : la population carcérale dépend aussi des lois, des juges et de l’exécution des peines.</li><li>Un « taux de récidive » ne veut rien dire sans sa définition : nouvelle condamnation ou retour en prison, après deux ans ou huit.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>9 811 → 12 581</b><span>détenus en Belgique, 2008 puis 2024</span><small>Eurostat, crim_pris_cap</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> lire une hausse des plaintes comme une hausse des crimes, ou une baisse comme une baisse réelle, sans savoir si les victimes signalent davantage ou moins.</p>
+      <p class="tm-concl">Les chiffres décrivent des tendances et des moyens ; ce que l’on attend d’une peine (punir, protéger, réparer, réinsérer) est un choix de valeurs.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- 1b. Les définitions -->
+<section class="sec papier" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois façons <span>de compter le crime.</span></h2>
+    <p class="lede" data-r>Aucune source ne mesure « la criminalité » telle qu’elle est. Chacune voit une partie du tableau, à une étape différente du parcours pénal.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Police</span><h3>Les faits enregistrés</h3><p class="who">Statistiques policières de criminalité, transmises à Eurostat</p><p>Les infractions <b>connues de la police</b>, par une plainte ou par un constat. Elles dépendent du comportement des victimes (porter plainte ou non) et des priorités policières (contrôles de drogue, par exemple).</p><p class="use">Sert à : suivre des tendances quand le taux de plainte est stable.</p></article>
+      <article data-r><span class="tag p">Enquête</span><h3>Les victimes interrogées</h3><p class="who">Moniteur de sécurité, Police fédérale</p><p>Un échantillon d’habitants dit s’il a été <b>victime</b> dans l’année et s’il a porté plainte. On y voit le « chiffre noir » : les faits que la police ne connaît pas.</p><p class="use">Sert à : mesurer la victimation réelle et le sentiment d’insécurité.</p></article>
+      <article data-r><span class="tag u">Justice et prisons</span><h3>Les décisions et les détenus</h3><p class="who">SPF Justice, Conseil de l’Europe (SPACE)</p><p>Les condamnations, les peines et le nombre de personnes <b>en prison</b>. Ces chiffres reflètent la réponse pénale (lois, juges, exécution des peines) autant que la criminalité.</p><p class="use">Sert à : décrire l’activité de la justice et l’état des prisons.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ un même phénomène peut monter dans une source et baisser dans une autre</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-crime"><span class="n">01</span><h3>La criminalité</h3><p>Qu’est-ce qui baisse, qu’est-ce qui monte, et que ne voit-on pas ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-prison"><span class="n">02</span><h3>La prison</h3><p>Pourquoi les prisons sont-elles surpeuplées ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-recidive"><span class="n">03</span><h3>La récidive</h3><p>Combien de personnes reviennent en prison ?</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · un siècle et demi de droit pénal</span>
+    <h2 class="giant" id="tH" data-r>De la guillotine <span>au bracelet électronique.</span></h2>
+    <p class="lede" data-r>Le droit pénal belge a longtemps reposé sur un Code de 1867. Il a été réformé par petites touches, souvent après des crises, jusqu’au nouveau Code pénal entré en vigueur en septembre 2026. Sur le temps long, la violence mortelle a fortement reculé en Europe : les historiens estiment que les taux d’homicide des sociétés européennes de la fin du Moyen Âge étaient bien plus élevés qu’aujourd’hui.</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1888</span><h3>Libérer sous conditions</h3><p>La loi du 31 mai 1888 introduit la libération conditionnelle : la peine peut se terminer hors de prison, sous surveillance.</p></li>
+      <li data-r><span class="yr">1918 et 1996</span><h3>Fin de la peine de mort</h3><p>Aucune exécution pour un crime de droit commun après 1918. La peine de mort est abolie en 1996, puis l’interdiction est inscrite dans la Constitution en 2005.</p></li>
+      <li data-r><span class="yr">1996-1998</span><h3>Le choc de l’affaire Dutroux</h3><p>Après l’arrestation de Marc Dutroux (13 août 1996), plus de 300 000 personnes manifestent à Bruxelles le 20 octobre 1996. Après son évasion en avril 1998, la loi du 7 décembre 1998 crée une police intégrée à deux niveaux (fédéral et local).</p></li>
+      <li data-r><span class="yr">2014</span><h3>Condamnée à Strasbourg</h3><p>Le 25 novembre 2014, dans l’arrêt <i>Vasilescu c. Belgique</i>, la Cour européenne des droits de l’homme constate un problème structurel de surpopulation carcérale.</p></li>
+      <li data-r><span class="yr">2022-2026</span><h3>Exécuter toutes les peines</h3><p>Les peines de 2 à 3 ans sont exécutées depuis septembre 2022, celles de 6 mois à 2 ans depuis septembre 2023. Le nouveau Code pénal, qui classe les peines en huit niveaux, s’applique depuis le 1<sup>er</sup> septembre 2026.</p></li>
+    </ol>
+    <p class="srcl">1888 : Chambre des représentants, proposition de loi n° 49K0138/1 (1995). Peine de mort : SPF Affaires étrangères, cité par <a href="https://en.wikipedia.org/wiki/Capital_punishment_in_Belgium" target="_blank" rel="noopener">Wikipedia</a> (source de niveau faible, utilisée seulement pour dater). Dutroux : <a href="https://www.lalibre.be/belgique/l-affaire-dutroux-un-drame-qui-a-bouleverse-et-change-la-belgique-57ae1d0235709a31055d8f49" target="_blank" rel="noopener">La Libre</a> ; réforme des polices : <a href="https://www.police.be/5267/node/370" target="_blank" rel="noopener">police.be</a>. Vasilescu : <a href="https://ccsp.belgium.be/wp-content/uploads/2025/04/CP_Comite-des-Ministres-dans-laffaire-Vasilescu-CCSP-IFDH.pdf" target="_blank" rel="noopener">CCSP et IFDH</a>. Courtes peines : SPF Justice, relayé par <a href="https://blog.forumforthefuture.be/fr/article/execution-systematique-des-peines-dune-duree-comprise-entre-6-mois-et-2-ans/20092" target="_blank" rel="noopener">Forum for the Future</a> (2023). Code pénal : <a href="https://www.uvcw.be/fonctionnement/actus/art-10379" target="_blank" rel="noopener">Union des Villes et Communes de Wallonie</a>. Temps long : M. Eisner (2003), « Long-Term Historical Trends in Violent Crime », <i>Crime and Justice</i>, 30, 83-142.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« La criminalité explose. »</h4><p><b>Faux pour les vols, plus nuancé ailleurs.</b> Cambriolages de logements et vols avec violence enregistrés ont diminué de moitié depuis 2011-2012. Mais les fraudes enregistrées ont plus que doublé depuis 2016, et les plaintes pour viol ont augmenté de 48 % depuis 2008.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« Plus de plaintes, c’est plus de crimes. »</h4><p><b>Pas forcément.</b> Seules 15,7 % des victimes de violences sexuelles hors famille déclaraient l’avoir signalé à la police en 2021. Si davantage de victimes portent plainte, le chiffre monte sans que les faits augmentent.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« 60 % des détenus récidivent. »</h4><p><b>Tout dépend de la définition.</b> Parmi les personnes libérées de prison entre 2003 et 2005, 44,1 % y sont retournées dans les cinq à huit ans, et 21 % dans les deux ans. Une nouvelle condamnation, même sans prison, donnerait un autre chiffre. <a href="#f-recidive">Voir la fiche</a>.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : la criminalité -->
+<section class="sec papier" id="f-crime" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>Moins de vols, <span>plus de fraudes.</span></h2>
+    <p class="lede" data-r>Les faits enregistrés ne suivent pas tous la même pente. Cambriolages de logements et vols avec violence ont diminué de moitié depuis leur pic. Les plaintes pour viol augmentent depuis 2015. Les fraudes, souvent en ligne, sont passées de 55 597 en 2016 à 123 126 en 2024. Le creux de 2020-2021 correspond aux années de confinement.</p>
+    <div class="chart" id="crimeChart"></div>
+    <p class="srcl">Infractions enregistrées par la police, indice 100 en 2008. Cambriolages de logements privés (ICCS 05012), vols avec violence ou menace (ICCS 0401) et viols (ICCS 03011), Belgique, 2008-2024. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/crim_off_cat/default/table?lang=fr" target="_blank" rel="noopener">crim_off_cat</a>, consulté le 11 octobre 2026. Les fraudes (ICCS 0701) ne sont disponibles que depuis 2016 et ne figurent pas sur le graphique.</p>
+    <div class="canwhat" data-r><p class="cw-t">Les infractions enregistrées par la police</p><div class="cw-yes"><h4>Ce qu’elles permettent de dire</h4><ul><li>Combien de faits la police a enregistrés, par type d’infraction.</li><li>Les tendances, pour les infractions que les victimes signalent le plus souvent (cambriolages, vols de voiture).</li></ul></div><div class="cw-no"><h4>Ce qu’elles ne permettent pas de dire</h4><ul><li>Combien d’infractions ont vraiment été commises : beaucoup ne sont jamais signalées.</li><li>Si une hausse vient de plus de faits, de plus de plaintes ou de plus de contrôles policiers.</li><li>Qui commet les faits : un fait enregistré n’est ni un auteur identifié ni une condamnation.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les enquêtes de victimation (Moniteur de sécurité).</li><li>Les taux d’élucidation et les suites judiciaires.</li><li>Les données par arrondissement et par commune.</li></ul></div></div>
+    <div class="duo">
+      <figure data-r><figcaption><b>Le chiffre noir</b><span>part des victimes qui ont signalé les faits à la police : violences sexuelles, escroqueries et attaques en ligne, Moniteur de sécurité 2021</span></figcaption><div class="chart sm" id="darkChart"></div></figure>
+      <figure data-r><figcaption><b>Homicides volontaires</b><span>pour 100 000 habitants, Belgique 2008-2024</span></figcaption><div class="chart sm" id="homChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : Police fédérale, <a href="https://www.police.be/5998/fr/node/26230" target="_blank" rel="noopener">Résultats du Moniteur de sécurité 2021</a> (près de 100 000 répondants de 15 ans et plus, publié le 29 décembre 2022) ; Eurostat, crim_off_cat (ICCS 0101). En 2024 : Belgique 1,40, France 1,28, Allemagne 0,83, Pays-Bas 0,67 homicide pour 100 000 habitants. Ces comparaisons restent fragiles : les pays n’enregistrent pas tous les faits de la même manière.</p>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : la prison -->
+<section class="sec brun grain" id="f-prison" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Plus de détenus <span>que de places.</span></h2>
+    <p class="lede" data-r>Le nombre de détenus est passé de 9 811 en 2008 à 12 581 en 2024, alors que vols et cambriolages baissaient. Les places n’ont pas suivi : au 31 mars 2025, 12 976 personnes se trouvaient en cellule pour 11 040 places, et 713 autres étaient en congé pénitentiaire prolongé pour cause de surpopulation. Des détenus dorment sur des matelas posés au sol.</p>
+    <div class="chart" id="prisChart"></div>
+    <p class="srcl">Personnes détenues et capacité officielle, Belgique. 2008-2024 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/crim_pris_cap/default/table?lang=fr" target="_blank" rel="noopener">crim_pris_cap</a> (données manquantes en 2014 et 2016, et pour la capacité en 2018 : la ligne relie les années disponibles). Mars 2025 : Conseil central de surveillance pénitentiaire, <a href="https://ccsp.belgium.be/wp-content/uploads/2025/04/CP_Les-prisons-craquent-sous-la-surpopulation.pdf" target="_blank" rel="noopener">communiqué du 18 avril 2025</a> (détenus en cellule). Consulté le 11 octobre 2026.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Surpeuplement</h3><b class="big">117,5 %</b><p>détenus en cellule pour 100 places, 31 mars 2025</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Au sol</h3><b class="big">164 → 710</b><p>détenus sur un matelas, février 2025 (CCSP) puis mars 2026 (presse)</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Sans nationalité belge</h3><b class="big">45,4 %</b><p>des détenus en 2024, contre 14,0 % de la population</p></div>
+    </div>
+    <p class="srcl">Sources : CCSP, <a href="https://ccsp.belgium.be/wp-content/uploads/2025/02/CCSP_Avis-sur-la-regulation-carcerale.pdf" target="_blank" rel="noopener">avis du 10 février 2025</a> (164 au 3 février 2025) ; <a href="https://www.lalibre.be/belgique/judiciaire/2026/06/15/rendez-vous-dans-dix-ans-avec-18-000-detenus-la-belgique-doit-reduire-durablement-le-nombre-de-personnes-incarcerees-RSN54MPTDBBCPK4LXRSGVBUHEE/" target="_blank" rel="noopener">La Libre, 15 juin 2026</a> (710 en mars 2026, source de presse) ; Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/crim_pris_ctz/default/table?lang=fr" target="_blank" rel="noopener">crim_pris_ctz</a> et migr_pop1ctz.</p>
+    <div class="canwhat" data-r><p class="cw-t">La part d’étrangers en prison</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Combien de détenus n’ont pas la nationalité belge.</li><li>Que cette part est bien supérieure à leur part dans la population, et parmi les plus élevées d’Europe selon le Conseil de l’Europe.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Que la nationalité explique la délinquance : âge, sexe, pauvreté et quartier pèsent aussi, et ne sont pas pris en compte ici.</li><li>Une comparaison juste avec la population : une partie des détenus étrangers est en séjour irrégulier et n’est pas comptée dans la population (plus de 60 % d’entre eux en 2011-2013, selon F. Brion).</li><li>Si la justice traite tout le monde de la même façon : la détention préventive, les peines hors prison ou la libération anticipée peuvent dépendre de la situation de séjour.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La part des prévenus, en attente de jugement.</li><li>Les infractions et la durée des peines par nationalité.</li><li>Les études qui comparent à profil égal (âge, sexe, revenus).</li></ul></div></div>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>Ce que nous n’avons pas pu vérifier : l’idée, répandue, que les personnes sans adresse stable sont plus souvent placées en détention préventive. Elle est plausible, mais nous n’avons pas trouvé de chiffre belge récent pour l’étayer. Le Conseil de l’Europe classe la Belgique parmi les pays où la part de détenus sans condamnation définitive est la plus élevée (plus de 25 % au-dessus de la médiane européenne, qui est de 25,9 %).</p></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : la récidive -->
+<section class="band grain" id="f-recidive" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>44&nbsp;% ou 21&nbsp;%&nbsp;? <span>Tout dépend de la question.</span></h2>
+    <p class="lede ink" data-r>L’Institut national de criminalistique et de criminologie a suivi les 14 754 personnes libérées des prisons belges entre 2003 et 2005. Au total, 44,1 % y sont retournées dans un délai de cinq ans et sept mois à huit ans et sept mois. Sur deux ans seulement, le taux tombe à 21 %, proche de chiffres norvégiens souvent cités en modèle.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Retour en prison en 2 ans</h3><b class="big">21 %</b><p>libérés de 2003 à 2005</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Retour en prison en 5 à 8 ans</h3><b class="big">44,1 %</b><p>même cohorte, suivie jusqu’en 2011</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Libérés en 2003</h3><b class="big">48,2 %</b><p>le suivi le plus long donne le taux le plus haut</p></div>
+    </div>
+    <div class="snow light" data-r>
+      <h3 class="sub">Pourquoi ces chiffres ne se comparent pas facilement</h3>
+      <p>Un taux de récidive change selon trois choix : <b>qui</b> on suit (tous les condamnés ou seulement les détenus), <b>ce qu’on compte</b> (nouvelle arrestation, nouvelle condamnation ou retour en prison) et <b>pendant combien de temps</b>. Les auteurs belges montrent qu’une fois ces différences corrigées, l’écart avec la Scandinavie est bien plus faible que ne le laissent croire les chiffres cités dans le débat.</p>
+      <p class="srcl ink">Sources : L. Robert et E. Maes (2012), <i>Wederopsluiting na vrijlating uit de gevangenis</i>, INCC, cité dans INCC, <a href="https://nicc.fgov.be/upload/publicaties/rapport_38.pdf" target="_blank" rel="noopener">rapport n° 38</a>, p. 20 ; <a href="https://www.police.be/5337/node/18813" target="_blank" rel="noopener">« Comparer des taux de récidive : la fausse bonne idée ? »</a>, police.be. Ces données datent : aucune étude plus récente de même ampleur n’a été trouvée lors de la vérification.</p>
+    </div>
+    <div class="canwhat" data-r><p class="cw-t">Le taux de réincarcération</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Quelle part des personnes libérées retourne en prison dans un délai donné.</li><li>Comment ce taux varie selon la durée de suivi ou le mode de libération.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Combien commettent une nouvelle infraction : beaucoup ne sont pas découvertes, ou sont punies sans prison.</li><li>Si la prison a causé la récidive ou l’a évitée : ceux qui vont en prison ne sont pas comparables aux autres.</li><li>La situation actuelle : la cohorte a été libérée il y a vingt ans.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La récidive après une peine de travail ou une surveillance électronique.</li><li>Les études comparant des personnes semblables jugées différemment.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Quatre questions, <span>quatre niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="index.html#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Face à la surpopulation et à la demande de sécurité, quatre grandes options sont discutées. Pour chacune : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Construire des places</h3><dl><dt>Le mécanisme</dt><dd>Augmenter la capacité des prisons pour loger tous les détenus dignement.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> La capacité est passée de 8 445 places en 2008 à 11 040 en 2024, et le nombre de détenus a augmenté plus vite (Eurostat).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Que de nouvelles places suffisent si les entrées continuent d’augmenter.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût élevé et des délais de construction de plusieurs années.</dd></dl></article><article class="opt" data-r><h3>Réguler la population carcérale</h3><dl><dt>Le mécanisme</dt><dd>Fixer une capacité maximale par prison et organiser des sorties anticipées quand elle est dépassée.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Le CCSP et le Conseil pénitentiaire le recommandent ; les condamnations européennes (Vasilescu, 2014) imposent d’agir.</dd><dt>Ce qui reste incertain</dt><dd>L’effet sur la sécurité et sur la confiance dans la justice.</dd><dt>Ce qu’on sacrifie</dt><dd>L’exécution complète de certaines peines prononcées.</dd></dl></article><article class="opt" data-r><h3>Développer les peines hors prison</h3><dl><dt>Le mécanisme</dt><dd>Surveillance électronique, peine de travail, probation, désormais au cœur du nouveau Code pénal.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> En Argentine, des personnes placées sous surveillance électronique ont été réarrêtées moins souvent que des détenus comparables (13 % contre 22 %, Di Tella et Schargrodsky, 2013).</dd><dt>Ce qui reste incertain</dt><dd>La transposition à la Belgique et aux infractions graves.</dd><dt>Ce qu’on sacrifie</dt><dd>Une partie de l’effet symbolique et de la mise à l’écart que la prison assure.</dd></dl></article><article class="opt" data-r><h3>Augmenter la probabilité d’être pris</h3><dl><dt>Le mécanisme</dt><dd>Plus de présence policière ciblée et d’enquêtes résolues, plutôt que des peines plus longues.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> À Londres, 10 % de présence policière en plus ont fait baisser la criminalité de 3 à 4 % (Draca et al., 2011). La certitude d’être pris dissuade davantage que la sévérité (Nagin, 2013).</dd><dt>Ce qui reste incertain</dt><dd>La durée de l’effet et son report vers d’autres quartiers.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût en effectifs, et des risques pour les libertés si les contrôles se multiplient.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>L’exécution de toutes les peines</td><td>Des conditions de détention dignes, tant que les places manquent</td></tr><tr><td>La sortie anticipée pour désengorger</td><td>La confiance des victimes et du public dans les peines prononcées</td></tr><tr><td>Plus de contrôles policiers</td><td>Les libertés individuelles et la relation avec certains quartiers</td></tr><tr><td>Les peines hors prison</td><td>La mise à l’écart des personnes jugées dangereuses</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>À quoi sert <span>une peine ?</span></h2>
+    <p class="lede" data-r>Punir parce que c’est juste, dissuader, protéger, réparer, réinsérer : les chiffres ne disent pas lequel de ces buts doit primer. Neuf traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>de la justice et de la sécurité ?</span></h2>
+    <p class="lede ink" data-r>Le droit pénal, les tribunaux et les prisons relèvent de l’État fédéral, mais la sécurité de tous les jours se joue aussi dans les communes, et l’accompagnement des justiciables dans les Communautés.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>État fédéral</h3><ul><li>Code pénal et procédure pénale</li><li>Tribunaux, parquets, tribunaux de l’application des peines</li><li>Prisons et police fédérale</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Communautés</h3><ul><li>Maisons de justice (suivi des peines hors prison)</li><li>Délinquance des mineurs et protection de la jeunesse</li><li>Aide aux détenus et aux victimes</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Communes</h3><ul><li>Police locale, organisée en zones</li><li>Sanctions administratives communales et prévention</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Europe</h3><ul><li>Cour européenne des droits de l’homme (conditions de détention, procès équitable)</li><li>Coopération policière et judiciaire de l’Union (Europol, Eurojust, Parquet européen)</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Confondre faits enregistrés et faits commis</h3><p>Une campagne de sensibilisation ou une priorité policière peut faire monter un chiffre sans que les faits augmentent. Pour les drogues, le chiffre dépend en grande partie de l’activité policière.</p></li>
+      <li data-r><span class="g">2</span><h3>Comparer des pays sans précaution</h3><p>Les codes pénaux, les règles d’enregistrement et les habitudes de plainte diffèrent. Même l’homicide, l’infraction la mieux mesurée, ne se compare qu’avec prudence.</p></li>
+      <li data-r><span class="g">3</span><h3>Oublier les ruptures</h3><p>Le nouveau Code pénal (septembre 2026) change les catégories d’infractions : les séries futures ne seront pas toujours comparables aux anciennes.</p></li>
+      <li data-r><span class="g">4</span><h3>Lire un chiffre de détenus sans sa date</h3><p>Au 1<sup>er</sup> janvier, beaucoup de détenus sont en congé : le Conseil de l’Europe signale que ce chiffre sous-estime la population habituelle des prisons belges.</p></li>
+      <li data-r><span class="g">5</span><h3>Comparer des nationalités sans le bon dénominateur</h3><p>Les détenus en séjour irrégulier ne figurent pas dans la population résidente. Rapporter leur nombre à cette population gonfle mécaniquement le taux.</p></li>
+      <li data-r><span class="g">6</span><h3>Confondre sentiment d’insécurité et risque</h3><p>9 % des habitants se sentaient souvent ou toujours en insécurité en 2021, contre 6 % en 2018. Ce sentiment compte, mais il n’évolue pas forcément comme la victimation.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="b" data-r><p class="qq">1. Une ville lance une grande campagne « Victime de harcèlement ? Portez plainte ». L’année suivante, les plaintes pour harcèlement augmentent de 40 %. Que peut-on conclure ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Le harcèlement a augmenté de 40 %.</button><button type="button" data-k="b" aria-pressed="false">On ne peut pas savoir sans une enquête auprès des victimes : la campagne a pu faire monter les plaintes sans que les faits augmentent.</button><button type="button" data-k="c" aria-pressed="false">La campagne a échoué.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Les plaintes mesurent les faits signalés, pas les faits commis.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> Si une plus grande part des victimes porte plainte, le chiffre monte même à nombre de faits constant.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Au contraire, plus de plaintes peut être le signe que la campagne a atteint son but.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> faits enregistrés = faits commis × taux de signalement. Quand le taux de signalement change, la statistique bouge sans que la réalité change.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="c" data-r><p class="qq">2. Dans le pays A, 20 % des personnes libérées sont recondamnées dans les deux ans. Dans le pays B, 45 % retournent en prison dans les huit ans. Quel pays réinsère le mieux ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Le pays A, son taux est plus de deux fois plus bas.</button><button type="button" data-k="b" aria-pressed="false">Le pays B, car il suit les personnes plus longtemps.</button><button type="button" data-k="c" aria-pressed="false">Impossible de conclure : la mesure et la durée de suivi diffèrent.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Sur deux ans au lieu de huit, le taux du pays B serait sans doute beaucoup plus bas.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> Une durée plus longue ne rend pas le chiffre meilleur, seulement différent.</p><p class="qfb" data-k="c" hidden><b>Exact.</b> En Belgique, le même groupe donne 21 % sur deux ans et 44,1 % sur cinq à huit ans.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un taux de récidive dépend de qui on suit, de ce qu’on compte et pendant combien de temps. On ne compare que des taux construits de la même façon.</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="cam" aria-pressed="true">Cambriolages</button>
+        <button type="button" data-k="pri" aria-pressed="false">Prisons</button>
+        <button type="button" data-k="rec" aria-pressed="false">Récidive</button>
+        <button type="button" data-k="pla" aria-pressed="false">Plaintes</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées le 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat : <a href="https://ec.europa.eu/eurostat/databrowser/view/crim_off_cat/default/table?lang=fr" target="_blank" rel="noopener">crim_off_cat</a> (infractions enregistrées), <a href="https://ec.europa.eu/eurostat/databrowser/view/crim_pris_cap/default/table?lang=fr" target="_blank" rel="noopener">crim_pris_cap</a> (détenus et capacité), <a href="https://ec.europa.eu/eurostat/databrowser/view/crim_pris_ctz/default/table?lang=fr" target="_blank" rel="noopener">crim_pris_ctz</a> (détenus par nationalité), migr_pop1ctz (population).</li>
+        <li>Police fédérale (2022). <a href="https://www.police.be/5998/fr/node/26230" target="_blank" rel="noopener">Résultats du Moniteur de sécurité 2021</a>.</li>
+        <li>Aebi, M. F. et Cocco, E. (2025). <a href="https://wp.unil.ch/space/files/2025/09/250924_rapport-space-i-2024.pdf" target="_blank" rel="noopener"><i>SPACE I – 2024. Council of Europe Annual Penal Statistics: Prison populations</i></a>. Conseil de l’Europe et Université de Lausanne.</li>
+      </ol>
+      <h3 class="mt">Niveau 3 · institutions publiques</h3><ol>
+        <li>Conseil central de surveillance pénitentiaire : <a href="https://ccsp.belgium.be/wp-content/uploads/2025/04/CP_Les-prisons-craquent-sous-la-surpopulation.pdf" target="_blank" rel="noopener">communiqué du 18 avril 2025</a> ; <a href="https://ccsp.belgium.be/wp-content/uploads/2025/02/CCSP_Avis-sur-la-regulation-carcerale.pdf" target="_blank" rel="noopener">avis sur la régulation carcérale, 10 février 2025</a> ; <a href="https://ccsp.belgium.be/wp-content/uploads/2025/04/CP_Comite-des-Ministres-dans-laffaire-Vasilescu-CCSP-IFDH.pdf" target="_blank" rel="noopener">communiqué sur l’affaire Vasilescu, décembre 2024</a>.</li>
+        <li>Robert, L. et Maes, E. (2012). <i>Wederopsluiting na vrijlating uit de gevangenis</i>. INCC ; cité dans INCC, <a href="https://nicc.fgov.be/upload/publicaties/rapport_38.pdf" target="_blank" rel="noopener">rapport n° 38</a>.</li>
+        <li>Police fédérale, <a href="https://www.police.be/5337/node/18813" target="_blank" rel="noopener">« Comparer des taux de récidive : la fausse bonne idée ? »</a>.</li>
+        <li>Union des Villes et Communes de Wallonie, <a href="https://www.uvcw.be/fonctionnement/actus/art-10379" target="_blank" rel="noopener">le nouveau Code pénal</a>.</li>
+      </ol>
+      <h3 class="mt">Histoire et analyses</h3><ol>
+        <li>Eisner, M. (2003). « Long-Term Historical Trends in Violent Crime ». <i>Crime and Justice</i>, 30, 83-142.</li>
+        <li>Brion, F. (2014). <a href="https://research.dial.uclouvain.be/bitstreams/93628882-390c-4afa-9fa4-d07cc079a192/download" target="_blank" rel="noopener">« Ondes longues du capitalisme et chirurgie du corps social »</a>. UCLouvain (lecture critique ; chiffres tirés des données de l’administration pénitentiaire).</li>
+      </ol>
+      <h3 class="mt">Niveau 6 · presse</h3><ol>
+        <li><a href="https://www.lalibre.be/belgique/judiciaire/2026/06/15/rendez-vous-dans-dix-ans-avec-18-000-detenus-la-belgique-doit-reduire-durablement-le-nombre-de-personnes-incarcerees-RSN54MPTDBBCPK4LXRSGVBUHEE/" target="_blank" rel="noopener">La Libre, 15 juin 2026</a> ; <a href="https://www.lalibre.be/belgique/l-affaire-dutroux-un-drame-qui-a-bouleverse-et-change-la-belgique-57ae1d0235709a31055d8f49" target="_blank" rel="noopener">La Libre, sur l’affaire Dutroux</a>.</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Bell, B., Fasani, F. et Machin, S. (2013). « Crime and Immigration: Evidence from Large Immigrant Waves ». <i>Review of Economics and Statistics</i>, 95(4), 1278-1290.</li>
+        <li>Di Tella, R. et Schargrodsky, E. (2013). « <a href="https://doi.org/10.1086/669786" target="_blank" rel="noopener">Criminal Recidivism after Prison and Electronic Monitoring</a> ». <i>Journal of Political Economy</i>, 121(1), 28-73.</li>
+        <li>Draca, M., Machin, S. et Witt, R. (2011). « <a href="https://doi.org/10.1257/aer.101.5.2157" target="_blank" rel="noopener">Panic on the Streets of London: Police, Crime, and the July 2005 Terror Attacks</a> ». <i>American Economic Review</i>, 101(5), 2157-2181.</li>
+        <li>Farrell, G., Tilley, N. et Tseloni, A. (2014). « <a href="https://irep.ntu.ac.uk/id/eprint/26190/" target="_blank" rel="noopener">Why the Crime Drop?</a> ». <i>Crime and Justice</i>, 43, 421-490.</li>
+        <li>Nagin, D. (2013). « Deterrence in the Twenty-First Century ». <i>Crime and Justice</i>, 42 ; synthèse : <a href="https://nij.ojp.gov/topics/articles/five-things-about-deterrence" target="_blank" rel="noopener">National Institute of Justice</a>.</li>
+        <li>Nagin, D., Cullen, F. et Jonson, C. (2009). « <a href="https://ojp.gov/ncjrs/virtual-library/abstracts/imprisonment-and-reoffending-crime-and-justice-review-research" target="_blank" rel="noopener">Imprisonment and Reoffending</a> ». <i>Crime and Justice</i>, 38, 115-200.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Beccaria, C. (1764). <i>Des délits et des peines</i>.</li>
+        <li>Becker, G. (1968). « Crime and Punishment: An Economic Approach ». <i>Journal of Political Economy</i>, 76(2).</li>
+        <li>Bentham, J. (1789). <i>An Introduction to the Principles of Morals and Legislation</i>.</li>
+        <li>Braithwaite, J. (1989). <i>Crime, Shame and Reintegration</i>. Cambridge University Press.</li>
+        <li>Durkheim, É. (1895). <i>Les Règles de la méthode sociologique</i>.</li>
+        <li>Foucault, M. (1975). <i>Surveiller et punir</i>. Gallimard.</li>
+        <li>Kant, E. (1797). <i>Métaphysique des mœurs</i>, Doctrine du droit.</li>
+        <li>Rusche, G. et Kirchheimer, O. (1939). <i>Punishment and Social Structure</i>. Columbia University Press.</li>
+        <li>Wilson, J. Q. et Kelling, G. (1982). « Broken Windows ». <i>The Atlantic Monthly</i>.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Les sites du SPF Justice et des statistiques policières n’ont pas pu être consultés automatiquement lors de la vérification : certains chiffres viennent donc d’organes de contrôle (CCSP) ou, quand c’est indiqué, de la presse. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="index.html#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 05 · Justice et sécurité · vérifié le 11 octobre 2026</span><a href="index.html#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
+<script>(function(){
+  var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg',DATA={"hom": [1.91, 1.76, 1.74, 1.95, 1.86, 1.83, 1.88, 2.06, 1.55, 1.74, 1.68, 1.28, 1.29, 1.37, 1.62, 1.41, 1.4], "burg": [64061, 69456, 63598, 70037, 75640, 75481, 72675, 65716, 55367, 52331, 51337, 47866, 33951, 33825, 39338, 37402, 36815], "rob": [22877, 23581, 23856, 27341, 25608, 22879, 21928, 20278, 18678, 17645, 16483, 16297, 11927, 11639, 13433, 14372, 13747], "rape": [3231, 3152, 3308, 3397, 3405, 3345, 3188, 3231, 3443, 3727, 3867, 4221, 4001, 4686, 4858, 4843, 4792], "pris": [[2008, 9811], [2009, 10126], [2010, 10526], [2011, 11040], [2012, 11183], [2013, 11818], [2015, 10994], [2017, 10471], [2018, 10261], [2019, 10794], [2020, 10357], [2021, 10769], [2022, 11050], [2023, 11893], [2024, 12581]], "cap": [[2008, 8445], [2009, 8546], [2010, 9129], [2011, 9212], [2012, 9401], [2013, 9715], [2015, 9952], [2017, 9231], [2019, 9231], [2020, 9554], [2021, 9563], [2022, 9703], [2023, 10584], [2024, 11040]], "burgI": [100.0, 108.4, 99.3, 109.3, 118.1, 117.8, 113.4, 102.6, 86.4, 81.7, 80.1, 74.7, 53.0, 52.8, 61.4, 58.4, 57.5], "robI": [100.0, 103.1, 104.3, 119.5, 111.9, 100.0, 95.9, 88.6, 81.6, 77.1, 72.1, 71.2, 52.1, 50.9, 58.7, 62.8, 60.1], "rapeI": [100.0, 97.6, 102.4, 105.1, 105.4, 103.5, 98.7, 100.0, 106.6, 115.4, 119.7, 130.6, 123.8, 145.0, 150.4, 149.9, 148.3]};
+  H.classList.add('js');
+  function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
+  function fr(v,d){d=d==null?1:d;return v.toLocaleString('fr-BE',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  function sg(v,d){return (v<0?'−':v>0?'+':'')+fr(Math.abs(v),d)}
+  var MOB=innerWidth<640;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,calm=false;
+  try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}
+  var ab=D.getElementById('a11y');
+  function setCalm(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}
+  setCalm(calm);ab.addEventListener('click',function(){setCalm(!calm)});
+  var TX='font-family:var(--sans);font-size:'+(MOB?12:13)+'px;fill:';
+
+
+  /* 0. Seuil */
+  (function(){
+    var g=D.getElementById('guess'),go=D.getElementById('gOut'),vd=D.getElementById('verdict');
+    g.addEventListener('input',function(){go.textContent=sg(+g.value,0)+' %'});
+    D.getElementById('reveal').addEventListener('click',function(){
+      var v=+g.value;
+      vd.innerHTML=(Math.abs(v+51)<=8?'Bien vu : ':'Vous avez dit '+sg(v,0)+' %. ')+'Les cambriolages de logements enregistrés sont passés de 75 640 en 2012 à 36 815 en 2024 : une baisse de 51 %.<span class="down" aria-hidden="true">↓</span>';
+      vd.hidden=false;go.textContent='−51 %';g.value=-51;
+    });
+  })();
+
+  /* Courbes à départs variables */
+  function lines2(host,o){
+    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?320:420),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
+    function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
+    (o.bands||[]).forEach(function(b){s.appendChild(el('rect',{x:X(b[0]),y:T,width:X(b[1])-X(b[0]),height:B-T,fill:b[2]}));s.appendChild(el('text',{x:(X(b[0])+X(b[1]))/2,y:T-10,'text-anchor':'middle',style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?15:22)+'px;fill:'+o.ink},b[3]))});
+    o.ticks.forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:o.grid}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+o.mute},fr(v,o.tdec||0)+(o.unit||'')))});
+    o.years.forEach(function(y){s.appendChild(el('text',{x:X(y),y:Hh-12,'text-anchor':'middle',style:TX+o.mute},y))});
+    (o.breaks||[]).forEach(function(b){s.appendChild(el('line',{x1:X(b),x2:X(b),y1:T,y2:B,stroke:'#E2402B','stroke-dasharray':'2 6'}));s.appendChild(el('text',{x:X(b),y:T-6,'text-anchor':'middle',style:'font-size:18px;fill:#E2402B'},'×'))});
+    var g=el('g',{});
+    o.series.forEach(function(se){
+      var pts=se.pts||se.v.map(function(v,j){return [se.s+j,v]});
+      var d=pts.map(function(p,j){return (j?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)}).join(' ');
+      var p=el('path',{d:d,fill:'none',stroke:se.c,'stroke-width':se.w||3,'stroke-linejoin':'round','stroke-linecap':'round','class':se.dash?'fadein':'drawline'});
+      if(se.dash)p.setAttribute('stroke-dasharray','6 6');g.appendChild(p);
+      if(se.end!==false){var lp=pts[pts.length-1];
+        g.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:5,fill:se.c,'class':'fadein'}));
+        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+se.c},fr(lp[1],o.dec==null?1:o.dec)+(o.unit||'')+(MOB?'':'  '+se.n)));}
+    });
+    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+k[3]},k[2]))});
+    s.appendChild(g);host.appendChild(s);
+  }
+
+
+  var DK={grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',bg:'#1E1914'},PP={grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',bg:'#F7F6F2'};
+  function o2(a,b){for(var k in b)a[k]=b[k];return a}
+  function yrs(a,b){var r=[];for(var y=a;y<=b;y++)r.push(y);return r}
+
+
+  var DK={grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',bg:'#1E1914'},PP={grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',bg:'#F7F6F2'};
+  function o2(a,b){for(var k in b)a[k]=b[k];return a}
+
+  /* Fiche 01 : indices */
+  lines2(D.getElementById('crimeChart'),o2({t0:2008,t1:2024,rm:MOB?70:250,min:40,max:160,ticks:[40,60,80,100,120,140,160],dec:0,years:MOB?[2008,2012,2016,2020,2024]:[2008,2010,2012,2014,2016,2018,2020,2022,2024],
+    series:[{n:'viols',v:DATA.rapeI,s:2008,c:'#3E3A8C',w:4,dy:0},{n:'vols avec violence',v:DATA.robI,s:2008,c:'#6A665F',dash:1,dy:-12},{n:'cambriolages de logements',v:DATA.burgI,s:2008,c:'#C0341E',w:4.5,dy:14}],
+    marks:[[2012,118.1,'pic 2012','#C0341E',-12]],
+    label:'Indice 100 en 2008 des infractions enregistrées : cambriolages de logements 57 en 2024 après un pic à 118 en 2012 ; vols avec violence 60 ; viols 148'},PP));
+
+  /* Chiffre noir */
+  (function(){
+    var N=[['Sexuelles, en famille',25.4],['Sexuelles, hors famille',15.7],['Escroqueries en ligne',10.1],['Piratage informatique',9.5],['Hameçonnage',6.6]];
+    var W=MOB?420:600,rh=38,L=MOB?170:220,R=W-60,Hh=N.length*rh+10;
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Part des victimes ayant signalé les faits à la police, 2021 : '+N.map(function(n){return n[0]+' '+fr(n[1])+' %'}).join(', ')});
+    N.forEach(function(n,i){var y=6+i*rh,w=(R-L)*n[1]/30;s.appendChild(el('text',{x:L-10,y:y+20,'text-anchor':'end',style:TX+PP.ink},n[0]));s.appendChild(el('rect',{x:L,y:y+6,width:w.toFixed(1),height:rh-16,fill:'#3E3A8C','class':'fadein'}));s.appendChild(el('text',{x:L+w+8,y:y+20,'class':'fadein',style:TX+PP.ink+';font-weight:700'},fr(n[1])+' %'))});
+    D.getElementById('darkChart').appendChild(s);
+  })();
+  lines2(D.getElementById('homChart'),o2({t0:2008,t1:2024,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:90,min:0,max:2.5,ticks:[0,0.5,1,1.5,2,2.5],tdec:1,dec:2,years:MOB?[2008,2016,2024]:[2008,2012,2016,2020,2024],
+    series:[{n:'',v:DATA.hom,s:2008,c:'#C0341E',w:4}],marks:[[2015,2.06,'2,06','#1A1A1A',-12]],
+    label:'Homicides volontaires enregistrés pour 100 000 habitants en Belgique : 1,91 en 2008, 2,06 en 2015, 1,40 en 2024'},PP));
+
+  /* Fiche 02 : prisons */
+  lines2(D.getElementById('prisChart'),o2({t0:2008,t1:2025,rm:MOB?78:200,min:8000,max:13500,ticks:[8000,9000,10000,11000,12000,13000],dec:0,years:MOB?[2008,2012,2016,2020,2025]:[2008,2010,2012,2014,2016,2018,2020,2022,2025],
+    series:[{n:'places',pts:DATA.cap,c:'#A69C8F',dash:1,dy:10},{n:'détenus',pts:DATA.pris,c:'#C9773A',w:4.5,dy:-2}],
+    marks:[[2025.25,12976,'12 976 en cellule (mars 2025)','#EDE6DC',-14,'end']],
+    label:'Détenus et capacité officielle des prisons belges : 9 811 détenus pour 8 445 places en 2008 ; 12 581 pour 11 040 en 2024 ; 12 976 détenus en cellule au 31 mars 2025'},DK));
+
+  /* Recherche */
+  (function(){
+    var Q=[
+      {q:'La criminalité augmente-t-elle en Belgique ?',b:['b-et','Établi : les vols ont baissé'],b2:['b-de','Débattu : violences et fraudes'],v:'Les vols et cambriolages enregistrés ont fortement baissé, comme dans beaucoup de pays riches depuis les années 1990. Pour les violences sexuelles et les fraudes, les plaintes augmentent, mais on ne sait pas quelle part vient d’une hausse des faits et quelle part d’une meilleure dénonciation ou de nouvelles formes de délinquance en ligne.',
+       st:[{a:'Farrell, Tilley et Tseloni, 2014',t:'Baisse de la criminalité dans les pays riches depuis les années 1990',l:0,lt:'revue',p:'Sur dix-sept explications testées, seule l’amélioration des dispositifs de sécurité (serrures, alarmes, antivols) résiste à tous les tests ; la preuve est forte pour les vols de voitures et s’accumule pour les cambriolages.',u:'https://irep.ntu.ac.uk/id/eprint/26190/',s:'Crime and Justice'},
+           {a:'Police fédérale, 2022',t:'Moniteur de sécurité 2021, près de 100 000 répondants',l:1,lt:'enquête',p:'Seules 15,7 % des victimes de violences sexuelles hors famille et environ une victime de violence physique sur trois disent avoir signalé les faits à la police.',u:'https://www.police.be/5998/fr/node/26230',s:'Police fédérale'}],
+       x:'Le Moniteur de sécurité n’est pas mené chaque année : il est difficile de savoir si le taux de plainte pour violences sexuelles a augmenté depuis 2021.'},
+      {q:'Des peines plus sévères font-elles baisser la criminalité ?',b:['b-ma','Majoritaire : la certitude compte plus que la sévérité'],v:'La probabilité d’être pris dissuade nettement plus que la longueur de la peine. Augmenter une peine déjà longue a peu d’effet dissuasif mesurable.',
+       st:[{a:'Nagin, 2013',t:'Synthèse de la recherche sur la dissuasion',l:0,lt:'revue',p:'La certitude d’être pris est un moyen de dissuasion bien plus puissant que la peine elle-même ; augmenter la sévérité dissuade peu.',u:'https://nij.ojp.gov/topics/articles/five-things-about-deterrence',s:'Crime and Justice · synthèse NIJ'},
+           {a:'Draca, Machin et Witt, 2011',t:'Londres, redéploiement policier après les attentats de juillet 2005',l:4,p:'Les quartiers qui ont reçu plus de policiers ont vu la criminalité baisser par rapport aux autres : environ 3 à 4 % de criminalité en moins pour 10 % de présence policière en plus.',u:'https://doi.org/10.1257/aer.101.5.2157',s:'American Economic Review'}],
+       x:'Aucune étude belge de ce type n’a été trouvée lors de la vérification.'},
+      {q:'La prison réduit-elle la récidive ?',b:['b-ma','Majoritaire : pas mieux que les autres peines'],v:'À profil comparable, la prison ne réduit pas davantage la récidive que les peines exécutées hors prison, et pourrait même l’augmenter légèrement. Elle protège en revanche la société pendant la détention.',
+       st:[{a:'Nagin, Cullen et Jonson, 2009',t:'Revue des études comparant prison et peines hors prison',l:0,lt:'revue',p:'Par rapport aux sanctions non privatives de liberté, l’emprisonnement a un effet nul ou légèrement criminogène sur les comportements futurs.',u:'https://ojp.gov/ncjrs/virtual-library/abstracts/imprisonment-and-reoffending-crime-and-justice-review-research',s:'Crime and Justice'},
+           {a:'Di Tella et Schargrodsky, 2013',t:'Argentine, juges attribués de façon quasi aléatoire',l:4,p:'Les personnes placées sous surveillance électronique ont été réarrêtées dans 13 % des cas, contre 22 % pour des détenus comparables.',u:'https://doi.org/10.1086/669786',s:'Journal of Political Economy'},
+           {a:'Robert et Maes (INCC), 2012',t:'Belgique, 14 754 personnes libérées de 2003 à 2005',l:1,p:'44,1 % retournent en prison dans les cinq à huit ans ; 21 % dans les deux ans. Étude descriptive : elle ne dit pas ce qui se serait passé sans la prison.',u:'https://nicc.fgov.be/upload/publicaties/rapport_38.pdf',s:'INCC'}],
+       x:'Les conditions de détention (surpopulation, accès aux activités) pourraient peser sur la récidive, mais les études belges manquent pour le mesurer.'},
+      {q:'L’immigration augmente-t-elle la criminalité ?',b:['b-de','Débattu'],v:'Les études les plus solides trouvent des effets faibles et qui dépendent de la situation des personnes : dans une étude britannique, une vague de demandeurs d’asile, dont l’accès à l’emploi était limité selon les auteurs, s’est accompagnée d’une petite hausse des vols, mais pas une vague de travailleurs européens. Aucune n’a trouvé d’effet sur les violences.',
+       st:[{a:'Bell, Fasani et Machin, 2013',t:'Royaume-Uni, deux grandes vagues d’immigration comparées par zone',l:4,p:'La vague de demandeurs d’asile de la fin des années 1990 a entraîné une petite hausse des atteintes aux biens ; la vague de travailleurs venus des nouveaux pays de l’Union après 2004, aucune. Pas d’effet observable sur les violences.',u:'https://researchonline.lse.ac.uk/id/eprint/59323',s:'Review of Economics and Statistics'}],
+       x:'Aucune étude causale belge récente n’a été trouvée. La surreprésentation des étrangers en prison (fiche 02) ne suffit pas à répondre : elle mêle délinquance, séjour irrégulier, âge, pauvreté et fonctionnement de la justice.'}];
+    function lvl(n,t){if(!n)return '<span class="lvl"><em>'+t+'</em></span>';var h='<span class="lvl" title="Échelle de Maryland : niveau '+n+' sur 5">';for(var i=1;i<=5;i++)h+='<i class="'+(i<=n?'on':'')+'"></i>';return h+'<em>Maryland '+n+'/5</em></span>'}
+    D.getElementById('rq').innerHTML=Q.map(function(q,i){return '<article class="rq" data-r><div class="qh"><span class="qn">'+(i+1)+'</span><div><h3>'+q.q+'</h3><div class="verd"><span class="bdg '+q.b[0]+'">'+q.b[1]+'</span>'+(q.b2?'<span class="bdg '+q.b2[0]+'">'+q.b2[1]+'</span>':'')+'<p>'+q.v+'</p></div></div></div><ul class="studies">'+q.st.map(function(s){return '<li class="study"><div class="meta"><span>'+s.s+'</span>'+lvl(s.l,s.lt)+'</div><h4>'+s.a+' · '+s.t+'</h4><p>'+s.p+'</p><a href="'+s.u+'" target="_blank" rel="noopener">Lire la source ↗</a></li>'}).join('')+'</ul><p class="unknown">'+q.x+'</p></article>'}).join('');
+  })();
+
+  /* Lectures */
+  (function(){
+    var Lx=[
+      ['Libérale classique','Cesare Beccaria','Des délits et des peines, 1764','Une peine doit être proportionnée, prévue par la loi et certaine plutôt que cruelle : c’est la certitude du châtiment, non sa dureté, qui détourne du crime.','La proportionnalité et la certitude de la peine.','Suppose des individus qui calculent ; beaucoup d’infractions sont impulsives ou liées à l’alcool, à la drogue ou à la détresse.'],
+      ['Rétributiviste','Emmanuel Kant','Métaphysique des mœurs, 1797','On punit parce que la personne a commis une faute, et dans la mesure de cette faute ; la peine respecte le condamné comme un être responsable, pas comme un moyen.','La gravité de la faute et la justice due aux victimes.','Ne dit rien de l’efficacité : une peine juste peut ne protéger personne.'],
+      ['Utilitariste','Jeremy Bentham','Introduction aux principes de morale et de législation, 1789','Une peine n’est justifiée que si elle évite plus de souffrance qu’elle n’en cause : dissuader, neutraliser, amender. Bentham a aussi imaginé le Panoptique.','La dissuasion et le coût des peines.','Peut justifier de punir lourdement pour l’exemple, au détriment de la justice individuelle.'],
+      ['Sociologique','Émile Durkheim','Les Règles de la méthode sociologique, 1895','Le crime est « normal » : toute société en produit. La peine sert surtout à réaffirmer les valeurs communes et la cohésion du groupe.','Ce que la peine dit d’une société.','Ne dit pas quel niveau de crime ou de punition est acceptable.'],
+      ['Critique','Michel Foucault','Surveiller et punir, 1975','La prison moderne n’a pas seulement humanisé la peine : elle a inventé une manière de surveiller et de discipliner les corps, et elle produit elle-même de la délinquance.','Le pouvoir derrière les institutions pénales.','Analyse historique et philosophique, difficile à traduire en politique concrète ou à vérifier par les chiffres.'],
+      ['Économique','Gary Becker','« Crime and Punishment: An Economic Approach », 1968','Le délinquant compare les gains du crime à la probabilité d’être pris multipliée par la peine. La politique pénale doit choisir la combinaison la moins coûteuse de contrôles et de sanctions.','La probabilité d’arrestation et le coût des peines.','Les recherches montrent que les individus réagissent beaucoup plus à la probabilité d’être pris qu’à la durée de la peine.'],
+      ['Ordre public','James Q. Wilson et George Kelling','« Broken Windows », 1982','Laisser passer les petits désordres (vitres cassées, incivilités) signale que personne ne contrôle le quartier et prépare des délits plus graves.','Les incivilités et la présence policière visible.','Ses applications (« tolérance zéro ») ont été accusées de cibler certains groupes, et leur effet propre sur la criminalité est discuté.'],
+      ['Justice restauratrice','John Braithwaite','Crime, Shame and Reintegration, 1989','Une sanction qui désapprouve l’acte tout en réintégrant la personne prévient mieux la récidive qu’une sanction qui l’exclut. La réparation envers la victime est centrale.','La réparation, la médiation, la place de la victime.','Moins adaptée aux crimes graves et suppose que l’auteur et la victime acceptent d’y participer.'],
+      ['Marxiste','Georg Rusche et Otto Kirchheimer','Punishment and Social Structure, 1939','Les formes de punition dépendent du marché du travail et des rapports de production, plus que du niveau de criminalité.','Le lien entre prison, pauvreté et économie.','Le lien entre économie et punition est réel mais loin d’être mécanique selon les recherches ultérieures.']];
+    for(var i=Lx.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=Lx[i];Lx[i]=Lx[j];Lx[j]=t}
+    D.getElementById('reads').innerHTML=Lx.map(function(r){return '<article class="read" data-r><span class="trad">'+r[0]+'</span><h3>'+r[1]+'</h3><p class="w">'+r[2]+'</p><p class="th">'+r[3]+'</p><p class="so"><b>Ce qu’elle regarde</b>'+r[4]+'</p><p class="cr"><b>Sa critique</b>'+r[5]+'</p></article>'}).join('');
+  })();
+
+  /* Citer */
+  (function(){
+    var T={cam:'En Belgique, les cambriolages de logements enregistrés par la police sont passés de 75 640 en 2012 à 36 815 en 2024, soit une baisse de 51 % (Eurostat, crim_off_cat).',
+      pri:'Au 31 mars 2025, 12 976 personnes étaient détenues en cellule dans les prisons belges pour 11 040 places (Conseil central de surveillance pénitentiaire).',
+      rec:'Parmi les personnes libérées des prisons belges entre 2003 et 2005, 21 % y sont retournées dans les deux ans et 44,1 % dans un délai de cinq à huit ans (Robert et Maes, INCC, 2012).',
+      pla:'En 2021, seules 15,7 % des victimes de violences sexuelles commises hors de la famille déclaraient avoir signalé les faits à la police (Police fédérale, Moniteur de sécurité 2021).'};
+    var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');
+    function set(k){q.textContent=T[k];c.textContent='';cs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}
+    cs.forEach(function(b){b.onclick=function(){set(b.dataset.k)}});set('cam');
+    D.getElementById('copy').onclick=function(){function fb(){var r=D.createRange();r.selectNodeContents(q);var s=getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Texte sélectionné : copiez-le.'}try{navigator.clipboard.writeText(q.textContent).then(function(){c.textContent='Copié.'},fb)}catch(e){fb()}};
+  })();
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
+  D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
+  ['t1','crimeChart','darkChart','homChart','prisChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
+  (function(){
+    var c=D.getElementById('cursor'),x=0,y=0,cx=0,cy=0;
+    D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,svg[role=img]')))});
+    (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
+  })();
+})();
+
+/* Composants pédagogiques communs aux dossiers :
+   - explication après le pari d'ouverture (data-reveal),
+   - questions de transfert avec correction expliquée (.qz). */
+(function(){
+  var D=document;
+  /* Après le pari : afficher l'explication détaillée */
+  D.querySelectorAll('[data-reveal]').forEach(function(b){
+    b.addEventListener('click',function(){var t=D.getElementById(b.getAttribute('data-reveal'));if(t)t.hidden=false});
+  });
+  /* Questions de transfert */
+  D.querySelectorAll('.qz').forEach(function(q){
+    var ok=q.getAttribute('data-ok'),opts=q.querySelectorAll('.qopts button'),mech=q.querySelector('.qmech');
+    opts.forEach(function(b){
+      b.addEventListener('click',function(){
+        var k=b.getAttribute('data-k');
+        opts.forEach(function(o){
+          var good=o.getAttribute('data-k')===ok;
+          o.setAttribute('aria-pressed',o===b?'true':'false');
+          o.classList.toggle('is-ok',good);
+          o.classList.toggle('is-ko',o===b&&!good);
+        });
+        q.querySelectorAll('.qfb').forEach(function(f){f.hidden=f.getAttribute('data-k')!==k});
+        if(mech)mech.hidden=false;
+        var live=q.querySelector('.qlive');
+        if(live)live.textContent=k===ok?'Bonne réponse.':'Ce n’est pas la bonne réponse : lisez l’explication.';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

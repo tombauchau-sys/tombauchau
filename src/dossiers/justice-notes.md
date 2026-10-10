@@ -1,0 +1,15 @@
+# Dossier 05 Justice et sécurité : données vérifiées (11 octobre 2026)
+- Eurostat crim_off_cat BE : homicides /100k 2008-2024 (1,91 … 1,40) ; NL 0,67, FR 1,28, DE 0,83 (2024)
+- Cambriolages logements 2008-2024 (64 061 … pic 75 640 en 2012 … 36 815 en 2024) ; vols qualifiés (robbery) 22 877 … 27 341 (2011) … 13 747 ; viols 3 231 (2008) … 4 792 (2024) ; fraude 55 597 (2016) … 123 126 (2024)
+- 2024 : homicides 166, tentatives 1 295, violences sexuelles 12 409
+- crim_pris_cap BE : détenus 9 811 (2008) … 12 581 (2024) ; capacité 8 445 … 11 040 ; 2014, 2016 manquants ; capacité 2018 manquante
+- crim_pris_ctz BE : étrangers 4 124 (2008) … 5 711 (2024)
+- SPACE I 2024 (Aebi & Cocco 2025) : 1/1/2024 BE 11 631 détenus, 10 600 places, densité 109,7, taux 98,3 ; note : 1er janvier sous-estimé (congés) ; BE dans le groupe « très élevé » pour % sans condamnation définitive (médiane 25,9 %) et % étrangers (médiane 16,0 %)
+- CCSP 18/04/2025 : 31/03/2025, 12 976 en cellule + 713 en congé pénitentiaire prolongé ; 11 040 places ; CCSP avis 10/02/2025 : 164 au sol le 3/2/2025, 250 le 1/3/2023 ; CCSP déc. 2024 : 12 737 / 11 020, 190 au sol ; Vasilescu c. Belgique 25/11/2014 ; Comité des ministres 5/12/2024
+- La Libre 15/06/2026 (presse) : jusqu'à 13 800 détenus en 2026, 710 au sol en mars 2026
+- Courtes peines : 2-3 ans exécutées depuis 1/9/2022 ; 6 mois-2 ans depuis 1/9/2023 (SPF Justice via Forum for the Future, 14/9/2023)
+- Nouveau Code pénal : lois du 29/2/2024 (MB 8/4/2024), entrée en vigueur reportée au 1/9/2026 (UVCW ; Business AM 31/8/2026) ; niveaux 1 à 8
+- Récidive : Robert & Maes 2012 (INCC), libérés 2003-2005 (n=14 754), réincarcération 44,1 % (suivi 5 ans 7 mois-8 ans 7 mois), 21 % en 2 ans (police.be)
+- Moniteur de sécurité 2021 : 9 % souvent/toujours insécurité (6 % en 2018) ; signalement violences sexuelles hors famille 15,7 %, en famille 25,4 % ; violence physique 1 sur 3 ; phishing 6,6 %
+- Brion 2014 (UCLouvain) : 44 % d'étrangers en 2010 ; séjour irrégulier 47 % (2010), 62 % (2011), 66 % (2012), 67,4 % (mars 2013) des détenus étrangers
+- Histoire : loi 31/5/1888 libération conditionnelle (Chambre doc 49K0138) ; dernière exécution droit commun 1918, abolition 1996, Constitution 2005 (Wikipedia/SPF AE) ; Dutroux arrêté 13/8/1996, manif 20/10/1996 > 300 000 (La Libre) ; loi 7/12/1998 police intégrée (police.be), évasion avril 1998

@@ -21,6 +21,7 @@ PAGES = {
     '__FINANCES__': ('dossier-finances.html', 'https://claude.ai/artifact/WPBbNAM2GqtYxFxyxtMktY'),
     '__PENSIONS__': ('dossier-pensions.html', 'https://claude.ai/artifact/26mrVdApdUWPhEHz9zX6Le'),
     '__IMMIGRATION__': ('dossier-immigration.html', 'https://claude.ai/artifact/Rj99NrRs1NEzhhCE5StkW5'),
+    '__JUSTICE__': ('dossier-justice.html', 'https://claude.ai/artifact/U2C7bMKnkAZnTHoGy5gFi6'),
 }
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +31,7 @@ DOSSIERS = {
     'emploi': ('Emploi et inactivité · Chiffre Juste', 'Emploi et inactivité en Belgique : taux d’emploi, chômage, invalidité, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'finances': ('Finances publiques · Chiffre Juste', 'Dette, déficit, dépenses par fonction, intérêts et notes des agences : les finances publiques belges en chiffres vérifiés, avec l’état de la recherche et des lectures plurielles.'),
     'immigration': ('Immigration et asile · Chiffre Juste', 'Immigration et asile en Belgique : personnes nées à l’étranger, étrangers, demandes d’asile, emploi des immigrés, histoire depuis 1930, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'justice': ('Justice et sécurité · Chiffre Juste', 'Justice et sécurité en Belgique : criminalité enregistrée et chiffre noir, prisons surpeuplées, récidive, histoire pénale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'pensions': ('Pensions et vieillissement · Chiffre Juste', 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
 }
 HOME_DESC = 'Chiffre Juste : les 27 pays de l’Union en chiffres vérifiés. Notes des agences, budget public par fonction, dette, pauvreté, commerce entre pays, classements, avec sources et limites.'
@@ -118,7 +120,7 @@ def main():
     for fname, fn in jobs.items():
         html, title, desc = fn()
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc), encoding='utf-8')
