@@ -413,6 +413,17 @@ html.calm .chart .fadein{opacity:1}
 .dark-reads .read .cr{color:var(--cream-dim)}
 .dark-reads .read .cr b{color:var(--cream)}
 @media (max-width:900px){.agrid3{grid-template-columns:1fr}}
+
+.preamb{padding-block:96px}
+.three-q{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.three-q li{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:26px;padding:22px;box-shadow:7px 7px 0 var(--line);rotate:var(--rot)}
+.three-q .n{font-family:var(--serif);font-style:italic;font-size:46px;line-height:1;color:var(--red)}
+.three-q h3{font-weight:700;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;margin-top:8px}
+.three-q p{font-size:16px;color:#3D3A35;margin-top:10px}
+.three-q a{color:var(--line);font-weight:700}
+.two-cols .sub.nm{margin-top:0}
+.two-cols .body{font-size:16.5px;color:#3D3A35;margin-top:12px;line-height:1.55}
+@media (max-width:900px){.three-q{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -450,7 +461,7 @@ html.calm .chart .fadein{opacity:1}
   <div class="wrap">
     <span class="kick" data-r>Dossier 02 · une question du débat</span>
     <div class="titlebox"><h2 class="title split" id="t1" aria-label="Finances publiques"><span class="t1">Finances </span><span class="t2">publiques</span></h2></div>
-    <p class="lede hq" data-r>Une dette de 108 % du PIB, est-ce beaucoup ? Trois notions à ne pas confondre, quatre fiches, l’état de la recherche et neuf lectures pour en débattre.</p>
+    <p class="lede hq" data-r>Une dette de 108 % du PIB, est-ce beaucoup ? Tout dépend de ce qu’elle finance, de ce qu’elle coûte et de la capacité à la porter. Trois notions, cinq fiches, quatre questions de recherche et neuf lectures pour en débattre.</p>
     <div class="facts" data-r>
       <div><b>107,9 %</b><span>de dette publique, contre 81,7 % dans l’Union</span><span class="src">Eurostat gov_10dd_edpt1, 2025</span></div>
       <div><b>−5,2 %</b><span>de déficit, contre −3,1 % dans l’Union</span><span class="src">Eurostat gov_10dd_edpt1, 2025</span></div>
@@ -461,16 +472,32 @@ html.calm .chart .fadein{opacity:1}
   </div>
 </section>
 
+<!-- 1b. Préambule -->
+<section class="band grain preamb" style="background:var(--cream)" aria-labelledby="tP">
+  <div class="wrap">
+    <span class="kick dark" data-r>Avant tout</span>
+    <h2 class="giant ink" id="tP" data-r>La dette n’est ni bonne <span>ni mauvaise en soi.</span></h2>
+    <p class="lede ink" data-r>Un État qui emprunte pour construire une école, un réseau ferré ou une centrale finance des services qui serviront pendant des décennies, et en étale le coût sur ceux qui en profiteront. Sans dette, une grande partie de l’investissement public serait impossible. Ce qui compte n’est donc pas d’avoir une dette, mais de répondre à trois questions.</p>
+    <ol class="three-q">
+      <li data-r style="--rot:-1.5deg"><span class="n">1</span><h3>À quoi sert-elle ?</h3><p>Financer un investissement qui rapportera (infrastructures, transition énergétique, recherche) n’a pas le même sens que financer les dépenses courantes de l’année. <a href="#f-invest">Fiche 05</a></p></li>
+      <li data-r style="--rot:1deg"><span class="n">2</span><h3>Combien coûte-t-elle ?</h3><p>Une dette bon marché, quand le taux d’intérêt est inférieur à la croissance, pèse peu. Quand les taux montent, chaque euro emprunté coûte plus cher. <a href="#f-interets">Fiche 04</a></p></li>
+      <li data-r style="--rot:-.5deg"><span class="n">3</span><h3>Peut-on la porter ?</h3><p>Une dette est soutenable si elle ne grimpe pas sans fin par rapport à la richesse produite, et si les prêteurs continuent d’avoir confiance. <a href="#recherche">Recherche</a></p></li>
+    </ol>
+    <p class="hand-note note" data-r>→ et un État n’est pas tout à fait un ménage (voir fiche 05)</p>
+  </div>
+</section>
+
 <!-- 2. Sommaire -->
 <section class="band grain sommaire" style="background:var(--mint)" aria-labelledby="tS">
   <div class="wrap">
-    <h2 id="tS" data-r>Quatre fiches</h2>
+    <h2 id="tS" data-r>Cinq fiches</h2>
     <p class="hint note" data-r>commencez où vous voulez ↓</p>
     <ol class="cards">
       <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-dette"><span class="n">01</span><h3>La dette</h3><p>Combien, depuis quand, et qui la porte ?</p><span class="go">Lire ↓</span></a></li>
       <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-deficit"><span class="n">02</span><h3>Le déficit</h3><p>Qui dépense plus qu’il ne perçoit ?</p><span class="go">Lire ↓</span></a></li>
       <li data-r style="--rot:-1deg;--bg:var(--orange)"><a href="#f-depenses"><span class="n">03</span><h3>Où va l’argent</h3><p>Les dépenses publiques, fonction par fonction.</p><span class="go">Lire ↓</span></a></li>
       <li data-r style="--rot:2deg;--bg:var(--lilac)"><a href="#f-interets"><span class="n">04</span><h3>Intérêts et notes</h3><p>Ce que coûte la dette, et ce qu’en pensent les agences.</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1.5deg;--bg:var(--peach)"><a href="#f-invest"><span class="n">05</span><h3>Investir ou consommer ?</h3><p>Ce que la dette finance compte plus que son montant.</p><span class="go">Lire ↓</span></a></li>
     </ol>
   </div>
 </section>
@@ -556,11 +583,27 @@ html.calm .chart .fadein{opacity:1}
   </div>
 </section>
 
+<!-- 7b. Fiche 05 : investir ou consommer -->
+<section class="sec papier" id="f-invest" aria-labelledby="tV">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 05 · fait et débat</span>
+    <h2 class="giant" id="tV" data-r>Investir <span>ou consommer ?</span></h2>
+    <p class="lede" data-r>En 2025, les pouvoirs publics belges ont investi 3,1 % du PIB (bâtiments, routes, équipements, logiciels…), contre 3,9 % en moyenne dans l’Union. La Belgique est sous la moyenne européenne depuis au moins 2000 : l’écart, de 1,7 point en 2008, est de 0,8 point en 2025.</p>
+    <div class="chart" id="invChart"></div>
+    <p class="srcl">Investissement public (formation brute de capital fixe des administrations publiques), en % du PIB, 2000-2025 (2024-2025 provisoires ; rupture de série en 2009). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_main</a> (P51G), mise à jour du 21 juillet 2026, consulté le 10 octobre 2026.</p>
+    <div class="duo two-cols">
+      <div data-r><h3 class="sub nm">La « règle d’or »</h3><p class="body">N’emprunter que pour investir, jamais pour les dépenses courantes. L’idée : une génération qui profite d’une infrastructure en partage le coût avec les suivantes. Olivier Blanchard et Francesco Giavazzi ont proposé en 2004 de sortir l’investissement net du calcul du déficit européen ; le Bureau fédéral du Plan a repris la discussion pour la Belgique en 2016.</p></div>
+      <div data-r><h3 class="sub nm">Ses limites</h3><p class="body">Elle n’a pas été retenue lors de la réforme du pacte de stabilité de 2005, et des économistes la jugent séduisante mais inadaptée (Balassone et Franco, 2000). La frontière est floue : un salaire d’enseignant est une dépense courante dans les comptes, mais il construit le capital humain de demain. Et un investissement mal choisi peut ne rien rapporter.</p></div>
+    </div>
+    <div class="trap" data-r><span class="note">piège !</span><p>« L’État doit gérer son budget comme un ménage. » Un ménage emprunte bien pour acheter une maison, mais un État ne meurt pas, lève l’impôt et refinance sa dette en continu. La comparaison aide à comprendre l’idée d’investir, pas à fixer un niveau de dette.</p></div>
+  </div>
+</section>
+
 <!-- 8. Recherche -->
 <section class="sec papier" id="recherche" aria-labelledby="tR">
   <div class="wrap">
     <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
-    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <h2 class="giant" id="tR" data-r>Quatre questions, <span>quatre niveaux de preuve.</span></h2>
     <p class="lede" data-r>Chaque conclusion porte un badge (grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="index.html#methode">Voir la méthode</a>.</p>
     <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
     <div id="rq" class="rq-light"></div>
@@ -649,6 +692,12 @@ html.calm .chart .fadein{opacity:1}
         <li>Herndon, T., Ash, M. et Pollin, R. (2014). « <a href="https://peri.umass.edu/publication/does-high-public-debt-consistently-stifle-economic-growth-a-critique-of-reinhart-and-rogoff/" target="_blank" rel="noopener">Does High Public Debt Consistently Stifle Economic Growth? A Critique of Reinhart and Rogoff</a> ». <i>Cambridge Journal of Economics</i>, 38(2).</li>
         <li>Reinhart, C. et Rogoff, K. (2010). « <a href="https://doi.org/10.1257/aer.100.2.573" target="_blank" rel="noopener">Growth in a Time of Debt</a> ». <i>American Economic Review</i>, 100(2), 573-578.</li>
       </ul>
+      <h3 class="mt">Investissement public</h3><ul>
+        <li>Abiad, A., Furceri, D. et Topalova, P. (2016). « <a href="https://ideas.repec.org/a/eee/jmacro/v50y2016icp224-240.html" target="_blank" rel="noopener">The Macroeconomic Effects of Public Investment: Evidence from Advanced Economies</a> ». <i>Journal of Macroeconomics</i>, 50, 224-240.</li>
+        <li>Balassone, F. et Franco, D. (2000). « <a href="https://ideas.repec.org/a/ifs/fistud/v21y2000i2p207-229.html" target="_blank" rel="noopener">Public Investment, the Stability Pact and the “Golden Rule”</a> ». <i>Fiscal Studies</i>, 21(2), 207-229.</li>
+        <li>Blanchard, O. et Giavazzi, F. (2004). « <a href="https://cepr.org/publications/dp4220" target="_blank" rel="noopener">Improving the SGP Through a Proper Accounting of Public Investment</a> ». CEPR Discussion Paper 4220.</li>
+        <li>Bogaert, H. (2016). <a href="https://ideas.repec.org/p/fpb/wpaper/201601.html" target="_blank" rel="noopener">Working Paper 1-16</a>. Bureau fédéral du Plan.</li>
+      </ul>
       <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
         <li>Buchanan, J. et Wagner, R. (1977). <i>Democracy in Deficit: The Political Legacy of Lord Keynes</i>. Academic Press.</li>
         <li>Burke, E. (1790). <i>Reflections on the Revolution in France</i>.</li>
@@ -661,6 +710,7 @@ html.calm .chart .fadein{opacity:1}
         <li>Smith, A. (1776). <i>An Inquiry into the Nature and Causes of the Wealth of Nations</i>, livre V.</li>
       </ul></div>
     </div>
+    <p class="maj">Journal des corrections · 10 octobre 2026 : ajout de l’encadré « La dette n’est ni bonne ni mauvaise en soi », de la fiche 05 sur l’investissement public et d’une quatrième question de recherche.</p>
     <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="index.html#methode">page Méthode</a>.</p>
   </div>
 </section>
@@ -671,7 +721,7 @@ html.calm .chart .fadein{opacity:1}
   <div class="wm" aria-hidden="true">Chiffre Juste</div>
 </footer>
 <script>(function(){
-  var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg',DATA={"debt": {"BE": [109.7, 108.5, 105.6, 101.8, 97.2, 95.2, 91.5, 87.5, 93.2, 99.9, 100.3, 102.8, 104.4, 105.1, 106.6, 105.7, 105.8, 102.6, 100.2, 97.7, 111.4, 108.7, 103.3, 102.5, 103.9, 107.9], "EU": [66.6, 65.8, 65.6, 66.8, 67.1, 67.2, 65.0, 62.4, 65.1, 75.7, 80.4, 81.7, 85.0, 86.8, 86.9, 85.1, 84.1, 81.5, 79.5, 77.5, 89.5, 86.7, 82.4, 80.5, 80.7, 81.7]}, "def": {"BE": [-0.1, 0.2, 0.0, -1.9, -0.2, -2.7, 0.2, 0.1, -1.1, -5.4, -4.1, -4.4, -4.3, -3.2, -3.2, -2.5, -2.4, -0.8, -1.0, -2.0, -9.0, -5.4, -3.5, -4.1, -4.4, -5.2], "EU": [-1.2, -2.0, -2.8, -3.1, -2.7, -2.4, -1.4, -0.6, -2.1, -6.1, -6.0, -4.1, -3.7, -3.1, -2.4, -1.9, -1.4, -0.9, -0.4, -0.5, -6.7, -4.6, -3.2, -3.4, -3.1, -3.1]}, "cofBE": {"GF01": 7.1, "GF02": 1.3, "GF03": 1.7, "GF04": 6.4, "GF05": 1.2, "GF06": 0.4, "GF07": 8.0, "GF08": 1.2, "GF09": 6.3, "GF10": 20.4, "TOTAL": 54.1}, "cofEU": {"TOTAL": 49.1, "GF01": 6.1, "GF02": 1.5, "GF03": 1.7, "GF04": 5.3, "GF05": 0.8, "GF06": 0.7, "GF07": 7.4, "GF08": 1.2, "GF09": 4.8, "GF10": 19.6}, "int": [12396.3, 11882.9, 10697.2, 10006.2, 9627.9, 9126.6, 8580.8, 8755.2, 11677.1, 13524.4, 14281.7], "sub": {"debt": [["État fédéral", 86.9, 89.2], ["Communautés et Régions", 20.4, 12.6], ["Pouvoirs locaux", 4.3, 5.9], ["Sécurité sociale", 0.1, 2.0]], "def": [["État fédéral", -3.8], ["Communautés et Régions", -1.4], ["Pouvoirs locaux", -0.1], ["Sécurité sociale", 0.0]]}};
+  var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg',DATA={"debt": {"BE": [109.7, 108.5, 105.6, 101.8, 97.2, 95.2, 91.5, 87.5, 93.2, 99.9, 100.3, 102.8, 104.4, 105.1, 106.6, 105.7, 105.8, 102.6, 100.2, 97.7, 111.4, 108.7, 103.3, 102.5, 103.9, 107.9], "EU": [66.6, 65.8, 65.6, 66.8, 67.1, 67.2, 65.0, 62.4, 65.1, 75.7, 80.4, 81.7, 85.0, 86.8, 86.9, 85.1, 84.1, 81.5, 79.5, 77.5, 89.5, 86.7, 82.4, 80.5, 80.7, 81.7]}, "def": {"BE": [-0.1, 0.2, 0.0, -1.9, -0.2, -2.7, 0.2, 0.1, -1.1, -5.4, -4.1, -4.4, -4.3, -3.2, -3.2, -2.5, -2.4, -0.8, -1.0, -2.0, -9.0, -5.4, -3.5, -4.1, -4.4, -5.2], "EU": [-1.2, -2.0, -2.8, -3.1, -2.7, -2.4, -1.4, -0.6, -2.1, -6.1, -6.0, -4.1, -3.7, -3.1, -2.4, -1.9, -1.4, -0.9, -0.4, -0.5, -6.7, -4.6, -3.2, -3.4, -3.1, -3.1]}, "cofBE": {"GF01": 7.1, "GF02": 1.3, "GF03": 1.7, "GF04": 6.4, "GF05": 1.2, "GF06": 0.4, "GF07": 8.0, "GF08": 1.2, "GF09": 6.3, "GF10": 20.4, "TOTAL": 54.1}, "cofEU": {"TOTAL": 49.1, "GF01": 6.1, "GF02": 1.5, "GF03": 1.7, "GF04": 5.3, "GF05": 0.8, "GF06": 0.7, "GF07": 7.4, "GF08": 1.2, "GF09": 4.8, "GF10": 19.6}, "int": [12396.3, 11882.9, 10697.2, 10006.2, 9627.9, 9126.6, 8580.8, 8755.2, 11677.1, 13524.4, 14281.7], "sub": {"debt": [["État fédéral", 86.9, 89.2], ["Communautés et Régions", 20.4, 12.6], ["Pouvoirs locaux", 4.3, 5.9], ["Sécurité sociale", 0.1, 2.0]], "def": [["État fédéral", -3.8], ["Communautés et Régions", -1.4], ["Pouvoirs locaux", -0.1], ["Sécurité sociale", 0.0]]}, "inv": {"BE": [2.4, 2.1, 2.1, 2.1, 2.0, 2.1, 1.9, 2.0, 2.0, 2.3, 2.2, 2.4, 2.5, 2.3, 2.5, 2.5, 2.4, 2.5, 2.7, 2.6, 2.8, 2.8, 2.7, 2.9, 3.1, 3.1], "EU": [3.3, 3.3, 3.3, 3.5, 3.4, 3.4, 3.5, 3.6, 3.7, 4.0, 3.8, 3.5, 3.3, 3.2, 3.1, 3.2, 2.9, 2.9, 3.1, 3.2, 3.5, 3.4, 3.3, 3.6, 3.7, 3.9]}};
   H.classList.add('js');
   function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
   function fr(v,d){d=d==null?1:d;return v.toLocaleString('fr-BE',{minimumFractionDigits:d,maximumFractionDigits:d})}
@@ -803,6 +853,12 @@ html.calm .chart .fadein{opacity:1}
     s.appendChild(g);box.appendChild(s);
   })();
 
+
+  /* 4b. Investissement */
+  lines(D.getElementById('invChart'),{t0:2000,t1:2025,min:1.5,max:4.5,ticks:[2,3,4],grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',years:MOB?[2000,2010,2020,2025]:[2000,2005,2010,2015,2020,2025],
+    events:[{y:2008,t:'écart max. : 1,7 pt'}],
+    series:[{n:'Union',v:DATA.inv.EU,c:'#6A665F',dash:1,dy:-4},{n:'Belgique',v:DATA.inv.BE,c:'#E2402B',w:4.5,dy:4}],label:'Investissement public 2000-2025 : Belgique de 2,4 % à 3,1 % du PIB, Union de 3,3 % à 3,9 %'});
+
   /* 5. Recherche */
   (function(){
     var Q=[
@@ -815,6 +871,12 @@ html.calm .chart .fadein{opacity:1}
        st:[{a:'Blanchard et Leigh, 2013',t:'Erreurs de prévision, pays avancés, début de la crise',l:2,p:'Les pays qui avaient prévu le plus d’austérité ont eu une croissance plus faible que prévu : l’effet des coupes sur l’activité était sous-estimé.',u:'https://nber.org/papers/w18779',s:'American Economic Review'},
            {a:'Alesina, Favero et Giavazzi, 2019',t:'Plans d’austérité de pays avancés',l:2,p:'Les plans fondés sur la baisse des dépenses coûtent beaucoup moins de croissance que ceux fondés sur les hausses d’impôts.',u:'https://cdhowe.org/publication/alesina-favero-giavazzi-austerity-and-economy-spending-cuts-versus-tax-increases/',s:'Princeton University Press'}],
        x:'Les deux travaux ne s’opposent pas entièrement : l’un porte sur le moment (en pleine crise), l’autre sur la composition (impôts ou dépenses). Leurs méthodes restent contestées, et aucune évaluation ne porte spécifiquement sur la Belgique.'},
+      {q:'Emprunter pour investir, est-ce une « bonne » dette ?',b:['b-ma','Majoritaire : l’investissement rapporte'],b2:['b-de','Débattu : la règle d’or'],v:'Dans les pays avancés, une hausse de l’investissement public augmente la production à court et à long terme, surtout quand l’économie tourne au ralenti et que l’investissement est bien choisi. Faut-il pour autant l’exclure des règles de déficit ? Les économistes sont partagés.',
+       st:[{a:'Abiad, Furceri et Topalova, 2016',t:'Pays avancés, surprises d’investissement public',l:3,p:'L’investissement public augmente la production à court et à long terme, entraîne l’investissement privé et réduit le chômage. L’effet est plus fort quand l’économie a des capacités inutilisées et quand l’investissement est efficace ; le ratio de dette peut même baisser.',u:'https://ideas.repec.org/a/eee/jmacro/v50y2016icp224-240.html',s:'Journal of Macroeconomics'},
+           {a:'Blanchard et Giavazzi, 2004',t:'Proposition de règle d’or',l:0,lt:'analyse',p:'Le pacte de stabilité commet une « erreur » en traitant l’investissement comme une dépense ordinaire : il faudrait exclure l’investissement net du déficit surveillé.',u:'https://cepr.org/publications/dp4220',s:'CEPR Discussion Paper'},
+           {a:'Balassone et Franco, 2000',t:'Évaluation de la règle d’or',l:0,lt:'analyse',p:'Les règles européennes peuvent freiner l’investissement public, mais la règle d’or, « intuitivement séduisante », ne semble pas la bonne solution.',u:'https://ideas.repec.org/a/ifs/fistud/v21y2000i2p207-229.html',s:'Fiscal Studies'},
+           {a:'Bogaert (Bureau du Plan), 2016',t:'Belgique et règles européennes',l:0,lt:'analyse',p:'L’ajustement budgétaire imposé par les règles a réduit l’investissement public, « un frein à la croissance future » ; il propose de mieux en tenir compte dans l’objectif à moyen terme.',u:'https://ideas.repec.org/p/fpb/wpaper/201601.html',s:'Bureau fédéral du Plan'}],
+       x:'Ce qu’on ne sait pas bien : le rendement réel de chaque investissement public belge. Il dépend du projet, et peu d’évaluations sont publiées.'},
       {q:'La dette belge est-elle soutenable ?',b:['b-et','Établi : le mécanisme'],b2:['b-de','Débattu : le seuil'],v:'Le mécanisme est connu : la dette baisse si la croissance dépasse le taux d’intérêt et si le budget hors intérêts est en équilibre. Aucun niveau de dette « sûr » ne fait consensus.',
        st:[{a:'Blanchard, 2019',t:'Analyse historique et théorique',l:0,lt:'analyse',p:'Tant que le taux d’intérêt reste sous la croissance, la dette peut avoir un coût budgétaire faible. Mais des primes de risque peuvent apparaître brutalement quand la dette est élevée.',u:'https://ideas.repec.org/a/aea/aecrev/v109y2019i4p1197-1229.html',s:'American Economic Review'},
            {a:'Comité d’étude sur le vieillissement, 2026',t:'Projections à l’horizon 2070',l:0,lt:'simulation',p:'Coût budgétaire du vieillissement : +1,5 point de PIB entre 2025 et 2070, surtout les soins de santé (+2,1 points). Avec une productivité plus faible : +3,3 points.',u:'https://blog.forumforthefuture.be/fr/article/vieillissement-en-belgique-a-lhorizon-2070-les-depenses-sociales-augmentent-jusquen-2050-puis-se-stabilisent-.../31873',s:'Bureau fédéral du Plan (relayé)'}],
@@ -853,7 +915,7 @@ html.calm .chart .fadein{opacity:1}
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','debtChart','subChart','defChart','subDef','revExp','cofChart','intChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','debtChart','subChart','defChart','subDef','revExp','cofChart','intChart','invChart'].forEach(function(id){io.observe(D.getElementById(id))});
   (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
   (function(){
     var c=D.getElementById('cursor'),x=0,y=0,cx=0,cy=0;
