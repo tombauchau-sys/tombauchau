@@ -398,7 +398,7 @@ var MAP=__MAP__;
       if(fast){g.classList.add('out');setTimeout(function(){g.hidden=true},1150);startHero();return}
       g.classList.add('flip');setTimeout(function(){g.classList.add('out');startHero()},1100);setTimeout(function(){g.hidden=true},2300)}
     D.getElementById('enter').addEventListener('click',function(){open(false)});
-    D.getElementById('enter-topic').addEventListener('click',function(){open(false);setTimeout(function(){var t=D.getElementById('dossiers');if(t){t.scrollIntoView();var h=t.querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}},2350)});
+    D.getElementById('enter-topic').addEventListener('click',function(){open(false);setTimeout(function(){var t=D.getElementById('questions');if(t){t.scrollIntoView();var h=t.querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}},2350)});
     D.getElementById('skip').addEventListener('click',function(){open(true)});
     D.addEventListener('keydown',function(e){if(!done&&(e.key==='Escape'))open(true)});
     var seen=false;try{seen=sessionStorage.getItem('cj-gate')==='1';sessionStorage.setItem('cj-gate','1')}catch(e){}

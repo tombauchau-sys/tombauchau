@@ -328,3 +328,22 @@ html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important
 .rkd .dl{display:block;margin-top:10px;font-weight:600}
 .dl a{color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
 .dl a:hover,.dl a:focus-visible{text-decoration-thickness:2.5px}
+
+/* Questions du débat */
+.qdeb .qth{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:46px 0 14px;padding-top:14px;border-top:1px solid var(--rule)}
+.qdeb .qlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.qdeb .qlist>li>a,.qdeb .qlist>li>div{display:flex;flex-direction:column;gap:8px;height:100%;padding:20px 22px;border:1.5px solid var(--line);border-radius:18px;background:#fff;color:var(--ink);text-decoration:none}
+.qdeb .qlist>li.nolink>div{background:transparent;border-style:dashed}
+.qdeb .qlist h4{font-family:var(--serif);font-size:clamp(22px,2vw,28px);line-height:1.08;font-weight:400}
+.qdeb .qlist p{font-size:15.5px;line-height:1.5;color:#3D3A35;margin:0}
+.qdeb .qgo{margin-top:auto;font-weight:600;font-size:14px}
+.qdeb .qlist>li>a:hover h4,.qdeb .qlist>li>a:focus-visible h4{text-decoration:underline;text-underline-offset:4px}
+.qdeb .qlist>li>a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.qdeb .qst{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 10px}
+.qdeb .qst.ok{background:var(--ink);color:#fff}
+.qdeb .qst.pt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.qdeb .qst.td{background:transparent;color:var(--grey);box-shadow:inset 0 0 0 1.5px var(--grey)}
+.qdeb .qnote{margin-top:30px;font-size:15px}
+.qdeb .qnote a{color:inherit}
+nav.top .ddp a.ddq{display:block;height:auto;border:0;margin:0 0 12px;padding:6px 6px;font-weight:600;font-size:15px;color:inherit;text-decoration:underline;text-underline-offset:3px;text-align:left}
+@media (max-width:760px){.qdeb .qlist{grid-template-columns:1fr}}

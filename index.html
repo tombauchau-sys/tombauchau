@@ -590,6 +590,25 @@ html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important
 .dl a{color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
 .dl a:hover,.dl a:focus-visible{text-decoration-thickness:2.5px}
 
+/* Questions du débat */
+.qdeb .qth{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:46px 0 14px;padding-top:14px;border-top:1px solid var(--rule)}
+.qdeb .qlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.qdeb .qlist>li>a,.qdeb .qlist>li>div{display:flex;flex-direction:column;gap:8px;height:100%;padding:20px 22px;border:1.5px solid var(--line);border-radius:18px;background:#fff;color:var(--ink);text-decoration:none}
+.qdeb .qlist>li.nolink>div{background:transparent;border-style:dashed}
+.qdeb .qlist h4{font-family:var(--serif);font-size:clamp(22px,2vw,28px);line-height:1.08;font-weight:400}
+.qdeb .qlist p{font-size:15.5px;line-height:1.5;color:#3D3A35;margin:0}
+.qdeb .qgo{margin-top:auto;font-weight:600;font-size:14px}
+.qdeb .qlist>li>a:hover h4,.qdeb .qlist>li>a:focus-visible h4{text-decoration:underline;text-underline-offset:4px}
+.qdeb .qlist>li>a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.qdeb .qst{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 10px}
+.qdeb .qst.ok{background:var(--ink);color:#fff}
+.qdeb .qst.pt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.qdeb .qst.td{background:transparent;color:var(--grey);box-shadow:inset 0 0 0 1.5px var(--grey)}
+.qdeb .qnote{margin-top:30px;font-size:15px}
+.qdeb .qnote a{color:inherit}
+nav.top .ddp a.ddq{display:block;height:auto;border:0;margin:0 0 12px;padding:6px 6px;font-weight:600;font-size:15px;color:inherit;text-decoration:underline;text-underline-offset:3px;text-align:left}
+@media (max-width:760px){.qdeb .qlist{grid-template-columns:1fr}}
+
 .grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}
 </style>
 </head>
@@ -617,7 +636,7 @@ html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important
   <a href="#dossiers" id="ddBtn" aria-haspopup="true" aria-expanded="false" aria-controls="ddP"><span class="lbl" data-t="Dossiers ▾">Dossiers ▾</span></a>
   <a href="#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
   <a href="#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
-  <div class="ddp" id="ddP" hidden><p class="ddh">Dix dossiers · une question du débat par dossier</p><div class="ddg"><a href="dossier-emploi.html" class="ddi"><span class="n">01</span><span class="t">Emploi et inactivité</span><span class="st">Ouvert</span></a><a href="dossier-finances.html" class="ddi"><span class="n">02</span><span class="t">Finances publiques</span><span class="st">Ouvert</span></a><a href="dossier-pensions.html" class="ddi"><span class="n">03</span><span class="t">Pensions et vieillissement</span><span class="st">Ouvert</span></a><a href="dossier-immigration.html" class="ddi"><span class="n">04</span><span class="t">Immigration et asile</span><span class="st">Ouvert</span></a><a href="dossier-justice.html" class="ddi"><span class="n">05</span><span class="t">Justice et sécurité</span><span class="st">Ouvert</span></a><a href="dossier-sante.html" class="ddi"><span class="n">06</span><span class="t">Santé</span><span class="st">Ouvert</span></a><a href="#d-education" class="ddi soon"><span class="n">07</span><span class="t">Éducation</span><span class="st">Bientôt</span></a><a href="#d-pauvrete" class="ddi soon"><span class="n">08</span><span class="t">Inégalités et pauvreté</span><span class="st">Bientôt</span></a><a href="#d-climat" class="ddi soon"><span class="n">09</span><span class="t">Climat et énergie</span><span class="st">Bientôt</span></a><a href="#d-logement" class="ddi soon"><span class="n">10</span><span class="t">Logement</span><span class="st">Bientôt</span></a></div><a class="ddall" href="#dossiers">Voir tous les dossiers ↓</a></div>
+  <div class="ddp" id="ddP" hidden><p class="ddh">Dix dossiers · une question du débat par dossier</p><a class="ddq" href="#questions">Partir d’une question du débat →</a><div class="ddg"><a href="dossier-emploi.html" class="ddi"><span class="n">01</span><span class="t">Emploi et inactivité</span><span class="st">Ouvert</span></a><a href="dossier-finances.html" class="ddi"><span class="n">02</span><span class="t">Finances publiques</span><span class="st">Ouvert</span></a><a href="dossier-pensions.html" class="ddi"><span class="n">03</span><span class="t">Pensions et vieillissement</span><span class="st">Ouvert</span></a><a href="dossier-immigration.html" class="ddi"><span class="n">04</span><span class="t">Immigration et asile</span><span class="st">Ouvert</span></a><a href="dossier-justice.html" class="ddi"><span class="n">05</span><span class="t">Justice et sécurité</span><span class="st">Ouvert</span></a><a href="dossier-sante.html" class="ddi"><span class="n">06</span><span class="t">Santé</span><span class="st">Ouvert</span></a><a href="#d-education" class="ddi soon"><span class="n">07</span><span class="t">Éducation</span><span class="st">Bientôt</span></a><a href="#d-pauvrete" class="ddi soon"><span class="n">08</span><span class="t">Inégalités et pauvreté</span><span class="st">Bientôt</span></a><a href="#d-climat" class="ddi soon"><span class="n">09</span><span class="t">Climat et énergie</span><span class="st">Bientôt</span></a><a href="#d-logement" class="ddi soon"><span class="n">10</span><span class="t">Logement</span><span class="st">Bientôt</span></a></div><a class="ddall" href="#dossiers">Voir tous les dossiers ↓</a></div>
 </nav>
 
 <main id="top">
@@ -666,6 +685,42 @@ html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important
 </section>
 
 
+
+<section class="dz papier qdeb" id="questions" aria-labelledby="qdH">
+  <div class="w">
+    <p class="kicker" data-r>Comprendre un sujet · partir d’une question</p>
+    <h2 id="qdH" data-r>Les questions <span class="s">du débat.</span></h2>
+    <p class="lede" data-r>Pas besoin de connaître un indicateur pour commencer : partez d’une question que l’on entend dans le débat public. Chacune renvoie à la partie du site qui l’examine, avec une première réponse en une phrase. Ces réponses résument les dossiers ; elles ne remplacent ni leurs nuances ni leurs limites.</p>
+    <h3 class="qth" data-r>Économie et finances publiques</h3>
+    <ul class="qlist">
+      <li data-r><a href="dossier-finances.html#f-dette"><span class="qst ok">Réponse dans le dossier</span><h4>La dette publique est-elle forcément un problème ?</h4><p>Non : une dette n’est ni bonne ni mauvaise en soi. Tout dépend de ce qu’elle finance, des taux d’intérêt et de la croissance. Celle de la Belgique (107,9 % du PIB) est élevée et sa charge d’intérêts remonte.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="dossier-finances.html#f-depenses"><span class="qst ok">Réponse dans le dossier</span><h4>Les dépenses publiques sont-elles trop élevées ?</h4><p>Elles atteignent 54,1 % du PIB en 2024, 5 points au-dessus de la moyenne européenne. Les chiffres montrent où va l’argent ; dire si c’est « trop » reste un jugement politique.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="#classements"><span class="qst pt">En partie</span><h4>La Belgique est-elle l’un des pays les plus taxés ?</h4><p>Les classements comparent déjà les impôts et cotisations en % du PIB dans les 27 pays. Un dossier dira ce qu’on compte, qui paie et ce qu’on reçoit en échange.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="#atlas"><span class="qst pt">En partie</span><h4>Une hausse du PIB veut-elle dire que la population s’enrichit ?</h4><p>La carte montre le PIB par habitant et le niveau de vie corrigé des prix, avec leurs limites (Irlande, Luxembourg). L’analyse détaillée est à venir.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+    </ul>
+    <h3 class="qth" data-r>Travail et protection sociale</h3>
+    <ul class="qlist">
+      <li data-r><a href="dossier-emploi.html#f-emploi"><span class="qst ok">Réponse dans le dossier</span><h4>Pourquoi la Belgique travaille-t-elle moins que ses voisins ?</h4><p>72,8 % des 20-64 ans ont un emploi, contre 76,1 % dans l’Union. Le chômage est proche de la moyenne ; l’écart vient surtout de l’inactivité, notamment chez les peu diplômés, les 55-64 ans et les personnes nées hors de l’Union.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="fiche-chomage.html#sources-croisees"><span class="qst ok">Réponse dans le dossier</span><h4>Peut-on comparer directement les taux de chômage ?</h4><p>Entre pays européens, oui, avec les chiffres harmonisés d’Eurostat. Mais pas avec les registres régionaux : à Bruxelles, Actiris compte 16,0 % quand l’enquête mesure 13,4 %.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="dossier-pensions.html#dossier"><span class="qst ok">Réponse dans le dossier</span><h4>Y aura-t-il encore des pensions demain ?</h4><p>Oui : les projections officielles annoncent un coût plus élevé, pas une disparition. La vraie question porte sur le niveau des pensions et sur qui finance la hausse.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="dossier-emploi.html#f-emploi"><span class="qst pt">En partie</span><h4>Les différences entre la Flandre et la Wallonie s’accentuent-elles ?</h4><p>Le dossier Emploi donne les écarts de 2025 (77,3 % d’emploi en Flandre, 67,9 % en Wallonie, 63,9 % à Bruxelles). Leur évolution dans le temps reste à analyser.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r class="nolink"><div><span class="qst td">À venir</span><h4>Le niveau de vie des jeunes se dégrade-t-il ?</h4><p>Cette question demande des données sur les revenus, le logement et l’emploi des jeunes, qui ne sont pas encore traitées sur le site.</p></div></li>
+    </ul>
+    <h3 class="qth" data-r>Société</h3>
+    <ul class="qlist">
+      <li data-r><a href="dossier-immigration.html#recherche"><span class="qst ok">Réponse dans le dossier</span><h4>L’immigration coûte-t-elle aux finances publiques ?</h4><p>Dans les pays de l’OCDE, l’effet net est faible, le plus souvent entre −1 et +1 % du PIB. En Belgique, la contribution des immigrés est plus faible qu’ailleurs, surtout à cause de leur taux d’emploi.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="dossier-immigration.html#recherche"><span class="qst ok">Réponse dans le dossier</span><h4>Durcir la politique d’asile fait-il baisser les demandes ?</h4><p>En partie : selon la recherche, les politiques plus strictes ont un effet réel mais limité ; la situation dans les pays d’origine pèse davantage.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="dossier-justice.html#f-crime"><span class="qst ok">Réponse dans le dossier</span><h4>La criminalité augmente-t-elle ?</h4><p>Pas pour les vols : les cambriolages de logements enregistrés ont baissé de 51 % depuis 2012. Les fraudes et les plaintes pour viol augmentent, sans qu’on sache quelle part vient des faits et quelle part d’une meilleure dénonciation.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="dossier-justice.html#recherche"><span class="qst ok">Réponse dans le dossier</span><h4>La prison réduit-elle la récidive ?</h4><p>Pas mieux que les peines exécutées hors prison, à profil comparable, selon la recherche internationale. Elle protège la société pendant la détention.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="dossier-sante.html#f-vie"><span class="qst ok">Réponse dans le dossier</span><h4>Vit-on plus longtemps en bonne santé ?</h4><p>Plus longtemps, oui ; en bonne santé, à peine : depuis 2008, l’espérance de vie a gagné 2,6 ans, les années sans limitation 0,2 an.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+    </ul>
+    <h3 class="qth" data-r>Méthode</h3>
+    <ul class="qlist">
+      <li data-r><a href="#methode"><span class="qst ok">Réponse dans le dossier</span><h4>Une politique a-t-elle vraiment produit les résultats qu’on lui attribue ?</h4><p>Pour le savoir, il faut comparer avec ce qui se serait passé sans elle. Notre page Méthode explique comment nous classons les études selon la solidité de cette comparaison.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+    </ul>
+    <p class="qnote" data-r>Une question manque ? Proposez-la sur la <a href="https://github.com/tombauchau-sys/tombauchau/issues" target="_blank" rel="noopener">page du projet</a>.</p>
+  </div>
+</section>
 
 <section class="themes" id="dossiers" aria-labelledby="th">
   <div class="in">
@@ -820,7 +875,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
       if(fast){g.classList.add('out');setTimeout(function(){g.hidden=true},1150);startHero();return}
       g.classList.add('flip');setTimeout(function(){g.classList.add('out');startHero()},1100);setTimeout(function(){g.hidden=true},2300)}
     D.getElementById('enter').addEventListener('click',function(){open(false)});
-    D.getElementById('enter-topic').addEventListener('click',function(){open(false);setTimeout(function(){var t=D.getElementById('dossiers');if(t){t.scrollIntoView();var h=t.querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}},2350)});
+    D.getElementById('enter-topic').addEventListener('click',function(){open(false);setTimeout(function(){var t=D.getElementById('questions');if(t){t.scrollIntoView();var h=t.querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}},2350)});
     D.getElementById('skip').addEventListener('click',function(){open(true)});
     D.addEventListener('keydown',function(e){if(!done&&(e.key==='Escape'))open(true)});
     var seen=false;try{seen=sessionStorage.getItem('cj-gate')==='1';sessionStorage.setItem('cj-gate','1')}catch(e){}
