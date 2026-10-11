@@ -1,0 +1,11 @@
+# Dossier 07 Éducation : données vérifiées (11 octobre 2026)
+- edat_lfse_14 (décrochage 18-24) BE 1992-2025 (18,1 → 7,3 ; ruptures nombreuses) ; UE 2015-2025 (9,1 en 2025)
+- edat_lfse_16 régions 2025 : BE1 8,8 ; BE2 5,5 ; BE3 9,8 (rupture 2024)
+- edat_lfse_03 25-34 ED5-8 BE 2005-2025 (40,6 → 52,7) ; UE 2015-2025 (44,8)
+- edat_lfse_20 NEET 15-29 BE 9,8 (2025) ; UE 11,0
+- gov_10a_exp GF09 BE 6,3 % PIB (2024 p) ; UE 4,7 % (2024) ; BE 1995 5,8
+- aSPe PISA 2022 (Baye et al., déc. 2023, Cahier 46) : maths FWB 474, Fl 501, DG 483, OCDE 472 ; sciences 479/499/487/485 ; lecture 474/483/467/476 ; à l'heure FWB 66,8 % (2022), Fl 78,5, OCDE 90,6
+- aSPe PISA 2025 (Baye et al., 2026, Cahier 49 ; slides) : redoublement FWB 35,2 %, Fl 19,4 %, OCDE 8,4 % ; série FWB 39 (2003), 46 (2009), 48 (2012), 46 (2015), 41 (2018), 33 (2022), 35 (2025) ; lecture 2025 FWB 466, Fl 467, DG 451 ; évolution lecture 2000-2025 FWB −12, Fl −68, NL −91, FR −49, DE −23, UK −29 ; maths 2003-2025 FWB −31, Fl −64, NL −55, FR −51, DE −39, UK −20 ; sciences 2006-2025 FWB −4, Fl −33, NL −40, DE −30, FR −8, UK −4 ; écarts immigrés réduits de moitié, socio-éco d'environ un quart (synthèse brève) ; FWB au niveau de la moyenne OCDE dans les 3 domaines
+- Histoire : Lire et Écrire / CARHOP 2019 : 1842, 1879-1884, 1914, Pacte scolaire loi 29 mai 1959, 1983 (fin obligation 18 ans), 1988 gratuité dans la Constitution, 1997 Décret Missions ; obligation dès 5 ans rentrée 2020 (bx1, L'Avenir) ; tronc commun : décret 3 mai 2019, 3e secondaire prévue 2028 (RTBF), mise en pause envisagée février 2025 (bx1)
+- Recherche : Jacob & Lefgren 2009 AEJ Applied 1(3) 33-58 ; Hanushek & Woessmann 2006 EJ 116(510) C63-C76 ; Krueger 1999 QJE 114(2) 497-532 ; Heckman et al. 2010 J Public Econ 94(1-2) 114-128
+- Emploi par diplôme 2025 (dossier Emploi) : peu diplômés BE 46,7 / UE 58,1 ; secondaire 67,8 / 75,1 ; supérieur 86,0 / 86,8

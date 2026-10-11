@@ -397,7 +397,10 @@
     olddep:[['__PENSIONS__#histoire','Dossier Pensions','ce que le ratio dit, et ce qu’il ne dit pas du financement des pensions']],
     netmig:[['__IMMIGRATION__#f-flux','Dossier Immigration','qui arrive, d’où, et pour quelles raisons']],
     lifeexp:[['__SANTE__#f-vie','Dossier Santé','vivre plus longtemps, mais pas forcément en bonne santé']],
-    hly65:[['__SANTE__#f-vie','Dossier Santé','ce que mesure la « bonne santé » déclarée']]};
+    hly65:[['__SANTE__#f-vie','Dossier Santé','ce que mesure la « bonne santé » déclarée']],
+    tertiary:[['__EDUCATION__#f-diplome','Dossier Éducation','diplômes et emploi']],
+    earlyleave:[['__EDUCATION__#f-parcours','Dossier Éducation','redoublement et décrochage']],
+    gf09:[['__EDUCATION__#recherche','Dossier Éducation','dépenser plus suffit-il ?']]};
   function dosLinks(id){var L=DOSL[id];if(!L)return '';return '<span class="dl">Pour comprendre : '+L.map(function(l){return '<a href="'+l[0]+'">'+l[1]+'</a> ('+l[2]+')'}).join(' · ')+'</span>'}
 
   /* ======================= Classements ======================= */

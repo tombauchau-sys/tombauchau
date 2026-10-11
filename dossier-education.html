@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Éducation en Belgique : compétences des élèves (PISA), redoublement, décrochage, diplômes et emploi, histoire de l’école, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.">
+<meta property="og:title" content="Éducation · Chiffre Juste">
+<meta property="og:description" content="Éducation en Belgique : compétences des élèves (PISA), redoublement, décrochage, diplômes et emploi, histoire de l’école, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.">
+<title>Éducation · Chiffre Juste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&display=swap">
+<style>
+/* ADN Chiffre Juste, fiche modèle. Univers alternés : brun (faits), papier (lecture), aplats de chapitre (exploration). Le fait en grotesque, la lecture en serif, les pièges à la main. Un seul univers visuel, identique en thème clair et sombre. */
+:root{
+  --brown:#1E1914; --cream:#EDE6DC; --cream-dim:#A69C8F; --hair:#3B332B; --copper:#C9773A;
+  --off:#F7F6F2; --ink:#222222; --grey:#6A665F; --rule:#D7D4CC;
+  --red:#E2402B; --red-ink:#C0341E; --line:#1A1A1A; --lilac:#9C98F0; --orange:#F09A3E; --pink:#EFA3CB; --mint:#7FB6A3; --blue:#7E9CC4; --peach:#F2A07B;
+  --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --main:"Caveat","Segoe Print","Bradley Hand",cursive;
+  --ease:cubic-bezier(.2,.7,.2,1); --ease-io:cubic-bezier(.6,0,.2,1);
+  --xgrid:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><path d='M21 21l6 6m0-6l-6 6' stroke='%23453B31' stroke-width='1.2' fill='none'/></svg>");
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--brown);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+p{margin:0}
+h1,h2,h3,h4{margin:0;font-weight:400;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+sup{font-size:.65em;line-height:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+.note{font-family:var(--main);font-weight:600;line-height:1.05}
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.06;pointer-events:none;z-index:0;mix-blend-mode:overlay}
+.grain>*{position:relative;z-index:1}
+.sec{padding-block:96px}
+.brun{background:var(--brown);color:var(--cream)}
+.papier{background:var(--off);color:var(--ink)}
+.kick{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.brun .kick{color:var(--copper)} .papier .kick{color:var(--grey)}
+.giant{font-family:var(--serif);font-size:clamp(56px,9vw,132px);line-height:.9;letter-spacing:-.02em}
+.giant span{color:var(--grey)} .brun .giant span{color:var(--cream-dim)}
+.lede{font-size:clamp(19px,1.9vw,24px);line-height:1.35;max-width:46ch}
+.papier .lede{color:#3D3A35}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 22px;font-weight:600;font-size:15px;text-decoration:none;border:0;transition:transform .35s var(--ease)}
+.pill.cream{background:var(--cream);color:var(--brown)} .pill.ink{background:var(--line);color:#fff}
+.pill .arr{transition:transform .35s var(--ease)} .pill:hover .arr{transform:translateX(5px)}
+.skew{display:inline-block;border:1.5px solid currentColor;padding:9px 14px;font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transform:skewX(-10deg);background:none}
+.skew span{display:inline-block;transform:skewX(10deg)}
+.skew[aria-pressed="true"]{background:currentColor}
+.skew[aria-pressed="true"] span{color:var(--brown)}
+
+/* Navigation */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--brown);display:grid;grid-template-columns:repeat(2,1fr) 110px repeat(3,1fr);border-bottom:1px solid var(--hair)}
+nav.top a{display:flex;align-items:center;justify-content:center;height:56px;text-decoration:none;font-weight:500;font-size:15px;border-right:1px solid var(--hair);position:relative;overflow:hidden}
+nav.top a:last-child{border-right:0}
+nav.top a .lbl{display:block;transition:transform .45s var(--ease)}
+nav.top a .lbl::after{content:attr(data-t);position:absolute;left:0;right:0;top:100%;text-align:center;color:var(--copper)}
+nav.top a:hover .lbl{transform:translateY(-100%)}
+nav.top a.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--copper)}
+nav.top .mark span{width:30px;height:30px;border-radius:50%;border:6px solid var(--cream);border-right-color:transparent;transform:rotate(-30deg);transition:transform .8s var(--ease)}
+nav.top .mark:hover span{transform:rotate(330deg)}
+
+/* 0. Seuil : devinez d'abord */
+.seuil{background-image:var(--xgrid);min-height:calc(100vh - 56px);display:grid;place-items:center;padding-block:64px;text-align:center}
+.seuil .q{font-family:var(--serif);font-size:clamp(30px,4vw,56px);line-height:1.05;max-width:20ch;margin:14px auto 0}
+.seuil .out{display:block;font-weight:700;font-size:clamp(96px,19vw,250px);line-height:.85;letter-spacing:-.05em;margin:24px 0 8px;font-variant-numeric:tabular-nums}
+.range{width:min(560px,86vw);margin:8px auto 0;display:block;appearance:none;-webkit-appearance:none;background:transparent;height:34px}
+.range::-webkit-slider-runnable-track{height:2px;background:var(--cream-dim)}
+.range::-moz-range-track{height:2px;background:var(--cream-dim)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--copper);margin-top:-12px;border:3px solid var(--brown);box-shadow:0 0 0 1.5px var(--copper)}
+.range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--copper);border:3px solid var(--brown)}
+.scale{display:flex;justify-content:space-between;width:min(560px,86vw);margin:0 auto;font-size:12.5px;color:var(--cream-dim)}
+.seuil .acts{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:30px}
+.seuil .skew{color:var(--cream-dim)}
+.verdict{max-width:34ch;margin:28px auto 0;font-size:28px;color:var(--cream)}
+.verdict .down{display:block;font-size:40px;margin-top:6px;animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* 1. Héros : triptyque */
+.hero{background-image:var(--xgrid);padding-top:60px;overflow:hidden}
+.hero .stage{position:relative;height:min(480px,52vw);min-height:300px}
+.hero svg.discs{position:absolute;left:50%;top:0;height:100%;transform:translateX(-50%);overflow:visible}
+.hero .row{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:14px;pointer-events:none}
+.side{font-family:var(--serif);font-size:clamp(26px,3.6vw,48px);line-height:1;white-space:nowrap}
+.conn{flex:1;height:1px;background:var(--cream-dim);opacity:.6;position:relative;min-width:20px}
+.conn::after{content:"×";position:absolute;top:-11px;right:-4px;font-size:16px;color:var(--cream-dim)}
+.conn.r::after{right:auto;left:-4px}
+.hero .gap{flex:0 0 calc(max(300px,min(480px,52vw)) * .93)}
+.title{font-weight:700;font-size:clamp(54px,10.5vw,150px);line-height:.86;letter-spacing:-.045em;margin-top:40px}
+.title .t2{color:var(--cream-dim)}
+.title .ch{display:inline-block}.title .wd{display:inline-block;white-space:nowrap}
+.split .ch{transform:translateY(105%);opacity:0}
+.split.go .ch{transform:none;opacity:1;transition:transform .9s var(--ease),opacity .9s var(--ease)}
+.titlebox{overflow:hidden;padding-bottom:.08em}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:48px}
+.facts div{padding:26px 22px 28px;border-right:1px solid var(--hair)}
+.facts div:first-child{padding-left:0}
+.facts div:last-child{border-right:0}
+.facts b{display:block;white-space:nowrap;font-weight:700;font-size:clamp(26px,3vw,44px);letter-spacing:-.02em;line-height:1}
+.facts span{display:block;font-size:14.5px;color:var(--cream-dim);margin-top:10px}
+.facts .src{font-size:12px;margin-top:6px;opacity:.8}
+
+/* 2. Définition */
+.crit{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.crit li{display:grid;grid-template-columns:80px minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--rule)}
+.crit .n{font-family:var(--serif);font-style:italic;font-size:44px;line-height:1;color:var(--red)}
+.crit h3{font-weight:700;font-size:clamp(26px,3vw,40px);letter-spacing:-.02em;line-height:1}
+.crit p{font-size:16px;color:#3D3A35}
+.aside-note{margin-top:22px;color:var(--grey);font-size:15.5px;max-width:60ch}
+
+/* Bande d'exploration (aplat) */
+.band{padding-block:80px;color:var(--line)}
+.band .bandin{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
+.band h2{font-family:var(--serif);font-size:clamp(46px,6vw,84px);line-height:.92}
+.band .hint{font-size:30px;margin-top:14px;transform:rotate(-3deg);display:inline-block}
+.bulle{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:28px;padding:28px;box-shadow:8px 8px 0 var(--line)}
+.bulle .step{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.bulle .qq{font-family:var(--serif);font-size:clamp(26px,2.8vw,36px);line-height:1.1;margin:10px 0 20px}
+.bulle .opts{display:flex;gap:10px;flex-wrap:wrap}
+.bulle .opts button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:10px 26px;font-weight:700;font-size:15px;transition:transform .2s var(--ease),background .2s ease}
+.bulle .opts button:hover{background:var(--line);color:#fff;transform:translateY(-2px)}
+.bulle .res{font-weight:700;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.02em;line-height:1;margin:8px 0 12px}
+.bulle .path{font-size:13.5px;color:var(--grey);margin-top:14px}
+.bulle .again{margin-top:16px;border:0;background:none;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.tag{display:inline-block;border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700}
+.tag.u{background:var(--red-ink);color:#fff}.tag.e{background:var(--line);color:#fff}.tag.p{background:var(--orange);color:var(--line)}.tag.i{border:1.5px solid var(--line)}
+.bulle.pop{animation:pop .45s var(--ease)}
+@keyframes pop{from{transform:translateY(10px) rotate(-1deg)}}
+
+/* 3. Sources */
+.srcs{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.srcs li{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) 170px;gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid var(--rule)}
+.srcs h3{font-family:var(--serif);font-size:clamp(26px,2.8vw,38px);line-height:1}
+.srcs .who{font-weight:600;font-size:15px}
+.srcs .how{font-size:15px;color:#3D3A35}
+.srcs .val{font-weight:700;font-size:clamp(28px,3vw,42px);letter-spacing:-.02em;text-align:right;line-height:1}
+.srcs .val small{display:block;font-weight:500;font-size:12.5px;letter-spacing:0;color:var(--grey);margin-top:6px}
+.srcs .hand{position:absolute;right:190px;top:-14px;color:var(--red);font-size:26px;transform:rotate(-4deg);white-space:nowrap}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.two h4{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.two .ok h4{color:var(--grey)} .two .ko h4{color:var(--red-ink)}
+.two p{font-family:var(--serif);font-size:22px;line-height:1.3}
+
+/* 4. Réforme */
+.reform .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:44px}
+.reform .grid3 div{padding:30px 24px 32px;border-right:1px solid var(--hair)}
+.reform .grid3 div:first-child{padding-left:0}.reform .grid3 div:last-child{border-right:0}
+.reform b{display:block;font-weight:700;font-size:clamp(44px,5.6vw,80px);letter-spacing:-.04em;line-height:.9}
+.reform span{display:block;color:var(--cream-dim);font-size:15px;margin-top:12px;max-width:28ch}
+
+/* Graphiques */
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart{margin-top:44px}
+.seg-bar rect.s{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform 1s var(--ease)}
+.seg-bar.play rect.s{transform:none}
+.drawline{stroke-dasharray:2000;stroke-dashoffset:2000}
+.play .drawline{transition:stroke-dashoffset 2.6s var(--ease-io);stroke-dashoffset:0}
+.fadein{opacity:0;transition:opacity .6s ease 2.2s}
+.play .fadein{opacity:1}
+.evs{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.evs button{border:1.5px solid var(--cream-dim);background:none;color:var(--cream);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;transition:background .2s ease}
+.evs button[aria-pressed="true"]{background:var(--cream);color:var(--brown);border-color:var(--cream)}
+.evtext{font-family:var(--serif);font-size:24px;line-height:1.3;margin-top:22px;max-width:52ch;min-height:4em}
+.pills .bar{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease)}
+.pills.play .bar{transform:none}
+
+/* 6. Limites */
+.lim{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.lim li{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr) minmax(0,1.2fr);gap:20px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--rule);overflow:hidden}
+.lim .g{font-family:var(--serif);font-size:56px;line-height:.8;color:var(--red)}
+.lim h3{font-family:var(--serif);font-size:clamp(28px,3vw,42px);line-height:1}
+.lim p{font-size:16px;color:#3D3A35}
+
+/* 7. Lectures */
+.reads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin-top:48px}
+.read{border-top:1px solid var(--ink);padding:22px 0 34px}
+.read .trad{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.read h3{font-family:var(--serif);font-size:clamp(28px,2.8vw,38px);line-height:1.05;margin-top:8px}
+.read .w{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--grey);margin-top:4px}
+.read .th{font-family:var(--serif);font-size:22px;line-height:1.3;margin-top:14px}
+.read .so{font-size:15px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule)}
+.read .so b{font-weight:700;color:var(--red-ink);margin-right:6px}
+
+/* 8. Citer */
+.cite .bulle .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.cite .bulle .chips button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:13.5px}
+.cite .bulle .chips button[aria-pressed="true"]{background:var(--line);color:#fff}
+.cite .quote{font-family:var(--serif);font-size:clamp(22px,2.3vw,28px);line-height:1.3}
+.cite .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:20px}
+.copied{font-size:14px;font-weight:600}
+
+/* 9. Sources + pied */
+.biblio{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.biblio ol,.biblio ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:14.5px;color:var(--cream-dim)}
+.biblio ul{list-style:none;padding:0}
+.biblio a{color:var(--cream)}
+.biblio h3{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin-bottom:14px}
+footer{border-top:1px solid var(--hair);overflow:hidden}
+footer .meta{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 20px;font-size:14px;color:var(--cream-dim)}
+footer .wm{font-weight:700;font-size:clamp(70px,17.5vw,232px);letter-spacing:-.05em;line-height:.76;white-space:nowrap;text-align:center;margin:16px 0 -.17em}
+
+/* Révélations, curseur, accessibilité */
+.js [data-r]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-r].in{opacity:1;transform:none}
+.cursor{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--copper);pointer-events:none;z-index:60;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s ease;display:none}
+.cursor.big{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(201,119,58,.22);border:1.5px solid var(--copper)}
+@media (pointer:fine){.cursor{display:block}}.cursor{opacity:0}.cursor.on{opacity:1}
+.a11y{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:8px;background:var(--off);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:4px 14px 4px 4px;font-size:13px;font-weight:600}
+.a11y b{background:var(--line);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px}
+.a11y[aria-pressed="true"] b{background:var(--red)}
+html.calm *{animation:none!important;transition:none!important}
+html.calm .drawline{stroke-dashoffset:0!important}
+html.calm .split .ch{transform:none!important;opacity:1!important}
+html.calm [data-r],html.calm .fadein{opacity:1!important;transform:none!important}
+html.calm .seg-bar rect.s,html.calm .pills .bar{transform:none!important}
+html.calm .cursor{display:none!important}
+html.calm .grain::before{display:none}
+html.calm .seuil,html.calm .hero{background-image:none}
+html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
+
+@media (max-width:900px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(3){padding-left:0;border-top:1px solid var(--hair)}
+  .facts div:nth-child(4){border-top:1px solid var(--hair)}
+  .crit li,.lim li{grid-template-columns:56px minmax(0,1fr)}
+  .crit p,.lim p{grid-column:2}
+  .band .bandin,.two,.reads,.biblio{grid-template-columns:1fr}
+  .srcs li{grid-template-columns:1fr 1fr}
+  .srcs .val{text-align:left}
+  .srcs .hand{right:0}
+  .reform .grid3{grid-template-columns:1fr}
+  .reform .grid3 div{padding-left:0;border-right:0;border-bottom:1px solid var(--hair)}
+  .hero .row{top:auto;bottom:-6px;transform:none;justify-content:space-between}
+  .hero .gap,.conn{display:none}
+  .side{font-size:24px}
+  .title{margin-top:60px}
+}
+@media (max-width:600px){
+  nav.top{grid-template-columns:1fr 1fr 64px 1fr 1fr}
+  nav.top a{font-size:12.5px;height:48px;text-align:center}
+  nav.top a.lang{display:none}
+  .sec{padding-block:68px}
+  .bulle{padding:20px;box-shadow:5px 5px 0 var(--line)}
+  .facts div{padding:20px 12px 22px}
+  .a11y{font-size:11.5px;padding:3px 10px 3px 3px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.drawline{stroke-dashoffset:0!important}.split .ch{transform:none!important;opacity:1!important}.js [data-r],.fadein{opacity:1!important;transform:none!important}.seg-bar rect.s,.pills .bar{transform:none!important}}
+/* Dossier : composants propres */
+@media (min-width:601px){nav.top{grid-template-columns:repeat(2,1fr) 110px repeat(3,1fr)}}
+.giant+.lede,h2+.lede{margin-top:20px}
+.seuil .q{max-width:24ch}
+.bet{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.betb{border:2.5px solid var(--cream);background:none;color:var(--cream);border-radius:999px;padding:14px 26px;font-weight:700;font-size:16px;transition:transform .3s var(--ease),background .2s ease,color .2s ease}
+.betb:hover{transform:translateY(-3px) rotate(-1.5deg);background:var(--cream);color:var(--brown)}
+.betb[aria-pressed="true"]{background:var(--copper);border-color:var(--copper);color:var(--brown)}
+.betb:disabled{cursor:default}
+.duel{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:24px;align-items:center;margin:44px auto 0;max-width:980px}
+.duel>div{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:28px;padding:26px 22px;box-shadow:8px 8px 0 var(--copper);text-align:left}
+.duel .side-c{transform:rotate(-1.5deg)}.duel .side-i{transform:rotate(1.5deg);background:var(--lilac)}
+.duel b{display:block;font-weight:700;font-size:clamp(44px,6.4vw,88px);letter-spacing:-.04em;line-height:.9;font-variant-numeric:tabular-nums}
+.duel span{display:block;font-size:16px;margin-top:10px;font-weight:600}
+.duel small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.duel .side-i small{color:#3D3A35}
+.duel .vs{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--cream-dim)}
+.seuil .passer{margin-top:34px;color:var(--cream-dim)}
+.verdict{max-width:40ch}
+.verdict a{color:var(--copper)}
+.hq{margin-top:28px}
+.maj{margin-top:22px;font-size:13.5px;color:var(--cream-dim)}
+.papier .maj{color:var(--grey)}
+.sommaire{padding-block:88px}
+.sommaire h2{font-family:var(--serif);font-size:clamp(56px,8vw,120px);line-height:.9}
+.sommaire .hint{font-size:30px;transform:rotate(-3deg);display:inline-block;margin-top:6px}
+.cards{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.cards li{rotate:var(--rot);transition:rotate .45s var(--ease),translate .45s var(--ease),opacity .9s var(--ease),transform .9s var(--ease)}
+.cards li:hover{rotate:0deg;translate:0 -6px}
+.cards a{display:flex;flex-direction:column;height:100%;min-height:260px;background:var(--bg);color:var(--line);border:2.5px solid var(--line);border-radius:26px;padding:22px;text-decoration:none;box-shadow:7px 7px 0 var(--line)}
+.cards .n{font-family:var(--serif);font-style:italic;font-size:46px;line-height:1;color:var(--red)}
+.cards h3{font-weight:700;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;line-height:1.05;margin-top:12px}
+.cards p{font-family:var(--serif);font-size:20px;line-height:1.2;margin-top:10px}
+.cards .go{margin-top:auto;padding-top:18px;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.count3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid var(--ink)}
+.count3 article{padding:26px 26px 30px 0;border-right:1px solid var(--rule)}
+.count3 article+article{padding-left:26px}
+.count3 article:last-child{border-right:0;padding-right:0}
+.count3 h3{font-family:var(--serif);font-size:clamp(28px,2.6vw,38px);line-height:1;margin-top:14px}
+.count3 .who{font-weight:600;font-size:14.5px;color:var(--grey);margin-top:6px}
+.count3 p{font-size:16px;color:#3D3A35;margin-top:14px}
+.count3 .use{font-weight:600;color:var(--ink);border-top:1px dashed var(--rule);padding-top:12px}
+.hand-note{font-size:28px;color:var(--red);margin-top:30px;transform:rotate(-1.5deg);display:inline-block}
+.srcl{font-size:13px;color:var(--cream-dim);margin-top:14px;max-width:110ch}
+.papier .srcl{color:var(--grey)}
+.srcl a{color:inherit;text-underline-offset:2px}
+.ink,.ink .srcl,.srcl.ink{color:var(--line)}
+.giant.ink span{color:rgba(26,26,26,.55)}
+.lede.ink{color:var(--line)}
+.kick.dark{color:var(--line)}
+.sub{font-weight:700;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em;margin-top:64px}
+.sub .note{font-size:22px;color:var(--red);margin-left:10px;font-weight:600;letter-spacing:0}
+.chart .lbl{font-family:var(--sans)}
+.inval{padding-block:96px}
+.invgrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:40px;align-items:center;margin-top:40px}
+.stickers{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.stickers li{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:24px;padding:18px 20px;box-shadow:6px 6px 0 var(--line);rotate:var(--rot)}
+.stickers b{display:block;font-weight:700;font-size:clamp(36px,4vw,54px);letter-spacing:-.04em;line-height:.9}
+.stickers span{display:block;font-weight:600;font-size:16px;margin-top:6px}
+.stickers small{display:block;font-size:12.5px;color:var(--grey);margin-top:4px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px}
+.duo figure{margin:0;border-top:1px solid var(--ink);padding-top:16px}
+.duo figcaption b{display:block;font-weight:700;font-size:20px}
+.duo figcaption span{display:block;font-size:14.5px;color:var(--grey);margin-top:2px}
+.chart.sm{margin-top:16px}
+.trap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:baseline;margin-top:40px;background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px 24px;box-shadow:6px 6px 0 var(--red);max-width:820px}
+.trap .note{font-size:32px;color:var(--red);transform:rotate(-4deg)}
+.trap p{font-family:var(--serif);font-size:22px;line-height:1.3}
+/* Recherche */
+.legend-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.bdg{display:inline-block;border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1.5px solid currentColor}
+.b-et{background:var(--mint);color:var(--line);border-color:var(--mint)}
+.b-ma{background:var(--blue);color:var(--line);border-color:var(--blue)}
+.b-de{background:var(--orange);color:var(--line);border-color:var(--orange)}
+.b-pe{background:none;color:var(--cream)}
+.rq{border-top:1px solid var(--hair);margin-top:48px;padding-top:30px}
+.rq .qh{display:grid;grid-template-columns:80px minmax(0,1fr);gap:20px;align-items:baseline}
+.rq .qn{font-family:var(--serif);font-style:italic;font-size:56px;line-height:.8;color:var(--copper)}
+.rq h3{font-family:var(--serif);font-size:clamp(30px,3.4vw,48px);line-height:1}
+.rq .verd{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.rq .verd p{font-size:17px;color:var(--cream);max-width:70ch;margin-top:10px;flex-basis:100%}
+.studies{list-style:none;margin:26px 0 0 100px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.study{border:1.5px solid var(--hair);border-radius:20px;padding:18px 20px;background:rgba(237,230,220,.03)}
+.study .meta{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--cream-dim);align-items:center}
+.study .lvl{display:inline-flex;gap:3px;align-items:center}
+.study .lvl i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--cream-dim)}
+.study .lvl i.on{background:var(--copper);border-color:var(--copper)}
+.study .lvl em{font-style:normal;margin-left:6px}
+.study h4{font-weight:700;font-size:17px;margin-top:10px;line-height:1.25}
+.study p{font-size:15.5px;color:var(--cream-dim);margin-top:8px}
+.study a{color:var(--cream);font-size:13.5px;display:inline-block;margin-top:10px}
+.unknown{margin:22px 0 0 100px;font-size:15.5px;color:var(--cream-dim);border-left:3px solid var(--copper);padding-left:14px;max-width:80ch}
+/* Lectures */
+.read .cr{font-size:15px;margin-top:10px;color:var(--grey)}
+.read .cr b{font-weight:700;color:var(--ink);margin-right:6px}
+/* Qui décide */
+.qui{padding-block:96px}
+.qui h2{font-family:var(--serif);font-size:clamp(52px,7vw,104px);line-height:.9}
+.qui h2 span{color:rgba(26,26,26,.55)}
+.levels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:40px}
+.lv{background:var(--off);color:var(--line);border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line);rotate:var(--rot)}
+.lv h3{font-family:var(--serif);font-size:30px;line-height:1}
+.lv ul{margin:14px 0 0;padding-left:18px;display:grid;gap:8px;font-size:15px}
+.biblio .mt{margin-top:30px}
+.cite{padding-block:88px}
+@media (max-width:900px){
+  .cards{grid-template-columns:1fr 1fr}
+  .count3,.invgrid,.duo{grid-template-columns:1fr}
+  .count3 article,.count3 article+article{padding:22px 0;border-right:0;border-bottom:1px solid var(--rule)}
+  .levels{grid-template-columns:1fr 1fr}
+  .studies{grid-template-columns:1fr;margin-left:0}
+  .unknown{margin-left:0}
+  .duel{grid-template-columns:1fr;gap:14px}
+  .duel .vs{text-align:center;font-size:32px}
+}
+@media (max-width:600px){
+  .cards,.levels{grid-template-columns:1fr}
+  .cards a{min-height:0}
+  .rq .qh{grid-template-columns:44px minmax(0,1fr)}
+  .rq .qn{font-size:40px}
+  .trap{grid-template-columns:1fr}
+}
+.play .seg-bar rect.s,.play .pills .bar{transform:none}
+.chart .fadein{transition-delay:1.3s}
+html.calm .chart .fadein{opacity:1}
+
+.gapwrap{margin-top:8px}
+.lede.sm{font-size:clamp(17px,1.5vw,20px);margin-top:12px;max-width:62ch}
+.dark-trap{background:var(--off);color:var(--ink)}
+.dark-trap p{color:var(--ink)}
+
+/* Finances */
+.snow{margin-top:44px;background:#fff;border:2.5px solid var(--line);border-radius:26px;padding:24px 26px;box-shadow:7px 7px 0 var(--line);max-width:900px}
+.snow .sub{margin-top:0}
+.snow p{font-size:16.5px;color:#3D3A35;margin-top:10px}
+.formula{font-family:var(--serif);font-size:clamp(22px,2.6vw,34px);line-height:1.2;color:var(--line);margin:18px 0 6px;white-space:pre-wrap;background:none;border:0;padding:0}
+.agrid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.ag{border:1.5px solid var(--hair);border-radius:22px;padding:20px 22px}
+.ag .who{display:block;font-size:13px;color:var(--cream-dim);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.ag b{display:block;font-weight:700;font-size:clamp(44px,5vw,68px);letter-spacing:-.04em;line-height:1;margin:8px 0 6px;color:var(--copper)}
+.ag span:last-child{font-size:14px;color:var(--cream-dim)}
+.key-dots{font-size:13.5px;color:var(--line);margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.kd{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--line)}
+.kd.be{background:var(--red)}.kd.eu{background:#fff;margin-left:10px}
+/* Recherche sur fond papier */
+.rq-light .rq{border-top-color:var(--rule)}
+.rq-light .rq .qn{color:var(--red)}
+.rq-light .rq .verd p{color:var(--ink)}
+.rq-light .study{border-color:var(--rule);background:#fff}
+.rq-light .study .meta,.rq-light .study p{color:var(--grey)}
+.rq-light .study .lvl i{border-color:var(--grey)}
+.rq-light .study .lvl i.on{background:var(--red);border-color:var(--red)}
+.rq-light .study a{color:var(--ink)}
+.rq-light .unknown{color:#3D3A35;border-left-color:var(--red)}
+.papier .b-pe{color:var(--ink)}
+/* Lectures sur fond brun */
+.dark-reads .read{border-top-color:var(--hair)}
+.dark-reads .read .trad,.dark-reads .read .w{color:var(--cream-dim)}
+.dark-reads .read .so{border-top-color:var(--hair)}
+.dark-reads .read .so b{color:var(--copper)}
+.dark-reads .read .cr{color:var(--cream-dim)}
+.dark-reads .read .cr b{color:var(--cream)}
+@media (max-width:900px){.agrid3{grid-template-columns:1fr}}
+
+.preamb{padding-block:96px}
+.three-q{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.three-q li{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:26px;padding:22px;box-shadow:7px 7px 0 var(--line);rotate:var(--rot)}
+.three-q .n{font-family:var(--serif);font-style:italic;font-size:46px;line-height:1;color:var(--red)}
+.three-q h3{font-weight:700;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;margin-top:8px}
+.three-q p{font-size:16px;color:#3D3A35;margin-top:10px}
+.three-q a{color:var(--line);font-weight:700}
+.two-cols .sub.nm{margin-top:0}
+.two-cols .body{font-size:16.5px;color:#3D3A35;margin-top:12px;line-height:1.55}
+@media (max-width:900px){.three-q{grid-template-columns:1fr}}
+
+.epochs{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--hair)}
+.epochs li{padding:22px 20px 26px 0;border-right:1px solid var(--hair)}
+.epochs li+li{padding-left:20px}.epochs li:last-child{border-right:0}
+.epochs .yr{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--copper)}
+.epochs h3{font-weight:700;font-size:20px;margin-top:6px}
+.epochs p{font-size:15px;color:var(--cream-dim);margin-top:8px}
+.myths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px}
+.myths article{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:20px 22px;box-shadow:6px 6px 0 var(--red);rotate:var(--rot)}
+.myths h4{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2vw,28px);line-height:1.1;margin:12px 0 10px}
+.myths p{font-size:15.5px;color:#3D3A35}
+.myths b{color:var(--red-ink)}
+.myths a{color:var(--ink);font-weight:700}
+@media (max-width:900px){.epochs,.myths{grid-template-columns:1fr}.epochs li,.epochs li+li{padding:18px 0;border-right:0;border-bottom:1px solid var(--hair)}}
+
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.agegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
+.agegrid .lv b.big{display:block;font-weight:700;font-size:clamp(38px,4.4vw,60px);letter-spacing:-.04em;line-height:1;margin:10px 0 6px;color:var(--red)}
+.agegrid .lv p{font-size:14px;color:var(--grey)}
+.snow.light{margin-top:36px}
+@media (max-width:900px){.cards.c3,.agegrid{grid-template-columns:1fr}}
+
+/* Contraste AA : rouge foncé pour les petits textes sur fond clair */
+.rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
+.key-dots .kd.be{background:var(--red-ink)}
+
+
+/* Prolongements : liens justifiés entre dossiers */
+.see .seegrid{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.see .seegrid li{border:2px solid var(--ink);border-radius:20px;padding:22px 22px 24px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.see .seegrid a{text-decoration:none;color:var(--ink);display:block}
+.see .seegrid a .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-ink)}
+.see .seegrid a h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1;margin-top:6px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+.see .seegrid a h3::after{content:" →"}
+.see .seegrid a:hover h3,.see .seegrid a:focus-visible h3{color:var(--red-ink)}
+.see .seegrid a:focus-visible{outline:3px solid var(--copper);outline-offset:4px;border-radius:8px}
+.see .seegrid p{font-size:15.5px;line-height:1.5;margin:0;color:#3D3A35}
+.see .seegrid p b{display:block;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+.see .seegrid .lim2{border-top:1px dashed var(--rule);padding-top:12px}
+.see .see-more{margin-top:24px;font-size:15.5px;color:#3D3A35;max-width:70ch}
+@media (max-width:900px){.see .seegrid{grid-template-columns:1fr}}
+/* ===== V2 : composants pédagogiques ===== */
+/* Niveau 1 : comprendre en deux minutes */
+.twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
+.twomin .tm{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:44px;align-items:start}
+.twomin .kick{color:var(--grey)}
+.twomin h2{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1;margin-top:10px}
+.twomin .ans{font-size:clamp(18px,1.6vw,21px);line-height:1.45;margin-top:18px;color:#2E2B27}
+.twomin .keys{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px;counter-reset:k}
+.twomin .keys li{counter-increment:k;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;font-size:16.5px;line-height:1.45}
+.twomin .keys li::before{content:counter(k);font-family:var(--serif);font-style:italic;font-size:30px;line-height:.9;color:var(--red-ink)}
+.twomin aside{display:grid;gap:16px}
+.tm-num{background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line)}
+.tm-num b{display:block;font-weight:700;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.04em;line-height:.95}
+.tm-num span{display:block;font-size:15px;margin-top:8px}
+.tm-num small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.tm-warn{border-left:4px solid var(--red-ink);padding:4px 0 4px 14px;font-size:15.5px;line-height:1.45}
+.tm-warn b{color:var(--red-ink)}
+.tm-concl{font-family:var(--serif);font-size:21px;line-height:1.3;border-top:1px solid var(--rule);padding-top:14px}
+.deeper{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:4px}
+/* Ce que ce chiffre permet de dire */
+.canwhat{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid currentColor;border-radius:22px;overflow:hidden}
+.canwhat>div{padding:20px 22px 22px}
+.canwhat>div+div{border-left:2px solid currentColor}
+.canwhat h4{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+.canwhat ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:15.5px;line-height:1.45}
+.canwhat .cw-t{grid-column:1/-1;border-bottom:2px solid currentColor;padding:14px 22px;font-family:var(--serif);font-size:22px}
+.canwhat .cw-t+div{border-left:0}
+.brun .canwhat .cw-no h4,.papier .canwhat .cw-no h4{color:inherit}
+.canwhat .cw-yes h4::before{content:"✓ "}
+.canwhat .cw-no h4::before{content:"✗ "}
+.canwhat .cw-more h4::before{content:"→ "}
+/* Explication après le pari */
+.why{max-width:760px;margin:26px auto 0;text-align:left;background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:7px 7px 0 var(--copper)}
+.why h3{font-weight:700;font-size:18px;margin:14px 0 4px}
+.why h3:first-child{margin-top:0}
+.why p{font-size:16px;line-height:1.5;color:#2E2B27}
+/* Questions de transfert */
+.check{padding-block:88px}
+.check .qz{border-top:1px solid var(--ink);padding:26px 0 30px}
+.check .qq{font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);line-height:1.2;max-width:58ch}
+.qopts{display:grid;gap:10px;margin-top:18px;max-width:780px}
+.qopts button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px 16px;font-size:16px;line-height:1.35;color:var(--line)}
+.qopts button:hover{background:#F0EEE8}
+.qopts button.is-ok{border-color:#2F7A5E;background:#E6F3EC}
+.qopts button.is-ko{border-color:var(--red-ink);background:#FBE9E6}
+.qfb,.qmech{max-width:780px;margin-top:14px;font-size:16px;line-height:1.5}
+.qfb b,.qmech b{font-weight:700}
+.qmech{border-left:4px solid var(--line);padding-left:14px}
+.qlive{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Du chiffre à la décision */
+.decide .opts4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:40px}
+.decide .opt{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:6px 6px 0 var(--line)}
+.decide .opt h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.05}
+.decide .opt dl{margin:14px 0 0;display:grid;gap:10px}
+.decide .opt dt{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.decide .opt dd{margin:2px 0 0;font-size:15.5px;line-height:1.45}
+.decide .opt .ev{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;margin-right:6px;vertical-align:1px}
+.ev.doc{background:#DCEFE6;color:#1F5C45}.ev.hyp{background:#FBE7D3;color:#7A4214}
+.decide .trade{margin-top:40px}
+.decide .trade table{width:100%;border-collapse:collapse;font-size:15.5px}
+.decide .trade th,.decide .trade td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
+.decide .trade th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper)}
+@media (max-width:900px){.twomin .tm,.canwhat,.decide .opts4{grid-template-columns:1fr}.canwhat>div+div{border-left:0;border-top:2px solid currentColor}.decide .trade{overflow-x:auto}}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+<nav class="top" aria-label="Navigation principale">
+  <a href="index.html#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
+  <a href="index.html#classements"><span class="lbl" data-t="Classements">Classements</span></a>
+  <a href="index.html" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="index.html#dossiers" class="on"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
+  <a href="index.html#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
+  <a href="index.html#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
+</nav>
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 07 · Éducation · avant de lire</span>
+    <h1 class="q" id="q0">Selon vous, quelle part des élèves de 15 ans de l’enseignement francophone a déjà redoublé au moins une fois ?</h1>
+    <output class="out" id="gOut" for="guess">15 %</output>
+    <input class="range" type="range" id="guess" min="0" max="60" step="1" value="15" aria-label="Votre estimation, en pour cent des élèves de 15 ans">
+    <div class="scale" aria-hidden="true"><span>0 %</span><span>30 %</span><span>60 %</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>Le chiffre vient de l’enquête PISA : les élèves de 15 ans déclarent s’ils ont déjà doublé une année. En Fédération Wallonie-Bruxelles, environ un sur trois l’a fait, contre un sur cinq en Flandre et moins d’un sur dix en moyenne dans l’OCDE.</p><h3>Pourquoi c’est important</h3><p>Le redoublement coûte cher (une année d’école en plus) et la recherche doute de son efficacité. C’est un trait marquant du système belge, surtout francophone, et l’une des clés pour comprendre ses inégalités.</p><h3>Pour réutiliser cette idée</h3><p>Devant un résultat scolaire, demandez : compare-t-on des élèves du même âge ou de la même année d’études ? Ce n’est pas la même chose quand beaucoup ont redoublé.</p></div>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 07 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Éducation"><span class="t1">Éducation</span></h2></div>
+    <p class="lede hq" data-r>L’école belge est-elle performante et juste ? Trois façons de mesurer l’école, deux siècles d’histoire, trois fiches, l’état de la recherche et huit lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>6,3 %</b><span>du PIB en dépenses publiques d’enseignement, contre 4,7 % dans l’Union</span><span class="src">Eurostat gov_10a_exp, 2024</span></div>
+      <div><b>35 %</b><span>des élèves de 15 ans ont déjà redoublé en Fédération Wallonie-Bruxelles (Flandre : 19 %, OCDE : 8 %)</span><span class="src">PISA 2025, aSPe ULiège</span></div>
+      <div><b>7,3 %</b><span>des 18-24 ans ont quitté l’école sans diplôme du secondaire supérieur (Union : 9,1 %)</span><span class="src">Eurostat edat_lfse_14, 2025</span></div>
+      <div><b>52,7 %</b><span>des 25-34 ans sont diplômés du supérieur (Union : 44,8 %)</span><span class="src">Eurostat edat_lfse_03, 2025</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : données Eurostat 2026 et rapport complet PISA 2025</p>
+  </div>
+</section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">L’école belge est-elle performante et juste ?</h2>
+      <p class="ans">Elle dépense beaucoup (6,3 % du PIB, contre 4,7 % en moyenne dans l’Union) et diplôme beaucoup : plus d’un jeune adulte sur deux sort du supérieur, et le décrochage est plus faible qu’en moyenne européenne. Mais les compétences des élèves de 15 ans, mesurées par PISA, ont baissé, surtout en Flandre ; l’enseignement francophone se situe désormais au niveau de la moyenne de l’OCDE. Le système reste marqué par le redoublement et par des écarts de résultats liés à l’origine sociale, même si ceux-ci se sont réduits en 2025 dans l’enseignement francophone.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Depuis 1989, l’enseignement relève des Communautés : on compare souvent l’école flamande et l’école francophone, qui sont deux systèmes distincts.</li><li>Dépenser plus ne garantit pas de meilleurs résultats : tout dépend de l’usage des moyens.</li><li>Le redoublement est très fréquent en Belgique, alors que la recherche en doute fortement.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>−68 · −12</b><span>points en lecture depuis 2000 : Flandre et Fédération Wallonie-Bruxelles</span><small>PISA, aSPe ULiège, 2026</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> classer les pays d’après un seul score PISA, sans regarder l’évolution, les écarts entre élèves ni la marge d’erreur de l’échantillon.</p>
+      <p class="tm-concl">Les chiffres montrent où l’école réussit et où elle échoue ; ce qu’elle doit d’abord viser (excellence, égalité, insertion) reste un choix politique.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- 1b. Les définitions -->
+<section class="sec papier" id="definitions" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois façons <span>de mesurer l’école.</span></h2>
+    <p class="lede" data-r>Ce que l’école produit ne se résume pas à un chiffre. Trois indicateurs reviennent dans le débat ; ils mesurent des choses différentes, à des âges différents.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Compétences</span><h3>Les scores PISA</h3><p class="who">OCDE ; en Belgique, aSPe (ULiège) et université de Gand</p><p>Tous les trois ou quatre ans, un <b>échantillon</b> d’élèves de 15 ans passe des épreuves en lecture, mathématiques et sciences. Les scores sont exprimés sur une échelle où la moyenne de l’OCDE valait 500 au départ.</p><p class="use">Sert à : comparer les compétences d’élèves du même âge, dans le temps et entre systèmes.</p></article>
+      <article data-r><span class="tag p">Parcours</span><h3>Le décrochage scolaire</h3><p class="who">Eurostat, enquête sur les forces de travail</p><p>La part des <b>18-24 ans</b> qui n’ont pas de diplôme de l’enseignement secondaire supérieur et ne suivent aucune formation.</p><p class="use">Sert à : mesurer combien de jeunes entrent dans la vie adulte sans qualification.</p></article>
+      <article data-r><span class="tag u">Diplômes</span><h3>Les diplômés du supérieur</h3><p class="who">Eurostat, enquête sur les forces de travail</p><p>La part des <b>25-34 ans</b> titulaires d’un diplôme de l’enseignement supérieur (bachelier, master, doctorat, ou équivalent).</p><p class="use">Sert à : suivre l’élévation du niveau de formation des jeunes adultes.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ un système peut diplômer beaucoup tout en voyant baisser les compétences à 15 ans</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-competences"><span class="n">01</span><h3>Les compétences</h3><p>Que savent les élèves de 15 ans, et comment cela évolue-t-il ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-parcours"><span class="n">02</span><h3>Le parcours</h3><p>Redoublement et décrochage : qui reste en chemin ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-diplome"><span class="n">03</span><h3>Le diplôme</h3><p>Combien de diplômés, et que vaut un diplôme sur le marché du travail ?</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · deux siècles d’école</span>
+    <h2 class="giant" id="tH" data-r>Une école née <span>de compromis.</span></h2>
+    <p class="lede" data-r>L’histoire de l’école belge est celle de conflits entre catholiques et laïques, réglés par des pactes, puis d’un transfert aux Communautés. Elle explique la coexistence de plusieurs réseaux d’enseignement et de deux systèmes éducatifs distincts au nord et au sud du pays.</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1842-1884</span><h3>Lois et guerres scolaires</h3><p>La loi de 1842 impose une école primaire par commune. De 1879 à 1884, la « première guerre scolaire » oppose libéraux et catholiques sur la place de la religion à l’école.</p></li>
+      <li data-r><span class="yr">1914</span><h3>L’instruction obligatoire</h3><p>L’instruction devient obligatoire. Elle sera prolongée plusieurs fois au cours du siècle.</p></li>
+      <li data-r><span class="yr">1958-1959</span><h3>Le Pacte scolaire</h3><p>Signé en 1958 par socialistes, libéraux et sociaux-chrétiens, devenu la loi du 29 mai 1959 : il met fin à la seconde guerre scolaire, garantit le libre choix de l’école et le financement des écoles libres subventionnées.</p></li>
+      <li data-r><span class="yr">1983-1989</span><h3>Jusqu’à 18 ans, puis aux Communautés</h3><p>En 1983, l’obligation scolaire est portée jusqu’à 18 ans (à temps partiel après 16 ans). En 1988, la gratuité de l’accès à l’enseignement est inscrite dans la Constitution, et l’enseignement devient une compétence des Communautés.</p></li>
+      <li data-r><span class="yr">2019-2028</span><h3>Le Pacte pour un enseignement d’excellence</h3><p>Côté francophone, un décret de 2019 prolonge le tronc commun jusqu’à la fin de la 3<sup>e</sup> secondaire, avec une mise en œuvre progressive prévue jusqu’en 2028 ; en 2025, le nouveau gouvernement a envisagé de suspendre cette dernière étape. Depuis la rentrée 2020, l’école est obligatoire dès 5 ans.</p></li>
+    </ol>
+    <p class="srcl">1842-1988 : Lire et Écrire et CARHOP (2019), <a href="https://lire-et-ecrire.be/IMG/pdf/l_histoire_sociale_de_la_belgique_-_enseignement_-_livret.pdf" target="_blank" rel="noopener"><i>Ligne du temps Enseignement</i></a>. Compétence des Communautés : Constitution, article 127. Tronc commun : <a href="https://www.rtbf.be/article/pacte-d-excellence-l-allongement-du-tronc-commun-jusqu-a-la-fin-de-la-3e-secondaire-definitivement-valide-10210812" target="_blank" rel="noopener">RTBF, mai 2019</a> et <a href="https://bx1.be/categories/news/la-possible-mise-en-pause-du-tronc-commun-electrise-le-parlement-de-la-federation-wallonie-bruxelles/" target="_blank" rel="noopener">BX1, 18 février 2025</a> (presse). Obligation dès 5 ans : <a href="https://bx1.be/categories/news/lobligation-scolaire-passe-de-6-a-5-ans-1er-septembre-2020/" target="_blank" rel="noopener">BX1</a>.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« L’école belge est parmi les meilleures d’Europe. »</h4><p><b>Plus vraiment.</b> En 2022 encore, la Flandre dépassait nettement la moyenne de l’OCDE en mathématiques (501 points contre 472). Mais elle a perdu 64 points depuis 2003, la Fédération Wallonie-Bruxelles 31. En 2025, l’enseignement francophone se situe au niveau de la moyenne de l’OCDE, qui a elle-même baissé.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« Redoubler aide l’élève à rattraper son retard. »</h4><p><b>Rarement démontré.</b> La recherche trouve peu d’effets positifs durables et un risque accru de décrochage pour les élèves plus âgés. Pourtant, 35 % des élèves francophones de 15 ans ont déjà redoublé. <a href="#recherche">Voir la recherche</a>.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Il suffit de mettre plus d’argent dans l’école. »</h4><p><b>À nuancer.</b> La Belgique dépense déjà plus que la moyenne européenne (6,3 % du PIB contre 4,7 %) avec des résultats moyens. Mais certains usages des moyens, comme des classes plus petites dans les premières années, ont des effets démontrés.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : compétences -->
+<section class="sec papier" id="f-competences" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>La Flandre chute, <span>le sud résiste.</span></h2>
+    <p class="lede" data-r>Sur vingt ans, les résultats PISA baissent dans presque tous les systèmes voisins. La chute est particulièrement forte en Flandre et aux Pays-Bas. L’enseignement francophone baisse moins et rejoint ainsi la Flandre en lecture (466 et 467 points en 2025). En mathématiques, la Flandre garde une avance.</p>
+    <div class="chart" id="pisaChart"></div>
+    <p class="srcl">Évolution des scores moyens PISA, en points : lecture de 2000 à 2025, mathématiques de 2003 à 2025, sciences de 2006 à 2025. Source : aSPe (ULiège), <a href="https://www.pisa-fwb.uliege.be/cms/c_13724472/fr/pisa2025-synthese-et-slides" target="_blank" rel="noopener">PISA 2025, synthèse et diaporama</a>, septembre 2026, d’après l’OCDE. Pour repère, en 2022 : mathématiques 474 (Fédération Wallonie-Bruxelles), 501 (Flandre), 472 (moyenne OCDE), selon <a href="https://www.pisa-fwb.uliege.be/upload/docs/application/pdf/2023-12/synthese_resultats_pisa_2022.pdf" target="_blank" rel="noopener">aSPe, décembre 2023</a>.</p>
+    <div class="canwhat" data-r><p class="cw-t">Le score PISA</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Ce que savent faire, en moyenne, des élèves de 15 ans en lecture, mathématiques et sciences.</li><li>Comment un système évolue et se compare à d’autres, avec les mêmes épreuves.</li><li>Les écarts entre élèves selon l’origine sociale ou migratoire.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Ce que vaut une école en particulier : c’est un échantillon national.</li><li>Pourquoi les résultats baissent : la crise sanitaire, les écrans, la composition des élèves et les réformes sont autant d’hypothèses.</li><li>Tout ce que l’école apporte : citoyenneté, créativité, formation professionnelle échappent largement à ces épreuves.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les écarts selon l’origine sociale.</li><li>Les épreuves externes (CEB en Fédération Wallonie-Bruxelles).</li><li>Les rapports complets de l’aSPe et de l’université de Gand.</li></ul></div></div>
+    <div class="trap" data-r><span class="note">attention</span><p>Un score PISA a une marge d’erreur de quelques points. En 2022, l’écart de 2 points entre l’enseignement francophone et la moyenne de l’OCDE en mathématiques n’était pas statistiquement significatif : on ne peut pas dire que l’un fait mieux que l’autre.</p></div>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : le parcours -->
+<section class="sec brun grain" id="f-parcours" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Un élève sur trois <span>a déjà redoublé.</span></h2>
+    <p class="lede" data-r>Le redoublement reste massif dans l’enseignement francophone, même s’il a reculé depuis le pic de 2012 (48 % des élèves de 15 ans). Dans le même temps, de moins en moins de jeunes quittent l’école sans diplôme : le décrochage est passé de 18,1 % en 1992 à 7,3 % en 2025, sous la moyenne européenne.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Redoublement</b><span>élèves de 15 ans ayant redoublé au moins une fois, Fédération Wallonie-Bruxelles, en %</span></figcaption><div class="chart sm" id="redChart"></div></figure>
+      <figure data-r><figcaption><b>Décrochage scolaire</b><span>18-24 ans sans diplôme du secondaire supérieur ni formation, en %</span></figcaption><div class="chart sm" id="eslChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : aSPe (ULiège), PISA 2025, d’après les déclarations des élèves (en 2025 : Flandre 19,4 %, moyenne OCDE 8,4 %) ; Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table?lang=fr" target="_blank" rel="noopener">edat_lfse_14</a> (nombreuses ruptures de série) et <a href="https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_16/default/table?lang=fr" target="_blank" rel="noopener">edat_lfse_16</a> pour les Régions : en 2025, 5,5 % en Flandre, 8,8 % à Bruxelles, 9,8 % en Wallonie. Consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">Le taux de décrochage</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Quelle part des 18-24 ans n’a ni diplôme du secondaire supérieur ni formation en cours.</li><li>Comment la Belgique et ses Régions se comparent à l’Union, avec la même définition.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Le niveau des compétences des diplômés.</li><li>Pourquoi les jeunes quittent l’école.</li><li>Une évolution régionale précise d’une année à l’autre : l’échantillon régional est petit et les ruptures de série nombreuses.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les jeunes ni en emploi, ni en études, ni en formation (fiche 03).</li><li>L’orientation vers l’enseignement qualifiant.</li></ul></div></div>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>Le recul du redoublement entre 2018 et 2022 coïncide avec la crise sanitaire, à laquelle l’aSPe attribue en partie la baisse des redoublements. La légère remontée de 2025 invite à ne pas lire ce recul comme une tendance acquise.</p></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : le diplôme -->
+<section class="band grain" id="f-diplome" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>Plus de diplômés, <span>et un diplôme qui protège.</span></h2>
+    <p class="lede ink" data-r>La part des 25-34 ans diplômés du supérieur est passée de 40,6 % en 2005 à 52,7 % en 2025, bien au-dessus de l’Union (44,8 %). Sur le marché du travail, le diplôme compte énormément : en 2025, 86 % des diplômés du supérieur de 20 à 64 ans travaillent, contre 47 % des peu diplômés.</p>
+    <div class="chart" id="terChart"></div>
+    <p class="srcl ink">Part des 25-34 ans diplômés de l’enseignement supérieur, en %, Belgique 2005-2025 et Union 2015-2025. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_03/default/table?lang=fr" target="_blank" rel="noopener">edat_lfse_03</a> (ruptures de série en 2008, 2014, 2017 et 2021), consulté le 11 octobre 2026.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Emploi des peu diplômés</h3><b class="big">46,7 %</b><p>des 20-64 ans en 2025 (Union : 58,1 %)</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Emploi des diplômés du supérieur</h3><b class="big">86,0 %</b><p>des 20-64 ans en 2025 (Union : 86,8 %)</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Ni emploi ni formation</h3><b class="big">9,8 %</b><p>des 15-29 ans en 2025 (Union : 11,0 %)</p></div>
+    </div>
+    <p class="srcl ink">Sources : Eurostat, lfsa_ergaed (emploi selon le diplôme, voir le <a href="dossier-emploi.html#f-emploi">dossier Emploi</a>) et <a href="https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_20/default/table?lang=fr" target="_blank" rel="noopener">edat_lfse_20</a> (jeunes ni en emploi, ni en études, ni en formation).</p>
+    <div class="canwhat" data-r><p class="cw-t">Le taux d’emploi selon le diplôme</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Que les diplômés travaillent beaucoup plus souvent que les peu diplômés.</li><li>Que l’écart est particulièrement grand en Belgique pour les peu diplômés.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Combien le diplôme lui-même rapporte : les diplômés diffèrent aussi par leur milieu, leurs capacités et leurs réseaux.</li><li>Si les emplois occupés correspondent au diplôme.</li><li>Ce qu’il adviendrait si tout le monde était diplômé.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les salaires selon le diplôme.</li><li>Les pénuries de main-d’œuvre par métier.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="index.html#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Relever le niveau, réduire les inégalités, mieux préparer au travail : ces objectifs se rejoignent parfois et s’opposent souvent. Pour chaque levier : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Remplacer le redoublement par la remédiation</h3><dl><dt>Le mécanisme</dt><dd>Aider l’élève en difficulté pendant l’année plutôt que de lui faire recommencer l’année entière.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> À Chicago, le redoublement n’a pas amélioré la réussite et a augmenté un peu le décrochage chez les élèves plus âgés (Jacob et Lefgren, 2009).</dd><dt>Ce qui reste incertain</dt><dd>L’efficacité des dispositifs de remédiation en Belgique, peu évalués.</dd><dt>Ce qu’on sacrifie</dt><dd>Un signal fort sur les exigences, et des moyens pour accompagner les élèves.</dd></dl></article><article class="opt" data-r><h3>Retarder l’orientation</h3><dl><dt>Le mécanisme</dt><dd>Garder tous les élèves dans un tronc commun plus longtemps avant de les orienter vers le général ou le qualifiant.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Les comparaisons entre pays associent une orientation précoce à plus d’inégalités, sans gain clair de niveau moyen (Hanushek et Woessmann, 2006).</dd><dt>Ce qui reste incertain</dt><dd>Les effets du tronc commun prolongé en Fédération Wallonie-Bruxelles, encore en cours de déploiement.</dd><dt>Ce qu’on sacrifie</dt><dd>Une spécialisation plus précoce pour les élèves attirés par les filières techniques.</dd></dl></article><article class="opt" data-r><h3>Réduire la taille des classes</h3><dl><dt>Le mécanisme</dt><dd>Moins d’élèves par enseignant, surtout dans les premières années.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Dans une expérience aléatoire au Tennessee, les petites classes ont amélioré les résultats, davantage pour les élèves défavorisés (Krueger, 1999).</dd><dt>Ce qui reste incertain</dt><dd>La possibilité de recruter assez d’enseignants qualifiés en période de pénurie.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût élevé, au détriment d’autres usages des moyens.</dd></dl></article><article class="opt" data-r><h3>Investir dans la petite enfance</h3><dl><dt>Le mécanisme</dt><dd>Préscolaire de qualité pour les enfants les plus défavorisés, avant que les écarts ne se creusent.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Le programme américain Perry Preschool a un rendement social estimé à 7 à 10 % par an (Heckman et al., 2010).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Que ces résultats, obtenus sur un petit programme ciblé, se retrouvent à grande échelle en Belgique.</dd><dt>Ce qu’on sacrifie</dt><dd>Des moyens dont les effets n’apparaissent que des années plus tard.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Le libre choix de l’école par les parents</td><td>La mixité sociale entre écoles</td></tr><tr><td>Un tronc commun long</td><td>Une orientation précoce vers les métiers</td></tr><tr><td>L’exigence par le redoublement</td><td>La motivation et la poursuite des études des élèves en difficulté</td></tr><tr><td>Des classes plus petites</td><td>D’autres usages des mêmes moyens (salaires, remédiation, bâtiments)</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>À quoi sert <span>l’école ?</span></h2>
+    <p class="lede" data-r>Transmettre, émanciper, sélectionner, former des travailleurs, des citoyens : les chiffres ne disent pas ce que l’école doit viser en premier. Huit traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>de l’école ?</span></h2>
+    <p class="lede ink" data-r>Depuis la réforme de 1988-1989, l’enseignement relève des Communautés, sauf trois exceptions que la Constitution laisse à l’État fédéral.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Communautés</h3><ul><li>Programmes, organisation des écoles, financement, statut des enseignants</li><li>Épreuves externes et diplômes, dans le cadre fédéral</li><li>Trois systèmes : flamand, francophone, germanophone</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>État fédéral</h3><ul><li>Début et fin de l’obligation scolaire</li><li>Conditions minimales de délivrance des diplômes</li><li>Régime des pensions des enseignants</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Pouvoirs organisateurs</h3><ul><li>Réseaux officiels (Communautés, communes, provinces) et libres (surtout catholiques)</li><li>Gestion des écoles et projet pédagogique</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Union européenne</h3><ul><li>Pas de compétence sur les programmes</li><li>Objectifs communs (décrochage, diplômés du supérieur), Erasmus+</li></ul></div>
+    </div>
+    <p class="srcl ink">Constitution belge, article 127, § 1<sup>er</sup>, 2°.</p>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Parler de « l’école belge »</h3><p>Il y a trois systèmes éducatifs, organisés par les Communautés. Une moyenne belge mélange des réalités différentes.</p></li>
+      <li data-r><span class="g">2</span><h3>Classer au point près</h3><p>Les scores PISA viennent d’échantillons : des écarts de quelques points ne sont souvent pas significatifs.</p></li>
+      <li data-r><span class="g">3</span><h3>Comparer élèves du même âge et élèves de la même année</h3><p>Avec beaucoup de redoublements, des élèves de 15 ans sont dans des années différentes ; les résultats par âge et par année ne racontent pas la même histoire.</p></li>
+      <li data-r><span class="g">4</span><h3>Attribuer une baisse à une seule cause</h3><p>Crise sanitaire, écrans, évolution de la population scolaire, réformes : plusieurs explications coexistent, et les données PISA seules ne permettent pas de les départager.</p></li>
+      <li data-r><span class="g">5</span><h3>Lire la dépense comme une mesure de la qualité</h3><p>La dépense en % du PIB dépend aussi du nombre d’élèves, des salaires et de l’organisation en réseaux.</p></li>
+      <li data-r><span class="g">6</span><h3>Confondre diplôme et compétences</h3><p>Plus de diplômés ne signifie pas automatiquement des compétences plus élevées ; les deux indicateurs peuvent évoluer différemment.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Liens : pour comprendre, il faut aussi examiner -->
+<section class="sec papier see" aria-labelledby="tSee">
+  <div class="wrap">
+    <span class="kick" data-r>Prolongements</span>
+    <h2 class="giant" id="tSee" data-r>Pour comprendre, <span>il faut aussi examiner…</span></h2>
+    <p class="lede" data-r>Les phénomènes sont liés, mais deux chiffres qui évoluent ensemble ne s’expliquent pas forcément l’un par l’autre. Chaque lien dit pourquoi il est utile et où il s’arrête.</p>
+    <ul class="seegrid"><li data-r><a href="dossier-emploi.html#f-emploi"><span class="k">Dossier</span><h3>Emploi et inactivité</h3></a><p><b>Pourquoi ce lien</b>Le diplôme est l’une des lignes de partage les plus nettes de l’emploi : en 2025, 46,7 % des peu diplômés de 20 à 64 ans travaillent, contre 86,0 % des diplômés du supérieur.</p><p class="lim2"><b>Sa limite</b>L’écart ne mesure pas l’effet propre du diplôme : milieu social, compétences et réseaux comptent aussi.</p></li><li data-r><a href="dossier-immigration.html#f-emploi"><span class="k">Dossier</span><h3>Immigration et asile</h3></a><p><b>Pourquoi ce lien</b>La Banque nationale cite la langue et la reconnaissance des diplômes parmi les freins à l’emploi des immigrés. À l’école, PISA 2025 montre que l’écart lié à l’origine migratoire s’est réduit de moitié dans l’enseignement francophone.</p><p class="lim2"><b>Sa limite</b>Les élèves issus de l’immigration et les adultes immigrés sont deux populations différentes : on ne passe pas de l’une à l’autre.</p></li><li data-r><a href="dossier-sante.html#f-evitable"><span class="k">Dossier</span><h3>Santé</h3></a><p><b>Pourquoi ce lien</b>Le diplôme est aussi lié à la durée de vie : à 25 ans, l’écart d’espérance de vie en bonne santé entre peu diplômés et diplômés du supérieur atteint 10 à 13 ans (2011).</p><p class="lim2"><b>Sa limite</b>C’est une corrélation : revenus, métiers et conditions de vie, liés au diplôme, contribuent à l’écart.</p></li></ul>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="b" data-r><p class="qq">1. Le pays A obtient 487 points en mathématiques, le pays B 484. La marge d’erreur de chaque score est d’environ 3 points. Que peut-on conclure ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Les élèves du pays A sont meilleurs.</button><button type="button" data-k="b" aria-pressed="false">On ne peut pas dire qu’un pays fait mieux que l’autre : l’écart est dans la marge d’erreur.</button><button type="button" data-k="c" aria-pressed="false">Le pays B doit réformer son école.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> L’écart est trop petit par rapport à l’incertitude de l’échantillon.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> Avec des échantillons, de petits écarts peuvent être dus au hasard du tirage.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Rien ne distingue clairement les deux pays.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un chiffre tiré d’un échantillon a une marge d’erreur. Avant de comparer, on vérifie si l’écart est plus grand que cette marge.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="c" data-r><p class="qq">2. Un pays supprime presque entièrement le redoublement. L’année suivante, la part d’élèves de 15 ans « à l’heure » bondit. Que faut-il vérifier avant de parler de progrès ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Rien : plus d’élèves à l’heure, c’est forcément mieux.</button><button type="button" data-k="b" aria-pressed="false">Le budget de l’enseignement.</button><button type="button" data-k="c" aria-pressed="false">Les compétences des élèves : l’indicateur peut monter simplement parce que la règle a changé.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> L’indicateur mesure le parcours, pas ce que les élèves savent.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> Le budget ne dit rien de l’effet de la mesure.</p><p class="qfb" data-k="c" hidden><b>Exact.</b> Quand la règle change, l’indicateur change mécaniquement. Il faut regarder aussi un résultat indépendant de la règle, comme les compétences.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un indicateur qui dépend d’une règle administrative change quand la règle change. On le croise avec une mesure qui n’en dépend pas.</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="red" aria-pressed="true">Redoublement</button>
+        <button type="button" data-k="pisa" aria-pressed="false">PISA</button>
+        <button type="button" data-k="dep" aria-pressed="false">Dépenses</button>
+        <button type="button" data-k="dip" aria-pressed="false">Diplômes</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées le 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat : <a href="https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table?lang=fr" target="_blank" rel="noopener">edat_lfse_14</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_16/default/table?lang=fr" target="_blank" rel="noopener">edat_lfse_16</a> (décrochage), <a href="https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_03/default/table?lang=fr" target="_blank" rel="noopener">edat_lfse_03</a> (diplômes), <a href="https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_20/default/table?lang=fr" target="_blank" rel="noopener">edat_lfse_20</a> (jeunes sans emploi ni formation), <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_exp</a> (dépenses par fonction), lfsa_ergaed (emploi selon le diplôme).</li>
+        <li>Baye, A., Benyekhlef, H., Bricteux, S., Crépin, F., Lafontaine, D. et Quittre, V. (2026). <i>Résultats de PISA 2025 en Fédération Wallonie-Bruxelles</i>. Cahiers des Sciences de l’éducation, 49, ULiège ; <a href="https://www.pisa-fwb.uliege.be/cms/c_13724472/fr/pisa2025-synthese-et-slides" target="_blank" rel="noopener">synthèse et diaporama</a>.</li>
+        <li>Baye, A. et al. (2023). <a href="https://www.pisa-fwb.uliege.be/upload/docs/application/pdf/2023-12/synthese_resultats_pisa_2022.pdf" target="_blank" rel="noopener"><i>Résultats de PISA 2022 en Fédération Wallonie-Bruxelles</i></a>. Cahiers des Sciences de l’éducation, 46, ULiège.</li>
+      </ol>
+      <h3 class="mt">Histoire et droit</h3><ol>
+        <li>Lire et Écrire et CARHOP (2019). <a href="https://lire-et-ecrire.be/IMG/pdf/l_histoire_sociale_de_la_belgique_-_enseignement_-_livret.pdf" target="_blank" rel="noopener"><i>Ligne du temps Enseignement</i></a>.</li>
+        <li>Constitution belge, article 127.</li>
+      </ol>
+      <h3 class="mt">Niveau 6 · presse</h3><ol>
+        <li><a href="https://www.rtbf.be/article/pacte-d-excellence-l-allongement-du-tronc-commun-jusqu-a-la-fin-de-la-3e-secondaire-definitivement-valide-10210812" target="_blank" rel="noopener">RTBF, mai 2019</a> ; <a href="https://bx1.be/categories/news/la-possible-mise-en-pause-du-tronc-commun-electrise-le-parlement-de-la-federation-wallonie-bruxelles/" target="_blank" rel="noopener">BX1, 18 février 2025</a> ; <a href="https://bx1.be/categories/news/lobligation-scolaire-passe-de-6-a-5-ans-1er-septembre-2020/" target="_blank" rel="noopener">BX1, 2019</a>.</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Hanushek, E. et Woessmann, L. (2006). « <a href="https://hanushek.stanford.edu/publications/does-educational-tracking-affect-performance-and-inequality-differences-differences" target="_blank" rel="noopener">Does Educational Tracking Affect Performance and Inequality? Differences-in-Differences Evidence across Countries</a> ». <i>Economic Journal</i>, 116(510), C63-C76.</li>
+        <li>Heckman, J., Moon, S. H., Pinto, R., Savelyev, P. et Yavitz, A. (2010). « <a href="https://nber.org/papers/w15471" target="_blank" rel="noopener">The Rate of Return to the HighScope Perry Preschool Program</a> ». <i>Journal of Public Economics</i>, 94(1-2), 114-128.</li>
+        <li>Jacob, B. et Lefgren, L. (2009). « <a href="https://ideas.repec.org/p/nbr/nberwo/13514.html" target="_blank" rel="noopener">The Effect of Grade Retention on High School Completion</a> ». <i>American Economic Journal: Applied Economics</i>, 1(3), 33-58.</li>
+        <li>Krueger, A. (1999). « <a href="https://www.nber.org/papers/w6051" target="_blank" rel="noopener">Experimental Estimates of Education Production Functions</a> ». <i>Quarterly Journal of Economics</i>, 114(2), 497-532.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Arendt, H. (1958). « La crise de l’éducation », repris dans <i>La Crise de la culture</i>.</li>
+        <li>Becker, G. (1964). <i>Human Capital</i>. NBER et Columbia University Press.</li>
+        <li>Bourdieu, P. et Passeron, J.-C. (1964). <i>Les Héritiers</i>. Minuit.</li>
+        <li>Dewey, J. (1916). <i>Democracy and Education</i>. Macmillan.</li>
+        <li>Dubet, F. (2004). <i>L’École des chances</i>. Seuil.</li>
+        <li>Durkheim, É. (1922). <i>Éducation et sociologie</i>. Alcan.</li>
+        <li>Freire, P. (1968). <i>Pédagogie des opprimés</i>.</li>
+        <li>Friedman, M. (1955). « The Role of Government in Education ». Dans R. Solo (dir.), <i>Economics and the Public Interest</i>.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Les scores PISA 2025 détaillés par Communauté (hors lecture) n’étaient disponibles que dans des graphiques ou dans la presse lors de la vérification : ils ne sont pas repris. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="index.html#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 07 · Éducation · vérifié le 11 octobre 2026</span><a href="index.html#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
+<script>(function(){
+  var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg',DATA={"esl": [18.1, 17.4, 16.1, 15.1, 12.9, 12.7, 14.5, 15.2, 13.8, 13.8, 14.1, 14.3, 13.1, 12.9, 12.6, 12.1, 12.0, 11.1, 11.9, 12.3, 12.0, 11.0, 9.8, 10.1, 8.8, 8.9, 8.6, 8.4, 8.1, 6.7, 6.4, 6.2, 7.0, 7.3], "eslEU": [11.0, 10.6, 10.5, 10.5, 10.1, 10.0, 9.7, 9.6, 9.6, 9.6, 9.1], "ter": [40.6, 41.9, 41.3, 42.3, 42.5, 43.8, 42.5, 43.0, 42.7, 44.2, 43.1, 44.3, 45.7, 47.4, 47.3, 48.5, 50.9, 51.4, 50.0, 50.7, 52.7], "terEU": [36.5, 36.8, 37.6, 38.7, 39.6, 40.7, 41.5, 42.0, 43.1, 43.9, 44.8], "red": [[2003, 39], [2009, 46], [2012, 48], [2015, 46], [2018, 41], [2022, 33], [2025, 35]]};
+  H.classList.add('js');
+  function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
+  function fr(v,d){d=d==null?1:d;return v.toLocaleString('fr-BE',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  function sg(v,d){return (v<0?'−':v>0?'+':'')+fr(Math.abs(v),d)}
+  var MOB=innerWidth<640;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,calm=false;
+  try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}
+  var ab=D.getElementById('a11y');
+  function setCalm(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}
+  setCalm(calm);ab.addEventListener('click',function(){setCalm(!calm)});
+  var TX='font-family:var(--sans);font-size:'+(MOB?12:13)+'px;fill:';
+
+
+  /* 0. Seuil */
+  (function(){
+    var g=D.getElementById('guess'),go=D.getElementById('gOut'),vd=D.getElementById('verdict');
+    g.addEventListener('input',function(){go.textContent=fr(+g.value,0)+' %'});
+    D.getElementById('reveal').addEventListener('click',function(){
+      var v=+g.value;
+      vd.innerHTML=(Math.abs(v-35)<=5?'Bien vu : ':'Vous avez dit '+fr(v,0)+' %. ')+'En 2025, 35 % des élèves de 15 ans de la Fédération Wallonie-Bruxelles déclarent avoir déjà redoublé, contre 19 % en Flandre et 8 % en moyenne dans l’OCDE.<span class="down" aria-hidden="true">↓</span>';
+      vd.hidden=false;go.textContent='35 %';g.value=35;
+    });
+  })();
+
+  /* Courbes à départs variables */
+  function lines2(host,o){
+    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?320:420),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
+    function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
+    (o.bands||[]).forEach(function(b){s.appendChild(el('rect',{x:X(b[0]),y:T,width:X(b[1])-X(b[0]),height:B-T,fill:b[2]}));s.appendChild(el('text',{x:(X(b[0])+X(b[1]))/2,y:T-10,'text-anchor':'middle',style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?15:22)+'px;fill:'+o.ink},b[3]))});
+    o.ticks.forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:o.grid}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+o.mute},fr(v,o.tdec||0)+(o.unit||'')))});
+    o.years.forEach(function(y){s.appendChild(el('text',{x:X(y),y:Hh-12,'text-anchor':'middle',style:TX+o.mute},y))});
+    (o.breaks||[]).forEach(function(b){s.appendChild(el('line',{x1:X(b),x2:X(b),y1:T,y2:B,stroke:'#E2402B','stroke-dasharray':'2 6'}));s.appendChild(el('text',{x:X(b),y:T-6,'text-anchor':'middle',style:'font-size:18px;fill:#E2402B'},'×'))});
+    var g=el('g',{});
+    o.series.forEach(function(se){
+      var pts=se.pts||se.v.map(function(v,j){return [se.s+j,v]});
+      var d=pts.map(function(p,j){return (j?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)}).join(' ');
+      var p=el('path',{d:d,fill:'none',stroke:se.c,'stroke-width':se.w||3,'stroke-linejoin':'round','stroke-linecap':'round','class':se.dash?'fadein':'drawline'});
+      if(se.dash)p.setAttribute('stroke-dasharray','6 6');g.appendChild(p);
+      if(se.end!==false){var lp=pts[pts.length-1];
+        g.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:5,fill:se.c,'class':'fadein'}));
+        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+se.c},fr(lp[1],o.dec==null?1:o.dec)+(o.unit||'')+(MOB?'':'  '+se.n)));}
+    });
+    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+k[3]},k[2]))});
+    s.appendChild(g);host.appendChild(s);
+  }
+
+
+  var DK={grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',bg:'#1E1914'},PP={grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',bg:'#F7F6F2'};
+  function o2(a,b){for(var k in b)a[k]=b[k];return a}
+
+  /* Fiche 01 : évolution PISA, trois panneaux */
+  (function(){
+    var SY=['Féd. Wallonie-Bruxelles','Royaume-Uni','Allemagne','France','Flandre','Pays-Bas'];
+    var P=[['Lecture, 2000-2025',[-12,-29,-23,-49,-68,-91]],['Mathématiques, 2003-2025',[-31,-20,-39,-51,-64,-55]],['Sciences, 2006-2025',[-4,-4,-30,-8,-33,-40]]];
+    var host=D.getElementById('pisaChart'),W=MOB?420:1000,col=MOB?1:3,pw=W/col,rh=30,L=MOB?170:180,top=34,ph=top+SY.length*rh+10,Hh=ph*(MOB?3:1);
+    var lab=[];P.forEach(function(p){lab.push(p[0]+' : '+SY.map(function(n,i){return n+' '+p[1][i]}).join(', '))});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Évolution des scores PISA en points. '+lab.join('. ')});
+    P.forEach(function(p,k){var ox=MOB?0:k*pw,oy=MOB?k*ph:0,x0=ox+L,sc=(pw-L-48)/95;
+      s.appendChild(el('text',{x:x0,y:oy+18,style:'font-family:var(--sans);font-weight:700;font-size:14px;fill:#1A1A1A'},p[0]));
+      SY.forEach(function(n,i){var v=p[1][i],y=oy+top+i*rh,w=-v*sc,fwb=i===0;
+        s.appendChild(el('text',{x:x0-10,y:y+16,'text-anchor':'end',style:TX+(fwb?'#1A1A1A;font-weight:700':'#3D3A35')},n));
+        s.appendChild(el('rect',{x:x0,y:y+4,width:Math.max(w,1.5).toFixed(1),height:rh-12,fill:fwb?'#C0341E':(n==='Flandre'?'#3E3A8C':'#9A9488'),'class':'fadein'}));
+        s.appendChild(el('text',{x:(x0+w+6).toFixed(1),y:y+16,'class':'fadein',style:TX+'#1A1A1A;font-weight:700'},'−'+(-v)))});
+      s.appendChild(el('line',{x1:x0,x2:x0,y1:oy+top-4,y2:oy+top+SY.length*rh,stroke:'#1A1A1A','stroke-width':1.5}));
+    });
+    host.appendChild(s);
+  })();
+
+  /* Fiche 02 : redoublement et décrochage */
+  lines2(D.getElementById('redChart'),o2({t0:2003,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:90,min:0,max:60,ticks:[0,20,40,60],unit:' %',dec:0,years:MOB?[2003,2012,2025]:[2003,2009,2012,2015,2018,2022,2025],
+    series:[{n:'',pts:DATA.red,c:'#C9773A',w:4}],marks:[[2003,39,'39 %','#EDE6DC',-12,'start'],[2012,48,'48 %','#EDE6DC',-12],[2022,33,'33 %','#EDE6DC',24]],
+    label:'Élèves de 15 ans ayant redoublé, Fédération Wallonie-Bruxelles : 39 % en 2003, 48 % en 2012, 33 % en 2022, 35 % en 2025'},DK));
+  lines2(D.getElementById('eslChart'),o2({t0:1992,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:120,min:0,max:20,ticks:[0,5,10,15,20],unit:' %',years:MOB?[1992,2008,2025]:[1992,2000,2008,2016,2025],
+    series:[{n:'Union',v:DATA.eslEU,s:2015,c:'#A69C8F',dash:1,dy:-4},{n:'Belgique',v:DATA.esl,s:1992,c:'#C9773A',w:4,dy:8}],
+    marks:[[1992,18.1,'18,1 %','#EDE6DC',-12,'start']],
+    label:'Décrochage scolaire des 18-24 ans : Belgique 18,1 % en 1992, 7,3 % en 2025 ; Union 9,1 % en 2025'},DK));
+
+  /* Fiche 03 : diplômés du supérieur */
+  lines2(D.getElementById('terChart'),{t0:2005,t1:2025,rm:MOB?70:150,min:30,max:60,ticks:[30,40,50,60],unit:' %',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',years:MOB?[2005,2015,2025]:[2005,2009,2013,2017,2021,2025],
+    series:[{n:'Union',v:DATA.terEU,s:2015,c:'#3D3A35',dash:1,dy:6},{n:'Belgique',v:DATA.ter,s:2005,c:'#701C0E',w:4.5,dy:-4}],
+    marks:[[2005,40.6,'40,6 %','#1A1A1A',24,'start']],
+    label:'Part des 25-34 ans diplômés du supérieur : Belgique 40,6 % en 2005, 52,7 % en 2025 ; Union 44,8 % en 2025'});
+
+  /* Recherche */
+  (function(){
+    var Q=[
+      {q:'Le redoublement aide-t-il les élèves en difficulté ?',b:['b-ma','Majoritaire : peu d’effets positifs'],b2:['b-de','Débattu : selon l’âge'],v:'Les études les plus solides trouvent peu de bénéfices durables au redoublement, et un risque accru de décrochage quand il intervient tard. Pour les plus jeunes, les résultats sont plus partagés.',
+       st:[{a:'Jacob et Lefgren, 2009',t:'Chicago, élèves juste au-dessus et juste en dessous du seuil de redoublement',l:4,p:'Le redoublement augmente modestement la probabilité d’abandonner l’école chez les élèves plus âgés ; pas d’effet significatif chez les plus jeunes.',u:'https://ideas.repec.org/p/nbr/nberwo/13514.html',s:'American Economic Journal: Applied'},
+           {a:'aSPe (ULiège), 2026',t:'PISA 2025, Fédération Wallonie-Bruxelles',l:1,lt:'statistique',p:'35,2 % des élèves de 15 ans ont déjà redoublé, contre 19,4 % en Flandre et 8,4 % en moyenne dans l’OCDE. Le taux était de 48 % en 2012.',u:'https://www.pisa-fwb.uliege.be/cms/c_13724469/fr/pisa-2025-cahier-sciences-education-49',s:'Université de Liège'}],
+       x:'Les effets du redoublement en Belgique même, comparés à des élèves semblables non redoublés, restent peu étudiés avec des méthodes causales.'},
+      {q:'Orienter tôt les élèves vers des filières augmente-t-il les inégalités ?',b:['b-ma','Majoritaire'],v:'Les comparaisons entre pays montrent que les systèmes qui orientent tôt les élèves vers des filières séparées creusent les écarts de résultats, sans gain clair de niveau moyen.',
+       st:[{a:'Hanushek et Woessmann, 2006',t:'Comparaison de pays, avant et après l’âge de l’orientation',l:3,p:'L’orientation précoce augmente les inégalités de résultats ; elle tend aussi à réduire le niveau moyen, mais cette conclusion est moins solide.',u:'https://hanushek.stanford.edu/publications/does-educational-tracking-affect-performance-and-inequality-differences-differences',s:'Economic Journal'},
+           {a:'aSPe (ULiège), 2026',t:'PISA 2025, lecture, systèmes classés par modèle',l:1,lt:'statistique',p:'Dans les systèmes « à séparation » (Allemagne, Autriche, Pays-Bas, Communautés belges…), l’inégalité sociale des résultats est plus élevée que dans les autres modèles (97 points contre 70 à 77).',u:'https://www.pisa-fwb.uliege.be/cms/c_13724472/fr/pisa2025-synthese-et-slides',s:'Université de Liège'}],
+       x:'Les pays diffèrent par bien d’autres aspects que l’âge d’orientation ; l’effet propre de cette règle reste difficile à isoler.'},
+      {q:'Quels moyens améliorent les résultats des élèves ?',b:['b-de','Débattu : tout dépend de l’usage'],v:'Plus de dépenses ne garantit pas de meilleurs résultats. Certains usages ont des effets démontrés, comme les petites classes au début de la scolarité ou un préscolaire de qualité pour les enfants défavorisés.',
+       st:[{a:'Krueger, 1999',t:'Tennessee, élèves et enseignants répartis au hasard entre petites et grandes classes',l:5,p:'Les élèves des petites classes gagnent environ 4 points de percentile la première année, puis environ 1 point par an ; l’effet est plus fort pour les élèves défavorisés.',u:'https://www.nber.org/papers/w6051',s:'Quarterly Journal of Economics'},
+           {a:'Heckman et al., 2010',t:'États-Unis, programme préscolaire Perry, enfants tirés au sort',l:5,p:'Rendement social estimé à 7 à 10 % par an, pour les garçons comme pour les filles.',u:'https://nber.org/papers/w15471',s:'Journal of Public Economics'}],
+       x:'Ces expériences sont anciennes et américaines. Leur transposition à la Belgique reste à vérifier.'}];
+    function lvl(n,t){if(!n)return '<span class="lvl"><em>'+t+'</em></span>';var h='<span class="lvl" title="Échelle de Maryland : niveau '+n+' sur 5">';for(var i=1;i<=5;i++)h+='<i class="'+(i<=n?'on':'')+'"></i>';return h+'<em>Maryland '+n+'/5</em></span>'}
+    D.getElementById('rq').innerHTML=Q.map(function(q,i){return '<article class="rq" data-r><div class="qh"><span class="qn">'+(i+1)+'</span><div><h3>'+q.q+'</h3><div class="verd"><span class="bdg '+q.b[0]+'">'+q.b[1]+'</span>'+(q.b2?'<span class="bdg '+q.b2[0]+'">'+q.b2[1]+'</span>':'')+'<p>'+q.v+'</p></div></div></div><ul class="studies">'+q.st.map(function(s){return '<li class="study"><div class="meta"><span>'+s.s+'</span>'+lvl(s.l,s.lt)+'</div><h4>'+s.a+' · '+s.t+'</h4><p>'+s.p+'</p><a href="'+s.u+'" target="_blank" rel="noopener">Lire la source ↗</a></li>'}).join('')+'</ul><p class="unknown">'+q.x+'</p></article>'}).join('');
+  })();
+
+  /* Lectures */
+  (function(){
+    var Lx=[
+      ['Sociologie classique','Émile Durkheim','Éducation et sociologie, 1922','L’éducation est la socialisation méthodique de la jeune génération : elle transmet à chacun ce que la société juge nécessaire pour vivre ensemble.','Ce que l’école transmet en commun.','Insiste sur l’intégration à la société plus que sur l’épanouissement ou l’esprit critique de l’individu.'],
+      ['Pragmatisme démocratique','John Dewey','Democracy and Education, 1916','L’école doit être une petite démocratie où l’on apprend en faisant et en coopérant : c’est ainsi qu’on forme des citoyens.','Les méthodes d’apprentissage actives.','Ses applications ont parfois été accusées de négliger la transmission des savoirs de base.'],
+      ['Sociologie critique','Pierre Bourdieu et Jean-Claude Passeron','Les Héritiers, 1964','L’école récompense une culture que les enfants des milieux favorisés reçoivent à la maison, et transforme ainsi des inégalités sociales en inégalités de « mérite ».','Le lien entre origine sociale et réussite.','Laisse peu de place aux réussites qui échappent au déterminisme et aux politiques qui réduisent les écarts.'],
+      ['Capital humain','Gary Becker','Human Capital, 1964','L’éducation est un investissement : elle accroît la productivité et les revenus futurs, pour l’individu comme pour la société.','Les rendements du diplôme et les choix d’études.','Réduit l’école à sa valeur économique ; une partie du « rendement » peut refléter un signal de sélection plutôt qu’un gain de compétences.'],
+      ['Libérale','Milton Friedman','« The Role of Government in Education », 1955','L’État peut financer l’école sans la gérer : un chèque éducation laisserait les familles choisir et mettrait les écoles en concurrence.','Le libre choix et la concurrence entre écoles.','La concurrence peut renforcer la ségrégation sociale entre écoles, un risque déjà discuté en Belgique où le libre choix existe.'],
+      ['Pédagogie de l’émancipation','Paulo Freire','Pédagogie des opprimés, 1968','L’éducation ne doit pas « déposer » des savoirs dans des esprits passifs, mais aider chacun à comprendre et transformer sa situation.','L’autonomie et l’esprit critique des élèves.','Sa dimension politique explicite est contestée, et ses effets sont difficiles à évaluer.'],
+      ['Conservatisme culturel','Hannah Arendt','« La crise de l’éducation », 1958','L’école doit transmettre le monde existant aux nouveaux venus et assumer l’autorité de cette transmission, pour qu’ils puissent un jour le renouveler.','L’autorité des enseignants et la transmission des savoirs.','Peut servir à justifier un immobilisme face aux inégalités que l’école reproduit.'],
+      ['Justice scolaire','François Dubet','L’École des chances, 2004','L’égalité des chances est nécessaire mais insuffisante : une école juste doit aussi garantir un socle commun à tous et ne pas humilier ceux qui échouent.','Le socle commun et le sort des élèves en difficulté.','Le « socle commun » peut abaisser les ambitions pour les meilleurs élèves, selon ses critiques.']];
+    for(var i=Lx.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=Lx[i];Lx[i]=Lx[j];Lx[j]=t}
+    D.getElementById('reads').innerHTML=Lx.map(function(r){return '<article class="read" data-r><span class="trad">'+r[0]+'</span><h3>'+r[1]+'</h3><p class="w">'+r[2]+'</p><p class="th">'+r[3]+'</p><p class="so"><b>Ce qu’elle regarde</b>'+r[4]+'</p><p class="cr"><b>Sa critique</b>'+r[5]+'</p></article>'}).join('');
+  })();
+
+  /* Citer */
+  (function(){
+    var T={red:'En 2025, 35 % des élèves de 15 ans de la Fédération Wallonie-Bruxelles déclaraient avoir déjà redoublé, contre 19 % en Flandre et 8 % en moyenne dans l’OCDE (PISA 2025, aSPe ULiège).',
+      pisa:'Entre 2000 et 2025, le score moyen en lecture des élèves de 15 ans a reculé de 68 points en Flandre et de 12 points en Fédération Wallonie-Bruxelles (PISA, aSPe ULiège, 2026).',
+      dep:'En 2024, les dépenses publiques d’enseignement atteignaient 6,3 % du PIB en Belgique, contre 4,7 % en moyenne dans l’Union européenne (Eurostat, gov_10a_exp).',
+      dip:'En 2025, 52,7 % des Belges de 25 à 34 ans étaient diplômés du supérieur, contre 44,8 % dans l’Union, et 7,3 % des 18-24 ans avaient quitté l’école sans diplôme du secondaire supérieur (Eurostat).'};
+    var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');
+    function set(k){q.textContent=T[k];c.textContent='';cs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}
+    cs.forEach(function(b){b.onclick=function(){set(b.dataset.k)}});set('red');
+    D.getElementById('copy').onclick=function(){function fb(){var r=D.createRange();r.selectNodeContents(q);var s=getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Texte sélectionné : copiez-le.'}try{navigator.clipboard.writeText(q.textContent).then(function(){c.textContent='Copié.'},fb)}catch(e){fb()}};
+  })();
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
+  D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
+  ['t1','pisaChart','redChart','eslChart','terChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
+  (function(){
+    var c=D.getElementById('cursor'),x=0,y=0,cx=0,cy=0;
+    D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,svg[role=img]')))});
+    (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
+  })();
+})();
+
+/* Composants pédagogiques communs aux dossiers :
+   - explication après le pari d'ouverture (data-reveal),
+   - questions de transfert avec correction expliquée (.qz). */
+(function(){
+  var D=document;
+  /* Après le pari : afficher l'explication détaillée */
+  D.querySelectorAll('[data-reveal]').forEach(function(b){
+    b.addEventListener('click',function(){var t=D.getElementById(b.getAttribute('data-reveal'));if(t)t.hidden=false});
+  });
+  /* Questions de transfert */
+  D.querySelectorAll('.qz').forEach(function(q){
+    var ok=q.getAttribute('data-ok'),opts=q.querySelectorAll('.qopts button'),mech=q.querySelector('.qmech');
+    opts.forEach(function(b){
+      b.addEventListener('click',function(){
+        var k=b.getAttribute('data-k');
+        opts.forEach(function(o){
+          var good=o.getAttribute('data-k')===ok;
+          o.setAttribute('aria-pressed',o===b?'true':'false');
+          o.classList.toggle('is-ok',good);
+          o.classList.toggle('is-ko',o===b&&!good);
+        });
+        q.querySelectorAll('.qfb').forEach(function(f){f.hidden=f.getAttribute('data-k')!==k});
+        if(mech)mech.hidden=false;
+        var live=q.querySelector('.qlive');
+        if(live)live.textContent=k===ok?'Bonne réponse.':'Ce n’est pas la bonne réponse : lisez l’explication.';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
