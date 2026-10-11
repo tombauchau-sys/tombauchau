@@ -25,3 +25,7 @@ Chaque page est autonome (styles, scripts et données intégrés) : pas de serve
 ## Règles éditoriales
 
 Voir la charte éditoriale et la page Méthode : chaque chiffre est daté et relié à sa source primaire, aucune donnée manquante n’est remplacée par zéro ou estimée, les corrections sont publiées.
+
+## Licence
+
+Textes et graphiques : Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/deed.fr — réutilisation libre en citant « Chiffre Juste ». Les données restent soumises aux conditions de leurs producteurs (Eurostat, Statbel, etc.).
