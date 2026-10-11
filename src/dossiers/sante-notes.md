@@ -1,0 +1,12 @@
+# Dossier 06 Santé : données vérifiées (11 octobre 2026)
+- demo_mlexpec BE 1960-2024 (69,7 → 82,4 ; 2020 : 80,8 ; ruptures 2011, 2014) ; UE 2002-2024 (81,5 en 2024)
+- hlth_hlye (dimension hlth_hle) HLY_Y0 T : BE 2004-2024 (63,7 en 2008 ; 63,9 en 2024 ; ruptures 2005, 2019) ; UE 65,2 en 2024 ; 2024 BE M 64,0 / F 63,9 ; LE M 80,3 / F 84,4
+- hlth_sha11_hf TOT_HF % PIB : BE 2003-2024 (11,07 en 2024) ; UE 2014-2023 (9,94 en 2023) ; HF3 % CHE : BE 21,78 (2024), UE 15,19 (2023)
+- hlth_silc_08 TXP_TFAR_WLIST 16+ : BE 2024 total 1,4 ; Q1 3,0 ; Q2 1,9 ; Q3 1,1 ; Q4 0,5 ; Q5 0,4 ; UE 2,5 ; BE 2025 0,9 ; Q1 série 7,2 (2015) → 2,5 (2025)
+- hlth_cd_apr taux standardisés : BE évitable par prévention 136,93 (2023), traitable 58,83 ; UE 150,85 / 86,81 ; séries 2011-2023
+- hlth_cd_asdr2 X60-X84_Y870 : BE 19,27 (2011) → 13,46 (2023) ; UE 10,37 (2023)
+- Renard et al. 2019 (Archives of Public Health, doi 10.1186/s13690-019-0330-8), via healthybelgium : 2011, écart d'EV à 25 ans peu/très diplômés 6,1 (H) et 4,6 (F) ; EV en bonne santé 10,5 (H) et 13,4 (F) ; Bourguignon et al. 2020 : EV à la naissance quartiles socio-éco 9 (H) / 6 (F) ans
+- INAMI brochure 50 ans : assurance obligatoire 1945 ; INAMI 1/1/1964 (loi 9/8/1963) ; indépendants petits risques depuis 2008 ; MAF « à partir de 2000 » ; budget 2014 38,2 Md€
+- Cultures & Santé 2022 : loi 1894 mutualités ; 1964 accord de la Saint-Jean après grève des médecins
+- KCE 376C (2024) HSPA : antidépresseurs 11,3 % Bruxelles - 17,1 % Namur
+- RAND HIE 1971-1982 ; Oregon 2008 ; Kaplan & Milstein 2019 Ann Fam Med 17(3) ; IARC Handbook 14 (2011)

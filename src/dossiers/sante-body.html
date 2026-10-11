@@ -1,0 +1,293 @@
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 06 · Santé · avant de lire</span>
+    <h1 class="q" id="q0">Entre 2008 et 2024, l’espérance de vie en Belgique a gagné 2,6 ans. Selon vous, combien d’années en bonne santé a-t-elle gagnées ?</h1>
+    <output class="out" id="gOut" for="guess">1,5 an</output>
+    <input class="range" type="range" id="guess" min="0" max="3" step="0.1" value="1.5" aria-label="Votre estimation, en années d’espérance de vie en bonne santé gagnées">
+    <div class="scale" aria-hidden="true"><span>0</span><span>1,5</span><span>3</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>L’espérance de vie compte les années vécues ; l’espérance de vie en bonne santé ne compte que celles vécues sans limitation dans les activités habituelles, d’après ce que les personnes déclarent elles-mêmes dans une enquête. On peut vivre plus longtemps sans que les années sans limitation augmentent : les années gagnées le sont alors avec des problèmes de santé.</p><h3>Pourquoi le chiffre surprend</h3><p>On imagine que vivre plus longtemps signifie vieillir en meilleure santé. En Belgique, sur cette période, ce n’est pas le cas en moyenne. L’indicateur a toutefois connu une rupture de série en 2019, qui invite à la prudence.</p><h3>Pour réutiliser cette idée</h3><p>Devant un progrès de l’espérance de vie, demandez : combien de ces années sont vécues en bonne santé, et pour qui ?</p></div>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 06 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Santé"><span class="t1">Santé</span></h2></div>
+    <p class="lede hq" data-r>Vit-on plus longtemps en bonne santé, et notre système de soins y est-il pour quelque chose ? Trois mesures de la santé, un siècle de protection sociale, trois fiches, l’état de la recherche et huit lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>82,4 ans</b><span>d’espérance de vie à la naissance en 2024, contre 81,5 dans l’Union</span><span class="src">Eurostat demo_mlexpec</span></div>
+      <div><b>63,9 ans</b><span>d’espérance de vie en bonne santé, contre 65,2 dans l’Union</span><span class="src">Eurostat hlth_hlye, 2024</span></div>
+      <div><b>11,1 %</b><span>du PIB consacré à la santé en 2024 (Union : 9,9 % en 2023)</span><span class="src">Eurostat hlth_sha11_hf</span></div>
+      <div><b>21,8 %</b><span>des dépenses de santé payées directement par les ménages (Union : 15,2 % en 2023)</span><span class="src">Eurostat hlth_sha11_hf, 2024</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : espérance de vie 2025 d’Eurostat (printemps 2027)</p>
+  </div>
+</section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">Vit-on plus longtemps en bonne santé, et les soins y sont-ils pour quelque chose ?</h2>
+      <p class="ans">On vit nettement plus longtemps : 82,4 ans en 2024, contre 69,7 en 1960. Mais le nombre d’années vécues sans limitation n’a presque pas bougé depuis 2008 (63,9 ans), et il reste inférieur à la moyenne européenne. Le système de soins belge soigne bien : les décès qu’un traitement à temps aurait évités sont bien moins fréquents que dans l’Union. Il coûte cher (11,1 % du PIB) et laisse une part élevée à la charge des patients. Les plus grandes marges de progrès sont ailleurs : prévention, conditions de vie, écarts entre groupes sociaux.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Vivre plus longtemps n’est pas vivre plus longtemps en bonne santé : ce sont deux indicateurs différents.</li><li>Les décès évitables par la prévention (tabac, alcool, accidents…) sont plus de deux fois plus nombreux que ceux évitables par les soins.</li><li>À 25 ans, une personne peu diplômée peut espérer vivre 5 à 6 ans de moins, et 10 à 13 ans de moins en bonne santé, qu’une personne diplômée du supérieur (chiffres de 2011).</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>137 · 59</b><span>décès évitables par la prévention et par les soins, pour 100 000 habitants, 2023</span><small>Eurostat, hlth_cd_apr</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> juger un système de santé à sa seule dépense ou à la seule espérance de vie, comme si les soins expliquaient tout.</p>
+      <p class="tm-concl">Les chiffres situent les forces et les faiblesses ; combien dépenser, qui paie et quelles priorités fixer sont des choix collectifs.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- 1b. Les définitions -->
+<section class="sec papier" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois façons <span>de mesurer la santé.</span></h2>
+    <p class="lede" data-r>La santé d’une population ne se résume pas à un seul chiffre. Trois indicateurs européens, calculés de la même façon dans tous les pays, éclairent chacun une facette différente.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Durée</span><h3>L’espérance de vie</h3><p class="who">Eurostat, d’après les décès et la population</p><p>Le nombre moyen d’années qu’<b>un nouveau-né vivrait</b> si les risques de décès de l’année se maintenaient toute sa vie. Ce n’est pas une prévision : c’est un résumé de la mortalité d’une année.</p><p class="use">Sert à : comparer la mortalité entre pays et dans le temps.</p></article>
+      <article data-r><span class="tag p">Qualité</span><h3>L’espérance de vie en bonne santé</h3><p class="who">Eurostat, d’après la mortalité et l’enquête SILC</p><p>Les années vécues <b>sans limitation</b> dans les activités habituelles, selon ce que déclarent les personnes. L’indicateur dépend donc aussi de la manière dont chacun perçoit sa santé.</p><p class="use">Sert à : savoir si les années gagnées sont vécues en bonne santé.</p></article>
+      <article data-r><span class="tag u">Efficacité</span><h3>La mortalité évitable</h3><p class="who">Eurostat, d’après une liste OCDE-Eurostat de causes</p><p>Les décès avant 75 ans qui auraient pu être évités par la <b>prévention</b> (tabac, alcool, accidents, certains cancers) ou par des <b>soins</b> efficaces et à temps (infections, certaines maladies cardiaques).</p><p class="use">Sert à : distinguer ce qui relève de la prévention et ce qui relève des soins.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ un pays peut bien soigner et mal prévenir, ou l’inverse</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-vie"><span class="n">01</span><h3>Vivre plus longtemps</h3><p>Combien d’années, et en quelle santé ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-cout"><span class="n">02</span><h3>Le coût et l’accès</h3><p>Combien dépense-t-on, et qui paie ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-evitable"><span class="n">03</span><h3>L’évitable et l’inégal</h3><p>Quels décès pourrait-on éviter, et qui meurt plus tôt ?</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · des mutualités à l’INAMI</span>
+    <h2 class="giant" id="tH" data-r>Douze ans de vie <span>gagnés en soixante ans.</span></h2>
+    <p class="lede" data-r>Un nouveau-né de 1960 pouvait espérer vivre 69,7 ans ; un nouveau-né de 2024, 82,4 ans. La hausse a été presque continue, à une exception près : la pandémie de 2020, qui a fait perdre un an d’espérance de vie, rattrapé depuis.</p>
+    <div class="chart" id="leChart"></div>
+    <p class="srcl">Espérance de vie à la naissance, en années, Belgique 1960-2024 et Union 2002-2024. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_mlexpec/default/table?lang=fr" target="_blank" rel="noopener">demo_mlexpec</a> (ruptures de série en 2011 et 2014), consulté le 11 octobre 2026.</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1894</span><h3>Les mutualités</h3><p>Une loi encadre les sociétés mutualistes, nées au XIX<sup>e</sup> siècle de l’entraide ouvrière ; elles peuvent se regrouper en fédérations à partir de 1898.</p></li>
+      <li data-r><span class="yr">1945</span><h3>L’assurance obligatoire</h3><p>Avec la sécurité sociale créée à la Libération, l’assurance maladie-invalidité devient obligatoire pour les salariés.</p></li>
+      <li data-r><span class="yr">1964</span><h3>L’INAMI</h3><p>La loi du 9 août 1963 crée l’INAMI, qui fonctionne depuis le 1<sup>er</sup> janvier 1964. La même année, une grève des médecins se conclut par l’« accord de la Saint-Jean ».</p></li>
+      <li data-r><span class="yr">2000-2008</span><h3>Protéger les plus malades</h3><p>Le maximum à facturer plafonne la part des soins payée par chaque ménage ; en 2008, les indépendants sont couverts aussi pour les « petits risques ».</p></li>
+      <li data-r><span class="yr">2020</span><h3>La pandémie</h3><p>L’espérance de vie tombe de 81,8 à 80,8 ans, avant de dépasser son niveau d’avant-crise en 2023.</p></li>
+    </ol>
+    <p class="srcl">INAMI, <a href="https://www.inami.fgov.be/SiteCollectionDocuments/brochure-50-inami.pdf" target="_blank" rel="noopener">brochure des 50 ans de l’INAMI</a> ; Cultures &amp; Santé (2022), <a href="https://cultures-sante.be/wp-content/uploads/2023/11/l-histoire-des-mutualites-en-belgique-guide.pdf" target="_blank" rel="noopener"><i>L’histoire des mutualités en Belgique</i></a> ; Eurostat, demo_mlexpec.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« On vit plus longtemps, donc en meilleure santé. »</h4><p><b>Pas en Belgique depuis 2008.</b> L’espérance de vie a gagné 2,6 ans, l’espérance de vie en bonne santé à peine 0,2 an. Les années gagnées sont surtout vécues avec des limitations.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« En Belgique, les soins sont presque gratuits. »</h4><p><b>Faux.</b> Les ménages paient directement 21,8 % des dépenses de santé, plus que la moyenne de l’Union (15,2 %). Pourtant, peu de personnes renoncent à des soins (1,4 %), grâce notamment aux plafonds de dépenses.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Notre santé dépend surtout des hôpitaux et des médecins. »</h4><p><b>En partie seulement.</b> Les décès évitables par la prévention sont plus de deux fois plus nombreux que ceux évitables par les soins. Les comportements et les conditions de vie pèsent lourd. <a href="#recherche">Voir la recherche</a>.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : vivre plus longtemps -->
+<section class="sec papier" id="f-vie" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>Plus d’années, <span>pas plus d’années en bonne santé.</span></h2>
+    <p class="lede" data-r>Depuis 2008, l’écart s’est creusé entre la durée de vie et la durée de vie sans limitation. En 2024, un nouveau-né peut espérer vivre 82,4 ans, dont 63,9 sans limitation dans ses activités : environ 18 années avec des problèmes de santé. Les femmes vivent plus longtemps que les hommes (84,4 ans contre 80,3), mais pas plus longtemps en bonne santé (63,9 contre 64,0).</p>
+    <div class="chart" id="hlyChart"></div>
+    <p class="srcl">Espérance de vie et espérance de vie en bonne santé à la naissance, Belgique 2004-2024, en années. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_hlye/default/table?lang=fr" target="_blank" rel="noopener">hlth_hlye</a> (ruptures de série en 2005 et 2019) et demo_mlexpec, consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">L’espérance de vie en bonne santé</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Combien d’années, en moyenne, sont vécues sans limitation déclarée dans les activités habituelles.</li><li>Si les années de vie gagnées sont vécues en bonne ou en moins bonne santé.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Une mesure médicale de la santé : elle repose sur une seule question d’enquête, à laquelle on répond selon ses attentes et sa culture.</li><li>Une comparaison sûre entre pays : la traduction de la question et la façon d’y répondre varient.</li><li>Quelles maladies limitent les personnes.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les maladies chroniques déclarées (enquête de santé de Sciensano).</li><li>L’espérance de vie en bonne santé selon le diplôme (fiche 03).</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : coût et accès -->
+<section class="sec brun grain" id="f-cout" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Un système cher, <span>où le patient paie beaucoup.</span></h2>
+    <p class="lede" data-r>La Belgique consacre 11,1 % de son PIB à la santé (2024), plus que la moyenne de l’Union (9,9 % en 2023). Une part importante reste à charge des patients : tickets modérateurs, suppléments, médicaments et soins peu remboursés. Pourtant, peu de personnes déclarent renoncer à des soins, et cette part a baissé chez les plus modestes.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Dépenses de santé</b><span>en % du PIB, Belgique 2003-2024 et Union 2014-2023</span></figcaption><div class="chart sm" id="spendChart"></div></figure>
+      <figure data-r><figcaption><b>Renoncer à un soin</b><span>16 ans et plus, examen médical non obtenu (trop cher, trop loin ou trop d’attente), selon le revenu, 2024</span></figcaption><div class="chart sm" id="unmetChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_sha11_hf/default/table?lang=fr" target="_blank" rel="noopener">hlth_sha11_hf</a> (dépenses courantes de santé, tous financeurs ; part payée directement par les ménages : 21,8 % en Belgique en 2024, 15,2 % dans l’Union en 2023) et <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_silc_08/default/table?lang=fr" target="_blank" rel="noopener">hlth_silc_08</a> (besoins non satisfaits ; Belgique 1,4 % en 2024, Union 2,5 %). Chez les 20 % les plus modestes, la part est passée de 7,2 % en 2015 à 3,0 % en 2024 (rupture de série en 2019). Consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">La dépense de santé en % du PIB</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Quelle part de la richesse produite est consacrée aux soins, tous financeurs confondus (État, sécurité sociale, assurances, patients).</li><li>Comment elle évolue et se compare, avec une méthode internationale commune.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Si l’argent est bien utilisé : dépenser plus ne garantit pas une meilleure santé.</li><li>Qui paie : la même dépense peut reposer sur l’impôt, les cotisations ou les patients.</li><li>Si la hausse vient de plus de soins ou d’un PIB plus faible (comme en 2020).</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La dépense par habitant en pouvoir d’achat.</li><li>La part payée par les ménages selon le revenu.</li><li>Le rapport du KCE sur la performance du système belge.</li></ul></div></div>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>Le saut de 2020 (11,45 % du PIB) vient en partie de la chute du PIB pendant la pandémie, pas seulement de la hausse des dépenses : un ratio bouge quand son dénominateur bouge.</p></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : évitable et inégal -->
+<section class="band grain" id="f-evitable" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>Bien soigner <span>ne suffit pas.</span></h2>
+    <p class="lede ink" data-r>En 2023, la Belgique compte 59 décès évitables par des soins à temps pour 100 000 habitants, bien moins que l’Union (87). Mais 137 décès pour 100 000 auraient pu être évités par la prévention, un niveau plus proche de la moyenne européenne (151). Et la durée de vie dépend fortement de la position sociale.</p>
+    <div class="chart" id="avChart"></div>
+    <p class="srcl ink">Taux standardisés de mortalité évitable avant 75 ans, pour 100 000 habitants, 2011-2023. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_apr/default/table?lang=fr" target="_blank" rel="noopener">hlth_cd_apr</a>, consulté le 11 octobre 2026. La hausse de 2020-2021 vient de la Covid-19, classée comme évitable par la prévention.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Écart d’espérance de vie à 25 ans</h3><b class="big">6,1 · 4,6 ans</b><p>entre peu diplômés et diplômés du supérieur, hommes et femmes, 2011</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Écart en bonne santé</h3><b class="big">10,5 · 13,4 ans</b><p>même comparaison, espérance de vie en bonne santé, 2011</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Suicide</h3><b class="big">13,5</b><p>décès pour 100 000 habitants en 2023 (Union : 10,4), contre 19,3 en 2011</p></div>
+    </div>
+    <p class="srcl ink">Sources : F. Renard et al. (2019), <i>Archives of Public Health</i>, doi <a href="https://doi.org/10.1186/s13690-019-0330-8" target="_blank" rel="noopener">10.1186/s13690-019-0330-8</a>, présenté par Sciensano sur <a href="https://www.healthybelgium.be/en/health-status/health-inequalities/inequalities-in-life-expectancy-and-quality-of-life" target="_blank" rel="noopener">healthybelgium.be</a> ; Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_asdr2/default/table?lang=fr" target="_blank" rel="noopener">hlth_cd_asdr2</a> (taux standardisés). Les écarts par diplôme datent du recensement de 2011 : ce sont les données détaillées les plus récentes trouvées.</p>
+    <div class="snow light" data-r>
+      <h3 class="sub">Besoin de parler ?</h3>
+      <p>Si ces chiffres vous touchent personnellement ou si vous traversez une période difficile, vous pouvez appeler gratuitement le Centre de prévention du suicide au <b>0800 32 123</b> (en français) ou la Zelfmoordlijn au <b>1813</b> (en néerlandais), ou en parler à un médecin ou à une personne de confiance.</p>
+    </div>
+    <div class="canwhat" data-r><p class="cw-t">La mortalité évitable</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Combien de décès avant 75 ans relèvent de causes que la prévention ou les soins peuvent en principe éviter.</li><li>Où se situent les marges de progrès : prévention, soins, ou les deux.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Que chacun de ces décès aurait pu être évité : la liste repose sur un consensus d’experts, par grandes causes.</li><li>Quelle politique de prévention fonctionne.</li><li>La qualité de vie des personnes qui survivent.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les causes principales (cancer du poumon, maladies cardiaques, alcool).</li><li>Les écarts entre Régions et entre groupes sociaux.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="__HOME__#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Maîtriser les dépenses, garantir l’accès, améliorer la santé : ces trois objectifs se contredisent souvent. Pour chaque levier : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Faire payer davantage le patient</h3><dl><dt>Le mécanisme</dt><dd>Augmenter le ticket modérateur pour réduire la consommation de soins.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Dans une expérience aléatoire aux États-Unis (RAND), payer une partie des soins a réduit les dépenses de 20 à 30 %, sans effet sur la santé moyenne, mais au détriment des plus pauvres et des plus malades (tension artérielle, vue).</dd><dt>Ce qui reste incertain</dt><dd>La transposition à la Belgique, où la part payée par les ménages est déjà élevée.</dd><dt>Ce qu’on sacrifie</dt><dd>L’accès des plus modestes et des malades chroniques.</dd></dl></article><article class="opt" data-r><h3>Rendre les soins plus accessibles</h3><dl><dt>Le mécanisme</dt><dd>Réduire ce que paient les patients (tiers payant, plafonds, meilleure couverture).</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> En Oregon, gagner une assurance par tirage au sort a augmenté le recours aux soins, quasi supprimé les dépenses catastrophiques et réduit la dépression ; aucun effet mesurable sur la tension ou le cholestérol en deux ans.</dd><dt>Ce qui reste incertain</dt><dd>Les effets sur la santé physique à long terme.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût plus élevé pour la collectivité.</dd></dl></article><article class="opt" data-r><h3>Investir dans la prévention</h3><dl><dt>Le mécanisme</dt><dd>Taxes sur le tabac et l’alcool, dépistage, vaccination, sécurité routière.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Le Centre international de recherche sur le cancer (OMS) conclut que les hausses de taxes qui augmentent le prix du tabac réduisent sa consommation, y compris chez les jeunes.</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Les économies réalisées : des personnes qui vivent plus longtemps consomment aussi des soins plus tard.</dd><dt>Ce qu’on sacrifie</dt><dd>Une part de liberté individuelle, et un poids proportionnellement plus lourd pour les fumeurs à petit revenu.</dd></dl></article><article class="opt" data-r><h3>Agir sur les conditions de vie</h3><dl><dt>Le mécanisme</dt><dd>Logement, éducation, revenus, conditions de travail : réduire les écarts sociaux de santé.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> L’écart d’espérance de vie en bonne santé à 25 ans atteint 10 à 13 ans selon le diplôme (Renard et al., 2019).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Quelles politiques réduisent effectivement ces écarts, et en combien de temps.</dd><dt>Ce qu’on sacrifie</dt><dd>Des moyens importants pour des effets lents et difficiles à mesurer.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>La maîtrise des dépenses</td><td>L’accès aux soins des plus modestes</td></tr><tr><td>La gratuité des soins</td><td>L’équilibre des comptes de l’assurance maladie</td></tr><tr><td>La prévention par les taxes</td><td>Le pouvoir d’achat des ménages modestes</td></tr><tr><td>La liberté de choix du patient et du médecin</td><td>La coordination et le contrôle des coûts</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>La santé est-elle <span>un bien comme un autre ?</span></h2>
+    <p class="lede" data-r>Marché ou solidarité, soin ou prévention, responsabilité individuelle ou collective : les chiffres ne tranchent pas. Huit traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>de la santé ?</span></h2>
+    <p class="lede ink" data-r>En Belgique, la santé est partagée entre l’État fédéral, qui finance l’essentiel des soins, et les entités fédérées, chargées notamment de la prévention. Les mutualités et les représentants des soignants participent à la gestion de l’assurance maladie.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>État fédéral</h3><ul><li>Assurance maladie-invalidité (INAMI) : remboursements et indemnités</li><li>Financement des hôpitaux, prix des médicaments</li><li>Exercice des professions de santé</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Mutualités et soignants</h3><ul><li>Remboursement aux affiliés</li><li>Accords tarifaires entre mutualités et prestataires, au sein de l’INAMI</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Communautés et Régions</h3><ul><li>Prévention et promotion de la santé (dépistage, vaccination)</li><li>Normes des hôpitaux, maisons de repos, première ligne</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Union européenne</h3><ul><li>Autorisation des médicaments, coordination face aux crises sanitaires</li><li>L’organisation des soins reste une compétence nationale</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Lire l’espérance de vie comme une prédiction</h3><p>Elle résume les risques de décès d’une année donnée. Un enfant né en 2024 vivra probablement plus longtemps que 82,4 ans si la mortalité continue de baisser.</p></li>
+      <li data-r><span class="g">2</span><h3>Comparer la « bonne santé » entre pays</h3><p>Elle repose sur ce que les gens déclarent. Les attentes, la culture et la traduction de la question influencent les réponses.</p></li>
+      <li data-r><span class="g">3</span><h3>Confondre dépense et performance</h3><p>Dépenser plus peut refléter des prix plus élevés, une population plus âgée ou des soins inutiles, pas forcément une meilleure santé.</p></li>
+      <li data-r><span class="g">4</span><h3>Oublier les petits nombres</h3><p>La part de personnes qui renoncent aux soins vient d’une enquête : chez les plus aisés, les valeurs proches de zéro sont peu précises.</p></li>
+      <li data-r><span class="g">5</span><h3>Lire une corrélation comme une cause</h3><p>Les peu diplômés vivent moins longtemps, mais le diplôme seul n’explique pas tout : revenus, métiers, logement et comportements se cumulent.</p></li>
+      <li data-r><span class="g">6</span><h3>Utiliser des données trop anciennes</h3><p>Les écarts par diplôme les plus détaillés datent de 2011. Ils décrivent une tendance de fond, pas forcément la situation actuelle.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="c" data-r><p class="qq">1. Un pays voit ses dépenses de santé passer de 10 % à 11 % du PIB en un an. Que faut-il vérifier avant de dire qu’il dépense davantage pour la santé ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Rien : la hausse du ratio prouve que les dépenses ont augmenté.</button><button type="button" data-k="b" aria-pressed="false">Le nombre de médecins.</button><button type="button" data-k="c" aria-pressed="false">L’évolution du PIB : s’il a baissé, le ratio monte même à dépense égale.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Un ratio peut monter parce que son dénominateur baisse.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> Cela ne dit rien de l’évolution du ratio.</p><p class="qfb" data-k="c" hidden><b>Exact.</b> C’est ce qui s’est passé en 2020 : le PIB a chuté pendant la pandémie.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un ratio a deux termes. Avant d’interpréter sa hausse, regardez séparément le numérateur (les dépenses) et le dénominateur (le PIB).</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="b" data-r><p class="qq">2. Deux pays ont la même espérance de vie, 82 ans. Dans le pays A, l’espérance de vie en bonne santé est de 70 ans ; dans le pays B, de 62 ans. Que peut-on en dire ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Les deux pays ont la même santé, puisqu’on y vit aussi longtemps.</button><button type="button" data-k="b" aria-pressed="false">Dans le pays B, on déclare plus d’années de limitation ; il faut vérifier si cela vient de la santé réelle ou de la manière de répondre à l’enquête.</button><button type="button" data-k="c" aria-pressed="false">Le pays A dépense forcément plus pour la santé.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> La durée de vie ne dit rien de la qualité des années vécues.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> L’écart peut refléter une vraie différence de santé, mais aussi des façons différentes de percevoir et de déclarer ses limitations.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Rien ne relie directement cet indicateur à la dépense.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un indicateur fondé sur des déclarations mesure aussi la manière de répondre. On le recoupe avec des données objectives (maladies diagnostiquées, mortalité).</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="hly" aria-pressed="true">Bonne santé</button>
+        <button type="button" data-k="dep" aria-pressed="false">Dépenses</button>
+        <button type="button" data-k="evi" aria-pressed="false">Évitable</button>
+        <button type="button" data-k="ine" aria-pressed="false">Inégalités</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées le 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat : <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_mlexpec/default/table?lang=fr" target="_blank" rel="noopener">demo_mlexpec</a> (espérance de vie), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_hlye/default/table?lang=fr" target="_blank" rel="noopener">hlth_hlye</a> (années en bonne santé), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_sha11_hf/default/table?lang=fr" target="_blank" rel="noopener">hlth_sha11_hf</a> (dépenses), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_silc_08/default/table?lang=fr" target="_blank" rel="noopener">hlth_silc_08</a> (besoins non satisfaits), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_apr/default/table?lang=fr" target="_blank" rel="noopener">hlth_cd_apr</a> (mortalité évitable), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_asdr2/default/table?lang=fr" target="_blank" rel="noopener">hlth_cd_asdr2</a> (causes de décès).</li>
+      </ol>
+      <h3 class="mt">Niveau 3 · institutions publiques</h3><ol>
+        <li>Gerkens, S. et al. (2024). <a href="https://sciensano.be/sites/default/files/kce376c_hspa2024_report.pdf" target="_blank" rel="noopener"><i>Performance of the Belgian Health System: Report 2024</i></a>. KCE Report 376C, KCE, Sciensano et INAMI.</li>
+        <li>Sciensano, <a href="https://www.healthybelgium.be/en/health-status/health-inequalities/inequalities-in-life-expectancy-and-quality-of-life" target="_blank" rel="noopener">Inequalities in life expectancy and quality of life</a>, healthybelgium.be.</li>
+        <li>INAMI, <a href="https://www.inami.fgov.be/SiteCollectionDocuments/brochure-50-inami.pdf" target="_blank" rel="noopener">50 ans de l’INAMI</a>.</li>
+        <li>Centre international de recherche sur le cancer (2011). <a href="https://handbooks.iarc.who.int/documents-handbooks/hb14/vol14-evaluations.pdf" target="_blank" rel="noopener"><i>Effectiveness of Tax and Price Policies for Tobacco Control</i></a>. IARC Handbooks of Cancer Prevention, vol. 14.</li>
+      </ol>
+      <h3 class="mt">Histoire</h3><ol>
+        <li>Cultures &amp; Santé (2022). <a href="https://cultures-sante.be/wp-content/uploads/2023/11/l-histoire-des-mutualites-en-belgique-guide.pdf" target="_blank" rel="noopener"><i>L’histoire des mutualités en Belgique</i></a>.</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Baicker, K. et al. (2013). « The Oregon Experiment: Effects of Medicaid on Clinical Outcomes ». <i>New England Journal of Medicine</i>, 368 ; Finkelstein, A. et al. (2012). « The Oregon Health Insurance Experiment: Evidence from the First Year ». <i>Quarterly Journal of Economics</i>, 127(3) ; synthèse : <a href="https://www.povertyactionlab.org/es/node/1825" target="_blank" rel="noopener">J-PAL</a>.</li>
+        <li>Kaplan, R. M. et Milstein, A. (2019). « <a href="https://www.annfammed.org/content/17/3/267" target="_blank" rel="noopener">Contributions of Health Care to Longevity: A Review of 4 Estimation Methods</a> ». <i>Annals of Family Medicine</i>, 17(3), 267-272.</li>
+        <li>Manning, W. et al. (1987). « Health Insurance and the Demand for Medical Care: Evidence from a Randomized Experiment ». <i>American Economic Review</i>, 77(3) ; synthèse : <a href="https://www.rand.org/pubs/research_briefs/RB9174.html" target="_blank" rel="noopener">RAND</a>.</li>
+        <li>Renard, F. et al. (2019). « Evolution of educational inequalities in life and health expectancies at 25 years in Belgium between 2001 and 2011: a census-based study ». <i>Archives of Public Health</i>, doi <a href="https://doi.org/10.1186/s13690-019-0330-8" target="_blank" rel="noopener">10.1186/s13690-019-0330-8</a>.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Arrow, K. (1963). « Uncertainty and the Welfare Economics of Medical Care ». <i>American Economic Review</i>, 53(5).</li>
+        <li>Beveridge, W. (1942). <i>Social Insurance and Allied Services</i>. HMSO.</li>
+        <li>Canguilhem, G. (1966). <i>Le normal et le pathologique</i>. PUF.</li>
+        <li>Daniels, N. (2008). <i>Just Health</i>. Cambridge University Press.</li>
+        <li>Friedman, M. (1962). <i>Capitalism and Freedom</i>. University of Chicago Press.</li>
+        <li>Illich, I. (1975). <i>Némésis médicale</i>. Seuil.</li>
+        <li>Marmot, M. (2015). <i>The Health Gap</i>. Bloomsbury.</li>
+        <li>Sen, A. (1999). <i>Development as Freedom</i>. Oxford University Press.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="__HOME__#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 06 · Santé · vérifié le 11 octobre 2026</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>

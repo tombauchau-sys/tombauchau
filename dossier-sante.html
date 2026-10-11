@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Santé en Belgique : espérance de vie et années en bonne santé, dépenses et accès aux soins, mortalité évitable, inégalités sociales, histoire de l’assurance maladie, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.">
+<meta property="og:title" content="Santé · Chiffre Juste">
+<meta property="og:description" content="Santé en Belgique : espérance de vie et années en bonne santé, dépenses et accès aux soins, mortalité évitable, inégalités sociales, histoire de l’assurance maladie, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.">
+<title>Santé · Chiffre Juste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&display=swap">
+<style>
+/* ADN Chiffre Juste, fiche modèle. Univers alternés : brun (faits), papier (lecture), aplats de chapitre (exploration). Le fait en grotesque, la lecture en serif, les pièges à la main. Un seul univers visuel, identique en thème clair et sombre. */
+:root{
+  --brown:#1E1914; --cream:#EDE6DC; --cream-dim:#A69C8F; --hair:#3B332B; --copper:#C9773A;
+  --off:#F7F6F2; --ink:#222222; --grey:#6A665F; --rule:#D7D4CC;
+  --red:#E2402B; --red-ink:#C0341E; --line:#1A1A1A; --lilac:#9C98F0; --orange:#F09A3E; --pink:#EFA3CB; --mint:#7FB6A3; --blue:#7E9CC4; --peach:#F2A07B;
+  --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --main:"Caveat","Segoe Print","Bradley Hand",cursive;
+  --ease:cubic-bezier(.2,.7,.2,1); --ease-io:cubic-bezier(.6,0,.2,1);
+  --xgrid:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><path d='M21 21l6 6m0-6l-6 6' stroke='%23453B31' stroke-width='1.2' fill='none'/></svg>");
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--brown);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+p{margin:0}
+h1,h2,h3,h4{margin:0;font-weight:400;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+sup{font-size:.65em;line-height:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+.note{font-family:var(--main);font-weight:600;line-height:1.05}
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.06;pointer-events:none;z-index:0;mix-blend-mode:overlay}
+.grain>*{position:relative;z-index:1}
+.sec{padding-block:96px}
+.brun{background:var(--brown);color:var(--cream)}
+.papier{background:var(--off);color:var(--ink)}
+.kick{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.brun .kick{color:var(--copper)} .papier .kick{color:var(--grey)}
+.giant{font-family:var(--serif);font-size:clamp(56px,9vw,132px);line-height:.9;letter-spacing:-.02em}
+.giant span{color:var(--grey)} .brun .giant span{color:var(--cream-dim)}
+.lede{font-size:clamp(19px,1.9vw,24px);line-height:1.35;max-width:46ch}
+.papier .lede{color:#3D3A35}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 22px;font-weight:600;font-size:15px;text-decoration:none;border:0;transition:transform .35s var(--ease)}
+.pill.cream{background:var(--cream);color:var(--brown)} .pill.ink{background:var(--line);color:#fff}
+.pill .arr{transition:transform .35s var(--ease)} .pill:hover .arr{transform:translateX(5px)}
+.skew{display:inline-block;border:1.5px solid currentColor;padding:9px 14px;font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transform:skewX(-10deg);background:none}
+.skew span{display:inline-block;transform:skewX(10deg)}
+.skew[aria-pressed="true"]{background:currentColor}
+.skew[aria-pressed="true"] span{color:var(--brown)}
+
+/* Navigation */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--brown);display:grid;grid-template-columns:repeat(2,1fr) 110px repeat(3,1fr);border-bottom:1px solid var(--hair)}
+nav.top a{display:flex;align-items:center;justify-content:center;height:56px;text-decoration:none;font-weight:500;font-size:15px;border-right:1px solid var(--hair);position:relative;overflow:hidden}
+nav.top a:last-child{border-right:0}
+nav.top a .lbl{display:block;transition:transform .45s var(--ease)}
+nav.top a .lbl::after{content:attr(data-t);position:absolute;left:0;right:0;top:100%;text-align:center;color:var(--copper)}
+nav.top a:hover .lbl{transform:translateY(-100%)}
+nav.top a.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--copper)}
+nav.top .mark span{width:30px;height:30px;border-radius:50%;border:6px solid var(--cream);border-right-color:transparent;transform:rotate(-30deg);transition:transform .8s var(--ease)}
+nav.top .mark:hover span{transform:rotate(330deg)}
+
+/* 0. Seuil : devinez d'abord */
+.seuil{background-image:var(--xgrid);min-height:calc(100vh - 56px);display:grid;place-items:center;padding-block:64px;text-align:center}
+.seuil .q{font-family:var(--serif);font-size:clamp(30px,4vw,56px);line-height:1.05;max-width:20ch;margin:14px auto 0}
+.seuil .out{display:block;font-weight:700;font-size:clamp(96px,19vw,250px);line-height:.85;letter-spacing:-.05em;margin:24px 0 8px;font-variant-numeric:tabular-nums}
+.range{width:min(560px,86vw);margin:8px auto 0;display:block;appearance:none;-webkit-appearance:none;background:transparent;height:34px}
+.range::-webkit-slider-runnable-track{height:2px;background:var(--cream-dim)}
+.range::-moz-range-track{height:2px;background:var(--cream-dim)}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--copper);margin-top:-12px;border:3px solid var(--brown);box-shadow:0 0 0 1.5px var(--copper)}
+.range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--copper);border:3px solid var(--brown)}
+.scale{display:flex;justify-content:space-between;width:min(560px,86vw);margin:0 auto;font-size:12.5px;color:var(--cream-dim)}
+.seuil .acts{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:30px}
+.seuil .skew{color:var(--cream-dim)}
+.verdict{max-width:34ch;margin:28px auto 0;font-size:28px;color:var(--cream)}
+.verdict .down{display:block;font-size:40px;margin-top:6px;animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* 1. Héros : triptyque */
+.hero{background-image:var(--xgrid);padding-top:60px;overflow:hidden}
+.hero .stage{position:relative;height:min(480px,52vw);min-height:300px}
+.hero svg.discs{position:absolute;left:50%;top:0;height:100%;transform:translateX(-50%);overflow:visible}
+.hero .row{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:14px;pointer-events:none}
+.side{font-family:var(--serif);font-size:clamp(26px,3.6vw,48px);line-height:1;white-space:nowrap}
+.conn{flex:1;height:1px;background:var(--cream-dim);opacity:.6;position:relative;min-width:20px}
+.conn::after{content:"×";position:absolute;top:-11px;right:-4px;font-size:16px;color:var(--cream-dim)}
+.conn.r::after{right:auto;left:-4px}
+.hero .gap{flex:0 0 calc(max(300px,min(480px,52vw)) * .93)}
+.title{font-weight:700;font-size:clamp(54px,10.5vw,150px);line-height:.86;letter-spacing:-.045em;margin-top:40px}
+.title .t2{color:var(--cream-dim)}
+.title .ch{display:inline-block}.title .wd{display:inline-block;white-space:nowrap}
+.split .ch{transform:translateY(105%);opacity:0}
+.split.go .ch{transform:none;opacity:1;transition:transform .9s var(--ease),opacity .9s var(--ease)}
+.titlebox{overflow:hidden;padding-bottom:.08em}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:48px}
+.facts div{padding:26px 22px 28px;border-right:1px solid var(--hair)}
+.facts div:first-child{padding-left:0}
+.facts div:last-child{border-right:0}
+.facts b{display:block;white-space:nowrap;font-weight:700;font-size:clamp(26px,3vw,44px);letter-spacing:-.02em;line-height:1}
+.facts span{display:block;font-size:14.5px;color:var(--cream-dim);margin-top:10px}
+.facts .src{font-size:12px;margin-top:6px;opacity:.8}
+
+/* 2. Définition */
+.crit{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.crit li{display:grid;grid-template-columns:80px minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--rule)}
+.crit .n{font-family:var(--serif);font-style:italic;font-size:44px;line-height:1;color:var(--red)}
+.crit h3{font-weight:700;font-size:clamp(26px,3vw,40px);letter-spacing:-.02em;line-height:1}
+.crit p{font-size:16px;color:#3D3A35}
+.aside-note{margin-top:22px;color:var(--grey);font-size:15.5px;max-width:60ch}
+
+/* Bande d'exploration (aplat) */
+.band{padding-block:80px;color:var(--line)}
+.band .bandin{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
+.band h2{font-family:var(--serif);font-size:clamp(46px,6vw,84px);line-height:.92}
+.band .hint{font-size:30px;margin-top:14px;transform:rotate(-3deg);display:inline-block}
+.bulle{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:28px;padding:28px;box-shadow:8px 8px 0 var(--line)}
+.bulle .step{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.bulle .qq{font-family:var(--serif);font-size:clamp(26px,2.8vw,36px);line-height:1.1;margin:10px 0 20px}
+.bulle .opts{display:flex;gap:10px;flex-wrap:wrap}
+.bulle .opts button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:10px 26px;font-weight:700;font-size:15px;transition:transform .2s var(--ease),background .2s ease}
+.bulle .opts button:hover{background:var(--line);color:#fff;transform:translateY(-2px)}
+.bulle .res{font-weight:700;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.02em;line-height:1;margin:8px 0 12px}
+.bulle .path{font-size:13.5px;color:var(--grey);margin-top:14px}
+.bulle .again{margin-top:16px;border:0;background:none;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.tag{display:inline-block;border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700}
+.tag.u{background:var(--red-ink);color:#fff}.tag.e{background:var(--line);color:#fff}.tag.p{background:var(--orange);color:var(--line)}.tag.i{border:1.5px solid var(--line)}
+.bulle.pop{animation:pop .45s var(--ease)}
+@keyframes pop{from{transform:translateY(10px) rotate(-1deg)}}
+
+/* 3. Sources */
+.srcs{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.srcs li{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) 170px;gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid var(--rule)}
+.srcs h3{font-family:var(--serif);font-size:clamp(26px,2.8vw,38px);line-height:1}
+.srcs .who{font-weight:600;font-size:15px}
+.srcs .how{font-size:15px;color:#3D3A35}
+.srcs .val{font-weight:700;font-size:clamp(28px,3vw,42px);letter-spacing:-.02em;text-align:right;line-height:1}
+.srcs .val small{display:block;font-weight:500;font-size:12.5px;letter-spacing:0;color:var(--grey);margin-top:6px}
+.srcs .hand{position:absolute;right:190px;top:-14px;color:var(--red);font-size:26px;transform:rotate(-4deg);white-space:nowrap}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.two h4{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.two .ok h4{color:var(--grey)} .two .ko h4{color:var(--red-ink)}
+.two p{font-family:var(--serif);font-size:22px;line-height:1.3}
+
+/* 4. Réforme */
+.reform .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:44px}
+.reform .grid3 div{padding:30px 24px 32px;border-right:1px solid var(--hair)}
+.reform .grid3 div:first-child{padding-left:0}.reform .grid3 div:last-child{border-right:0}
+.reform b{display:block;font-weight:700;font-size:clamp(44px,5.6vw,80px);letter-spacing:-.04em;line-height:.9}
+.reform span{display:block;color:var(--cream-dim);font-size:15px;margin-top:12px;max-width:28ch}
+
+/* Graphiques */
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart{margin-top:44px}
+.seg-bar rect.s{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform 1s var(--ease)}
+.seg-bar.play rect.s{transform:none}
+.drawline{stroke-dasharray:2000;stroke-dashoffset:2000}
+.play .drawline{transition:stroke-dashoffset 2.6s var(--ease-io);stroke-dashoffset:0}
+.fadein{opacity:0;transition:opacity .6s ease 2.2s}
+.play .fadein{opacity:1}
+.evs{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.evs button{border:1.5px solid var(--cream-dim);background:none;color:var(--cream);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;transition:background .2s ease}
+.evs button[aria-pressed="true"]{background:var(--cream);color:var(--brown);border-color:var(--cream)}
+.evtext{font-family:var(--serif);font-size:24px;line-height:1.3;margin-top:22px;max-width:52ch;min-height:4em}
+.pills .bar{transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease)}
+.pills.play .bar{transform:none}
+
+/* 6. Limites */
+.lim{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid var(--ink)}
+.lim li{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr) minmax(0,1.2fr);gap:20px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--rule);overflow:hidden}
+.lim .g{font-family:var(--serif);font-size:56px;line-height:.8;color:var(--red)}
+.lim h3{font-family:var(--serif);font-size:clamp(28px,3vw,42px);line-height:1}
+.lim p{font-size:16px;color:#3D3A35}
+
+/* 7. Lectures */
+.reads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin-top:48px}
+.read{border-top:1px solid var(--ink);padding:22px 0 34px}
+.read .trad{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.read h3{font-family:var(--serif);font-size:clamp(28px,2.8vw,38px);line-height:1.05;margin-top:8px}
+.read .w{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--grey);margin-top:4px}
+.read .th{font-family:var(--serif);font-size:22px;line-height:1.3;margin-top:14px}
+.read .so{font-size:15px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule)}
+.read .so b{font-weight:700;color:var(--red-ink);margin-right:6px}
+
+/* 8. Citer */
+.cite .bulle .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.cite .bulle .chips button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:13.5px}
+.cite .bulle .chips button[aria-pressed="true"]{background:var(--line);color:#fff}
+.cite .quote{font-family:var(--serif);font-size:clamp(22px,2.3vw,28px);line-height:1.3}
+.cite .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:20px}
+.copied{font-size:14px;font-weight:600}
+
+/* 9. Sources + pied */
+.biblio{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.biblio ol,.biblio ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:14.5px;color:var(--cream-dim)}
+.biblio ul{list-style:none;padding:0}
+.biblio a{color:var(--cream)}
+.biblio h3{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin-bottom:14px}
+footer{border-top:1px solid var(--hair);overflow:hidden}
+footer .meta{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:22px 20px;font-size:14px;color:var(--cream-dim)}
+footer .wm{font-weight:700;font-size:clamp(70px,17.5vw,232px);letter-spacing:-.05em;line-height:.76;white-space:nowrap;text-align:center;margin:16px 0 -.17em}
+
+/* Révélations, curseur, accessibilité */
+.js [data-r]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-r].in{opacity:1;transform:none}
+.cursor{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--copper);pointer-events:none;z-index:60;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s ease;display:none}
+.cursor.big{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(201,119,58,.22);border:1.5px solid var(--copper)}
+@media (pointer:fine){.cursor{display:block}}.cursor{opacity:0}.cursor.on{opacity:1}
+.a11y{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:8px;background:var(--off);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:4px 14px 4px 4px;font-size:13px;font-weight:600}
+.a11y b{background:var(--line);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px}
+.a11y[aria-pressed="true"] b{background:var(--red)}
+html.calm *{animation:none!important;transition:none!important}
+html.calm .drawline{stroke-dashoffset:0!important}
+html.calm .split .ch{transform:none!important;opacity:1!important}
+html.calm [data-r],html.calm .fadein{opacity:1!important;transform:none!important}
+html.calm .seg-bar rect.s,html.calm .pills .bar{transform:none!important}
+html.calm .cursor{display:none!important}
+html.calm .grain::before{display:none}
+html.calm .seuil,html.calm .hero{background-image:none}
+html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
+
+@media (max-width:900px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(3){padding-left:0;border-top:1px solid var(--hair)}
+  .facts div:nth-child(4){border-top:1px solid var(--hair)}
+  .crit li,.lim li{grid-template-columns:56px minmax(0,1fr)}
+  .crit p,.lim p{grid-column:2}
+  .band .bandin,.two,.reads,.biblio{grid-template-columns:1fr}
+  .srcs li{grid-template-columns:1fr 1fr}
+  .srcs .val{text-align:left}
+  .srcs .hand{right:0}
+  .reform .grid3{grid-template-columns:1fr}
+  .reform .grid3 div{padding-left:0;border-right:0;border-bottom:1px solid var(--hair)}
+  .hero .row{top:auto;bottom:-6px;transform:none;justify-content:space-between}
+  .hero .gap,.conn{display:none}
+  .side{font-size:24px}
+  .title{margin-top:60px}
+}
+@media (max-width:600px){
+  nav.top{grid-template-columns:1fr 1fr 64px 1fr 1fr}
+  nav.top a{font-size:12.5px;height:48px;text-align:center}
+  nav.top a.lang{display:none}
+  .sec{padding-block:68px}
+  .bulle{padding:20px;box-shadow:5px 5px 0 var(--line)}
+  .facts div{padding:20px 12px 22px}
+  .a11y{font-size:11.5px;padding:3px 10px 3px 3px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.drawline{stroke-dashoffset:0!important}.split .ch{transform:none!important;opacity:1!important}.js [data-r],.fadein{opacity:1!important;transform:none!important}.seg-bar rect.s,.pills .bar{transform:none!important}}
+/* Dossier : composants propres */
+@media (min-width:601px){nav.top{grid-template-columns:repeat(2,1fr) 110px repeat(3,1fr)}}
+.giant+.lede,h2+.lede{margin-top:20px}
+.seuil .q{max-width:24ch}
+.bet{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.betb{border:2.5px solid var(--cream);background:none;color:var(--cream);border-radius:999px;padding:14px 26px;font-weight:700;font-size:16px;transition:transform .3s var(--ease),background .2s ease,color .2s ease}
+.betb:hover{transform:translateY(-3px) rotate(-1.5deg);background:var(--cream);color:var(--brown)}
+.betb[aria-pressed="true"]{background:var(--copper);border-color:var(--copper);color:var(--brown)}
+.betb:disabled{cursor:default}
+.duel{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:24px;align-items:center;margin:44px auto 0;max-width:980px}
+.duel>div{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:28px;padding:26px 22px;box-shadow:8px 8px 0 var(--copper);text-align:left}
+.duel .side-c{transform:rotate(-1.5deg)}.duel .side-i{transform:rotate(1.5deg);background:var(--lilac)}
+.duel b{display:block;font-weight:700;font-size:clamp(44px,6.4vw,88px);letter-spacing:-.04em;line-height:.9;font-variant-numeric:tabular-nums}
+.duel span{display:block;font-size:16px;margin-top:10px;font-weight:600}
+.duel small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.duel .side-i small{color:#3D3A35}
+.duel .vs{font-family:var(--serif);font-style:italic;font-size:44px;color:var(--cream-dim)}
+.seuil .passer{margin-top:34px;color:var(--cream-dim)}
+.verdict{max-width:40ch}
+.verdict a{color:var(--copper)}
+.hq{margin-top:28px}
+.maj{margin-top:22px;font-size:13.5px;color:var(--cream-dim)}
+.papier .maj{color:var(--grey)}
+.sommaire{padding-block:88px}
+.sommaire h2{font-family:var(--serif);font-size:clamp(56px,8vw,120px);line-height:.9}
+.sommaire .hint{font-size:30px;transform:rotate(-3deg);display:inline-block;margin-top:6px}
+.cards{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.cards li{rotate:var(--rot);transition:rotate .45s var(--ease),translate .45s var(--ease),opacity .9s var(--ease),transform .9s var(--ease)}
+.cards li:hover{rotate:0deg;translate:0 -6px}
+.cards a{display:flex;flex-direction:column;height:100%;min-height:260px;background:var(--bg);color:var(--line);border:2.5px solid var(--line);border-radius:26px;padding:22px;text-decoration:none;box-shadow:7px 7px 0 var(--line)}
+.cards .n{font-family:var(--serif);font-style:italic;font-size:46px;line-height:1;color:var(--red)}
+.cards h3{font-weight:700;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;line-height:1.05;margin-top:12px}
+.cards p{font-family:var(--serif);font-size:20px;line-height:1.2;margin-top:10px}
+.cards .go{margin-top:auto;padding-top:18px;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.count3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid var(--ink)}
+.count3 article{padding:26px 26px 30px 0;border-right:1px solid var(--rule)}
+.count3 article+article{padding-left:26px}
+.count3 article:last-child{border-right:0;padding-right:0}
+.count3 h3{font-family:var(--serif);font-size:clamp(28px,2.6vw,38px);line-height:1;margin-top:14px}
+.count3 .who{font-weight:600;font-size:14.5px;color:var(--grey);margin-top:6px}
+.count3 p{font-size:16px;color:#3D3A35;margin-top:14px}
+.count3 .use{font-weight:600;color:var(--ink);border-top:1px dashed var(--rule);padding-top:12px}
+.hand-note{font-size:28px;color:var(--red);margin-top:30px;transform:rotate(-1.5deg);display:inline-block}
+.srcl{font-size:13px;color:var(--cream-dim);margin-top:14px;max-width:110ch}
+.papier .srcl{color:var(--grey)}
+.srcl a{color:inherit;text-underline-offset:2px}
+.ink,.ink .srcl,.srcl.ink{color:var(--line)}
+.giant.ink span{color:rgba(26,26,26,.55)}
+.lede.ink{color:var(--line)}
+.kick.dark{color:var(--line)}
+.sub{font-weight:700;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em;margin-top:64px}
+.sub .note{font-size:22px;color:var(--red);margin-left:10px;font-weight:600;letter-spacing:0}
+.chart .lbl{font-family:var(--sans)}
+.inval{padding-block:96px}
+.invgrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:40px;align-items:center;margin-top:40px}
+.stickers{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.stickers li{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:24px;padding:18px 20px;box-shadow:6px 6px 0 var(--line);rotate:var(--rot)}
+.stickers b{display:block;font-weight:700;font-size:clamp(36px,4vw,54px);letter-spacing:-.04em;line-height:.9}
+.stickers span{display:block;font-weight:600;font-size:16px;margin-top:6px}
+.stickers small{display:block;font-size:12.5px;color:var(--grey);margin-top:4px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px}
+.duo figure{margin:0;border-top:1px solid var(--ink);padding-top:16px}
+.duo figcaption b{display:block;font-weight:700;font-size:20px}
+.duo figcaption span{display:block;font-size:14.5px;color:var(--grey);margin-top:2px}
+.chart.sm{margin-top:16px}
+.trap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:baseline;margin-top:40px;background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px 24px;box-shadow:6px 6px 0 var(--red);max-width:820px}
+.trap .note{font-size:32px;color:var(--red);transform:rotate(-4deg)}
+.trap p{font-family:var(--serif);font-size:22px;line-height:1.3}
+/* Recherche */
+.legend-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.bdg{display:inline-block;border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1.5px solid currentColor}
+.b-et{background:var(--mint);color:var(--line);border-color:var(--mint)}
+.b-ma{background:var(--blue);color:var(--line);border-color:var(--blue)}
+.b-de{background:var(--orange);color:var(--line);border-color:var(--orange)}
+.b-pe{background:none;color:var(--cream)}
+.rq{border-top:1px solid var(--hair);margin-top:48px;padding-top:30px}
+.rq .qh{display:grid;grid-template-columns:80px minmax(0,1fr);gap:20px;align-items:baseline}
+.rq .qn{font-family:var(--serif);font-style:italic;font-size:56px;line-height:.8;color:var(--copper)}
+.rq h3{font-family:var(--serif);font-size:clamp(30px,3.4vw,48px);line-height:1}
+.rq .verd{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.rq .verd p{font-size:17px;color:var(--cream);max-width:70ch;margin-top:10px;flex-basis:100%}
+.studies{list-style:none;margin:26px 0 0 100px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.study{border:1.5px solid var(--hair);border-radius:20px;padding:18px 20px;background:rgba(237,230,220,.03)}
+.study .meta{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--cream-dim);align-items:center}
+.study .lvl{display:inline-flex;gap:3px;align-items:center}
+.study .lvl i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--cream-dim)}
+.study .lvl i.on{background:var(--copper);border-color:var(--copper)}
+.study .lvl em{font-style:normal;margin-left:6px}
+.study h4{font-weight:700;font-size:17px;margin-top:10px;line-height:1.25}
+.study p{font-size:15.5px;color:var(--cream-dim);margin-top:8px}
+.study a{color:var(--cream);font-size:13.5px;display:inline-block;margin-top:10px}
+.unknown{margin:22px 0 0 100px;font-size:15.5px;color:var(--cream-dim);border-left:3px solid var(--copper);padding-left:14px;max-width:80ch}
+/* Lectures */
+.read .cr{font-size:15px;margin-top:10px;color:var(--grey)}
+.read .cr b{font-weight:700;color:var(--ink);margin-right:6px}
+/* Qui décide */
+.qui{padding-block:96px}
+.qui h2{font-family:var(--serif);font-size:clamp(52px,7vw,104px);line-height:.9}
+.qui h2 span{color:rgba(26,26,26,.55)}
+.levels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:40px}
+.lv{background:var(--off);color:var(--line);border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line);rotate:var(--rot)}
+.lv h3{font-family:var(--serif);font-size:30px;line-height:1}
+.lv ul{margin:14px 0 0;padding-left:18px;display:grid;gap:8px;font-size:15px}
+.biblio .mt{margin-top:30px}
+.cite{padding-block:88px}
+@media (max-width:900px){
+  .cards{grid-template-columns:1fr 1fr}
+  .count3,.invgrid,.duo{grid-template-columns:1fr}
+  .count3 article,.count3 article+article{padding:22px 0;border-right:0;border-bottom:1px solid var(--rule)}
+  .levels{grid-template-columns:1fr 1fr}
+  .studies{grid-template-columns:1fr;margin-left:0}
+  .unknown{margin-left:0}
+  .duel{grid-template-columns:1fr;gap:14px}
+  .duel .vs{text-align:center;font-size:32px}
+}
+@media (max-width:600px){
+  .cards,.levels{grid-template-columns:1fr}
+  .cards a{min-height:0}
+  .rq .qh{grid-template-columns:44px minmax(0,1fr)}
+  .rq .qn{font-size:40px}
+  .trap{grid-template-columns:1fr}
+}
+.play .seg-bar rect.s,.play .pills .bar{transform:none}
+.chart .fadein{transition-delay:1.3s}
+html.calm .chart .fadein{opacity:1}
+
+.gapwrap{margin-top:8px}
+.lede.sm{font-size:clamp(17px,1.5vw,20px);margin-top:12px;max-width:62ch}
+.dark-trap{background:var(--off);color:var(--ink)}
+.dark-trap p{color:var(--ink)}
+
+/* Finances */
+.snow{margin-top:44px;background:#fff;border:2.5px solid var(--line);border-radius:26px;padding:24px 26px;box-shadow:7px 7px 0 var(--line);max-width:900px}
+.snow .sub{margin-top:0}
+.snow p{font-size:16.5px;color:#3D3A35;margin-top:10px}
+.formula{font-family:var(--serif);font-size:clamp(22px,2.6vw,34px);line-height:1.2;color:var(--line);margin:18px 0 6px;white-space:pre-wrap;background:none;border:0;padding:0}
+.agrid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.ag{border:1.5px solid var(--hair);border-radius:22px;padding:20px 22px}
+.ag .who{display:block;font-size:13px;color:var(--cream-dim);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.ag b{display:block;font-weight:700;font-size:clamp(44px,5vw,68px);letter-spacing:-.04em;line-height:1;margin:8px 0 6px;color:var(--copper)}
+.ag span:last-child{font-size:14px;color:var(--cream-dim)}
+.key-dots{font-size:13.5px;color:var(--line);margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.kd{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--line)}
+.kd.be{background:var(--red)}.kd.eu{background:#fff;margin-left:10px}
+/* Recherche sur fond papier */
+.rq-light .rq{border-top-color:var(--rule)}
+.rq-light .rq .qn{color:var(--red)}
+.rq-light .rq .verd p{color:var(--ink)}
+.rq-light .study{border-color:var(--rule);background:#fff}
+.rq-light .study .meta,.rq-light .study p{color:var(--grey)}
+.rq-light .study .lvl i{border-color:var(--grey)}
+.rq-light .study .lvl i.on{background:var(--red);border-color:var(--red)}
+.rq-light .study a{color:var(--ink)}
+.rq-light .unknown{color:#3D3A35;border-left-color:var(--red)}
+.papier .b-pe{color:var(--ink)}
+/* Lectures sur fond brun */
+.dark-reads .read{border-top-color:var(--hair)}
+.dark-reads .read .trad,.dark-reads .read .w{color:var(--cream-dim)}
+.dark-reads .read .so{border-top-color:var(--hair)}
+.dark-reads .read .so b{color:var(--copper)}
+.dark-reads .read .cr{color:var(--cream-dim)}
+.dark-reads .read .cr b{color:var(--cream)}
+@media (max-width:900px){.agrid3{grid-template-columns:1fr}}
+
+.preamb{padding-block:96px}
+.three-q{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.three-q li{background:#fff;color:var(--line);border:2.5px solid var(--line);border-radius:26px;padding:22px;box-shadow:7px 7px 0 var(--line);rotate:var(--rot)}
+.three-q .n{font-family:var(--serif);font-style:italic;font-size:46px;line-height:1;color:var(--red)}
+.three-q h3{font-weight:700;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;margin-top:8px}
+.three-q p{font-size:16px;color:#3D3A35;margin-top:10px}
+.three-q a{color:var(--line);font-weight:700}
+.two-cols .sub.nm{margin-top:0}
+.two-cols .body{font-size:16.5px;color:#3D3A35;margin-top:12px;line-height:1.55}
+@media (max-width:900px){.three-q{grid-template-columns:1fr}}
+
+.epochs{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--hair)}
+.epochs li{padding:22px 20px 26px 0;border-right:1px solid var(--hair)}
+.epochs li+li{padding-left:20px}.epochs li:last-child{border-right:0}
+.epochs .yr{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--copper)}
+.epochs h3{font-weight:700;font-size:20px;margin-top:6px}
+.epochs p{font-size:15px;color:var(--cream-dim);margin-top:8px}
+.myths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px}
+.myths article{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:20px 22px;box-shadow:6px 6px 0 var(--red);rotate:var(--rot)}
+.myths h4{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2vw,28px);line-height:1.1;margin:12px 0 10px}
+.myths p{font-size:15.5px;color:#3D3A35}
+.myths b{color:var(--red-ink)}
+.myths a{color:var(--ink);font-weight:700}
+@media (max-width:900px){.epochs,.myths{grid-template-columns:1fr}.epochs li,.epochs li+li{padding:18px 0;border-right:0;border-bottom:1px solid var(--hair)}}
+
+.cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.agegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:36px}
+.agegrid .lv b.big{display:block;font-weight:700;font-size:clamp(38px,4.4vw,60px);letter-spacing:-.04em;line-height:1;margin:10px 0 6px;color:var(--red)}
+.agegrid .lv p{font-size:14px;color:var(--grey)}
+.snow.light{margin-top:36px}
+@media (max-width:900px){.cards.c3,.agegrid{grid-template-columns:1fr}}
+
+/* Contraste AA : rouge foncé pour les petits textes sur fond clair */
+.rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
+.key-dots .kd.be{background:var(--red-ink)}
+
+/* ===== V2 : composants pédagogiques ===== */
+/* Niveau 1 : comprendre en deux minutes */
+.twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
+.twomin .tm{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:44px;align-items:start}
+.twomin .kick{color:var(--grey)}
+.twomin h2{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1;margin-top:10px}
+.twomin .ans{font-size:clamp(18px,1.6vw,21px);line-height:1.45;margin-top:18px;color:#2E2B27}
+.twomin .keys{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px;counter-reset:k}
+.twomin .keys li{counter-increment:k;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;font-size:16.5px;line-height:1.45}
+.twomin .keys li::before{content:counter(k);font-family:var(--serif);font-style:italic;font-size:30px;line-height:.9;color:var(--red-ink)}
+.twomin aside{display:grid;gap:16px}
+.tm-num{background:#fff;border:2.5px solid var(--line);border-radius:24px;padding:20px;box-shadow:6px 6px 0 var(--line)}
+.tm-num b{display:block;font-weight:700;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.04em;line-height:.95}
+.tm-num span{display:block;font-size:15px;margin-top:8px}
+.tm-num small{display:block;font-size:12.5px;color:var(--grey);margin-top:6px}
+.tm-warn{border-left:4px solid var(--red-ink);padding:4px 0 4px 14px;font-size:15.5px;line-height:1.45}
+.tm-warn b{color:var(--red-ink)}
+.tm-concl{font-family:var(--serif);font-size:21px;line-height:1.3;border-top:1px solid var(--rule);padding-top:14px}
+.deeper{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--ink);padding-bottom:4px}
+/* Ce que ce chiffre permet de dire */
+.canwhat{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid currentColor;border-radius:22px;overflow:hidden}
+.canwhat>div{padding:20px 22px 22px}
+.canwhat>div+div{border-left:2px solid currentColor}
+.canwhat h4{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+.canwhat ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:15.5px;line-height:1.45}
+.canwhat .cw-t{grid-column:1/-1;border-bottom:2px solid currentColor;padding:14px 22px;font-family:var(--serif);font-size:22px}
+.canwhat .cw-t+div{border-left:0}
+.brun .canwhat .cw-no h4,.papier .canwhat .cw-no h4{color:inherit}
+.canwhat .cw-yes h4::before{content:"✓ "}
+.canwhat .cw-no h4::before{content:"✗ "}
+.canwhat .cw-more h4::before{content:"→ "}
+/* Explication après le pari */
+.why{max-width:760px;margin:26px auto 0;text-align:left;background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:7px 7px 0 var(--copper)}
+.why h3{font-weight:700;font-size:18px;margin:14px 0 4px}
+.why h3:first-child{margin-top:0}
+.why p{font-size:16px;line-height:1.5;color:#2E2B27}
+/* Questions de transfert */
+.check{padding-block:88px}
+.check .qz{border-top:1px solid var(--ink);padding:26px 0 30px}
+.check .qq{font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);line-height:1.2;max-width:58ch}
+.qopts{display:grid;gap:10px;margin-top:18px;max-width:780px}
+.qopts button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px 16px;font-size:16px;line-height:1.35;color:var(--line)}
+.qopts button:hover{background:#F0EEE8}
+.qopts button.is-ok{border-color:#2F7A5E;background:#E6F3EC}
+.qopts button.is-ko{border-color:var(--red-ink);background:#FBE9E6}
+.qfb,.qmech{max-width:780px;margin-top:14px;font-size:16px;line-height:1.5}
+.qfb b,.qmech b{font-weight:700}
+.qmech{border-left:4px solid var(--line);padding-left:14px}
+.qlive{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Du chiffre à la décision */
+.decide .opts4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:40px}
+.decide .opt{background:var(--off);color:var(--ink);border:2.5px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:6px 6px 0 var(--line)}
+.decide .opt h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.05}
+.decide .opt dl{margin:14px 0 0;display:grid;gap:10px}
+.decide .opt dt{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.decide .opt dd{margin:2px 0 0;font-size:15.5px;line-height:1.45}
+.decide .opt .ev{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;margin-right:6px;vertical-align:1px}
+.ev.doc{background:#DCEFE6;color:#1F5C45}.ev.hyp{background:#FBE7D3;color:#7A4214}
+.decide .trade{margin-top:40px}
+.decide .trade table{width:100%;border-collapse:collapse;font-size:15.5px}
+.decide .trade th,.decide .trade td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
+.decide .trade th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper)}
+@media (max-width:900px){.twomin .tm,.canwhat,.decide .opts4{grid-template-columns:1fr}.canwhat>div+div{border-left:0;border-top:2px solid currentColor}.decide .trade{overflow-x:auto}}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+<nav class="top" aria-label="Navigation principale">
+  <a href="index.html#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
+  <a href="index.html#classements"><span class="lbl" data-t="Classements">Classements</span></a>
+  <a href="index.html" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="index.html#dossiers" class="on"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
+  <a href="index.html#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
+  <a href="index.html#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
+</nav>
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 06 · Santé · avant de lire</span>
+    <h1 class="q" id="q0">Entre 2008 et 2024, l’espérance de vie en Belgique a gagné 2,6 ans. Selon vous, combien d’années en bonne santé a-t-elle gagnées ?</h1>
+    <output class="out" id="gOut" for="guess">1,5 an</output>
+    <input class="range" type="range" id="guess" min="0" max="3" step="0.1" value="1.5" aria-label="Votre estimation, en années d’espérance de vie en bonne santé gagnées">
+    <div class="scale" aria-hidden="true"><span>0</span><span>1,5</span><span>3</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>L’espérance de vie compte les années vécues ; l’espérance de vie en bonne santé ne compte que celles vécues sans limitation dans les activités habituelles, d’après ce que les personnes déclarent elles-mêmes dans une enquête. On peut vivre plus longtemps sans que les années sans limitation augmentent : les années gagnées le sont alors avec des problèmes de santé.</p><h3>Pourquoi le chiffre surprend</h3><p>On imagine que vivre plus longtemps signifie vieillir en meilleure santé. En Belgique, sur cette période, ce n’est pas le cas en moyenne. L’indicateur a toutefois connu une rupture de série en 2019, qui invite à la prudence.</p><h3>Pour réutiliser cette idée</h3><p>Devant un progrès de l’espérance de vie, demandez : combien de ces années sont vécues en bonne santé, et pour qui ?</p></div>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 06 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Santé"><span class="t1">Santé</span></h2></div>
+    <p class="lede hq" data-r>Vit-on plus longtemps en bonne santé, et notre système de soins y est-il pour quelque chose ? Trois mesures de la santé, un siècle de protection sociale, trois fiches, l’état de la recherche et huit lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>82,4 ans</b><span>d’espérance de vie à la naissance en 2024, contre 81,5 dans l’Union</span><span class="src">Eurostat demo_mlexpec</span></div>
+      <div><b>63,9 ans</b><span>d’espérance de vie en bonne santé, contre 65,2 dans l’Union</span><span class="src">Eurostat hlth_hlye, 2024</span></div>
+      <div><b>11,1 %</b><span>du PIB consacré à la santé en 2024 (Union : 9,9 % en 2023)</span><span class="src">Eurostat hlth_sha11_hf</span></div>
+      <div><b>21,8 %</b><span>des dépenses de santé payées directement par les ménages (Union : 15,2 % en 2023)</span><span class="src">Eurostat hlth_sha11_hf, 2024</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : espérance de vie 2025 d’Eurostat (printemps 2027)</p>
+  </div>
+</section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">Vit-on plus longtemps en bonne santé, et les soins y sont-ils pour quelque chose ?</h2>
+      <p class="ans">On vit nettement plus longtemps : 82,4 ans en 2024, contre 69,7 en 1960. Mais le nombre d’années vécues sans limitation n’a presque pas bougé depuis 2008 (63,9 ans), et il reste inférieur à la moyenne européenne. Le système de soins belge soigne bien : les décès qu’un traitement à temps aurait évités sont bien moins fréquents que dans l’Union. Il coûte cher (11,1 % du PIB) et laisse une part élevée à la charge des patients. Les plus grandes marges de progrès sont ailleurs : prévention, conditions de vie, écarts entre groupes sociaux.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Vivre plus longtemps n’est pas vivre plus longtemps en bonne santé : ce sont deux indicateurs différents.</li><li>Les décès évitables par la prévention (tabac, alcool, accidents…) sont plus de deux fois plus nombreux que ceux évitables par les soins.</li><li>À 25 ans, une personne peu diplômée peut espérer vivre 5 à 6 ans de moins, et 10 à 13 ans de moins en bonne santé, qu’une personne diplômée du supérieur (chiffres de 2011).</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>137 · 59</b><span>décès évitables par la prévention et par les soins, pour 100 000 habitants, 2023</span><small>Eurostat, hlth_cd_apr</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> juger un système de santé à sa seule dépense ou à la seule espérance de vie, comme si les soins expliquaient tout.</p>
+      <p class="tm-concl">Les chiffres situent les forces et les faiblesses ; combien dépenser, qui paie et quelles priorités fixer sont des choix collectifs.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- 1b. Les définitions -->
+<section class="sec papier" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois façons <span>de mesurer la santé.</span></h2>
+    <p class="lede" data-r>La santé d’une population ne se résume pas à un seul chiffre. Trois indicateurs européens, calculés de la même façon dans tous les pays, éclairent chacun une facette différente.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Durée</span><h3>L’espérance de vie</h3><p class="who">Eurostat, d’après les décès et la population</p><p>Le nombre moyen d’années qu’<b>un nouveau-né vivrait</b> si les risques de décès de l’année se maintenaient toute sa vie. Ce n’est pas une prévision : c’est un résumé de la mortalité d’une année.</p><p class="use">Sert à : comparer la mortalité entre pays et dans le temps.</p></article>
+      <article data-r><span class="tag p">Qualité</span><h3>L’espérance de vie en bonne santé</h3><p class="who">Eurostat, d’après la mortalité et l’enquête SILC</p><p>Les années vécues <b>sans limitation</b> dans les activités habituelles, selon ce que déclarent les personnes. L’indicateur dépend donc aussi de la manière dont chacun perçoit sa santé.</p><p class="use">Sert à : savoir si les années gagnées sont vécues en bonne santé.</p></article>
+      <article data-r><span class="tag u">Efficacité</span><h3>La mortalité évitable</h3><p class="who">Eurostat, d’après une liste OCDE-Eurostat de causes</p><p>Les décès avant 75 ans qui auraient pu être évités par la <b>prévention</b> (tabac, alcool, accidents, certains cancers) ou par des <b>soins</b> efficaces et à temps (infections, certaines maladies cardiaques).</p><p class="use">Sert à : distinguer ce qui relève de la prévention et ce qui relève des soins.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ un pays peut bien soigner et mal prévenir, ou l’inverse</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-vie"><span class="n">01</span><h3>Vivre plus longtemps</h3><p>Combien d’années, et en quelle santé ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-cout"><span class="n">02</span><h3>Le coût et l’accès</h3><p>Combien dépense-t-on, et qui paie ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-evitable"><span class="n">03</span><h3>L’évitable et l’inégal</h3><p>Quels décès pourrait-on éviter, et qui meurt plus tôt ?</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · des mutualités à l’INAMI</span>
+    <h2 class="giant" id="tH" data-r>Douze ans de vie <span>gagnés en soixante ans.</span></h2>
+    <p class="lede" data-r>Un nouveau-né de 1960 pouvait espérer vivre 69,7 ans ; un nouveau-né de 2024, 82,4 ans. La hausse a été presque continue, à une exception près : la pandémie de 2020, qui a fait perdre un an d’espérance de vie, rattrapé depuis.</p>
+    <div class="chart" id="leChart"></div>
+    <p class="srcl">Espérance de vie à la naissance, en années, Belgique 1960-2024 et Union 2002-2024. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_mlexpec/default/table?lang=fr" target="_blank" rel="noopener">demo_mlexpec</a> (ruptures de série en 2011 et 2014), consulté le 11 octobre 2026.</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1894</span><h3>Les mutualités</h3><p>Une loi encadre les sociétés mutualistes, nées au XIX<sup>e</sup> siècle de l’entraide ouvrière ; elles peuvent se regrouper en fédérations à partir de 1898.</p></li>
+      <li data-r><span class="yr">1945</span><h3>L’assurance obligatoire</h3><p>Avec la sécurité sociale créée à la Libération, l’assurance maladie-invalidité devient obligatoire pour les salariés.</p></li>
+      <li data-r><span class="yr">1964</span><h3>L’INAMI</h3><p>La loi du 9 août 1963 crée l’INAMI, qui fonctionne depuis le 1<sup>er</sup> janvier 1964. La même année, une grève des médecins se conclut par l’« accord de la Saint-Jean ».</p></li>
+      <li data-r><span class="yr">2000-2008</span><h3>Protéger les plus malades</h3><p>Le maximum à facturer plafonne la part des soins payée par chaque ménage ; en 2008, les indépendants sont couverts aussi pour les « petits risques ».</p></li>
+      <li data-r><span class="yr">2020</span><h3>La pandémie</h3><p>L’espérance de vie tombe de 81,8 à 80,8 ans, avant de dépasser son niveau d’avant-crise en 2023.</p></li>
+    </ol>
+    <p class="srcl">INAMI, <a href="https://www.inami.fgov.be/SiteCollectionDocuments/brochure-50-inami.pdf" target="_blank" rel="noopener">brochure des 50 ans de l’INAMI</a> ; Cultures &amp; Santé (2022), <a href="https://cultures-sante.be/wp-content/uploads/2023/11/l-histoire-des-mutualites-en-belgique-guide.pdf" target="_blank" rel="noopener"><i>L’histoire des mutualités en Belgique</i></a> ; Eurostat, demo_mlexpec.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« On vit plus longtemps, donc en meilleure santé. »</h4><p><b>Pas en Belgique depuis 2008.</b> L’espérance de vie a gagné 2,6 ans, l’espérance de vie en bonne santé à peine 0,2 an. Les années gagnées sont surtout vécues avec des limitations.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« En Belgique, les soins sont presque gratuits. »</h4><p><b>Faux.</b> Les ménages paient directement 21,8 % des dépenses de santé, plus que la moyenne de l’Union (15,2 %). Pourtant, peu de personnes renoncent à des soins (1,4 %), grâce notamment aux plafonds de dépenses.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Notre santé dépend surtout des hôpitaux et des médecins. »</h4><p><b>En partie seulement.</b> Les décès évitables par la prévention sont plus de deux fois plus nombreux que ceux évitables par les soins. Les comportements et les conditions de vie pèsent lourd. <a href="#recherche">Voir la recherche</a>.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : vivre plus longtemps -->
+<section class="sec papier" id="f-vie" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>Plus d’années, <span>pas plus d’années en bonne santé.</span></h2>
+    <p class="lede" data-r>Depuis 2008, l’écart s’est creusé entre la durée de vie et la durée de vie sans limitation. En 2024, un nouveau-né peut espérer vivre 82,4 ans, dont 63,9 sans limitation dans ses activités : environ 18 années avec des problèmes de santé. Les femmes vivent plus longtemps que les hommes (84,4 ans contre 80,3), mais pas plus longtemps en bonne santé (63,9 contre 64,0).</p>
+    <div class="chart" id="hlyChart"></div>
+    <p class="srcl">Espérance de vie et espérance de vie en bonne santé à la naissance, Belgique 2004-2024, en années. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_hlye/default/table?lang=fr" target="_blank" rel="noopener">hlth_hlye</a> (ruptures de série en 2005 et 2019) et demo_mlexpec, consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">L’espérance de vie en bonne santé</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Combien d’années, en moyenne, sont vécues sans limitation déclarée dans les activités habituelles.</li><li>Si les années de vie gagnées sont vécues en bonne ou en moins bonne santé.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Une mesure médicale de la santé : elle repose sur une seule question d’enquête, à laquelle on répond selon ses attentes et sa culture.</li><li>Une comparaison sûre entre pays : la traduction de la question et la façon d’y répondre varient.</li><li>Quelles maladies limitent les personnes.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les maladies chroniques déclarées (enquête de santé de Sciensano).</li><li>L’espérance de vie en bonne santé selon le diplôme (fiche 03).</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : coût et accès -->
+<section class="sec brun grain" id="f-cout" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Un système cher, <span>où le patient paie beaucoup.</span></h2>
+    <p class="lede" data-r>La Belgique consacre 11,1 % de son PIB à la santé (2024), plus que la moyenne de l’Union (9,9 % en 2023). Une part importante reste à charge des patients : tickets modérateurs, suppléments, médicaments et soins peu remboursés. Pourtant, peu de personnes déclarent renoncer à des soins, et cette part a baissé chez les plus modestes.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Dépenses de santé</b><span>en % du PIB, Belgique 2003-2024 et Union 2014-2023</span></figcaption><div class="chart sm" id="spendChart"></div></figure>
+      <figure data-r><figcaption><b>Renoncer à un soin</b><span>16 ans et plus, examen médical non obtenu (trop cher, trop loin ou trop d’attente), selon le revenu, 2024</span></figcaption><div class="chart sm" id="unmetChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_sha11_hf/default/table?lang=fr" target="_blank" rel="noopener">hlth_sha11_hf</a> (dépenses courantes de santé, tous financeurs ; part payée directement par les ménages : 21,8 % en Belgique en 2024, 15,2 % dans l’Union en 2023) et <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_silc_08/default/table?lang=fr" target="_blank" rel="noopener">hlth_silc_08</a> (besoins non satisfaits ; Belgique 1,4 % en 2024, Union 2,5 %). Chez les 20 % les plus modestes, la part est passée de 7,2 % en 2015 à 3,0 % en 2024 (rupture de série en 2019). Consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">La dépense de santé en % du PIB</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Quelle part de la richesse produite est consacrée aux soins, tous financeurs confondus (État, sécurité sociale, assurances, patients).</li><li>Comment elle évolue et se compare, avec une méthode internationale commune.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Si l’argent est bien utilisé : dépenser plus ne garantit pas une meilleure santé.</li><li>Qui paie : la même dépense peut reposer sur l’impôt, les cotisations ou les patients.</li><li>Si la hausse vient de plus de soins ou d’un PIB plus faible (comme en 2020).</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La dépense par habitant en pouvoir d’achat.</li><li>La part payée par les ménages selon le revenu.</li><li>Le rapport du KCE sur la performance du système belge.</li></ul></div></div>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>Le saut de 2020 (11,45 % du PIB) vient en partie de la chute du PIB pendant la pandémie, pas seulement de la hausse des dépenses : un ratio bouge quand son dénominateur bouge.</p></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : évitable et inégal -->
+<section class="band grain" id="f-evitable" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>Bien soigner <span>ne suffit pas.</span></h2>
+    <p class="lede ink" data-r>En 2023, la Belgique compte 59 décès évitables par des soins à temps pour 100 000 habitants, bien moins que l’Union (87). Mais 137 décès pour 100 000 auraient pu être évités par la prévention, un niveau plus proche de la moyenne européenne (151). Et la durée de vie dépend fortement de la position sociale.</p>
+    <div class="chart" id="avChart"></div>
+    <p class="srcl ink">Taux standardisés de mortalité évitable avant 75 ans, pour 100 000 habitants, 2011-2023. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_apr/default/table?lang=fr" target="_blank" rel="noopener">hlth_cd_apr</a>, consulté le 11 octobre 2026. La hausse de 2020-2021 vient de la Covid-19, classée comme évitable par la prévention.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Écart d’espérance de vie à 25 ans</h3><b class="big">6,1 · 4,6 ans</b><p>entre peu diplômés et diplômés du supérieur, hommes et femmes, 2011</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Écart en bonne santé</h3><b class="big">10,5 · 13,4 ans</b><p>même comparaison, espérance de vie en bonne santé, 2011</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Suicide</h3><b class="big">13,5</b><p>décès pour 100 000 habitants en 2023 (Union : 10,4), contre 19,3 en 2011</p></div>
+    </div>
+    <p class="srcl ink">Sources : F. Renard et al. (2019), <i>Archives of Public Health</i>, doi <a href="https://doi.org/10.1186/s13690-019-0330-8" target="_blank" rel="noopener">10.1186/s13690-019-0330-8</a>, présenté par Sciensano sur <a href="https://www.healthybelgium.be/en/health-status/health-inequalities/inequalities-in-life-expectancy-and-quality-of-life" target="_blank" rel="noopener">healthybelgium.be</a> ; Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_asdr2/default/table?lang=fr" target="_blank" rel="noopener">hlth_cd_asdr2</a> (taux standardisés). Les écarts par diplôme datent du recensement de 2011 : ce sont les données détaillées les plus récentes trouvées.</p>
+    <div class="snow light" data-r>
+      <h3 class="sub">Besoin de parler ?</h3>
+      <p>Si ces chiffres vous touchent personnellement ou si vous traversez une période difficile, vous pouvez appeler gratuitement le Centre de prévention du suicide au <b>0800 32 123</b> (en français) ou la Zelfmoordlijn au <b>1813</b> (en néerlandais), ou en parler à un médecin ou à une personne de confiance.</p>
+    </div>
+    <div class="canwhat" data-r><p class="cw-t">La mortalité évitable</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Combien de décès avant 75 ans relèvent de causes que la prévention ou les soins peuvent en principe éviter.</li><li>Où se situent les marges de progrès : prévention, soins, ou les deux.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Que chacun de ces décès aurait pu être évité : la liste repose sur un consensus d’experts, par grandes causes.</li><li>Quelle politique de prévention fonctionne.</li><li>La qualité de vie des personnes qui survivent.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les causes principales (cancer du poumon, maladies cardiaques, alcool).</li><li>Les écarts entre Régions et entre groupes sociaux.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="index.html#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Maîtriser les dépenses, garantir l’accès, améliorer la santé : ces trois objectifs se contredisent souvent. Pour chaque levier : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Faire payer davantage le patient</h3><dl><dt>Le mécanisme</dt><dd>Augmenter le ticket modérateur pour réduire la consommation de soins.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Dans une expérience aléatoire aux États-Unis (RAND), payer une partie des soins a réduit les dépenses de 20 à 30 %, sans effet sur la santé moyenne, mais au détriment des plus pauvres et des plus malades (tension artérielle, vue).</dd><dt>Ce qui reste incertain</dt><dd>La transposition à la Belgique, où la part payée par les ménages est déjà élevée.</dd><dt>Ce qu’on sacrifie</dt><dd>L’accès des plus modestes et des malades chroniques.</dd></dl></article><article class="opt" data-r><h3>Rendre les soins plus accessibles</h3><dl><dt>Le mécanisme</dt><dd>Réduire ce que paient les patients (tiers payant, plafonds, meilleure couverture).</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> En Oregon, gagner une assurance par tirage au sort a augmenté le recours aux soins, quasi supprimé les dépenses catastrophiques et réduit la dépression ; aucun effet mesurable sur la tension ou le cholestérol en deux ans.</dd><dt>Ce qui reste incertain</dt><dd>Les effets sur la santé physique à long terme.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût plus élevé pour la collectivité.</dd></dl></article><article class="opt" data-r><h3>Investir dans la prévention</h3><dl><dt>Le mécanisme</dt><dd>Taxes sur le tabac et l’alcool, dépistage, vaccination, sécurité routière.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Le Centre international de recherche sur le cancer (OMS) conclut que les hausses de taxes qui augmentent le prix du tabac réduisent sa consommation, y compris chez les jeunes.</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Les économies réalisées : des personnes qui vivent plus longtemps consomment aussi des soins plus tard.</dd><dt>Ce qu’on sacrifie</dt><dd>Une part de liberté individuelle, et un poids proportionnellement plus lourd pour les fumeurs à petit revenu.</dd></dl></article><article class="opt" data-r><h3>Agir sur les conditions de vie</h3><dl><dt>Le mécanisme</dt><dd>Logement, éducation, revenus, conditions de travail : réduire les écarts sociaux de santé.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> L’écart d’espérance de vie en bonne santé à 25 ans atteint 10 à 13 ans selon le diplôme (Renard et al., 2019).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Quelles politiques réduisent effectivement ces écarts, et en combien de temps.</dd><dt>Ce qu’on sacrifie</dt><dd>Des moyens importants pour des effets lents et difficiles à mesurer.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>La maîtrise des dépenses</td><td>L’accès aux soins des plus modestes</td></tr><tr><td>La gratuité des soins</td><td>L’équilibre des comptes de l’assurance maladie</td></tr><tr><td>La prévention par les taxes</td><td>Le pouvoir d’achat des ménages modestes</td></tr><tr><td>La liberté de choix du patient et du médecin</td><td>La coordination et le contrôle des coûts</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>La santé est-elle <span>un bien comme un autre ?</span></h2>
+    <p class="lede" data-r>Marché ou solidarité, soin ou prévention, responsabilité individuelle ou collective : les chiffres ne tranchent pas. Huit traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>de la santé ?</span></h2>
+    <p class="lede ink" data-r>En Belgique, la santé est partagée entre l’État fédéral, qui finance l’essentiel des soins, et les entités fédérées, chargées notamment de la prévention. Les mutualités et les représentants des soignants participent à la gestion de l’assurance maladie.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>État fédéral</h3><ul><li>Assurance maladie-invalidité (INAMI) : remboursements et indemnités</li><li>Financement des hôpitaux, prix des médicaments</li><li>Exercice des professions de santé</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Mutualités et soignants</h3><ul><li>Remboursement aux affiliés</li><li>Accords tarifaires entre mutualités et prestataires, au sein de l’INAMI</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Communautés et Régions</h3><ul><li>Prévention et promotion de la santé (dépistage, vaccination)</li><li>Normes des hôpitaux, maisons de repos, première ligne</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Union européenne</h3><ul><li>Autorisation des médicaments, coordination face aux crises sanitaires</li><li>L’organisation des soins reste une compétence nationale</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Lire l’espérance de vie comme une prédiction</h3><p>Elle résume les risques de décès d’une année donnée. Un enfant né en 2024 vivra probablement plus longtemps que 82,4 ans si la mortalité continue de baisser.</p></li>
+      <li data-r><span class="g">2</span><h3>Comparer la « bonne santé » entre pays</h3><p>Elle repose sur ce que les gens déclarent. Les attentes, la culture et la traduction de la question influencent les réponses.</p></li>
+      <li data-r><span class="g">3</span><h3>Confondre dépense et performance</h3><p>Dépenser plus peut refléter des prix plus élevés, une population plus âgée ou des soins inutiles, pas forcément une meilleure santé.</p></li>
+      <li data-r><span class="g">4</span><h3>Oublier les petits nombres</h3><p>La part de personnes qui renoncent aux soins vient d’une enquête : chez les plus aisés, les valeurs proches de zéro sont peu précises.</p></li>
+      <li data-r><span class="g">5</span><h3>Lire une corrélation comme une cause</h3><p>Les peu diplômés vivent moins longtemps, mais le diplôme seul n’explique pas tout : revenus, métiers, logement et comportements se cumulent.</p></li>
+      <li data-r><span class="g">6</span><h3>Utiliser des données trop anciennes</h3><p>Les écarts par diplôme les plus détaillés datent de 2011. Ils décrivent une tendance de fond, pas forcément la situation actuelle.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="c" data-r><p class="qq">1. Un pays voit ses dépenses de santé passer de 10 % à 11 % du PIB en un an. Que faut-il vérifier avant de dire qu’il dépense davantage pour la santé ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Rien : la hausse du ratio prouve que les dépenses ont augmenté.</button><button type="button" data-k="b" aria-pressed="false">Le nombre de médecins.</button><button type="button" data-k="c" aria-pressed="false">L’évolution du PIB : s’il a baissé, le ratio monte même à dépense égale.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Un ratio peut monter parce que son dénominateur baisse.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> Cela ne dit rien de l’évolution du ratio.</p><p class="qfb" data-k="c" hidden><b>Exact.</b> C’est ce qui s’est passé en 2020 : le PIB a chuté pendant la pandémie.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un ratio a deux termes. Avant d’interpréter sa hausse, regardez séparément le numérateur (les dépenses) et le dénominateur (le PIB).</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="b" data-r><p class="qq">2. Deux pays ont la même espérance de vie, 82 ans. Dans le pays A, l’espérance de vie en bonne santé est de 70 ans ; dans le pays B, de 62 ans. Que peut-on en dire ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Les deux pays ont la même santé, puisqu’on y vit aussi longtemps.</button><button type="button" data-k="b" aria-pressed="false">Dans le pays B, on déclare plus d’années de limitation ; il faut vérifier si cela vient de la santé réelle ou de la manière de répondre à l’enquête.</button><button type="button" data-k="c" aria-pressed="false">Le pays A dépense forcément plus pour la santé.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> La durée de vie ne dit rien de la qualité des années vécues.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> L’écart peut refléter une vraie différence de santé, mais aussi des façons différentes de percevoir et de déclarer ses limitations.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Rien ne relie directement cet indicateur à la dépense.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un indicateur fondé sur des déclarations mesure aussi la manière de répondre. On le recoupe avec des données objectives (maladies diagnostiquées, mortalité).</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="hly" aria-pressed="true">Bonne santé</button>
+        <button type="button" data-k="dep" aria-pressed="false">Dépenses</button>
+        <button type="button" data-k="evi" aria-pressed="false">Évitable</button>
+        <button type="button" data-k="ine" aria-pressed="false">Inégalités</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées le 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat : <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_mlexpec/default/table?lang=fr" target="_blank" rel="noopener">demo_mlexpec</a> (espérance de vie), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_hlye/default/table?lang=fr" target="_blank" rel="noopener">hlth_hlye</a> (années en bonne santé), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_sha11_hf/default/table?lang=fr" target="_blank" rel="noopener">hlth_sha11_hf</a> (dépenses), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_silc_08/default/table?lang=fr" target="_blank" rel="noopener">hlth_silc_08</a> (besoins non satisfaits), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_apr/default/table?lang=fr" target="_blank" rel="noopener">hlth_cd_apr</a> (mortalité évitable), <a href="https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_asdr2/default/table?lang=fr" target="_blank" rel="noopener">hlth_cd_asdr2</a> (causes de décès).</li>
+      </ol>
+      <h3 class="mt">Niveau 3 · institutions publiques</h3><ol>
+        <li>Gerkens, S. et al. (2024). <a href="https://sciensano.be/sites/default/files/kce376c_hspa2024_report.pdf" target="_blank" rel="noopener"><i>Performance of the Belgian Health System: Report 2024</i></a>. KCE Report 376C, KCE, Sciensano et INAMI.</li>
+        <li>Sciensano, <a href="https://www.healthybelgium.be/en/health-status/health-inequalities/inequalities-in-life-expectancy-and-quality-of-life" target="_blank" rel="noopener">Inequalities in life expectancy and quality of life</a>, healthybelgium.be.</li>
+        <li>INAMI, <a href="https://www.inami.fgov.be/SiteCollectionDocuments/brochure-50-inami.pdf" target="_blank" rel="noopener">50 ans de l’INAMI</a>.</li>
+        <li>Centre international de recherche sur le cancer (2011). <a href="https://handbooks.iarc.who.int/documents-handbooks/hb14/vol14-evaluations.pdf" target="_blank" rel="noopener"><i>Effectiveness of Tax and Price Policies for Tobacco Control</i></a>. IARC Handbooks of Cancer Prevention, vol. 14.</li>
+      </ol>
+      <h3 class="mt">Histoire</h3><ol>
+        <li>Cultures &amp; Santé (2022). <a href="https://cultures-sante.be/wp-content/uploads/2023/11/l-histoire-des-mutualites-en-belgique-guide.pdf" target="_blank" rel="noopener"><i>L’histoire des mutualités en Belgique</i></a>.</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Baicker, K. et al. (2013). « The Oregon Experiment: Effects of Medicaid on Clinical Outcomes ». <i>New England Journal of Medicine</i>, 368 ; Finkelstein, A. et al. (2012). « The Oregon Health Insurance Experiment: Evidence from the First Year ». <i>Quarterly Journal of Economics</i>, 127(3) ; synthèse : <a href="https://www.povertyactionlab.org/es/node/1825" target="_blank" rel="noopener">J-PAL</a>.</li>
+        <li>Kaplan, R. M. et Milstein, A. (2019). « <a href="https://www.annfammed.org/content/17/3/267" target="_blank" rel="noopener">Contributions of Health Care to Longevity: A Review of 4 Estimation Methods</a> ». <i>Annals of Family Medicine</i>, 17(3), 267-272.</li>
+        <li>Manning, W. et al. (1987). « Health Insurance and the Demand for Medical Care: Evidence from a Randomized Experiment ». <i>American Economic Review</i>, 77(3) ; synthèse : <a href="https://www.rand.org/pubs/research_briefs/RB9174.html" target="_blank" rel="noopener">RAND</a>.</li>
+        <li>Renard, F. et al. (2019). « Evolution of educational inequalities in life and health expectancies at 25 years in Belgium between 2001 and 2011: a census-based study ». <i>Archives of Public Health</i>, doi <a href="https://doi.org/10.1186/s13690-019-0330-8" target="_blank" rel="noopener">10.1186/s13690-019-0330-8</a>.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Arrow, K. (1963). « Uncertainty and the Welfare Economics of Medical Care ». <i>American Economic Review</i>, 53(5).</li>
+        <li>Beveridge, W. (1942). <i>Social Insurance and Allied Services</i>. HMSO.</li>
+        <li>Canguilhem, G. (1966). <i>Le normal et le pathologique</i>. PUF.</li>
+        <li>Daniels, N. (2008). <i>Just Health</i>. Cambridge University Press.</li>
+        <li>Friedman, M. (1962). <i>Capitalism and Freedom</i>. University of Chicago Press.</li>
+        <li>Illich, I. (1975). <i>Némésis médicale</i>. Seuil.</li>
+        <li>Marmot, M. (2015). <i>The Health Gap</i>. Bloomsbury.</li>
+        <li>Sen, A. (1999). <i>Development as Freedom</i>. Oxford University Press.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="index.html#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 06 · Santé · vérifié le 11 octobre 2026</span><a href="index.html#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
+<script>(function(){
+  var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg',DATA={"le": [69.7, 70.5, 70.3, 70.1, 70.8, 70.7, 70.7, 71.0, 70.7, 70.8, 71.0, 71.1, 71.4, 71.7, 72.0, 72.0, 72.2, 72.8, 72.8, 73.3, 73.3, 73.7, 74.0, 73.9, 74.5, 74.6, 74.8, 75.4, 75.7, 75.7, 76.2, 76.3, 76.5, 76.5, 76.8, 77.0, 77.3, 77.5, 77.6, 77.7, 77.9, 78.1, 78.2, 78.3, 79.0, 79.1, 79.5, 79.9, 79.8, 80.2, 80.3, 80.7, 80.5, 80.7, 81.1, 80.9, 81.3, 81.4, 81.5, 81.8, 80.8, 81.7, 81.7, 82.3, 82.4], "leEU": [77.6, 77.7, 78.3, 78.4, 78.9, 79.1, 79.3, 79.5, 79.8, 80.1, 80.2, 80.5, 80.6, 80.5, 80.7, 80.7, 80.8, 81.1, 80.3, 80.0, 80.6, 81.2, 81.5], "hly": [58.7, 62.4, 63.2, 63.7, 63.7, 63.9, 63.3, 63.5, 64.6, 63.9, 64.1, 64.2, 63.7, 63.7, 63.4, 62.4, 63.8, 64.6, 63.7, 64.0, 63.9], "leB": [79.0, 79.1, 79.5, 79.9, 79.8, 80.2, 80.3, 80.7, 80.5, 80.7, 81.1, 80.9, 81.3, 81.4, 81.5, 81.8, 80.8, 81.7, 81.7, 82.3, 82.4], "spend": [9.16, 9.33, 9.22, 9.13, 9.13, 9.6, 10.54, 10.41, 10.41, 10.58, 10.63, 10.62, 10.88, 10.88, 10.93, 10.98, 10.85, 11.45, 11.28, 10.8, 10.79, 11.07], "spendEU": [9.91, 9.86, 9.87, 9.81, 9.79, 9.84, 10.76, 10.79, 10.26, 9.94], "unmet": [3.0, 1.9, 1.1, 0.5, 0.4], "prv": [172.38, 170.9, 167.71, 161.47, 160.75, 154.88, 149.74, 146.72, 142.96, 177.16, 164.05, 152.21, 136.93], "trt": [82.31, 82.04, 81.65, 74.86, 73.93, 71.5, 70.97, 69.89, 65.17, 62.67, 61.64, 62.27, 58.83], "prvEU": [177.96, 175.02, 171.01, 165.82, 166.28, 162.48, 160.0, 158.57, 154.0, 179.91, 200.83, 168.14, 150.85], "trtEU": [103.39, 101.73, 98.65, 94.83, 95.85, 93.16, 92.09, 91.3, 89.16, 91.71, 93.27, 89.7, 86.81]};
+  H.classList.add('js');
+  function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
+  function fr(v,d){d=d==null?1:d;return v.toLocaleString('fr-BE',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  function sg(v,d){return (v<0?'−':v>0?'+':'')+fr(Math.abs(v),d)}
+  var MOB=innerWidth<640;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,calm=false;
+  try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}
+  var ab=D.getElementById('a11y');
+  function setCalm(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}
+  setCalm(calm);ab.addEventListener('click',function(){setCalm(!calm)});
+  var TX='font-family:var(--sans);font-size:'+(MOB?12:13)+'px;fill:';
+
+
+  /* 0. Seuil */
+  (function(){
+    var g=D.getElementById('guess'),go=D.getElementById('gOut'),vd=D.getElementById('verdict');
+    function yr(v){return fr(v)+(v>=2?' ans':' an')}
+    g.addEventListener('input',function(){go.textContent=yr(+g.value)});
+    D.getElementById('reveal').addEventListener('click',function(){
+      var v=+g.value;
+      vd.innerHTML=(Math.abs(v-0.2)<=0.3?'Bien vu : ':'Vous avez dit '+yr(v)+'. ')+'L’espérance de vie en bonne santé est passée de 63,7 ans en 2008 à 63,9 ans en 2024 : à peine 0,2 an de plus, alors que l’espérance de vie a gagné 2,6 ans.<span class="down" aria-hidden="true">↓</span>';
+      vd.hidden=false;go.textContent='0,2 an';g.value=0.2;
+    });
+  })();
+
+  /* Courbes à départs variables */
+  function lines2(host,o){
+    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?320:420),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
+    function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
+    (o.bands||[]).forEach(function(b){s.appendChild(el('rect',{x:X(b[0]),y:T,width:X(b[1])-X(b[0]),height:B-T,fill:b[2]}));s.appendChild(el('text',{x:(X(b[0])+X(b[1]))/2,y:T-10,'text-anchor':'middle',style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?15:22)+'px;fill:'+o.ink},b[3]))});
+    o.ticks.forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:o.grid}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+o.mute},fr(v,o.tdec||0)+(o.unit||'')))});
+    o.years.forEach(function(y){s.appendChild(el('text',{x:X(y),y:Hh-12,'text-anchor':'middle',style:TX+o.mute},y))});
+    (o.breaks||[]).forEach(function(b){s.appendChild(el('line',{x1:X(b),x2:X(b),y1:T,y2:B,stroke:'#E2402B','stroke-dasharray':'2 6'}));s.appendChild(el('text',{x:X(b),y:T-6,'text-anchor':'middle',style:'font-size:18px;fill:#E2402B'},'×'))});
+    var g=el('g',{});
+    o.series.forEach(function(se){
+      var pts=se.pts||se.v.map(function(v,j){return [se.s+j,v]});
+      var d=pts.map(function(p,j){return (j?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)}).join(' ');
+      var p=el('path',{d:d,fill:'none',stroke:se.c,'stroke-width':se.w||3,'stroke-linejoin':'round','stroke-linecap':'round','class':se.dash?'fadein':'drawline'});
+      if(se.dash)p.setAttribute('stroke-dasharray','6 6');g.appendChild(p);
+      if(se.end!==false){var lp=pts[pts.length-1];
+        g.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:5,fill:se.c,'class':'fadein'}));
+        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+se.c},fr(lp[1],o.dec==null?1:o.dec)+(o.unit||'')+(MOB?'':'  '+se.n)));}
+    });
+    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+k[3]},k[2]))});
+    s.appendChild(g);host.appendChild(s);
+  }
+
+
+  var DK={grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',bg:'#1E1914'},PP={grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',bg:'#F7F6F2'};
+  function o2(a,b){for(var k in b)a[k]=b[k];return a}
+
+  /* Histoire : espérance de vie 1960-2024 */
+  lines2(D.getElementById('leChart'),o2({t0:1960,t1:2024,rm:MOB?70:150,min:65,max:85,ticks:[65,70,75,80,85],years:MOB?[1960,1980,2000,2024]:[1960,1970,1980,1990,2000,2010,2024],breaks:[2011,2014],
+    series:[{n:'Union',v:DATA.leEU,s:2002,c:'#A69C8F',dash:1,dy:10},{n:'Belgique',v:DATA.le,s:1960,c:'#C9773A',w:4.5,dy:-4}],
+    marks:[[1960,69.7,'69,7 ans','#EDE6DC',26,'start'],[2020,80.8,'2020 : 80,8','#EDE6DC',24,'end']],
+    label:'Espérance de vie à la naissance en Belgique : 69,7 ans en 1960, 80,8 en 2020, 82,4 en 2024 ; Union : 81,5 en 2024'},DK));
+
+  /* Fiche 01 : espérance de vie et années en bonne santé */
+  lines2(D.getElementById('hlyChart'),o2({t0:2004,t1:2024,rm:MOB?70:230,min:55,max:85,ticks:[55,60,65,70,75,80,85],years:MOB?[2004,2012,2024]:[2004,2008,2012,2016,2020,2024],breaks:[2005,2019],
+    series:[{n:'ans d’espérance de vie',v:DATA.leB,s:2004,c:'#3E3A8C',w:4,dy:0},{n:'ans en bonne santé',v:DATA.hly,s:2004,c:'#C0341E',w:4.5,dy:0}],
+    marks:[[2008,79.8,'79,8','#3E3A8C',-12],[2008,63.7,'63,7','#C0341E',-12]],
+    label:'Belgique : espérance de vie de 79,8 ans en 2008 à 82,4 ans en 2024 ; espérance de vie en bonne santé de 63,7 à 63,9 ans'},PP));
+
+  /* Fiche 02 : dépenses et renoncement */
+  lines2(D.getElementById('spendChart'),o2({t0:2003,t1:2024,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:120,min:8,max:12,ticks:[8,9,10,11,12],unit:' %',years:MOB?[2003,2013,2024]:[2003,2008,2013,2018,2024],
+    series:[{n:'Union',v:DATA.spendEU,s:2014,c:'#A69C8F',dash:1,dy:10},{n:'Belgique',v:DATA.spend,s:2003,c:'#C9773A',w:4,dy:-4}],
+    marks:[[2020,11.45,'2020','#EDE6DC',-12]],
+    label:'Dépenses de santé en % du PIB : Belgique 9,2 % en 2003, 11,1 % en 2024 ; Union 9,9 % en 2023'},DK));
+  (function(){
+    var N=[['20 % les plus modestes',DATA.unmet[0]],['2e cinquième',DATA.unmet[1]],['3e cinquième',DATA.unmet[2]],['4e cinquième',DATA.unmet[3]],['20 % les plus aisés',DATA.unmet[4]]];
+    var W=MOB?420:600,rh=44,L=MOB?160:190,R=W-60,Hh=N.length*rh+10;
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Part des 16 ans et plus ayant renoncé à un examen médical en 2024, selon le revenu : '+N.map(function(n){return n[0]+' '+fr(n[1])+' %'}).join(', ')});
+    N.forEach(function(n,i){var y=6+i*rh,w=(R-L)*n[1]/3.5;s.appendChild(el('text',{x:L-10,y:y+24,'text-anchor':'end',style:TX+DK.ink},n[0]));s.appendChild(el('rect',{x:L,y:y+8,width:Math.max(w,2).toFixed(1),height:rh-20,fill:'#C9773A','class':'fadein'}));s.appendChild(el('text',{x:L+Math.max(w,2)+8,y:y+24,'class':'fadein',style:TX+DK.ink+';font-weight:700'},fr(n[1])+' %'))});
+    D.getElementById('unmetChart').appendChild(s);
+  })();
+
+  /* Fiche 03 : mortalité évitable */
+  lines2(D.getElementById('avChart'),{t0:2011,t1:2023,rm:MOB?70:290,min:40,max:210,ticks:[50,100,150,200],dec:0,grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',years:MOB?[2011,2017,2023]:[2011,2013,2015,2017,2019,2021,2023],
+    series:[{n:'prévention, Union',v:DATA.prvEU,s:2011,c:'#3D3A35',dash:1,dy:-6},{n:'prévention, Belgique',v:DATA.prv,s:2011,c:'#701C0E',w:4.5,dy:8},{n:'soins, Union',v:DATA.trtEU,s:2011,c:'#3D3A35',dash:1,dy:-2},{n:'soins, Belgique',v:DATA.trt,s:2011,c:'#1A1A1A',w:4.5,dy:6}],
+    label:'Mortalité évitable pour 100 000 habitants en 2023 : par la prévention, Belgique 137, Union 151 ; par les soins, Belgique 59, Union 87'});
+
+  /* Recherche */
+  (function(){
+    var Q=[
+      {q:'Les soins expliquent-ils l’essentiel de notre espérance de vie ?',b:['b-ma','Majoritaire : une contribution réelle mais partielle'],b2:['b-de','Débattu : sa part exacte'],v:'Les soins sauvent des vies, mais la durée de vie dépend aussi beaucoup des comportements, des conditions de vie et de travail. Le chiffre souvent cité de « 10 % » pour la part des soins est fragile.',
+       st:[{a:'Kaplan et Milstein, 2019',t:'Revue de quatre méthodes d’estimation, États-Unis',l:0,lt:'revue',p:'Les estimations de la part des soins dans la longévité vont de 0 à 17 % selon la méthode. Le chiffre de 10 %, très cité, repose sur des calculs qu’on ne peut pas reproduire ; les auteurs jugent l’effet des soins « modeste ».',u:'https://www.annfammed.org/content/17/3/267',s:'Annals of Family Medicine'},
+           {a:'Eurostat, 2023',t:'Mortalité évitable, Belgique et Union',l:1,lt:'statistique',p:'En Belgique, 137 décès pour 100 000 habitants sont évitables par la prévention, contre 59 par les soins. Le second chiffre est bien inférieur à la moyenne européenne (87), le premier en est plus proche (151).',u:'https://ec.europa.eu/eurostat/databrowser/view/hlth_cd_apr/default/table?lang=fr',s:'Eurostat'}],
+       x:'Ces estimations viennent surtout des États-Unis, où l’accès aux soins est plus inégal qu’en Belgique.'},
+      {q:'Faire payer le patient réduit-il les dépenses sans nuire à la santé ?',b:['b-ma','Majoritaire'],v:'Payer une partie de ses soins réduit leur consommation. En moyenne, la santé n’en souffre pas de façon mesurable, mais les plus pauvres et les plus malades y perdent. À l’inverse, rendre les soins accessibles protège surtout le budget des ménages et la santé mentale.',
+       st:[{a:'RAND, 1971-1982 (Manning et al., 1987)',t:'États-Unis, plus de 7 700 personnes tirées au sort entre plusieurs formules d’assurance',l:5,p:'Avec une participation financière, les dépenses baissent de 20 à 30 % et les hospitalisations d’environ 20 %. Pas d’effet sur la santé moyenne ; chez les plus pauvres et les plus malades (environ 6 % de l’échantillon), les soins gratuits améliorent le contrôle de la tension et la vue.',u:'https://www.rand.org/pubs/research_briefs/RB9174.html',s:'RAND · American Economic Review'},
+           {a:'Oregon, 2008 (Finkelstein et al., 2012 ; Baicker et al., 2013)',t:'États-Unis, accès à une assurance publique attribué par tirage au sort',l:5,p:'Les gagnants consultent davantage, n’ont presque plus de dépenses catastrophiques et souffrent moins de dépression (−9 points). Pas d’effet significatif sur la tension, le cholestérol ou le diabète mesurés au bout de deux ans.',u:'https://www.povertyactionlab.org/es/node/1825',s:'QJE · NEJM'}],
+       x:'Les deux expériences sont américaines ; la Belgique part d’une couverture presque universelle et d’une part à charge des patients déjà élevée.'},
+      {q:'Les inégalités sociales de santé sont-elles importantes en Belgique ?',b:['b-et','Établi : le gradient social'],b2:['b-de','Débattu : ses causes'],v:'Plus on est diplômé ou aisé, plus on vit longtemps et en bonne santé, à chaque marche de l’échelle sociale. Les causes se cumulent (revenus, travail, logement, comportements, accès aux soins) et leur part respective est discutée.',
+       st:[{a:'Renard et al., 2019',t:'Belgique, recensements de 2001 et 2011 reliés aux décès',l:1,p:'En 2011, à 25 ans, l’écart d’espérance de vie entre peu diplômés et diplômés du supérieur atteint 6,1 ans chez les hommes et 4,6 chez les femmes ; en bonne santé, 10,5 et 13,4 ans.',u:'https://doi.org/10.1186/s13690-019-0330-8',s:'Archives of Public Health'},
+           {a:'Sciensano (Bourguignon et al.), 2020',t:'Belgique, quartiles d’un indice socio-économique',l:1,p:'Environ 9 ans d’écart d’espérance de vie à la naissance chez les hommes et 6 chez les femmes entre le quart le plus favorisé et le quart le moins favorisé.',u:'https://www.healthybelgium.be/en/health-status/health-inequalities/inequalities-in-life-expectancy-and-quality-of-life',s:'Sciensano'}],
+       x:'Ces études décrivent des écarts ; elles ne disent pas quelle politique les réduirait.'}];
+    function lvl(n,t){if(!n)return '<span class="lvl"><em>'+t+'</em></span>';var h='<span class="lvl" title="Échelle de Maryland : niveau '+n+' sur 5">';for(var i=1;i<=5;i++)h+='<i class="'+(i<=n?'on':'')+'"></i>';return h+'<em>Maryland '+n+'/5</em></span>'}
+    D.getElementById('rq').innerHTML=Q.map(function(q,i){return '<article class="rq" data-r><div class="qh"><span class="qn">'+(i+1)+'</span><div><h3>'+q.q+'</h3><div class="verd"><span class="bdg '+q.b[0]+'">'+q.b[1]+'</span>'+(q.b2?'<span class="bdg '+q.b2[0]+'">'+q.b2[1]+'</span>':'')+'<p>'+q.v+'</p></div></div></div><ul class="studies">'+q.st.map(function(s){return '<li class="study"><div class="meta"><span>'+s.s+'</span>'+lvl(s.l,s.lt)+'</div><h4>'+s.a+' · '+s.t+'</h4><p>'+s.p+'</p><a href="'+s.u+'" target="_blank" rel="noopener">Lire la source ↗</a></li>'}).join('')+'</ul><p class="unknown">'+q.x+'</p></article>'}).join('');
+  })();
+
+  /* Lectures */
+  (function(){
+    var Lx=[
+      ['Économie du bien-être','Kenneth Arrow','« Uncertainty and the Welfare Economics of Medical Care », 1963','La santé n’est pas un marché comme les autres : la maladie est imprévisible, le patient en sait moins que le médecin et ne peut pas « essayer » un traitement. Ces défauts justifient assurance, règles et confiance.','L’incertitude, l’asymétrie d’information, l’assurance.','N’indique pas jusqu’où l’État doit intervenir pour corriger ces défauts.'],
+      ['Libérale','Milton Friedman','Capitalism and Freedom, 1962','Les règles qui réservent l’exercice de la médecine aux diplômés agréés protègent surtout les médecins et limitent l’offre. Plus de concurrence ferait baisser les prix.','La liberté de choix et le coût des soins.','Le patient a souvent du mal à juger la qualité d’un soin, ce qui rend la concurrence risquée.'],
+      ['Protection universelle','William Beveridge','Social Insurance and Allied Services, 1942','Un service de santé accessible à tous, financé collectivement, est l’une des conditions d’une société libérée du besoin.','L’accès universel et la gratuité au point de soins.','Un système unique peut souffrir de files d’attente et d’une moindre réactivité.'],
+      ['Égalitarisme libéral','Norman Daniels','Just Health, 2008','La santé protège l’égalité des chances : une société juste doit répartir équitablement non seulement les soins, mais aussi les conditions sociales qui produisent la santé.','Les inégalités de santé et leurs causes sociales.','Laisse ouverte la question des priorités quand les moyens manquent.'],
+      ['Capabilités','Amartya Sen','Development as Freedom, 1999','La santé est une liberté fondamentale : elle détermine ce qu’une personne peut faire et être. On juge une société à la longévité et à la santé qu’elle rend possibles, pas seulement à sa richesse.','L’espérance de vie et les capacités réelles des personnes.','Difficile à transformer en indicateurs et en priorités concrètes.'],
+      ['Épidémiologie sociale','Michael Marmot','The Health Gap, 2015','La santé suit un gradient social : à chaque marche de l’échelle sociale, on vit plus longtemps. Réduire les écarts passe par l’éducation, l’emploi et le logement autant que par les soins.','Les écarts de santé entre groupes sociaux.','Les mécanismes exacts reliant position sociale et santé restent discutés.'],
+      ['Critique de la médicalisation','Ivan Illich','Némésis médicale, 1975','Au-delà d’un certain seuil, la médecine produit ses propres maux : effets indésirables, dépendance aux soins, perte de la capacité des personnes à faire face à la maladie.','Les soins inutiles et la surmédicalisation.','Sous-estime les progrès réels de la médecine depuis les années 1970.'],
+      ['Philosophie de la médecine','Georges Canguilhem','Le normal et le pathologique, 1966','La santé n’est pas une moyenne statistique : c’est la capacité d’un individu à s’adapter et à créer de nouvelles normes de vie. Être en bonne santé, c’est pouvoir tomber malade et s’en remettre.','Ce que veut dire « être en bonne santé ».','Une réflexion conceptuelle, éloignée des choix concrets de politique de santé.']];
+    for(var i=Lx.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=Lx[i];Lx[i]=Lx[j];Lx[j]=t}
+    D.getElementById('reads').innerHTML=Lx.map(function(r){return '<article class="read" data-r><span class="trad">'+r[0]+'</span><h3>'+r[1]+'</h3><p class="w">'+r[2]+'</p><p class="th">'+r[3]+'</p><p class="so"><b>Ce qu’elle regarde</b>'+r[4]+'</p><p class="cr"><b>Sa critique</b>'+r[5]+'</p></article>'}).join('');
+  })();
+
+  /* Citer */
+  (function(){
+    var T={hly:'En Belgique, l’espérance de vie à la naissance est passée de 79,8 ans en 2008 à 82,4 ans en 2024, mais l’espérance de vie en bonne santé seulement de 63,7 à 63,9 ans (Eurostat, demo_mlexpec et hlth_hlye).',
+      dep:'En 2024, la Belgique a consacré 11,1 % de son PIB aux dépenses de santé, dont 21,8 % ont été payés directement par les ménages (Eurostat, hlth_sha11_hf).',
+      evi:'En 2023, la Belgique comptait 137 décès évitables par la prévention et 59 décès évitables par des soins pour 100 000 habitants, contre 151 et 87 dans l’Union européenne (Eurostat, hlth_cd_apr).',
+      ine:'En 2011, à 25 ans, un homme peu diplômé pouvait espérer vivre 6,1 ans de moins qu’un diplômé du supérieur, et 10,5 ans de moins en bonne santé (Renard et al., 2019).'};
+    var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');
+    function set(k){q.textContent=T[k];c.textContent='';cs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}
+    cs.forEach(function(b){b.onclick=function(){set(b.dataset.k)}});set('hly');
+    D.getElementById('copy').onclick=function(){function fb(){var r=D.createRange();r.selectNodeContents(q);var s=getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Texte sélectionné : copiez-le.'}try{navigator.clipboard.writeText(q.textContent).then(function(){c.textContent='Copié.'},fb)}catch(e){fb()}};
+  })();
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
+  D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
+  ['t1','leChart','hlyChart','spendChart','unmetChart','avChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
+  (function(){
+    var c=D.getElementById('cursor'),x=0,y=0,cx=0,cy=0;
+    D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,svg[role=img]')))});
+    (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
+  })();
+})();
+
+/* Composants pédagogiques communs aux dossiers :
+   - explication après le pari d'ouverture (data-reveal),
+   - questions de transfert avec correction expliquée (.qz). */
+(function(){
+  var D=document;
+  /* Après le pari : afficher l'explication détaillée */
+  D.querySelectorAll('[data-reveal]').forEach(function(b){
+    b.addEventListener('click',function(){var t=D.getElementById(b.getAttribute('data-reveal'));if(t)t.hidden=false});
+  });
+  /* Questions de transfert */
+  D.querySelectorAll('.qz').forEach(function(q){
+    var ok=q.getAttribute('data-ok'),opts=q.querySelectorAll('.qopts button'),mech=q.querySelector('.qmech');
+    opts.forEach(function(b){
+      b.addEventListener('click',function(){
+        var k=b.getAttribute('data-k');
+        opts.forEach(function(o){
+          var good=o.getAttribute('data-k')===ok;
+          o.setAttribute('aria-pressed',o===b?'true':'false');
+          o.classList.toggle('is-ok',good);
+          o.classList.toggle('is-ko',o===b&&!good);
+        });
+        q.querySelectorAll('.qfb').forEach(function(f){f.hidden=f.getAttribute('data-k')!==k});
+        if(mech)mech.hidden=false;
+        var live=q.querySelector('.qlive');
+        if(live)live.textContent=k===ok?'Bonne réponse.':'Ce n’est pas la bonne réponse : lisez l’explication.';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
