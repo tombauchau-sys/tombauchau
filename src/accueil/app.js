@@ -403,7 +403,9 @@
     gf09:[['__EDUCATION__#recherche','Dossier Éducation','dépenser plus suffit-il ?']],
     arope:[['__INEGALITES__#f-pauvrete','Dossier Inégalités','ce que mesure le risque de pauvreté']],
     depriv:[['__INEGALITES__#definitions','Dossier Inégalités','pauvreté relative et privations concrètes']],
-    gini:[['__INEGALITES__#f-redistribution','Dossier Inégalités','redistribution et coefficient de Gini']]};
+    gini:[['__INEGALITES__#f-redistribution','Dossier Inégalités','redistribution et coefficient de Gini']],
+    ghg:[['__CLIMAT__#f-emissions','Dossier Climat et énergie','quels secteurs émettent, et ce que l’inventaire ne compte pas']],
+    renew:[['__CLIMAT__#f-energie','Dossier Climat et énergie','renouvelable ne veut pas dire bas carbone']]};
   function dosLinks(id){var L=DOSL[id];if(!L)return '';return '<span class="dl">Pour comprendre : '+L.map(function(l){return '<a href="'+l[0]+'">'+l[1]+'</a> ('+l[2]+')'}).join(' · ')+'</span>'}
 
   /* ======================= Classements ======================= */

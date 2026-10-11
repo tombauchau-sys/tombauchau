@@ -1,0 +1,306 @@
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 09 · Climat et énergie · avant de lire</span>
+    <h1 class="q" id="q0">Selon vous, de combien les émissions de gaz à effet de serre de la Belgique ont-elles baissé depuis 1990 ?</h1>
+    <output class="out" id="gOut" for="guess">−20 %</output>
+    <input class="range" type="range" id="guess" min="0" max="60" step="1" value="20" aria-label="Votre estimation de la baisse, en pour cent">
+    <div class="scale" aria-hidden="true"><span>0 %</span><span>−30 %</span><span>−60 %</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>Chaque pays tient un inventaire des gaz à effet de serre émis sur son territoire : centrales, usines, voitures, chauffage, élevage, décharges. En 2024, la Belgique a émis 98,0 millions de tonnes d’équivalent CO₂, contre 145,5 millions en 1990. Ce chiffre ne compte ni les forêts et les sols, ni les émissions liées aux biens importés.</p><h3>Pourquoi le chiffre surprend</h3><p>La baisse est réelle, mais plus lente que dans l’ensemble de l’Union (−38,0 %). Elle vient surtout de la production d’électricité et de l’industrie ; les émissions du transport, elles, ont augmenté.</p><h3>Pour réutiliser cette idée</h3><p>Devant un chiffre d’émissions, demandez : depuis quelle année de référence, avec ou sans forêts, et sur le territoire ou en tenant compte des importations ?</p></div>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 09 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Climat et énergie"><span class="t1">Climat </span><span class="t2">et énergie</span></h2></div>
+    <p class="lede hq" data-r>La Belgique réduit-elle ses émissions, et à quel prix ? Trente-cinq ans d’inventaires, trois fiches, l’état de la recherche et huit lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>−32,6 %</b><span>d’émissions de gaz à effet de serre entre 1990 et 2024, contre −38,0 % dans l’Union</span><span class="src">Eurostat sdg_13_10 et env_air_gge</span></div>
+      <div><b>14,3 %</b><span>d’énergies renouvelables dans la consommation d’énergie, la part la plus basse de l’Union (Union : 25,2 %)</span><span class="src">Eurostat nrg_ind_ren, 2024</span></div>
+      <div><b>40,5 %</b><span>de l’électricité produite en Belgique vient du nucléaire, 34,4 % des renouvelables</span><span class="src">Eurostat nrg_bal_peh, 2024</span></div>
+      <div><b>+19 %</b><span>d’émissions du transport depuis 1990 : le seul grand secteur en hausse</span><span class="src">Eurostat env_air_gge, 2024</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : inventaire 2025 des émissions (printemps-été 2027)</p>
+  </div>
+</section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">La Belgique réduit-elle ses émissions, et à quel prix ?</h2>
+      <p class="ans">Oui, mais moins vite que la moyenne européenne : −32,6 % entre 1990 et 2024, contre −38,0 % pour l’Union. La baisse vient surtout de la production d’électricité, de l’industrie et des déchets ; le transport émet davantage qu’en 1990. La Belgique est le pays de l’Union où la part des renouvelables dans l’énergie consommée est la plus faible, et elle importe les trois quarts de son énergie. L’objectif imposé par la justice en 2023, −55 % en 2030, suppose d’aller beaucoup plus vite.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Les inventaires comptent les émissions produites sur le territoire, pas celles des biens importés.</li><li>La baisse est très inégale selon les secteurs : forte pour l’électricité et l’industrie, inexistante pour le transport, qui émet davantage qu’en 1990.</li><li>Le prix de l’énergie et la capacité des ménages à se chauffer font partie de la question climatique.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>145,5 → 98,0 Mt</b><span>émissions de gaz à effet de serre de la Belgique, 1990 et 2024, forêts et sols exclus</span><small>Eurostat, sdg_13_10</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> comparer des pourcentages de baisse calculés depuis des années de référence différentes (1990, 2005) ou avec et sans les forêts.</p>
+      <p class="tm-concl">Les chiffres mesurent les émissions et leur évolution ; la vitesse à laquelle il faut réduire, et qui doit en porter le coût, restent des choix politiques.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- 1b. Les définitions -->
+<section class="sec papier" id="definitions" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois indicateurs <span>qu’on confond souvent.</span></h2>
+    <p class="lede" data-r>Les émissions viennent des inventaires que chaque pays transmet à l’ONU et à l’Union ; les chiffres d’énergie, des bilans énergétiques publiés par Eurostat. Ils ne mesurent pas la même chose.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Territoire</span><h3>Les émissions</h3><p class="who">Inventaires nationaux, Eurostat</p><p>Gaz à effet de serre émis <b>sur le territoire</b> en un an, convertis en tonnes d’équivalent CO₂. On peut compter ou non ce qu’absorbent les forêts et les sols ; l’aviation et la navigation internationales sont à part.</p><p class="use">Sert à : suivre les engagements climatiques d’un pays.</p></article>
+      <article data-r><span class="tag p">Énergie</span><h3>La part des renouvelables</h3><p class="who">Eurostat, selon la directive européenne</p><p>Part de l’énergie renouvelable (vent, soleil, biomasse, chaleur ambiante, hydraulique) dans la <b>consommation finale brute d’énergie</b> : électricité, chaleur et carburants, pas seulement l’électricité.</p><p class="use">Sert à : mesurer la transformation du système énergétique.</p></article>
+      <article data-r><span class="tag u">Approvisionnement</span><h3>La dépendance énergétique</h3><p class="who">Eurostat</p><p>Part de l’énergie disponible <b>couverte par des importations nettes</b>. Par convention, l’électricité nucléaire compte comme une production nationale, même si l’uranium est importé.</p><p class="use">Sert à : mesurer l’exposition aux marchés et aux fournisseurs étrangers.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ un pays peut produire une électricité peu carbonée et rester très dépendant de l’étranger</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-emissions"><span class="n">01</span><h3>Les émissions</h3><p>Quels secteurs baissent, lequel augmente ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-energie"><span class="n">02</span><h3>L’énergie</h3><p>Nucléaire, gaz, renouvelables : d’où vient l’énergie ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-facture"><span class="n">03</span><h3>La facture</h3><p>Prix de l’électricité et ménages qui ne se chauffent pas.</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · de Kyoto aux tribunaux</span>
+    <h2 class="giant" id="tH" data-r>Un plateau jusqu’en 2005, <span>puis une baisse par à-coups.</span></h2>
+    <p class="lede" data-r>Pendant quinze ans, les émissions belges restent proches de leur niveau de 1990. Elles baissent ensuite, avec deux chutes brutales lors des crises de 2009 et de 2020, suivies de rebonds. L’Union, elle, baisse dès les années 1990.</p>
+    <div class="chart" id="histChart"></div>
+    <p class="srcl">Émissions de gaz à effet de serre hors forêts et sols (UTCATF), indice 1990 = 100, Belgique (trait plein) et Union à 27 (pointillés), 1990-2024. Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=fr" target="_blank" rel="noopener">sdg_13_10</a> (Belgique) et <a href="https://ec.europa.eu/eurostat/databrowser/view/env_air_gge/default/table?lang=fr" target="_blank" rel="noopener">env_air_gge</a> (Union, indice calculé par Chiffre Juste), consulté le 11 octobre 2026. La bande grise marque la période d’engagement de Kyoto (2008-2012).</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1997</span><h3>Kyoto</h3><p>Dans le partage de l’effort européen, la Belgique s’engage à réduire ses émissions de 7,5 % sur 2008-2012 par rapport à 1990. Sur ces cinq ans, ses émissions intérieures sont en moyenne inférieures de 12 % à 1990 (calcul sur les données Eurostat ; la comptabilité officielle de Kyoto suit des règles propres).</p></li>
+      <li data-r><span class="yr">2003</span><h3>La sortie du nucléaire</h3><p>Une loi interdit la construction de nouvelles centrales et limite l’exploitation des réacteurs à quarante ans, avec des fermetures prévues entre 2015 et 2025.</p></li>
+      <li data-r><span class="yr">2005</span><h3>Le marché du carbone</h3><p>L’Union lance son système d’échange de quotas d’émission : centrales et grandes usines doivent détenir un quota pour chaque tonne de CO₂ émise.</p></li>
+      <li data-r><span class="yr">2015</span><h3>L’accord de Paris</h3><p>Les États s’engagent à contenir le réchauffement nettement en dessous de 2 °C. L’Union se fixe ensuite −55 % d’émissions nettes en 2030 par rapport à 1990 et la neutralité climatique en 2050.</p></li>
+      <li data-r><span class="yr">2023</span><h3>La Klimaatzaak</h3><p>Saisie par l’association Klimaatzaak et quelque 58 000 citoyens, la cour d’appel de Bruxelles condamne l’État fédéral, la Flandre et Bruxelles à réduire les émissions de 55 % en 2030 par rapport à 1990. Elle ne retient pas de faute de la Wallonie.</p></li>
+      <li data-r><span class="yr">2022-2025</span><h3>Fermer, puis prolonger</h3><p>Doel 3 (2022), Tihange 2 (2023), Doel 1, Tihange 1 et Doel 2 (2025) ferment. Doel 4 et Tihange 3 sont prolongés de dix ans après un accord avec Engie, et la Chambre vote le 15 mai 2025 l’abrogation de la sortie du nucléaire.</p></li>
+    </ol>
+    <p class="srcl">Kyoto : Chambre des représentants, DOC 51 1034/001, 21 avril 2004. Loi de 2003 : <a href="https://climate-laws.org/document/act-on-nuclear-energy-for-industrial-electricity-production_572c" target="_blank" rel="noopener">Climate Change Laws of the World</a>. Union : règlement (UE) 2021/1119, « loi européenne sur le climat ». Klimaatzaak : <a href="https://www.vrt.be/vrtnws/fr/2023/11/30/la-cour-d_appel-de-bruxelles-enjoint-letat-belge-a-reduire-ses-e/" target="_blank" rel="noopener">VRT, 30 novembre 2023</a>. Réacteurs : <a href="https://world-nuclear-news.org/articles/first-belgian-power-reactor-shut-down" target="_blank" rel="noopener">World Nuclear News, 2022</a> ; <a href="https://nuclear.engie-electrabel.be/en/nuclear-energy/shutdown-our-nuclear-power-plants/final-shutdown-doel-1" target="_blank" rel="noopener">Engie Electrabel</a> ; <a href="https://world-nuclear.org/our-association/publications/world-nuclear-outlook-report/belgium---world-nuclear-outlook-report" target="_blank" rel="noopener">World Nuclear Association</a>. Abrogation : <a href="https://www.vrt.be/vrtnws/fr/2025/05/16/des-centrales-nucleaires-pourraient-etre-construites-en-belgique/" target="_blank" rel="noopener">VRT, 16 mai 2025</a>.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« La Belgique ne réduit pas ses émissions. »</h4><p><b>Faux.</b> Elles ont baissé de 32,6 % entre 1990 et 2024. Mais la baisse est plus lente que dans l’Union (−38,0 %), et par habitant la Belgique reste au neuvième rang des émissions nettes les plus élevées des 27.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« Les émissions baissent dans tous les secteurs. »</h4><p><b>Faux.</b> Le transport émettait 21,0 millions de tonnes en 1990 et 24,9 millions en 2024 (+19 %). C’est désormais le premier secteur émetteur, avec un quart du total.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Avec le nucléaire, la Belgique produit son énergie. »</h4><p><b>En partie seulement.</b> L’électricité nucléaire compte, par convention, comme une production nationale, mais l’uranium est importé, et l’électricité n’est qu’une partie de l’énergie consommée. Même avec ses réacteurs, la Belgique importait 75,4 % de son énergie en 2024.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : les émissions -->
+<section class="sec papier" id="f-emissions" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>L’électricité et l’industrie baissent, <span>le transport augmente.</span></h2>
+    <p class="lede" data-r>Depuis 1990, les émissions de la production d’énergie ont été divisées par deux et celles des déchets par quatre. Le chauffage des bâtiments, l’industrie et l’agriculture baissent aussi. Le transport fait exception : il représente aujourd’hui 25 % des émissions. Par habitant, les émissions (hors forêts et sols) sont passées de 14,6 tonnes en 1990 à 8,3 tonnes en 2024.</p>
+    <div class="chart" id="secChart"></div>
+    <p class="srcl">Émissions de gaz à effet de serre par secteur, Belgique, 1990 et 2024, en millions de tonnes d’équivalent CO₂. « Bâtiments et autres » regroupe le chauffage des logements, des bureaux et des exploitations agricoles. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/env_air_gge/default/table?lang=fr" target="_blank" rel="noopener">env_air_gge</a> ; par habitant : <a href="https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=fr" target="_blank" rel="noopener">sdg_13_10</a>. Consulté le 11 octobre 2026.</p>
+    <div class="trap" data-r><span class="note">attention</span><p>Les deux plus fortes baisses annuelles, en 2009 (−9 %) et en 2020 (−8 %), correspondent à la crise financière et à la pandémie, et ont été suivies de rebonds. Une baisse d’une année sur l’autre ne prouve pas l’efficacité d’une politique.</p></div>
+    <div class="canwhat" data-r><p class="cw-t">L’inventaire des émissions</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Combien de gaz à effet de serre sont émis sur le territoire, et par quel secteur.</li><li>Si un pays tient ses engagements, avec une méthode commune fixée par l’ONU.</li><li>Comparer les pays et les années.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Les émissions liées aux biens importés et consommés en Belgique.</li><li>L’aviation et la navigation internationales, comptées à part.</li><li>Pourquoi les émissions ont baissé : politiques, crises, délocalisations ou météo.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>L’empreinte carbone, qui compte la consommation.</li><li>Les émissions par Région.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : l'énergie -->
+<section class="sec brun grain" id="f-energie" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Beaucoup de nucléaire, <span>peu de renouvelables.</span></h2>
+    <p class="lede" data-r>En 2024, la Belgique produit 40,5 % de son électricité dans ses centrales nucléaires, 34,4 % à partir de renouvelables et 18,4 % au gaz. Mais l’électricité n’est qu’une partie de l’énergie : sur l’ensemble de la consommation (chauffage et carburants compris), les renouvelables pèsent 14,3 %, le niveau le plus bas de l’Union.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Part des renouvelables</b><span>dans la consommation finale brute d’énergie, 2004-2024, en % · trait plein : Belgique, pointillés : Union</span></figcaption><div class="chart sm" id="renChart"></div></figure>
+      <figure data-r><figcaption><b>Production d’électricité</b><span>Belgique, 2000-2024, en térawattheures · orange : nucléaire, vert : renouvelables, gris : gaz</span></figcaption><div class="chart sm" id="mixChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=fr" target="_blank" rel="noopener">nrg_ind_ren</a> (donnée provisoire 2025 : 14,9 % pour la Belgique, 26,2 % pour l’Union), <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_peh/default/table?lang=fr" target="_blank" rel="noopener">nrg_bal_peh</a> (production brute d’électricité) et <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_id/default/table?lang=fr" target="_blank" rel="noopener">nrg_ind_id</a> (dépendance énergétique), consulté le 11 octobre 2026.</p>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>La production nucléaire varie fortement d’une année à l’autre : 26,1 TWh en 2015, 50,3 TWh en 2021. Les années où elle est la plus basse (2015, 2018) sont aussi celles où la dépendance énergétique mesurée est la plus haute (84,2 % et 83,0 %, contre 75,4 % en 2024). C’est en partie un effet de la convention statistique : quand les réacteurs tournent moins, l’énergie importée pèse davantage.</p></div>
+    <div class="canwhat" data-r><p class="cw-t">La part des renouvelables</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Quelle part de toute l’énergie consommée vient de sources renouvelables.</li><li>Comparer les pays avec la règle de calcul de la directive européenne.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Si l’énergie est peu carbonée : le nucléaire n’est pas renouvelable, mais émet peu de CO₂.</li><li>La part dans la seule électricité, beaucoup plus élevée.</li><li>Les conditions naturelles : vent, soleil et hydraulique ne sont pas les mêmes partout.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La part des renouvelables par usage : électricité, chaleur, transport.</li><li>Les échanges d’électricité avec les pays voisins.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : la facture -->
+<section class="band grain" id="f-facture" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>Une électricité chère, <span>et des ménages qui ne se chauffent pas.</span></h2>
+    <p class="lede ink" data-r>Pour un ménage moyen (2 500 à 5 000 kWh par an), le kilowattheure coûtait 35,0 centimes toutes taxes comprises au second semestre 2025, contre 29,0 dans l’Union : le troisième prix le plus élevé des 27, en euros. Pendant la crise de 2022, il a atteint 44,9 centimes. Cette année-là, la part des habitants incapables de chauffer convenablement leur logement est passée de 3,5 % (2021) à 5,0 %, puis 6,0 % en 2023.</p>
+    <div class="chart" id="priceChart"></div>
+    <p class="srcl ink">Prix de l’électricité pour les ménages (consommation de 2 500 à 4 999 kWh par an), toutes taxes et prélèvements compris, en centimes d’euro par kWh, par semestre ; trait plein : Belgique, pointillés : Union. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?lang=fr" target="_blank" rel="noopener">nrg_pc_204</a>, consulté le 11 octobre 2026 ; Union disponible jusqu’au second semestre 2025.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Belgique</h3><b class="big">4,2 %</b><p>des habitants ne peuvent pas chauffer convenablement leur logement, 2025</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Sous le seuil de pauvreté</h3><b class="big">13,2 %</b><p>des personnes à risque de pauvreté sont dans ce cas</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Union</h3><b class="big">8,8 %</b><p>en 2025, contre 10,6 % en 2023</p></div>
+    </div>
+    <p class="srcl ink">Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_mdes01/default/table?lang=fr" target="_blank" rel="noopener">ilc_mdes01</a> (enquête SILC, réponse déclarée par les ménages ; rupture de série en 2019 pour la Belgique), consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">Le prix moyen de l’électricité</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Ce que paie un ménage type par kilowattheure, taxes comprises.</li><li>Comment ce prix évolue, et le comparer entre pays avec la même méthode.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Le poids de la facture dans le budget : il faut tenir compte des revenus et du pouvoir d’achat de chaque pays.</li><li>Ce que paient les ménages au tarif social, aux contrats fixes ou très consommateurs.</li><li>Le coût du chauffage au gaz ou au mazout, mesuré à part.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les prix en parité de pouvoir d’achat.</li><li>La part des taxes et des coûts de réseau dans la facture.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="__HOME__#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Réduire les émissions, garder une énergie abordable, sécuriser l’approvisionnement, ménager les finances publiques : ces objectifs entrent souvent en tension. Pour chaque levier : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Donner un prix au carbone</h3><dl><dt>Le mécanisme</dt><dd>Faire payer chaque tonne émise, par une taxe ou un marché de quotas, pour rendre les solutions sobres plus rentables.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Le marché européen du carbone a réduit les émissions des secteurs couverts (Bayer et Aklin, 2020 ; Colmer et al., 2025) ; la taxe suédoise a réduit celles du transport (Andersson, 2019).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> L’acceptation sociale d’une hausse des prix pour le chauffage et la voiture, et l’effet d’une redistribution des recettes sur cette acceptation.</dd><dt>Ce qu’on sacrifie</dt><dd>Le pouvoir d’achat des ménages qui dépendent de la voiture ou d’un chauffage fossile, si rien ne compense.</dd></dl></article><article class="opt" data-r><h3>Imposer des normes</h3><dl><dt>Le mécanisme</dt><dd>Fixer des exigences : performance énergétique des bâtiments neufs, émissions des voitures neuves, interdiction de certains équipements.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Le transport est le seul grand secteur dont les émissions ont augmenté depuis 1990 en Belgique (+19 %, Eurostat).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Le coût par tonne évitée des normes, comparé à un prix du carbone, et la rapidité du renouvellement des voitures et des logements.</dd><dt>Ce qu’on sacrifie</dt><dd>Une part de liberté de choix, et un coût pour ceux qui ne peuvent pas s’équiper.</dd></dl></article><article class="opt" data-r><h3>Subventionner l’efficacité</h3><dl><dt>Le mécanisme</dt><dd>Aider à isoler les logements, à remplacer les chaudières ou à acheter des équipements moins gourmands.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Dans un grand programme américain d’isolation, les économies réelles ont été environ 2,5 fois plus faibles que prévu (Fowlie, Greenstone et Wolfram, 2018).</dd><dt>Ce qui reste incertain</dt><dd>Si ce résultat se transpose au parc de logements belge, ancien et peu isolé.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût budgétaire, et des aides qui profitent en partie à ceux qui auraient investi de toute façon <span class="ev hyp">hypothèse</span>.</dd></dl></article><article class="opt" data-r><h3>Miser sur le nucléaire</h3><dl><dt>Le mécanisme</dt><dd>Prolonger les réacteurs existants, voire en construire de nouveaux, pour produire une électricité peu carbonée et pilotable.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Le nucléaire a produit 40,5 % de l’électricité belge en 2024 (Eurostat) ; deux réacteurs sur sept restent en service.</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Le coût et le délai de nouvelles capacités, et leur place face à l’éolien, au solaire et aux importations.</dd><dt>Ce qu’on sacrifie</dt><dd>La gestion des déchets sur le très long terme, un risque d’accident, et des engagements financiers de plusieurs décennies.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Une baisse rapide des émissions</td><td>Le pouvoir d’achat à court terme, ou l’activité de certaines industries</td></tr><tr><td>Une énergie bon marché</td><td>Le signal-prix qui pousse à consommer moins</td></tr><tr><td>L’autonomie énergétique</td><td>Le recours aux importations, souvent moins chères à court terme</td></tr><tr><td>Des aides généreuses</td><td>L’équilibre des finances publiques</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>Que devons-nous <span>aux générations futures ?</span></h2>
+    <p class="lede" data-r>Faut-il agir vite quoi qu’il en coûte, faire confiance au prix et à l’innovation, ou changer de modèle ? Les chiffres ne tranchent pas. Huit traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>de la politique climatique ?</span></h2>
+    <p class="lede ink" data-r>En Belgique, le climat et l’énergie sont partagés entre l’État fédéral et les Régions, dans un cadre fixé en grande partie par l’Union européenne. La cour d’appel a d’ailleurs jugé séparément le fédéral et chaque Région.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Union européenne</h3><ul><li>Objectif de −55 % en 2030 et de neutralité en 2050</li><li>Marché du carbone pour l’électricité et l’industrie</li><li>Objectif belge de −47 % en 2030 (par rapport à 2005) pour le transport, les bâtiments, l’agriculture et les déchets</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>État fédéral</h3><ul><li>Nucléaire, sécurité d’approvisionnement, éolien en mer du Nord</li><li>Fiscalité (accises, TVA) et tarif social de l’énergie</li><li>Chemins de fer</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Régions</h3><ul><li>Environnement, renouvelables sur terre, primes à la rénovation</li><li>Performance énergétique des bâtiments, distribution du gaz et de l’électricité</li><li>Transports publics régionaux, agriculture</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Tribunaux</h3><ul><li>Klimaatzaak : objectif de −55 % imposé en 2023 au fédéral, à la Flandre et à Bruxelles</li><li>Contrôle du respect des droits fondamentaux</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Oublier les émissions importées</h3><p>L’inventaire compte ce qui est émis sur le territoire. Un pays qui importe davantage de biens fabriqués ailleurs peut voir ses émissions baisser sans que sa consommation en émette moins.</p></li>
+      <li data-r><span class="g">2</span><h3>Mélanger les années de référence</h3><p>−32,6 % depuis 1990 et −32,3 % depuis 2005 : les objectifs européens utilisent l’une ou l’autre année. Comparer un chiffre à un objectif suppose la même référence.</p></li>
+      <li data-r><span class="g">3</span><h3>Compter ou non les forêts</h3><p>Avec les forêts et les sols, la Belgique émet 97,4 millions de tonnes nettes en 2024 ; sans, 98,0. Dans d’autres pays, l’écart est énorme : la Suède passe sous zéro.</p></li>
+      <li data-r><span class="g">4</span><h3>Lire une année comme une tendance</h3><p>Un hiver doux, une crise économique ou l’arrêt de réacteurs nucléaires font varier les chiffres d’une année sur l’autre. Seule une série longue montre une tendance.</p></li>
+      <li data-r><span class="g">5</span><h3>Confondre renouvelable et bas carbone</h3><p>Le nucléaire n’est pas renouvelable, mais il émet peu de CO₂. La part des renouvelables ne dit donc pas, à elle seule, si l’énergie d’un pays est propre.</p></li>
+      <li data-r><span class="g">6</span><h3>Comparer des prix sans les revenus</h3><p>Les prix de l’énergie sont donnés en euros courants. Un kilowattheure à 35 centimes ne pèse pas le même poids dans tous les budgets ni dans tous les pays.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Liens : pour comprendre, il faut aussi examiner -->
+<section class="sec papier see" aria-labelledby="tSee">
+  <div class="wrap">
+    <span class="kick" data-r>Prolongements</span>
+    <h2 class="giant" id="tSee" data-r>Pour comprendre, <span>il faut aussi examiner…</span></h2>
+    <p class="lede" data-r>Les phénomènes sont liés, mais deux chiffres qui évoluent ensemble ne s’expliquent pas forcément l’un par l’autre. Chaque lien dit pourquoi il est utile et où il s’arrête.</p>
+    <ul class="seegrid"><li data-r><a href="__INEGALITES__#f-pauvrete"><span class="k">Dossier</span><h3>Inégalités et pauvreté</h3></a><p><b>Pourquoi ce lien</b>Les ménages sous le seuil de pauvreté sont trois fois plus nombreux à ne pas pouvoir chauffer leur logement (13,2 % contre 4,2 % pour l’ensemble en 2025) : le coût de la transition ne pèse pas sur tous de la même façon.</p><p class="lim2"><b>Sa limite</b>L’incapacité à se chauffer dépend aussi de l’état du logement et du statut de locataire ou de propriétaire, que ces chiffres ne détaillent pas.</p></li><li data-r><a href="__FINANCES__#f-depenses"><span class="k">Dossier</span><h3>Finances publiques</h3></a><p><b>Pourquoi ce lien</b>Primes à la rénovation, tarif social, fiscalité de l’énergie, investissements dans les réseaux : une grande partie de la politique énergétique passe par le budget.</p><p class="lim2"><b>Sa limite</b>Le dossier Finances ne chiffre pas séparément les dépenses liées au climat et à l’énergie.</p></li></ul>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="b" data-r><p class="qq">1. Un pays ferme ses aciéries et importe désormais tout son acier. Que deviennent ses émissions dans l’inventaire national ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Elles ne changent pas : l’acier est toujours consommé dans le pays.</button><button type="button" data-k="b" aria-pressed="false">Elles baissent, même si la consommation d’acier reste la même.</button><button type="button" data-k="c" aria-pressed="false">Elles augmentent, à cause du transport de l’acier importé.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> L’inventaire compte ce qui est émis sur le territoire, pas ce qui y est consommé.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> Les émissions des aciéries étrangères sont comptées dans les pays producteurs.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Le transport maritime international est compté à part, hors du total national.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> l’inventaire est territorial. Pour savoir ce qu’un pays fait émettre par sa consommation, il faut une empreinte carbone, qui ajoute les importations et retire les exportations.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="c" data-r><p class="qq">2. Un pays remplace ses centrales nucléaires par des centrales au gaz importé. Que devient sa part de renouvelables ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Elle baisse, car le nucléaire était compté comme renouvelable.</button><button type="button" data-k="b" aria-pressed="false">Elle augmente, car le gaz pollue moins que le nucléaire.</button><button type="button" data-k="c" aria-pressed="false">Elle ne bouge pas, mais ses émissions et sa dépendance énergétique augmentent.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Le nucléaire n’est pas compté parmi les renouvelables.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> Le gaz n’est pas renouvelable, et il émet du CO₂, contrairement au nucléaire en fonctionnement.</p><p class="qfb" data-k="c" hidden><b>Exact.</b> Ni le nucléaire ni le gaz ne sont renouvelables ; mais le gaz émet du CO₂ et, importé, augmente la dépendance mesurée.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> part des renouvelables, émissions et dépendance sont trois indicateurs distincts. Un même choix peut en améliorer un et en dégrader un autre.</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="ghg" aria-pressed="true">Émissions</button>
+        <button type="button" data-k="tra" aria-pressed="false">Transport</button>
+        <button type="button" data-k="ren" aria-pressed="false">Renouvelables</button>
+        <button type="button" data-k="chf" aria-pressed="false">Chauffage</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées le 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat, émissions : <a href="https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=fr" target="_blank" rel="noopener">sdg_13_10</a> (émissions nettes, indice, par habitant), <a href="https://ec.europa.eu/eurostat/databrowser/view/env_air_gge/default/table?lang=fr" target="_blank" rel="noopener">env_air_gge</a> (par secteur, Union).</li>
+        <li>Eurostat, énergie : <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=fr" target="_blank" rel="noopener">nrg_ind_ren</a> (renouvelables), <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_id/default/table?lang=fr" target="_blank" rel="noopener">nrg_ind_id</a> (dépendance), <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_peh/default/table?lang=fr" target="_blank" rel="noopener">nrg_bal_peh</a> (production d’électricité), <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?lang=fr" target="_blank" rel="noopener">nrg_pc_204</a> (prix pour les ménages).</li>
+        <li>Eurostat, enquête SILC : <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_mdes01/default/table?lang=fr" target="_blank" rel="noopener">ilc_mdes01</a> (incapacité à chauffer convenablement le logement).</li>
+        <li>Commission européenne. <a href="https://climate.ec.europa.eu/eu-action/effort-sharing-member-states-emission-targets/effort-sharing-2021-2030-targets-and-flexibilities_en" target="_blank" rel="noopener">Effort sharing 2021-2030: targets and flexibilities</a>.</li>
+      </ol>
+      <h3 class="mt">Histoire et droit</h3><ol>
+        <li>Chambre des représentants (2004). Rapport sur l’accord de coopération relatif au partage des charges de Kyoto, DOC 51 1034/001.</li>
+        <li>Loi du 31 janvier 2003 sur la sortie progressive de l’énergie nucléaire, présentée par <a href="https://climate-laws.org/document/act-on-nuclear-energy-for-industrial-electricity-production_572c" target="_blank" rel="noopener">Climate Change Laws of the World</a>.</li>
+        <li>Règlement (UE) 2021/1119 établissant le cadre requis pour parvenir à la neutralité climatique (« loi européenne sur le climat »).</li>
+        <li><a href="https://nuclear.engie-electrabel.be/en/nuclear-energy/shutdown-our-nuclear-power-plants/final-shutdown-doel-1" target="_blank" rel="noopener">Engie Electrabel, mise à l’arrêt de Doel 1</a> ; <a href="https://world-nuclear-news.org/articles/first-belgian-power-reactor-shut-down" target="_blank" rel="noopener">World Nuclear News (2022)</a> ; <a href="https://world-nuclear.org/our-association/publications/world-nuclear-outlook-report/belgium---world-nuclear-outlook-report" target="_blank" rel="noopener">World Nuclear Association</a>.</li>
+      </ol>
+      <h3 class="mt">Niveau 6 · presse</h3><ol>
+        <li><a href="https://www.vrt.be/vrtnws/fr/2023/11/30/la-cour-d_appel-de-bruxelles-enjoint-letat-belge-a-reduire-ses-e/" target="_blank" rel="noopener">VRT, 30 novembre 2023</a> (Klimaatzaak) ; <a href="https://www.vrt.be/vrtnws/fr/2025/05/16/des-centrales-nucleaires-pourraient-etre-construites-en-belgique/" target="_blank" rel="noopener">VRT, 16 mai 2025</a> (abrogation de la sortie du nucléaire) ; <a href="https://www.lalibre.be/economie/conjoncture/2023/01/31/la-centrale-nucleaire-de-tihange-2-a-ete-definitivement-mise-a-larret-mardi-soir-E6SYMMSCDJDWHLM2TDVRNOXAPI/" target="_blank" rel="noopener">La Libre, 31 janvier 2023</a> (Tihange 2).</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Andersson, J. (2019). « <a href="https://www.aeaweb.org/doi/10.1257/pol.20170144" target="_blank" rel="noopener">Carbon Taxes and CO2 Emissions: Sweden as a Case Study</a> ». <i>American Economic Journal: Economic Policy</i>, 11(4), 1-30.</li>
+        <li>Bayer, P. et Aklin, M. (2020). « <a href="https://strathprints.strath.ac.uk/72023" target="_blank" rel="noopener">The European Union Emissions Trading System reduced CO2 emissions despite low prices</a> ». <i>PNAS</i>, 117(16), 8804-8812.</li>
+        <li>Colmer, J., Martin, R., Muûls, M. et Wagner, U. (2025). « <a href="https://ideas.repec.org/a/oup/restud/v92y2025i3p1625-1660..html" target="_blank" rel="noopener">Does Pricing Carbon Mitigate Climate Change? Firm-Level Evidence from the European Union Emissions Trading System</a> ». <i>Review of Economic Studies</i>, 92(3), 1625-1660.</li>
+        <li>Douenne, T. et Fabre, A. (2022). « <a href="https://ideas.repec.org/a/aea/aejpol/v14y2022i1p81-110.html" target="_blank" rel="noopener">Yellow Vests, Pessimistic Beliefs, and Carbon Tax Aversion</a> ». <i>American Economic Journal: Economic Policy</i>, 14(1), 81-110.</li>
+        <li>Fowlie, M., Greenstone, M. et Wolfram, C. (2018). « <a href="https://www.nber.org/papers/w21331" target="_blank" rel="noopener">Do Energy Efficiency Investments Deliver? Evidence from the Weatherization Assistance Program</a> ». <i>Quarterly Journal of Economics</i>, doi 10.1093/qje/qjy005.</li>
+        <li>Gillingham, K., Rapson, D. et Wagner, G. (2014). « <a href="https://www.rff.org/publications/working-papers/the-rebound-effect-and-energy-efficiency-policy/" target="_blank" rel="noopener">The Rebound Effect and Energy Efficiency Policy</a> ». Resources for the Future, document de travail 14-39.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Georgescu-Roegen, N. (1971). <i>The Entropy Law and the Economic Process</i>. Harvard University Press.</li>
+        <li>Hardin, G. (1968). « The Tragedy of the Commons ». <i>Science</i>, 162(3859), 1243-1248.</li>
+        <li>Jevons, W. S. (1865). <i>The Coal Question</i>. Macmillan.</li>
+        <li>Jonas, H. (1979). <i>Das Prinzip Verantwortung</i> (trad. <i>Le Principe responsabilité</i>).</li>
+        <li>Latour, B. (2017). <i>Où atterrir ?</i> La Découverte.</li>
+        <li>Nordhaus, W. (2013). <i>The Climate Casino</i>. Yale University Press.</li>
+        <li>Ostrom, E. (1990). <i>Governing the Commons</i>. Cambridge University Press.</li>
+        <li>Stern, N. (2006). <i>The Economics of Climate Change: The Stern Review</i>. HM Treasury.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Les dates de fin d’exploitation de Doel 4 et Tihange 3 diffèrent selon les sources consultées : elles ne sont pas reprises. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="__HOME__#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 09 · Climat et énergie · vérifié le 11 octobre 2026</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
