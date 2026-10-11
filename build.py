@@ -26,6 +26,7 @@ PAGES = {
     '__EDUCATION__': ('dossier-education.html', 'https://claude.ai/artifact/UqvRTHWAxQ3fmxoujdHYU3'),
     '__INEGALITES__': ('dossier-inegalites.html', 'https://claude.ai/artifact/1YHWYRbbFUwdpQybjQe92u'),
     '__CLIMAT__': ('dossier-climat.html', 'https://claude.ai/artifact/XeD7pKwARAY12Gqj6xhVqH'),
+    '__LOGEMENT__': ('dossier-logement.html', 'https://claude.ai/artifact/KnCCYmNraookxjwkZf9twj'),
 }
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +41,7 @@ DOSSIERS = {
     'education': ('Éducation · Chiffre Juste', 'Éducation en Belgique : compétences des élèves (PISA), redoublement, décrochage, diplômes et emploi, histoire de l’école, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'inegalites': ('Inégalités et pauvreté · Chiffre Juste', 'Inégalités et pauvreté en Belgique : risque de pauvreté, privations, redistribution, Gini, patrimoine, écarts entre Régions, histoire de l’aide sociale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'climat': ('Climat et énergie · Chiffre Juste', 'Climat et énergie en Belgique : émissions de gaz à effet de serre par secteur, renouvelables, nucléaire, dépendance énergétique, prix de l’électricité, précarité énergétique, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'logement': ('Logement · Chiffre Juste', 'Le logement en Belgique : prix, rapport prix/revenu, propriétaires et locataires, surcharge des coûts, logement social, sans-abrisme, jeunes chez leurs parents, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'pensions': ('Pensions et vieillissement · Chiffre Juste', 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
 }
 HOME_DESC = 'Chiffre Juste : les 27 pays de l’Union en chiffres vérifiés. Notes des agences, budget public par fonction, dette, pauvreté, commerce entre pays, classements, avec sources et limites.'
@@ -128,7 +130,7 @@ def main():
     for fname, fn in jobs.items():
         html, title, desc = fn()
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc), encoding='utf-8')

@@ -1,0 +1,299 @@
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 10 · Logement · avant de lire</span>
+    <h1 class="q" id="q0">Selon vous, quelle part des habitants de la Belgique sont propriétaires de leur logement ?</h1>
+    <output class="out" id="gOut" for="guess">50 %</output>
+    <input class="range" type="range" id="guess" min="0" max="100" step="1" value="50" aria-label="Votre estimation, en pour cent de la population">
+    <div class="scale" aria-hidden="true"><span>0 %</span><span>50 %</span><span>100 %</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>L’enquête européenne auprès des ménages (SILC) demande à chacun s’il est propriétaire, avec ou sans emprunt, ou locataire. En 2025, 70,9 % des habitants vivent dans un logement dont leur ménage est propriétaire : 43,1 % remboursent encore un emprunt, 27,8 % ont fini de payer.</p><h3>Pourquoi le chiffre surprend</h3><p>La « brique dans le ventre » est réelle, mais la Belgique est proche de la moyenne de l’Union (68,5 %). Et la moyenne cache un fossé : sous le seuil de pauvreté, 59,5 % des personnes sont locataires.</p><h3>Pour réutiliser cette idée</h3><p>Devant un chiffre sur le logement, demandez : de qui parle-t-on, propriétaires ou locataires, et de quel revenu ? Les mêmes prix ne pèsent pas du tout de la même façon selon le statut.</p></div>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 10 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Le logement"><span class="t1">Le </span><span class="t2">logement</span></h2></div>
+    <p class="lede hq" data-r>Se loger devient-il inabordable en Belgique ? Vingt ans de prix, trois fiches, l’état de la recherche et huit lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>×2</b><span>les prix des logements ont doublé entre 2005 et 2025 (indice 72,9 puis 144,9)</span><span class="src">Eurostat prc_hpi_a</span></div>
+      <div><b>25,4 %</b><span>des locataires du marché privé consacrent plus de 40 % de leur revenu au logement, contre 0,9 % des propriétaires qui remboursent un emprunt</span><span class="src">Eurostat ilc_lvho07c, 2025</span></div>
+      <div><b>62 234</b><span>ménages sur la liste d’attente d’un logement social à Bruxelles, fin 2025</span><span class="src">SLRB, cité par BX1</span></div>
+      <div><b>9 777</b><span>personnes sans chez-soi comptées à Bruxelles une nuit de novembre 2024, +25 % en deux ans</span><span class="src">Bruss’help</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : enquête SILC 2026 (printemps 2027)</p>
+  </div>
+</section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">Se loger devient-il inabordable en Belgique ?</h2>
+      <p class="ans">Pas pour tout le monde de la même façon. Les prix ont doublé en vingt ans, mais depuis 2015 ils progressent à peu près au rythme des revenus, et une fois l’inflation retirée la hausse est modeste (+7 % entre 2015 et 2025). La difficulté se concentre ailleurs : chez les locataires du marché privé, dont un sur quatre consacre plus de 40 % de son revenu au logement, chez les ménages pauvres, majoritairement locataires, et à Bruxelles, où l’offre de logements sociaux est très loin de la demande.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Le prix d’achat ne suffit pas : il faut le comparer aux revenus et à l’inflation.</li><li>Le statut d’occupation fait la différence : propriétaires et locataires ne vivent pas la même hausse.</li><li>Les moyennes nationales cachent les écarts entre Régions et entre villes.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>0,9 % / 25,4 %</b><span>surcharge des coûts du logement : propriétaires avec emprunt, puis locataires au prix du marché, 2025</span><small>Eurostat, ilc_lvho07c</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> juger l’accessibilité du logement sur les seuls prix de vente, sans tenir compte des revenus, de l’inflation ni des locataires.</p>
+      <p class="tm-concl">Les chiffres montrent qui paie le plus ; faut-il aider les acheteurs, protéger les locataires ou construire davantage, c’est un choix politique.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- 1b. Les définitions -->
+<section class="sec papier" id="definitions" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois façons <span>de mesurer l’accès au logement.</span></h2>
+    <p class="lede" data-r>Les prix viennent des actes de vente enregistrés, rassemblés par Statbel et Eurostat ; le poids du logement dans les budgets, de l’enquête SILC auprès des ménages. Ils ne mesurent pas la même chose.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Prix</span><h3>L’indice des prix</h3><p class="who">Statbel, Eurostat</p><p>Évolution du <b>prix des logements vendus</b>, neufs et anciens, à qualité comparable. Il dit combien coûte un achat, pas ce que paient les ménages déjà logés.</p><p class="use">Sert à : suivre le marché de l’achat.</p></article>
+      <article data-r><span class="tag p">Effort</span><h3>La surcharge des coûts</h3><p class="who">Eurostat (enquête SILC)</p><p>Part des personnes dont les coûts du logement (loyer ou intérêts d’emprunt, charges, énergie) dépassent <b>40 % du revenu disponible</b>. Le remboursement du capital n’est pas compté.</p><p class="use">Sert à : repérer ceux pour qui le logement pèse trop lourd.</p></article>
+      <article data-r><span class="tag u">Qualité</span><h3>Le surpeuplement</h3><p class="who">Eurostat (enquête SILC)</p><p>Part des personnes vivant dans un logement qui <b>n’a pas assez de pièces</b> pour la taille du ménage. En 2025 : 6,6 % en Belgique, 16,8 % dans l’Union.</p><p class="use">Sert à : mesurer les conditions de logement, pas seulement leur coût.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ un même logement peut être bon marché pour son propriétaire et ruineux pour un locataire</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-acheter"><span class="n">01</span><h3>Acheter</h3><p>Les prix ont-ils décroché des revenus ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-louer"><span class="n">02</span><h3>Louer</h3><p>Qui paie trop pour se loger ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-jeunes"><span class="n">03</span><h3>Les jeunes</h3><p>Partent-ils plus tard de chez leurs parents ?</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · de l’habitation ouvrière au marché</span>
+    <h2 class="giant" id="tH" data-r>Un pays de propriétaires, <span>bâti par la loi.</span></h2>
+    <p class="lede" data-r>Depuis la fin du XIX<sup>e</sup> siècle, l’État belge soutient la construction et l’achat de logements. Les prix ont doublé en vingt ans, avec une pause après la crise de 2008, à un rythme proche de la moyenne européenne. Depuis 2015, ils montent moins vite que dans l’Union.</p>
+    <div class="chart" id="histChart"></div>
+    <p class="srcl">Indice des prix des logements (moyenne annuelle, 2015 = 100), Belgique (trait plein) et Union à 27 (pointillés), 2005-2025. Prix nominaux, inflation non déduite. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_a/default/table?lang=fr" target="_blank" rel="noopener">prc_hpi_a</a>, consulté le 11 octobre 2026.</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1889</span><h3>Les habitations ouvrières</h3><p>La loi du 9 août 1889 encourage la construction de logements ouvriers, financés par des prêts de la Caisse générale d’épargne et de retraite (CGER).</p></li>
+      <li data-r><span class="yr">1919</span><h3>Le logement social</h3><p>Après la guerre, l’État crée la Société nationale des habitations et logements à bon marché, qui prête aux sociétés locales de logement.</p></li>
+      <li data-r><span class="yr">1949</span><h3>La loi Brunfaut</h3><p>Elle renforce le soutien public à la construction de logements sociaux pendant la reconstruction.</p></li>
+      <li data-r><span class="yr">1980-1989</span><h3>La régionalisation</h3><p>La loi spéciale du 8 août 1980 confie le logement aux Régions ; la Région bruxelloise suit en 1989. Il n’y a plus, depuis, de politique nationale du logement.</p></li>
+      <li data-r><span class="yr">2017-2025</span><h3>Moins de bonus, moins de droits</h3><p>Bruxelles (2017) puis la Flandre (crédits signés à partir de 2020) suppriment l’avantage fiscal lié à l’emprunt hypothécaire. En 2025, la Flandre ramène les droits d’enregistrement de 3 % à 2 % pour une habitation unique, et la Wallonie de 12,5 % à 3 %.</p></li>
+    </ol>
+    <p class="srcl">1889-1989 : <a href="https://www.housingeurope.eu/wp-content/uploads/2026/06/belgium.pdf" target="_blank" rel="noopener">Housing Europe, fiche Belgique, 2026</a>. 2017 : <a href="https://www.notaire.be/immobilier/nouveautes/ce-qui-change-a-bruxelles-a-partir-du-1er-janvier-2017" target="_blank" rel="noopener">Fednot</a>. 2020 : <a href="https://www.notaire.be/actualites/la-suppression-du-woonbonus-en-flandre-entraine-une-forte-augmentation-du-nombre-de-compromis-signes" target="_blank" rel="noopener">Fednot, 10 octobre 2019</a>. 2025 : <a href="https://www.notaire.be/actualites/reduction-des-droits-denregistrement-en-wallonie-3-approuve-au-parlement" target="_blank" rel="noopener">Fednot, 5 décembre 2024</a> ; <a href="https://www.lexgo.be/en/news-and-articles/13950-la-wallonie-reduit-de-12-5-a-3-les-droits-d-enregistrement-pour-l-achat-d-une-habitation-propre-et-unique" target="_blank" rel="noopener">Lexgo</a> ; <a href="https://blog.forumforthefuture.be/fr/article/acquisition-dune-habitation-propre-et-unique-en-2025-la-comparaison-regionale-en-droits-denregistrement/24928" target="_blank" rel="noopener">Forum for the Future</a>.</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« Les Belges sont bien plus souvent propriétaires que leurs voisins. »</h4><p><b>Pas vraiment.</b> 70,9 % des habitants vivent dans un logement dont leur ménage est propriétaire, contre 68,5 % dans l’Union. La Belgique est dans la moyenne.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« Acheter n’a jamais été aussi inabordable. »</h4><p><b>À nuancer.</b> Les prix ont doublé depuis 2005, mais le rapport entre prix et revenus a baissé depuis 2021 et se situait en 2024 un peu sous son niveau de 2015. L’apport personnel exigé et les taux d’intérêt comptent aussi.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Les jeunes Belges restent plus longtemps chez leurs parents qu’ailleurs. »</h4><p><b>Faux en moyenne.</b> Ils quittent le foyer à 26,2 ans en moyenne, comme dans l’Union (26,3). Mais la part des 25-34 ans vivant chez leurs parents a nettement augmenté en 2025.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : acheter -->
+<section class="sec papier" id="f-acheter" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>Des prix élevés, <span>mais qui suivent les revenus depuis 2015.</span></h2>
+    <p class="lede" data-r>Entre 2015 et 2025, les prix des logements ont augmenté de 44,9 % en Belgique, contre 61,9 % dans l’Union. Une fois l’inflation déduite, la hausse belge n’est plus que de 7 % environ, contre 22 % dans l’Union. Le rapport entre prix et revenu des ménages, lui, était en 2024 légèrement inférieur à son niveau de 2015 en Belgique (97), alors qu’il avait augmenté dans l’Union (106).</p>
+    <div class="chart" id="ptirChart"></div>
+    <p class="srcl">Rapport entre prix des logements et revenu disponible par habitant, indice 2015 = 100, Belgique (trait plein) et Union (pointillés), 2015-2024. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/tipsho60/default/table?lang=fr" target="_blank" rel="noopener">tipsho60</a> ; prix réels : calcul de Chiffre Juste à partir de <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_a/default/table?lang=fr" target="_blank" rel="noopener">prc_hpi_a</a> et de l’indice des prix à la consommation harmonisé (<a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_aind/default/table?lang=fr" target="_blank" rel="noopener">prc_hicp_aind</a>). Consulté le 11 octobre 2026.</p>
+    <div class="trap" data-r><span class="note">attention</span><p>Un rapport prix/revenu stable ne veut pas dire qu’acheter est facile : comparé à sa moyenne depuis 2000, il reste un peu au-dessus (102 en 2024). Et il ne tient compte ni des taux d’intérêt, ni de l’apport personnel que les banques demandent, souvent hors de portée sans aide familiale.</p></div>
+    <div class="canwhat" data-r><p class="cw-t">L’indice des prix des logements</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>De combien le prix d’un logement comparable a augmenté.</li><li>Comparer la Belgique aux autres pays avec une méthode commune.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si l’achat est abordable : il faut le rapporter aux revenus et aux taux d’intérêt.</li><li>Les écarts entre une commune bruxelloise et un village ardennais.</li><li>Ce que paient les locataires.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les prix par commune (Statbel).</li><li>Le nombre d’années de revenu nécessaires pour acheter.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : louer -->
+<section class="sec brun grain" id="f-louer" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Le poids du logement <span>tombe sur les locataires.</span></h2>
+    <p class="lede" data-r>En 2025, 6,7 % des habitants consacrent plus de 40 % de leur revenu au logement, contre 7,7 % dans l’Union. Mais la moyenne cache des situations opposées : 25,4 % chez les locataires du marché privé, moins de 2 % chez les propriétaires. Sous le seuil de pauvreté, la proportion atteint 31,3 %, et 59,5 % des personnes sont locataires.</p>
+    <div class="chart" id="burChart"></div>
+    <p class="srcl">Part des personnes dont les coûts du logement dépassent 40 % du revenu disponible, selon le statut d’occupation, Belgique, 2025. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho07c/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvho07c</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho07a/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvho07a</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho02/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvho02</a>, consulté le 11 octobre 2026.</p>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>Le logement social représente environ 6 % des résidences principales en Belgique (estimation pour 2021). À Bruxelles, 62 234 ménages attendaient un logement social fin 2025, pour environ 42 000 logements existants ; l’attente moyenne se compte en années. Ces chiffres régionaux ne sont pas directement comparables entre Régions, faute de définitions communes.</p></div>
+    <div class="canwhat" data-r><p class="cw-t">Le taux de surcharge des coûts du logement</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Pour quelle part de la population le logement pèse très lourd dans le budget.</li><li>Quels groupes sont les plus touchés : locataires, ménages pauvres, familles monoparentales.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>La situation des personnes sans logement, absentes de l’enquête.</li><li>Ceux qui paient peu parce qu’ils vivent dans un logement trop petit ou insalubre.</li><li>Le seuil de 40 % est une convention : à 35 % ou 45 %, les chiffres changeraient.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le revenu disponible après coût du logement.</li><li>Les loyers moyens par commune.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : les jeunes -->
+<section class="band grain" id="f-jeunes" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>Les jeunes partent comme ailleurs, <span>mais 2025 marque un signal.</span></h2>
+    <p class="lede ink" data-r>En moyenne, les jeunes Belges quittent le domicile de leurs parents à 26,2 ans, comme dans l’Union. La part des 25-34 ans qui vivent encore chez leurs parents est restée autour de 20 % pendant dix ans, bien en dessous de la moyenne européenne (environ 30 %). Elle bondit à 25,1 % en 2025 : un seul point ne fait pas une tendance, mais c’est le niveau le plus élevé depuis au moins 2015.</p>
+    <div class="chart" id="parChart"></div>
+    <p class="srcl ink">Part des 25-34 ans vivant chez leurs parents, en %, Belgique (trait plein) et Union (pointillés), 2015-2025 ; rupture de série en 2019. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvps08/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvps08</a>, consulté le 11 octobre 2026.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Âge de départ</h3><b class="big">26,2 ans</b><p>en Belgique en 2025, contre 26,3 dans l’Union</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>25-29 ans</h3><b class="big">41,7 %</b><p>vivent chez leurs parents en 2025, contre 33,8 % en 2024</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Surpeuplement</h3><b class="big">6,6 %</b><p>des habitants, cinquième taux le plus bas de l’Union (16,8 %)</p></div>
+    </div>
+    <p class="srcl ink">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table?lang=fr" target="_blank" rel="noopener">yth_demo_030</a> (âge estimé ; ruptures de série en 2017 et 2021 pour la Belgique), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvps08/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvps08</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho05a/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvho05a</a>, consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">La part des jeunes vivant chez leurs parents</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>Combien de jeunes adultes n’ont pas (encore) leur propre logement.</li><li>Comparer les pays et suivre l’évolution.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Pourquoi : coût du logement, études plus longues, choix personnel ou culture familiale.</li><li>Les étudiants en kot, parfois comptés comme vivant chez leurs parents.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>L’âge du premier achat.</li><li>Les loyers payés par les moins de 30 ans.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="__HOME__#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Protéger les locataires, aider à acheter, construire davantage, sortir les personnes de la rue : ces objectifs entrent souvent en tension. Pour chaque levier : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Encadrer les loyers</h3><dl><dt>Le mécanisme</dt><dd>Limiter le niveau ou la hausse des loyers, par une grille de référence ou un plafond.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> À San Francisco, les locataires protégés sont restés davantage dans leur logement, mais les propriétaires concernés ont réduit leur offre locative de 15 % (Diamond, McQuade et Qian, 2019).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> L’effet des grilles indicatives de loyers utilisées en Belgique, plus souples qu’un plafond strict.</dd><dt>Ce qu’on sacrifie</dt><dd>Une partie de l’offre locative et de l’entretien des logements, selon ses critiques.</dd></dl></article><article class="opt" data-r><h3>Construire davantage</h3><dl><dt>Le mécanisme</dt><dd>Augmenter le nombre de logements, publics ou privés, pour détendre le marché.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Aux États-Unis, les loyers baissent de 5 à 7 % autour des nouveaux grands immeubles (Asquith, Mast et Reed, 2023).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> La disponibilité de terrains et la durée des procédures de permis en Belgique.</dd><dt>Ce qu’on sacrifie</dt><dd>Des espaces non bâtis, et l’opposition des riverains aux projets.</dd></dl></article><article class="opt" data-r><h3>Aider à acheter</h3><dl><dt>Le mécanisme</dt><dd>Réduire les droits d’enregistrement ou accorder un avantage fiscal sur l’emprunt.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Au Danemark, réduire la déduction des intérêts n’a pas changé la part de propriétaires, mais a réduit l’endettement (Gruber, Jensen et Kleven, 2021).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> La part de l’aide absorbée par une hausse des prix, plutôt que gagnée par l’acheteur.</dd><dt>Ce qu’on sacrifie</dt><dd>Des recettes fiscales, au profit surtout de ceux qui peuvent déjà acheter.</dd></dl></article><article class="opt" data-r><h3>Le logement d’abord</h3><dl><dt>Le mécanisme</dt><dd>Donner directement un logement aux personnes sans abri, avec un accompagnement, sans exiger d’étapes préalables.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> À Toronto, dans un essai randomisé, les personnes concernées ont été logées de façon stable 73,6 % du temps sur deux ans, contre 27,8 % (O’Campo et al., 2016).</dd><dt>Ce qui reste incertain</dt><dd>Le coût à grande échelle, et la disponibilité de logements dans les villes tendues.</dd><dt>Ce qu’on sacrifie</dt><dd>Une priorité accordée à certains, alors que des dizaines de milliers de ménages attendent un logement social.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Des loyers stables</td><td>Une partie de l’offre locative</td></tr><tr><td>L’accès à la propriété</td><td>Des recettes fiscales, et peut-être des prix plus élevés</td></tr><tr><td>Plus de construction</td><td>Des terrains non bâtis et la qualité de vie des riverains</td></tr><tr><td>Les plus vulnérables</td><td>L’ordre d’attente des autres candidats</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>Le logement : <span>un bien, un droit, un placement ?</span></h2>
+    <p class="lede" data-r>Faut-il laisser le marché fixer les prix, garantir un toit à chacun, ou taxer la rente foncière ? Les chiffres ne tranchent pas. Huit traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>de la politique du logement ?</span></h2>
+    <p class="lede ink" data-r>Le logement est d’abord une compétence régionale : la Flandre, la Wallonie et Bruxelles mènent des politiques différentes. L’État fédéral garde des leviers importants, notamment fiscaux.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Régions</h3><ul><li>Logement social et aides au logement</li><li>Règles du bail d’habitation et grilles de loyers</li><li>Droits d’enregistrement, aménagement du territoire et permis</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>État fédéral</h3><ul><li>TVA sur la construction et la rénovation</li><li>Règles du crédit hypothécaire</li><li>Revenu d’intégration et aide sociale</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Communes et CPAS</h3><ul><li>Délivrance de nombreux permis d’urbanisme</li><li>Agences et sociétés locales de logement</li><li>Aide aux personnes sans abri</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Banques et Union</h3><ul><li>La Banque nationale encadre les conditions d’octroi des crédits</li><li>La Banque centrale européenne fixe les taux directeurs</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Oublier l’inflation</h3><p>+44,9 % de prix entre 2015 et 2025, c’est environ +7 % une fois l’inflation déduite. Comparer des prix nominaux sur dix ans exagère la hausse réelle.</p></li>
+      <li data-r><span class="g">2</span><h3>Confondre propriétaire et riche</h3><p>Beaucoup de retraités modestes sont propriétaires sans emprunt ; à l’inverse, des ménages aisés louent. Le statut d’occupation n’est pas un niveau de vie.</p></li>
+      <li data-r><span class="g">3</span><h3>Lire une moyenne nationale</h3><p>Le prix moyen belge mélange des marchés très différents : centre de Bruxelles, côte, campagne wallonne. Une moyenne nationale ne décrit aucun d’eux.</p></li>
+      <li data-r><span class="g">4</span><h3>Prendre un seuil pour une frontière</h3><p>Le seuil de 40 % du revenu est une convention européenne. Un ménage à 39 % n’est pas à l’aise pour autant.</p></li>
+      <li data-r><span class="g">5</span><h3>Comparer des comptages de sans-abri</h3><p>Les comptages bruxellois, flamands et wallons utilisent des méthodes et des périmètres différents : on ne peut ni les additionner simplement, ni les comparer d’une année à l’autre sans précaution.</p></li>
+      <li data-r><span class="g">6</span><h3>Tirer une tendance d’un seul point</h3><p>La hausse de 2025 des jeunes vivant chez leurs parents est forte, mais isolée. Il faut attendre les années suivantes pour savoir si elle se confirme.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Liens : pour comprendre, il faut aussi examiner -->
+<section class="sec papier see" aria-labelledby="tSee">
+  <div class="wrap">
+    <span class="kick" data-r>Prolongements</span>
+    <h2 class="giant" id="tSee" data-r>Pour comprendre, <span>il faut aussi examiner…</span></h2>
+    <p class="lede" data-r>Les phénomènes sont liés, mais deux chiffres qui évoluent ensemble ne s’expliquent pas forcément l’un par l’autre. Chaque lien dit pourquoi il est utile et où il s’arrête.</p>
+    <ul class="seegrid"><li data-r><a href="__INEGALITES__#f-ecarts"><span class="k">Dossier</span><h3>Inégalités et pauvreté</h3></a><p><b>Pourquoi ce lien</b>Sous le seuil de pauvreté, 59,5 % des personnes sont locataires, contre 25,4 % au-dessus ; le dossier Inégalités montre aussi à quel point le patrimoine est concentré.</p><p class="lim2"><b>Sa limite</b>Le taux de pauvreté est calculé avant coût du logement : il ne montre pas directement ce que le loyer retire au budget.</p></li><li data-r><a href="__PENSIONS__#f-niveau"><span class="k">Dossier</span><h3>Pensions et vieillissement</h3></a><p><b>Pourquoi ce lien</b>Environ deux tiers des personnes vivant dans un ménage âgé sont propriétaires sans emprunt, et 1,6 % seulement des propriétaires sans emprunt sont en surcharge : être propriétaire change ce que vaut une pension.</p><p class="lim2"><b>Sa limite</b>Les retraités locataires, minoritaires, cumulent pension basse et loyer : la moyenne les masque.</p></li><li data-r><a href="__CLIMAT__#f-facture"><span class="k">Dossier</span><h3>Climat et énergie</h3></a><p><b>Pourquoi ce lien</b>Les coûts du logement comprennent l’énergie : la crise de 2022 a fait monter la part des ménages incapables de se chauffer.</p><p class="lim2"><b>Sa limite</b>La surcharge des coûts ne distingue pas le loyer de la facture d’énergie.</p></li></ul>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="c" data-r><p class="qq">1. Dans une ville, les prix des logements augmentent de 30 % en dix ans, les revenus de 30 % aussi, et les prix à la consommation de 25 %. Acheter y est-il devenu plus difficile ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Oui, les prix ont augmenté de 30 %.</button><button type="button" data-k="b" aria-pressed="false">Non, c’est devenu beaucoup plus facile.</button><button type="button" data-k="c" aria-pressed="false">Pas en rapport avec les revenus ; tout dépend aussi des taux d’intérêt et de l’apport exigé.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Les revenus ont augmenté au même rythme : le rapport prix/revenu n’a pas bougé.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> Rien n’indique une amélioration : le rapport prix/revenu est stable.</p><p class="qfb" data-k="c" hidden><b>Exact.</b> Le prix seul ne dit rien ; rapporté aux revenus, il est stable. Mais un taux d’intérêt plus élevé ou un apport plus important peut rendre l’achat plus difficile.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un prix se lit par rapport aux revenus et à l’inflation, et l’accès à la propriété dépend aussi du crédit.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="a" data-r><p class="qq">2. Un gouvernement crée une allocation-loyer pour les étudiants, alors que le nombre de logements disponibles ne bouge pas. Que risque-t-il de se passer ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Une partie de l’aide se retrouve dans des loyers plus élevés.</button><button type="button" data-k="b" aria-pressed="false">Les loyers baissent, puisque les étudiants paient moins.</button><button type="button" data-k="c" aria-pressed="false">Rien : une aide ne touche pas les prix.</button></div><p class="qfb" data-k="a" hidden><b>Exact.</b> En France, 78 centimes par euro d’aide se sont retrouvés dans les loyers (Fack, 2006).</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> L’aide augmente ce que les étudiants peuvent payer : la demande monte, pas l’offre.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Quand l’offre ne suit pas, une aide à la demande se reporte en partie sur les prix.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> quand l’offre de logements est rigide, aider la demande fait monter les prix ; l’effet dépend de la capacité à construire.</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="pri" aria-pressed="true">Prix</button>
+        <button type="button" data-k="loc" aria-pressed="false">Locataires</button>
+        <button type="button" data-k="soc" aria-pressed="false">Logement social</button>
+        <button type="button" data-k="jeu" aria-pressed="false">Jeunes</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées le 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat, prix : <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_a/default/table?lang=fr" target="_blank" rel="noopener">prc_hpi_a</a> (prix des logements), <a href="https://ec.europa.eu/eurostat/databrowser/view/tipsho60/default/table?lang=fr" target="_blank" rel="noopener">tipsho60</a> (rapport prix/revenu), <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_aind/default/table?lang=fr" target="_blank" rel="noopener">prc_hicp_aind</a> (inflation).</li>
+        <li>Eurostat, enquête SILC : <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho02/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvho02</a> (statut d’occupation), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho07a/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvho07a</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho07c/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvho07c</a> (surcharge des coûts), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho05a/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvho05a</a> (surpeuplement), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvps08/default/table?lang=fr" target="_blank" rel="noopener">ilc_lvps08</a> (jeunes chez leurs parents).</li>
+        <li>Eurostat, jeunesse : <a href="https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table?lang=fr" target="_blank" rel="noopener">yth_demo_030</a> (âge de départ du foyer parental).</li>
+      </ol>
+      <h3 class="mt">Niveau 3 · organisations et associations</h3><ol>
+        <li>Housing Europe (2026). <a href="https://www.housingeurope.eu/wp-content/uploads/2026/06/belgium.pdf" target="_blank" rel="noopener">The State of Housing in Europe, fiche Belgique</a> (estimations).</li>
+        <li>Bruss’help, dénombrement des personnes sans chez-soi, nuit du 6 au 7 novembre 2024, rapporté par la <a href="https://www.vrt.be/vrtnws/fr/2025/04/16/bruxelles-pres-de-10-000-personnes-sans-abri-ou-sans-chez-soi/" target="_blank" rel="noopener">VRT, 16 avril 2025</a>.</li>
+        <li>Fédération du notariat (Fednot) : <a href="https://www.notaire.be/immobilier/nouveautes/ce-qui-change-a-bruxelles-a-partir-du-1er-janvier-2017" target="_blank" rel="noopener">Bruxelles 2017</a>, <a href="https://www.notaire.be/actualites/la-suppression-du-woonbonus-en-flandre-entraine-une-forte-augmentation-du-nombre-de-compromis-signes" target="_blank" rel="noopener">woonbonus</a>, <a href="https://www.notaire.be/actualites/reduction-des-droits-denregistrement-en-wallonie-3-approuve-au-parlement" target="_blank" rel="noopener">Wallonie 2025</a>.</li>
+      </ol>
+      <h3 class="mt">Niveau 6 · presse</h3><ol>
+        <li><a href="https://bx1.be/?p=833944" target="_blank" rel="noopener">BX1, 2 octobre 2026</a> (liste d’attente du logement social bruxellois, chiffres SLRB) ; <a href="https://www.vrt.be/vrtnws/fr/2026/03/26/la-flandre-compte-plus-de-21-000-personnes-sans-abri-et-sans-che/" target="_blank" rel="noopener">VRT, 26 mars 2026</a> (sans-abrisme en Flandre).</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Asquith, B., Mast, E. et Reed, D. (2023). « <a href="https://research.upjohn.org/up_workingpapers/316" target="_blank" rel="noopener">Local Effects of Large New Apartment Buildings in Low-Income Areas</a> ». <i>Review of Economics and Statistics</i>, 105(2), 359-375.</li>
+        <li>Diamond, R., McQuade, T. et Qian, F. (2019). « <a href="https://nber.org/papers/w24181" target="_blank" rel="noopener">The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality: Evidence from San Francisco</a> ». <i>American Economic Review</i>, 109(9), 3365-3394.</li>
+        <li>Fack, G. (2006). « <a href="https://ideas.repec.org/p/hal/journl/hal-00813573.html" target="_blank" rel="noopener">Are housing benefit an effective way to redistribute income? Evidence from a natural experiment in France</a> ». <i>Labour Economics</i>, 13(6), 747-771.</li>
+        <li>Gruber, J., Jensen, A. et Kleven, H. (2021). « <a href="https://ideas.repec.org/a/aea/aejpol/v13y2021i2p273-303.html" target="_blank" rel="noopener">Do People Respond to the Mortgage Interest Deduction? Quasi-experimental Evidence from Denmark</a> ». <i>American Economic Journal: Economic Policy</i>, 13(2), 273-303.</li>
+        <li>O’Campo, P., Stergiopoulos, V. et al. (2016). « <a href="https://bmjopen.bmj.com/content/6/9/e010581" target="_blank" rel="noopener">How did a Housing First intervention improve health and social outcomes among homeless adults with mental illness in Toronto?</a> ». <i>BMJ Open</i>, 6(9), e010581.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Bourdieu, P. (2000). <i>Les Structures sociales de l’économie</i>. Seuil.</li>
+        <li>Desmond, M. (2016). <i>Evicted: Poverty and Profit in the American City</i>. Crown.</li>
+        <li>Engels, F. (1872). <i>La Question du logement</i>.</li>
+        <li>Friedman, M. et Stigler, G. (1946). <i>Roofs or Ceilings? The Current Housing Problem</i>. Foundation for Economic Education.</li>
+        <li>George, H. (1879). <i>Progress and Poverty</i>.</li>
+        <li>Jacobs, J. (1961). <i>The Death and Life of Great American Cities</i>. Random House.</li>
+        <li>Lefebvre, H. (1968). <i>Le Droit à la ville</i>. Anthropos.</li>
+        <li>Saunders, P. (1990). <i>A Nation of Home Owners</i>. Unwin Hyman.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Les publications de Statbel et des administrations régionales du logement n’ont pas pu être consultées automatiquement : les chiffres régionaux viennent d’organisations et de la presse, et sont présentés comme tels. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="__HOME__#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 10 · Logement · vérifié le 11 octobre 2026</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
