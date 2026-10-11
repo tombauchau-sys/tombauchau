@@ -1,0 +1,297 @@
+<main id="top">
+
+<!-- 0. Seuil -->
+<section class="seuil brun grain" aria-labelledby="q0">
+  <div class="wrap">
+    <span class="kick">Dossier 08 · Inégalités et pauvreté · avant de lire</span>
+    <h1 class="q" id="q0">Selon vous, quelle part des habitants de la Belgique vit sous le seuil de pauvreté ?</h1>
+    <output class="out" id="gOut" for="guess">20 %</output>
+    <input class="range" type="range" id="guess" min="0" max="40" step="0.5" value="20" aria-label="Votre estimation, en pour cent de la population">
+    <div class="scale" aria-hidden="true"><span>0 %</span><span>20 %</span><span>40 %</span></div>
+    <div class="acts">
+      <button class="pill cream" id="reveal" type="button" data-reveal="why">Voir le vrai chiffre <span class="arr" aria-hidden="true">↓</span></button>
+      <a class="skew" href="#dossier"><span>Passer</span></a>
+    </div>
+    <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Le mécanisme</h3><p>Est « à risque de pauvreté » une personne dont le revenu, ajusté selon la taille du ménage, est inférieur à 60 % du revenu médian du pays. En 2025, ce seuil valait 18 780 € par an pour une personne seule, soit environ 1 565 € par mois. C’est une mesure relative : elle compare chacun au niveau de vie du reste de la population.</p><h3>Pourquoi le chiffre surprend</h3><p>Ce taux a fortement baissé depuis 2018 : en 2025, c’est le deuxième plus bas de l’Union, après la Tchéquie. Mais il ne dit pas tout : les associations ne constatent pas de recul de l’aide alimentaire, et le patrimoine reste très concentré.</p><h3>Pour réutiliser cette idée</h3><p>Devant un chiffre de pauvreté, demandez : seuil relatif ou absolu, revenu ou privations, et qui n’est pas dans l’enquête (sans-abri, personnes en institution) ?</p></div>
+  </div>
+</section>
+
+<!-- 1. Héros -->
+<section class="hero brun grain" id="dossier" aria-labelledby="t1">
+  <div class="wrap">
+    <span class="kick" data-r>Dossier 08 · une question du débat</span>
+    <div class="titlebox"><h2 class="title split" id="t1" aria-label="Inégalités et pauvreté"><span class="t1">Inégalités </span><span class="t2">et pauvreté</span></h2></div>
+    <p class="lede hq" data-r>La Belgique est-elle un pays égalitaire, et la pauvreté y recule-t-elle ? Trois façons de mesurer, un demi-siècle de protection sociale, trois fiches, l’état de la recherche et huit lectures pour en débattre.</p>
+    <div class="facts" data-r>
+      <div><b>10,9 %</b><span>des habitants sous le seuil de pauvreté en 2025, contre 16,3 % dans l’Union</span><span class="src">Eurostat ilc_li02</span></div>
+      <div><b>23,4</b><span>coefficient de Gini des revenus, le deuxième plus bas de l’Union après la Slovaquie (Union : 29,2)</span><span class="src">Eurostat ilc_di12, 2025</span></div>
+      <div><b>55 %</b><span>du patrimoine net détenu par les 10 % des ménages les plus riches</span><span class="src">Banque nationale, 2<sup>e</sup> trimestre 2023</span></div>
+      <div><b>33,6 %</b><span>à risque de pauvreté ou d’exclusion à Bruxelles, contre 11,4 % en Flandre</span><span class="src">Eurostat ilc_peps11n, 2025</span></div>
+    </div>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : enquête SILC 2026 (printemps 2027)</p>
+  </div>
+</section>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">La Belgique est-elle un pays égalitaire, et la pauvreté y recule-t-elle ?</h2>
+      <p class="ans">Pour les revenus, oui : la Belgique est le deuxième pays le moins inégalitaire de l’Union, et le taux de risque de pauvreté est tombé de 16,4 % en 2018 à 10,9 % en 2025. Les impôts et les allocations y jouent un grand rôle : sans les transferts sociaux (hors pensions), 23,0 % des habitants seraient sous le seuil. Mais deux réalités tempèrent ce constat : le patrimoine est beaucoup plus concentré que les revenus, et les écarts entre Régions sont très forts, Bruxelles cumulant les difficultés.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Le seuil de pauvreté est relatif : il compare chaque ménage au niveau de vie médian du pays.</li><li>Revenus et patrimoine ne racontent pas la même histoire : les revenus sont peu inégaux, le patrimoine l’est beaucoup plus.</li><li>La baisse récente de la pauvreté monétaire n’est pas toujours ressentie sur le terrain, selon les associations.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>23,0 → 10,9 %</b><span>risque de pauvreté avant et après transferts sociaux (hors pensions), 2025</span><small>Eurostat, ilc_li10 et ilc_li02</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> confondre « pauvres » et « sous le seuil de pauvreté », ou comparer un seuil relatif entre pays aux niveaux de vie très différents.</p>
+      <p class="tm-concl">Les chiffres décrivent les écarts et l’effet de la redistribution ; quel niveau d’inégalité est acceptable reste une question de justice, donc de valeurs.</p>
+    </aside>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- 1b. Les définitions -->
+<section class="sec papier" id="definitions" aria-labelledby="tC">
+  <div class="wrap">
+    <span class="kick" data-r>Avant les chiffres · les définitions</span>
+    <h2 class="giant" id="tC" data-r>Trois façons <span>de mesurer la pauvreté et les inégalités.</span></h2>
+    <p class="lede" data-r>Tous ces chiffres viennent de la même enquête européenne auprès des ménages (SILC), menée en Belgique par Statbel, ou des comptes de patrimoine de la Banque nationale. Ils ne mesurent pas la même chose.</p>
+    <div class="count3">
+      <article data-r><span class="tag e">Relatif</span><h3>Le risque de pauvreté</h3><p class="who">Eurostat, Statbel (enquête SILC)</p><p>Part des personnes dont le revenu disponible, ajusté à la taille du ménage, est <b>inférieur à 60 % du revenu médian</b> du pays. Le seuil bouge avec le niveau de vie de tous.</p><p class="use">Sert à : mesurer qui décroche par rapport au niveau de vie courant.</p></article>
+      <article data-r><span class="tag p">Absolu</span><h3>La privation sévère</h3><p class="who">Eurostat, Statbel (enquête SILC)</p><p>Part des personnes qui <b>ne peuvent pas s’offrir au moins 7 biens ou activités sur 13</b> jugés nécessaires (chauffer son logement, faire face à une dépense imprévue, une semaine de vacances…).</p><p class="use">Sert à : mesurer les privations concrètes, comparables entre pays.</p></article>
+      <article data-r><span class="tag u">Répartition</span><h3>Les inégalités</h3><p class="who">Eurostat (revenus), Banque nationale (patrimoine)</p><p>Le <b>coefficient de Gini</b> résume les écarts de revenus, de 0 (tous égaux) à 100 (une personne a tout). La <b>part du patrimoine</b> détenue par les plus riches mesure la concentration de la richesse accumulée.</p><p class="use">Sert à : décrire la répartition, pas seulement le bas de l’échelle.</p></article>
+    </div>
+    <p class="hand-note note" data-r>→ on peut avoir peu de pauvreté monétaire et un patrimoine très concentré</p>
+  </div>
+</section>
+
+<!-- 2. Sommaire -->
+<section class="band grain sommaire" style="background:var(--lilac)" aria-labelledby="tS">
+  <div class="wrap">
+    <h2 id="tS" data-r>Trois fiches</h2>
+    <p class="hint note" data-r>commencez où vous voulez ↓</p>
+    <ol class="cards c3">
+      <li data-r style="--rot:-2deg;--bg:var(--cream)"><a href="#f-pauvrete"><span class="n">01</span><h3>La pauvreté</h3><p>Combien de personnes, quels âges, et pourquoi la baisse ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:1.5deg;--bg:#fff"><a href="#f-redistribution"><span class="n">02</span><h3>La redistribution</h3><p>Que changent impôts et allocations ?</p><span class="go">Lire ↓</span></a></li>
+      <li data-r style="--rot:-1deg;--bg:var(--mint)"><a href="#f-ecarts"><span class="n">03</span><h3>Les écarts</h3><p>Entre Régions, et entre patrimoines.</p><span class="go">Lire ↓</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Histoire -->
+<section class="sec brun grain" id="histoire" aria-labelledby="tH">
+  <div class="wrap">
+    <span class="kick" data-r>Histoire · de l’assistance au droit</span>
+    <h2 class="giant" id="tH" data-r>D’une aide à la charité <span>à un droit inscrit dans la loi.</span></h2>
+    <p class="lede" data-r>Le taux de risque de pauvreté a longtemps oscillé autour de 15 % en Belgique. Il recule nettement depuis 2018, alors qu’il reste stable dans l’ensemble de l’Union.</p>
+    <div class="chart" id="povChart"></div>
+    <p class="srcl">Taux de risque de pauvreté (60 % du revenu médian), en %, Belgique 1995-2025 et Union 2015-2025. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=fr" target="_blank" rel="noopener">ilc_li02</a>, consulté le 11 octobre 2026. Ruptures de série en 2003 (passage de l’enquête ECHP à SILC, pas de donnée en 2002) et en 2019 (réforme de l’enquête). L’année indiquée est celle de l’enquête ; les revenus portent sur l’année précédente.</p>
+    <ol class="epochs">
+      <li data-r><span class="yr">1944</span><h3>La sécurité sociale</h3><p>La sécurité sociale des travailleurs salariés est créée à la Libération : elle protège contre la perte de revenus liée au chômage, à la maladie ou à la vieillesse.</p></li>
+      <li data-r><span class="yr">1974</span><h3>Le minimex</h3><p>La loi du 7 août 1974 institue un droit à un minimum de moyens d’existence pour ceux qui n’ont pas de ressources suffisantes.</p></li>
+      <li data-r><span class="yr">1976</span><h3>Les CPAS</h3><p>La loi organique du 8 juillet 1976 crée les centres publics d’action sociale dans chaque commune, chargés de garantir à chacun une vie conforme à la dignité humaine.</p></li>
+      <li data-r><span class="yr">2002</span><h3>L’intégration sociale</h3><p>Une nouvelle loi remplace le minimex par le droit à l’intégration sociale : un revenu, mais aussi un accompagnement vers l’emploi ou la formation.</p></li>
+      <li data-r><span class="yr">2018-2025</span><h3>Une baisse marquée</h3><p>Le taux de risque de pauvreté passe de 16,4 % à 10,9 %. Les spécialistes citent les mesures de soutien pendant la crise sanitaire et la crise énergétique, la hausse du salaire minimum, la revalorisation des allocations minimales et la création d’emplois.</p></li>
+    </ol>
+    <p class="srcl">1974-2002 : Chambre des représentants, projet de loi concernant le droit à l’intégration sociale, DOC 50 1603/001, 23 janvier 2002 ; 1944 : voir le <a href="__SANTE__#histoire">dossier Santé</a> et le dossier Pensions. 2018-2025 : Eurostat ; explications rapportées par <a href="https://www.rtbf.be/article/belgique-les-chiffres-de-la-pauvrete-reculent-mais-personne-ne-s-en-rejouit-11678159" target="_blank" rel="noopener">RTBF, 12 février 2026</a> (presse, avec le professeur Ive Marx, UAntwerpen).</p>
+    <h3 class="sub" data-r>Trois idées reçues</h3>
+    <div class="myths">
+      <article data-r style="--rot:-1deg"><span class="tag u">Idée reçue</span><h4>« La pauvreté ne cesse d’augmenter. »</h4><p><b>Faux selon la mesure officielle.</b> Le taux de risque de pauvreté est passé de 16,4 % en 2018 à 10,9 % en 2025. Mais cette mesure relative ne capte pas tout : les associations ne voient pas reculer le recours à l’aide alimentaire.</p></article>
+      <article data-r style="--rot:1deg"><span class="tag u">Idée reçue</span><h4>« La Belgique est un pays égalitaire. »</h4><p><b>Vrai pour les revenus, pas pour le patrimoine.</b> Le Gini des revenus est le deuxième plus bas de l’Union, mais les 10 % les plus riches détiennent 55 % du patrimoine net, et la moitié la moins riche 8,4 %.</p></article>
+      <article data-r style="--rot:-.5deg"><span class="tag u">Idée reçue</span><h4>« Les jeunes s’appauvrissent. »</h4><p><b>Pas selon le revenu.</b> Le risque de pauvreté des 18-24 ans est passé de 21,7 % en 2017 à 12,6 % en 2025. D’autres dimensions (logement, accès à la propriété, premiers emplois) ne sont pas mesurées ici et méritent une analyse à part.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Fiche 01 : la pauvreté -->
+<section class="sec papier" id="f-pauvrete" aria-labelledby="tE">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 01 · fait</span>
+    <h2 class="giant" id="tE" data-r>Moins de pauvreté, <span>surtout chez les aînés et les jeunes adultes.</span></h2>
+    <p class="lede" data-r>En 2025, 10,9 % des habitants vivent sous le seuil de pauvreté. Les enfants restent les plus exposés (14,5 %), devant les 18-24 ans (12,6 %) et les 65 ans et plus (9,3 %). Les privations sévères touchent 4,9 % de la population, contre 6,3 % dans l’Union. Le travail protège fortement : chez les moins de 65 ans, le risque de pauvreté est de 50,0 % dans les ménages où l’on ne travaille presque pas, de 1,5 % là où les adultes travaillent quasi à temps plein.</p>
+    <div class="chart" id="ageChart"></div>
+    <p class="srcl">Taux de risque de pauvreté selon l’âge, Belgique, 2018 et 2025, en %. L’enquête a été réformée en 2019 : la comparaison avec 2018 donne un ordre de grandeur, pas un écart exact. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=fr" target="_blank" rel="noopener">ilc_li02</a> ; privation matérielle et sociale sévère : <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_mdsd11/default/table?lang=fr" target="_blank" rel="noopener">ilc_mdsd11</a> ; selon l’intensité de travail du ménage : <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li06/default/table?lang=fr" target="_blank" rel="noopener">ilc_li06</a>. Consulté le 11 octobre 2026.</p>
+    <div class="canwhat" data-r><p class="cw-t">Le taux de risque de pauvreté</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Quelle part des habitants a un revenu nettement inférieur au niveau de vie médian du pays.</li><li>Quels groupes (âge, type de ménage, Région) sont les plus exposés.</li><li>Comment cela évolue, avec une méthode européenne commune.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si les personnes vivent mal en absolu : le seuil dépend du niveau de vie des autres.</li><li>La situation des personnes absentes de l’enquête : sans-abri, personnes en institution, sans adresse.</li><li>Le patrimoine (logement possédé, épargne) et les coûts du logement.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La privation matérielle et sociale.</li><li>Le recours à l’aide alimentaire et aux CPAS.</li><li>La pauvreté après coût du logement.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 5. Fiche 02 : la redistribution -->
+<section class="sec brun grain" id="f-redistribution" aria-labelledby="tN">
+  <div class="wrap">
+    <span class="kick" data-r>Fiche 02 · fait</span>
+    <h2 class="giant" id="tN" data-r>Les allocations <span>divisent la pauvreté par deux.</span></h2>
+    <p class="lede" data-r>Si l’on retire des revenus les allocations sociales (chômage, maladie, famille, aide sociale, mais pas les pensions), 23,0 % des habitants seraient sous le seuil en 2025. Après ces transferts, ils sont 10,9 %. Dans l’Union, l’écart est plus faible : de 24,4 % à 16,3 %. Les inégalités de revenus disponibles (Gini) reculent aussi.</p>
+    <div class="duo">
+      <figure data-r><figcaption><b>Avant et après transferts</b><span>risque de pauvreté, 2025, en %</span></figcaption><div class="chart sm" id="preChart"></div></figure>
+      <figure data-r><figcaption><b>Coefficient de Gini</b><span>revenu disponible, Belgique 2014-2025 et Union 2015-2025</span></figcaption><div class="chart sm" id="giniChart"></div></figure>
+    </div>
+    <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li10/default/table?lang=fr" target="_blank" rel="noopener">ilc_li10</a> (avant transferts, pensions exclues des transferts), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=fr" target="_blank" rel="noopener">ilc_li02</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_di12/default/table?lang=fr" target="_blank" rel="noopener">ilc_di12</a> (rupture en 2019 pour la Belgique), consulté le 11 octobre 2026.</p>
+    <div class="trap dark-trap" data-r><span class="note">attention</span><p>Le taux « avant transferts » est un calcul : il retire les allocations sans tenir compte de ce que les personnes feraient sans elles (travailler davantage, se loger autrement). Il montre l’ampleur de la redistribution, pas une situation qui existerait vraiment sans elle.</p></div>
+    <div class="canwhat" data-r><p class="cw-t">Le coefficient de Gini</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>À quel point les revenus disponibles sont inégalement répartis, en un seul nombre.</li><li>Comparer pays et années avec la même méthode.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Où se situe l’inégalité : en haut, au milieu ou en bas de l’échelle.</li><li>Les très hauts revenus, souvent mal captés par les enquêtes.</li><li>Les inégalités de patrimoine, mesurées à part.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le rapport entre les 20 % les plus aisés et les 20 % les plus modestes.</li><li>Les données fiscales sur les hauts revenus.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 6. Fiche 03 : les écarts -->
+<section class="band grain" id="f-ecarts" style="background:var(--mint);padding-block:96px" aria-labelledby="tA">
+  <div class="wrap">
+    <span class="kick dark" data-r>Fiche 03 · fait</span>
+    <h2 class="giant ink" id="tA" data-r>Trois Régions, <span>et un patrimoine très concentré.</span></h2>
+    <p class="lede ink" data-r>Le risque de pauvreté ou d’exclusion sociale touche un Bruxellois sur trois (33,6 %), un Wallon sur cinq (20,0 %) et un Flamand sur neuf (11,4 %). Pour le patrimoine, l’écart est plus marqué encore : les 10 % des ménages les plus riches détiennent plus de la moitié du patrimoine net, la moitié la moins riche moins d’un dixième.</p>
+    <div class="agegrid">
+      <div class="lv" data-r style="--rot:-1deg"><h3>Bruxelles</h3><b class="big">33,6 %</b><p>à risque de pauvreté ou d’exclusion sociale, 2025</p></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Wallonie</h3><b class="big">20,0 %</b><p>contre 25,0 % en 2019</p></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Flandre</h3><b class="big">11,4 %</b><p>contre 13,9 % en 2019</p></div>
+    </div>
+    <p class="srcl ink">Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_peps11n/default/table?lang=fr" target="_blank" rel="noopener">ilc_peps11n</a> (rupture en 2019), consulté le 11 octobre 2026. Indicateur européen combinant risque de pauvreté, privation sévère et très faible intensité de travail du ménage ; Belgique : 16,5 %, Union : 20,9 %.</p>
+    <div class="chart" id="wealthChart"></div>
+    <p class="srcl ink">Répartition du patrimoine net des ménages belges, 2<sup>e</sup> trimestre 2023, en % du total. Source : Banque nationale de Belgique, <a href="https://www.nbb.be/doc/dq/f/dq3/histo/dff23ii.pdf" target="_blank" rel="noopener">comptes distributionnels du patrimoine, communiqué du 8 janvier 2024</a>. Données plus récentes relayées par la presse (1<sup>er</sup> trimestre 2026) : 54,4 % pour les 10 % les plus riches, 7,7 % pour la moitié la moins riche (<a href="https://www.21news.be/la-moitie-des-belges-possede-moins-de-287-000-euros-ce-que-revelent-les-nouveaux-chiffres-de-la-bnb/" target="_blank" rel="noopener">21news, 29 septembre 2026</a>).</p>
+    <div class="canwhat" data-r><p class="cw-t">La part du patrimoine des plus riches</p><div class="cw-yes"><h4>Ce qu’elle permet de dire</h4><ul><li>À quel point la richesse accumulée (logement, épargne, placements, entreprises) est concentrée.</li><li>Comment cette concentration évolue d’un trimestre à l’autre.</li></ul></div><div class="cw-no"><h4>Ce qu’elle ne permet pas de dire</h4><ul><li>Le niveau de vie courant, qui dépend surtout des revenus.</li><li>Une mesure exacte des très grandes fortunes : elles sont rares dans les enquêtes et estimées par modélisation.</li><li>Les droits à pension, qui ne sont pas comptés comme un patrimoine.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La part du logement dans le patrimoine.</li><li>La comparaison avec la zone euro.</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 7. Recherche -->
+<section class="sec papier" id="recherche" aria-labelledby="tR">
+  <div class="wrap">
+    <span class="kick" data-r>Recherche · ce que savent les chercheurs</span>
+    <h2 class="giant" id="tR" data-r>Trois questions, <span>trois niveaux de preuve.</span></h2>
+    <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="__HOME__#methode">Voir la méthode</a>.</p>
+    <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
+    <div id="rq" class="rq-light"></div>
+  </div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Quatre leviers, <span>et aucun sans contrepartie.</span></h2>
+    <p class="lede" data-r>Réduire la pauvreté, limiter les inégalités, encourager le travail, financer la protection sociale : ces objectifs entrent souvent en tension. Pour chaque levier : le mécanisme, ce qui est documenté, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune combinaison.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Relever les allocations minimales</h3><dl><dt>Le mécanisme</dt><dd>Rapprocher les revenus minimaux (aide sociale, chômage, pension minimum) du seuil de pauvreté.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Les transferts sociaux font passer le risque de pauvreté de 23,0 % à 10,9 % en 2025 (Eurostat). Les spécialistes associent la baisse récente aux revalorisations des minima.</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> L’effet sur l’incitation à travailler, quand l’écart entre allocation et salaire se réduit.</dd><dt>Ce qu’on sacrifie</dt><dd>Un coût budgétaire, en période de déficit public élevé.</dd></dl></article><article class="opt" data-r><h3>Augmenter le salaire minimum</h3><dl><dt>Le mécanisme</dt><dd>Relever le revenu des travailleurs les moins payés et l’écart avec les allocations.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Aux États-Unis, 138 hausses de salaire minimum n’ont pas réduit le nombre d’emplois peu payés dans les cinq ans (Cengiz et al., 2019).</dd><dt>Ce qui reste incertain</dt><dd>Les effets de fortes hausses, et dans les secteurs exposés à la concurrence internationale.</dd><dt>Ce qu’on sacrifie</dt><dd>Un risque pour l’emploi des moins qualifiés si la hausse est trop forte, selon d’autres chercheurs.</dd></dl></article><article class="opt" data-r><h3>Taxer davantage le patrimoine</h3><dl><dt>Le mécanisme</dt><dd>Impôt sur les grandes fortunes, sur les plus-values ou sur les successions.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Le patrimoine est très concentré : 55 % pour les 10 % les plus riches (Banque nationale, 2023).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Le rendement réel d’un tel impôt, face aux possibilités de départ et d’optimisation.</dd><dt>Ce qu’on sacrifie</dt><dd>Une part de l’investissement et de la transmission familiale, selon ses opposants.</dd></dl></article><article class="opt" data-r><h3>Miser sur l’emploi</h3><dl><dt>Le mécanisme</dt><dd>Réduire la pauvreté par le travail : activation, formation, limitation dans le temps des allocations.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Chez les moins de 65 ans, 50,0 % des personnes vivant dans un ménage où l’on ne travaille presque pas sont sous le seuil de pauvreté, contre 1,5 % là où les adultes travaillent quasi à temps plein (Eurostat, 2025) ; le <a href="__EMPLOI__#recherche">dossier Emploi</a> présente ce que l’on sait des politiques d’activation.</dd><dt>Ce qui reste incertain</dt><dd>L’effet de la limitation dans le temps des allocations de chômage décidée par le gouvernement fédéral, pas encore observable.</dd><dt>Ce qu’on sacrifie</dt><dd>Le revenu de ceux qui ne trouvent pas d’emploi, reportés vers les CPAS.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Des minima sociaux élevés</td><td>L’écart avec les bas salaires, et donc une partie de l’incitation à travailler</td></tr><tr><td>Une fiscalité légère sur le patrimoine</td><td>La réduction des inégalités de richesse</td></tr><tr><td>L’activation des allocataires</td><td>La protection de ceux qui ne peuvent pas travailler</td></tr><tr><td>Des allocations universelles</td><td>Un coût plus élevé que des aides ciblées</td></tr></tbody></table></div>
+    <p class="maj">« Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré. Les effets cités viennent de la partie Recherche et des fiches, avec leurs sources.</p>
+  </div>
+</section>
+
+<!-- 8. Lectures -->
+<section class="sec brun grain" id="lectures" aria-labelledby="tL">
+  <div class="wrap">
+    <span class="kick" data-r>Lectures · question de valeurs</span>
+    <h2 class="giant" id="tL" data-r>Quelles inégalités <span>sont justes ?</span></h2>
+    <p class="lede" data-r>Faut-il réduire les écarts, garantir un minimum, ou protéger ce que chacun a acquis ? Les chiffres ne tranchent pas. Huit traditions répondent, chacune par son meilleur argument et sa principale critique. L’ordre change à chaque visite.</p>
+    <div class="reads dark-reads" id="reads"></div>
+  </div>
+</section>
+
+<!-- 9. Qui décide -->
+<section class="band grain qui" style="background:var(--pink)" aria-labelledby="tQ">
+  <div class="wrap">
+    <h2 id="tQ" data-r>Qui décide <span>de la redistribution ?</span></h2>
+    <p class="lede ink" data-r>L’essentiel des instruments (sécurité sociale, impôt sur les revenus, revenu d’intégration) relève de l’État fédéral, mais les CPAS, les Régions et les partenaires sociaux jouent un rôle important.</p>
+    <div class="levels">
+      <div class="lv" data-r style="--rot:-1deg"><h3>État fédéral</h3><ul><li>Sécurité sociale : chômage, maladie, pensions</li><li>Impôt des personnes physiques et revenu d’intégration</li><li>Indexation des allocations</li></ul></div>
+      <div class="lv" data-r style="--rot:1deg"><h3>Partenaires sociaux</h3><ul><li>Salaire minimum interprofessionnel, négocié au Conseil national du travail</li><li>Gestion paritaire de la sécurité sociale</li></ul></div>
+      <div class="lv" data-r style="--rot:-.5deg"><h3>Régions, Communautés, CPAS</h3><ul><li>Allocations familiales (depuis la sixième réforme de l’État)</li><li>Logement social, aides énergie régionales</li><li>CPAS : revenu d’intégration et aide sociale dans chaque commune</li></ul></div>
+      <div class="lv" data-r style="--rot:1.5deg"><h3>Union européenne</h3><ul><li>Objectif 2030 de réduction de la pauvreté et de l’exclusion sociale</li><li>Directive de 2022 sur des salaires minimaux adéquats</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Limites -->
+<section class="sec papier" aria-labelledby="tM">
+  <div class="wrap">
+    <span class="kick" data-r>Limites · ce que ces chiffres ne disent pas</span>
+    <h2 class="giant" id="tM" data-r>Six pièges <span>à éviter.</span></h2>
+    <ol class="lim">
+      <li data-r><span class="g">1</span><h3>Confondre pauvreté relative et pauvreté absolue</h3><p>Le seuil de 60 % du revenu médian monte quand le niveau de vie général monte. Un pays riche peut avoir plus de « pauvres » relatifs qu’un pays pauvre.</p></li>
+      <li data-r><span class="g">2</span><h3>Oublier ceux que l’enquête ne voit pas</h3><p>Les personnes sans-abri, sans adresse ou vivant en institution ne sont pas interrogées : la pauvreté la plus grave échappe en partie à ces chiffres.</p></li>
+      <li data-r><span class="g">3</span><h3>Lire l’année de l’enquête comme l’année des revenus</h3><p>L’enquête de 2025 porte sur les revenus de 2024 : les chiffres ont toujours un temps de retard sur les décisions politiques.</p></li>
+      <li data-r><span class="g">4</span><h3>Juger l’égalité sur les seuls revenus</h3><p>Revenus et patrimoine racontent des histoires différentes ; l’un ne peut pas remplacer l’autre.</p></li>
+      <li data-r><span class="g">5</span><h3>Comparer des Régions sans regarder leur population</h3><p>La composition de la population (âge, taille des ménages, emploi) diffère fortement d’une Région à l’autre : une partie de l’écart vient de qui y habite, pas seulement des politiques menées.</p></li>
+      <li data-r><span class="g">6</span><h3>Prendre « avant transferts » pour une situation réelle</h3><p>Ce chiffre est un calcul qui ne tient pas compte des comportements : il mesure l’ampleur de la redistribution, pas un monde sans elle.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Liens : pour comprendre, il faut aussi examiner -->
+<section class="sec papier see" aria-labelledby="tSee">
+  <div class="wrap">
+    <span class="kick" data-r>Prolongements</span>
+    <h2 class="giant" id="tSee" data-r>Pour comprendre, <span>il faut aussi examiner…</span></h2>
+    <p class="lede" data-r>Les phénomènes sont liés, mais deux chiffres qui évoluent ensemble ne s’expliquent pas forcément l’un par l’autre. Chaque lien dit pourquoi il est utile et où il s’arrête.</p>
+    <ul class="seegrid"><li data-r><a href="__EMPLOI__#f-emploi"><span class="k">Dossier</span><h3>Emploi et inactivité</h3></a><p><b>Pourquoi ce lien</b>Le travail est la première protection contre la pauvreté : chez les moins de 65 ans, 50,0 % des personnes vivant dans un ménage où l’on ne travaille presque pas sont sous le seuil.</p><p class="lim2"><b>Sa limite</b>L’emploi ne suffit pas toujours : temps partiel, bas salaires et charges de famille peuvent maintenir sous le seuil des ménages qui travaillent.</p></li><li data-r><a href="__PENSIONS__#f-niveau"><span class="k">Dossier</span><h3>Pensions et vieillissement</h3></a><p><b>Pourquoi ce lien</b>Le risque de pauvreté des 65 ans et plus a fortement baissé (9,3 % en 2025) ; le dossier Pensions montre aussi que les pensions restent basses par rapport aux salaires de fin de carrière.</p><p class="lim2"><b>Sa limite</b>Un revenu au-dessus du seuil n’exclut pas les difficultés, notamment pour les locataires.</p></li><li data-r><a href="__EDUCATION__#f-diplome"><span class="k">Dossier</span><h3>Éducation</h3></a><p><b>Pourquoi ce lien</b>Le diplôme compte beaucoup pour l’emploi, donc pour le risque de pauvreté ; l’école reproduit aussi une partie des inégalités sociales.</p><p class="lim2"><b>Sa limite</b>Le diplôme est un marqueur de la position sociale autant qu’une cause : il ne suffit pas à expliquer les écarts.</p></li></ul>
+  </div>
+</section>
+
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="c" data-r><p class="qq">1. Dans un pays, tous les revenus doublent du jour au lendemain, prix inchangés. Que devient le taux de risque de pauvreté ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Il est divisé par deux.</button><button type="button" data-k="b" aria-pressed="false">Il tombe à zéro.</button><button type="button" data-k="c" aria-pressed="false">Il ne change pas.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Le seuil double lui aussi, puisqu’il dépend du revenu médian.</p><p class="qfb" data-k="b" hidden><b>Pas tout à fait.</b> Les mêmes personnes restent sous un seuil qui a doublé.</p><p class="qfb" data-k="c" hidden><b>Exact.</b> Le seuil est relatif : si tout le monde s’enrichit dans la même proportion, la position de chacun reste la même.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un indicateur relatif mesure des écarts, pas un niveau de vie absolu. Pour savoir si les plus modestes vivent mieux, il faut aussi regarder les privations concrètes.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="b" data-r><p class="qq">2. Deux pays ont le même coefficient de Gini des revenus. Peut-on en conclure qu’ils sont aussi égalitaires l’un que l’autre ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Oui, le Gini résume toute l’inégalité.</button><button type="button" data-k="b" aria-pressed="false">Non : le patrimoine peut être réparti très différemment, et un même Gini peut cacher des écarts situés à des endroits différents de l’échelle.</button><button type="button" data-k="c" aria-pressed="false">Non, car le Gini ne concerne que les pauvres.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Le Gini ne porte que sur les revenus, et il résume toute une répartition en un seul nombre.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> En Belgique, le Gini des revenus est bas, mais le patrimoine est très concentré.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Le Gini porte sur toute la population, pas seulement le bas de l’échelle.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> un indice synthétique résume, donc il simplifie. On le complète avec d’autres mesures : part des plus riches, patrimoine, privations.</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
+<!-- 11. Citer -->
+<section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
+  <div class="wrap bandin">
+    <div><h2 id="tK" data-r>Citer ce dossier</h2><p class="hint note" data-r>un chiffre juste, avec sa source →</p></div>
+    <div class="bulle" data-r>
+      <div class="chips" id="chips" role="group" aria-label="Choisir une phrase">
+        <button type="button" data-k="pov" aria-pressed="true">Pauvreté</button>
+        <button type="button" data-k="red" aria-pressed="false">Redistribution</button>
+        <button type="button" data-k="pat" aria-pressed="false">Patrimoine</button>
+        <button type="button" data-k="reg" aria-pressed="false">Régions</button>
+      </div>
+      <p class="quote" id="quote"></p>
+      <div class="row"><button type="button" class="pill ink" id="copy">Copier <span class="arr" aria-hidden="true">→</span></button><span class="copied" id="copied" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Sources -->
+<section class="sec brun" id="sources" aria-labelledby="tB">
+  <div class="wrap">
+    <span class="kick">Sources · consultées le 11 octobre 2026</span>
+    <h2 class="giant" id="tB">D’où viennent <span>ces chiffres.</span></h2>
+    <div class="biblio">
+      <div><h3>Niveau 1 · statistiques officielles</h3><ol>
+        <li>Eurostat, enquête SILC : <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=fr" target="_blank" rel="noopener">ilc_li02</a> (risque de pauvreté), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li10/default/table?lang=fr" target="_blank" rel="noopener">ilc_li10</a> (avant transferts), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=fr" target="_blank" rel="noopener">ilc_li01</a> (seuils), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01n/default/table?lang=fr" target="_blank" rel="noopener">ilc_peps01n</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_peps11n/default/table?lang=fr" target="_blank" rel="noopener">ilc_peps11n</a> (pauvreté ou exclusion), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_mdsd11/default/table?lang=fr" target="_blank" rel="noopener">ilc_mdsd11</a> (privation), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_di12/default/table?lang=fr" target="_blank" rel="noopener">ilc_di12</a> (Gini), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li06/default/table?lang=fr" target="_blank" rel="noopener">ilc_li06</a> (intensité de travail).</li>
+        <li>Banque nationale de Belgique (2024). <a href="https://www.nbb.be/doc/dq/f/dq3/histo/dff23ii.pdf" target="_blank" rel="noopener">Comptes distributionnels du patrimoine, communiqué du 8 janvier 2024</a>.</li>
+      </ol>
+      <h3 class="mt">Histoire et droit</h3><ol>
+        <li>Chambre des représentants (2002). Projet de loi concernant le droit à l’intégration sociale, DOC 50 1603/001.</li>
+      </ol>
+      <h3 class="mt">Niveau 6 · presse</h3><ol>
+        <li><a href="https://www.rtbf.be/article/belgique-les-chiffres-de-la-pauvrete-reculent-mais-personne-ne-s-en-rejouit-11678159" target="_blank" rel="noopener">RTBF, 12 février 2026</a> ; <a href="https://www.21news.be/la-moitie-des-belges-possede-moins-de-287-000-euros-ce-que-revelent-les-nouveaux-chiffres-de-la-bnb/" target="_blank" rel="noopener">21news, 29 septembre 2026</a>.</li>
+      </ol></div>
+      <div><h3>Niveau 2 · recherche</h3><ul>
+        <li>Card, D. et Krueger, A. (1994). « <a href="https://www.nber.org/papers/w4509" target="_blank" rel="noopener">Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania</a> ». <i>American Economic Review</i>, 84(4), 772-793.</li>
+        <li>Cengiz, D., Dube, A., Lindner, A. et Zipperer, B. (2019). « <a href="https://doi.org/10.1093/qje/qjz014" target="_blank" rel="noopener">The Effect of Minimum Wages on Low-Wage Jobs</a> ». <i>Quarterly Journal of Economics</i>, 134(3), 1405-1454.</li>
+        <li>Neumark, D. et Wascher, W. (2008). <i>Minimum Wages</i>. MIT Press.</li>
+        <li>Piketty, T. (2013). <i>Le Capital au XXI<sup>e</sup> siècle</i>. Seuil.</li>
+        <li>Rognlie, M. (2015). « <a href="https://www.brookings.edu/articles/deciphering-the-fall-and-rise-in-the-net-capital-share" target="_blank" rel="noopener">Deciphering the Fall and Rise in the Net Capital Share</a> ». <i>Brookings Papers on Economic Activity</i>, printemps 2015.</li>
+      </ul>
+      <h3 class="mt">Œuvres citées dans les lectures</h3><ul>
+        <li>Atkinson, A. (2015). <i>Inequality: What Can Be Done?</i> Harvard University Press.</li>
+        <li>Hayek, F. (1976). <i>Law, Legislation and Liberty</i>, vol. 2 : <i>The Mirage of Social Justice</i>. Routledge.</li>
+        <li>Marx, K. (1867). <i>Le Capital</i>, livre I.</li>
+        <li>Murray, C. (1984). <i>Losing Ground</i>. Basic Books.</li>
+        <li>Nozick, R. (1974). <i>Anarchy, State, and Utopia</i>. Basic Books.</li>
+        <li>Rawls, J. (1971). <i>A Theory of Justice</i>. Harvard University Press.</li>
+        <li>Townsend, P. (1979). <i>Poverty in the United Kingdom</i>. Penguin.</li>
+      </ul></div>
+    </div>
+    <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Les publications de Statbel et du SPF Sécurité sociale n’ont pas pu être consultées automatiquement lors de la vérification : les explications de la baisse de la pauvreté viennent de la presse et sont présentées comme telles. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="__HOME__#methode">page Méthode</a>.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Dossier 08 · Inégalités et pauvreté · vérifié le 11 octobre 2026</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>

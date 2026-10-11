@@ -400,7 +400,10 @@
     hly65:[['__SANTE__#f-vie','Dossier Santé','ce que mesure la « bonne santé » déclarée']],
     tertiary:[['__EDUCATION__#f-diplome','Dossier Éducation','diplômes et emploi']],
     earlyleave:[['__EDUCATION__#f-parcours','Dossier Éducation','redoublement et décrochage']],
-    gf09:[['__EDUCATION__#recherche','Dossier Éducation','dépenser plus suffit-il ?']]};
+    gf09:[['__EDUCATION__#recherche','Dossier Éducation','dépenser plus suffit-il ?']],
+    arope:[['__INEGALITES__#f-pauvrete','Dossier Inégalités','ce que mesure le risque de pauvreté']],
+    depriv:[['__INEGALITES__#definitions','Dossier Inégalités','pauvreté relative et privations concrètes']],
+    gini:[['__INEGALITES__#f-redistribution','Dossier Inégalités','redistribution et coefficient de Gini']]};
   function dosLinks(id){var L=DOSL[id];if(!L)return '';return '<span class="dl">Pour comprendre : '+L.map(function(l){return '<a href="'+l[0]+'">'+l[1]+'</a> ('+l[2]+')'}).join(' · ')+'</span>'}
 
   /* ======================= Classements ======================= */

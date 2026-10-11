@@ -1,0 +1,12 @@
+# Dossier 08 Inégalités et pauvreté : données vérifiées (11 octobre 2026)
+- ilc_li02 (MED_EI, B_60) BE 1995-2025 (16,0 … 16,4 en 2018 … 10,9 en 2025 ; ruptures 2003, 2019) ; UE 2015-2025 (16,3 en 2025)
+- par âge BE 2025 : <18 14,5 ; 18-24 12,6 (21,7 en 2017) ; 65+ 9,3
+- ilc_peps01n AROPE BE 16,5 (2025) ; UE 20,9 ; régions ilc_peps11n 2025 : BE1 33,6 ; BE2 11,4 ; BE3 20,0
+- ilc_mdsd11 privation sévère BE 4,9 (2025) ; UE 6,3
+- ilc_di12 Gini BE 23,4 (2025), 25,9 (2014) ; UE 29,2
+- ilc_li10 avant transferts (pensions exclues) BE 23,0 (2025) ; UE 24,4
+- ilc_li01 seuil isolé BE 18 780 €/an (2025)
+- BNB communiqué 8/1/2024 (DWA) : T2 2023 top 10 % = 55 % du patrimoine net ; 50 % inférieurs = 8,4 % ; presse 21news 29/9/2026 : T1 2026 54,4 % et 7,7 %, médiane 287 000 €
+- RTBF 12/2/2026 : explications (aides, salaire minimum, revalorisations, emploi) ; associations prudentes ; Ive Marx : seule la Tchéquie fait mieux
+- Histoire : loi 7/8/1974 minimex ; loi organique CPAS 8/7/1976 ; projet loi intégration sociale 23/1/2002 (DOC 50 1603)
+- Card & Krueger 1994 AER 84(4) 772-793 ; Cengiz, Dube, Lindner, Zipperer 2019 QJE 134(3) 1405-1454 ; Rognlie 2015 BPEA
