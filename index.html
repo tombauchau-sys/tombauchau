@@ -583,6 +583,13 @@ html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important
 .rrb{position:absolute;inset:0;width:100%;border:0;background:none;padding:0;cursor:pointer;z-index:1}
 .rrb:focus-visible{outline:3px solid var(--copper);outline-offset:2px}
 
+/* Liens vers les dossiers depuis la carte et les classements */
+.legend .lnt{flex-basis:100%;font-size:12px;line-height:1.4}
+.legend .ldl .dl{display:inline}
+.rkd .dl{display:block;margin-top:10px;font-weight:600}
+.dl a{color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.dl a:hover,.dl a:focus-visible{text-decoration-thickness:2.5px}
+
 .grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}
 </style>
 </head>
@@ -994,7 +1001,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
     D.querySelectorAll('.o').forEach(function(o){o.style.opacity=st.view==='geo'?'':0});
     var lg=D.getElementById('legend');
     if(cd){var it=cd.it,nd=Object.keys(by).length-Object.keys(cd.vals).length;
-      lg.innerHTML='<span class="sw">'+RAMP.map(function(p,i){return '<span style="background:'+rampCol(i)+'"></span>'}).join('')+'</span><span><b>'+it.lab+'</b>, '+cd.y+' · '+(it.id==='rating'?'note la plus haute (clair) → la plus basse (foncé)':vfmt(it,cd.min)+' (clair) → '+vfmt(it,cd.max)+' (foncé)')+' · cinq classes de même effectif'+(nd?' · <span class="ndk"></span> donnée non disponible ('+nd+')':'')+'</span><span class="lsrc">'+linkify(it.src)+'</span>'}else lg.innerHTML='';
+      lg.innerHTML='<span class="sw">'+RAMP.map(function(p,i){return '<span style="background:'+rampCol(i)+'"></span>'}).join('')+'</span><span><b>'+it.lab+'</b>, '+cd.y+' · '+(it.id==='rating'?'note la plus haute (clair) → la plus basse (foncé)':vfmt(it,cd.min)+' (clair) → '+vfmt(it,cd.max)+' (foncé)')+' · cinq classes de même effectif'+(nd?' · <span class="ndk"></span> donnée non disponible ('+nd+')':'')+'</span><span class="lsrc">'+linkify(it.src)+'</span>'+(it.note?'<span class="lnt">À savoir : '+it.note+'</span>':'')+(DOSL[it.id]?'<span class="lsrc ldl">'+dosLinks(it.id)+'</span>':'')}else lg.innerHTML='';
     gLb.innerHTML='';[st.a,st.b].forEach(function(k,i){if(!k)return;var pp=pos(k),t=el('text',{x:pp[0],y:pp[1]-(st.view==='geo'?18:40),'text-anchor':'middle','class':'maptag'},name(k));gLb.appendChild(t)});
   }
   function drawFlows(){
@@ -1235,6 +1242,27 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
       '<div class="limits"><div><b>Des avis, pas des mesures.</b><p>Une note est une opinion argumentée, publiée par une entreprise privée. Les trois agences ne sont pas toujours d’accord, ni au même moment.</p></div><div><b>Un poids réel.</b><p>Une baisse de note peut renchérir le coût de l’emprunt public : certains investisseurs ne peuvent détenir que des titres bien notés.</p></div><div><b>Une histoire contestée.</b><p>Les agences ont été critiquées pour avoir noté trop haut avant 2008, puis dégradé brutalement pendant la crise de la zone euro. Elles sont encadrées dans l’UE depuis 2009 (règlement CRA, supervision de l’ESMA).</p></div></div></div>';
   }
 
+  /* Liens de la carte et des classements vers les dossiers qui analysent l'indicateur */
+  var DOSL={
+    unemp:[['fiche-chomage.html','Fiche chômage','ce que le taux compte, et pourquoi il ne se compare pas toujours d’une source à l’autre'],['dossier-emploi.html#f-emploi','Dossier Emploi','chômage, inactivité et taux d’emploi en Belgique']],
+    youth:[['fiche-chomage.html','Fiche chômage','définition du chômage et limites des comparaisons']],
+    ltu:[['dossier-emploi.html#f-duree','Dossier Emploi','durée du chômage et inactivité']],
+    emp:[['dossier-emploi.html#f-emploi','Dossier Emploi','qui travaille, qui ne travaille pas, et où se situe l’écart avec l’Union']],
+    debt:[['dossier-finances.html#f-dette','Dossier Finances publiques','une dette n’est pas mauvaise en soi : tout dépend de ce qu’elle finance']],
+    debtpc:[['dossier-finances.html#f-dette','Dossier Finances publiques','dette, croissance et taux d’intérêt']],
+    deficit:[['dossier-finances.html#f-deficit','Dossier Finances publiques','ce que mesure le solde et ce qu’il ne dit pas']],
+    spend:[['dossier-finances.html#f-depenses','Dossier Finances publiques','les dépenses par fonction']],
+    revenue:[['dossier-finances.html#f-depenses','Dossier Finances publiques','recettes, dépenses et solde']],
+    tax:[['dossier-finances.html#f-depenses','Dossier Finances publiques','recettes, dépenses et solde']],
+    interest:[['dossier-finances.html#f-interets','Dossier Finances publiques','la charge d’intérêts et les notes des agences']],
+    gf10:[['dossier-pensions.html#f-cout','Dossier Pensions','le premier poste de la protection sociale']],
+    gf07:[['dossier-sante.html#f-cout','Dossier Santé','dépenses publiques et privées, accès aux soins']],
+    olddep:[['dossier-pensions.html#histoire','Dossier Pensions','ce que le ratio dit, et ce qu’il ne dit pas du financement des pensions']],
+    netmig:[['dossier-immigration.html#f-flux','Dossier Immigration','qui arrive, d’où, et pour quelles raisons']],
+    lifeexp:[['dossier-sante.html#f-vie','Dossier Santé','vivre plus longtemps, mais pas forcément en bonne santé']],
+    hly65:[['dossier-sante.html#f-vie','Dossier Santé','ce que mesure la « bonne santé » déclarée']]};
+  function dosLinks(id){var L=DOSL[id];if(!L)return '';return '<span class="dl">Pour comprendre : '+L.map(function(l){return '<a href="'+l[0]+'">'+l[1]+'</a> ('+l[2]+')'}).join(' · ')+'</span>'}
+
   /* ======================= Classements ======================= */
   function cof(k){return function(c){var o=C[c].cofog[k]||{},L=last(o);return L}}
   function lastOf(k){return function(c){return last(S(c,k))}}
@@ -1315,7 +1343,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
     function euRow(){return '<li class="rr eu"><span class="n"></span><span class="cn">Union européenne</span><span class="bw'+(neg?' neg':'')+'"><span class="bar'+(euv<0?' m':'')+'" style="--w:'+W(euv).toFixed(1)+'%"></span></span><b class="vv">'+it.fmt(euv)+'</b></li>'}
     D.getElementById('rkT').innerHTML=it.lab+'<span class="s">, '+(ys.length===1?ys[0]:ys[0]+'-'+ys[ys.length-1])+'.</span>';
     D.getElementById('rkK').textContent=it.th+' · '+rows.length+' pays classés';
-    D.getElementById('rkD').innerHTML=it.def+' <span class="src">Source : '+linkify(it.src)+' · '+CONSULT+'.</span>'+(it.note?'<span class="nt">'+it.note+'</span>':'');
+    D.getElementById('rkD').innerHTML=it.def+' <span class="src">Source : '+linkify(it.src)+' · '+CONSULT+'.</span>'+(it.note?'<span class="nt">'+it.note+'</span>':'')+dosLinks(it.id);
     D.getElementById('rkDir').textContent=(rk.dir<0)?(it.inv?'Du mieux noté au moins bien noté':'Du plus élevé au plus bas'):(it.inv?'Du moins bien noté au mieux noté':'Du plus bas au plus élevé');
     var ol=D.getElementById('rkL');ol.innerHTML=html;ol.classList.remove('go');void ol.offsetWidth;ol.classList.add('go');
     ol.querySelectorAll('.rr[data-c]').forEach(function(li){function go(){var c=li.dataset.c;if(st.mode==='A'){st.a=c}else{if(c===st.a){}else if(!st.b)st.b=c;else st.b=c}update(true);renderRanks()}li.querySelector('.rrb').onclick=go});

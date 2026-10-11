@@ -452,6 +452,21 @@ html.calm .chart .fadein{opacity:1}
 .rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
 .key-dots .kd.be{background:var(--red-ink)}
 
+
+/* Prolongements : liens justifiés entre dossiers */
+.see .seegrid{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.see .seegrid li{border:2px solid var(--ink);border-radius:20px;padding:22px 22px 24px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.see .seegrid a{text-decoration:none;color:var(--ink);display:block}
+.see .seegrid a .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-ink)}
+.see .seegrid a h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1;margin-top:6px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+.see .seegrid a h3::after{content:" →"}
+.see .seegrid a:hover h3,.see .seegrid a:focus-visible h3{color:var(--red-ink)}
+.see .seegrid a:focus-visible{outline:3px solid var(--copper);outline-offset:4px;border-radius:8px}
+.see .seegrid p{font-size:15.5px;line-height:1.5;margin:0;color:#3D3A35}
+.see .seegrid p b{display:block;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+.see .seegrid .lim2{border-top:1px dashed var(--rule);padding-top:12px}
+.see .see-more{margin-top:24px;font-size:15.5px;color:#3D3A35;max-width:70ch}
+@media (max-width:900px){.see .seegrid{grid-template-columns:1fr}}
 /* ===== V2 : composants pédagogiques ===== */
 /* Niveau 1 : comprendre en deux minutes */
 .twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
@@ -766,6 +781,17 @@ html.calm .chart .fadein{opacity:1}
       <li data-r><span class="g">5</span><h3>Oublier les navetteurs</h3><p>Les taux régionaux sont calculés selon le lieu de <i>résidence</i>. En 2023, 48 % des emplois situés à Bruxelles étaient occupés par des habitants de Flandre ou de Wallonie (Statbel, cité par <a href="https://blog.forumforthefuture.be/fr/article/nouvelle-evolution-positive-de-lemploi-en-region-bruxelloise-en-2023/23244" target="_blank" rel="noopener">Forum for the Future</a>).</p></li>
       <li data-r><span class="g">6</span><h3>Classer les pays sur l’invalidité</h3><p>Chaque pays organise différemment la protection en cas de maladie, de chômage ou de fin de carrière. Un pays qui a peu d’invalides peut avoir beaucoup de préretraités. L’OCDE invite à ne pas lire ces catégories séparément.</p></li>
     </ol>
+  </div>
+</section>
+
+<!-- Liens : pour comprendre, il faut aussi examiner -->
+<section class="sec papier see" aria-labelledby="tSee">
+  <div class="wrap">
+    <span class="kick" data-r>Prolongements</span>
+    <h2 class="giant" id="tSee" data-r>Pour comprendre, <span>il faut aussi examiner…</span></h2>
+    <p class="lede" data-r>Les phénomènes sont liés, mais deux chiffres qui évoluent ensemble ne s’expliquent pas forcément l’un par l’autre. Chaque lien dit pourquoi il est utile et où il s’arrête.</p>
+    <ul class="seegrid"><li data-r><a href="dossier-pensions.html#f-age"><span class="k">Dossier</span><h3>Pensions et vieillissement</h3></a><p><b>Pourquoi ce lien</b>L’emploi des 55-64 ans (61,5 % en 2025) compte pour le financement des pensions : dans un système par répartition, ce sont les personnes au travail qui cotisent pour les pensionnés.</p><p class="lim2"><b>Sa limite</b>Ce n’est qu’un facteur parmi d’autres : salaires, productivité et règles de calcul des pensions pèsent aussi.</p></li><li data-r><a href="dossier-immigration.html#f-emploi"><span class="k">Dossier</span><h3>Immigration et asile</h3></a><p><b>Pourquoi ce lien</b>Une partie de l’écart d’emploi avec l’Union se situe chez les personnes nées hors de l’Union. Le dossier Immigration examine les explications possibles : motif d’arrivée, diplôme, langue, discriminations.</p><p class="lim2"><b>Sa limite</b>Un écart d’emploi décrit une situation ; il ne dit pas à lui seul pourquoi elle existe, et les explications restent débattues.</p></li><li data-r><a href="dossier-sante.html#f-vie"><span class="k">Dossier</span><h3>Santé</h3></a><p><b>Pourquoi ce lien</b>La hausse de l’invalidité coïncide avec un constat de santé : depuis 2008, les années de vie gagnées sont surtout vécues avec des limitations.</p><p class="lim2"><b>Sa limite</b>Les deux tendances évoluent ensemble, sans que l’une explique forcément l’autre : les règles d’accès à l’invalidité et les conditions de travail comptent aussi.</p></li></ul>
+    
   </div>
 </section>
 

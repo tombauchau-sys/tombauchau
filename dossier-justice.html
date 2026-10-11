@@ -452,6 +452,21 @@ html.calm .chart .fadein{opacity:1}
 .rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
 .key-dots .kd.be{background:var(--red-ink)}
 
+
+/* Prolongements : liens justifiés entre dossiers */
+.see .seegrid{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.see .seegrid li{border:2px solid var(--ink);border-radius:20px;padding:22px 22px 24px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.see .seegrid a{text-decoration:none;color:var(--ink);display:block}
+.see .seegrid a .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-ink)}
+.see .seegrid a h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1;margin-top:6px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+.see .seegrid a h3::after{content:" →"}
+.see .seegrid a:hover h3,.see .seegrid a:focus-visible h3{color:var(--red-ink)}
+.see .seegrid a:focus-visible{outline:3px solid var(--copper);outline-offset:4px;border-radius:8px}
+.see .seegrid p{font-size:15.5px;line-height:1.5;margin:0;color:#3D3A35}
+.see .seegrid p b{display:block;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+.see .seegrid .lim2{border-top:1px dashed var(--rule);padding-top:12px}
+.see .see-more{margin-top:24px;font-size:15.5px;color:#3D3A35;max-width:70ch}
+@media (max-width:900px){.see .seegrid{grid-template-columns:1fr}}
 /* ===== V2 : composants pédagogiques ===== */
 /* Niveau 1 : comprendre en deux minutes */
 .twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
@@ -750,6 +765,17 @@ html.calm .chart .fadein{opacity:1}
       <li data-r><span class="g">5</span><h3>Comparer des nationalités sans le bon dénominateur</h3><p>Les détenus en séjour irrégulier ne figurent pas dans la population résidente. Rapporter leur nombre à cette population gonfle mécaniquement le taux.</p></li>
       <li data-r><span class="g">6</span><h3>Confondre sentiment d’insécurité et risque</h3><p>9 % des habitants se sentaient souvent ou toujours en insécurité en 2021, contre 6 % en 2018. Ce sentiment compte, mais il n’évolue pas forcément comme la victimation.</p></li>
     </ol>
+  </div>
+</section>
+
+<!-- Liens : pour comprendre, il faut aussi examiner -->
+<section class="sec papier see" aria-labelledby="tSee">
+  <div class="wrap">
+    <span class="kick" data-r>Prolongements</span>
+    <h2 class="giant" id="tSee" data-r>Pour comprendre, <span>il faut aussi examiner…</span></h2>
+    <p class="lede" data-r>Les phénomènes sont liés, mais deux chiffres qui évoluent ensemble ne s’expliquent pas forcément l’un par l’autre. Chaque lien dit pourquoi il est utile et où il s’arrête.</p>
+    <ul class="seegrid"><li data-r><a href="dossier-immigration.html#definitions"><span class="k">Dossier</span><h3>Immigration et asile</h3></a><p><b>Pourquoi ce lien</b>Étranger, né à l’étranger, demandeur d’asile : ces définitions sont nécessaires pour lire correctement la part d’étrangers en prison.</p><p class="lim2"><b>Sa limite</b>Le dossier Immigration ne traite pas de la délinquance ; il donne le cadre et les chiffres de population nécessaires à la comparaison.</p></li></ul>
+    <p class="see-more">Les dossiers à venir sur l’éducation et les inégalités permettront d’examiner les liens entre conditions sociales et délinquance, avec les mêmes précautions.</p>
   </div>
 </section>
 

@@ -321,3 +321,10 @@ html.calm .gate .go,html.calm .gate .here,html.calm .flowlab{opacity:1!important
 .rr{position:relative}
 .rrb{position:absolute;inset:0;width:100%;border:0;background:none;padding:0;cursor:pointer;z-index:1}
 .rrb:focus-visible{outline:3px solid var(--copper);outline-offset:2px}
+
+/* Liens vers les dossiers depuis la carte et les classements */
+.legend .lnt{flex-basis:100%;font-size:12px;line-height:1.4}
+.legend .ldl .dl{display:inline}
+.rkd .dl{display:block;margin-top:10px;font-weight:600}
+.dl a{color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.dl a:hover,.dl a:focus-visible{text-decoration-thickness:2.5px}

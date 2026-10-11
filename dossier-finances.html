@@ -452,6 +452,21 @@ html.calm .chart .fadein{opacity:1}
 .rq-light .study .lvl i.on{background:var(--red-ink);border-color:var(--red-ink)}
 .key-dots .kd.be{background:var(--red-ink)}
 
+
+/* Prolongements : liens justifiés entre dossiers */
+.see .seegrid{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.see .seegrid li{border:2px solid var(--ink);border-radius:20px;padding:22px 22px 24px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.see .seegrid a{text-decoration:none;color:var(--ink);display:block}
+.see .seegrid a .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-ink)}
+.see .seegrid a h3{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1;margin-top:6px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+.see .seegrid a h3::after{content:" →"}
+.see .seegrid a:hover h3,.see .seegrid a:focus-visible h3{color:var(--red-ink)}
+.see .seegrid a:focus-visible{outline:3px solid var(--copper);outline-offset:4px;border-radius:8px}
+.see .seegrid p{font-size:15.5px;line-height:1.5;margin:0;color:#3D3A35}
+.see .seegrid p b{display:block;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+.see .seegrid .lim2{border-top:1px dashed var(--rule);padding-top:12px}
+.see .see-more{margin-top:24px;font-size:15.5px;color:#3D3A35;max-width:70ch}
+@media (max-width:900px){.see .seegrid{grid-template-columns:1fr}}
 /* ===== V2 : composants pédagogiques ===== */
 /* Niveau 1 : comprendre en deux minutes */
 .twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
@@ -801,6 +816,17 @@ html.calm .chart .fadein{opacity:1}
       <li data-r><span class="g">6</span><h3>Comparer les dépenses sans regarder qui paie quoi</h3><p>Un pays peut dépenser moins en santé parce que les ménages paient davantage via des assurances privées. Un chiffre public plus bas ne veut pas dire un coût total plus bas.</p></li>
       <li data-r><span class="g">7</span><h3>Lire une note d’agence comme un fait</h3><p>C’est l’opinion d’une entreprise privée, dont le modèle économique repose en grande partie sur la rémunération par les émetteurs de dette. Les trois agences ne s’accordent d’ailleurs pas sur la Belgique.</p></li>
     </ol>
+  </div>
+</section>
+
+<!-- Liens : pour comprendre, il faut aussi examiner -->
+<section class="sec papier see" aria-labelledby="tSee">
+  <div class="wrap">
+    <span class="kick" data-r>Prolongements</span>
+    <h2 class="giant" id="tSee" data-r>Pour comprendre, <span>il faut aussi examiner…</span></h2>
+    <p class="lede" data-r>Les phénomènes sont liés, mais deux chiffres qui évoluent ensemble ne s’expliquent pas forcément l’un par l’autre. Chaque lien dit pourquoi il est utile et où il s’arrête.</p>
+    <ul class="seegrid"><li data-r><a href="dossier-pensions.html#f-cout"><span class="k">Dossier</span><h3>Pensions et vieillissement</h3></a><p><b>Pourquoi ce lien</b>La protection sociale représente plus du tiers des dépenses publiques, et la vieillesse à elle seule 10,2 % du PIB en 2024. Le vieillissement de la population pèse donc directement sur le budget.</p><p class="lim2"><b>Sa limite</b>Les projections de coût reposent sur des hypothèses d’emploi, de productivité et de migrations qui peuvent se révéler fausses.</p></li><li data-r><a href="dossier-emploi.html#f-emploi"><span class="k">Dossier</span><h3>Emploi et inactivité</h3></a><p><b>Pourquoi ce lien</b>Le solde public dépend de l’emploi : plus de personnes au travail, ce sont plus d’impôts et de cotisations, et moins d’allocations.</p><p class="lim2"><b>Sa limite</b>On ne peut pas en déduire ce que rapporterait un point d’emploi en plus sans tenir compte des salaires et du coût des politiques pour y parvenir.</p></li><li data-r><a href="dossier-sante.html#f-cout"><span class="k">Dossier</span><h3>Santé</h3></a><p><b>Pourquoi ce lien</b>La santé est l’une des principales fonctions de la dépense publique ; le dossier Santé montre aussi ce que paient directement les ménages.</p><p class="lim2"><b>Sa limite</b>Le dossier Santé compte toutes les dépenses (11,1 % du PIB), y compris privées : ce chiffre ne se compare pas directement aux dépenses publiques présentées ici.</p></li></ul>
+    
   </div>
 </section>
 

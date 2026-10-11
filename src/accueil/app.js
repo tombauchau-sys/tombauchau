@@ -138,7 +138,7 @@
     D.querySelectorAll('.o').forEach(function(o){o.style.opacity=st.view==='geo'?'':0});
     var lg=D.getElementById('legend');
     if(cd){var it=cd.it,nd=Object.keys(by).length-Object.keys(cd.vals).length;
-      lg.innerHTML='<span class="sw">'+RAMP.map(function(p,i){return '<span style="background:'+rampCol(i)+'"></span>'}).join('')+'</span><span><b>'+it.lab+'</b>, '+cd.y+' · '+(it.id==='rating'?'note la plus haute (clair) → la plus basse (foncé)':vfmt(it,cd.min)+' (clair) → '+vfmt(it,cd.max)+' (foncé)')+' · cinq classes de même effectif'+(nd?' · <span class="ndk"></span> donnée non disponible ('+nd+')':'')+'</span><span class="lsrc">'+linkify(it.src)+'</span>'}else lg.innerHTML='';
+      lg.innerHTML='<span class="sw">'+RAMP.map(function(p,i){return '<span style="background:'+rampCol(i)+'"></span>'}).join('')+'</span><span><b>'+it.lab+'</b>, '+cd.y+' · '+(it.id==='rating'?'note la plus haute (clair) → la plus basse (foncé)':vfmt(it,cd.min)+' (clair) → '+vfmt(it,cd.max)+' (foncé)')+' · cinq classes de même effectif'+(nd?' · <span class="ndk"></span> donnée non disponible ('+nd+')':'')+'</span><span class="lsrc">'+linkify(it.src)+'</span>'+(it.note?'<span class="lnt">À savoir : '+it.note+'</span>':'')+(DOSL[it.id]?'<span class="lsrc ldl">'+dosLinks(it.id)+'</span>':'')}else lg.innerHTML='';
     gLb.innerHTML='';[st.a,st.b].forEach(function(k,i){if(!k)return;var pp=pos(k),t=el('text',{x:pp[0],y:pp[1]-(st.view==='geo'?18:40),'text-anchor':'middle','class':'maptag'},name(k));gLb.appendChild(t)});
   }
   function drawFlows(){
@@ -379,6 +379,27 @@
       '<div class="limits"><div><b>Des avis, pas des mesures.</b><p>Une note est une opinion argumentée, publiée par une entreprise privée. Les trois agences ne sont pas toujours d’accord, ni au même moment.</p></div><div><b>Un poids réel.</b><p>Une baisse de note peut renchérir le coût de l’emprunt public : certains investisseurs ne peuvent détenir que des titres bien notés.</p></div><div><b>Une histoire contestée.</b><p>Les agences ont été critiquées pour avoir noté trop haut avant 2008, puis dégradé brutalement pendant la crise de la zone euro. Elles sont encadrées dans l’UE depuis 2009 (règlement CRA, supervision de l’ESMA).</p></div></div></div>';
   }
 
+  /* Liens de la carte et des classements vers les dossiers qui analysent l'indicateur */
+  var DOSL={
+    unemp:[['__FICHE__','Fiche chômage','ce que le taux compte, et pourquoi il ne se compare pas toujours d’une source à l’autre'],['__EMPLOI__#f-emploi','Dossier Emploi','chômage, inactivité et taux d’emploi en Belgique']],
+    youth:[['__FICHE__','Fiche chômage','définition du chômage et limites des comparaisons']],
+    ltu:[['__EMPLOI__#f-duree','Dossier Emploi','durée du chômage et inactivité']],
+    emp:[['__EMPLOI__#f-emploi','Dossier Emploi','qui travaille, qui ne travaille pas, et où se situe l’écart avec l’Union']],
+    debt:[['__FINANCES__#f-dette','Dossier Finances publiques','une dette n’est pas mauvaise en soi : tout dépend de ce qu’elle finance']],
+    debtpc:[['__FINANCES__#f-dette','Dossier Finances publiques','dette, croissance et taux d’intérêt']],
+    deficit:[['__FINANCES__#f-deficit','Dossier Finances publiques','ce que mesure le solde et ce qu’il ne dit pas']],
+    spend:[['__FINANCES__#f-depenses','Dossier Finances publiques','les dépenses par fonction']],
+    revenue:[['__FINANCES__#f-depenses','Dossier Finances publiques','recettes, dépenses et solde']],
+    tax:[['__FINANCES__#f-depenses','Dossier Finances publiques','recettes, dépenses et solde']],
+    interest:[['__FINANCES__#f-interets','Dossier Finances publiques','la charge d’intérêts et les notes des agences']],
+    gf10:[['__PENSIONS__#f-cout','Dossier Pensions','le premier poste de la protection sociale']],
+    gf07:[['__SANTE__#f-cout','Dossier Santé','dépenses publiques et privées, accès aux soins']],
+    olddep:[['__PENSIONS__#histoire','Dossier Pensions','ce que le ratio dit, et ce qu’il ne dit pas du financement des pensions']],
+    netmig:[['__IMMIGRATION__#f-flux','Dossier Immigration','qui arrive, d’où, et pour quelles raisons']],
+    lifeexp:[['__SANTE__#f-vie','Dossier Santé','vivre plus longtemps, mais pas forcément en bonne santé']],
+    hly65:[['__SANTE__#f-vie','Dossier Santé','ce que mesure la « bonne santé » déclarée']]};
+  function dosLinks(id){var L=DOSL[id];if(!L)return '';return '<span class="dl">Pour comprendre : '+L.map(function(l){return '<a href="'+l[0]+'">'+l[1]+'</a> ('+l[2]+')'}).join(' · ')+'</span>'}
+
   /* ======================= Classements ======================= */
   function cof(k){return function(c){var o=C[c].cofog[k]||{},L=last(o);return L}}
   function lastOf(k){return function(c){return last(S(c,k))}}
@@ -459,7 +480,7 @@
     function euRow(){return '<li class="rr eu"><span class="n"></span><span class="cn">Union européenne</span><span class="bw'+(neg?' neg':'')+'"><span class="bar'+(euv<0?' m':'')+'" style="--w:'+W(euv).toFixed(1)+'%"></span></span><b class="vv">'+it.fmt(euv)+'</b></li>'}
     D.getElementById('rkT').innerHTML=it.lab+'<span class="s">, '+(ys.length===1?ys[0]:ys[0]+'-'+ys[ys.length-1])+'.</span>';
     D.getElementById('rkK').textContent=it.th+' · '+rows.length+' pays classés';
-    D.getElementById('rkD').innerHTML=it.def+' <span class="src">Source : '+linkify(it.src)+' · '+CONSULT+'.</span>'+(it.note?'<span class="nt">'+it.note+'</span>':'');
+    D.getElementById('rkD').innerHTML=it.def+' <span class="src">Source : '+linkify(it.src)+' · '+CONSULT+'.</span>'+(it.note?'<span class="nt">'+it.note+'</span>':'')+dosLinks(it.id);
     D.getElementById('rkDir').textContent=(rk.dir<0)?(it.inv?'Du mieux noté au moins bien noté':'Du plus élevé au plus bas'):(it.inv?'Du moins bien noté au mieux noté':'Du plus bas au plus élevé');
     var ol=D.getElementById('rkL');ol.innerHTML=html;ol.classList.remove('go');void ol.offsetWidth;ol.classList.add('go');
     ol.querySelectorAll('.rr[data-c]').forEach(function(li){function go(){var c=li.dataset.c;if(st.mode==='A'){st.a=c}else{if(c===st.a){}else if(!st.b)st.b=c;else st.b=c}update(true);renderRanks()}li.querySelector('.rrb').onclick=go});
