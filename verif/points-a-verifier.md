@@ -51,5 +51,5 @@ Conformes à la source trouvée, mais cette source est la presse ou une organisa
 - [ ] **Méthode générale** — l’outil de lecture d’Eurostat a parfois renvoyé des réponses périmées : toute valeur relue doit avoir un libellé (pays, catégorie) conforme à la requête.
 
 ## Inflation (ajout du 12 octobre 2026)
-- Accueil, outil « Où va l'argent public ? », mode « € par habitant » : affiché en euros courants de l'année choisie (étiqueté). À convertir en euros constants dès que l'IPCH des 27 pays 2015-2024 aura été relu (Eurostat prc_hicp_ainr, TOTAL, INX_A_AVG, tous pays) : la requête a été refusée (HTTP 429) le 12/10/2026.
+- ~~Accueil, outil budgétaire en euros constants~~ : RÉSOLU le 12/10/2026 (IPCH 27 pays relu année par année ; mode « € de 2024 par habitant » ajouté).
 - Prix de l'électricité en euros de 2025 : indice annuel appliqué à des prix semestriels (approximation signalée sur le site).

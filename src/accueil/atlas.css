@@ -100,8 +100,8 @@
 .budget-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:40px}
 .yearpick{display:flex;align-items:center;gap:14px}
 .yearpick output{font-weight:700;font-size:44px;letter-spacing:-.02em;line-height:1;min-width:3.2ch}
-.yearpick input{width:min(280px,50vw);accent-color:var(--line)}
-.unit{display:inline-grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);border-radius:999px;overflow:hidden}
+.yearpick input{width:min(280px,42vw);accent-color:var(--line)}
+.unit{display:inline-grid;grid-template-columns:repeat(3,auto);border:2px solid var(--ink);border-radius:999px;overflow:hidden}
 .unit button{border:0;background:none;padding:8px 14px;font-weight:600;font-size:13.5px}
 .unit button[aria-pressed="true"]{background:var(--ink);color:var(--off)}
 .fn{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--ink)}
@@ -356,3 +356,5 @@ nav.top .ddp a.ddq{display:block;height:auto;border:0;margin:0 0 12px;padding:6p
 .qdeb .qpnote{margin:18px 0 0;max-width:72ch;font-size:15.5px;line-height:1.5;border-left:3px solid var(--copper);padding-left:14px}
 .qdeb .qst.au{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--copper)}
 .qdeb .qsrc{font-size:12.5px;color:var(--grey)}
+
+@media (max-width:640px){.unit{display:grid;width:100%;grid-template-columns:repeat(3,1fr);border-radius:16px}.unit button{padding:8px 6px;font-size:12.5px;line-height:1.25}.unit button+button{border-left:2px solid var(--ink)}}

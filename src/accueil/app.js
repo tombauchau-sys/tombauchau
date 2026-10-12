@@ -1,5 +1,7 @@
   /* ======================= Données ======================= */
   var C=DATA.c,T=DATA.trade,EU='EU27_2020';
+  /* IPCH, moyenne annuelle, 2025 = 100, 2015-2024 (Eurostat prc_hicp_ainr, TOTAL, INX_A_AVG, lu le 12/10/2026) : sert à convertir en euros de 2024 */
+  var IPCH={"EU27_2020":[75.27,75.4,76.58,77.95,79.06,79.6,81.91,89.43,95.12,97.6],"BE":[73.81,75.11,76.78,78.55,79.54,79.88,82.45,90.97,93.05,97.06],"BG":[70.18,69.25,70.07,71.92,73.68,74.58,76.7,86.68,94.14,96.58],"CZ":[64.35,64.77,66.37,67.65,69.39,71.67,74.05,85.0,95.19,97.75],"DK":[82.42,82.44,83.32,83.9,84.51,84.8,86.43,93.82,96.97,98.19],"DE":[75.81,76.07,77.38,78.86,79.95,80.24,82.81,89.99,95.41,97.79],"EE":[61.51,62.0,64.27,66.46,67.97,67.54,70.57,84.29,91.97,95.41],"IE":[82.07,81.89,82.1,82.71,83.43,83.04,85.05,91.92,96.69,97.98],"EL":[81.46,81.48,82.4,83.04,83.47,82.42,82.89,90.6,94.37,97.19],"ES":[78.96,78.7,80.3,81.69,82.33,82.05,84.52,91.55,94.66,97.38],"FR":[80.37,80.61,81.55,83.26,84.34,84.78,86.54,91.65,96.84,99.08],"HR":[72.56,72.1,73.04,74.18,74.77,74.78,76.78,84.97,92.1,95.8],"IT":[80.5,80.4,81.5,82.5,83.0,82.9,84.5,91.9,97.3,98.4],"CY":[84.7,83.67,84.23,84.9,85.37,84.42,86.33,93.32,96.99,99.18],"LV":[66.29,66.36,68.28,70.02,71.95,72.0,74.34,87.15,95.05,96.33],"LT":[64.11,64.54,66.94,68.64,70.18,70.92,74.2,88.19,95.86,96.67],"LU":[78.17,78.2,79.85,81.46,82.8,82.8,85.68,92.67,95.38,97.53],"HU":[57.49,57.74,59.12,60.84,62.92,65.05,68.43,78.88,92.32,95.75],"MT":[79.43,80.15,81.16,82.57,83.83,84.49,85.08,90.3,95.32,97.65],"NL":[73.61,73.68,74.64,75.83,77.86,78.73,80.95,90.37,94.07,97.1],"AT":[71.94,72.64,74.26,75.83,76.96,78.03,80.18,87.09,93.81,96.55],"PL":[65.07,64.95,66.0,66.77,68.21,70.69,74.39,84.21,93.34,96.76],"PT":[80.11,80.62,81.87,82.83,83.07,82.97,83.76,90.54,95.31,97.85],"RO":[62.48,61.81,62.48,65.03,67.57,69.14,71.98,80.63,88.49,93.66],"SI":[76.31,76.19,77.38,78.88,80.21,79.99,81.63,89.24,95.68,97.58],"SK":[67.01,66.69,67.61,69.33,71.25,72.68,74.73,83.8,93.0,95.93],"FI":[81.96,82.28,82.97,83.94,84.89,85.22,86.98,93.22,97.26,98.21],"SE":[75.56,76.42,77.84,79.43,80.79,81.32,83.48,90.21,95.54,97.45]};
   var M2D=function(m){return m==='GR'?'EL':m},D2M=function(d){return d==='EL'?'GR':d};
   var MOB=innerWidth<700;
   var MINUS='−';
@@ -227,10 +229,10 @@
     h+='<section class="dz papier" aria-labelledby="dA2"><div class="w"><p class="kicker" data-r>Dépenses publiques par fonction · COFOG · Eurostat gov_10a_exp</p><h2 id="dA2" data-r>Où va <span class="s">l’argent public ?</span></h2>'+
       '<p class="lede" data-r id="bLede"></p>'+
       '<div class="budget-top" data-r><div class="yearpick"><label for="yr" class="kicker" style="color:var(--grey);margin:0">Année</label><input type="range" id="yr" min="'+Y0+'" max="'+Y1+'" step="1" value="'+Y1+'"><output id="yrO">'+Y1+'</output></div>'+
-      '<div class="unit" role="group" aria-label="Unité"><button type="button" id="uP" aria-pressed="true">% du PIB</button><button type="button" id="uE" aria-pressed="false">€ par habitant (euros de l’année)</button></div></div>'+
+      '<div class="unit" role="group" aria-label="Unité"><button type="button" id="uP" aria-pressed="true">% du PIB</button><button type="button" id="uR" aria-pressed="false">€ de 2024 par habitant</button><button type="button" id="uE" aria-pressed="false">€ courants par habitant</button></div></div>'+
       '<ul class="fn" id="fn" data-r></ul>'+
       '<div class="keyrow"><span><i style="border-color:#C9773A"></i>'+nm+', '+Y0+'-'+Y1+'</span><span><i class="d" style="border-color:#6A665F"></i>moyenne de l’Union</span></div>'+
-      '<p class="src">'+srcs(['gov_10a_exp','nama_10_gdp','tps00001'],'€ par habitant : calcul Chiffre Juste, en euros courants de l’année choisie (inflation non déduite) ; pour comparer des années entre elles, utilisez le % du PIB')+'</p>'+
+      '<p class="src">'+srcs(['gov_10a_exp','nama_10_gdp','tps00001'],'€ par habitant : calcul Chiffre Juste. « € courants » : euros de l’année choisie. « € de 2024 » : montant converti avec l’indice des prix à la consommation harmonisé du pays (Eurostat prc_hicp_ainr ; moyenne de l’Union : IPCH de l’Union), pour comparer les années entre elles. Les écarts de prix entre pays ne sont pas corrigés')+'</p>'+
       '<div class="limits" data-r><div><b>Une fonction n’est pas un ministère.</b><p>Les portefeuilles changent à chaque gouvernement. La classification COFOG des Nations unies range chaque dépense selon sa finalité : c’est ce qui permet de comparer les pays et les années.</p></div>'+
       '<div><b>Tous les niveaux de pouvoir.</b><p>'+(c==='BE'?'État fédéral, Régions, Communautés, provinces, communes et sécurité sociale sont additionnés : aucun de ces budgets, pris seul, ne donne ce total.':'Administration centrale, collectivités locales et sécurité sociale sont additionnées (secteur S13).')+'</p></div>'+
       '<div><b>La dette se cache dans « services généraux ».</b><p>Les intérêts payés y sont comptés : '+pc(at(S(c,'interest'),Y1))+' du PIB en '+Y1+' pour '+le(c)+', contre '+pc(at(S(EU,'interest'),Y1))+' dans l’Union.</p></div></div>'+
@@ -281,8 +283,9 @@
     /* Budget interactif */
     var unit='P',yr=Y1;
     function eurHab(code,k,y){var v=at(C[code].cofog[k],y),g=at(S(code,'gdp_meur'),y),p=popMid(code,y);return v!=null&&g&&p?v/100*g*1e6/p:null}
+    function realHab(code,k,y){var e=eurHab(code,k,y),ix=IPCH[code];if(e==null||!ix||y<2015||y>2024)return null;return e*ix[9]/ix[y-2015]}
     function drawBudget(){
-      var get=function(code,k){return unit==='P'?at(C[code].cofog[k],yr):eurHab(code,k,yr)};
+      var get=function(code,k){return unit==='P'?at(C[code].cofog[k],yr):unit==='R'?realHab(code,k,yr):eurHab(code,k,yr)};
       var fmt=function(v){return v==null?'—':unit==='P'?pc(v):num(Math.round(v/10)*10,0)+' €'};
       var mx=0;COF.forEach(function(f){mx=Math.max(mx,get(c,f[0])||0,get(EU,f[0])||0)});
       var ul=D.getElementById('fn'),tv=get(c,'TOTAL'),te2=get(EU,'TOTAL');
@@ -290,11 +293,10 @@
       D.getElementById('fTot').innerHTML=fmt(tv)+'<small>UE : '+fmt(te2)+'</small>';
       COF.forEach(function(f,i){var li=ul.children[i+1],v=get(c,f[0]),ve=get(EU,f[0]);li.querySelector('.bar span').style.width=((v||0)/mx*100).toFixed(1)+'%';li.querySelector('.eu').style.left=((ve||0)/mx*100).toFixed(1)+'%';li.querySelector('.val').innerHTML=fmt(v)+'<small>UE : '+fmt(ve)+'</small>'});
       var t=at(C[c].cofog.TOTAL,yr),s=at(C[c].cofog.GF10,yr),eh=eurHab(c,'TOTAL',yr);
-      D.getElementById('bLede').innerHTML='En '+yr+', les administrations publiques '+(adj(c)||'')+' ont dépensé <b>'+pc(t)+' du PIB</b>, soit environ <b>'+num(Math.round(eh/100)*100,0)+' € par habitant</b> (euros de '+yr+'). La protection sociale en représente '+pc(s/t*100,0)+'. Moyenne de l’Union : '+pc(at(C[EU].cofog.TOTAL,yr))+' du PIB.';
+      D.getElementById('bLede').innerHTML='En '+yr+', les administrations publiques '+(adj(c)||'')+' ont dépensé <b>'+pc(t)+' du PIB</b>, soit environ <b>'+num(Math.round(eh/100)*100,0)+' € par habitant</b> en euros de '+yr+(yr<2024&&realHab(c,'TOTAL',yr)!=null?' ('+num(Math.round(realHab(c,'TOTAL',yr)/100)*100,0)+' € aux prix de 2024)':'')+'. La protection sociale en représente '+pc(s/t*100,0)+'. Moyenne de l’Union : '+pc(at(C[EU].cofog.TOTAL,yr))+' du PIB.';
     }
     var yrI=D.getElementById('yr');yrI.oninput=function(){yr=+this.value;D.getElementById('yrO').textContent=yr;drawBudget()};
-    D.getElementById('uP').onclick=function(){unit='P';this.setAttribute('aria-pressed','true');D.getElementById('uE').setAttribute('aria-pressed','false');drawBudget()};
-    D.getElementById('uE').onclick=function(){unit='E';this.setAttribute('aria-pressed','true');D.getElementById('uP').setAttribute('aria-pressed','false');drawBudget()};
+    ['uP','uR','uE'].forEach(function(id){D.getElementById(id).onclick=function(){unit=id.charAt(1);['uP','uR','uE'].forEach(function(j){D.getElementById(j).setAttribute('aria-pressed',j===id?'true':'false')});drawBudget()}});
     drawBudget();
   }
 
