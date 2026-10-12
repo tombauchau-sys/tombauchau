@@ -1,3 +1,5 @@
 .artifacts/
 node_modules/
 __pycache__/
+verif/__pycache__/
+verif/raw/

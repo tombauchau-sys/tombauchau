@@ -27,6 +27,7 @@ PAGES = {
     '__INEGALITES__': ('dossier-inegalites.html', 'https://claude.ai/artifact/1YHWYRbbFUwdpQybjQe92u'),
     '__CLIMAT__': ('dossier-climat.html', 'https://claude.ai/artifact/XeD7pKwARAY12Gqj6xhVqH'),
     '__LOGEMENT__': ('dossier-logement.html', 'https://claude.ai/artifact/KnCCYmNraookxjwkZf9twj'),
+    '__REGISTRE__': ('registre-verification.html', 'https://claude.ai/artifact/Dg6d1Tr6wmDe1SFiUjHjYC'),
 }
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,16 +122,26 @@ def build_dossier(name):
     return head + nav + read(f'dossiers/{name}-body.html') + '<script>' + js + '\n' + read('dossiers/common.js') + '</script>\n', title, desc
 
 
+def build_registre():
+    import csv
+    names = {'emploi':'Emploi','finances':'Finances publiques','pensions':'Pensions','immigration':'Immigration','justice':'Justice','sante':'Santé','education':'Éducation','inegalites':'Inégalités','climat':'Climat et énergie','logement':'Logement','fiche':'Fiche chômage','accueil':'Accueil et carte'}
+    rows = list(csv.DictReader(open(ROOT / 'verif' / 'registre.csv', encoding='utf-8')))
+    data = [[names.get(r['page'], r['page']), r['affirmation'], r['valeur_site'], r['source_primaire'], r['valeur_source'], r['statut'], r['note']] for r in rows]
+    js = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
+    html = read('registre/registre.html').replace('__REGDATA__', js)
+    return html, 'Registre de vérification · Chiffre Juste', 'Chaque affirmation de Chiffre Juste contrôlée à sa source primaire : valeur affichée, source consultée, statut.'
+
+
 def main():
     artifact = '--artifact' in sys.argv
-    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche}
+    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre}
     for n in DOSSIERS:
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc), encoding='utf-8')

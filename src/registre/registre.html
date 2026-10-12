@@ -1,0 +1,81 @@
+<title>Registre de vérification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : un registre administratif — en-tête de synthèse, filtres, puis tableau défilant horizontalement si nécessaire */
+:root{--bg:#F5F3EE;--panel:#FFFFFF;--fg:#1B1A17;--mute:#5E5A52;--line:#DAD5CB;--ok:#2F6B57;--okbg:#DDEDE6;--fix:#8A2A17;--fixbg:#F6DFD8;--warn:#7A5A0B;--warnbg:#F5E9C8;--na:#4A4A55;--nabg:#E4E3EA;--accent:#B5622A;
+--display:"Archivo",system-ui,sans-serif;--body:"Archivo",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1B1915;--panel:#24211C;--fg:#EEE9E0;--mute:#ABA396;--line:#3A352D;--ok:#8FD0B5;--okbg:#20352D;--fix:#F0A28F;--fixbg:#3E241C;--warn:#E8C772;--warnbg:#3A3019;--na:#C4C3D0;--nabg:#2E2D35;--accent:#E0915A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1B1915;--panel:#24211C;--fg:#EEE9E0;--mute:#ABA396;--line:#3A352D;--ok:#8FD0B5;--okbg:#20352D;--fix:#F0A28F;--fixbg:#3E241C;--warn:#E8C772;--warnbg:#3A3019;--na:#C4C3D0;--nabg:#2E2D35;--accent:#E0915A;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body);padding-inline:clamp(16px,4vw,48px);padding-block:32px 64px}
+.wrap{max-width:1200px;margin:0 auto;display:grid;gap:28px}
+header{display:grid;gap:10px}
+.kick{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font:800 clamp(28px,4vw,44px)/1.05 var(--display);margin:0;text-wrap:balance}
+.lede{max-width:68ch;color:var(--mute);margin:0}
+.lede b{color:var(--fg)}
+.sum{display:flex;flex-wrap:wrap;gap:10px}
+.sum button{font:600 14px var(--body);border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:6px;padding:10px 14px;display:flex;gap:10px;align-items:baseline;cursor:pointer}
+.sum button b{font:600 22px var(--mono);font-variant-numeric:tabular-nums}
+.sum button[aria-pressed="true"]{border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg)}
+.sum button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:end}
+.tools label{display:grid;gap:4px;font:500 12px var(--mono);color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+select,input{font:15px var(--body);color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px 10px;min-width:0}
+input{width:min(320px,80vw)}
+.count{font:13px var(--mono);color:var(--mute);margin-left:auto}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:1000px;font-size:14px}
+td:nth-child(2){min-width:220px}
+th{position:sticky;top:0;background:var(--panel);text-align:left;font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--mute);padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.v{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;min-width:90px;max-width:200px;overflow-wrap:anywhere}
+td.src{color:var(--mute);max-width:280px}
+td.note{color:var(--mute);max-width:300px}
+.pill{display:inline-block;font:600 12px var(--mono);padding:3px 8px;border-radius:999px;white-space:nowrap}
+.s-ok{background:var(--okbg);color:var(--ok)}.s-fix{background:var(--fixbg);color:var(--fix)}.s-warn{background:var(--warnbg);color:var(--warn)}.s-na{background:var(--nabg);color:var(--na)}
+.legend{display:grid;gap:6px;max-width:80ch;color:var(--mute);font-size:14px}
+.legend p{margin:0}
+footer{color:var(--mute);font-size:13px;max-width:80ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="wrap">
+<header>
+<span class="kick">Chiffre Juste · revérification du 12 octobre 2026</span>
+<h1>Registre de vérification</h1>
+<p class="lede">Chaque affirmation chiffrée ou factuelle contrôlée sur le site, avec la valeur affichée, la source primaire consultée et ce qu’elle dit. Les statistiques sont relues à la source officielle (Eurostat, Banque nationale, administrations) ; les études, dans les revues à comité de lecture ou leurs pages officielles. <b>Une affirmation n’est « vérifiée » que si la source a été lue et concorde.</b></p>
+</header>
+<div class="sum" id="sum" role="group" aria-label="Filtrer par statut"></div>
+<div class="legend">
+<p><span class="pill s-ok">vérifié</span> la source primaire a été lue et concorde avec le site.</p>
+<p><span class="pill s-fix">corrigé</span> un écart a été trouvé ; le site a été corrigé selon la source.</p>
+<p><span class="pill s-warn">signalé</span> conforme, mais la seule source disponible est la presse ou une organisation : le site le dit.</p>
+<p><span class="pill s-na">non revérifié</span> la source n’a pas pu être relue (accès refusé) ; la valeur reste celle de la rédaction.</p>
+</div>
+<div class="tools">
+<label for="fpage">Dossier<select id="fpage"><option value="">Tous les dossiers</option></select></label>
+<label for="fq">Rechercher<input id="fq" type="search" placeholder="chiffre, source, mot…"></label>
+<span class="count" id="count" aria-live="polite"></span>
+</div>
+<div class="tbl"><table><thead><tr><th scope="col">Dossier</th><th scope="col">Affirmation</th><th scope="col">Sur le site</th><th scope="col">Source primaire</th><th scope="col">Dans la source</th><th scope="col">Statut</th><th scope="col">Note</th></tr></thead><tbody id="tb"></tbody></table></div>
+<footer><a href="__HOME__#methode">← Retour à la méthode de Chiffre Juste</a>. Registre tenu dans le dépôt du site (dossier <code>verif/</code>). Certaines séries Eurostat n’ont pas pu être relues le 12 octobre 2026 parce que le service a limité le nombre de requêtes ; elles sont marquées « non revérifié » et seront relues lors de la prochaine mise à jour.</footer>
+</div>
+<script>
+const D=__REGDATA__;
+const ST={'vérifié':'s-ok','corrigé':'s-fix','signalé':'s-warn','non revérifié':'s-na'};
+const ORDER=['vérifié','corrigé','signalé','non revérifié'];
+let fs='';const tb=document.getElementById('tb'),fp=document.getElementById('fpage'),fq=document.getElementById('fq'),cnt=document.getElementById('count'),sum=document.getElementById('sum');
+[...new Set(D.map(r=>r[0]))].forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;fp.appendChild(o)});
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function draw(){
+  const q=fq.value.trim().toLowerCase(),p=fp.value;
+  const base=D.filter(r=>(!p||r[0]===p)&&(!q||r.join(' ').toLowerCase().includes(q)));
+  const rows=base.filter(r=>!fs||r[5]===fs);
+  sum.innerHTML=['',...ORDER].map(s=>{const n=s?base.filter(r=>r[5]===s).length:base.length;return '<button type="button" data-s="'+s+'" aria-pressed="'+(fs===s)+'">'+(s?'<span class="pill '+ST[s]+'">'+s+'</span>':'Toutes')+'<b>'+n+'</b></button>'}).join('');
+  sum.querySelectorAll('button').forEach(b=>b.onclick=()=>{fs=b.dataset.s;draw()});
+  tb.innerHTML=rows.map(r=>'<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td class="v">'+esc(r[2])+'</td><td class="src">'+esc(r[3])+'</td><td class="v">'+esc(r[4])+'</td><td><span class="pill '+(ST[r[5]]||'s-na')+'">'+esc(r[5])+'</span></td><td class="note">'+esc(r[6])+'</td></tr>').join('');
+  cnt.textContent=rows.length+' affirmation'+(rows.length>1?'s':'')+' affichée'+(rows.length>1?'s':'');
+}
+fp.onchange=draw;fq.oninput=draw;draw();
+</script>

@@ -67,12 +67,12 @@
 
   lines2(D.getElementById('povChart'),o2({t0:1995,t1:2025,rm:MOB?70:150,min:0,max:20,ticks:[0,5,10,15,20],unit:' %',years:MOB?[1995,2010,2025]:[1995,2000,2005,2010,2015,2020,2025],breaks:[2003,2019],
     series:[{n:'',pts:DATA.pov1,c:'#C9773A',w:4,end:false},{n:'Union',v:DATA.povEU,s:2015,c:'#A69C8F',dash:1,dy:-4},{n:'Belgique',pts:DATA.pov2,c:'#C9773A',w:4.5,dy:8}],
-    marks:[[2018,16.4,'2018 : 16,4 %','#EDE6DC',28,'end']],
-    label:'Taux de risque de pauvreté en Belgique : 16,0 % en 1995, 16,4 % en 2018, 10,9 % en 2025 ; Union : 16,3 % en 2025'},DK));
+    marks:[[2019,14.8,'2019 : 14,8 %','#EDE6DC',28,'end']],
+    label:'Taux de risque de pauvreté en Belgique : 16,0 % en 1995, 14,8 % en 2019 (après la réforme de l’enquête), 10,9 % en 2025 ; Union : 16,3 % en 2025'},DK));
 
   hbars(D.getElementById('ageChart'),{cats:['Moins de 18 ans','18-24 ans','65 ans et plus','Ensemble'],max:25,ink:'#1A1A1A',
-    series:[{n:'2018',v:[20.1,20.0,16.6,16.4],c:'#9A9488'},{n:'2025',v:[14.5,12.6,9.3,10.9],c:'#C0341E'}],
-    label:'Taux de risque de pauvreté selon l’âge en 2018 et 2025 : moins de 18 ans 20,1 puis 14,5 % ; 18-24 ans 20,0 puis 12,6 % ; 65 ans et plus 16,6 puis 9,3 % ; ensemble 16,4 puis 10,9 %'});
+    series:[{n:'2019',v:[19.0,16.0,15.8,14.8],c:'#9A9488'},{n:'2025',v:[14.5,12.6,9.3,10.9],c:'#C0341E'}],
+    label:'Taux de risque de pauvreté selon l’âge en 2019 et 2025 : moins de 18 ans 19,0 puis 14,5 % ; 18-24 ans 16,0 puis 12,6 % ; 65 ans et plus 15,8 puis 9,3 % ; ensemble 14,8 puis 10,9 %'});
 
   hbars(D.getElementById('preChart'),{w:600,L:150,rh:60,cats:['Belgique','Union'],max:30,ink:'#EDE6DC',
     series:[{n:'avant transferts',v:[23.0,24.4],c:'#A69C8F'},{n:'après transferts',v:[10.9,16.3],c:'#C9773A'}],

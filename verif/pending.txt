@@ -1,0 +1,10 @@
+lfsi_emp_a : hommes 20-64 BE/UE 2025 (76,4/80,9) ; 55-64 BE/UE 2025 (61,5/66,4) ; femmes UE (71,3)
+lfst_r_lfe2emprt : BE2 Flandre 2015-2025
+gov_10dd_edpt1 : dette par sous-secteur S1311-S1314 2015/2025 ; soldes par sous-secteur 2025 ; dette MIO_EUR 2025 (692 Md)
+gov_10a_main : P51G BE/UE 2000-2025 (rate limit) ; TR/TE 2025 BE/UE (49,0/46,4 ; 54,2/49,5)
+gov_10a_exp : COFOG 2024 BE/UE
+migr_asyappctza EU27_2020 2014-2025 (après 15 min)
+lfsa_ergacob BE femmes 2025 : nées hors UE 51,3 ; nées en BE 72,7
+hlth_hlye UE HLY_Y0 T 2024 (65,2)
+hlth_sha11_hf HF3 PC_CHE BE 2024 (21,78) et UE 2023 (15,19)
+hlth_silc_08 UE 2024 TOTAL (2,5)
