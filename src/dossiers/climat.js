@@ -79,10 +79,23 @@
     series:[{n:'gaz',v:DATA.gas,s:2000,c:'#A69C8F',w:3,dy:4},{n:'renouv.',v:DATA.rnw,s:2000,c:'#7FB6A3',w:3.5,dy:6},{n:'nucléaire',v:DATA.nuc,s:2000,c:'#C9773A',w:4,dy:-4}],
     label:'Production d’électricité en Belgique en térawattheures : nucléaire 48,2 en 2000 et 31,3 en 2024 ; renouvelables 1,0 puis 26,5 ; gaz 16,0 puis 14,2'},DK));
 
-  lines2(D.getElementById('priceChart'),{t0:2019,t1:2026,rm:MOB?70:150,min:15,max:50,ticks:[20,30,40,50],unit:' c€',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',years:MOB?[2019,2022,2026]:[2019,2020,2021,2022,2023,2024,2025,2026],
-    series:[{n:'Union',pts:DATA.priceEU,c:'#3D3A35',dash:1,dy:8},{n:'Belgique',pts:DATA.price,c:'#701C0E',w:4.5,dy:-4}],
-    marks:[[2022.5,44.9,'2022 : 44,9 c€','#701C0E',-14]],
-    label:'Prix de l’électricité pour les ménages, toutes taxes, en centimes d’euro courants par kWh : Belgique 28,4 au premier semestre 2019, 44,9 au second semestre 2022, 35,8 au premier semestre 2026 ; Union 29,0 au second semestre 2025'});
+  /* Prix de l'électricité : euros courants ou euros de 2025 (IPCH annuel, Eurostat prc_hicp_ainr ; approximation pour des prix semestriels) */
+  (function(){
+    var host=D.getElementById('priceChart'),real=false;
+    function defl(pts,ix){return pts.filter(function(p){return ix[String(Math.floor(p[0]))]}).map(function(p){return [p[0],Math.round(p[1]*1000/ix[String(Math.floor(p[0]))])/10]})}
+    function draw(){
+      host.innerHTML='';
+      var be=real?defl(DATA.price,DATA.ipchBE):DATA.price,eu=real?defl(DATA.priceEU,DATA.ipchEU):DATA.priceEU,pk=be.filter(function(p){return p[0]===2022.5})[0][1];
+      var w=host.parentNode&&host.parentNode.querySelector('.axt-y');if(w)w.lastChild.textContent=real?'Centimes d’euro de 2025 par kWh (inflation déduite), toutes taxes comprises':'Centimes d’euro courants par kWh, toutes taxes comprises';
+      lines2(host,{t0:2019,t1:2026,rm:MOB?70:150,min:15,max:55,ticks:[20,30,40,50],unit:' c€',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',years:MOB?[2019,2022,2026]:[2019,2020,2021,2022,2023,2024,2025,2026],
+        series:[{n:'Union',pts:eu,c:'#3D3A35',dash:1,dy:8},{n:'Belgique',pts:be,c:'#701C0E',w:4.5,dy:-4}],
+        marks:[[2022.5,pk,'2022 : '+fr(pk)+' c€','#701C0E',-14]],
+        label:real?'Prix de l’électricité pour les ménages, toutes taxes, en centimes d’euro de 2025 par kWh (inflation déduite avec l’IPCH annuel) : Belgique 35,7 au premier semestre 2019, 49,4 au second semestre 2022, 35,0 au second semestre 2025 ; Union 27,4 au premier semestre 2019 et 29,0 au second semestre 2025':'Prix de l’électricité pour les ménages, toutes taxes, en centimes d’euro courants par kWh : Belgique 28,4 au premier semestre 2019, 44,9 au second semestre 2022, 35,8 au premier semestre 2026 ; Union 29,0 au second semestre 2025'});
+    }
+    var bs=D.querySelectorAll('#priceUnit button');
+    bs.forEach(function(b){b.onclick=function(){real=b.dataset.u==='r';bs.forEach(function(x){x.setAttribute('aria-pressed',x===b)});draw()}});
+    draw();
+  })();
 
   /* Recherche */
   (function(){

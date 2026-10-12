@@ -164,7 +164,7 @@
     bul.innerHTML='<div class="head"><h2>'+name(c)+'</h2><span class="tag-s">Fiche pays · Eurostat</span></div>'+
       '<div class="kg">'+
       '<div><span class="v">'+hab(at(S(c,'population'),2025))+'</span><span class="t">d’habitants au 1er janvier 2025</span></div>'+
-      '<div><span class="v">'+num(Math.round(g/100)*100,0)+' €</span><span class="t">de PIB par habitant, 2024</span><span class="e">UE : '+num(Math.round(ge/100)*100,0)+' €</span></div>'+
+      '<div><span class="v">'+num(Math.round(g/100)*100,0)+' €</span><span class="t">de PIB par habitant, 2024 (euros courants)</span><span class="e">UE : '+num(Math.round(ge/100)*100,0)+' €</span></div>'+
       '<div><span class="v">'+pc(dt[1])+'</span><span class="t">de dette publique, en % du PIB, '+dt[0]+'</span><span class="e">UE : '+pc(at(S(EU,'debt'),dt[0]))+'</span></div>'+
       '<div><span class="v">'+pc(u[1])+'</span><span class="t">de chômage, '+u[0]+'</span><span class="e">UE : '+pc(at(S(EU,'unemp'),u[0]))+'</span></div>'+
       '</div><p class="rline"><span>Note de la dette</span><b>'+rtShort(c)+'</b><small>S&P · Moody’s · Fitch</small></p><div class="cta"><a class="btn" href="#dossier" data-magnet>Ouvrir l’analyse <span aria-hidden="true">↓</span></a><button type="button" class="btn" style="background:#fff;color:var(--line);border:2px solid var(--line)" id="goC">Comparer avec…</button></div>'+
@@ -214,8 +214,8 @@
     h+='<section class="dz brun grain" aria-labelledby="dA1"><div class="w"><p class="kicker" data-r>Analyse · Eurostat · consulté le 10 octobre 2026</p><h2 class="giant" id="dA1" data-r>'+nm+'<span class="s">, en huit chiffres.</span></h2>'+
       '<div class="facts8" data-r>'+
       fcell(hab(p25),'d’habitants au 1er janvier 2025',(p24?sgn((p25/p24-1)*100,1)+' % en un an':''))+
-      fcell(eur(gdp),'de PIB en 2024',num(gdp/gdpEU*100,1)+' % du PIB de l’Union')+
-      fcell(num(Math.round(gdpHab(c,2024)/100)*100,0)+' €','de PIB par habitant, 2024',euCmp(0,Math.round(gdpHab(EU,2024)/100)*100,function(v){return num(v,0)+' €'}))+
+      fcell(eur(gdp),'de PIB en 2024 (euros courants)',num(gdp/gdpEU*100,1)+' % du PIB de l’Union')+
+      fcell(num(Math.round(gdpHab(c,2024)/100)*100,0)+' €','de PIB par habitant, 2024 (euros courants)',euCmp(0,Math.round(gdpHab(EU,2024)/100)*100,function(v){return num(v,0)+' €'}))+
       fcell(spc(gr[1]),'de croissance réelle, '+gr[0],euCmp(0,at(S(EU,'growth'),gr[0]),spc))+
       fcell(pc(inf[1]),'d’inflation (IPCH), '+inf[0],euCmp(0,at(S(EU,'inflation'),inf[0]),pc))+
       fcell(pc(u[1]),'de chômage, '+u[0],euCmp(0,at(S(EU,'unemp'),u[0]),pc))+
@@ -227,10 +227,10 @@
     h+='<section class="dz papier" aria-labelledby="dA2"><div class="w"><p class="kicker" data-r>Dépenses publiques par fonction · COFOG · Eurostat gov_10a_exp</p><h2 id="dA2" data-r>Où va <span class="s">l’argent public ?</span></h2>'+
       '<p class="lede" data-r id="bLede"></p>'+
       '<div class="budget-top" data-r><div class="yearpick"><label for="yr" class="kicker" style="color:var(--grey);margin:0">Année</label><input type="range" id="yr" min="'+Y0+'" max="'+Y1+'" step="1" value="'+Y1+'"><output id="yrO">'+Y1+'</output></div>'+
-      '<div class="unit" role="group" aria-label="Unité"><button type="button" id="uP" aria-pressed="true">% du PIB</button><button type="button" id="uE" aria-pressed="false">€ par habitant</button></div></div>'+
+      '<div class="unit" role="group" aria-label="Unité"><button type="button" id="uP" aria-pressed="true">% du PIB</button><button type="button" id="uE" aria-pressed="false">€ par habitant (euros de l’année)</button></div></div>'+
       '<ul class="fn" id="fn" data-r></ul>'+
       '<div class="keyrow"><span><i style="border-color:#C9773A"></i>'+nm+', '+Y0+'-'+Y1+'</span><span><i class="d" style="border-color:#6A665F"></i>moyenne de l’Union</span></div>'+
-      '<p class="src">'+srcs(['gov_10a_exp','nama_10_gdp','tps00001'],'€ par habitant : calcul Chiffre Juste')+'</p>'+
+      '<p class="src">'+srcs(['gov_10a_exp','nama_10_gdp','tps00001'],'€ par habitant : calcul Chiffre Juste, en euros courants de l’année choisie (inflation non déduite) ; pour comparer des années entre elles, utilisez le % du PIB')+'</p>'+
       '<div class="limits" data-r><div><b>Une fonction n’est pas un ministère.</b><p>Les portefeuilles changent à chaque gouvernement. La classification COFOG des Nations unies range chaque dépense selon sa finalité : c’est ce qui permet de comparer les pays et les années.</p></div>'+
       '<div><b>Tous les niveaux de pouvoir.</b><p>'+(c==='BE'?'État fédéral, Régions, Communautés, provinces, communes et sécurité sociale sont additionnés : aucun de ces budgets, pris seul, ne donne ce total.':'Administration centrale, collectivités locales et sécurité sociale sont additionnées (secteur S13).')+'</p></div>'+
       '<div><b>La dette se cache dans « services généraux ».</b><p>Les intérêts payés y sont comptés : '+pc(at(S(c,'interest'),Y1))+' du PIB en '+Y1+' pour '+le(c)+', contre '+pc(at(S(EU,'interest'),Y1))+' dans l’Union.</p></div></div>'+
@@ -258,7 +258,7 @@
     var PN=function(k){return k==='US'?'États-Unis':k==='CN'?'Chine':name(k)};
     h+='<section class="dz aplat grain" style="background:var(--c-eco)" aria-labelledby="dA5"><div class="w"><p class="kicker" data-r>Commerce extérieur · Eurostat, Comext DS-045409 et nama_10_gdp</p><h2 id="dA5" data-r>Ce que '+le(c)+' <span class="s">vend et achète.</span></h2>'+
       '<div class="trade"><div class="bulle" data-r><div class="kg"><div><span class="v">'+pc(ex[1],0)+'</span><span class="t">du PIB exporté en biens et services, '+ex[0]+'</span></div><div><span class="v">'+pc(im,0)+'</span><span class="t">du PIB importé, '+ex[0]+'</span></div>'+
-      '<div><span class="v">'+eur(tr.WORLD)+'</span><span class="t">de biens exportés, 2024</span></div><div><span class="v">'+seur(bal)+'</span><span class="t">de solde commercial en biens, 2024</span></div></div>'+
+      '<div><span class="v">'+eur(tr.WORLD)+'</span><span class="t">de biens exportés, 2024 (euros courants)</span></div><div><span class="v">'+seur(bal)+'</span><span class="t">de solde commercial en biens, 2024</span></div></div>'+
       '<p class="src" style="color:var(--line)">'+(ex[1]>100?'Les exportations dépassent le PIB : le PIB compte une valeur ajoutée, les exportations une valeur brute, qui inclut ce qui a été importé puis réexporté.':'Le solde en biens ne compte ni le tourisme, ni la finance, ni les transports : ces services figurent dans les exportations totales.')+'</p></div>'+
       '<div data-r><p class="kicker">Premiers clients en biens, 2024</p><ul class="fn" style="margin-top:8px">'+parts.map(function(p){return '<li style="grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) 100px"><span class="nm" style="font-size:22px">'+PN(p[0])+'</span><span class="bar"><span style="width:'+(p[1]/pmx*100).toFixed(1)+'%;--cc:#FFF4E2"></span></span><span class="val">'+eur(p[1])+'</span></li>'}).join('')+'</ul>'+
       '<p class="note" style="font-size:24px;margin-top:14px;transform:rotate(-2deg)">pour voir les flux dans les deux sens, comparez deux pays ↑</p></div></div>'+
@@ -290,7 +290,7 @@
       D.getElementById('fTot').innerHTML=fmt(tv)+'<small>UE : '+fmt(te2)+'</small>';
       COF.forEach(function(f,i){var li=ul.children[i+1],v=get(c,f[0]),ve=get(EU,f[0]);li.querySelector('.bar span').style.width=((v||0)/mx*100).toFixed(1)+'%';li.querySelector('.eu').style.left=((ve||0)/mx*100).toFixed(1)+'%';li.querySelector('.val').innerHTML=fmt(v)+'<small>UE : '+fmt(ve)+'</small>'});
       var t=at(C[c].cofog.TOTAL,yr),s=at(C[c].cofog.GF10,yr),eh=eurHab(c,'TOTAL',yr);
-      D.getElementById('bLede').innerHTML='En '+yr+', les administrations publiques '+(adj(c)||'')+' ont dépensé <b>'+pc(t)+' du PIB</b>, soit environ <b>'+num(Math.round(eh/100)*100,0)+' € par habitant</b>. La protection sociale en représente '+pc(s/t*100,0)+'. Moyenne de l’Union : '+pc(at(C[EU].cofog.TOTAL,yr))+' du PIB.';
+      D.getElementById('bLede').innerHTML='En '+yr+', les administrations publiques '+(adj(c)||'')+' ont dépensé <b>'+pc(t)+' du PIB</b>, soit environ <b>'+num(Math.round(eh/100)*100,0)+' € par habitant</b> (euros de '+yr+'). La protection sociale en représente '+pc(s/t*100,0)+'. Moyenne de l’Union : '+pc(at(C[EU].cofog.TOTAL,yr))+' du PIB.';
     }
     var yrI=D.getElementById('yr');yrI.oninput=function(){yr=+this.value;D.getElementById('yrO').textContent=yr;drawBudget()};
     D.getElementById('uP').onclick=function(){unit='P';this.setAttribute('aria-pressed','true');D.getElementById('uE').setAttribute('aria-pressed','false');drawBudget()};
@@ -413,7 +413,7 @@
   function lastOf(k){return function(c){return last(S(c,k))}}
   var RK=[
     {th:'Économie',items:[
-      {id:'gdphab',lab:'PIB par habitant',f:function(c){var y=2024,v=gdpHab(c,y);return [y,v]},fmt:function(v){return num(Math.round(v/100)*100,0)+' €'},def:'Produit intérieur brut divisé par la population moyenne de l’année.',src:'Eurostat nama_10_gdp, tps00001 ; calcul Chiffre Juste',note:'Le PIB par habitant de l’Irlande et du Luxembourg est gonflé par les profits des multinationales et les travailleurs frontaliers.'},
+      {id:'gdphab',lab:'PIB par habitant',f:function(c){var y=2024,v=gdpHab(c,y);return [y,v]},fmt:function(v){return num(Math.round(v/100)*100,0)+' €'},def:'Produit intérieur brut divisé par la population moyenne de l’année, en euros courants de l’année indiquée.',src:'Eurostat nama_10_gdp, tps00001 ; calcul Chiffre Juste',note:'Le PIB par habitant de l’Irlande et du Luxembourg est gonflé par les profits des multinationales et les travailleurs frontaliers.'},
       {id:'gdppps',lab:'Niveau de vie (PIB en SPA)',f:lastOf('gdppps'),fmt:function(v){return num(v,0)},def:'PIB par habitant corrigé des différences de prix, indice : Union = 100.',src:'Eurostat tec00114'},
       {id:'growth',lab:'Croissance',f:lastOf('growth'),fmt:spc,def:'Variation du PIB en volume par rapport à l’année précédente.',src:'Eurostat tec00115'},
       {id:'inflation',lab:'Inflation',f:lastOf('inflation'),fmt:pc,def:'Variation annuelle moyenne de l’indice des prix à la consommation harmonisé (IPCH).',src:'Eurostat prc_hicp_aind'},
@@ -423,7 +423,7 @@
     {th:'Finances publiques',items:[
       {id:'rating',lab:'Note de la dette',f:function(c){return RT[c]?[2026,RT[c].avg]:null},fmt:function(v,c){return rtShort(c)},inv:true,def:'Notes S&P, Moody’s et Fitch au 10 octobre 2026, classées par leur moyenne (AAA = 1, AA+ = 2…).',src:'Agences de notation, communiqués et presse, vérifiés le 10/10/2026',note:'S&P ne note plus l’Estonie depuis 2025 : sa moyenne repose sur deux agences.'},
       {id:'debt',lab:'Dette publique',f:lastOf('debt'),fmt:pc,def:'Dette brute des administrations publiques, au sens de Maastricht, en % du PIB.',src:'Eurostat gov_10dd_edpt1'},
-      {id:'debtpc',lab:'Dette par habitant',f:function(c){var y=last(S(c,'debt'))[0],d=at(S(c,'debt'),y),g=at(S(c,'gdp_meur'),y),p=popMid(c,y);return [y,d&&g&&p?d/100*g*1e6/p:null]},fmt:function(v){return num(Math.round(v/100)*100,0)+' €'},def:'Dette publique divisée par la population.',src:'Eurostat gov_10dd_edpt1, nama_10_gdp, tps00001 ; calcul Chiffre Juste'},
+      {id:'debtpc',lab:'Dette par habitant',f:function(c){var y=last(S(c,'debt'))[0],d=at(S(c,'debt'),y),g=at(S(c,'gdp_meur'),y),p=popMid(c,y);return [y,d&&g&&p?d/100*g*1e6/p:null]},fmt:function(v){return num(Math.round(v/100)*100,0)+' €'},def:'Dette publique divisée par la population, en euros courants de l’année indiquée.',src:'Eurostat gov_10dd_edpt1, nama_10_gdp, tps00001 ; calcul Chiffre Juste'},
       {id:'deficit',lab:'Solde public',f:lastOf('deficit'),fmt:spc,def:'Recettes moins dépenses publiques de l’année, en % du PIB.',src:'Eurostat gov_10dd_edpt1'},
       {id:'spend',lab:'Dépenses publiques',f:cof('TOTAL'),fmt:pc,def:'Dépenses totales des administrations publiques, en % du PIB.',src:'Eurostat gov_10a_exp'},
       {id:'revenue',lab:'Recettes publiques',f:lastOf('revenue'),fmt:pc,def:'Recettes totales des administrations publiques, en % du PIB.',src:'Eurostat gov_10a_main'},
@@ -441,7 +441,7 @@
       {id:'unemp',lab:'Chômage',f:lastOf('unemp'),fmt:pc,def:'Part des actifs de 15 à 74 ans sans emploi, qui cherchent et sont disponibles (BIT).',src:'Eurostat une_rt_a'},
       {id:'youth',lab:'Chômage des jeunes',f:lastOf('youth'),fmt:pc,def:'Chômage des 15-24 ans, en % des jeunes actifs.',src:'Eurostat une_rt_a',note:'Les étudiants ne comptent pas parmi les actifs : 20 % de chômage ne veut pas dire un jeune sur cinq.'},
       {id:'ltu',lab:'Chômage de longue durée',f:lastOf('ltu'),fmt:pc,def:'Chômeurs depuis un an ou plus, en % des actifs.',src:'Eurostat une_ltu_a'},
-      {id:'minwage',lab:'Salaire minimum',f:lastOf('minwage'),fmt:function(v){return num(Math.round(v),0)+' €'},def:'Salaire minimum légal mensuel brut, second semestre de l’année.',src:'Eurostat earn_mw_cur',note:'Cinq pays (Autriche, Danemark, Finlande, Italie, Suède) n’ont pas de salaire minimum légal : les minima y sont fixés par conventions collectives, ils n’apparaissent pas. Montants bruts, sans correction des prix.'},
+      {id:'minwage',lab:'Salaire minimum',f:lastOf('minwage'),fmt:function(v){return num(Math.round(v),0)+' €'},def:'Salaire minimum légal mensuel brut, second semestre de l’année, en euros courants de cette année.',src:'Eurostat earn_mw_cur',note:'Cinq pays (Autriche, Danemark, Finlande, Italie, Suède) n’ont pas de salaire minimum légal : les minima y sont fixés par conventions collectives, ils n’apparaissent pas. Montants bruts, sans correction des prix.'},
       {id:'paygap',lab:'Écart salarial femmes-hommes',f:lastOf('paygap'),fmt:pc,def:'Différence de salaire horaire brut moyen entre hommes et femmes, en % du salaire masculin.',src:'Eurostat sdg_05_20',note:'Écart « non ajusté » : il ne compare pas des postes identiques, il mesure l’écart global.'}]},
     {th:'Social',items:[
       {id:'arope',lab:'Pauvreté ou exclusion',f:lastOf('arope'),fmt:pc,def:'Risque de pauvreté, privation sévère ou très faible intensité de travail (Europe 2030).',src:'Eurostat ilc_peps01n'},

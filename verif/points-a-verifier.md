@@ -49,3 +49,7 @@ Conformes à la source trouvée, mais cette source est la presse ou une organisa
 - [ ] **Inégalités** — explications de la baisse de la pauvreté depuis 2019 : seulement la presse (RTBF) ; chercher une analyse du CSB (UAntwerpen) ou de Statbel.
 - [ ] **Fiche chômage** — chiffres Actiris (16,0 %, août 2026) : relire sur le site d’Actiris (non accessible automatiquement).
 - [ ] **Méthode générale** — l’outil de lecture d’Eurostat a parfois renvoyé des réponses périmées : toute valeur relue doit avoir un libellé (pays, catégorie) conforme à la requête.
+
+## Inflation (ajout du 12 octobre 2026)
+- Accueil, outil « Où va l'argent public ? », mode « € par habitant » : affiché en euros courants de l'année choisie (étiqueté). À convertir en euros constants dès que l'IPCH des 27 pays 2015-2024 aura été relu (Eurostat prc_hicp_ainr, TOTAL, INX_A_AVG, tous pays) : la requête a été refusée (HTTP 429) le 12/10/2026.
+- Prix de l'électricité en euros de 2025 : indice annuel appliqué à des prix semestriels (approximation signalée sur le site).
