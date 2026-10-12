@@ -315,6 +315,14 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
 .decide .trade th,.decide .trade td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
 .decide .trade th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--copper)}
 @media (max-width:900px){.twomin .tm,.canwhat,.decide .opts4{grid-template-columns:1fr}.canwhat>div+div{border-left:0;border-top:2px solid currentColor}.decide .trade{overflow-x:auto}}
+
+/* Titres des axes (ajoutés par common.js à partir de data-yt / data-xt) */
+.axt{font-family:var(--sans);font-size:15px;line-height:1.35;margin:18px 0 6px;max-width:72ch;opacity:.9}
+.axt span{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-right:8px;opacity:.75}
+.axt-x{text-align:right;margin:8px 0 0 auto}
+.chart svg{overflow:visible}
+.axt-y + .chart{margin-top:6px}
+.axwrap{min-width:0}
 </style>
 </head>
 <body>
@@ -447,7 +455,7 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
   <div class="wrap">
     <span class="kick" data-r>Au-delà du chômage · Eurostat, 2025, 15-74 ans</span>
     <h2 class="giant" id="t5" data-r>712 000 personnes <span>voudraient travailler plus.</span></h2>
-    <div class="chart seg-bar" id="slack"></div>
+    <div class="chart seg-bar" id="slack" data-yt="" data-xt="Milliers de personnes de 15 à 74 ans (712 000 au total), 2025"></div>
   </div>
 </section>
 
@@ -456,7 +464,7 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
   <div class="wrap">
     <span class="kick" data-r>Belgique et Union européenne · 2009-2025 · Eurostat</span>
     <h2 class="giant" id="t6" data-r>Seize ans, <span>trois changements d’instrument.</span></h2>
-    <div class="chart" id="series"></div>
+    <div class="chart" id="series" data-yt="% des actifs" data-xt="Année"></div>
     <div class="evs" role="group" aria-label="Moments clés">
       <button type="button" data-e="0">2013 · Crise des dettes</button>
       <button type="button" data-e="1">2017 · Nouvelle enquête</button>
@@ -473,7 +481,7 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
   <div class="wrap">
     <span class="kick" style="color:var(--line)" data-r>Taux de chômage 2025 · 15-74 ans · Eurostat</span>
     <h2 class="giant" id="t7" data-r style="color:var(--line)">Pile dans <span style="color:#3E3A8C">la moyenne.</span></h2>
-    <div class="chart pills" id="europe"></div>
+    <div class="chart pills" id="europeChart" data-yt="Pays" data-xt="Taux de chômage 2025, en % des actifs de 15 à 74 ans"></div>
     <p style="font-size:13.5px;margin-top:10px">* Espagne et France : définition légèrement différente selon Eurostat.</p>
   </div>
 </section>
@@ -677,7 +685,7 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
     lab.appendChild(el('text',{x:X(2017.1),y:Y(9.4),style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?20:26)+'px;fill:#EDE6DC'},'rupture ici !'));
     lab.appendChild(el('path',{d:'M'+X(2017.1)+' '+(Y(9.4)-8)+' C '+(X(2016.6))+' '+(Y(9.8))+', '+X(2016.5)+' '+Y(10.6)+', '+(X(2016.5)+2)+' '+(Y(11.3)),fill:'none',stroke:'#EDE6DC','stroke-width':2,'stroke-linecap':'round'}));
     s.appendChild(lab);
-    var cur=el('line',{y1:T,y2:B,stroke:'#EDE6DC','stroke-width':1,opacity:.6}),d1=el('circle',{r:7,fill:'#C9773A',stroke:'#1E1914','stroke-width':3}),d2=el('circle',{r:6,fill:'#A69C8F',stroke:'#1E1914','stroke-width':3}),tl=el('text',{style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:15)+'px;fill:#EDE6DC'});
+    var cur=el('line',{y1:T,y2:B,stroke:'#EDE6DC','stroke-width':1,opacity:.6}),d1=el('circle',{r:7,fill:'#C9773A',stroke:'#1E1914','stroke-width':3}),d2=el('circle',{r:6,fill:'#A69C8F',stroke:'#1E1914','stroke-width':3}),tl=el('text',{style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:#EDE6DC'});
     [cur,d1,d2,tl].forEach(function(n){s.appendChild(n)});
     function focus(y){var i=y-2009,x=X(y);cur.setAttribute('x1',x);cur.setAttribute('x2',x);d1.setAttribute('cx',x);d1.setAttribute('cy',Y(BE[i]));d2.setAttribute('cx',x);d2.setAttribute('cy',Y(EU[i]));var r=x>R-(MOB?110:230);tl.setAttribute('x',r?x-12:x+12);tl.setAttribute('text-anchor',r?'end':'start');tl.setAttribute('y',B-14);tl.textContent=y+' · Belgique '+fr(BE[i])+' % · UE '+fr(EU[i])+' %'}
     s.addEventListener('pointermove',function(e){var r=s.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W;focus(Math.max(2009,Math.min(2025,Math.round(2009+(px-L)/(R-L)*16))))});
@@ -690,15 +698,15 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
   /* Europe */
   (function(){
     var raw=[['Belgique',6.2],['Bulgarie',3.5],['Tchéquie',2.8],['Danemark',6.4],['Allemagne',3.8],['Estonie',7.5],['Irlande',4.7],['Grèce',8.9],['Espagne*',10.5],['France*',7.7],['Croatie',4.9],['Italie',6.1],['Chypre',4.4],['Lettonie',6.9],['Lituanie',6.9],['Luxembourg',6.5],['Hongrie',4.4],['Malte',3.1],['Pays-Bas',3.9],['Autriche',5.7],['Pologne',3.1],['Portugal',6.0],['Roumanie',6.1],['Slovénie',3.9],['Slovaquie',5.4],['Finlande',9.7],['Suède',8.8]];
-    var dd=raw.slice().sort(function(a,b){return b[1]-a[1]}),box=D.getElementById('europe');
+    var dd=raw.slice().sort(function(a,b){return b[1]-a[1]}),box=D.getElementById('europeChart');
     var W=MOB?400:1000,row=MOB?24:26,T=10,L=MOB?94:150,R=MOB?362:900,mx=11,Hh=T+dd.length*row+34;
     function X(v){return L+v/mx*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Taux de chômage 2025 des 27 pays de l’Union, Belgique 6,2 %, moyenne 6,0 %'});
     dd.forEach(function(c,i){
       var y=T+i*row,be=c[0]==='Belgique';
       s.appendChild(el('rect',{x:L,y:y+4,width:X(c[1])-L,height:row-8,rx:(row-8)/2,fill:be?'#E2402B':'#FFFFFF',stroke:'#1A1A1A','stroke-width':2,'class':'bar',style:'transition-delay:'+(i*0.03)+'s'}));
-      s.appendChild(el('text',{x:L-12,y:y+row/2+5,'text-anchor':'end',style:'font-family:var(--sans);font-weight:'+(be?700:500)+';font-size:'+(MOB?13:15)+'px;fill:#1A1A1A'},c[0]));
-      s.appendChild(el('text',{x:X(c[1])+10,y:y+row/2+5,style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:#1A1A1A'},fr(c[1])));
+      s.appendChild(el('text',{x:L-12,y:y+row/2+5,'text-anchor':'end',style:'font-family:var(--sans);font-weight:'+(be?700:500)+';font-size:'+(MOB?14:16)+'px;fill:#1A1A1A'},c[0]));
+      s.appendChild(el('text',{x:X(c[1])+10,y:y+row/2+5,style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:#1A1A1A'},fr(c[1])));
     });
     var xe=X(6.0);s.appendChild(el('line',{x1:xe,x2:xe,y1:T-4,y2:Hh-28,stroke:'#1A1A1A','stroke-width':1.5,'stroke-dasharray':'4 4'}));
     s.appendChild(el('text',{x:xe,y:Hh-8,'text-anchor':'middle',style:'font-family:var(--sans);font-weight:700;font-size:13px;fill:#1A1A1A'},'moyenne UE 6,0 %'));
@@ -736,7 +744,7 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
   /* Révélations et tracés au défilement */
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.2});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','slack','series','europe'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','slack','series','europeChart'].forEach(function(id){io.observe(D.getElementById(id))});
   io.observe(D.querySelector('.hero'));
 
   /* Curseur et boutons magnétiques */
@@ -775,6 +783,38 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
         if(live)live.textContent=k===ok?'Bonne réponse.':'Ce n’est pas la bonne réponse : lisez l’explication.';
       });
     });
+  });
+})();
+
+/* Cadre des graphiques : le cadre (viewBox) s’agrandit pour contenir toutes les étiquettes, afin qu’aucune ne soit coupée au bord de l’écran */
+(function(){
+  var D=document;
+  function fit(svg){
+    try{
+      var vb=svg.viewBox.baseVal;if(!vb||!vb.width)return;
+      if(!svg.dataset.vb)svg.dataset.vb=[vb.x,vb.y,vb.width,vb.height].join(' ');
+      var o=svg.dataset.vb.split(' ').map(Number),bb=svg.getBBox(),p=6;
+      var x0=Math.min(o[0],bb.x-p),y0=Math.min(o[1],bb.y-p),x1=Math.max(o[0]+o[2],bb.x+bb.width+p),y1=Math.max(o[1]+o[3],bb.y+bb.height+p);
+      svg.setAttribute('viewBox',[x0,y0,x1-x0,y1-y0].map(function(n){return Math.round(n*10)/10}).join(' '));
+    }catch(e){}
+  }
+  function all(c){c.querySelectorAll(':scope > svg, :scope svg').forEach(function(s){if(!s.parentNode.closest('svg'))fit(s)})}
+  D.querySelectorAll('.chart').forEach(function(c){
+    all(c);
+    new MutationObserver(function(){all(c)}).observe(c,{childList:true});
+  });
+})();
+
+/* Titres des axes des graphiques : chaque graphique annonce ce que mesurent l’axe vertical et l’axe horizontal */
+(function(){
+  var D=document;
+  D.querySelectorAll('.chart[data-xt],.chart[data-yt]').forEach(function(c){
+    var yt=c.getAttribute('data-yt'),xt=c.getAttribute('data-xt');
+    function p(cls,lab,txt){var e=D.createElement('p');e.className='axt '+cls;var s=D.createElement('span');s.textContent=lab;e.appendChild(s);e.appendChild(D.createTextNode(txt));return e}
+    var w=D.createElement('div');w.className='axwrap';c.parentNode.insertBefore(w,c);
+    if(yt)w.appendChild(p('axt-y','Axe vertical',yt));
+    w.appendChild(c);
+    if(xt)w.appendChild(p('axt-x','Axe horizontal',xt));
   });
 })();
 </script>

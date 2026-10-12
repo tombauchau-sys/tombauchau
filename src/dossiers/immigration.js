@@ -10,7 +10,7 @@
   var ab=D.getElementById('a11y');
   function setCalm(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}
   setCalm(calm);ab.addEventListener('click',function(){setCalm(!calm)});
-  var TX='font-family:var(--sans);font-size:'+(MOB?12:13)+'px;fill:';
+  var TX='font-family:var(--sans);font-size:'+(MOB?14:15)+'px;fill:';
 
 
   /* 0. Seuil */
@@ -26,7 +26,7 @@
 
   /* Courbes à départs variables */
   function lines2(host,o){
-    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?320:420),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
+    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
     (o.bands||[]).forEach(function(b){s.appendChild(el('rect',{x:X(b[0]),y:T,width:X(b[1])-X(b[0]),height:B-T,fill:b[2]}));s.appendChild(el('text',{x:(X(b[0])+X(b[1]))/2,y:T-10,'text-anchor':'middle',style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?15:22)+'px;fill:'+o.ink},b[3]))});
@@ -41,9 +41,9 @@
       if(se.dash)p.setAttribute('stroke-dasharray','6 6');g.appendChild(p);
       if(se.end!==false){var lp=pts[pts.length-1];
         g.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:5,fill:se.c,'class':'fadein'}));
-        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+se.c},fr(lp[1])+(o.unit||'')+(MOB?'':'  '+se.n)));}
+        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:'+se.c},fr(lp[1])+(o.unit||'')+(MOB?'':'  '+se.n)));}
     });
-    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+k[3]},k[2]))});
+    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:'+k[3]},k[2]))});
     s.appendChild(g);host.appendChild(s);
   }
 
@@ -69,7 +69,7 @@
       g.appendChild(el('rect',{x:x.toFixed(1),y:Math.min(y0,y1).toFixed(1),width:Math.max(w-.5,1).toFixed(1),height:Math.max(Math.abs(y1-y0),.5).toFixed(1),fill:se.c}))})});
     s.appendChild(g);
     o.labels.forEach(function(l,i){if(o.show.indexOf(l)>=0)s.appendChild(el('text',{x:L+i*bw+bw/2,y:Hh-12,'text-anchor':'middle',style:TX+o.mute},l))});
-    (o.notes||[]).forEach(function(nt){var i=o.labels.indexOf(nt[0]);s.appendChild(el('text',{x:L+i*bw+bw/2+(nt[3]||0),y:Y(nt[1])-8,'text-anchor':nt[4]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+o.ink},nt[2]))});
+    (o.notes||[]).forEach(function(nt){var i=o.labels.indexOf(nt[0]);s.appendChild(el('text',{x:L+i*bw+bw/2+(nt[3]||0),y:Y(nt[1])-8,'text-anchor':nt[4]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:'+o.ink},nt[2]))});
     if(o.legend){var lg=el('g',{});o.legend.forEach(function(it,i){var x=L+8+i*(MOB?150:210);lg.appendChild(el('rect',{x:x,y:4,width:14,height:14,fill:it[1]}));lg.appendChild(el('text',{x:x+20,y:16,style:TX+o.ink},it[0]))});s.appendChild(lg)}
     host.appendChild(s);
   }
@@ -77,7 +77,7 @@
   bars(D.getElementById('growChart'),o2({min:-40,max:130,ticks:[-40,0,40,80,120],labels:yrs(1960,2025),show:MOB?[1960,1990,2025]:[1960,1970,1980,1990,2000,2010,2025],
     series:[{v:DATA.ng.map(function(v){return v/1000}),c:'#9A9488'},{v:DATA.mig.map(function(v){return v/1000}),c:'#C0341E'}],
     legend:[['Solde naturel','#9A9488'],['Solde migratoire','#C0341E']],
-    notes:[[2022,127.5,'2022 : 127 500',-6,'end']],
+    notes:MOB?[]:[[2022,127.5,'2022 : 127 500',-6,'end']],
     label:'Solde naturel et solde migratoire en Belgique, 1960-2025, en milliers : le solde naturel dépasse 40 000 par an au début des années 1960 et devient négatif après 2020 ; le solde migratoire atteint 127 502 en 2022'},PP));
 
   /* Barres horizontales empilées 100 % */
@@ -86,7 +86,7 @@
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
     o.rows.forEach(function(r,i){var y=10+i*rowH,x=L;s.appendChild(el('text',{x:L-10,y:y+24,'text-anchor':'end',style:TX+o.ink+';font-weight:700'},r[0]));
       r[1].forEach(function(v,j){var w=(R-L)*v/100;s.appendChild(el('rect',{x:x.toFixed(1),y:y,width:Math.max(w-2,0).toFixed(1),height:rowH-22,fill:o.cols[j],'class':'fadein'}));
-        if(w>34)s.appendChild(el('text',{x:x+w/2,y:y+(rowH-22)/2+5,'text-anchor':'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:13)+'px;fill:'+o.txt[j]},fr(v,0)+' %'));x+=w})});
+        if(w>34)s.appendChild(el('text',{x:x+w/2,y:y+(rowH-22)/2+5,'text-anchor':'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:15)+'px;fill:'+o.txt[j]},fr(v,0)+' %'));x+=w})});
     var ly=o.rows.length*rowH+18,lx=L,per=o.per||(MOB?2:4);
     o.names.forEach(function(nm,j){var cx=lx+(j%per)*((R-L)/per),cy=ly+Math.floor(j/per)*24;s.appendChild(el('rect',{x:cx,y:cy-11,width:12,height:12,fill:o.cols[j]}));s.appendChild(el('text',{x:cx+18,y:cy,style:TX+o.ink},nm))});
     host.appendChild(s);

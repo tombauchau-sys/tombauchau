@@ -71,9 +71,11 @@ var CJC=(function(){
     function sync(){grid.querySelectorAll('input').forEach(function(cb){cb.checked=!!sel[cb.value]})}
     var head=h('div',{'class':'cmp-head'});
     var chart=h('div',{'class':'cmp-chart'}),legend=h('ul',{'class':'cmp-legend','aria-hidden':'true'});
+    function axt(cls,lab){var e=h('p',{'class':'axt '+cls});e.appendChild(h('span',{text:lab}));e.appendChild(D.createTextNode(''));return e}
+    var axY=axt('axt-y','Axe vertical'),axX=axt('axt-x','Axe horizontal');
     var tw=h('div',{'class':'cmp-table'}),def=h('p',{'class':'cmp-def'});
     host.appendChild(bar);host.appendChild(head);
-    var two=h('div',{'class':'cmp-two'},[h('div',{'class':'cmp-main'},[chart,legend,def]),fs]);
+    var two=h('div',{'class':'cmp-two'},[h('div',{'class':'cmp-main'},[axY,chart,axX,legend,def]),fs]);
     host.appendChild(two);host.appendChild(tw);
     this.setMain=function(p){main=p;defaults();sync();draw()};
     function colors(list){var m={},k=0;list.forEach(function(c){if(c===main)m[c]='var(--cmp-main)';else if(c===EU)m[c]='var(--cmp-eu)';else m[c]=PAL[k++%PAL.length]});return m}
@@ -83,8 +85,9 @@ var CJC=(function(){
       var col=colors(list);
       head.innerHTML='';head.appendChild(h('h3',{text:it.lab+(it.u&&it.u.indexOf('PIB')>-1?' (% du PIB)':'')}));
       def.textContent=it.def+(it.note?' '+it.note:'')+' Source : '+it.src+'.';
+      axY.lastChild.textContent=it.ax;axX.lastChild.textContent='Année (une observation par an ; '+ (dt.years(cur)[0]||'')+'-'+(dt.years(cur).slice(-1)[0]||'')+')';
       /* Graphique */
-      var ys=dt.years(cur),mob=innerWidth<640,W=mob?420:760,H=mob?300:360,L=mob?44:54,R=W-(mob?46:74),T=18,B=H-34;
+      var ys=dt.years(cur),mob=innerWidth<640,W=mob?360:760,H=mob?320:440,L=mob?40:54,R=W-(mob?40:74),T=18,B=H-34;
       var vals=[];list.forEach(function(c){ys.forEach(function(yy){var v=dt.val(cur,c,yy);if(v!=null)vals.push(v)})});
       chart.innerHTML='';legend.innerHTML='';
       if(!vals.length){chart.appendChild(h('p',{'class':'cmp-empty',text:'Aucune donnée pour les pays cochés.'}));drawTable();return}
@@ -96,7 +99,7 @@ var CJC=(function(){
       for(var t=lo;t<=hi+step/2;t+=step){s.appendChild(el('line',{x1:L,x2:R,y1:Y(t),y2:Y(t),'class':'g'}));s.appendChild(el('text',{x:L-8,y:Y(t)+4,'text-anchor':'end','class':'tk'},fr(t,step<1?1:0)))}
       if(lo<0&&hi>0)s.appendChild(el('line',{x1:L,x2:R,y1:Y(0),y2:Y(0),'class':'z'}));
       var every=Math.ceil((y1-y0+1)/(innerWidth<640?4:8));
-      for(var yy=y0;yy<=y1;yy++)if((yy-y0)%every===0||yy===y1)s.appendChild(el('text',{x:X(yy),y:H-10,'text-anchor':'middle','class':'tk'},yy));
+      for(var yy=y0;yy<=y1;yy++)if(((yy-y0)%every===0&&y1-yy>=every/2)||yy===y1)s.appendChild(el('text',{x:X(yy),y:H-10,'text-anchor':'middle','class':'tk'},yy));
       var ends=[];
       list.forEach(function(c){
         var pts=ys.filter(function(yy){return dt.val(cur,c,yy)!=null}).map(function(yy){return [yy,dt.val(cur,c,yy)]});if(!pts.length)return;
@@ -106,7 +109,7 @@ var CJC=(function(){
         var lp=pts[pts.length-1];s.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:c===main?5:3.5,fill:col[c]}));
         ends.push({c:c,y:Y(lp[1]),x:X(lp[0])});
       });
-      if(ends.length>10)ends=ends.filter(function(e){return e.c===main||e.c===EU});ends.sort(function(a,b){return a.y-b.y});for(var i=1;i<ends.length;i++)if(ends[i].y-ends[i-1].y<13)ends[i].y=ends[i-1].y+13;var over=ends.length?ends[ends.length-1].y-(B+4):0;if(over>0)ends.forEach(function(e){e.y-=over});for(var j=ends.length-2;j>=0;j--)if(ends[j+1].y-ends[j].y<13)ends[j].y=ends[j+1].y-13;
+      if(ends.length>10)ends=ends.filter(function(e){return e.c===main||e.c===EU});ends.sort(function(a,b){return a.y-b.y});var gap=mob?15:18;for(var i=1;i<ends.length;i++)if(ends[i].y-ends[i-1].y<gap)ends[i].y=ends[i-1].y+gap;var over=ends.length?ends[ends.length-1].y-(B+4):0;if(over>0)ends.forEach(function(e){e.y-=over});for(var j=ends.length-2;j>=0;j--)if(ends[j+1].y-ends[j].y<gap)ends[j].y=ends[j+1].y-gap;
       ends.forEach(function(e){s.appendChild(el('text',{x:e.x+8,y:e.y+4,'class':'lb'+(e.c===main?' m':''),fill:col[e.c]},e.c===EU?'UE':e.c))});
       chart.appendChild(s);
       list.slice().reverse().forEach(function(c){legend.appendChild(h('li',{},[h('span',{'class':'sw'+(c===EU?' eu':''),style:'background:'+col[c]}),D.createTextNode(c===EU?'Union':dt.name(c))]))});

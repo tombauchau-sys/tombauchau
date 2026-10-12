@@ -10,7 +10,7 @@
   var ab=D.getElementById('a11y');
   function setCalm(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}
   setCalm(calm);ab.addEventListener('click',function(){setCalm(!calm)});
-  var TX='font-family:var(--sans);font-size:'+(MOB?12:13)+'px;fill:';
+  var TX='font-family:var(--sans);font-size:'+(MOB?14:15)+'px;fill:';
 
 
   /* 0. Seuil */
@@ -26,7 +26,7 @@
 
   /* Courbes à départs variables */
   function lines2(host,o){
-    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?320:420),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
+    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
     (o.bands||[]).forEach(function(b){s.appendChild(el('rect',{x:X(b[0]),y:T,width:X(b[1])-X(b[0]),height:B-T,fill:b[2]}));s.appendChild(el('text',{x:(X(b[0])+X(b[1]))/2,y:T-10,'text-anchor':'middle',style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?15:22)+'px;fill:'+o.ink},b[3]))});
@@ -41,9 +41,9 @@
       if(se.dash)p.setAttribute('stroke-dasharray','6 6');g.appendChild(p);
       if(se.end!==false){var lp=pts[pts.length-1];
         g.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:5,fill:se.c,'class':'fadein'}));
-        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+se.c},fr(lp[1],o.dec==null?1:o.dec)+(o.unit||'')+(MOB?'':'  '+se.n)));}
+        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:'+se.c},fr(lp[1],o.dec==null?1:o.dec)+(o.unit||'')+(MOB?'':'  '+se.n)));}
     });
-    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+k[3]},k[2]))});
+    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:'+k[3]},k[2]))});
     s.appendChild(g);host.appendChild(s);
   }
 
@@ -59,7 +59,7 @@
       o.series.forEach(function(se,j){var bh=(rh-14)/k,yy=y+4+j*bh,w=(R-L)*se.v[i]/o.max;
         s.appendChild(el('rect',{x:L,y:yy.toFixed(1),width:w.toFixed(1),height:(bh-2).toFixed(1),fill:se.c,'class':'fadein'}));
         s.appendChild(el('text',{x:L+w+6,y:(yy+bh/2+3).toFixed(1),'class':'fadein',style:TX+o.ink+';font-weight:700'},fr(se.v[i])+' %'))})});
-    var lx=L;o.series.forEach(function(se){s.appendChild(el('rect',{x:lx,y:Hh-20,width:12,height:12,fill:se.c}));s.appendChild(el('text',{x:lx+18,y:Hh-10,style:TX+o.ink},se.n));lx+=MOB?120:170});
+    var lx=L;o.series.forEach(function(se){s.appendChild(el('rect',{x:lx,y:Hh-20,width:12,height:12,fill:se.c}));s.appendChild(el('text',{x:lx+18,y:Hh-10,style:TX+o.ink},se.n));lx+=Math.max(MOB?120:170,38+se.n.length*(MOB?8:9))});
     host.appendChild(s);
   }
   var DK={grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',bg:'#1E1914'},PP={grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',bg:'#F7F6F2'};
@@ -87,7 +87,7 @@
     var W=MOB?420:1000,L=10,R=W-10,Hh=MOB?150:120,x=L;
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Patrimoine net des ménages belges au 2e trimestre 2023 : 8,4 % pour les 50 % les moins riches, 36,6 % pour les 40 % du milieu, 55 % pour les 10 % les plus riches'});
     P.forEach(function(p,i){var w=(R-L)*p[1]/100;s.appendChild(el('rect',{x:x.toFixed(1),y:10,width:(w-2).toFixed(1),height:50,fill:p[2],'class':'fadein'}));
-      s.appendChild(el('text',{x:(x+w/2).toFixed(1),y:41,'text-anchor':'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?13:16)+'px;fill:'+p[3]},fr(p[1])+' %'));
+      s.appendChild(el('text',{x:(x+w/2).toFixed(1),y:41,'text-anchor':'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:17)+'px;fill:'+p[3]},fr(p[1])+' %'));
       var ly=MOB?84+i*20:86;s.appendChild(el('text',{x:MOB?L:(x+w/2),y:ly,'text-anchor':MOB?'start':'middle',style:TX+'#1A1A1A;font-weight:600'},(MOB?fr(p[1])+' % : ':'')+p[0]));x+=w});
     D.getElementById('wealthChart').appendChild(s);
   })();

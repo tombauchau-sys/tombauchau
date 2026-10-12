@@ -10,7 +10,7 @@
   var ab=D.getElementById('a11y');
   function setCalm(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}
   setCalm(calm);ab.addEventListener('click',function(){setCalm(!calm)});
-  var TX='font-family:var(--sans);font-size:'+(MOB?12:13)+'px;fill:';
+  var TX='font-family:var(--sans);font-size:'+(MOB?14:15)+'px;fill:';
 
 
   /* 0. Seuil */
@@ -26,7 +26,7 @@
 
   /* Courbes à départs variables */
   function lines2(host,o){
-    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?320:420),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
+    var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
     (o.bands||[]).forEach(function(b){s.appendChild(el('rect',{x:X(b[0]),y:T,width:X(b[1])-X(b[0]),height:B-T,fill:b[2]}));s.appendChild(el('text',{x:(X(b[0])+X(b[1]))/2,y:T-10,'text-anchor':'middle',style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?15:22)+'px;fill:'+o.ink},b[3]))});
@@ -41,9 +41,9 @@
       if(se.dash)p.setAttribute('stroke-dasharray','6 6');g.appendChild(p);
       if(se.end!==false){var lp=pts[pts.length-1];
         g.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:5,fill:se.c,'class':'fadein'}));
-        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+se.c},fr(lp[1])+(o.unit||'')+(MOB?'':'  '+se.n)));}
+        g.appendChild(el('text',{x:X(lp[0])+10,y:Y(lp[1])+5+(se.dy||0),'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:'+se.c},fr(lp[1])+(o.unit||'')+(MOB?'':'  '+se.n)));}
     });
-    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:'+k[3]},k[2]))});
+    (o.marks||[]).forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:5.5,fill:k[3],stroke:o.bg||'#1E1914','stroke-width':2,'class':'fadein'}));s.appendChild(el('text',{x:x+(k[6]||0),y:y+(k[4]||-12),'text-anchor':k[5]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:'+k[3]},k[2]))});
     s.appendChild(g);host.appendChild(s);
   }
 
@@ -51,13 +51,13 @@
   lines2(D.getElementById('depChart'),{t0:1960,t1:2070,min:10,max:55,ticks:[10,20,30,40,50],grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',years:MOB?[1960,1990,2025,2070]:[1960,1970,1980,1990,2000,2010,2025,2040,2055,2070],
     bands:[[2025,2070,'rgba(201,119,58,.14)','projection']],
     series:[{n:'',v:DATA.dep,s:1960,c:'#C9773A',w:4.5,end:false},{n:'',pts:DATA.proj,c:'#C9773A',w:3,dash:1,end:false}],
-    marks:[[1960,18.5,'18,5','#EDE6DC',-12,'start'],[1985,20.3,'20,3','#EDE6DC',22],[2025,31.8,'31,8','#EDE6DC',-14],[2070,48.3,'48,3 (projection)','#C9773A',24,'end']],
+    marks:[[1960,18.5,'18,5','#EDE6DC',24,'start'],[1985,20.3,'20,3','#EDE6DC',22],[2025,31.8,'31,8','#EDE6DC',-14],[2070,48.3,'48,3 (projection)','#C9773A',-14,'end']],
     label:'Personnes de 65 ans et plus pour 100 personnes de 15 à 64 ans : 18,5 en 1960, 31,8 en 2025, 48,3 projeté en 2070'});
 
   /* Fiche 01 : coût */
   lines2(D.getElementById('costChart'),{t0:2001,t1:2024,min:6,max:12,ticks:[6,8,10,12],unit:' %',grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',bg:'#F7F6F2',years:MOB?[2001,2010,2020,2024]:[2001,2004,2008,2012,2016,2020,2024],
     series:[{n:'Union',v:DATA.oldEU,s:2010,c:'#6A665F',dash:1,dy:-4},{n:'Belgique',v:DATA.oldBE,s:2001,c:'#E2402B',w:4.5,dy:6}],
-    marks:[[2001,6.8,'6,8 %','#E2402B',-12,'start'],[2020,10.1,'Covid : 10,1 %','#E2402B',26]],
+    marks:[[2001,6.8,'6,8 %','#E2402B',-12,'start'],[2020,10.1,'Covid : 10,1 %','#E2402B',26,'end',-10]],
     label:'Dépenses publiques vieillesse en % du PIB : Belgique de 6,8 % en 2001 à 10,2 % en 2024 ; Union 10,7 % en 2024'});
 
   /* Fiche 02 : pauvreté et écart */

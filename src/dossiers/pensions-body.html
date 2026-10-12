@@ -86,7 +86,7 @@
     <span class="kick" data-r>Histoire · un siècle de pensions</span>
     <h2 class="giant" id="tH" data-r>Le vieillissement n’est pas <span>une surprise : il était prévu.</span></h2>
     <p class="lede" data-r>Le nombre de personnes âgées pour 100 personnes en âge de travailler monte depuis le milieu des années 1980, sous l’effet de l’allongement de la vie, de la baisse de la natalité et, depuis les années 2010, de l’arrivée à 65 ans des générations nombreuses nées après 1945. Les projections prolongent la tendance jusqu’en 2070.</p>
-    <div class="chart" id="depChart"></div>
+    <div class="chart" id="depChart" data-yt="Personnes de 65 ans et plus pour 100 de 15 à 64 ans" data-xt="Année (projections au-delà de 2025)"></div>
     <p class="srcl">Personnes de 65 ans et plus pour 100 personnes de 15 à 64 ans. 1960-2025 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=fr" target="_blank" rel="noopener">demo_pjanind</a> (rupture en 2011) ; 2025-2070 : projections Eurostat EUROPOP2023, scénario de base, <a href="https://ec.europa.eu/eurostat/databrowser/view/proj_23ndbi/default/table?lang=fr" target="_blank" rel="noopener">proj_23ndbi</a>. Une projection n’est pas une prévision : elle dépend d’hypothèses sur la fécondité, la mortalité et les migrations.</p>
     
     <div class="canwhat" data-r><p class="cw-t">Le taux de dépendance des âgés</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Comment évolue la structure par âge de la population.</li><li>Comment la Belgique se compare à d’autres pays, avec la même définition.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Combien de personnes cotisent réellement et combien touchent une pension.</li><li>Ce que chaque travailleur produira : la productivité compte autant que le nombre.</li><li>Le coût futur des pensions, qui dépend aussi des règles et des montants.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le taux d’emploi par âge.</li><li>Le rapport entre cotisants et pensionnés.</li><li>Les projections de coût du Comité d’étude sur le vieillissement.</li></ul></div></div>
@@ -112,7 +112,7 @@
     <span class="kick" data-r>Fiche 01 · fait</span>
     <h2 class="giant" id="tE" data-r>10,2 % <span>du PIB.</span></h2>
     <p class="lede" data-r>Les dépenses publiques consacrées à la vieillesse sont passées de 6,8 % du PIB en 2001 à 10,2 % en 2024. Elles restent un peu sous la moyenne européenne (10,7 %), qui part de plus haut. Le Comité d’étude sur le vieillissement prévoit une hausse supplémentaire des pensions de 0,7 point de PIB d’ici 2070, après la réforme récente.</p>
-    <div class="chart" id="costChart"></div>
+    <div class="chart" id="costChart" data-yt="% du PIB" data-xt="Année"></div>
     <p class="srcl">Dépenses publiques « vieillesse » (fonction COFOG 10.2 : pensions de retraite et services aux personnes âgées), en % du PIB. Belgique 2001-2024, Union 2010-2024 (données disponibles). Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_exp</a>, mise à jour du 16 septembre 2026. Projection : Comité d’étude sur le vieillissement, rapport de juillet 2026, relayé par <a href="https://blog.forumforthefuture.be/fr/article/vieillissement-en-belgique-a-lhorizon-2070-les-depenses-sociales-augmentent-jusquen-2050-puis-se-stabilisent-.../31873" target="_blank" rel="noopener">Forum for the Future</a>.</p>
   </div>
 </section>
@@ -124,8 +124,8 @@
     <h2 class="giant" id="tN" data-r>Moins de pauvreté, <span>mais des pensions plus basses qu’ailleurs.</span></h2>
     <p class="lede" data-r>Deux chiffres semblent se contredire. Le risque de pauvreté des aînés a fortement baissé et passe sous la moyenne européenne. Mais la pension médiane ne remplace que 48 % du revenu des personnes en fin de carrière, contre 60 % dans l’Union.</p>
     <div class="duo">
-      <figure data-r><figcaption><b>Risque de pauvreté des 65 ans et plus</b><span>en %, revenu sous 60 % du revenu médian</span></figcaption><div class="chart sm" id="povChart"></div></figure>
-      <figure data-r><figcaption><b>Écart de pension femmes-hommes</b><span>65-79 ans, en % de la pension moyenne des hommes</span></figcaption><div class="chart sm" id="gapChart"></div></figure>
+      <figure data-r><figcaption><b>Risque de pauvreté des 65 ans et plus</b><span>en %, revenu sous 60 % du revenu médian</span></figcaption><div class="chart sm" id="povChart" data-yt="% des 65 ans et plus" data-xt="Année"></div></figure>
+      <figure data-r><figcaption><b>Écart de pension femmes-hommes</b><span>65-79 ans, en % de la pension moyenne des hommes</span></figcaption><div class="chart sm" id="gapChart" data-yt="% de la pension moyenne des hommes" data-xt="Année"></div></figure>
     </div>
     <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=fr" target="_blank" rel="noopener">ilc_li02</a> (pauvreté, rupture en 2019), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_pnp13/default/table?lang=fr" target="_blank" rel="noopener">ilc_pnp13</a> (écart de pension), <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_pnp3/default/table?lang=fr" target="_blank" rel="noopener">ilc_pnp3</a> (taux de remplacement agrégé : pension médiane des 65-74 ans rapportée au revenu médian du travail des 50-59 ans), consulté le 11 octobre 2026. Enquête SILC : l’année indiquée est celle de l’enquête, les revenus portent sur l’année précédente.</p>
     
