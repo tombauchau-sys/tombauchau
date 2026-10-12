@@ -467,6 +467,61 @@ html.calm .chart .fadein{opacity:1}
 .see .seegrid .lim2{border-top:1px dashed var(--rule);padding-top:12px}
 .see .see-more{margin-top:24px;font-size:15.5px;color:#3D3A35;max-width:70ch}
 @media (max-width:900px){.see .seegrid{grid-template-columns:1fr}}
+
+/* ===== Comparaison entre pays (section « Ce dossier en Europe » et page Comparer) */
+.eu{--cmp-main:#C0341E;--cmp-eu:#1A1A1A}
+.eu .eu-top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:end;justify-content:space-between;margin-top:28px}
+.eu .eu-sel{display:grid;gap:6px;font:600 13px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.eu select{font:600 18px var(--sans);color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:6px;padding:10px 12px;min-width:min(260px,80vw)}
+.eu select:focus-visible,.eu button:focus-visible,.eu input:focus-visible{outline:3px solid var(--red-ink);outline-offset:2px}
+.eu .eu-note{margin:20px 0 0;padding:14px 18px;border-left:4px solid var(--red-ink);background:#fff;max-width:72ch}
+.eu .eu-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:28px}
+.eu .eu-card{background:#fff;border:2px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:4px;min-width:0}
+.eu .eu-card .k{font:600 14px var(--sans)}
+.eu .eu-card b{font:600 34px/1.1 var(--sans);font-variant-numeric:tabular-nums}
+.eu .eu-card span{font:14px/1.4 var(--sans);color:var(--grey)}
+.eu .src{font:12px var(--sans);color:var(--grey);letter-spacing:.02em}
+.eu .eu-q{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.eu .eu-q li{border-top:2px solid var(--line);padding-top:12px;display:grid;gap:6px}
+.eu .eu-q h4{margin:0;font:600 18px/1.3 var(--sans)}
+.eu .eu-q p{margin:0;font:16px/1.5 var(--sans)}
+.eu h3.sub{margin-top:56px}
+.cmp-ind{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;align-items:end}
+.cmp-ind button,.cmp-quick button{font:600 14px var(--sans);color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.cmp-ind button[aria-pressed="true"]{background:var(--line);color:#fff}
+.cmp-ind .cmp-lab{font:600 13px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--grey);width:100%}
+.cmp-head h3{font:600 24px var(--sans);margin:28px 0 8px}
+.cmp-two{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.cmp-main{min-width:0}
+.cmp-chart svg{width:100%;height:auto;display:block;background:#fff;border:2px solid var(--line);border-radius:8px}
+.cmp-chart .g{stroke:#E4E1D9}.cmp-chart .z{stroke:#8A867D}
+.cmp-chart .tk{font:12px var(--sans);fill:#6A665F}
+.cmp-chart .lb{font:600 12px var(--sans)}.cmp-chart .lb.m{font-size:14px}
+.cmp-legend{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;font:13px var(--sans)}
+.cmp-legend .sw{display:inline-block;width:18px;height:4px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.cmp-legend .sw.eu{background:repeating-linear-gradient(90deg,#1A1A1A 0 5px,transparent 5px 8px)!important}
+.cmp-def{font:14px/1.5 var(--sans);color:var(--grey);margin:10px 0 0;max-width:80ch}
+.cmp-pays{border:2px solid var(--line);border-radius:8px;background:#fff;padding:12px 14px;margin:0;min-width:0}
+.cmp-pays legend{font:600 13px var(--sans);text-transform:uppercase;letter-spacing:.06em;padding:0 6px}
+.cmp-quick{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.cmp-quick button{padding:5px 10px;font-size:13px}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;max-height:360px;overflow:auto}
+.cmp-grid label{font:14px/1.3 var(--sans);display:flex;gap:6px;align-items:center;padding:3px 0;cursor:pointer}
+.cmp-grid label.eu{grid-column:1/-1;font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:4px}
+.cmp-grid input{appearance:none;-webkit-appearance:none;flex:none;width:18px;height:18px;margin:0;border:2px solid #1A1A1A;border-radius:3px;background:#fff;display:grid;place-content:center;cursor:pointer}
+.cmp-grid input::before{content:"";width:10px;height:10px;transform:scale(0);background:#fff;clip-path:polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0,43% 62%)}
+.cmp-grid input:checked{background:#C0341E;border-color:#C0341E}
+.cmp-grid input:checked::before{transform:scale(1)}
+.cmp-table{margin-top:24px;overflow-x:auto}
+.cmp-table table{border-collapse:collapse;width:100%;min-width:480px;background:#fff;font:15px var(--sans)}
+.cmp-table caption{text-align:left;font:600 15px var(--sans);padding:0 0 8px}
+.cmp-table th,.cmp-table td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;font-variant-numeric:tabular-nums}
+.cmp-table thead th{font:600 12px var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--grey);border-bottom:2px solid var(--line)}
+.cmp-table tr.me{background:#FBE7E2}.cmp-table tr.me th{color:#8A2412}
+.cmp-table tr.eu th,.cmp-table tr.eu td{font-style:italic}
+.cmp-miss,.cmp-empty{font:14px var(--sans);color:var(--grey)}
+@media (max-width:900px){.cmp-two{grid-template-columns:1fr}.cmp-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));max-height:none}}
+
 /* ===== V2 : composants pédagogiques ===== */
 /* Niveau 1 : comprendre en deux minutes */
 .twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
@@ -575,7 +630,7 @@ html.calm .chart .fadein{opacity:1}
       <div><b>62 234</b><span>ménages sur la liste d’attente d’un logement social à Bruxelles, fin 2025</span><span class="src">SLRB, cité par BX1</span></div>
       <div><b>9 777</b><span>personnes sans chez-soi comptées à Bruxelles la nuit du 6 novembre 2024, +24,5 % en deux ans à méthode égale</span><span class="src">Bruss’help, 2025</span></div>
     </div>
-    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : enquête SILC 2026 (printemps 2027)</p>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : enquête SILC 2026 (printemps 2027) · <a href="#europe">Voir ce dossier pour un autre pays</a></p>
   </div>
 </section>
 
@@ -594,6 +649,25 @@ html.calm .chart .fadein{opacity:1}
       <p class="tm-warn"><b>L’erreur la plus fréquente :</b> juger l’accessibilité du logement sur les seuls prix de vente, sans tenir compte des revenus, de l’inflation ni des locataires.</p>
       <p class="tm-concl">Les chiffres montrent qui paie le plus ; faut-il aider les acheteurs, protéger les locataires ou construire davantage, c’est un choix politique.</p>
     </aside>
+  </div>
+</section>
+
+<!-- Ce dossier en Europe : chiffres et questions par pays, comparateur -->
+<section class="sec papier eu" id="europe" aria-labelledby="tEu">
+  <div class="wrap">
+    <span class="kick" data-r>Ce dossier en Europe · 27 pays</span>
+    <h2 class="giant" id="tEu" data-r>Et ailleurs <span>en Europe ?</span></h2>
+    <p class="lede" data-r>Choisissez un pays : les chiffres clés et les questions du débat se mettent à jour avec les données d’Eurostat, établies selon les mêmes définitions dans les 27 pays de l’Union.</p>
+    <div class="eu-top"><label class="eu-sel" for="eu-pays">Pays<select id="eu-pays"></select></label></div>
+    <p class="eu-note" id="eu-note" hidden>Les autres parties de ce dossier (histoire, fiches, recherche, « qui décide ») portent sur la Belgique : elles n’ont pas encore été rédigées pour <b></b>. Seuls les chiffres de cette section changent avec le pays.</p>
+    <h3 class="sub" id="eu-title">Les chiffres de la Belgique</h3>
+    <div class="eu-cards" id="eu-cards"></div>
+    <h3 class="sub">Questions du débat, en chiffres</h3>
+    <p class="cmp-def">Réponses calculées à partir des données : elles situent le pays parmi les autres, elles n’expliquent pas pourquoi.</p>
+    <ul class="eu-q" id="eu-q"></ul>
+    <h3 class="sub">Comparer les pays</h3>
+    <p class="cmp-def">Cochez ou décochez les pays ; le tableau sous le graphique donne les valeurs exactes. Tous les indicateurs : <a href="comparer.html">page Comparer</a>.</p>
+    <div id="eu-cmp"></div>
   </div>
 </section>
 <div id="approfondir" aria-hidden="true"></div>
@@ -1010,6 +1084,193 @@ html.calm .chart .fadein{opacity:1}
     });
   });
 })();
+</script>
+<script>var CMP={"n":{"BE":"Belgique","BG":"Bulgarie","CZ":"Tchéquie","DK":"Danemark","DE":"Allemagne","EE":"Estonie","IE":"Irlande","EL":"Grèce","ES":"Espagne","FR":"France","HR":"Croatie","IT":"Italie","CY":"Chypre","LV":"Lettonie","LT":"Lituanie","LU":"Luxembourg","HU":"Hongrie","MT":"Malte","NL":"Pays-Bas","AT":"Autriche","PL":"Pologne","PT":"Portugal","RO":"Roumanie","SI":"Slovénie","SK":"Slovaquie","FI":"Finlande","SE":"Suède","EU27_2020":"Union européenne"},"i":{"hpi":{"lab":"Prix des logements","u":"","d":1,"def":"Indice des prix des logements, 2015 = 100 (prix nominaux, inflation non déduite).","src":"Eurostat prc_hpi_a","note":"Pas de données pour la Grèce.","t":"Logement","q":"Les prix des logements ont-ils beaucoup augmenté {en} ?","v":{"EU27_2020":{"2015":100.0,"2016":104.31,"2017":109.31,"2018":114.81,"2019":120.4,"2020":127.15,"2021":137.87,"2022":148.86,"2023":148.44,"2024":153.42,"2025":161.89},"BE":{"2015":100.0,"2016":102.33,"2017":105.95,"2018":109.15,"2019":113.23,"2020":118.09,"2021":125.96,"2022":132.93,"2023":136.05,"2024":140.42,"2025":144.86},"BG":{"2015":100.0,"2016":107.02,"2017":116.3,"2018":123.96,"2019":131.42,"2020":137.41,"2021":149.33,"2022":169.92,"2023":186.67,"2024":217.47,"2025":249.23},"CZ":{"2015":100.0,"2016":107.2,"2017":119.7,"2018":130.0,"2019":141.9,"2020":153.9,"2021":184.2,"2022":215.3,"2023":211.7,"2024":222.3,"2025":245.4},"DK":{"2015":100.0,"2016":104.56,"2017":109.75,"2018":114.59,"2019":117.13,"2020":122.17,"2021":136.28,"2022":142.73,"2023":137.34,"2024":142.17,"2025":152.84},"DE":{"2015":100.0,"2016":107.5,"2017":114.1,"2018":121.7,"2019":128.7,"2020":138.7,"2021":154.7,"2022":164.1,"2023":150.3,"2024":148.0,"2025":152.7},"EE":{"2015":100.0,"2016":104.75,"2017":110.51,"2018":117.07,"2019":125.27,"2020":132.79,"2021":152.78,"2022":186.76,"2023":197.72,"2024":209.79,"2025":220.72},"IE":{"2015":100.0,"2016":107.46,"2017":119.14,"2018":131.33,"2019":134.41,"2020":134.82,"2021":145.98,"2022":163.96,"2023":168.99,"2024":183.38,"2025":197.19},"ES":{"2015":100.0,"2016":104.62,"2017":111.1,"2018":118.58,"2019":124.71,"2020":127.5,"2021":132.19,"2022":141.98,"2023":147.69,"2024":160.25,"2025":180.6},"FR":{"2015":100.0,"2016":101.04,"2017":104.24,"2018":107.29,"2019":110.86,"2020":116.62,"2021":124.13,"2022":131.82,"2023":131.26,"2024":126.39,"2025":127.26},"HR":{"2015":100.0,"2016":101.04,"2017":104.99,"2018":111.8,"2019":121.64,"2020":130.58,"2021":140.37,"2022":161.18,"2023":180.63,"2024":199.44,"2025":227.09},"IT":{"2015":100.0,"2016":100.3,"2017":99.2,"2018":98.6,"2019":98.5,"2020":100.4,"2021":103.0,"2022":106.9,"2023":108.3,"2024":111.7,"2025":116.2},"CY":{"2015":100.0,"2016":99.82,"2017":104.48,"2018":103.08,"2019":111.7,"2020":117.49,"2021":115.7,"2022":123.22,"2023":134.6,"2024":144.46,"2025":150.89},"LV":{"2015":100.0,"2016":108.49,"2017":118.01,"2018":129.3,"2019":140.88,"2020":145.77,"2021":161.65,"2022":184.01,"2023":190.89,"2024":198.9,"2025":214.05},"LT":{"2015":100.0,"2016":105.4,"2017":114.8,"2018":123.18,"2019":131.61,"2020":141.18,"2021":163.84,"2022":195.05,"2023":214.2,"2024":235.02,"2025":258.11},"LU":{"2015":100.0,"2016":106.07,"2017":112.09,"2018":120.41,"2019":131.88,"2020":151.04,"2021":172.12,"2022":188.53,"2023":171.45,"2024":162.52,"2025":165.14},"HU":{"2015":100.0,"2016":113.38,"2017":127.24,"2018":145.5,"2019":170.17,"2020":178.58,"2021":208.04,"2022":254.52,"2023":272.54,"2024":309.86,"2025":366.62},"MT":{"2015":100.0,"2016":105.45,"2017":111.03,"2018":117.45,"2019":124.65,"2020":128.86,"2021":135.44,"2022":144.45,"2023":153.42,"2024":163.77,"2025":173.55},"NL":{"2015":100.0,"2016":105.29,"2017":113.81,"2018":124.4,"2019":133.38,"2020":144.07,"2021":164.94,"2022":186.84,"2023":183.26,"2024":198.24,"2025":215.15},"AT":{"2015":100.0,"2016":106.71,"2017":112.14,"2018":118.83,"2019":125.97,"2020":135.52,"2021":151.02,"2022":168.49,"2023":163.68,"2024":163.06,"2025":167.06},"PL":{"2015":100.0,"2016":101.86,"2017":105.78,"2018":112.74,"2019":122.52,"2020":135.36,"2021":147.77,"2022":165.21,"2023":179.78,"2024":206.7,"2025":216.8},"PT":{"2015":100.0,"2016":107.12,"2017":117.02,"2018":129.03,"2019":141.88,"2020":154.33,"2021":168.84,"2022":190.17,"2023":205.76,"2024":224.44,"2025":263.85},"RO":{"2015":100.0,"2016":105.95,"2017":112.36,"2018":118.62,"2019":122.69,"2020":128.44,"2021":134.09,"2022":143.7,"2023":148.43,"2024":155.89,"2025":164.82},"SI":{"2015":100.0,"2016":103.25,"2017":111.79,"2018":121.55,"2019":129.7,"2020":135.66,"2021":151.32,"2022":173.65,"2023":186.22,"2024":200.26,"2025":214.9},"SK":{"2015":100.0,"2016":106.67,"2017":112.91,"2018":121.32,"2019":132.4,"2020":145.02,"2021":154.27,"2022":175.41,"2023":175.08,"2024":181.67,"2025":204.22},"FI":{"2015":100.0,"2016":101.29,"2017":102.39,"2018":103.34,"2019":103.77,"2020":105.6,"2021":110.46,"2022":111.52,"2023":104.58,"2024":101.35,"2025":99.03},"SE":{"2015":100.0,"2016":108.24,"2017":115.43,"2018":114.35,"2019":117.19,"2020":122.11,"2021":134.46,"2022":139.25,"2023":132.05,"2024":132.03,"2025":133.41}},"f":{}},"overburden":{"lab":"Surcharge des coûts du logement","u":" %","d":1,"def":"Part des personnes dont les coûts du logement dépassent 40 % du revenu disponible.","src":"Eurostat ilc_lvho07a","t":"Logement","q":"Le logement pèse-t-il lourd dans les budgets {en} ?","v":{"EU27_2020":{"2015":11.2,"2016":10.9,"2017":10.1,"2018":9.6,"2019":9.4,"2020":7.8,"2021":8.7,"2022":8.7,"2023":8.8,"2024":8.2,"2025":7.7},"BE":{"2015":9.4,"2016":9.8,"2017":9.4,"2018":8.9,"2019":8.4,"2020":7.7,"2021":7.6,"2022":7.5,"2023":7.8,"2024":6.7,"2025":6.7},"BG":{"2015":14.8,"2016":20.7,"2017":18.9,"2018":17.9,"2019":16.0,"2020":14.4,"2021":11.6,"2022":15.1,"2023":11.1,"2024":8.0,"2025":6.9},"CZ":{"2015":10.4,"2016":9.5,"2017":8.7,"2018":7.8,"2019":6.9,"2020":6.5,"2021":6.2,"2022":6.9,"2023":9.1,"2024":9.2,"2025":8.2},"DK":{"2015":15.1,"2016":15.1,"2017":15.7,"2018":14.7,"2019":15.6,"2020":14.1,"2021":15.5,"2022":14.7,"2023":15.4,"2024":14.6,"2025":23.4},"DE":{"2015":15.6,"2016":15.8,"2017":14.5,"2018":14.2,"2019":13.9,"2020":9.0,"2021":11.0,"2022":11.9,"2023":13.0,"2024":12.0,"2025":11.2},"EE":{"2015":6.8,"2016":4.9,"2017":4.8,"2018":4.0,"2019":4.4,"2020":4.4,"2021":4.4,"2022":4.9,"2023":7.6,"2024":8.6,"2025":8.8},"IE":{"2015":4.7,"2016":4.6,"2017":4.5,"2018":3.4,"2019":5.2,"2020":4.2,"2021":2.6,"2022":3.7,"2023":4.7,"2024":4.5,"2025":5.3},"EL":{"2015":45.5,"2016":40.5,"2017":39.6,"2018":39.5,"2019":36.2,"2020":33.3,"2021":28.8,"2022":26.7,"2023":28.5,"2024":28.9,"2025":26.4},"ES":{"2015":10.3,"2016":10.2,"2017":9.8,"2018":8.9,"2019":8.5,"2020":8.2,"2021":9.9,"2022":9.2,"2023":8.2,"2024":7.8,"2025":7.2},"FR":{"2015":5.7,"2016":5.2,"2017":5.0,"2018":4.7,"2019":5.5,"2020":5.6,"2022":6.5,"2023":6.5,"2024":7.0,"2025":6.4},"HR":{"2015":7.2,"2016":6.4,"2017":5.8,"2018":5.1,"2019":4.7,"2020":4.2,"2021":4.5,"2022":3.8,"2023":4.0,"2024":3.7,"2025":3.2},"IT":{"2015":8.6,"2016":9.6,"2017":8.2,"2018":8.2,"2019":8.7,"2020":7.2,"2021":7.2,"2022":6.6,"2023":5.7,"2024":5.1,"2025":5.0},"CY":{"2015":3.9,"2016":3.1,"2017":2.8,"2018":2.0,"2019":2.2,"2020":1.9,"2021":2.4,"2022":2.6,"2023":2.6,"2024":2.4,"2025":2.4},"LV":{"2015":8.1,"2016":7.0,"2017":6.9,"2018":6.7,"2019":5.4,"2020":4.8,"2021":4.9,"2022":5.4,"2023":7.2,"2024":6.7,"2025":5.7},"LT":{"2015":9.1,"2016":7.8,"2017":7.2,"2018":5.6,"2019":4.8,"2020":2.7,"2021":2.7,"2022":3.5,"2023":5.2,"2024":6.2,"2025":5.7},"LU":{"2015":6.0,"2016":7.0,"2017":7.1,"2018":9.3,"2019":10.1,"2020":8.5,"2021":5.1,"2022":9.0,"2023":11.5,"2024":8.0,"2025":8.1},"HU":{"2015":8.5,"2016":8.8,"2017":10.7,"2018":9.6,"2019":3.9,"2020":3.7,"2021":2.7,"2022":8.1,"2023":7.3,"2024":9.0,"2025":5.3},"MT":{"2015":1.1,"2016":1.4,"2017":1.4,"2018":1.7,"2019":2.6,"2020":2.8,"2021":2.7,"2022":2.9,"2023":6.0,"2024":5.9,"2025":6.0},"NL":{"2015":14.9,"2016":10.7,"2017":9.4,"2018":9.4,"2019":9.9,"2020":8.3,"2021":8.3,"2022":10.0,"2023":9.3,"2024":6.9,"2025":6.5},"AT":{"2015":6.4,"2016":7.2,"2017":7.1,"2018":6.8,"2019":7.0,"2020":6.3,"2021":6.1,"2022":7.4,"2023":6.0,"2024":6.3,"2025":6.1},"PL":{"2015":8.7,"2016":7.7,"2017":6.7,"2018":6.2,"2019":6.0,"2020":4.9,"2021":5.7,"2022":5.6,"2023":5.9,"2024":5.2,"2025":4.1},"PT":{"2015":9.1,"2016":7.5,"2017":6.7,"2018":5.7,"2019":5.7,"2020":4.1,"2021":5.9,"2022":5.0,"2023":4.9,"2024":6.9,"2025":6.3},"RO":{"2015":15.9,"2016":14.4,"2017":12.3,"2018":10.3,"2019":8.6,"2020":7.1,"2021":7.5,"2022":8.5,"2023":9.1,"2024":4.7,"2025":5.0},"SI":{"2015":6.1,"2016":5.7,"2017":5.2,"2018":4.9,"2019":4.1,"2020":4.4,"2021":4.1,"2022":4.1,"2023":3.7,"2024":3.8,"2025":3.5},"SK":{"2015":9.1,"2016":7.7,"2017":8.4,"2018":4.1,"2019":5.7,"2020":3.2,"2021":7.1,"2022":2.5,"2023":5.9,"2024":6.4,"2025":3.5},"FI":{"2015":4.9,"2016":4.4,"2017":4.3,"2018":4.3,"2019":4.0,"2020":4.1,"2021":4.3,"2022":5.4,"2023":5.5,"2024":5.4,"2025":4.7},"SE":{"2015":8.7,"2016":8.5,"2017":8.4,"2018":8.3,"2019":9.4,"2020":8.3,"2021":8.5,"2022":9.1,"2023":10.9,"2024":10.6,"2025":10.8}},"f":{"EU27_2020":{"2015":"e","2016":"e","2017":"e","2018":"e"},"BE":{"2019":"b"},"BG":{"2016":"b"},"DK":{"2020":"b","2025":"b"},"DE":{"2020":"b","2023":"b"},"IE":{"2019":"b","2020":"b"},"FR":{"2020":"b","2022":"b"},"LT":{"2024":"p","2025":"p"},"LU":{"2016":"b","2020":"b","2021":"b","2022":"b","2023":"b","2025":"b"},"HU":{"2019":"b"},"MT":{"2023":"b"},"NL":{"2016":"b"},"PL":{"2020":"b"}}},"overcrowd":{"lab":"Surpeuplement","u":" %","d":1,"def":"Part des personnes vivant dans un logement qui n’a pas assez de pièces pour la taille du ménage.","src":"Eurostat ilc_lvho05a","t":"Logement","v":{"EU27_2020":{"2015":18.1,"2016":17.9,"2017":17.5,"2018":17.1,"2019":17.1,"2020":17.4,"2021":17.3,"2022":16.8,"2023":16.8,"2024":16.9,"2025":16.8},"BE":{"2015":1.6,"2016":3.5,"2017":4.8,"2018":5.7,"2019":5.6,"2020":5.8,"2021":5.9,"2022":6.0,"2023":5.7,"2024":6.5,"2025":6.6},"BG":{"2015":41.4,"2016":42.5,"2017":41.9,"2018":41.6,"2019":41.1,"2020":39.5,"2021":37.9,"2022":36.2,"2023":34.9,"2024":33.8,"2025":32.5},"CZ":{"2015":18.7,"2016":17.9,"2017":16.0,"2018":15.7,"2019":15.4,"2020":15.2,"2021":15.4,"2022":15.1,"2023":15.9,"2024":16.6,"2025":16.7},"DK":{"2015":8.1,"2016":8.2,"2017":8.6,"2018":9.2,"2019":10.0,"2020":9.5,"2021":9.2,"2022":9.8,"2023":8.7,"2024":9.3,"2025":9.9},"DE":{"2015":7.0,"2016":7.2,"2017":7.2,"2018":7.4,"2019":7.8,"2020":10.2,"2021":10.6,"2022":11.2,"2023":11.4,"2024":11.5,"2025":11.7},"EE":{"2015":13.4,"2016":13.4,"2017":13.5,"2018":12.6,"2019":13.9,"2020":12.7,"2021":14.9,"2022":15.7,"2023":17.0,"2024":18.4,"2025":17.9},"IE":{"2015":3.8,"2016":3.4,"2017":2.8,"2018":2.7,"2019":3.1,"2020":3.0,"2021":3.3,"2022":4.2,"2023":3.9,"2024":5.0,"2025":5.4},"EL":{"2015":28.1,"2016":28.7,"2017":29.0,"2018":29.2,"2019":28.7,"2020":29.0,"2021":28.5,"2022":28.0,"2023":26.9,"2024":27.0,"2025":28.3},"ES":{"2015":5.5,"2016":5.4,"2017":5.1,"2018":4.7,"2019":5.9,"2020":7.6,"2021":6.4,"2022":6.6,"2023":7.6,"2024":9.1,"2025":9.5},"FR":{"2015":7.4,"2016":7.7,"2017":7.7,"2018":8.2,"2019":7.7,"2020":9.6,"2021":9.4,"2022":9.2,"2023":9.9,"2024":10.4,"2025":10.8},"HR":{"2015":41.7,"2016":41.1,"2017":39.9,"2018":39.3,"2019":38.5,"2020":36.2,"2021":34.4,"2022":32.7,"2023":31.3,"2024":31.7,"2025":31.8},"IT":{"2015":27.8,"2016":27.8,"2017":27.1,"2018":27.8,"2019":28.3,"2020":26.1,"2021":28.0,"2022":25.1,"2023":25.4,"2024":23.9,"2025":24.3},"CY":{"2015":1.4,"2016":2.4,"2017":2.8,"2018":2.5,"2019":3.4,"2020":2.7,"2021":2.3,"2022":3.5,"2023":2.9,"2024":2.4,"2025":2.2},"LV":{"2015":41.4,"2016":43.2,"2017":41.9,"2018":43.4,"2019":42.2,"2020":42.5,"2021":41.3,"2022":41.7,"2023":40.9,"2024":39.3,"2025":38.9},"LT":{"2015":26.4,"2016":23.7,"2017":23.7,"2018":22.8,"2019":22.9,"2020":21.1,"2021":23.7,"2022":24.6,"2023":26.0,"2024":26.3,"2025":27.8},"LU":{"2015":6.8,"2016":8.1,"2017":8.3,"2018":8.4,"2019":7.1,"2020":8.5,"2021":7.7,"2022":5.7,"2023":7.4,"2024":6.8,"2025":8.8},"HU":{"2015":41.1,"2016":40.4,"2017":40.5,"2018":20.1,"2019":20.4,"2020":18.8,"2021":18.1,"2022":17.0,"2023":15.5,"2024":14.6,"2025":14.6},"MT":{"2015":3.8,"2016":3.0,"2017":3.0,"2018":3.4,"2019":3.7,"2020":4.2,"2021":2.9,"2022":2.8,"2023":2.4,"2024":3.7,"2025":4.7},"NL":{"2015":3.3,"2016":4.0,"2017":4.1,"2018":4.1,"2019":4.8,"2020":4.8,"2021":3.4,"2022":2.9,"2023":3.8,"2024":4.6,"2025":4.1},"AT":{"2015":15.0,"2016":15.2,"2017":15.1,"2018":13.5,"2019":15.1,"2020":14.1,"2021":14.3,"2022":15.7,"2023":14.5,"2024":13.7,"2025":14.2},"PL":{"2015":43.4,"2016":40.7,"2017":40.5,"2018":39.2,"2019":37.6,"2020":36.9,"2021":35.7,"2022":35.8,"2023":33.9,"2024":33.7,"2025":30.9},"PT":{"2015":10.3,"2016":10.3,"2017":9.3,"2018":9.6,"2019":9.5,"2020":9.0,"2021":10.6,"2022":9.4,"2023":12.9,"2024":11.2,"2025":12.7},"RO":{"2015":49.7,"2016":48.4,"2017":47.0,"2018":46.3,"2019":45.8,"2020":45.1,"2021":41.0,"2022":40.5,"2023":40.0,"2024":40.7,"2025":40.4},"SI":{"2015":13.7,"2016":12.6,"2017":12.8,"2018":12.5,"2019":11.6,"2020":10.9,"2021":10.9,"2022":11.0,"2023":10.3,"2024":10.6,"2025":10.5},"SK":{"2015":37.8,"2016":37.9,"2017":36.4,"2018":35.5,"2019":34.1,"2020":30.1,"2021":31.2,"2022":31.8,"2023":30.5,"2024":29.9,"2025":27.8},"FI":{"2015":6.7,"2016":6.6,"2017":6.1,"2018":7.3,"2019":7.7,"2020":7.6,"2021":7.4,"2022":8.4,"2023":8.8,"2024":9.1,"2025":9.5},"SE":{"2015":13.9,"2016":14.4,"2017":13.5,"2018":15.2,"2019":15.6,"2020":15.6,"2021":15.7,"2022":15.9,"2023":16.4,"2024":16.7,"2025":15.7}},"f":{"EU27_2020":{"2015":"e","2016":"e","2017":"e","2018":"e"},"BE":{"2016":"b","2019":"b"},"BG":{"2016":"b"},"DE":{"2020":"b"},"IE":{"2019":"b","2020":"b"},"FR":{"2020":"b","2022":"b"},"LT":{"2024":"p","2025":"p"},"LU":{"2016":"b","2020":"b","2021":"b","2022":"b","2025":"b"},"HU":{"2018":"b","2019":"b"},"NL":{"2016":"b"},"PL":{"2020":"b","2023":"b"}}}}};
+/* Chiffre Juste · comparaison entre pays (dossiers, page Comparer, accueil) */
+var CJC=(function(){
+  var NS='http://www.w3.org/2000/svg',D=document;
+  var EU='EU27_2020';
+  var MEM=['BE','BG','CZ','DK','DE','EE','IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE'];
+  var EN={BE:'en Belgique',BG:'en Bulgarie',CZ:'en Tchéquie',DK:'au Danemark',DE:'en Allemagne',EE:'en Estonie',IE:'en Irlande',EL:'en Grèce',ES:'en Espagne',FR:'en France',HR:'en Croatie',IT:'en Italie',CY:'à Chypre',LV:'en Lettonie',LT:'en Lituanie',LU:'au Luxembourg',HU:'en Hongrie',MT:'à Malte',NL:'aux Pays-Bas',AT:'en Autriche',PL:'en Pologne',PT:'au Portugal',RO:'en Roumanie',SI:'en Slovénie',SK:'en Slovaquie',FI:'en Finlande',SE:'en Suède'};
+  var DE_={BE:'de la Belgique',BG:'de la Bulgarie',CZ:'de la Tchéquie',DK:'du Danemark',DE:'de l’Allemagne',EE:'de l’Estonie',IE:'de l’Irlande',EL:'de la Grèce',ES:'de l’Espagne',FR:'de la France',HR:'de la Croatie',IT:'de l’Italie',CY:'de Chypre',LV:'de la Lettonie',LT:'de la Lituanie',LU:'du Luxembourg',HU:'de la Hongrie',MT:'de Malte',NL:'des Pays-Bas',AT:'de l’Autriche',PL:'de la Pologne',PT:'du Portugal',RO:'de la Roumanie',SI:'de la Slovénie',SK:'de la Slovaquie',FI:'de la Finlande',SE:'de la Suède'};
+  /* Pays voisins ou proches (frontière terrestre dans l’Union, sinon pays le plus proche) */
+  var NB={BE:['FR','NL','DE','LU'],NL:['BE','DE'],LU:['BE','DE','FR'],FR:['BE','LU','DE','IT','ES'],DE:['DK','NL','BE','LU','FR','AT','CZ','PL'],DK:['DE','SE'],SE:['DK','FI'],FI:['SE','EE'],EE:['LV','FI'],LV:['EE','LT'],LT:['LV','PL'],PL:['DE','CZ','SK','LT'],CZ:['DE','PL','SK','AT'],SK:['CZ','PL','HU','AT'],AT:['DE','CZ','SK','HU','SI','IT'],HU:['AT','SK','RO','HR','SI'],SI:['IT','AT','HU','HR'],HR:['SI','HU'],IT:['FR','AT','SI','MT'],MT:['IT'],ES:['FR','PT'],PT:['ES'],IE:['FR'],EL:['BG','CY'],CY:['EL'],BG:['RO','EL'],RO:['BG','HU']};
+  var PAL=['#2F6B8F','#7A5195','#3E8E5E','#B07A1F','#8C4A6B','#2B8C8C','#A35D3A','#5B6BB0','#6F7F2E','#9A4C9A'];
+  function fr(v,d){return v.toLocaleString('fr-BE',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  function fmt(it,v){if(v==null)return '–';var s=fr(Math.abs(v),it.d);if(it.sg)s=(v<0?'−':v>0?'+':'')+s;else if(v<0)s='−'+s;return s+it.u}
+  function ord(n){return n===1?'1re':n+'e'}
+  function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
+  function h(t,a,c){var e=D.createElement(t);if(a)for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k])}if(c)c.forEach(function(x){e.appendChild(x)});return e}
+  function getPays(){try{var p=localStorage.getItem('cj-pays');if(p&&EN[p])return p}catch(e){}return 'BE'}
+  function setPays(p){try{localStorage.setItem('cj-pays',p)}catch(e){}}
+
+  function Data(C){
+    this.C=C;
+    this.name=function(g){return C.n[g]||g};
+    this.series=function(id,g){var s=C.i[id].v[g];return s||{}};
+    this.flag=function(id,g,y){var f=C.i[id].f;return f&&f[g]&&f[g][y]||''};
+    this.years=function(id){var ys={};MEM.concat([EU]).forEach(function(g){var s=C.i[id].v[g];if(s)for(var y in s)ys[y]=1});return Object.keys(ys).map(Number).sort(function(a,b){return a-b})};
+    /* Année de référence : la plus récente où au moins 20 pays ont une valeur */
+    this.ref=function(id){var self=this,ys=this.years(id).reverse();for(var i=0;i<ys.length;i++){var n=MEM.filter(function(g){return self.series(id,g)[ys[i]]!=null}).length;if(n>=20)return ys[i]}return ys[0]};
+    this.val=function(id,g,y){var v=this.series(id,g)[y];return v==null?null:v};
+    this.rank=function(id,g,y){var self=this,rows=MEM.filter(function(c){return self.val(id,c,y)!=null}).map(function(c){return [c,self.val(id,c,y)]});rows.sort(function(a,b){return b[1]-a[1]});var r=0;rows.forEach(function(x,i){if(x[0]===g)r=i+1});return {r:r,n:rows.length}};
+  }
+
+  /* Réponse chiffrée à une question du débat, sans jugement */
+  function answer(dt,id,g){
+    var it=dt.C.i[id],y=dt.ref(id),v=dt.val(id,g,y),eu=dt.val(id,EU,y);
+    if(v==null)return {t:'Pas de donnée pour '+dt.name(g)+' en '+y+' dans cette série ('+it.src+') : aucune valeur n’est estimée à sa place.',ok:false};
+    var rk=dt.rank(id,g,y),s=it.lab+' '+EN[g]+' : '+fmt(it,v)+' en '+y;
+    s+=eu!=null?', contre '+fmt(it,eu)+' dans l’Union. ':'. ';
+    s+='Rang : '+ord(rk.r)+' sur '+rk.n+' pays de l’Union disposant de données, du plus élevé au plus bas.';
+    var y0=y-5,v0=dt.val(id,g,y0);if(v0!=null)s+=' En '+y0+', elle était de '+fmt(it,v0).replace(/\.$/,'')+'.';
+    if(dt.flag(id,g,y)==='b'||(v0!=null&&Object.keys(dt.series(id,g)).some(function(k){return +k>y0&&+k<=y&&dt.flag(id,g,k)==='b'})))s+=' Attention : rupture de série dans cette période.';
+    return {t:s,ok:true,y:y};
+  }
+  function questions(dt,ids,g){return ids.filter(function(id){return dt.C.i[id]&&dt.C.i[id].q}).map(function(id){var it=dt.C.i[id];return {id:id,q:it.q.replace('{en}',EN[g]),a:answer(dt,id,g),src:it.src}})}
+
+  /* Comparateur : choix de l’indicateur, pays à cocher, courbes et tableau */
+  function Comparator(host,dt,ids,opts){
+    opts=opts||{};var self=this,cur=ids[0],sel={},main=opts.pays||getPays();
+    var uid='cmp'+Math.random().toString(36).slice(2,7);
+    function defaults(){sel={};sel[main]=1;(NB[main]||[]).forEach(function(c){sel[c]=1});sel[EU]=1}
+    defaults();
+    var bar=h('div',{'class':'cmp-ind',role:'group','aria-label':'Choisir l’indicateur'});
+    var pick=null;
+    if(opts.grouped){
+      var lab=h('label',{'for':uid+'-ind','class':'cmp-lab',text:'Indicateur'});
+      pick=h('select',{id:uid+'-ind'});
+      var groups={};ids.forEach(function(id){var t=dt.C.i[id].t;(groups[t]=groups[t]||[]).push(id)});
+      Object.keys(groups).forEach(function(t){var og=h('optgroup',{label:t});groups[t].forEach(function(id){og.appendChild(h('option',{value:id,text:dt.C.i[id].lab}))});pick.appendChild(og)});
+      pick.onchange=function(){cur=pick.value;draw()};
+      bar.appendChild(lab);bar.appendChild(pick);
+    }else{
+      ids.forEach(function(id){var b=h('button',{type:'button','data-id':id,'aria-pressed':String(id===cur),text:dt.C.i[id].lab});b.onclick=function(){cur=id;bar.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.id===cur))});draw()};bar.appendChild(b)});
+    }
+    var fs=h('fieldset',{'class':'cmp-pays'});fs.appendChild(h('legend',{text:'Pays affichés'}));
+    var quick=h('div',{'class':'cmp-quick'});
+    [['Voisins',function(){defaults()}],['Les 27',function(){sel={};MEM.forEach(function(c){sel[c]=1});sel[EU]=1}],['Aucun',function(){sel={};sel[main]=1}]].forEach(function(q){var b=h('button',{type:'button',text:q[0]});b.onclick=function(){q[1]();sync();draw()};quick.appendChild(b)});
+    fs.appendChild(quick);
+    var grid=h('div',{'class':'cmp-grid'});
+    [EU].concat(MEM.slice().sort(function(a,b){return dt.name(a).localeCompare(dt.name(b),'fr')})).forEach(function(c){
+      var id=uid+'-'+c,cb=h('input',{type:'checkbox',id:id,value:c});cb.onchange=function(){if(cb.checked)sel[c]=1;else delete sel[c];draw()};
+      var l=h('label',{'for':id,'class':c===EU?'eu':''},[cb,D.createTextNode(c===EU?'Moyenne de l’Union':dt.name(c))]);grid.appendChild(l)});
+    fs.appendChild(grid);
+    function sync(){grid.querySelectorAll('input').forEach(function(cb){cb.checked=!!sel[cb.value]})}
+    var head=h('div',{'class':'cmp-head'});
+    var chart=h('div',{'class':'cmp-chart'}),legend=h('ul',{'class':'cmp-legend','aria-hidden':'true'});
+    var tw=h('div',{'class':'cmp-table'}),def=h('p',{'class':'cmp-def'});
+    host.appendChild(bar);host.appendChild(head);
+    var two=h('div',{'class':'cmp-two'},[h('div',{'class':'cmp-main'},[chart,legend,def]),fs]);
+    host.appendChild(two);host.appendChild(tw);
+    this.setMain=function(p){main=p;defaults();sync();draw()};
+    function colors(list){var m={},k=0;list.forEach(function(c){if(c===main)m[c]='var(--cmp-main)';else if(c===EU)m[c]='var(--cmp-eu)';else m[c]=PAL[k++%PAL.length]});return m}
+    function draw(){
+      var it=dt.C.i[cur],y=dt.ref(cur),list=[EU].concat(MEM).filter(function(c){return sel[c]});
+      list.sort(function(a,b){return a===main?1:b===main?-1:0});
+      var col=colors(list);
+      head.innerHTML='';head.appendChild(h('h3',{text:it.lab+(it.u&&it.u.indexOf('PIB')>-1?' (% du PIB)':'')}));
+      def.textContent=it.def+(it.note?' '+it.note:'')+' Source : '+it.src+'.';
+      /* Graphique */
+      var ys=dt.years(cur),mob=innerWidth<640,W=mob?420:760,H=mob?300:360,L=mob?44:54,R=W-(mob?46:74),T=18,B=H-34;
+      var vals=[];list.forEach(function(c){ys.forEach(function(yy){var v=dt.val(cur,c,yy);if(v!=null)vals.push(v)})});
+      chart.innerHTML='';legend.innerHTML='';
+      if(!vals.length){chart.appendChild(h('p',{'class':'cmp-empty',text:'Aucune donnée pour les pays cochés.'}));drawTable();return}
+      var mn=Math.min.apply(0,vals),mx=Math.max.apply(0,vals),pad=(mx-mn)*0.08||1;mn-=pad;mx+=pad;if(mn>0&&mn<(mx-mn)*0.5)mn=0;
+      var step=nice((mx-mn)/4),lo=Math.floor(mn/step)*step,hi=Math.ceil(mx/step)*step;
+      var y0=ys[0],y1=ys[ys.length-1];
+      function X(v){return L+(v-y0)/((y1-y0)||1)*(R-L)}function Y(v){return B-(v-lo)/(hi-lo)*(B-T)}
+      var s=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':it.lab+', '+y0+'-'+y1+' : '+list.map(function(c){var v=dt.val(cur,c,y);return (c===EU?'Union':dt.name(c))+' '+(v==null?'pas de donnée':fmt(it,v))}).join(' ; ')+' (en '+y+')'});
+      for(var t=lo;t<=hi+step/2;t+=step){s.appendChild(el('line',{x1:L,x2:R,y1:Y(t),y2:Y(t),'class':'g'}));s.appendChild(el('text',{x:L-8,y:Y(t)+4,'text-anchor':'end','class':'tk'},fr(t,step<1?1:0)))}
+      if(lo<0&&hi>0)s.appendChild(el('line',{x1:L,x2:R,y1:Y(0),y2:Y(0),'class':'z'}));
+      var every=Math.ceil((y1-y0+1)/(innerWidth<640?4:8));
+      for(var yy=y0;yy<=y1;yy++)if((yy-y0)%every===0||yy===y1)s.appendChild(el('text',{x:X(yy),y:H-10,'text-anchor':'middle','class':'tk'},yy));
+      var ends=[];
+      list.forEach(function(c){
+        var pts=ys.filter(function(yy){return dt.val(cur,c,yy)!=null}).map(function(yy){return [yy,dt.val(cur,c,yy)]});if(!pts.length)return;
+        var d='',prev=null;pts.forEach(function(p){d+=(prev!=null&&p[0]===prev+1?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)+' ';prev=p[0]});
+        var a={d:d,fill:'none',stroke:col[c],'stroke-width':c===main?4:2,'stroke-linejoin':'round','stroke-linecap':'round'};if(c===EU)a['stroke-dasharray']='6 5';
+        s.appendChild(el('path',a));
+        var lp=pts[pts.length-1];s.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:c===main?5:3.5,fill:col[c]}));
+        ends.push({c:c,y:Y(lp[1]),x:X(lp[0])});
+      });
+      if(ends.length>10)ends=ends.filter(function(e){return e.c===main||e.c===EU});ends.sort(function(a,b){return a.y-b.y});for(var i=1;i<ends.length;i++)if(ends[i].y-ends[i-1].y<13)ends[i].y=ends[i-1].y+13;var over=ends.length?ends[ends.length-1].y-(B+4):0;if(over>0)ends.forEach(function(e){e.y-=over});for(var j=ends.length-2;j>=0;j--)if(ends[j+1].y-ends[j].y<13)ends[j].y=ends[j+1].y-13;
+      ends.forEach(function(e){s.appendChild(el('text',{x:e.x+8,y:e.y+4,'class':'lb'+(e.c===main?' m':''),fill:col[e.c]},e.c===EU?'UE':e.c))});
+      chart.appendChild(s);
+      list.slice().reverse().forEach(function(c){legend.appendChild(h('li',{},[h('span',{'class':'sw'+(c===EU?' eu':''),style:'background:'+col[c]}),D.createTextNode(c===EU?'Union':dt.name(c))]))});
+      drawTable();
+    }
+    function drawTable(){
+      var it=dt.C.i[cur],y=dt.ref(cur);
+      var rows=MEM.map(function(c){return {c:c,v:dt.val(cur,c,y)}}).filter(function(r){return r.v!=null}).sort(function(a,b){return b.v-a.v});
+      var eu=dt.val(cur,EU,y),shown=rows.filter(function(r){return sel[r.c]});
+      var miss=MEM.filter(function(c){return sel[c]&&dt.val(cur,c,y)==null});
+      var t='<table><caption>'+it.lab+' en '+y+', pays cochés, du plus élevé au plus bas</caption><thead><tr><th scope="col">Rang sur '+rows.length+'</th><th scope="col">Pays</th><th scope="col">Valeur</th><th scope="col">Écart à l’Union</th></tr></thead><tbody>';
+      shown.forEach(function(r){var i=rows.indexOf(r)+1,f=dt.flag(cur,r.c,y);t+='<tr'+(r.c===main?' class="me"':'')+'><td>'+ord(i)+'</td><th scope="row">'+dt.name(r.c)+'</th><td>'+fmt(it,r.v)+(f?' <abbr title="'+(f==='b'?'rupture de série':f==='p'?'provisoire':f==='e'?'estimé':'note Eurostat')+'">'+f+'</abbr>':'')+'</td><td>'+(eu==null?'–':(function(d){return (d<0?'−':d>0?'+':'')+fr(Math.abs(d),it.d)})(r.v-eu))+'</td></tr>'});
+      if(eu!=null&&sel[EU])t+='<tr class="eu"><td></td><th scope="row">Moyenne de l’Union</th><td>'+fmt(it,eu)+'</td><td></td></tr>';
+      t+='</tbody></table>';
+      if(miss.length)t+='<p class="cmp-miss">Pas de donnée en '+y+' : '+miss.map(dt.name).join(', ')+'. Les données manquantes ne sont pas remplacées.</p>';
+      tw.innerHTML=t;
+    }
+    function nice(x){var p=Math.pow(10,Math.floor(Math.log10(x))),f=x/p;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*p}
+    sync();draw();
+    if(pick)pick.value=cur;
+  }
+
+  /* Section « Ce dossier en Europe » d’un dossier */
+  function dossier(cfg){
+    var dt=new Data(CMP);if(!D.getElementById('eu-pays'))return;
+    var g=getPays();
+    var sw=D.getElementById('eu-pays');
+    MEM.slice().sort(function(a,b){return dt.name(a).localeCompare(dt.name(b),'fr')}).forEach(function(c){sw.appendChild(h('option',{value:c,text:dt.name(c)}))});
+    sw.value=g;
+    var cards=D.getElementById('eu-cards'),qs=D.getElementById('eu-q'),note=D.getElementById('eu-note'),ttl=D.getElementById('eu-title');
+    var cmp=new Comparator(D.getElementById('eu-cmp'),dt,cfg.ind,{pays:g});
+    function render(){
+      ttl.textContent='Les chiffres '+DE_[g];
+      note.hidden=g==='BE';
+      note.querySelector('b').textContent=dt.name(g);
+      cards.innerHTML='';
+      cfg.ind.forEach(function(id){var it=dt.C.i[id],y=dt.ref(id),v=dt.val(id,g,y),eu=dt.val(id,EU,y),rk=dt.rank(id,g,y);
+        cards.appendChild(h('div',{'class':'eu-card'},[h('span',{'class':'k',text:it.lab}),h('b',{text:fmt(it,v)}),h('span',{text:(v==null?'pas de donnée en '+y:y+(rk.r?' · '+ord(rk.r)+' sur '+rk.n:''))+(eu!=null?' · Union : '+fmt(it,eu):'')}),h('span',{'class':'src',text:it.src})]))});
+      qs.innerHTML='';
+      questions(dt,cfg.ind,g).forEach(function(q){qs.appendChild(h('li',{},[h('h4',{text:q.q}),h('p',{text:q.a.t}),h('span',{'class':'src',text:q.src})]))});
+    }
+    sw.onchange=function(){g=sw.value;setPays(g);render();cmp.setMain(g)};
+    render();
+  }
+  /* Page Comparer : tous les indicateurs */
+  function page(ids){
+    var dt=new Data(CMP),g=getPays(),sw=D.getElementById('eu-pays');
+    MEM.slice().sort(function(a,b){return dt.name(a).localeCompare(dt.name(b),'fr')}).forEach(function(c){sw.appendChild(h('option',{value:c,text:dt.name(c)}))});
+    sw.value=g;
+    var cmp=new Comparator(D.getElementById('eu-cmp'),dt,ids,{pays:g,grouped:true});
+    sw.onchange=function(){g=sw.value;setPays(g);cmp.setMain(g)};
+  }
+  /* Accueil : questions du débat pour le pays choisi */
+  function home(groups){
+    var dt=new Data(CMP),sw=D.getElementById('q-pays');if(!sw)return;
+    var be=D.getElementById('q-be'),gen=D.getElementById('q-gen'),note=D.getElementById('q-note');
+    MEM.slice().sort(function(a,b){return dt.name(a).localeCompare(dt.name(b),'fr')}).forEach(function(c){sw.appendChild(h('option',{value:c,text:dt.name(c)}))});
+    function render(g){
+      be.hidden=g!=='BE';gen.hidden=g==='BE';note.hidden=g==='BE';note.querySelector('b').textContent=dt.name(g);
+      if(g==='BE')return;
+      gen.innerHTML='';
+      groups.forEach(function(gr){
+        var qs=questions(dt,gr.ind,g);if(!qs.length)return;
+        gen.appendChild(h('h3',{'class':'qth',text:gr.t}));
+        var ul=h('ul',{'class':'qlist'});
+        qs.forEach(function(q){var a=h('a',{href:gr.href+'#europe'},[h('span',{'class':'qst au',text:'Réponse chiffrée'}),h('h4',{text:q.q}),h('p',{text:q.a.t}),h('span',{'class':'qsrc',text:q.src}),h('span',{'class':'qgo','aria-hidden':'true',text:'Voir le dossier →'})]);a.addEventListener('click',function(){setPays(g)});ul.appendChild(h('li',{},[a]))});
+        gen.appendChild(ul);
+      });
+    }
+    var g0=getPays();sw.value=g0;render(g0);
+    sw.onchange=function(){setPays(sw.value);render(sw.value)};
+  }
+  return {home:home,page:page,Data:Data,Comparator:Comparator,questions:questions,dossier:dossier,getPays:getPays,setPays:setPays,MEM:MEM,EN:EN,DE:DE_,EU:EU};
+})();
+
+CJC.dossier({ind:["hpi", "overburden", "overcrowd"]});
 </script>
 </body>
 </html>

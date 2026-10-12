@@ -223,3 +223,8 @@ fiche,"Taux de chômage BE 6,2 % ; UE 6,0 % (2025)","6,2 / 6,0",Eurostat une_rt_
 fiche,"Actiris : 16,0 % de demandeurs d’emploi à Bruxelles (août 2026)","16,0 %",Actiris via Belga (presse),—,signalé,site d’Actiris non consultable lors de la vérification
 fiche,ONEM : 55 246 sorties d’allocations au 31 mars 2026,55 246,"ONEM, monitoring de mars 2026",—,non revérifié,"vérifié lors de la rédaction (10.10), pas relu le 12.10"
 fiche,"Sous-utilisation du travail 12,6 % ; 712 000 personnes","12,6 %",Eurostat lfsi_sla_a,—,non revérifié,"vérifié lors de la rédaction (10.10), pas relu le 12.10"
+accueil,"Comparateur : prix des logements, 27 pays 2015-2025",séries,"Eurostat prc_hpi_a (I15_A_AVG, TOTAL), requête du 12.10",Belgique et Union identiques aux valeurs déjà vérifiées,vérifié,pas de série pour la Grèce
+accueil,"Comparateur : surcharge des coûts du logement, 27 pays 2015-2025",séries,"Eurostat ilc_lvho07a (TOTAL), requête du 12.10",Belgique et Union identiques aux valeurs déjà vérifiées,vérifié,ruptures conservées (lettre b)
+accueil,"Comparateur : surpeuplement, 27 pays 2015-2025",séries,"Eurostat ilc_lvho05a (TOTAL), requête du 12.10","Belgique (6,6) et Union (16,8) identiques",vérifié,
+accueil,"Comparateur : détenus et capacité des prisons, 27 pays 2015-2024",séries,"Eurostat crim_pris_cap (PRIS_ACT_CAP, PRIS_OFF_CAP, P_HTHAB), requête du 12.10","Belgique 2024 : 106,5 détenus pour 93,4 places pour 100 000 hab. (114 %)",vérifié,taux d’occupation calculé par Chiffre Juste
+accueil,"Comparateur : autres indicateurs (emploi, finances, santé, éducation, pauvreté, climat)",séries,"Données de la carte (Eurostat, 10 octobre 2026)",—,non revérifié,seules les valeurs belges et européennes ont été relues ; séries des autres pays reprises de la carte

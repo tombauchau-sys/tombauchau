@@ -28,6 +28,7 @@ PAGES = {
     '__CLIMAT__': ('dossier-climat.html', 'https://claude.ai/artifact/XeD7pKwARAY12Gqj6xhVqH'),
     '__LOGEMENT__': ('dossier-logement.html', 'https://claude.ai/artifact/KnCCYmNraookxjwkZf9twj'),
     '__REGISTRE__': ('registre-verification.html', 'https://claude.ai/artifact/Dg6d1Tr6wmDe1SFiUjHjYC'),
+    '__COMPARER__': ('comparer.html', 'https://claude.ai/artifact/P1ppwNCEvjgmHgZ9VkbXmD'),
 }
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,6 +71,68 @@ def wrap(html, title, desc):
     return head + html[:i] + '\n</head>\n<body>\n' + html[i:] + '</body>\n</html>\n'
 
 
+# ---------- Comparaison entre pays ----------
+DOSSIER_IND = {
+    'emploi': ['emp', 'unemp', 'youth', 'ltu', 'paygap'],
+    'finances': ['debt', 'deficit', 'spend', 'revenue', 'tax', 'interest'],
+    'pensions': ['olddep', 'gf10', 'medage'],
+    'immigration': ['netmig', 'emp'],
+    'justice': ['prison', 'prisocc', 'gf03'],
+    'sante': ['lifeexp', 'hly65', 'gf07'],
+    'education': ['tertiary', 'earlyleave', 'adultlearn', 'gf09'],
+    'inegalites': ['arope', 'gini', 'depriv'],
+    'climat': ['ghg', 'renew', 'gf05'],
+    'logement': ['hpi', 'overburden', 'overcrowd'],
+}
+MEMBERS = ['BE','BG','CZ','DK','DE','EE','IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE','EU27_2020']
+
+
+def _csv(name):
+    import csv
+    vals, flags = {}, {}
+    for r in csv.DictReader(open(SRC / 'data' / 'extra' / f'{name}.csv', encoding='utf-8')):
+        g = r.pop('geo')
+        for y, cell in r.items():
+            cell = cell.strip()
+            if not cell:
+                continue
+            f = ''.join(ch for ch in cell if ch.isalpha())
+            vals.setdefault(g, {})[y] = float(cell.rstrip('bepu'))
+            if f:
+                flags.setdefault(g, {})[y] = f
+    return vals, flags
+
+
+def cmp_data(ids):
+    meta = json.loads(read('compare/indicators.json'))
+    cj = json.loads(read('data/cj-data.json'))['c']
+    extra = {n: _csv(n) for n in ('hpi', 'overburden', 'overcrowd', 'prison', 'prison_cap')}
+    pv, pc = extra['prison'][0], extra['prison_cap'][0]
+    occ = {g: {y: round(pv[g][y] / pc[g][y] * 100) for y in pv[g] if g in pc and y in pc[g] and pc[g][y]} for g in pv}
+    extra['prisocc'] = (occ, {})
+    out = {'n': {g: cj[g]['name'] for g in MEMBERS}, 'i': {}}
+    for i in ids:
+        m = dict(meta[i]); key = m.pop('key', i); v, f = {}, {}
+        if key.startswith('x.'):
+            v, f = extra[key[2:]]
+        else:
+            for g in MEMBERS:
+                node = cj.get(g, {})
+                for part in key.split('.'):
+                    node = node.get(part, {}) if isinstance(node, dict) else {}
+                if node:
+                    v[g] = node
+        m['v'] = {g: s for g, s in v.items() if g in MEMBERS}
+        m['f'] = {g: s for g, s in f.items() if g in MEMBERS}
+        out['i'][i] = m
+    return out
+
+
+def cmp_script(ids, init):
+    return ('var CMP=' + json.dumps(cmp_data(ids), ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';\n'
+            + read('compare/compare.js') + '\n' + init + '\n')
+
+
 def build_home():
     src = read('accueil/head.html')
     head = src[:src.index('</style>')]
@@ -89,6 +152,10 @@ def build_home():
     out = (out.replace('__MAP__', read('geo/map.json'))
               .replace('__WORLD__', read('geo/world.json'))
               .replace('__DATA__', read('data/cj-data.json')))
+    titles = {'emploi': 'Emploi et inactivité', 'finances': 'Finances publiques', 'pensions': 'Pensions et vieillissement', 'immigration': 'Immigration et asile', 'justice': 'Justice et sécurité', 'sante': 'Santé', 'education': 'Éducation', 'inegalites': 'Inégalités et pauvreté', 'climat': 'Climat et énergie', 'logement': 'Logement'}
+    groups = [{'t': titles[n], 'href': '__' + n.upper() + '__', 'ind': DOSSIER_IND[n]} for n in titles]
+    allids = sorted({i for n in titles for i in DOSSIER_IND[n]})
+    out += '<script>' + cmp_script(allids, 'CJC.home(' + json.dumps(groups, ensure_ascii=False) + ');') + '</script>\n'
     return out, 'Atlas Chiffre Juste', HOME_DESC
 
 
@@ -119,7 +186,13 @@ def build_dossier(name):
 </nav>
 '''
     js = read(f'dossiers/{name}.js').replace('__DATA__', read(f'dossiers/{name}-data.json'))
-    return head + nav + read(f'dossiers/{name}-body.html') + '<script>' + js + '\n' + read('dossiers/common.js') + '</script>\n', title, desc
+    body = read(f'dossiers/{name}-body.html')
+    mk = '<div id="approfondir" aria-hidden="true"></div>'
+    assert mk in body, name
+    body = body.replace(mk, read('compare/section.html') + mk, 1)
+    body = re.sub(r'(<p class="maj">Dossier vérifié[^<]*)</p>', r'\1 · <a href="#europe">Voir ce dossier pour un autre pays</a></p>', body, count=1)
+    cmp = cmp_script(DOSSIER_IND[name], 'CJC.dossier({ind:' + json.dumps(DOSSIER_IND[name]) + '});')
+    return head + nav + body + '<script>' + js + '\n' + read('dossiers/common.js') + '</script>\n<script>' + cmp + '</script>\n', title, desc
 
 
 def build_registre():
@@ -132,16 +205,44 @@ def build_registre():
     return html, 'Registre de vérification · Chiffre Juste', 'Chaque affirmation de Chiffre Juste contrôlée à sa source primaire : valeur affichée, source consultée, statut.'
 
 
+def build_comparer():
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css') + '\n.cmp-page{padding-top:140px}.cmp-page .cmp-how{margin-top:56px;max-width:80ch}.cmp-page .cmp-how ul{font:17px/1.55 var(--sans);padding-left:1.2em;display:grid;gap:10px}\n'
+    title = 'Comparer les pays · Chiffre Juste'
+    desc = 'Comparer les 27 pays de l’Union sur une trentaine d’indicateurs Eurostat : emploi, finances publiques, santé, éducation, pauvreté, climat, logement, justice. Pays à cocher, graphiques et tableaux.'
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
+    nav = '''<div class="cursor" id="cursor" aria-hidden="true"></div>
+<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+<nav class="top" aria-label="Navigation principale">
+  <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
+  <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
+  <a href="__HOME__" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="__HOME__#dossiers"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
+  <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
+  <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
+</nav>
+'''
+    ids = list(json.loads(read('compare/indicators.json')).keys())
+    init = ("(function(){var D=document,H=D.documentElement,ab=D.getElementById('a11y'),calm=false;H.classList.add('js');"
+            "try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}"
+            "function set(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}"
+            "set(calm);ab.onclick=function(){set(!calm)};"
+            "var c=D.getElementById('cursor'),x=0,y=0,cx=0,cy=0;D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,select,label')))});"
+            "(function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();})();\n"
+            "CJC.page(" + json.dumps(ids) + ");")
+    return head + nav + read('compare/page-body.html') + '<script>' + cmp_script(ids, init) + '</script>\n', title, desc
+
+
 def main():
     artifact = '--artifact' in sys.argv
-    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre}
+    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer}
     for n in DOSSIERS:
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|COMPARER|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc), encoding='utf-8')

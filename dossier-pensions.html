@@ -467,6 +467,61 @@ html.calm .chart .fadein{opacity:1}
 .see .seegrid .lim2{border-top:1px dashed var(--rule);padding-top:12px}
 .see .see-more{margin-top:24px;font-size:15.5px;color:#3D3A35;max-width:70ch}
 @media (max-width:900px){.see .seegrid{grid-template-columns:1fr}}
+
+/* ===== Comparaison entre pays (section « Ce dossier en Europe » et page Comparer) */
+.eu{--cmp-main:#C0341E;--cmp-eu:#1A1A1A}
+.eu .eu-top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:end;justify-content:space-between;margin-top:28px}
+.eu .eu-sel{display:grid;gap:6px;font:600 13px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.eu select{font:600 18px var(--sans);color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:6px;padding:10px 12px;min-width:min(260px,80vw)}
+.eu select:focus-visible,.eu button:focus-visible,.eu input:focus-visible{outline:3px solid var(--red-ink);outline-offset:2px}
+.eu .eu-note{margin:20px 0 0;padding:14px 18px;border-left:4px solid var(--red-ink);background:#fff;max-width:72ch}
+.eu .eu-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:28px}
+.eu .eu-card{background:#fff;border:2px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:4px;min-width:0}
+.eu .eu-card .k{font:600 14px var(--sans)}
+.eu .eu-card b{font:600 34px/1.1 var(--sans);font-variant-numeric:tabular-nums}
+.eu .eu-card span{font:14px/1.4 var(--sans);color:var(--grey)}
+.eu .src{font:12px var(--sans);color:var(--grey);letter-spacing:.02em}
+.eu .eu-q{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.eu .eu-q li{border-top:2px solid var(--line);padding-top:12px;display:grid;gap:6px}
+.eu .eu-q h4{margin:0;font:600 18px/1.3 var(--sans)}
+.eu .eu-q p{margin:0;font:16px/1.5 var(--sans)}
+.eu h3.sub{margin-top:56px}
+.cmp-ind{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;align-items:end}
+.cmp-ind button,.cmp-quick button{font:600 14px var(--sans);color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.cmp-ind button[aria-pressed="true"]{background:var(--line);color:#fff}
+.cmp-ind .cmp-lab{font:600 13px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--grey);width:100%}
+.cmp-head h3{font:600 24px var(--sans);margin:28px 0 8px}
+.cmp-two{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.cmp-main{min-width:0}
+.cmp-chart svg{width:100%;height:auto;display:block;background:#fff;border:2px solid var(--line);border-radius:8px}
+.cmp-chart .g{stroke:#E4E1D9}.cmp-chart .z{stroke:#8A867D}
+.cmp-chart .tk{font:12px var(--sans);fill:#6A665F}
+.cmp-chart .lb{font:600 12px var(--sans)}.cmp-chart .lb.m{font-size:14px}
+.cmp-legend{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;font:13px var(--sans)}
+.cmp-legend .sw{display:inline-block;width:18px;height:4px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.cmp-legend .sw.eu{background:repeating-linear-gradient(90deg,#1A1A1A 0 5px,transparent 5px 8px)!important}
+.cmp-def{font:14px/1.5 var(--sans);color:var(--grey);margin:10px 0 0;max-width:80ch}
+.cmp-pays{border:2px solid var(--line);border-radius:8px;background:#fff;padding:12px 14px;margin:0;min-width:0}
+.cmp-pays legend{font:600 13px var(--sans);text-transform:uppercase;letter-spacing:.06em;padding:0 6px}
+.cmp-quick{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.cmp-quick button{padding:5px 10px;font-size:13px}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;max-height:360px;overflow:auto}
+.cmp-grid label{font:14px/1.3 var(--sans);display:flex;gap:6px;align-items:center;padding:3px 0;cursor:pointer}
+.cmp-grid label.eu{grid-column:1/-1;font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:4px}
+.cmp-grid input{appearance:none;-webkit-appearance:none;flex:none;width:18px;height:18px;margin:0;border:2px solid #1A1A1A;border-radius:3px;background:#fff;display:grid;place-content:center;cursor:pointer}
+.cmp-grid input::before{content:"";width:10px;height:10px;transform:scale(0);background:#fff;clip-path:polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0,43% 62%)}
+.cmp-grid input:checked{background:#C0341E;border-color:#C0341E}
+.cmp-grid input:checked::before{transform:scale(1)}
+.cmp-table{margin-top:24px;overflow-x:auto}
+.cmp-table table{border-collapse:collapse;width:100%;min-width:480px;background:#fff;font:15px var(--sans)}
+.cmp-table caption{text-align:left;font:600 15px var(--sans);padding:0 0 8px}
+.cmp-table th,.cmp-table td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;font-variant-numeric:tabular-nums}
+.cmp-table thead th{font:600 12px var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--grey);border-bottom:2px solid var(--line)}
+.cmp-table tr.me{background:#FBE7E2}.cmp-table tr.me th{color:#8A2412}
+.cmp-table tr.eu th,.cmp-table tr.eu td{font-style:italic}
+.cmp-miss,.cmp-empty{font:14px var(--sans);color:var(--grey)}
+@media (max-width:900px){.cmp-two{grid-template-columns:1fr}.cmp-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));max-height:none}}
+
 /* ===== V2 : composants pédagogiques ===== */
 /* Niveau 1 : comprendre en deux minutes */
 .twomin{padding-block:72px;background:var(--off);color:var(--ink);border-top:1px solid var(--rule)}
@@ -575,7 +630,7 @@ html.calm .chart .fadein{opacity:1}
       <div><b>9,3 %</b><span>des 65 ans et plus à risque de pauvreté, contre 16,3 % dans l’Union</span><span class="src">Eurostat ilc_li02, 2025</span></div>
       <div><b>48 %</b><span>taux de remplacement, contre 60 % dans l’Union</span><span class="src">Eurostat ilc_pnp3, 2025</span></div>
     </div>
-    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : rapport du Comité d’étude sur le vieillissement (juillet 2027)</p>
+    <p class="maj">Dossier vérifié le 11 octobre 2026 · prochaine mise à jour : rapport du Comité d’étude sur le vieillissement (juillet 2027) · <a href="#europe">Voir ce dossier pour un autre pays</a></p>
   </div>
 </section>
 
@@ -594,6 +649,25 @@ html.calm .chart .fadein{opacity:1}
       <p class="tm-warn"><b>L’erreur la plus fréquente :</b> lire le taux de dépendance comme le nombre de cotisants par pensionné : il compare des âges, pas des personnes qui travaillent.</p>
       <p class="tm-concl">La question n’est pas « pension ou pas », mais quel niveau, pour qui, et qui finance la hausse : un choix de valeurs autant que de chiffres.</p>
     </aside>
+  </div>
+</section>
+
+<!-- Ce dossier en Europe : chiffres et questions par pays, comparateur -->
+<section class="sec papier eu" id="europe" aria-labelledby="tEu">
+  <div class="wrap">
+    <span class="kick" data-r>Ce dossier en Europe · 27 pays</span>
+    <h2 class="giant" id="tEu" data-r>Et ailleurs <span>en Europe ?</span></h2>
+    <p class="lede" data-r>Choisissez un pays : les chiffres clés et les questions du débat se mettent à jour avec les données d’Eurostat, établies selon les mêmes définitions dans les 27 pays de l’Union.</p>
+    <div class="eu-top"><label class="eu-sel" for="eu-pays">Pays<select id="eu-pays"></select></label></div>
+    <p class="eu-note" id="eu-note" hidden>Les autres parties de ce dossier (histoire, fiches, recherche, « qui décide ») portent sur la Belgique : elles n’ont pas encore été rédigées pour <b></b>. Seuls les chiffres de cette section changent avec le pays.</p>
+    <h3 class="sub" id="eu-title">Les chiffres de la Belgique</h3>
+    <div class="eu-cards" id="eu-cards"></div>
+    <h3 class="sub">Questions du débat, en chiffres</h3>
+    <p class="cmp-def">Réponses calculées à partir des données : elles situent le pays parmi les autres, elles n’expliquent pas pourquoi.</p>
+    <ul class="eu-q" id="eu-q"></ul>
+    <h3 class="sub">Comparer les pays</h3>
+    <p class="cmp-def">Cochez ou décochez les pays ; le tableau sous le graphique donne les valeurs exactes. Tous les indicateurs : <a href="comparer.html">page Comparer</a>.</p>
+    <div id="eu-cmp"></div>
   </div>
 </section>
 <div id="approfondir" aria-hidden="true"></div>
@@ -1000,6 +1074,193 @@ html.calm .chart .fadein{opacity:1}
     });
   });
 })();
+</script>
+<script>var CMP={"n":{"BE":"Belgique","BG":"Bulgarie","CZ":"Tchéquie","DK":"Danemark","DE":"Allemagne","EE":"Estonie","IE":"Irlande","EL":"Grèce","ES":"Espagne","FR":"France","HR":"Croatie","IT":"Italie","CY":"Chypre","LV":"Lettonie","LT":"Lituanie","LU":"Luxembourg","HU":"Hongrie","MT":"Malte","NL":"Pays-Bas","AT":"Autriche","PL":"Pologne","PT":"Portugal","RO":"Roumanie","SI":"Slovénie","SK":"Slovaquie","FI":"Finlande","SE":"Suède","EU27_2020":"Union européenne"},"i":{"olddep":{"lab":"Dépendance des âgés","u":" %","d":1,"def":"Personnes de 65 ans et plus pour 100 personnes de 15 à 64 ans.","src":"Eurostat demo_pjanind","t":"Pensions","q":"La population vieillit-elle plus vite qu’ailleurs {en} ?","v":{"BE":{"2015":27.8,"2016":28.2,"2017":28.6,"2018":29.1,"2019":29.5,"2020":29.9,"2021":30.2,"2022":30.6,"2023":30.8,"2024":31.3,"2025":31.8},"BG":{"2015":31.2,"2016":32.4,"2017":33.4,"2018":34.3,"2019":35.4,"2020":36.3,"2021":36.7,"2022":37.5,"2023":37.7,"2024":38.2,"2025":38.7},"CZ":{"2015":26.6,"2016":27.6,"2017":28.6,"2018":29.6,"2019":30.4,"2020":31.1,"2021":32.3,"2022":32.6,"2023":32.1,"2024":32.3,"2025":32.4},"DK":{"2015":28.8,"2016":29.3,"2017":29.7,"2018":30.1,"2019":30.6,"2020":31.1,"2021":31.7,"2022":32.0,"2023":32.2,"2024":32.5,"2025":32.8},"DE":{"2015":32.0,"2016":32.0,"2017":32.4,"2018":32.8,"2019":33.2,"2020":33.7,"2021":34.2,"2022":34.7,"2023":34.9,"2024":35.2,"2025":35.9},"EE":{"2015":28.7,"2016":29.3,"2017":30.0,"2018":30.6,"2019":31.0,"2020":31.6,"2021":32.2,"2022":32.3,"2023":31.9,"2024":32.2,"2025":32.9},"IE":{"2015":19.7,"2016":20.2,"2017":20.6,"2018":21.2,"2019":21.5,"2020":22.0,"2021":22.5,"2022":23.0,"2023":23.2,"2024":23.6,"2025":23.8},"EL":{"2015":32.0,"2016":32.7,"2017":33.3,"2018":33.8,"2019":34.3,"2020":34.7,"2021":35.2,"2022":35.7,"2023":36.2,"2024":36.8,"2025":37.4},"ES":{"2015":27.8,"2016":28.2,"2017":28.6,"2018":29.0,"2019":29.2,"2020":29.5,"2021":29.7,"2022":30.2,"2023":30.4,"2024":30.8,"2025":31.2},"FR":{"2015":29.2,"2016":30.1,"2017":30.9,"2018":31.6,"2019":32.3,"2020":33.0,"2021":33.4,"2022":33.8,"2023":34.3,"2024":34.9,"2025":35.5},"HR":{"2015":28.6,"2016":29.4,"2017":30.3,"2018":31.5,"2019":32.7,"2020":33.8,"2021":34.9,"2022":35.6,"2023":36.1,"2024":36.6,"2025":37.0},"IT":{"2015":34.0,"2016":34.5,"2017":35.0,"2018":35.4,"2019":35.8,"2020":36.4,"2021":37.0,"2022":37.5,"2023":37.8,"2024":38.4,"2025":39.0},"CY":{"2015":21.0,"2016":21.7,"2017":22.5,"2018":23.2,"2019":23.8,"2020":24.4,"2021":25.0,"2022":25.4,"2023":25.8,"2024":26.5,"2025":27.4},"LV":{"2015":29.5,"2016":30.2,"2017":30.8,"2018":31.4,"2019":31.7,"2020":32.3,"2021":32.9,"2022":33.1,"2023":33.1,"2024":33.9,"2025":34.7},"LT":{"2015":27.8,"2016":28.3,"2017":28.8,"2018":29.4,"2019":29.6,"2020":29.9,"2021":30.5,"2022":30.7,"2023":30.8,"2024":31.2,"2025":32.1},"LU":{"2015":20.5,"2016":20.5,"2017":20.5,"2018":20.6,"2019":20.7,"2020":20.9,"2021":21.0,"2022":21.3,"2023":21.5,"2024":21.7,"2025":22.0},"HU":{"2015":26.4,"2016":27.0,"2017":27.7,"2018":28.3,"2019":29.0,"2020":30.1,"2021":30.9,"2022":31.4,"2023":31.6,"2024":31.9,"2025":32.2},"MT":{"2015":26.6,"2016":27.1,"2017":27.6,"2018":27.4,"2019":26.9,"2020":26.3,"2021":27.0,"2022":27.6,"2023":27.1,"2024":26.5,"2025":26.6},"NL":{"2015":27.2,"2016":27.8,"2017":28.4,"2018":29.0,"2019":29.5,"2020":30.1,"2021":30.6,"2022":31.1,"2023":31.4,"2024":31.8,"2025":32.4},"AT":{"2015":27.4,"2016":27.4,"2017":27.6,"2018":27.9,"2019":28.2,"2020":28.6,"2021":28.9,"2022":29.4,"2023":29.6,"2024":30.2,"2025":30.9},"PL":{"2015":22.2,"2016":23.1,"2017":24.2,"2018":25.3,"2019":26.4,"2020":27.5,"2021":28.9,"2022":29.7,"2023":30.8,"2024":31.8,"2025":32.7},"PT":{"2015":31.4,"2016":32.1,"2017":33.0,"2018":33.8,"2019":34.6,"2020":35.6,"2021":36.5,"2022":37.3,"2023":37.8,"2024":38.2,"2025":38.6},"RO":{"2015":25.2,"2016":25.9,"2017":26.7,"2018":27.5,"2019":28.1,"2020":29.0,"2021":29.7,"2022":30.3,"2023":30.8,"2024":31.2,"2025":31.6},"SI":{"2015":26.6,"2016":27.6,"2017":28.6,"2018":29.6,"2019":30.5,"2020":31.3,"2021":32.1,"2022":33.1,"2023":33.7,"2024":34.3,"2025":34.9},"SK":{"2015":19.7,"2016":20.6,"2017":21.5,"2018":22.5,"2019":23.5,"2020":24.5,"2021":25.5,"2022":26.1,"2023":27.0,"2024":27.9,"2025":28.7},"FI":{"2015":31.3,"2016":32.4,"2017":33.2,"2018":34.2,"2019":35.1,"2020":36.0,"2021":36.8,"2022":37.4,"2023":37.8,"2024":37.8,"2025":38.1},"SE":{"2015":31.1,"2016":31.5,"2017":31.6,"2018":31.7,"2019":31.9,"2020":32.1,"2021":32.4,"2022":32.6,"2023":32.8,"2024":33.1,"2025":33.4},"EU27_2020":{"2015":29.0,"2016":29.6,"2017":30.2,"2018":30.8,"2019":31.4,"2020":32.0,"2021":32.6,"2022":33.1,"2023":33.4,"2024":33.9,"2025":34.5}},"f":{}},"gf10":{"lab":"Dépenses de protection sociale","u":" % du PIB","d":1,"def":"Pensions, chômage, famille, handicap, exclusion : dépenses publiques (classification COFOG).","src":"Eurostat gov_10a_exp","t":"Pensions","q":"Dépense-t-on beaucoup pour la protection sociale {en} ?","v":{"BE":{"2013":20.0,"2014":19.7,"2015":19.5,"2016":19.5,"2017":19.4,"2018":19.3,"2019":19.2,"2020":22.4,"2021":20.8,"2022":20.1,"2023":20.1,"2024":20.4},"BG":{"2013":13.5,"2014":13.3,"2015":13.0,"2016":12.3,"2017":12.3,"2018":12.0,"2019":11.5,"2020":13.0,"2021":12.9,"2022":13.2,"2023":13.8,"2024":14.4},"CZ":{"2013":13.7,"2014":13.3,"2015":12.8,"2016":12.6,"2017":12.2,"2018":12.2,"2019":12.3,"2020":14.0,"2021":13.2,"2022":13.3,"2023":13.4,"2024":13.2},"DK":{"2013":24.1,"2014":23.7,"2015":23.2,"2016":22.6,"2017":22.0,"2018":21.6,"2019":21.4,"2020":22.1,"2021":20.5,"2022":18.7,"2023":19.7,"2024":19.6},"DE":{"2013":18.6,"2014":18.4,"2015":18.7,"2016":19.1,"2017":19.0,"2018":18.9,"2019":19.2,"2020":21.4,"2021":20.5,"2022":19.8,"2023":19.5,"2024":20.4},"EE":{"2013":11.5,"2014":11.3,"2015":12.2,"2016":12.6,"2017":12.3,"2018":12.5,"2019":12.7,"2020":14.5,"2021":13.3,"2022":12.6,"2023":13.5,"2024":13.8},"IE":{"2013":15.1,"2014":13.5,"2015":10.1,"2016":10.0,"2017":9.3,"2018":8.9,"2019":8.8,"2020":9.8,"2021":8.4,"2022":7.4,"2023":8.1,"2024":8.2},"EL":{"2013":19.9,"2014":20.5,"2015":20.5,"2016":20.7,"2017":20.0,"2018":19.7,"2019":19.6,"2020":22.3,"2021":20.3,"2022":18.9,"2023":18.5,"2024":17.7},"ES":{"2013":18.1,"2014":17.8,"2015":17.0,"2016":16.9,"2017":16.6,"2018":16.8,"2019":17.3,"2020":21.9,"2021":20.1,"2022":18.3,"2023":18.5,"2024":18.7},"FR":{"2013":24.4,"2014":24.5,"2015":24.3,"2016":24.4,"2017":24.3,"2018":24.0,"2019":23.9,"2020":27.2,"2021":24.8,"2022":23.8,"2023":23.3,"2024":23.7},"HR":{"2013":14.7,"2014":15.2,"2015":15.1,"2016":14.1,"2017":13.9,"2018":13.9,"2019":13.8,"2020":15.6,"2021":13.9,"2022":13.0,"2023":12.8,"2024":13.8},"IT":{"2013":20.8,"2014":21.0,"2015":21.2,"2016":20.8,"2017":20.6,"2018":20.6,"2019":21.0,"2020":25.0,"2021":22.6,"2022":21.4,"2023":21.0,"2024":21.3},"CY":{"2013":16.4,"2014":16.2,"2015":15.8,"2016":15.1,"2017":14.4,"2018":13.9,"2019":13.6,"2020":15.0,"2021":13.3,"2022":12.4,"2023":14.6,"2024":12.4},"LV":{"2013":11.9,"2014":11.8,"2015":12.1,"2016":12.2,"2017":12.0,"2018":11.9,"2019":12.4,"2020":13.6,"2021":13.9,"2022":14.0,"2023":13.5,"2024":14.1},"LT":{"2013":12.5,"2014":12.6,"2015":12.2,"2016":12.3,"2017":12.3,"2018":13.0,"2019":13.3,"2020":15.8,"2021":14.2,"2022":13.6,"2023":13.9,"2024":14.7},"LU":{"2013":17.7,"2014":17.5,"2015":17.5,"2016":17.1,"2017":17.7,"2018":17.9,"2019":18.3,"2020":20.6,"2021":18.2,"2022":19.3,"2023":19.6,"2024":19.9},"HU":{"2013":16.4,"2014":15.3,"2015":14.6,"2016":14.2,"2017":13.7,"2018":13.0,"2019":12.6,"2020":13.4,"2021":13.0,"2022":13.1,"2023":12.3,"2024":12.3},"MT":{"2013":13.2,"2014":12.6,"2015":11.5,"2016":11.2,"2017":10.4,"2018":10.1,"2019":10.1,"2020":11.1,"2021":10.1,"2022":9.9,"2023":9.6,"2024":9.8},"NL":{"2013":17.6,"2014":17.4,"2015":17.2,"2016":17.1,"2017":16.6,"2018":16.2,"2019":16.0,"2020":17.3,"2021":16.4,"2022":15.7,"2023":16.4,"2024":16.6},"AT":{"2013":21.2,"2014":21.4,"2015":21.3,"2016":21.1,"2017":20.7,"2018":20.3,"2019":20.2,"2020":22.8,"2021":21.9,"2022":21.5,"2023":21.2,"2024":22.8},"PL":{"2013":16.2,"2014":16.0,"2015":15.6,"2016":16.6,"2017":16.4,"2018":16.0,"2019":16.5,"2020":17.9,"2021":17.1,"2022":16.7,"2023":16.8,"2024":18.3},"PT":{"2013":19.5,"2014":19.1,"2015":18.6,"2016":18.1,"2017":17.3,"2018":17.0,"2019":16.9,"2020":19.0,"2021":18.1,"2022":17.5,"2023":16.4,"2024":17.1},"RO":{"2013":11.6,"2014":11.4,"2015":11.4,"2016":11.7,"2017":11.7,"2018":11.6,"2019":11.8,"2020":13.7,"2021":13.4,"2022":13.4,"2023":12.9,"2024":13.6},"SI":{"2013":19.7,"2014":18.9,"2015":18.4,"2016":17.8,"2017":17.2,"2018":16.7,"2019":16.7,"2020":18.9,"2021":17.9,"2022":17.8,"2023":16.8,"2024":17.1},"SK":{"2013":14.9,"2014":14.8,"2015":14.6,"2016":14.8,"2017":14.5,"2018":14.2,"2019":14.4,"2020":15.8,"2021":15.9,"2022":15.6,"2023":17.5,"2024":18.4},"FI":{"2013":24.7,"2014":25.3,"2015":25.4,"2016":25.8,"2017":24.8,"2018":24.5,"2019":24.3,"2020":25.9,"2021":25.1,"2022":23.8,"2023":25.6,"2024":26.5},"SE":{"2013":21.7,"2014":21.3,"2015":20.9,"2016":21.2,"2017":20.8,"2018":20.4,"2019":19.7,"2020":20.4,"2021":19.4,"2022":19.0,"2023":18.9,"2024":19.1},"EU27_2020":{"2013":19.9,"2014":19.8,"2015":19.6,"2016":19.6,"2017":19.3,"2018":19.1,"2019":19.2,"2020":21.7,"2021":20.2,"2022":19.3,"2023":19.1,"2024":19.6}},"f":{}},"medage":{"lab":"Âge médian","u":" ans","d":1,"def":"La moitié de la population est plus jeune, l’autre plus âgée.","src":"Eurostat demo_pjanind","t":"Pensions","v":{"BE":{"2015":41.4,"2016":41.4,"2017":41.5,"2018":41.6,"2019":41.7,"2020":41.8,"2021":41.8,"2022":41.9,"2023":41.9,"2024":42.0,"2025":42.1},"BG":{"2015":44.2,"2016":44.6,"2017":45.0,"2018":45.4,"2019":45.8,"2020":46.3,"2021":46.4,"2022":46.7,"2023":46.8,"2024":47.1,"2025":47.3},"CZ":{"2015":41.1,"2016":41.5,"2017":41.9,"2018":42.3,"2019":42.6,"2020":43.0,"2021":43.6,"2022":43.8,"2023":43.7,"2024":44.0,"2025":44.3},"DK":{"2015":41.5,"2016":41.5,"2017":41.6,"2018":41.8,"2019":41.9,"2020":42.1,"2021":42.2,"2022":42.3,"2023":42.2,"2024":42.2,"2025":42.2},"DE":{"2015":45.9,"2016":45.8,"2017":45.9,"2018":46.0,"2019":46.0,"2020":45.9,"2021":45.9,"2022":45.8,"2023":45.7,"2024":45.5,"2025":45.5},"EE":{"2015":41.4,"2016":41.6,"2017":41.8,"2018":42.0,"2019":42.1,"2020":42.3,"2021":42.5,"2022":42.6,"2023":42.3,"2024":42.5,"2025":42.9},"IE":{"2015":36.2,"2016":36.5,"2017":36.9,"2018":37.3,"2019":37.7,"2020":38.0,"2021":38.4,"2022":38.8,"2023":39.1,"2024":39.4,"2025":39.6},"EL":{"2015":43.5,"2016":44.0,"2017":44.3,"2018":44.7,"2019":45.1,"2020":45.4,"2021":45.8,"2022":46.2,"2023":46.6,"2024":46.9,"2025":47.2},"ES":{"2015":42.3,"2016":42.7,"2017":43.2,"2018":43.5,"2019":43.9,"2020":44.2,"2021":44.6,"2022":45.1,"2023":45.3,"2024":45.6,"2025":45.8},"FR":{"2015":41.0,"2016":41.2,"2017":41.4,"2018":41.6,"2019":41.8,"2020":41.9,"2021":42.0,"2022":42.1,"2023":42.3,"2024":42.6,"2025":42.8},"HR":{"2015":43.1,"2016":43.4,"2017":43.9,"2018":44.3,"2019":44.7,"2020":45.0,"2021":45.3,"2022":45.4,"2023":45.4,"2024":45.4,"2025":45.5},"IT":{"2015":45.2,"2016":45.6,"2017":46.0,"2018":46.4,"2019":46.8,"2020":47.2,"2021":47.6,"2022":48.0,"2023":48.4,"2024":48.7,"2025":49.1},"CY":{"2015":37.0,"2016":37.4,"2017":37.9,"2018":38.4,"2019":38.9,"2020":39.3,"2021":39.6,"2022":39.9,"2023":40.2,"2024":40.6,"2025":41.0},"LV":{"2015":42.7,"2016":42.9,"2017":43.1,"2018":43.3,"2019":43.5,"2020":43.7,"2021":43.9,"2022":44.0,"2023":43.8,"2024":44.0,"2025":44.4},"LT":{"2015":42.8,"2016":43.2,"2017":43.6,"2018":44.0,"2019":44.2,"2020":44.4,"2021":44.5,"2022":44.5,"2023":44.2,"2024":44.2,"2025":44.3},"LU":{"2015":39.3,"2016":39.3,"2017":39.4,"2018":39.4,"2019":39.5,"2020":39.5,"2021":39.6,"2022":39.7,"2023":39.7,"2024":39.7,"2025":39.8},"HU":{"2015":41.6,"2016":41.9,"2017":42.3,"2018":42.6,"2019":43.0,"2020":43.3,"2021":43.7,"2022":43.9,"2023":44.2,"2024":44.5,"2025":44.8},"MT":{"2015":40.4,"2016":40.4,"2017":40.6,"2018":40.4,"2019":40.1,"2020":39.8,"2021":40.2,"2022":40.5,"2023":40.1,"2024":39.8,"2025":40.0},"NL":{"2015":42.2,"2016":42.4,"2017":42.5,"2018":42.6,"2019":42.7,"2020":42.7,"2021":42.7,"2022":42.7,"2023":42.5,"2024":42.5,"2025":42.6},"AT":{"2015":43.0,"2016":43.0,"2017":43.0,"2018":43.2,"2019":43.4,"2020":43.5,"2021":43.6,"2022":43.6,"2023":43.5,"2024":43.6,"2025":43.8},"PL":{"2015":39.6,"2016":39.9,"2017":40.3,"2018":40.6,"2019":41.0,"2020":41.3,"2021":41.9,"2022":42.2,"2023":42.6,"2024":43.0,"2025":43.4},"PT":{"2015":43.6,"2016":44.1,"2017":44.5,"2018":45.0,"2019":45.4,"2020":45.9,"2021":46.3,"2022":46.7,"2023":46.9,"2024":47.1,"2025":47.3},"RO":{"2015":41.0,"2016":41.4,"2017":41.8,"2018":42.1,"2019":42.5,"2020":42.8,"2021":43.0,"2022":43.5,"2023":43.6,"2024":43.8,"2025":44.1},"SI":{"2015":42.8,"2016":43.2,"2017":43.5,"2018":43.8,"2019":44.0,"2020":44.1,"2021":44.4,"2022":44.7,"2023":44.9,"2024":45.2,"2025":45.5},"SK":{"2015":39.0,"2016":39.4,"2017":39.8,"2018":40.2,"2019":40.6,"2020":41.0,"2021":41.4,"2022":41.8,"2023":42.2,"2024":42.6,"2025":43.0},"FI":{"2015":42.4,"2016":42.5,"2017":42.5,"2018":42.7,"2019":42.9,"2020":43.1,"2021":43.3,"2022":43.4,"2023":43.5,"2024":43.4,"2025":43.5},"SE":{"2015":40.9,"2016":40.9,"2017":40.8,"2018":40.6,"2019":40.5,"2020":40.5,"2021":40.6,"2022":40.7,"2023":40.8,"2024":41.0,"2025":41.2},"EU27_2020":{"2015":42.8,"2016":43.0,"2017":43.2,"2018":43.5,"2019":43.7,"2020":43.9,"2021":44.2,"2022":44.4,"2023":44.5,"2024":44.7,"2025":44.9}},"f":{}}}};
+/* Chiffre Juste · comparaison entre pays (dossiers, page Comparer, accueil) */
+var CJC=(function(){
+  var NS='http://www.w3.org/2000/svg',D=document;
+  var EU='EU27_2020';
+  var MEM=['BE','BG','CZ','DK','DE','EE','IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE'];
+  var EN={BE:'en Belgique',BG:'en Bulgarie',CZ:'en Tchéquie',DK:'au Danemark',DE:'en Allemagne',EE:'en Estonie',IE:'en Irlande',EL:'en Grèce',ES:'en Espagne',FR:'en France',HR:'en Croatie',IT:'en Italie',CY:'à Chypre',LV:'en Lettonie',LT:'en Lituanie',LU:'au Luxembourg',HU:'en Hongrie',MT:'à Malte',NL:'aux Pays-Bas',AT:'en Autriche',PL:'en Pologne',PT:'au Portugal',RO:'en Roumanie',SI:'en Slovénie',SK:'en Slovaquie',FI:'en Finlande',SE:'en Suède'};
+  var DE_={BE:'de la Belgique',BG:'de la Bulgarie',CZ:'de la Tchéquie',DK:'du Danemark',DE:'de l’Allemagne',EE:'de l’Estonie',IE:'de l’Irlande',EL:'de la Grèce',ES:'de l’Espagne',FR:'de la France',HR:'de la Croatie',IT:'de l’Italie',CY:'de Chypre',LV:'de la Lettonie',LT:'de la Lituanie',LU:'du Luxembourg',HU:'de la Hongrie',MT:'de Malte',NL:'des Pays-Bas',AT:'de l’Autriche',PL:'de la Pologne',PT:'du Portugal',RO:'de la Roumanie',SI:'de la Slovénie',SK:'de la Slovaquie',FI:'de la Finlande',SE:'de la Suède'};
+  /* Pays voisins ou proches (frontière terrestre dans l’Union, sinon pays le plus proche) */
+  var NB={BE:['FR','NL','DE','LU'],NL:['BE','DE'],LU:['BE','DE','FR'],FR:['BE','LU','DE','IT','ES'],DE:['DK','NL','BE','LU','FR','AT','CZ','PL'],DK:['DE','SE'],SE:['DK','FI'],FI:['SE','EE'],EE:['LV','FI'],LV:['EE','LT'],LT:['LV','PL'],PL:['DE','CZ','SK','LT'],CZ:['DE','PL','SK','AT'],SK:['CZ','PL','HU','AT'],AT:['DE','CZ','SK','HU','SI','IT'],HU:['AT','SK','RO','HR','SI'],SI:['IT','AT','HU','HR'],HR:['SI','HU'],IT:['FR','AT','SI','MT'],MT:['IT'],ES:['FR','PT'],PT:['ES'],IE:['FR'],EL:['BG','CY'],CY:['EL'],BG:['RO','EL'],RO:['BG','HU']};
+  var PAL=['#2F6B8F','#7A5195','#3E8E5E','#B07A1F','#8C4A6B','#2B8C8C','#A35D3A','#5B6BB0','#6F7F2E','#9A4C9A'];
+  function fr(v,d){return v.toLocaleString('fr-BE',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  function fmt(it,v){if(v==null)return '–';var s=fr(Math.abs(v),it.d);if(it.sg)s=(v<0?'−':v>0?'+':'')+s;else if(v<0)s='−'+s;return s+it.u}
+  function ord(n){return n===1?'1re':n+'e'}
+  function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
+  function h(t,a,c){var e=D.createElement(t);if(a)for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k])}if(c)c.forEach(function(x){e.appendChild(x)});return e}
+  function getPays(){try{var p=localStorage.getItem('cj-pays');if(p&&EN[p])return p}catch(e){}return 'BE'}
+  function setPays(p){try{localStorage.setItem('cj-pays',p)}catch(e){}}
+
+  function Data(C){
+    this.C=C;
+    this.name=function(g){return C.n[g]||g};
+    this.series=function(id,g){var s=C.i[id].v[g];return s||{}};
+    this.flag=function(id,g,y){var f=C.i[id].f;return f&&f[g]&&f[g][y]||''};
+    this.years=function(id){var ys={};MEM.concat([EU]).forEach(function(g){var s=C.i[id].v[g];if(s)for(var y in s)ys[y]=1});return Object.keys(ys).map(Number).sort(function(a,b){return a-b})};
+    /* Année de référence : la plus récente où au moins 20 pays ont une valeur */
+    this.ref=function(id){var self=this,ys=this.years(id).reverse();for(var i=0;i<ys.length;i++){var n=MEM.filter(function(g){return self.series(id,g)[ys[i]]!=null}).length;if(n>=20)return ys[i]}return ys[0]};
+    this.val=function(id,g,y){var v=this.series(id,g)[y];return v==null?null:v};
+    this.rank=function(id,g,y){var self=this,rows=MEM.filter(function(c){return self.val(id,c,y)!=null}).map(function(c){return [c,self.val(id,c,y)]});rows.sort(function(a,b){return b[1]-a[1]});var r=0;rows.forEach(function(x,i){if(x[0]===g)r=i+1});return {r:r,n:rows.length}};
+  }
+
+  /* Réponse chiffrée à une question du débat, sans jugement */
+  function answer(dt,id,g){
+    var it=dt.C.i[id],y=dt.ref(id),v=dt.val(id,g,y),eu=dt.val(id,EU,y);
+    if(v==null)return {t:'Pas de donnée pour '+dt.name(g)+' en '+y+' dans cette série ('+it.src+') : aucune valeur n’est estimée à sa place.',ok:false};
+    var rk=dt.rank(id,g,y),s=it.lab+' '+EN[g]+' : '+fmt(it,v)+' en '+y;
+    s+=eu!=null?', contre '+fmt(it,eu)+' dans l’Union. ':'. ';
+    s+='Rang : '+ord(rk.r)+' sur '+rk.n+' pays de l’Union disposant de données, du plus élevé au plus bas.';
+    var y0=y-5,v0=dt.val(id,g,y0);if(v0!=null)s+=' En '+y0+', elle était de '+fmt(it,v0).replace(/\.$/,'')+'.';
+    if(dt.flag(id,g,y)==='b'||(v0!=null&&Object.keys(dt.series(id,g)).some(function(k){return +k>y0&&+k<=y&&dt.flag(id,g,k)==='b'})))s+=' Attention : rupture de série dans cette période.';
+    return {t:s,ok:true,y:y};
+  }
+  function questions(dt,ids,g){return ids.filter(function(id){return dt.C.i[id]&&dt.C.i[id].q}).map(function(id){var it=dt.C.i[id];return {id:id,q:it.q.replace('{en}',EN[g]),a:answer(dt,id,g),src:it.src}})}
+
+  /* Comparateur : choix de l’indicateur, pays à cocher, courbes et tableau */
+  function Comparator(host,dt,ids,opts){
+    opts=opts||{};var self=this,cur=ids[0],sel={},main=opts.pays||getPays();
+    var uid='cmp'+Math.random().toString(36).slice(2,7);
+    function defaults(){sel={};sel[main]=1;(NB[main]||[]).forEach(function(c){sel[c]=1});sel[EU]=1}
+    defaults();
+    var bar=h('div',{'class':'cmp-ind',role:'group','aria-label':'Choisir l’indicateur'});
+    var pick=null;
+    if(opts.grouped){
+      var lab=h('label',{'for':uid+'-ind','class':'cmp-lab',text:'Indicateur'});
+      pick=h('select',{id:uid+'-ind'});
+      var groups={};ids.forEach(function(id){var t=dt.C.i[id].t;(groups[t]=groups[t]||[]).push(id)});
+      Object.keys(groups).forEach(function(t){var og=h('optgroup',{label:t});groups[t].forEach(function(id){og.appendChild(h('option',{value:id,text:dt.C.i[id].lab}))});pick.appendChild(og)});
+      pick.onchange=function(){cur=pick.value;draw()};
+      bar.appendChild(lab);bar.appendChild(pick);
+    }else{
+      ids.forEach(function(id){var b=h('button',{type:'button','data-id':id,'aria-pressed':String(id===cur),text:dt.C.i[id].lab});b.onclick=function(){cur=id;bar.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.id===cur))});draw()};bar.appendChild(b)});
+    }
+    var fs=h('fieldset',{'class':'cmp-pays'});fs.appendChild(h('legend',{text:'Pays affichés'}));
+    var quick=h('div',{'class':'cmp-quick'});
+    [['Voisins',function(){defaults()}],['Les 27',function(){sel={};MEM.forEach(function(c){sel[c]=1});sel[EU]=1}],['Aucun',function(){sel={};sel[main]=1}]].forEach(function(q){var b=h('button',{type:'button',text:q[0]});b.onclick=function(){q[1]();sync();draw()};quick.appendChild(b)});
+    fs.appendChild(quick);
+    var grid=h('div',{'class':'cmp-grid'});
+    [EU].concat(MEM.slice().sort(function(a,b){return dt.name(a).localeCompare(dt.name(b),'fr')})).forEach(function(c){
+      var id=uid+'-'+c,cb=h('input',{type:'checkbox',id:id,value:c});cb.onchange=function(){if(cb.checked)sel[c]=1;else delete sel[c];draw()};
+      var l=h('label',{'for':id,'class':c===EU?'eu':''},[cb,D.createTextNode(c===EU?'Moyenne de l’Union':dt.name(c))]);grid.appendChild(l)});
+    fs.appendChild(grid);
+    function sync(){grid.querySelectorAll('input').forEach(function(cb){cb.checked=!!sel[cb.value]})}
+    var head=h('div',{'class':'cmp-head'});
+    var chart=h('div',{'class':'cmp-chart'}),legend=h('ul',{'class':'cmp-legend','aria-hidden':'true'});
+    var tw=h('div',{'class':'cmp-table'}),def=h('p',{'class':'cmp-def'});
+    host.appendChild(bar);host.appendChild(head);
+    var two=h('div',{'class':'cmp-two'},[h('div',{'class':'cmp-main'},[chart,legend,def]),fs]);
+    host.appendChild(two);host.appendChild(tw);
+    this.setMain=function(p){main=p;defaults();sync();draw()};
+    function colors(list){var m={},k=0;list.forEach(function(c){if(c===main)m[c]='var(--cmp-main)';else if(c===EU)m[c]='var(--cmp-eu)';else m[c]=PAL[k++%PAL.length]});return m}
+    function draw(){
+      var it=dt.C.i[cur],y=dt.ref(cur),list=[EU].concat(MEM).filter(function(c){return sel[c]});
+      list.sort(function(a,b){return a===main?1:b===main?-1:0});
+      var col=colors(list);
+      head.innerHTML='';head.appendChild(h('h3',{text:it.lab+(it.u&&it.u.indexOf('PIB')>-1?' (% du PIB)':'')}));
+      def.textContent=it.def+(it.note?' '+it.note:'')+' Source : '+it.src+'.';
+      /* Graphique */
+      var ys=dt.years(cur),mob=innerWidth<640,W=mob?420:760,H=mob?300:360,L=mob?44:54,R=W-(mob?46:74),T=18,B=H-34;
+      var vals=[];list.forEach(function(c){ys.forEach(function(yy){var v=dt.val(cur,c,yy);if(v!=null)vals.push(v)})});
+      chart.innerHTML='';legend.innerHTML='';
+      if(!vals.length){chart.appendChild(h('p',{'class':'cmp-empty',text:'Aucune donnée pour les pays cochés.'}));drawTable();return}
+      var mn=Math.min.apply(0,vals),mx=Math.max.apply(0,vals),pad=(mx-mn)*0.08||1;mn-=pad;mx+=pad;if(mn>0&&mn<(mx-mn)*0.5)mn=0;
+      var step=nice((mx-mn)/4),lo=Math.floor(mn/step)*step,hi=Math.ceil(mx/step)*step;
+      var y0=ys[0],y1=ys[ys.length-1];
+      function X(v){return L+(v-y0)/((y1-y0)||1)*(R-L)}function Y(v){return B-(v-lo)/(hi-lo)*(B-T)}
+      var s=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':it.lab+', '+y0+'-'+y1+' : '+list.map(function(c){var v=dt.val(cur,c,y);return (c===EU?'Union':dt.name(c))+' '+(v==null?'pas de donnée':fmt(it,v))}).join(' ; ')+' (en '+y+')'});
+      for(var t=lo;t<=hi+step/2;t+=step){s.appendChild(el('line',{x1:L,x2:R,y1:Y(t),y2:Y(t),'class':'g'}));s.appendChild(el('text',{x:L-8,y:Y(t)+4,'text-anchor':'end','class':'tk'},fr(t,step<1?1:0)))}
+      if(lo<0&&hi>0)s.appendChild(el('line',{x1:L,x2:R,y1:Y(0),y2:Y(0),'class':'z'}));
+      var every=Math.ceil((y1-y0+1)/(innerWidth<640?4:8));
+      for(var yy=y0;yy<=y1;yy++)if((yy-y0)%every===0||yy===y1)s.appendChild(el('text',{x:X(yy),y:H-10,'text-anchor':'middle','class':'tk'},yy));
+      var ends=[];
+      list.forEach(function(c){
+        var pts=ys.filter(function(yy){return dt.val(cur,c,yy)!=null}).map(function(yy){return [yy,dt.val(cur,c,yy)]});if(!pts.length)return;
+        var d='',prev=null;pts.forEach(function(p){d+=(prev!=null&&p[0]===prev+1?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)+' ';prev=p[0]});
+        var a={d:d,fill:'none',stroke:col[c],'stroke-width':c===main?4:2,'stroke-linejoin':'round','stroke-linecap':'round'};if(c===EU)a['stroke-dasharray']='6 5';
+        s.appendChild(el('path',a));
+        var lp=pts[pts.length-1];s.appendChild(el('circle',{cx:X(lp[0]),cy:Y(lp[1]),r:c===main?5:3.5,fill:col[c]}));
+        ends.push({c:c,y:Y(lp[1]),x:X(lp[0])});
+      });
+      if(ends.length>10)ends=ends.filter(function(e){return e.c===main||e.c===EU});ends.sort(function(a,b){return a.y-b.y});for(var i=1;i<ends.length;i++)if(ends[i].y-ends[i-1].y<13)ends[i].y=ends[i-1].y+13;var over=ends.length?ends[ends.length-1].y-(B+4):0;if(over>0)ends.forEach(function(e){e.y-=over});for(var j=ends.length-2;j>=0;j--)if(ends[j+1].y-ends[j].y<13)ends[j].y=ends[j+1].y-13;
+      ends.forEach(function(e){s.appendChild(el('text',{x:e.x+8,y:e.y+4,'class':'lb'+(e.c===main?' m':''),fill:col[e.c]},e.c===EU?'UE':e.c))});
+      chart.appendChild(s);
+      list.slice().reverse().forEach(function(c){legend.appendChild(h('li',{},[h('span',{'class':'sw'+(c===EU?' eu':''),style:'background:'+col[c]}),D.createTextNode(c===EU?'Union':dt.name(c))]))});
+      drawTable();
+    }
+    function drawTable(){
+      var it=dt.C.i[cur],y=dt.ref(cur);
+      var rows=MEM.map(function(c){return {c:c,v:dt.val(cur,c,y)}}).filter(function(r){return r.v!=null}).sort(function(a,b){return b.v-a.v});
+      var eu=dt.val(cur,EU,y),shown=rows.filter(function(r){return sel[r.c]});
+      var miss=MEM.filter(function(c){return sel[c]&&dt.val(cur,c,y)==null});
+      var t='<table><caption>'+it.lab+' en '+y+', pays cochés, du plus élevé au plus bas</caption><thead><tr><th scope="col">Rang sur '+rows.length+'</th><th scope="col">Pays</th><th scope="col">Valeur</th><th scope="col">Écart à l’Union</th></tr></thead><tbody>';
+      shown.forEach(function(r){var i=rows.indexOf(r)+1,f=dt.flag(cur,r.c,y);t+='<tr'+(r.c===main?' class="me"':'')+'><td>'+ord(i)+'</td><th scope="row">'+dt.name(r.c)+'</th><td>'+fmt(it,r.v)+(f?' <abbr title="'+(f==='b'?'rupture de série':f==='p'?'provisoire':f==='e'?'estimé':'note Eurostat')+'">'+f+'</abbr>':'')+'</td><td>'+(eu==null?'–':(function(d){return (d<0?'−':d>0?'+':'')+fr(Math.abs(d),it.d)})(r.v-eu))+'</td></tr>'});
+      if(eu!=null&&sel[EU])t+='<tr class="eu"><td></td><th scope="row">Moyenne de l’Union</th><td>'+fmt(it,eu)+'</td><td></td></tr>';
+      t+='</tbody></table>';
+      if(miss.length)t+='<p class="cmp-miss">Pas de donnée en '+y+' : '+miss.map(dt.name).join(', ')+'. Les données manquantes ne sont pas remplacées.</p>';
+      tw.innerHTML=t;
+    }
+    function nice(x){var p=Math.pow(10,Math.floor(Math.log10(x))),f=x/p;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*p}
+    sync();draw();
+    if(pick)pick.value=cur;
+  }
+
+  /* Section « Ce dossier en Europe » d’un dossier */
+  function dossier(cfg){
+    var dt=new Data(CMP);if(!D.getElementById('eu-pays'))return;
+    var g=getPays();
+    var sw=D.getElementById('eu-pays');
+    MEM.slice().sort(function(a,b){return dt.name(a).localeCompare(dt.name(b),'fr')}).forEach(function(c){sw.appendChild(h('option',{value:c,text:dt.name(c)}))});
+    sw.value=g;
+    var cards=D.getElementById('eu-cards'),qs=D.getElementById('eu-q'),note=D.getElementById('eu-note'),ttl=D.getElementById('eu-title');
+    var cmp=new Comparator(D.getElementById('eu-cmp'),dt,cfg.ind,{pays:g});
+    function render(){
+      ttl.textContent='Les chiffres '+DE_[g];
+      note.hidden=g==='BE';
+      note.querySelector('b').textContent=dt.name(g);
+      cards.innerHTML='';
+      cfg.ind.forEach(function(id){var it=dt.C.i[id],y=dt.ref(id),v=dt.val(id,g,y),eu=dt.val(id,EU,y),rk=dt.rank(id,g,y);
+        cards.appendChild(h('div',{'class':'eu-card'},[h('span',{'class':'k',text:it.lab}),h('b',{text:fmt(it,v)}),h('span',{text:(v==null?'pas de donnée en '+y:y+(rk.r?' · '+ord(rk.r)+' sur '+rk.n:''))+(eu!=null?' · Union : '+fmt(it,eu):'')}),h('span',{'class':'src',text:it.src})]))});
+      qs.innerHTML='';
+      questions(dt,cfg.ind,g).forEach(function(q){qs.appendChild(h('li',{},[h('h4',{text:q.q}),h('p',{text:q.a.t}),h('span',{'class':'src',text:q.src})]))});
+    }
+    sw.onchange=function(){g=sw.value;setPays(g);render();cmp.setMain(g)};
+    render();
+  }
+  /* Page Comparer : tous les indicateurs */
+  function page(ids){
+    var dt=new Data(CMP),g=getPays(),sw=D.getElementById('eu-pays');
+    MEM.slice().sort(function(a,b){return dt.name(a).localeCompare(dt.name(b),'fr')}).forEach(function(c){sw.appendChild(h('option',{value:c,text:dt.name(c)}))});
+    sw.value=g;
+    var cmp=new Comparator(D.getElementById('eu-cmp'),dt,ids,{pays:g,grouped:true});
+    sw.onchange=function(){g=sw.value;setPays(g);cmp.setMain(g)};
+  }
+  /* Accueil : questions du débat pour le pays choisi */
+  function home(groups){
+    var dt=new Data(CMP),sw=D.getElementById('q-pays');if(!sw)return;
+    var be=D.getElementById('q-be'),gen=D.getElementById('q-gen'),note=D.getElementById('q-note');
+    MEM.slice().sort(function(a,b){return dt.name(a).localeCompare(dt.name(b),'fr')}).forEach(function(c){sw.appendChild(h('option',{value:c,text:dt.name(c)}))});
+    function render(g){
+      be.hidden=g!=='BE';gen.hidden=g==='BE';note.hidden=g==='BE';note.querySelector('b').textContent=dt.name(g);
+      if(g==='BE')return;
+      gen.innerHTML='';
+      groups.forEach(function(gr){
+        var qs=questions(dt,gr.ind,g);if(!qs.length)return;
+        gen.appendChild(h('h3',{'class':'qth',text:gr.t}));
+        var ul=h('ul',{'class':'qlist'});
+        qs.forEach(function(q){var a=h('a',{href:gr.href+'#europe'},[h('span',{'class':'qst au',text:'Réponse chiffrée'}),h('h4',{text:q.q}),h('p',{text:q.a.t}),h('span',{'class':'qsrc',text:q.src}),h('span',{'class':'qgo','aria-hidden':'true',text:'Voir le dossier →'})]);a.addEventListener('click',function(){setPays(g)});ul.appendChild(h('li',{},[a]))});
+        gen.appendChild(ul);
+      });
+    }
+    var g0=getPays();sw.value=g0;render(g0);
+    sw.onchange=function(){setPays(sw.value);render(sw.value)};
+  }
+  return {home:home,page:page,Data:Data,Comparator:Comparator,questions:questions,dossier:dossier,getPays:getPays,setPays:setPays,MEM:MEM,EN:EN,DE:DE_,EU:EU};
+})();
+
+CJC.dossier({ind:["olddep", "gf10", "medage"]});
 </script>
 </body>
 </html>

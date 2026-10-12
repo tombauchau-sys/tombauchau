@@ -36,6 +36,9 @@ Conformes à la source trouvée, mais cette source est la presse ou une organisa
 
 ## 3. Autres points relevés pendant la vérification
 
+- [ ] **Comparateur (dossiers, page Comparer, accueil)** — les séries des 26 autres pays pour l’emploi, les finances, la santé, l’éducation, la pauvreté et le climat viennent des données de la carte (10 octobre 2026) et n’ont pas été relues pays par pays.
+- [ ] **Comparateur** — taux d’occupation des prisons : les capacités officielles sont définies différemment selon les pays ; vérifier les notes méthodologiques d’Eurostat (crim_pris_cap).
+
 - [ ] **Accueil et carte** — mettre à jour toutes les séries de la carte (données du 10 octobre 2026) : certaines valeurs Eurostat sont révisées régulièrement.
 - [ ] **Logement** — chercher une source primaire pour la liste d’attente bruxelloise (62 234 ménages) : annexe « candidats-locataires » du rapport annuel 2025 de la SLRB (p. 69), non lisible automatiquement.
 - [ ] **Logement** — loi Brunfaut (1949) et part du logement social (6,1 %) : seulement Housing Europe ; chercher une source académique (CRISP, Brussels Studies).
