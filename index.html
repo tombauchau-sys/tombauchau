@@ -709,7 +709,7 @@ nav.top .ddp a.ddq{display:block;height:auto;border:0;margin:0 0 12px;padding:6p
     <h3 class="qth" data-r>Économie et finances publiques</h3>
     <ul class="qlist">
       <li data-r><a href="dossier-finances.html#f-dette"><span class="qst ok">Réponse dans le dossier</span><h4>La dette publique est-elle forcément un problème ?</h4><p>Non : une dette n’est ni bonne ni mauvaise en soi. Tout dépend de ce qu’elle finance, des taux d’intérêt et de la croissance. Celle de la Belgique (107,9 % du PIB) est élevée et sa charge d’intérêts remonte.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
-      <li data-r><a href="dossier-finances.html#f-depenses"><span class="qst ok">Réponse dans le dossier</span><h4>Les dépenses publiques sont-elles trop élevées ?</h4><p>Elles atteignent 54,1 % du PIB en 2024, 5 points au-dessus de la moyenne européenne. Les chiffres montrent où va l’argent ; dire si c’est « trop » reste un jugement politique.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
+      <li data-r><a href="dossier-finances.html#f-depenses"><span class="qst ok">Réponse dans le dossier</span><h4>Les dépenses publiques sont-elles trop élevées ?</h4><p>Elles atteignent 54,2 % du PIB en 2025 (provisoire), près de 5 points au-dessus de la moyenne européenne (49,5 %). Les chiffres montrent où va l’argent ; dire si c’est « trop » reste un jugement politique.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
       <li data-r><a href="#classements"><span class="qst pt">En partie</span><h4>La Belgique est-elle l’un des pays les plus taxés ?</h4><p>Les classements comparent déjà les impôts et cotisations en % du PIB dans les 27 pays. Un dossier dira ce qu’on compte, qui paie et ce qu’on reçoit en échange.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
       <li data-r><a href="#atlas"><span class="qst pt">En partie</span><h4>Une hausse du PIB veut-elle dire que la population s’enrichit ?</h4><p>La carte montre le PIB par habitant et le niveau de vie corrigé des prix, avec leurs limites (Irlande, Luxembourg). L’analyse détaillée est à venir.</p><span class="qgo" aria-hidden="true">Lire →</span></a></li>
     </ul>
@@ -989,6 +989,8 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
   /* ======================= Données ======================= */
   var C=DATA.c,T=DATA.trade,EU='EU27_2020';
   /* IPCH, moyenne annuelle, 2025 = 100, 2015-2024 (Eurostat prc_hicp_ainr, TOTAL, INX_A_AVG, lu le 12/10/2026) : sert à convertir en euros de 2024 */
+  /* Dépenses publiques totales 2025, % du PIB (Eurostat gov_10a_main, S13, TE ; lu le 12/10/2026 ; BE et NL provisoires) : la ventilation par fonction (COFOG) s'arrête à 2024 */
+  var TE25={"EU27_2020":49.5,"BE":54.2,"BG":41.7,"CZ":43.2,"DK":48.1,"DE":50.5,"EE":45.4,"IE":21.0,"EL":48.3,"ES":45.3,"FR":57.2,"HR":50.1,"IT":51.2,"CY":40.2,"LV":46.1,"LT":41.2,"LU":49.1,"HU":47.3,"MT":37.0,"NL":44.9,"AT":55.2,"PL":50.9,"PT":42.7,"RO":43.3,"SI":49.6,"SK":47.9,"FI":57.7,"SE":49.9};
   var IPCH={"EU27_2020":[75.27,75.4,76.58,77.95,79.06,79.6,81.91,89.43,95.12,97.6],"BE":[73.81,75.11,76.78,78.55,79.54,79.88,82.45,90.97,93.05,97.06],"BG":[70.18,69.25,70.07,71.92,73.68,74.58,76.7,86.68,94.14,96.58],"CZ":[64.35,64.77,66.37,67.65,69.39,71.67,74.05,85.0,95.19,97.75],"DK":[82.42,82.44,83.32,83.9,84.51,84.8,86.43,93.82,96.97,98.19],"DE":[75.81,76.07,77.38,78.86,79.95,80.24,82.81,89.99,95.41,97.79],"EE":[61.51,62.0,64.27,66.46,67.97,67.54,70.57,84.29,91.97,95.41],"IE":[82.07,81.89,82.1,82.71,83.43,83.04,85.05,91.92,96.69,97.98],"EL":[81.46,81.48,82.4,83.04,83.47,82.42,82.89,90.6,94.37,97.19],"ES":[78.96,78.7,80.3,81.69,82.33,82.05,84.52,91.55,94.66,97.38],"FR":[80.37,80.61,81.55,83.26,84.34,84.78,86.54,91.65,96.84,99.08],"HR":[72.56,72.1,73.04,74.18,74.77,74.78,76.78,84.97,92.1,95.8],"IT":[80.5,80.4,81.5,82.5,83.0,82.9,84.5,91.9,97.3,98.4],"CY":[84.7,83.67,84.23,84.9,85.37,84.42,86.33,93.32,96.99,99.18],"LV":[66.29,66.36,68.28,70.02,71.95,72.0,74.34,87.15,95.05,96.33],"LT":[64.11,64.54,66.94,68.64,70.18,70.92,74.2,88.19,95.86,96.67],"LU":[78.17,78.2,79.85,81.46,82.8,82.8,85.68,92.67,95.38,97.53],"HU":[57.49,57.74,59.12,60.84,62.92,65.05,68.43,78.88,92.32,95.75],"MT":[79.43,80.15,81.16,82.57,83.83,84.49,85.08,90.3,95.32,97.65],"NL":[73.61,73.68,74.64,75.83,77.86,78.73,80.95,90.37,94.07,97.1],"AT":[71.94,72.64,74.26,75.83,76.96,78.03,80.18,87.09,93.81,96.55],"PL":[65.07,64.95,66.0,66.77,68.21,70.69,74.39,84.21,93.34,96.76],"PT":[80.11,80.62,81.87,82.83,83.07,82.97,83.76,90.54,95.31,97.85],"RO":[62.48,61.81,62.48,65.03,67.57,69.14,71.98,80.63,88.49,93.66],"SI":[76.31,76.19,77.38,78.88,80.21,79.99,81.63,89.24,95.68,97.58],"SK":[67.01,66.69,67.61,69.33,71.25,72.68,74.73,83.8,93.0,95.93],"FI":[81.96,82.28,82.97,83.94,84.89,85.22,86.98,93.22,97.26,98.21],"SE":[75.56,76.42,77.84,79.43,80.79,81.32,83.48,90.21,95.54,97.45]};
   var M2D=function(m){return m==='GR'?'EL':m},D2M=function(d){return d==='EL'?'GR':d};
   var MOB=innerWidth<700;
@@ -1150,11 +1152,11 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
   var bul=D.getElementById('bulle'),h1=D.getElementById('atT'),hint=D.getElementById('hint');
   function pop(n){n.classList.remove('pop');void n.offsetWidth;n.classList.add('pop')}
   function bulleA(c){
-    var p=last(S(c,'population')),g=gdpHab(c,2024),ge=gdpHab(EU,2024),dt=last(S(c,'debt')),u=last(S(c,'unemp'));
+    var p=last(S(c,'population')),g=gdpHab(c,2025),ge=gdpHab(EU,2025),dt=last(S(c,'debt')),u=last(S(c,'unemp'));
     bul.innerHTML='<div class="head"><h2>'+name(c)+'</h2><span class="tag-s">Fiche pays · Eurostat</span></div>'+
       '<div class="kg">'+
-      '<div><span class="v">'+hab(at(S(c,'population'),2025))+'</span><span class="t">d’habitants au 1er janvier 2025</span></div>'+
-      '<div><span class="v">'+num(Math.round(g/100)*100,0)+' €</span><span class="t">de PIB par habitant, 2024 (euros courants)</span><span class="e">UE : '+num(Math.round(ge/100)*100,0)+' €</span></div>'+
+      '<div><span class="v">'+hab(at(S(c,'population'),2026))+'</span><span class="t">d’habitants au 1er janvier 2026</span></div>'+
+      '<div><span class="v">'+num(Math.round(g/100)*100,0)+' €</span><span class="t">de PIB par habitant, 2025 (euros courants)</span><span class="e">UE : '+num(Math.round(ge/100)*100,0)+' €</span></div>'+
       '<div><span class="v">'+pc(dt[1])+'</span><span class="t">de dette publique, en % du PIB, '+dt[0]+'</span><span class="e">UE : '+pc(at(S(EU,'debt'),dt[0]))+'</span></div>'+
       '<div><span class="v">'+pc(u[1])+'</span><span class="t">de chômage, '+u[0]+'</span><span class="e">UE : '+pc(at(S(EU,'unemp'),u[0]))+'</span></div>'+
       '</div><p class="rline"><span>Note de la dette</span><b>'+rtShort(c)+'</b><small>S&P · Moody’s · Fitch</small></p><div class="cta"><a class="btn" href="#dossier" data-magnet>Ouvrir l’analyse <span aria-hidden="true">↓</span></a><button type="button" class="btn" style="background:#fff;color:var(--line);border:2px solid var(--line)" id="goC">Comparer avec…</button></div>'+
@@ -1198,14 +1200,14 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
   function fcell(v,l,e){return '<div><b>'+v+'</b><span class="l">'+l+'</span><span class="e">'+e+'</span></div>'}
   function euCmp(v,eu,fmt){return 'UE : <em>'+fmt(eu)+'</em>'}
   function renderA(c){
-    var nm=name(c),p25=at(S(c,'population'),2025),p24=at(S(c,'population'),2024),gdp=at(S(c,'gdp_meur'),2024)*1e6,gdpEU=at(S(EU,'gdp_meur'),2024)*1e6;
+    var nm=name(c),p25=at(S(c,'population'),2026),p24=at(S(c,'population'),2025),gdp=at(S(c,'gdp_meur'),2025)*1e6,gdpEU=at(S(EU,'gdp_meur'),2025)*1e6;
     var gr=last(S(c,'growth')),inf=last(S(c,'inflation')),u=last(S(c,'unemp')),dt=last(S(c,'debt')),df=last(S(c,'deficit'));
     var h='';
     h+='<section class="dz brun grain" aria-labelledby="dA1"><div class="w"><p class="kicker" data-r>Analyse · Eurostat · consulté le 10 octobre 2026</p><h2 class="giant" id="dA1" data-r>'+nm+'<span class="s">, en huit chiffres.</span></h2>'+
       '<div class="facts8" data-r>'+
-      fcell(hab(p25),'d’habitants au 1er janvier 2025',(p24?sgn((p25/p24-1)*100,1)+' % en un an':''))+
-      fcell(eur(gdp),'de PIB en 2024 (euros courants)',num(gdp/gdpEU*100,1)+' % du PIB de l’Union')+
-      fcell(num(Math.round(gdpHab(c,2024)/100)*100,0)+' €','de PIB par habitant, 2024 (euros courants)',euCmp(0,Math.round(gdpHab(EU,2024)/100)*100,function(v){return num(v,0)+' €'}))+
+      fcell(hab(p25),'d’habitants au 1er janvier 2026',(p24?sgn((p25/p24-1)*100,1)+' % en un an':''))+
+      fcell(eur(gdp),'de PIB en 2025 (euros courants)',num(gdp/gdpEU*100,1)+' % du PIB de l’Union')+
+      fcell(num(Math.round(gdpHab(c,2025)/100)*100,0)+' €','de PIB par habitant, 2025 (euros courants)',euCmp(0,Math.round(gdpHab(EU,2025)/100)*100,function(v){return num(v,0)+' €'}))+
       fcell(spc(gr[1]),'de croissance réelle, '+gr[0],euCmp(0,at(S(EU,'growth'),gr[0]),spc))+
       fcell(pc(inf[1]),'d’inflation (IPCH), '+inf[0],euCmp(0,at(S(EU,'inflation'),inf[0]),pc))+
       fcell(pc(u[1]),'de chômage, '+u[0],euCmp(0,at(S(EU,'unemp'),u[0]),pc))+
@@ -1229,7 +1231,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
     h+='<section class="dz brun grain" aria-labelledby="dA3"><div class="w"><p class="kicker" data-r>Finances publiques · Eurostat, notification EDP (gov_10dd_edpt1) et gov_10a_main</p><h2 id="dA3" data-r>La santé <span class="s">financière.</span></h2>'+ratingBlock(c)+
       '<div class="grid2"><div class="chartcard" data-r id="cDebt"><h3>Dette publique</h3><p class="def">Ce que doivent toutes les administrations publiques, en % du PIB, au sens du traité de Maastricht.</p></div>'+
       '<div class="chartcard" data-r id="cDef"><h3>Solde public</h3><p class="def">Recettes moins dépenses de l’année, en % du PIB. Sous zéro : déficit, qui s’ajoute à la dette.</p></div>'+
-      '<div class="chartcard" data-r id="cRE"><h3>Recettes et dépenses</h3><p class="def">Ce que les administrations prélèvent et ce qu’elles dépensent, en % du PIB.</p></div>'+
+      '<div class="chartcard" data-r id="cRE"><h3>Recettes et dépenses</h3><p class="def">Ce que les administrations prélèvent et ce qu’elles dépensent, en % du PIB. Dépenses : Eurostat gov_10a_exp jusqu’en 2024, gov_10a_main pour 2025 (provisoire pour certains pays).</p></div>'+
       '<div class="chartcard" data-r id="cInt"><h3>Charge d’intérêts</h3><p class="def">Les intérêts payés sur la dette, en % du PIB.</p></div></div>'+
       '<div class="limits" data-r><div><b>Un stock rapporté à un flux.</b><p>La dette s’accumule sur des décennies ; le PIB est produit en un an. Le ratio dit l’effort relatif, pas la date d’une faillite.</p></div><div><b>60 % et 3 % : des conventions.</b><p>Ces seuils datent du traité de Maastricht (1992). Ce sont des repères politiques, pas des limites scientifiques ; les économistes débattent de leur pertinence.</p></div><div><b>Une dette brute.</b><p>Les actifs financiers publics ne sont pas déduits. Deux pays au même ratio peuvent avoir des patrimoines publics très différents.</p></div></div>'+
       '</div></section>';
@@ -1258,8 +1260,8 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
     var EUc='#A69C8F';
     lineChart(D.getElementById('cDebt'),{dark:true,from:2013,to:2025,min:0,refs:[{v:60,label:'critère de Maastricht : 60 %'}],aria:'Dette publique de '+nm+' et de l’Union, 2013-2025',series:[{d:S(EU,'debt'),color:EUc,dash:1,w:2,name:'UE'},{d:S(c,'debt'),color:'#C9773A',name:nm}]});
     barChart(D.getElementById('cDef'),{dark:true,from:2013,to:2025,d:S(c,'deficit'),ref:-3,refLabel:'repère : −3 %',color:'#C9773A',pos:'#7FB6A3',aria:'Solde public de '+nm+', 2013-2025'});
-    var te={};for(var y=2013;y<=2024;y++)te[y]=at(C[c].cofog.TOTAL,y);
-    lineChart(D.getElementById('cRE'),{dark:true,from:2013,to:2024,aria:'Recettes et dépenses publiques de '+nm,series:[{d:S(c,'revenue'),color:'#EDE6DC',name:'recettes'},{d:te,color:'#C9773A',name:'dépenses'}]});
+    var te={};for(var y=2013;y<=2024;y++)te[y]=at(C[c].cofog.TOTAL,y);te[2025]=TE25[c];
+    lineChart(D.getElementById('cRE'),{dark:true,from:2013,to:2025,aria:'Recettes et dépenses publiques de '+nm,series:[{d:S(c,'revenue'),color:'#EDE6DC',name:'recettes'},{d:te,color:'#C9773A',name:'dépenses'}]});
     lineChart(D.getElementById('cInt'),{dark:true,from:2013,to:2025,min:0,aria:'Charge d’intérêts de '+nm,series:[{d:S(EU,'interest'),color:EUc,dash:1,w:2,name:'UE'},{d:S(c,'interest'),color:'#C9773A',name:nm}]});
     var EUp='#6A665F';
     lineChart(D.getElementById('cArope'),{from:2015,to:2025,aria:'Pauvreté ou exclusion sociale',series:[{d:S(EU,'arope'),color:EUp,dash:1,w:2,name:'UE'},{d:S(c,'arope'),color:'#C9773A',name:nm}]});
@@ -1313,10 +1315,10 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
       '<p style="margin-top:10px;font-size:14.5px">Les deux douanes ne voient pas la même chose : dates d’enregistrement, transport compté ou non, marchandises qui transitent par un port (Anvers, Rotterdam) sans y être produites, seuils de déclaration. Chiffre Juste retient la déclaration de l’exportateur, et affiche l’autre.</p><p class="src" style="color:var(--line)">'+srcs(['DS-045409'])+'</p></div>'+
       '</div></section>';
     /* Côte à côte */
-    var R=[['PIB par habitant','2024, calcul',function(k){return gdpHab(k,2024)},function(v){return num(Math.round(v/100)*100,0)+' €'}],
+    var R=[['PIB par habitant','2025, euros courants, calcul',function(k){return gdpHab(k,2025)},function(v){return num(Math.round(v/100)*100,0)+' €'}],
       ['Croissance réelle',null,'growth',spc],['Inflation (IPCH)',null,'inflation',pc],['Chômage',null,'unemp',pc],
       ['Dette publique','% du PIB','debt',pc],['Solde public','% du PIB','deficit',spc],
-      ['Dépenses publiques','% du PIB, 2024',function(k){return at(C[k].cofog.TOTAL,2024)},pc],['Recettes publiques','% du PIB','revenue',pc],
+      ['Dépenses publiques','% du PIB, 2025',function(k){return TE25[k]},pc],['Recettes publiques','% du PIB','revenue',pc],
       ['Pauvreté ou exclusion','% de la population','arope',pc],['Inégalités (Gini)','0 à 100','gini',function(v){return num(v,1)}],
       ['Espérance de vie','à la naissance','lifeexp',function(v){return num(v,1)+' ans'}],['Exportations','% du PIB','exports_pc',function(v){return pc(v,0)}]];
     function rowsHTML(list){return list.map(function(r){
@@ -1403,7 +1405,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
   function lastOf(k){return function(c){return last(S(c,k))}}
   var RK=[
     {th:'Économie',items:[
-      {id:'gdphab',lab:'PIB par habitant',f:function(c){var y=2024,v=gdpHab(c,y);return [y,v]},fmt:function(v){return num(Math.round(v/100)*100,0)+' €'},def:'Produit intérieur brut divisé par la population moyenne de l’année, en euros courants de l’année indiquée.',src:'Eurostat nama_10_gdp, tps00001 ; calcul Chiffre Juste',note:'Le PIB par habitant de l’Irlande et du Luxembourg est gonflé par les profits des multinationales et les travailleurs frontaliers.'},
+      {id:'gdphab',lab:'PIB par habitant',f:function(c){var y=2025,v=gdpHab(c,y);return [y,v]},fmt:function(v){return num(Math.round(v/100)*100,0)+' €'},def:'Produit intérieur brut divisé par la population moyenne de l’année, en euros courants de l’année indiquée.',src:'Eurostat nama_10_gdp, tps00001 ; calcul Chiffre Juste',note:'Le PIB par habitant de l’Irlande et du Luxembourg est gonflé par les profits des multinationales et les travailleurs frontaliers.'},
       {id:'gdppps',lab:'Niveau de vie (PIB en SPA)',f:lastOf('gdppps'),fmt:function(v){return num(v,0)},def:'PIB par habitant corrigé des différences de prix, indice : Union = 100.',src:'Eurostat tec00114'},
       {id:'growth',lab:'Croissance',f:lastOf('growth'),fmt:spc,def:'Variation du PIB en volume par rapport à l’année précédente.',src:'Eurostat tec00115'},
       {id:'inflation',lab:'Inflation',f:lastOf('inflation'),fmt:pc,def:'Variation annuelle moyenne de l’indice des prix à la consommation harmonisé (IPCH).',src:'Eurostat prc_hicp_aind'},

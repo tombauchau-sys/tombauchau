@@ -93,8 +93,8 @@
   }
   stack(D.getElementById('immChart'),{rows:[['2024',[9.9,37.9,52.1]]],cols:['#9A9488','#3E3A8C','#C0341E'],txt:['#1A1A1A','#fff','#fff'],names:['Belges','Union','Hors Union*'],per:3,legendRows:1,ink:'#1A1A1A',
     label:'Immigrations en Belgique en 2024 selon la nationalité : 9,9 % de Belges, 37,9 % de citoyens d’autres pays de l’Union, 52,1 % de citoyens de pays hors de l’Union, apatrides et nationalités inconnues compris (0,2 %)'});
-  stack(D.getElementById('resChart'),{rows:[['Belgique',[45.7,13.3,10.5,30.5]],['Union',[27.1,15.7,31.8,25.4]]],cols:['#C0341E','#3E3A8C','#2F6B4F','#9A9488'],txt:['#fff','#fff','#fff','#1A1A1A'],names:['Famille','Études','Travail','Autres'],legendRows:MOB?2:1,ink:'#1A1A1A',
-    label:'Premiers titres de séjour en 2024 par motif. Belgique : famille 45,7 %, études 13,3 %, travail 10,5 %, autres 30,5 %. Union : famille 27,1 %, études 15,7 %, travail 31,8 %, autres 25,4 %'});
+  stack(D.getElementById('resChart'),{rows:[['Belgique',[47.4,15.0,10.0,27.6]],['Union',[28.1,15.5,33.6,22.8]]],cols:['#C0341E','#3E3A8C','#2F6B4F','#9A9488'],txt:['#fff','#fff','#fff','#1A1A1A'],names:['Famille','Études','Travail','Autres'],legendRows:MOB?2:1,ink:'#1A1A1A',
+    label:'Premiers titres de séjour en 2025 par motif. Belgique : famille 47,4 %, études 15,0 %, travail 10,0 %, autres 27,6 %. Union : famille 28,1 %, études 15,5 %, travail 33,6 %, autres 22,8 %'});
 
   /* Fiche 02 : asile */
   bars(D.getElementById('asyChart'),o2({min:0,max:40000,ticks:[0,10000,20000,30000,40000],labels:yrs(2008,2025),show:MOB?[2008,2015,2020,2025]:yrs(2008,2025),
@@ -163,7 +163,7 @@
   /* Citer */
   (function(){
     var T={nes:'Au 1er janvier 2025, 20,2 % des habitants de la Belgique étaient nés à l’étranger, dont quatre sur dix dans un autre pays de l’Union, et 14,2 % n’avaient pas la nationalité belge (Eurostat, migr_pop3ctb et migr_pop1ctz).',
-      pop:'Entre 2015 et 2024, le solde migratoire a ajouté 606 454 personnes à la population belge, contre 39 767 pour l’excédent des naissances sur les décès (Eurostat, demo_gind).',
+      pop:'Entre 2016 et 2025, le solde migratoire a ajouté 620 046 personnes à la population belge, contre 24 145 pour l’excédent des naissances sur les décès (Eurostat, demo_gind).',
       asy:'En 2025, la Belgique a enregistré 27 540 premières demandes d’asile, soit 2,3 pour 1 000 habitants, contre 1,5 dans l’Union européenne (Eurostat, migr_asyappctza).',
       emp:'En 2025, 60,7 % des personnes de 20 à 64 ans nées hors de l’Union avaient un emploi en Belgique, contre 75,0 % des personnes nées en Belgique (Eurostat, lfsa_ergacob).'};
     var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');

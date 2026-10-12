@@ -72,7 +72,7 @@
   (function(){
     var N=[['20 % les plus modestes',DATA.unmet[0]],['2e cinquième',DATA.unmet[1]],['3e cinquième',DATA.unmet[2]],['4e cinquième',DATA.unmet[3]],['20 % les plus aisés',DATA.unmet[4]]];
     var W=MOB?420:600,rh=44,L=MOB?160:190,R=W-60,Hh=N.length*rh+10;
-    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Part des 16 ans et plus ayant renoncé à un examen médical en 2024, selon le revenu : '+N.map(function(n){return n[0]+' '+fr(n[1])+' %'}).join(', ')});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Part des 16 ans et plus ayant renoncé à un examen médical en 2025, selon le revenu : '+N.map(function(n){return n[0]+' '+fr(n[1])+' %'}).join(', ')});
     N.forEach(function(n,i){var y=6+i*rh,w=(R-L)*n[1]/3.5;s.appendChild(el('text',{x:L-10,y:y+24,'text-anchor':'end',style:TX+DK.ink},n[0]));s.appendChild(el('rect',{x:L,y:y+8,width:Math.max(w,2).toFixed(1),height:rh-20,fill:'#C9773A','class':'fadein'}));s.appendChild(el('text',{x:L+Math.max(w,2)+8,y:y+24,'class':'fadein',style:TX+DK.ink+';font-weight:700'},fr(n[1])+' %'))});
     D.getElementById('unmetChart').appendChild(s);
   })();

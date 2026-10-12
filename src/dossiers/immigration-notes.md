@@ -24,3 +24,5 @@
 
 ## Emploi (lfsa_ergacob, 20-64)
 - Nés en BE 2010-2025 ; nés hors UE BE 2010-2025 ; UE nés hors UE 2010-2025 ; femmes hors UE BE 51,3 (2025) vs nées en BE 72,7 ; nés UE en BE 74,3
+
+- migr_resfirst 2025 (mise à jour Eurostat du 28/09/2026, lu le 12/10/2026) BE : total 73 667 ; famille 34 897 ; études 11 066 ; travail 7 392 ; autres 20 312 (47,4 / 15,0 / 10,0 / 27,6 %). UE : 3 860 000 ; 1 084 363 ; 599 081 ; 1 295 687 ; 880 869 (28,1 / 15,5 / 33,6 / 22,8 %).

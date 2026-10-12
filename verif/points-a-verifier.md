@@ -53,3 +53,29 @@ Conformes à la source trouvée, mais cette source est la presse ou une organisa
 ## Inflation (ajout du 12 octobre 2026)
 - ~~Accueil, outil budgétaire en euros constants~~ : RÉSOLU le 12/10/2026 (IPCH 27 pays relu année par année ; mode « € de 2024 par habitant » ajouté).
 - Prix de l'électricité en euros de 2025 : indice annuel appliqué à des prix semestriels (approximation signalée sur le site).
+
+## Disponibilité des données 2025 (contrôle du 12 octobre 2026)
+Séries vérifiées sur Eurostat (dernière année publiée, date de mise à jour) :
+- demo_mlexpec (espérance de vie) | dernière année 2024 | mise à jour 25/09/2026 | 2025 non publié
+- demo_find (fécondité) | 2024 | 30/09/2026 | 2025 non publié
+- sdg_13_10 (gaz à effet de serre) | 2024 | 22/04/2026 | 2025 non publié (inventaires : publication au printemps t+2)
+- tepsr_sp320 (années en bonne santé à 65 ans) | 2024 | 17/07/2026 | 2025 non publié
+- sdg_05_20 (écart salarial) | 2024 | 26/02/2026 | 2025 non publié
+- gov_10a_exp (dépenses par fonction, COFOG) | 2024 | 16/09/2026 | 2025 : case prévue mais vide pour la Belgique
+- crim_pris_cap (prisons) | 2024 | 29/04/2026 | 2025 non publié
+- hlth_silc_08 (besoins de soins non satisfaits) | 2025 publié (ensemble BE 0,9 ; UE 2,4 ; Q1 2,5 déjà relus) | quintiles 2025 relus le 12/10 (2,5 / 1,5 / 0,4 / 0,2 / 0,0) → MIS À JOUR
+- hlth_sha11_hf (dépenses de santé) | BE 2024 | 01/10/2026 | 2025 vide
+- hlth_sha11_hf UE | 2023 (2024 vide)
+- crim_off_cat (infractions, homicides) | 2024 | 29/04/2026 | 2025 non publié
+- nrg_ind_id (dépendance énergétique) | 2024 | 16/07/2026 | 2025 non publié
+- tipsho60 (prix/revenu) | 2024 | 16/04/2026 | 2025 absent de la série
+- migr_resfirst (premiers titres de séjour) | 2025 PUBLIÉ (BE 73 667) | 28/09/2026 | MIS À JOUR
+-   BE 2025 : FAM 34 897 ; EDUC 11 066 ; EMP 7 392 ; OTH 20 312 ; total 73 667 (somme vérifiée)
+-   UE 2025 : FAM 1 084 363 ; EDUC 599 081 ; EMP 1 295 687 ; OTH 880 869 ; total 3 860 000 (somme vérifiée)
+- migr_imm1ctz (immigrations par nationalité) | 2024 | 29/05/2026 | 2025 non publié
+- nrg_bal_peh (production d'électricité) | non relu (HTTP 429) ; même publication que nrg_ind_id (2024)
+- rd_e_gerdtot (R&D) | 2024 (e) | 29/09/2026 | 2025 non publié
+- Comext DS-045409 (commerce) | 2025 PUBLIÉ (BE exportations 505,9 Md€) | 15/09/2026 | mise à jour lourde (27 pays × partenaires)
+- À faire : commerce extérieur (Comext DS-045409) — l'année 2025 est publiée mais la matrice des 27 pays × partenaires reste en 2024 (environ 54 requêtes à espacer).
+- À faire : production d'électricité (nrg_bal_peh) — non relue (HTTP 429), probablement encore 2024.
+- Mis à jour le 12/10 : accueil (PIB 2025, population au 1/1/2026, dépenses totales 2025), immigration (solde 2016-2025).
