@@ -20,8 +20,7 @@ Attention outil : l'outil de lecture web met en cache les réponses de l'API Eur
 ## Prix (prc_hpi_a, indice 2015 = 100, moyenne annuelle)
 - BE : 2005 72,85 · 2008 89,95 · 2015 100 · 2020 118,09 · 2022 132,93 · 2025 144,86 (×1,99 depuis 2005).
 - UE : 2005 85,85 · 2015 100 · 2022 148,86 · 2023 148,44 · 2025 161,89 (×1,89 depuis 2005).
-- IPCH BE (prc_hicp_aind, taux annuels) 2016-2025 : 1,8 · 2,2 · 2,3 · 1,2 · 0,4 · 3,2 · 10,3 · 2,3 · 4,3 · 3,0 → indice 2025 = 135,3 (2015 = 100) ; prix réels BE 2025 = 107,1 (calcul).
-- IPCH UE : 0,2 · 1,6 · 1,8 · 1,4 · 0,7 · 2,9 · 9,2 · 6,4 · 2,6 · 2,5 → 133,1 ; prix réels UE 2025 = 121,7 (calcul).
+- IPCH (12/10/2026) : prc_hicp_aind ne renvoie plus de valeurs ; série ECOICOP 2 prc_hicp_ainr (TOTAL, INX_A_AVG, 2025 = 100). BE 2015 = 73,81 → indice 2025 = 135,5 (2015 = 100) ; prix réels BE 2025 = 106,9. UE 2015 = 75,27 → 132,9 ; prix réels UE 2025 = 121,9. (Ancien calcul par taux annuels : 107,1 et 121,7.)
 - Rapport prix/revenu (tipsho60, 2015 = 100) : BE 2024 96,95 ; UE 105,72. Par rapport à la moyenne de long terme (depuis 2000) : BE 102,44 ; UE 98,94 (2024). Taux BE : 2022 −2,9 ; 2023 −4,8 ; 2024 +0,5.
 
 ## Jeunes

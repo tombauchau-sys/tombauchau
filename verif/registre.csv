@@ -184,7 +184,7 @@ climat,Recherche : Bayer et Aklin 2020 ; Colmer et al. 2025 ; Andersson 2019 ; F
 logement,"Propriétaires BE 70,9 % ; UE 68,5 % (2025)","70,9 ; 68,5",Eurostat ilc_lvho02 (libellés contrôlés ; sommes cohérentes),identique,vérifié,
 logement,"Surcharge des coûts : BE 6,7 % ; UE 7,7 % ; pauvres 31,3 % ; locataires marché 25,4 % ; propriétaires avec emprunt 0,9 %",valeurs,"Eurostat ilc_lvho07a, ilc_lvho07c",identique,vérifié,
 logement,"Prix : BE 72,85 → 144,86 ; UE 85,85 → 161,89 (2015 = 100)",indices,Eurostat prc_hpi_a,identique,vérifié,
-logement,Prix réels BE +7 % (2015-2025),+7 %,"calcul : prc_hpi_a / IPCH (prc_hicp_aind, taux annuels)","107,1",vérifié,calcul Chiffre Juste
+logement,Prix réels BE +7 % (2015-2025),+7 %,"calcul : prc_hpi_a / IPCH (prc_hicp_ainr, INX_A_AVG, 2025 = 100)","106,9",vérifié,"calcul Chiffre Juste ; recalculé le 12/10/2026 avec la série ECOICOP 2 (prc_hicp_ainr), BE 2015 = 73,81"
 logement,"Rapport prix/revenu BE 96,95 ; UE 105,72 (2024) ; 102,44 vs moyenne longue",valeurs,Eurostat tipsho60 (cohérence vérifiée avec les taux annuels),identique,vérifié,
 logement,"25-34 ans chez leurs parents BE 25,1 % (2025), UE 30,1 % ; âge de départ 26,2 / 26,3",valeurs,"Eurostat ilc_lvps08, yth_demo_030",identique,vérifié,
 logement,"Surpeuplement BE 6,6 % ; UE 16,8 % ; 5e plus bas",valeurs,Eurostat ilc_lvho05a,identique,vérifié,
@@ -228,3 +228,11 @@ accueil,"Comparateur : surcharge des coûts du logement, 27 pays 2015-2025",sér
 accueil,"Comparateur : surpeuplement, 27 pays 2015-2025",séries,"Eurostat ilc_lvho05a (TOTAL), requête du 12.10","Belgique (6,6) et Union (16,8) identiques",vérifié,
 accueil,"Comparateur : détenus et capacité des prisons, 27 pays 2015-2024",séries,"Eurostat crim_pris_cap (PRIS_ACT_CAP, PRIS_OFF_CAP, P_HTHAB), requête du 12.10","Belgique 2024 : 106,5 détenus pour 93,4 places pour 100 000 hab. (114 %)",vérifié,taux d’occupation calculé par Chiffre Juste
 accueil,"Comparateur : autres indicateurs (emploi, finances, santé, éducation, pauvreté, climat)",séries,"Données de la carte (Eurostat, 10 octobre 2026)",—,non revérifié,seules les valeurs belges et européennes ont été relues ; séries des autres pays reprises de la carte
+finances,"Prix à la consommation BE 2015-2025 (IPCH, moyenne annuelle, 2025 = 100)",indices utilisés pour les euros constants,"Eurostat prc_hicp_ainr, BE, TOTAL, INX_A_AVG","2015 73,81 · 2016 75,11 · 2017 76,78 · 2018 78,55 · 2019 79,54 · 2020 79,88 · 2021 82,45 · 2022 90,97 · 2023 93,05 · 2024 97,06 · 2025 100,00",vérifié,lu le 12/10/2026 ; l'ancien jeu prc_hicp_aind ne renvoie plus de valeurs
+finances,Intérêts 2021 en euros de 2025,"environ 10,4 Md","calcul : gov_10a_main D41PAY 8 580,8 M€ × 100 / 82,45","10,41 Md",vérifié,calcul Chiffre Juste
+finances,"Hausse des intérêts 2021-2025, inflation déduite",environ +37 %,"calcul : 14 281,7 / 10 407","+37,2 %",vérifié,calcul Chiffre Juste ; +66 % en euros courants
+finances,Intérêts 2015 en euros de 2025,"16,8 Md","calcul : 12 396,3 M€ × 100 / 73,81","16,79 Md",vérifié,calcul Chiffre Juste
+finances,Hausse des prix à la consommation 2021-2025,environ 21 %,"calcul : 100 / 82,45","+21,3 %",vérifié,IPCH prc_hicp_ainr
+climat,Prix électricité 2019-S1 en euros de 2025,"environ 35,7 c€","calcul : 28,39 × 100 / 79,54 (moyenne annuelle 2019)","35,69",vérifié,approximation : indice annuel appliqué à un prix semestriel
+climat,Pic 2022-S2 en euros de 2025,environ 49 c€,"calcul : 44,89 × 100 / 90,97","49,35",vérifié,même approximation
+logement,Prix réels UE +22 % (2015-2025),22 %,"calcul : prc_hpi_a 161,89 / IPCH UE (prc_hicp_ainr, 2015 = 75,27)","121,9",vérifié,"calcul Chiffre Juste, 12/10/2026"

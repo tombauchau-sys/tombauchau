@@ -132,17 +132,29 @@
     var key=D.createElement('p');key.className='key-dots';key.innerHTML='<span class="kd be"></span> Belgique <span class="kd eu"></span> Union européenne · entre parenthèses : l’écart en points'+(MOB?' · * dont intérêts de la dette':'');box.appendChild(key);
   })();
 
-  /* 4. Intérêts */
+  /* 4. Intérêts : euros courants et euros constants de 2025 (déflateur : IPCH, Eurostat prc_hicp_ainr, 2025 = 100) */
   (function(){
-    var I=DATA.int,box=D.getElementById('intChart'),W=MOB?420:1000,Hh=MOB?280:340,L=MOB?44:60,R=W-20,T=30,B=Hh-34,mx=16000,n=I.length;
+    var I=DATA.int,P=DATA.ipch,box=D.getElementById('intChart'),W=MOB?420:1000,Hh=MOB?330:420,L=MOB?44:60,R=W-20,T=MOB?62:48,B=Hh-34,mx=18000,n=I.length;
+    var K=I.map(function(v,i){return v*100/P[i]});
     function Y(v){return B-v/mx*(B-T)}
-    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Intérêts payés 2015-2025 : 12,4 milliards en 2015, 8,6 en 2021, 14,3 en 2025'}),g=el('g',{'class':'seg-bar'});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Intérêts payés 2015-2025. En euros courants : 12,4 milliards en 2015, 8,6 en 2021, 14,3 en 2025. En euros de 2025, inflation déduite : 16,8 milliards en 2015, 10,4 en 2021, 14,3 en 2025.'}),g=el('g',{'class':'seg-bar'});
     [0,5000,10000,15000].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:'#3B332B'}));s.appendChild(el('text',{x:L-8,y:Y(v)+4,'text-anchor':'end',style:TX+'#A69C8F'},v/1000+' Md'))});
-    var slot=(R-L)/n,bw=slot*.6;
-    I.forEach(function(v,i){var x=L+i*slot+(slot-bw)/2,y=2015+i,hi=y===2021||y>=2024;
-      g.appendChild(el('rect',{x:x,y:Y(v),width:bw,height:B-Y(v),fill:hi?'#C9773A':'#EDE6DC','class':'s',style:'transform-origin:bottom'}));
-      if(!MOB||hi||y===2015)g.appendChild(el('text',{x:x+bw/2,y:Y(v)-8,'text-anchor':'middle',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12.5:15)+'px;fill:'+(hi?'#C9773A':'#EDE6DC')},fr(v/1000)));
-      if(!MOB||i%2===0)g.appendChild(el('text',{x:x+bw/2,y:Hh-12,'text-anchor':'middle',style:TX+'#A69C8F'},y+(y>=2024?'*':'')));
+    var C1='#A69C8F',C2='#C9773A',lab=function(x,y,t,c){g.appendChild(el('text',{x:x,y:y,'text-anchor':'middle',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?13:15)+'px;fill:'+c},t))};
+    var lg=el('g',{}),ly=MOB?8:10;
+    lg.appendChild(el('rect',{x:L,y:ly,width:12,height:12,fill:C1}));lg.appendChild(el('text',{x:L+18,y:ly+11,style:TX+'#EDE6DC'},'euros courants (de chaque année)'));
+    var lx2=MOB?L:L+300,ly2=MOB?ly+24:ly;
+    lg.appendChild(el('rect',{x:lx2,y:ly2,width:12,height:12,fill:C2}));lg.appendChild(el('text',{x:lx2+18,y:ly2+11,style:TX+'#EDE6DC'},'euros de 2025 (inflation déduite)'));
+    s.appendChild(lg);
+    var slot=(R-L)/n,bw=slot*(MOB?.36:.38),gap=slot*.04;
+    I.forEach(function(v,i){var y=2015+i,x0=L+i*slot+(slot-2*bw-gap)/2,x1=x0+bw+gap,k=K[i],show=MOB?(y===2015||y===2021||y===2025):true;
+      g.appendChild(el('rect',{x:x0,y:Y(v),width:bw,height:B-Y(v),fill:C1,'class':'s',style:'transform-origin:bottom'}));
+      g.appendChild(el('rect',{x:x1,y:Y(k),width:bw,height:B-Y(k),fill:C2,'class':'s',style:'transform-origin:bottom'}));
+      if(show){
+        if(Math.abs(k-v)<50)lab(x0+bw+gap/2,Y(k)-8,fr(k/1000),'#EDE6DC');
+        else if(MOB){lab(x1+bw/2,Y(k)-8,fr(k/1000),C2);var cx=x0+bw/2+4,cy=Y(v)+8;g.appendChild(el('text',{x:cx,y:cy,'text-anchor':'end',transform:'rotate(-90 '+cx+' '+cy+')',style:'font-family:var(--sans);font-weight:700;font-size:12px;fill:#1E1914'},fr(v/1000)))}
+        else{lab(x1+bw/2+2,Y(k)-8,fr(k/1000),C2);lab(x0+bw/2-2,Y(v)-8,fr(v/1000),C1)}
+      }
+      if(!MOB||i%2===0)g.appendChild(el('text',{x:L+i*slot+slot/2,y:Hh-12,'text-anchor':'middle',style:TX+'#A69C8F'},y+(y>=2024?'*':'')));
     });
     s.appendChild(g);box.appendChild(s);
   })();
@@ -199,7 +211,7 @@
   (function(){
     var T={dette:'Fin 2025, la dette publique belge atteignait 107,9 % du PIB, soit 692 milliards d’euros, contre 81,7 % en moyenne dans l’Union européenne (Eurostat, gov_10dd_edpt1, notification d’avril 2026).',
       def:'En 2025, le déficit public belge était de 5,2 % du PIB, dont 2,2 points d’intérêts, contre 3,1 % dans l’Union européenne (Eurostat, gov_10dd_edpt1).',
-      int:'Les pouvoirs publics belges ont payé 14,3 milliards d’euros d’intérêts en 2025, contre 8,6 milliards en 2021 (Eurostat, gov_10a_main, chiffres provisoires).',
+      int:'Les pouvoirs publics belges ont payé 14,3 milliards d’euros d’intérêts en 2025, contre 8,6 milliards en 2021 en euros courants : +66 %. Une fois l’inflation déduite (8,6 milliards de 2021 valent environ 10,4 milliards de 2025), la hausse est d’environ 37 % (Eurostat, gov_10a_main, chiffres provisoires ; IPCH, prc_hicp_ainr ; calcul Chiffre Juste).',
       ent:'La dette des Communautés et des Régions est passée de 12,6 % à 20,4 % du PIB entre 2015 et 2025 (Eurostat, gov_10dd_edpt1, secteur S1312).'};
     var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');
     function set(k){q.textContent=T[k];c.textContent='';cs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}

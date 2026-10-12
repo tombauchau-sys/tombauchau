@@ -82,7 +82,7 @@
   lines2(D.getElementById('priceChart'),{t0:2019,t1:2026,rm:MOB?70:150,min:15,max:50,ticks:[20,30,40,50],unit:' c€',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',years:MOB?[2019,2022,2026]:[2019,2020,2021,2022,2023,2024,2025,2026],
     series:[{n:'Union',pts:DATA.priceEU,c:'#3D3A35',dash:1,dy:8},{n:'Belgique',pts:DATA.price,c:'#701C0E',w:4.5,dy:-4}],
     marks:[[2022.5,44.9,'2022 : 44,9 c€','#701C0E',-14]],
-    label:'Prix de l’électricité pour les ménages, toutes taxes, en centimes par kWh : Belgique 28,4 au premier semestre 2019, 44,9 au second semestre 2022, 35,8 au premier semestre 2026 ; Union 29,0 au second semestre 2025'});
+    label:'Prix de l’électricité pour les ménages, toutes taxes, en centimes d’euro courants par kWh : Belgique 28,4 au premier semestre 2019, 44,9 au second semestre 2022, 35,8 au premier semestre 2026 ; Union 29,0 au second semestre 2025'});
 
   /* Recherche */
   (function(){
