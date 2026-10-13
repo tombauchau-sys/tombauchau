@@ -29,6 +29,7 @@ PAGES = {
     '__LOGEMENT__': ('dossier-logement.html', 'https://claude.ai/artifact/KnCCYmNraookxjwkZf9twj'),
     '__REGISTRE__': ('registre-verification.html', 'https://claude.ai/artifact/Dg6d1Tr6wmDe1SFiUjHjYC'),
     '__COMPARER__': ('comparer.html', 'https://claude.ai/artifact/P1ppwNCEvjgmHgZ9VkbXmD'),
+    '__LEXIQUE__': ('lexique.html', 'https://claude.ai/artifact/LQDyy5p1qNjdLvMPncXWce'),
 }
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,13 +206,7 @@ def build_registre():
     return html, 'Registre de vérification · Chiffre Juste', 'Chaque affirmation de Chiffre Juste contrôlée à sa source primaire : valeur affichée, source consultée, statut.'
 
 
-def build_comparer():
-    fiche = read('fiche/fiche-chomage.html')
-    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css') + '\n.cmp-page{padding-top:140px}.cmp-page .cmp-how{margin-top:56px;max-width:80ch}.cmp-page .cmp-how ul{font:17px/1.55 var(--sans);padding-left:1.2em;display:grid;gap:10px}\n'
-    title = 'Comparer les pays · Chiffre Juste'
-    desc = 'Comparer les 27 pays de l’Union sur une trentaine d’indicateurs Eurostat : emploi, finances publiques, santé, éducation, pauvreté, climat, logement, justice. Pays à cocher, graphiques et tableaux.'
-    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
-    nav = '''<div class="cursor" id="cursor" aria-hidden="true"></div>
+NAV_SIMPLE = '''<div class="cursor" id="cursor" aria-hidden="true"></div>
 <button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
@@ -222,27 +217,51 @@ def build_comparer():
   <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
 </nav>
 '''
-    ids = list(json.loads(read('compare/indicators.json')).keys())
-    init = ("(function(){var D=document,H=D.documentElement,ab=D.getElementById('a11y'),calm=false;H.classList.add('js');"
+A11Y_INIT = ("(function(){var D=document,H=D.documentElement,ab=D.getElementById('a11y'),calm=false;H.classList.add('js');"
             "try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}"
             "function set(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}"
             "set(calm);ab.onclick=function(){set(!calm)};"
             "var c=D.getElementById('cursor'),x=0,y=0,cx=0,cy=0;D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,select,label')))});"
-            "(function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();})();\n"
+            "(function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();})();\n")
+
+
+def build_comparer():
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css') + '\n.cmp-page{padding-top:140px}.cmp-page .cmp-how{margin-top:56px;max-width:80ch}.cmp-page .cmp-how ul{font:17px/1.55 var(--sans);padding-left:1.2em;display:grid;gap:10px}\n'
+    title = 'Comparer les pays · Chiffre Juste'
+    desc = 'Comparer les 27 pays de l’Union sur une trentaine d’indicateurs Eurostat : emploi, finances publiques, santé, éducation, pauvreté, climat, logement, justice. Pays à cocher, graphiques et tableaux.'
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
+    nav = NAV_SIMPLE
+    ids = list(json.loads(read('compare/indicators.json')).keys())
+    init = (A11Y_INIT +
             "CJC.page(" + json.dumps(ids) + ");")
     return head + nav + read('compare/page-body.html') + '<script>' + cmp_script(ids, init) + '</script>\n', title, desc
 
 
+def build_lexique():
+    sys.path.insert(0, str(SRC / 'lexique'))
+    import build_lexique as BL
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
+    nav = NAV_SIMPLE
+    init = A11Y_INIT
+    body, lcss, js, n = BL.build(read, nav, init)
+    title = 'Lexique · Chiffre Juste'
+    desc = f'Lexique de Chiffre Juste : {n} définitions des termes politiques, économiques, sociaux et européens du débat public, des institutions belges aux traités de l’Union (Maastricht, Lisbonne…).'
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + lcss + '</style>\n'
+    return head + nav + body + '<script>' + js + '</script>\n', title, desc
+
+
 def main():
     artifact = '--artifact' in sys.argv
-    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer}
+    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer, 'lexique.html': build_lexique}
     for n in DOSSIERS:
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|COMPARER|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|COMPARER|LEXIQUE|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc), encoding='utf-8')

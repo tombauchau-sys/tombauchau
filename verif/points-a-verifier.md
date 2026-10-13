@@ -79,3 +79,6 @@ Séries vérifiées sur Eurostat (dernière année publiée, date de mise à jou
 - À faire : commerce extérieur (Comext DS-045409) — l'année 2025 est publiée mais la matrice des 27 pays × partenaires reste en 2024 (environ 54 requêtes à espacer).
 - À faire : production d'électricité (nrg_bal_peh) — non relue (HTTP 429), probablement encore 2024.
 - Mis à jour le 12/10 : accueil (PIB 2025, population au 1/1/2026, dépenses totales 2025), immigration (solde 2016-2025).
+## Lexique (13 octobre 2026)
+- Liens EUR-Lex des traités (CELEX 11951K, 11957E, 11986U, 11992M, 11997D, 12001C, 12007L, 12016P, protocole 12016E/PRO/13) : non ouverts depuis cette session (autorisation d'accès non accordée). À cliquer une fois pour confirmer.
+- Système de Dublin : vérifier la date d'application effective du pacte sur la migration et l'asile (indiquée « fixée à 2026 »).
