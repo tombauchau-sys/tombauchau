@@ -62,9 +62,10 @@
     label:'Dépenses publiques vieillesse en % du PIB : Belgique de 6,8 % en 2001 à 10,2 % en 2024 ; Union 10,7 % en 2024'});
 
   /* Fiche 02 : pauvreté et écart */
-  lines2(D.getElementById('povChart'),{t0:2015,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:125,min:0,max:25,ticks:[0,5,10,15,20,25],unit:' %',grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',breaks:[2018.5],years:MOB?[2015,2019,2023,2025]:[2015,2017,2019,2021,2023,2025],
-    series:[{n:'Union',v:DATA.povEU,s:2015,c:'#A69C8F',dash:1,dy:-4},{n:'Belgique',v:DATA.povBE,s:2015,c:'#C9773A',w:4,dy:4}],
-    label:'Risque de pauvreté des 65 ans et plus : Belgique 15,2 % en 2015, 9,3 % en 2025 ; Union 16,3 % en 2025'});
+  lines2(D.getElementById('povChart'),{t0:1995,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:125,min:0,max:30,ticks:[0,10,20,30],unit:' %',grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',breaks:[2002,2018.5],years:MOB?[1995,2005,2015,2025]:[1995,2000,2005,2010,2015,2020,2025],
+    series:[{n:'',pts:DATA.povBE95,c:'#C9773A',w:3,end:false},{n:'Union',v:DATA.povEU,s:2013,c:'#A69C8F',dash:1,dy:-4},{n:'Belgique',v:DATA.povBE,s:2003,c:'#C9773A',w:4,dy:4}],
+    label:'Risque de pauvreté des 65 ans et plus : Belgique 25 % en 1995, 22,0 % en 2003, 15,2 % en 2015, 9,3 % en 2025 ; Union 13,3 % en 2013 et 16,3 % en 2025'});
+  CJD.rename('povChart',['Belgique, enquête ECHP 1995-2001 (%)','Union (%, depuis 2013)','Belgique, enquête SILC (%)'],'Ruptures : passage de l’enquête ECHP à SILC (aucune donnée en 2002 ; ECHP publié sans décimale) et réforme de l’enquête belge en 2019.');
   lines2(D.getElementById('gapChart'),{t0:2015,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:125,min:0,max:40,ticks:[0,10,20,30,40],unit:' %',grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',years:MOB?[2015,2019,2023,2025]:[2015,2017,2019,2021,2023,2025],
     series:[{n:'Union',v:DATA.gapEU,s:2015,c:'#A69C8F',dash:1,dy:8},{n:'Belgique',v:DATA.gapBE,s:2015,c:'#EFA3CB',w:4,dy:-4}],
     label:'Écart de pension femmes-hommes, 65-79 ans : Belgique 28,3 % en 2025, Union 24,2 %'});

@@ -81,10 +81,10 @@
     label:'Décrochage scolaire des 18-24 ans : Belgique 18,1 % en 1992, 7,3 % en 2025 ; Union 9,1 % en 2025'},DK));
 
   /* Fiche 03 : diplômés du supérieur */
-  lines2(D.getElementById('terChart'),{t0:2005,t1:2025,rm:MOB?70:150,min:30,max:60,ticks:[30,40,50,60],unit:' %',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',years:MOB?[2005,2015,2025]:[2005,2009,2013,2017,2021,2025],
-    series:[{n:'Union',v:DATA.terEU,s:2015,c:'#3D3A35',dash:1,dy:6},{n:'Belgique',v:DATA.ter,s:2005,c:'#701C0E',w:4.5,dy:-4}],
-    marks:[[2005,40.6,'40,6 %','#1A1A1A',24,'start']],
-    label:'Part des 25-34 ans diplômés du supérieur : Belgique 40,6 % en 2005, 52,7 % en 2025 ; Union 44,8 % en 2025'});
+  lines2(D.getElementById('terChart'),{t0:1992,t1:2025,rm:MOB?70:150,min:20,max:60,ticks:[20,30,40,50,60],unit:' %',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',breaks:[1999,2008,2014,2017,2021],years:MOB?[1992,2008,2025]:[1992,1996,2000,2004,2008,2012,2016,2020,2025],
+    series:[{n:'Union',v:DATA.terEU,s:2002,c:'#3D3A35',dash:1,dy:6},{n:'Belgique',v:DATA.ter,s:1992,c:'#701C0E',w:4.5,dy:-4}],
+    marks:[[1992,27.8,'27,8 %','#1A1A1A',24,'start']],
+    label:'Part des 25-34 ans diplômés du supérieur : Belgique 27,8 % en 1992, 40,6 % en 2005, 52,7 % en 2025 ; Union 23,1 % en 2002 et 44,8 % en 2025'});
 
   /* Recherche */
   (function(){

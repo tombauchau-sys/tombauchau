@@ -61,17 +61,17 @@
 
   /* Barres verticales génériques */
   function bars(host,o){CJD.series(host,o.series.map(function(se,j){return {n:se.n||(o.legend&&o.legend[j]&&o.legend[j][0]),v:se.v,s:+o.labels[0]}}),+o.labels[0]);
-    var W=o.w||(MOB?420:1000),Hh=o.h||(MOB?300:400),L=MOB?44:60,R=W-16,T=24,B=Hh-36,mn=o.min,mx=o.max,n=o.labels.length,k=o.series.length;
+    var W=o.w||(MOB?420:1000),Hh=o.h||(MOB?300:400),L=MOB?44:60,R=W-16,T=o.legend&&MOB?56:24,B=Hh-36,mn=o.min,mx=o.max,n=o.labels.length,k=o.series.length;
     function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label}),bw=(R-L)/n;
     o.ticks.forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v===0?o.mute:o.grid}));s.appendChild(el('text',{x:L-8,y:Y(v)+4,'text-anchor':'end',style:TX+o.mute},fr(v,0)))});
     var g=el('g',{'class':'fadein'});
-    o.series.forEach(function(se,j){se.v.forEach(function(v,i){var w=bw*(k>1?.42:.7),x=L+i*bw+(bw-(k>1?2*w:w))/2+j*w,y0=Y(0),y1=Y(v);
+    o.series.forEach(function(se,j){se.v.forEach(function(v,i){if(v==null)return;var sb=k>1&&!o.solo,w=bw*(sb?.42:.7),x=L+i*bw+(bw-(sb?2*w:w))/2+(sb?j*w:0),y0=Y(0),y1=Y(v);
       g.appendChild(el('rect',{x:x.toFixed(1),y:Math.min(y0,y1).toFixed(1),width:Math.max(w-.5,1).toFixed(1),height:Math.max(Math.abs(y1-y0),.5).toFixed(1),fill:se.c}))})});
     s.appendChild(g);
     o.labels.forEach(function(l,i){if(o.show.indexOf(l)>=0)s.appendChild(el('text',{x:L+i*bw+bw/2,y:Hh-12,'text-anchor':'middle',style:TX+o.mute},l))});
     (o.notes||[]).forEach(function(nt){var i=o.labels.indexOf(nt[0]);s.appendChild(el('text',{x:L+i*bw+bw/2+(nt[3]||0),y:Y(nt[1])-8,'text-anchor':nt[4]||'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:'+o.ink},nt[2]))});
-    if(o.legend){var lg=el('g',{});o.legend.forEach(function(it,i){var x=L+8+i*(MOB?150:210);lg.appendChild(el('rect',{x:x,y:4,width:14,height:14,fill:it[1]}));lg.appendChild(el('text',{x:x+20,y:16,style:TX+o.ink},it[0]))});s.appendChild(lg)}
+    if(o.legend){var lg=el('g',{}),lx=L+8,ly=4;o.legend.forEach(function(it,i){var wd=40+it[0].length*(MOB?7.2:8.4);if(i&&lx+wd>R){lx=L+8;ly+=22}var x=lx;lx+=Math.max(MOB?150:210,wd);lg.appendChild(el('rect',{x:x,y:ly,width:14,height:14,fill:it[1]}));lg.appendChild(el('text',{x:x+20,y:ly+12,style:TX+o.ink},it[0]))});s.appendChild(lg)}
     host.appendChild(s);
   }
   /* Fiche 01 : croissance */
@@ -99,13 +99,13 @@
     label:'Premiers titres de séjour en 2025 par motif. Belgique : famille 47,4 %, études 15,0 %, travail 10,0 %, autres 27,6 %. Union : famille 28,1 %, études 15,5 %, travail 33,6 %, autres 22,8 %'});
 
   /* Fiche 02 : asile */
-  bars(D.getElementById('asyChart'),o2({min:0,max:40000,ticks:[0,10000,20000,30000,40000],labels:yrs(2008,2025),show:MOB?[2008,2015,2020,2025]:yrs(2008,2025),
-    series:[{v:DATA.asy,c:'#C9773A'}],notes:[[2015,39065,'39 065'],[2020,12930,'12 930'],[2025,27540,'27 540']],
-    label:'Premières demandes d’asile en Belgique de 2008 à 2025 : 11 395 en 2008, 39 065 en 2015, 12 930 en 2020, 32 710 en 2024, 27 540 en 2025'},DK));
-  CJD.rename('asyChart',['Premières demandes d’asile']);
-  lines2(D.getElementById('recChart'),o2({t0:2015,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:125,min:0,max:70,ticks:[0,20,40,60],unit:' %',years:MOB?[2015,2019,2023,2025]:[2015,2017,2019,2021,2023,2025],
-    series:[{n:'Belgique',v:DATA.rec,s:2015,c:'#C9773A',w:4}],marks:[[2016,60.2,'60,2 %','#EDE6DC',-12],[2024,48.7,'48,7 %','#EDE6DC',-12]],
-    label:'Part des décisions de première instance accordant une protection en Belgique : 53,8 % en 2015, 60,2 % en 2016, 34,9 % en 2020, 48,7 % en 2024, 29,7 % en 2025'},DK));
+  bars(D.getElementById('asyChart'),o2({min:0,max:45000,ticks:[0,10000,20000,30000,40000],labels:yrs(1985,2025),show:MOB?[1985,2000,2015,2025]:[1985,1990,1995,2000,2005,2010,2015,2020,2025],solo:1,
+    series:[{v:DATA.asyOld.concat(yrs(2008,2025).map(function(){return null})),c:'#9A9488'},{v:yrs(1985,2007).map(function(){return null}).concat(DATA.asy),c:'#C9773A'}],legend:[['toutes demandes (1985-2007)','#9A9488'],['premières demandes (depuis 2008)','#C9773A']],notes:[[2000,42690,'42 690'],[2015,39065,'39 065'],[2025,27540,'27 540']],
+    label:'Demandes d’asile en Belgique : toutes demandes de 1985 à 2007 (5 385 en 1985, 26 715 en 1993, 42 690 en 2000, 11 575 en 2007), puis premières demandes de 2008 à 2025 (11 395 en 2008, 39 065 en 2015, 12 930 en 2020, 27 540 en 2025)'},DK));
+  CJD.rename('asyChart',['Toutes demandes d’asile, 1985-2007 (migr_asyctz)','Premières demandes d’asile, depuis 2008 (migr_asyappctza)'],'Les deux séries ne mesurent pas la même chose : avant 2008, Eurostat compte toutes les demandes, y compris les demandes répétées ; depuis 2008, seulement les premières demandes.');
+  lines2(D.getElementById('recChart'),o2({t0:2008,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:125,min:0,max:70,ticks:[0,20,40,60],unit:' %',years:MOB?[2008,2015,2025]:[2008,2011,2014,2017,2020,2025],
+    series:[{n:'Belgique',v:DATA.rec,s:2008,c:'#C9773A',w:4}],marks:[[2016,60.2,'60,2 %','#EDE6DC',-12],[2024,48.7,'48,7 %','#EDE6DC',-12]],
+    label:'Part des décisions de première instance accordant une protection en Belgique : 25,7 % en 2008, 19,0 % en 2009, 53,8 % en 2015, 60,2 % en 2016, 34,9 % en 2020, 48,7 % en 2024, 29,7 % en 2025'},DK));
   (function(){
     var N=[['Palestine',2815],['Érythrée',2590],['Afghanistan',2395],['RD Congo',2110],['Turquie',2105],['Burundi',1435],['Syrie',1280],['Cameroun',1135],['Guinée',1085]];
     CJD.set('natChart',['Nationalité','Premières demandes d’asile, 2025'],N.map(function(n){return [n[0],n[1]]}));
@@ -116,10 +116,10 @@
   })();
 
   /* Fiche 03 : emploi */
-  lines2(D.getElementById('empChart'),{t0:2010,t1:2025,rm:MOB?70:260,min:40,max:80,ticks:[40,50,60,70,80],unit:' %',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',breaks:[2011,2017,2021],years:MOB?[2010,2015,2020,2025]:yrs(2010,2025).filter(function(y){return y%2===0||y===2025}),
-    series:[{n:'nés en Belgique',v:DATA.empNat,s:2010,c:'#1A1A1A',w:4,dy:-4},{n:'nés hors UE, moyenne UE',v:DATA.empNeuEU,s:2010,c:'#3D3A35',dash:1,dy:4},{n:'nés hors UE, en Belgique',v:DATA.empNeu,s:2010,c:'#701C0E',w:4.5,dy:6}],
-    marks:[[2010,49.3,'49,3 %','#701C0E',22,'start']],
-    label:'Taux d’emploi des 20-64 ans : nés en Belgique 69,9 % en 2010 et 75,0 % en 2025 ; nés hors de l’Union vivant en Belgique 49,3 % en 2010 et 60,7 % en 2025 ; nés hors de l’Union dans l’ensemble de l’Union 68,6 % en 2025'});
+  lines2(D.getElementById('empChart'),{t0:1995,t1:2025,rm:MOB?70:260,min:40,max:80,ticks:[40,50,60,70,80],unit:' %',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',breaks:[1999,2001,2005,2011,2017,2021],years:MOB?[1995,2005,2015,2025]:[1995,2000,2005,2010,2015,2020,2025],
+    series:[{n:'nés en Belgique',v:DATA.empNat,s:1995,c:'#1A1A1A',w:4,dy:-4},{n:'nés hors UE, moyenne UE',v:DATA.empNeuEU,s:2002,c:'#3D3A35',dash:1,dy:4},{n:'nés hors UE, en Belgique',v:DATA.empNeu,s:1995,c:'#701C0E',w:4.5,dy:6}],
+    marks:[[1995,42,'42 %','#701C0E',22,'start']],
+    label:'Taux d’emploi des 20-64 ans : nés en Belgique 63,1 % en 1995, 69,9 % en 2010 et 75,0 % en 2025 ; nés hors de l’Union vivant en Belgique 42 % en 1995, 49,3 % en 2010 et 60,7 % en 2025 ; nés hors de l’Union dans l’ensemble de l’Union 61,2 % en 2002 et 68,6 % en 2025'});
 
   /* Recherche */
   (function(){

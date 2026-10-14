@@ -62,21 +62,23 @@
     host.appendChild(s);
   }
 
-  lines2(D.getElementById('histChart'),o2({t0:2005,t1:2025,rm:MOB?70:150,min:60,max:170,ticks:[80,100,120,140,160],years:MOB?[2005,2015,2025]:[2005,2009,2013,2017,2021,2025],
-    series:[{n:'Union',v:DATA.hpiEU,s:2005,c:'#A69C8F',dash:1,dy:-2},{n:'Belgique',v:DATA.hpi,s:2005,c:'#C9773A',w:4.5,dy:6}],
-    label:'Indice des prix des logements, 2015 = 100 : Belgique 72,9 en 2005 et 144,9 en 2025 ; Union 85,9 puis 161,9'},DK));
+  lines2(D.getElementById('histChart'),o2({t0:1970,t1:2025,rm:MOB?78:190,min:0,max:170,ticks:[0,40,80,120,160],years:MOB?[1970,1990,2010,2025]:[1970,1975,1980,1985,1990,1995,2000,2005,2010,2015,2020,2025],
+    series:[{n:'Union',v:DATA.hpiEU,s:2005,c:'#A69C8F',dash:1,dy:-8},{n:'Belgique',v:DATA.hpiL,s:1970,c:'#C9773A',w:4.5,dy:8},{n:'Belgique, prix réels',v:DATA.rhp,s:1970,c:'#EDE6DC',w:2.5,dy:4}],
+    label:'Indice des prix des logements, 2015 = 100 : Belgique 7,8 en 1970, 72,9 en 2005 et 144,9 en 2025 en prix courants ; en prix réels (inflation déduite) 37,9 en 1970, 35,0 en 1985 et 106,6 en 2025 ; Union 85,9 en 2005 puis 161,9'},DK));
+  CJD.rename('histChart',['Union (Eurostat, depuis 2005)','Belgique, prix courants (OCDE 1970-2004, Eurostat ensuite)','Belgique, prix réels (OCDE)'],'Indices 2015 = 100. Prix réels : prix nominaux divisés par l’indice des prix à la consommation (calcul de l’OCDE). De 2005 à 2025, l’indice nominal de l’OCDE et celui d’Eurostat sont identiques (à l’arrondi près).');
 
-  lines2(D.getElementById('ptirChart'),o2({t0:2015,t1:2024,rm:MOB?70:150,min:90,max:120,ticks:[90,100,110,120],years:MOB?[2015,2020,2024]:[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],
-    series:[{n:'Union',v:DATA.ptirEU,s:2015,c:'#6A665F',dash:1,dy:-2},{n:'Belgique',v:DATA.ptir,s:2015,c:'#C0341E',w:4.5,dy:6}],
-    label:'Rapport prix des logements sur revenu, 2015 = 100 : Belgique 104,4 en 2021 et 97,0 en 2024 ; Union 115,2 en 2022 et 105,7 en 2024'},PP));
+  lines2(D.getElementById('ptirChart'),o2({t0:1970,t1:2025,rm:MOB?70:170,min:40,max:120,ticks:[40,60,80,100,120],years:MOB?[1970,1990,2010,2025]:[1970,1975,1980,1985,1990,1995,2000,2005,2010,2015,2020,2025],
+    series:[{n:'Union (Eurostat)',v:DATA.ptirEU,s:2015,c:'#6A665F',dash:1,dy:-6},{n:'Belgique (OCDE)',v:DATA.ptirL,s:1970,c:'#C0341E',w:4.5,dy:8}],
+    label:'Rapport prix des logements sur revenu disponible par habitant, 2015 = 100 : Belgique 75,6 en 1970, 51,5 en 1986, 104,7 en 2021 et 96,3 en 2025 (OCDE) ; Union 115,2 en 2022 et 105,7 en 2024 (Eurostat)'},PP));
+  CJD.rename('ptirChart',['Union (Eurostat, tipsho60, depuis 2015)','Belgique (OCDE, rapport prix/revenu)'],'Deux sources aux méthodes proches mais non identiques : pour la Belgique, l’OCDE donne 96,9 en 2024, Eurostat 97,0.');
 
   hb(D.getElementById('burChart'),{cats:['Locataires, prix du marché','Locataires, loyer réduit','Propriétaires sans emprunt','Propriétaires avec emprunt','Ensemble'],max:30,u:' %',ink:'#EDE6DC',L:260,
     series:[{n:'Belgique, 2025',v:[25.4,7.4,1.6,0.9,6.7],c:'#C9773A'}],
     label:'Part des personnes dont le logement coûte plus de 40 % du revenu, 2025 : locataires au prix du marché 25,4 % ; loyer réduit 7,4 % ; propriétaires sans emprunt 1,6 % ; avec emprunt 0,9 % ; ensemble 6,7 %'});
 
-  lines2(D.getElementById('parChart'),{t0:2015,t1:2025,rm:MOB?70:150,min:10,max:35,ticks:[10,20,30],unit:' %',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',years:MOB?[2015,2020,2025]:[2015,2017,2019,2021,2023,2025],breaks:[2019],
-    series:[{n:'Union',v:DATA.parEU,s:2015,c:'#3D3A35',dash:1,dy:-2},{n:'Belgique',v:DATA.par,s:2015,c:'#701C0E',w:4.5,dy:6}],
-    label:'Part des 25-34 ans vivant chez leurs parents : Belgique 19,0 % en 2015, 20,7 % en 2024, 25,1 % en 2025 ; Union 30,1 % en 2025'});
+  lines2(D.getElementById('parChart'),{t0:2003,t1:2025,rm:MOB?70:150,min:10,max:35,ticks:[10,20,30],unit:' %',grid:'rgba(26,26,26,.14)',mute:'#3D3A35',ink:'#1A1A1A',bg:'#7FB6A3',years:MOB?[2003,2014,2025]:[2003,2007,2011,2015,2019,2025],breaks:[2019],
+    series:[{n:'Union',v:DATA.parEU,s:2010,c:'#3D3A35',dash:1,dy:-2},{n:'Belgique',v:DATA.par,s:2003,c:'#701C0E',w:4.5,dy:6}],
+    label:'Part des 25-34 ans vivant chez leurs parents : Belgique 15,4 % en 2003, 13,7 % en 2010, 19,0 % en 2015, 20,7 % en 2024, 25,1 % en 2025 ; Union 29,0 % en 2010 et 30,1 % en 2025'});
 
   /* Recherche */
   (function(){

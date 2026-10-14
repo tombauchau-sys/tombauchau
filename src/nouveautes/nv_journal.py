@@ -8,6 +8,8 @@ SITE = [
         'Méthode : outils utilisés et moyens de reproduire les chiffres.',
         'Liste de vérification réglée : affirmations encore appuyées sur la presse revérifiées ou signalées comme telles.',
         'Lexique : une source extérieure pour chaque terme. Plan du site pour les moteurs de recherche.',
+        'Séries allongées dans sept dossiers : dette et déficit depuis 1980, prix des logements depuis 1970, emploi depuis 1995-1999, demandes d’asile depuis 1985, électricité depuis 1990… Chaque changement de source est signalé sur le graphique et dans le tableau de données.',
+        'Pensions : le financement par l’impôt est précisé (en 2023, les cotisations couvraient environ 63,5 % des recettes de la sécurité sociale des salariés).',
         'Création de cette page.',
     ]),
     ('13 octobre 2026', [
