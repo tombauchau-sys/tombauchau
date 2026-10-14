@@ -209,7 +209,7 @@ def build_home():
     add = read('accueil/atlas.css') + "\n.grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}\n"
     gate_html = src[src.index('<div class="gate grain"'):src.index('<nav class="top"')]
     body = read('accueil/body.html').replace('<div class="frame"><svg id="map"', '<div class="mframe"><svg id="map"')
-    js = src[src.index('<script>'):]
+    js = src[src.index('<script>', src.index('<nav class="top"')):]  # script principal (le premier <script> est celui de la page d’entrée)
     pre = js[:js.index("  /* Lettres à faire monter */")].replace("var MAP=__MAP__;", "var MAP=__MAP__,DATA=__DATA__;")
     letters = """  /* Lettres à faire monter */
   (function(){var n=D.getElementById('fw'),t=n.textContent;n.textContent='';t.split('').forEach(function(c,i){var s=D.createElement('span');s.className='ch';s.textContent=c===' '?' ':c;s.setAttribute('aria-hidden','true');s.style.transitionDelay=(i*0.045)+'s';n.appendChild(s)})})();
