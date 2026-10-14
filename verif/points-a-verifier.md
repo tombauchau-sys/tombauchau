@@ -24,12 +24,12 @@ Liste mise à jour le 14 octobre 2026. Le détail de chaque contrôle figure dan
 
 ## Restent signalés comme tels sur le site (source de presse ou relais, faute de source primaire lisible)
 
-- [ ] **Fiche chômage** — Actiris : 16,0 % en août 2026 (Belga). Les pages d’Actiris n’ont pas pu être lues automatiquement : à relire dans un navigateur (actiris.brussels, rapports mensuels).
+- [ ] **Fiche chômage** — Actiris : 16,0 % en août 2026 (Belga). Les pages d’Actiris n’ont pas pu être lues automatiquement : à relire dans un navigateur (actiris.brussels, rapports mensuels). Nouvel essai le 14 octobre : les pages chiffres d’Actiris ne s’ouvrent pas (page introuvable).
 - [ ] **Justice** — Détenus au sol : record de 784 le 27 avril 2026 (Bruzz, 21/09/2026 : chiffres syndicaux « confirmés par l’administration pénitentiaire ») ; remplace 710 (La Libre). Reste une source de presse : chercher un chiffre publié par le SPF Justice ou le CCSP.
-- [ ] **Inégalités** — Explications de la baisse de la pauvreté depuis 2019 : RTBF (avec Ive Marx, UAntwerpen). Publications repérées mais illisibles automatiquement (à ouvrir dans un navigateur) : SPF Sécurité sociale, analyse SILC 2024 (socialsecurity.belgium.be) ; Mariani et Cantillon (UAntwerpen) sur l’évolution de la pauvreté relative.
-- [ ] **Finances / Pensions** — Comité d’étude sur le vieillissement 2026 : chiffres confirmés par un second relais (La Libre, 9 juillet 2026), hypothèse de productivité ajoutée ; le rapport lui-même reste à ouvrir dans un navigateur (plan.be refuse la lecture automatique).
+- [x] **Inégalités** — Explications de la baisse de la pauvreté : SPF Sécurité sociale (analyse SILC 2024) et Comité d’étude sur le vieillissement, lus le 14 octobre dans le navigateur ; la presse reste citée pour les autres pistes, présentées comme non vérifiées.
+- [x] **Finances / Pensions** — Comité d’étude sur le vieillissement 2026 : communiqué officiel du Bureau du Plan lu le 14 octobre dans le navigateur ; tous les chiffres identiques.
 - [ ] **Logement** — Loi Brunfaut (1949) et part du logement social (6,1 %) : Housing Europe ; 1889 et 1919 appuyés sur Lambrichs (2000-2001).
-- [ ] **Fiche chômage** — ONEM : 55 246 sorties au 31 mars 2026, vérifié à la rédaction ; le site de l’ONEM refuse désormais la lecture automatique.
+- [x] **Fiche chômage** — ONEM : 55 246 sorties au 31 mars 2026, relu le 14 octobre dans le document de l’ONEM (ouvert dans le navigateur), identique. Vérifier s’il existe un suivi plus récent.
 
 ## Mises à jour de données à programmer (ce ne sont pas des erreurs)
 
