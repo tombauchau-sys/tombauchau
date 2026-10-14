@@ -119,6 +119,7 @@ def wrap(html, title, desc, fname='index.html'):
             '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
             f'<meta name="description" content="{e(desc)}">\n'
             '<meta name="robots" content="index, follow, max-snippet:-1">\n'
+            '<meta name="google-site-verification" content="8CY4p_RIcIztYWd81ESIhaF0xvL9GLfE-ciBlfuM7q4">\n'
             f'<link rel="canonical" href="{url}">\n'
             f'<meta property="og:title" content="{e(seo)}">\n'
             f'<meta property="og:description" content="{e(desc)}">\n'
