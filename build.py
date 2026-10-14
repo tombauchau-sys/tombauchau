@@ -47,7 +47,7 @@ DOSSIERS = {
     'logement': ('Logement · Chiffre Juste', 'Le logement en Belgique : prix, rapport prix/revenu, propriétaires et locataires, surcharge des coûts, logement social, sans-abrisme, jeunes chez leurs parents, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'pensions': ('Pensions et vieillissement · Chiffre Juste', 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
 }
-HOME_DESC = 'Chiffre Juste : les 27 pays de l’Union en chiffres vérifiés. Notes des agences, budget public par fonction, dette, pauvreté, commerce entre pays, classements, avec sources et limites.'
+HOME_DESC = 'Chiffre Juste, outil citoyen : des chiffres vérifiés sur la Belgique et les 27 pays de l’Union. Notes des agences, budget public par fonction, dette, pauvreté, commerce entre pays, classements, avec sources et limites.'
 FICHE_DESC = 'Chômage en Belgique, 2025 : 6,2 % selon Statbel et Eurostat. Définition, sources croisées, ruptures de série, limites et sept lectures d’intellectuels.'
 
 
@@ -61,15 +61,81 @@ def links(html, mode):
     return html
 
 
-def wrap(html, title, desc):
+BASE = 'https://tombauchau-sys.github.io/tombauchau/'
+BUILD_DATE = __import__('datetime').date.today().isoformat()
+# Titres pour les moteurs de recherche (60 caractères environ), par fichier
+SEO_TITLES = {
+    'index.html': 'Chiffre Juste · chiffres vérifiés sur la Belgique et l’Europe',
+    'fiche-chomage.html': 'Chômage en Belgique : définitions et chiffres · Chiffre Juste',
+    'dossier-emploi.html': 'Emploi et inactivité en Belgique · Chiffre Juste',
+    'dossier-finances.html': 'Dette et finances publiques belges · Chiffre Juste',
+    'dossier-pensions.html': 'Pensions et vieillissement en Belgique · Chiffre Juste',
+    'dossier-immigration.html': 'Immigration et asile en Belgique · Chiffre Juste',
+    'dossier-justice.html': 'Justice, criminalité et prisons en Belgique · Chiffre Juste',
+    'dossier-sante.html': 'Santé en Belgique : espérance de vie, soins · Chiffre Juste',
+    'dossier-education.html': 'Éducation en Belgique : PISA, diplômes · Chiffre Juste',
+    'dossier-inegalites.html': 'Inégalités et pauvreté en Belgique · Chiffre Juste',
+    'dossier-climat.html': 'Climat et énergie en Belgique · Chiffre Juste',
+    'dossier-logement.html': 'Logement en Belgique : prix, loyers · Chiffre Juste',
+    'comparer.html': 'Comparer les 27 pays de l’Union européenne · Chiffre Juste',
+    'lexique.html': 'Lexique politique, économique et européen · Chiffre Juste',
+    'registre-verification.html': 'Registre de vérification des chiffres · Chiffre Juste',
+}
+AUTHOR = {'@type': 'Person', 'name': 'Tom Bauchau'}
+# Descriptions pour les moteurs de recherche (160 caractères au plus)
+SEO_DESC = {'index.html': 'Outil citoyen : chiffres vérifiés sur la Belgique et l’Europe (dette, emploi, pauvreté, climat, logement), avec sources, définitions et limites.', 'comparer.html': 'Comparer les 27 pays de l’Union sur une trentaine d’indicateurs Eurostat : emploi, finances publiques, santé, éducation, pauvreté, climat, logement.', 'dossier-climat.html': 'Climat et énergie en Belgique : émissions par secteur, renouvelables, nucléaire, dépendance énergétique, prix de l’électricité. Chiffres vérifiés.', 'dossier-education.html': 'Éducation en Belgique : compétences des élèves (PISA), redoublement, décrochage, diplômes et emploi. Chiffres vérifiés, sources et limites.', 'dossier-finances.html': 'Dette, déficit, dépenses par fonction, intérêts et notes des agences : les finances publiques belges en chiffres vérifiés, avec leurs limites.', 'dossier-immigration.html': 'Immigration et asile en Belgique : personnes nées à l’étranger, titres de séjour, demandes d’asile, emploi. Chiffres vérifiés et sources.', 'dossier-inegalites.html': 'Inégalités et pauvreté en Belgique : risque de pauvreté, privations, redistribution, Gini, patrimoine. Chiffres vérifiés, sources et limites.', 'dossier-justice.html': 'Justice et sécurité en Belgique : criminalité enregistrée, chiffre noir, prisons surpeuplées, récidive. Chiffres vérifiés et sources.', 'dossier-logement.html': 'Logement en Belgique : prix, rapport prix/revenu, propriétaires et locataires, coût du logement, logement social. Chiffres vérifiés.', 'dossier-pensions.html': 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, réforme. Chiffres vérifiés.', 'dossier-sante.html': 'Santé en Belgique : espérance de vie, années en bonne santé, dépenses, accès aux soins, mortalité évitable. Chiffres vérifiés et sources.', 'lexique.html': 'Lexique de 166 termes politiques, économiques, sociaux et européens : institutions belges, traités (Maastricht, Lisbonne…), statistique.'}
+
+
+def jsonld(fname, title, desc):
+    url = BASE + ('' if fname == 'index.html' else fname)
+    site = {'@type': 'WebSite', '@id': BASE + '#site', 'name': 'Chiffre Juste', 'url': BASE, 'inLanguage': 'fr', 'author': AUTHOR,
+            'description': 'Outil citoyen de chiffres vérifiés sur la Belgique et l’Europe, avec sources, définitions et limites.'}
+    if fname == 'index.html':
+        data = site
+    else:
+        data = {'@type': 'WebPage', 'name': title, 'url': url, 'description': desc, 'inLanguage': 'fr',
+                'dateModified': BUILD_DATE, 'isPartOf': {'@id': BASE + '#site'}, 'author': AUTHOR}
+        if fname == 'lexique.html':
+            sys.path.insert(0, str(SRC / 'lexique'))
+            import build_lexique as BL
+            terms = BL.load()
+            data = {'@type': 'DefinedTermSet', 'name': 'Lexique de Chiffre Juste', 'url': url, 'inLanguage': 'fr',
+                    'description': desc, 'dateModified': BUILD_DATE, 'isPartOf': {'@id': BASE + '#site'},
+                    'hasDefinedTerm': [{'@type': 'DefinedTerm', 'name': e['t'], 'description': e['d'],
+                                        'url': url + '#t-' + BL.slug(e['t'])} for e in terms]}
+        data = [site, data]
+    return '<script type="application/ld+json">' + json.dumps({'@context': 'https://schema.org', '@graph': data if isinstance(data, list) else [data]}, ensure_ascii=False).replace('</', '<\\/') + '</script>\n'
+
+
+def wrap(html, title, desc, fname='index.html'):
     """Version site : document HTML complet avec métadonnées pour les moteurs de recherche."""
+    seo = SEO_TITLES.get(fname, title)
+    desc = SEO_DESC.get(fname, desc)
+    html = re.sub(r'<title>[^<]*</title>', '<title>' + seo.replace('\\', '') + '</title>', html, count=1)
+    url = BASE + ('' if fname == 'index.html' else fname)
     i = html.index('</style>') + 8
+    e = lambda t: t.replace('"', '&quot;')
     head = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
-            f'<meta name="description" content="{desc}">\n'
-            f'<meta property="og:title" content="{title}">\n'
-            f'<meta property="og:description" content="{desc}">\n')
+            f'<meta name="description" content="{e(desc)}">\n'
+            '<meta name="robots" content="index, follow, max-snippet:-1">\n'
+            f'<link rel="canonical" href="{url}">\n'
+            f'<meta property="og:title" content="{e(seo)}">\n'
+            f'<meta property="og:description" content="{e(desc)}">\n'
+            f'<meta property="og:url" content="{url}">\n'
+            f'<meta property="og:type" content="{"website" if fname == "index.html" else "article"}">\n'
+            '<meta property="og:site_name" content="Chiffre Juste">\n<meta property="og:locale" content="fr_BE">\n'
+            '<meta name="twitter:card" content="summary">\n'
+            + jsonld(fname, seo, desc))
     return head + html[:i] + '\n</head>\n<body>\n' + html[i:] + '</body>\n</html>\n'
+
+
+def write_seo_files(fnames):
+    """Plan du site et robots.txt pour les moteurs de recherche."""
+    order = ['index.html'] + sorted(f for f in fnames if f != 'index.html')
+    urls = ''.join(f'  <url><loc>{BASE + ("" if f == "index.html" else f)}</loc><lastmod>{BUILD_DATE}</lastmod></url>\n' for f in order)
+    (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n', encoding='utf-8')
+    (ROOT / 'robots.txt').write_text('User-agent: *\nAllow: /\n\nSitemap: ' + BASE + 'sitemap.xml\n', encoding='utf-8')
 
 
 # ---------- Comparaison entre pays ----------
@@ -264,11 +330,12 @@ def main():
         left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|COMPARER|LEXIQUE|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
-        (ROOT / fname).write_text(wrap(site, title, desc), encoding='utf-8')
+        (ROOT / fname).write_text(wrap(site, title, desc, fname), encoding='utf-8')
         if artifact:
             outdir.mkdir(exist_ok=True)
             (outdir / fname).write_text(links(html, 'artifact'), encoding='utf-8')
         print('construit', fname)
+    write_seo_files(list(jobs))
 
 
 if __name__ == '__main__':

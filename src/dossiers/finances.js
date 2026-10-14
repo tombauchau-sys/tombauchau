@@ -118,7 +118,7 @@
     var F=[['GF10','Protection sociale','Protection sociale'],['GF07','Santé','Santé'],['GF01','Services généraux (dont intérêts)','Services généraux*'],['GF04','Affaires économiques','Affaires éco.'],['GF09','Enseignement','Enseignement'],['GF03','Ordre et sécurité publics','Ordre public'],['GF02','Défense','Défense'],['GF05','Environnement','Environnement'],['GF08','Loisirs, culture, cultes','Culture, loisirs'],['GF06','Logement et équipements','Logement']];
     var box=D.getElementById('cofChart'),W=MOB?400:1000,row=MOB?46:44,L=MOB?120:290,R=W-(MOB?20:150),mx=MOB?30:26,Hh=F.length*row+36;
     function X(v){return L+v/mx*(R-L)}
-    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dépenses publiques par fonction 2024, Belgique et Union, en % du PIB : protection sociale 20,4 contre 19,6 ; santé 8,0 contre 7,4 ; enseignement 6,3 contre 4,8'}),g=el('g',{'class':'pills'});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dépenses publiques par fonction 2024, Belgique et Union, en % du PIB : protection sociale 20,4 contre 19,6 ; santé 8,0 contre 7,3 ; enseignement 6,3 contre 4,7'}),g=el('g',{'class':'pills'});
     [0,5,10,15,20].forEach(function(v){s.appendChild(el('line',{x1:X(v),x2:X(v),y1:4,y2:Hh-28,stroke:'rgba(26,26,26,.2)'}));s.appendChild(el('text',{x:X(v),y:Hh-10,'text-anchor':'middle',style:TX+'#1A1A1A'},v+' %'))});
     F.forEach(function(f,i){var y=i*row+row/2+2,be=DATA.cofBE[f[0]],eu=DATA.cofEU[f[0]],d=Math.round((be-eu)*10)/10;
       g.appendChild(el('line',{x1:X(Math.min(be,eu)),x2:X(Math.max(be,eu)),y1:y,y2:y,stroke:'#1A1A1A','stroke-width':3,'class':'bar'}));

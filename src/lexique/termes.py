@@ -213,7 +213,7 @@ T('Convention de Genève relative au statut des réfugiés', 'eur',
   'Convention des Nations unies du 28 juillet 1951, complétée par le protocole de New York de 1967. Elle définit le réfugié comme une personne qui craint avec raison d’être persécutée du fait de sa race, de sa religion, de sa nationalité, de son appartenance à un certain groupe social ou de ses opinions politiques, et interdit de la renvoyer vers un pays où elle serait en danger (non-refoulement).',
   al=['Convention de Genève', 'non-refoulement'], v=[at(IMM, 'f-asile')])
 T('Système de Dublin', 'eur',
-  'Règles européennes qui désignent l’État membre responsable de l’examen d’une demande d’asile, en principe le pays de première entrée. Le règlement Dublin III (2013) est remplacé par les règles du pacte sur la migration et l’asile, adopté en 2024, dont l’application a été fixée à 2026.',
+  'Règles européennes qui désignent l’État membre responsable de l’examen d’une demande d’asile, en principe le pays de première entrée. Le règlement Dublin III (2013) est remplacé par les règles du pacte sur la migration et l’asile, adopté en 2024 et entré en application le 12 juin 2026.',
   al=['règlement Dublin', 'pacte sur la migration et l’asile'], v=[at(IMM, 'f-asile')])
 
 # ===================== Économie et finances publiques =====================
@@ -480,7 +480,7 @@ T('Mix électrique', 'env',
   'Répartition de la production d’électricité d’un pays entre ses sources : nucléaire, gaz, renouvelables, etc. À ne pas confondre avec la consommation, qui inclut les importations.',
   al=['production d’électricité'], v=[at(CLI, 'f-energie')])
 T('Sortie du nucléaire', 'env',
-  'Loi belge du 31 janvier 2003 qui interdisait de nouvelles centrales nucléaires et prévoyait la fermeture des réacteurs après 40 ans d’exploitation, entre 2015 et 2025. Elle a été abrogée par un vote de la Chambre le 15 mai 2025.',
+  'Loi belge du 31 janvier 2003 qui interdisait de nouvelles centrales nucléaires et prévoyait la fermeture des réacteurs après 40 ans d’exploitation, entre 2015 et 2025. La loi du 17 mai 2025, votée par la Chambre le 15 mai, a supprimé l’interdiction de nouvelles centrales et le calendrier de fermeture.',
   al=['loi de 2003'], v=[at(CLI, 'histoire')])
 T('Précarité énergétique', 'env',
   'Difficulté d’un ménage à satisfaire ses besoins d’énergie à un coût supportable. L’indicateur européen le plus courant est la part des personnes qui déclarent ne pas pouvoir chauffer convenablement leur logement.',
@@ -616,7 +616,7 @@ SRC = {
     'Traité de Lisbonne': [eg('Lisbon Treaty')],
     'Convention européenne des droits de l’homme': [('Cour européenne des droits de l’homme, texte de la Convention', 'https://www.echr.coe.int/fr/european-convention-on-human-rights')],
     'Convention de Genève relative au statut des réfugiés': [('HCR, Convention et protocole relatifs au statut des réfugiés (texte)', 'https://www.unhcr.org/fr-fr/sites/fr-fr/files/legacy-pdf/4b14f4a62.pdf')],
-    'Système de Dublin': [('Règlement (UE) n° 604/2013 (Dublin III), EUR-Lex', EURLEX + '32013R0604'), ('Conseil de l’UE, pacte sur la migration et l’asile', 'https://www.consilium.europa.eu/fr/policies/eu-pact-migration-asylum/')],
+    'Système de Dublin': [('Règlement (UE) n° 604/2013 (Dublin III), EUR-Lex', EURLEX + '32013R0604'), ('Conseil de l’UE, pacte sur la migration et l’asile', 'https://www.consilium.europa.eu/fr/policies/eu-pact-migration-asylum/'), ('Commission européenne, nouvelles règles de responsabilité en matière d’asile (16 juillet 2026)', 'https://home-affairs.ec.europa.eu/news/commission-presents-assessment-application-new-asylum-responsibility-rules-2026-07-16_en')],
 
     'Produit intérieur brut': [eg('Gross domestic product (GDP)')],
     'PIB par habitant': [eg('Gross domestic product (GDP)')],
@@ -707,7 +707,7 @@ SRC = {
     'Énergies renouvelables': [eg('Renewable energy sources')],
     'Dépendance énergétique': [eg('Energy dependency rate')],
     'Mix électrique': [eg('Electricity')],
-    'Sortie du nucléaire': [('Climate Change Laws of the World, loi du 31 janvier 2003', 'https://climate-laws.org/document/act-on-nuclear-energy-for-industrial-electricity-production_572c')],
+    'Sortie du nucléaire': [('Climate Change Laws of the World, loi du 31 janvier 2003', 'https://climate-laws.org/document/act-on-nuclear-energy-for-industrial-electricity-production_572c'), ('Chambre des représentants, DOC 56 0318/009 (texte adopté, mai 2025)', 'https://www.dekamer.be/FLWB/pdf/56/0318/56K0318009.pdf')],
     'Précarité énergétique': [('Recommandation (UE) 2023/2407 de la Commission sur la précarité énergétique (référence)', None)],
     'Effet rebond': [('Gillingham, K., Rapson, D. et Wagner, G. (2014), Resources for the Future, DP 14-39', 'https://www.rff.org/publications/working-papers/the-rebound-effect-and-energy-efficiency-policy/')],
 
