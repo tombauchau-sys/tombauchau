@@ -38,11 +38,14 @@ def entry(e):
         out.append(f'<p class="lx-ex"><b>Repère</b>{e_(e["ex"])}</p>')
     if e['al']:
         out.append(f'<p class="lx-al"><b>Aussi</b>{e_(" · ".join(e["al"]))}</p>')
+    if e['s']:
+        items = []
+        for lab, url in e['s']:
+            items.append(f'<li><a href="{url}" target="_blank" rel="noopener">{e_(lab)}<span class="ext" aria-hidden="true"> ↗</span><span class="sr"> (site externe, nouvel onglet)</span></a></li>' if url else f'<li>{e_(lab)}</li>')
+        out.append(f'<div class="lx-s"><b>{"Sources" if len(e["s"]) > 1 else "Source"}</b><ul>{"".join(items)}</ul></div>')
     if e['v']:
         links = ' · '.join(f'<a href="{href}">{e_(lab)}</a>' for lab, href in e['v'])
-        out.append(f'<p class="lx-v"><b>Sur le site</b>{links}</p>')
-    for lab, url in e['s']:
-        out.append(f'<p class="lx-s"><b>Texte</b><a href="{url}" target="_blank" rel="noopener">{e_(lab)}</a></p>')
+        out.append(f'<p class="lx-v"><b>Voir aussi dans les dossiers</b>{links}</p>')
     out.append('</article>')
     return ''.join(out)
 
@@ -58,13 +61,15 @@ CSS = '''
 .lx-az a:hover,.lx-az a:focus-visible{border-color:var(--line)}
 .lx-az span{font:600 14px var(--sans);color:#B5B1A8;min-width:30px;height:30px;display:inline-grid;place-items:center}
 .lx-count{font:14px var(--sans);color:var(--grey);margin:10px 0 0}
-.lx-letter{font-family:var(--serif);font-size:56px;line-height:1;margin:48px 0 8px;scroll-margin-top:260px}
+.lx-letter{font-family:var(--serif);font-size:56px;line-height:1;margin:48px 0 8px;scroll-margin-top:340px}
 .lx-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
-.lx{border-top:1.5px solid var(--rule);padding:18px 0 20px;scroll-margin-top:260px}
+.lx{border-top:1.5px solid var(--rule);padding:18px 0 20px;scroll-margin-top:340px}
 .lx h3{font:600 21px/1.25 var(--sans);margin:0 0 8px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
 .lx-tag{font:600 11.5px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--grey);border:1.5px solid var(--rule);border-radius:999px;padding:2px 9px}
 .lx-d{font:17px/1.55 var(--sans);margin:0;color:var(--ink)}
 .lx-ex,.lx-al,.lx-v,.lx-s{font:15px/1.5 var(--sans);margin:8px 0 0;color:#3D3A35}
+.lx-s ul{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:3px}.lx-s li{padding-left:14px;position:relative}.lx-s li::before{content:'';position:absolute;left:2px;top:.65em;width:5px;height:5px;background:var(--red-ink);border-radius:50%}
+.lx-s .ext{font-size:.85em}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .lx-ex b,.lx-al b,.lx-v b,.lx-s b{font:600 11.5px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--grey);margin-right:8px}
 .lx-ex{background:#fff;border-left:4px solid var(--red-ink);padding:6px 10px}
 .lx a{color:var(--ink);text-underline-offset:3px}

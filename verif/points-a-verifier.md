@@ -80,5 +80,6 @@ Séries vérifiées sur Eurostat (dernière année publiée, date de mise à jou
 - À faire : production d'électricité (nrg_bal_peh) — non relue (HTTP 429), probablement encore 2024.
 - Mis à jour le 12/10 : accueil (PIB 2025, population au 1/1/2026, dépenses totales 2025), immigration (solde 2016-2025).
 ## Lexique (13 octobre 2026)
-- Liens EUR-Lex des traités (CELEX 11951K, 11957E, 11986U, 11992M, 11997D, 12001C, 12007L, 12016P, protocole 12016E/PRO/13) : non ouverts depuis cette session (autorisation d'accès non accordée). À cliquer une fois pour confirmer.
+- Liens EUR-Lex : Maastricht (11992M) et le glossaire (pacte de stabilité, subsidiarité) ouverts et confirmés le 14/10. Les autres (11951K, 11957E, 11986U, 11997D, 12001C, 12007L, 12016P, 12016E/PRO/13, 12016E, 32013R0604, 32021R1119) suivent le format officiel mais EUR-Lex refuse la lecture automatique (robots) : à cliquer une fois pour confirmer.
+- Lexique, 14/10 : chaque terme a au moins une source externe. Glossaire Eurostat : titres relevés dans la liste officielle du glossaire (pages A à « Pupil-teacher ratios ») et par recherche limitée au domaine ; la dernière page de la liste a été refusée (HTTP 429).
 - Système de Dublin : vérifier la date d'application effective du pacte sur la migration et l'asile (indiquée « fixée à 2026 »).
