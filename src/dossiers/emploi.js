@@ -26,16 +26,16 @@
   })();
 
   /* Courbes génériques */
-  function lines(host,o){CJD.series(host,o.series,o.t0||T0);
+  function lines(host,o){var T0=o.t0||2015,T1=o.t1||2025;CJD.series(host,o.series,T0);
     var W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?38:52,R=W-(o.w?(MOB?60:125):(MOB?70:150)),T=26,B=Hh-40,mn=o.min,mx=o.max,n=T1-T0;
     function X(y){return L+(y-T0)/n*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
     o.ticks.forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:o.grid}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+o.mute},fr(v,0)+' %'))});
-    [2015,2017,2019,2021,2023,2025].forEach(function(y){if(MOB&&(y===2017||y===2023))return;s.appendChild(el('text',{x:X(y),y:Hh-12,'text-anchor':'middle',style:TX+o.mute},y))});
-    if(o.breaks)[2016.5,2020.5].forEach(function(b){s.appendChild(el('line',{x1:X(b),x2:X(b),y1:T,y2:B,stroke:'#E2402B','stroke-dasharray':'2 6'}));s.appendChild(el('text',{x:X(b),y:T-6,'text-anchor':'middle',style:'font-size:18px;fill:#E2402B'},'×'))});
+    (o.years||[2015,2017,2019,2021,2023,2025]).forEach(function(y){s.appendChild(el('text',{x:X(y),y:Hh-12,'text-anchor':'middle',style:TX+o.mute},y))});
+    if(o.breaks)(o.breaks.length?o.breaks:[2016.5,2020.5]).forEach(function(b){s.appendChild(el('line',{x1:X(b),x2:X(b),y1:T,y2:B,stroke:'#E2402B','stroke-dasharray':'2 6'}));s.appendChild(el('text',{x:X(b),y:T-6,'text-anchor':'middle',style:'font-size:18px;fill:#E2402B'},'×'))});
     var g=el('g',{});
     o.series.forEach(function(se,i){
-      var d=se.v.map(function(v,j){return (j?'L':'M')+X(T0+j).toFixed(1)+' '+Y(v).toFixed(1)}).join(' ');
+      var pen=0,d=se.v.map(function(v,j){if(v==null){pen=0;return ''}var c=(pen?'L':'M')+X(T0+j).toFixed(1)+' '+Y(v).toFixed(1);pen=1;return c}).join(' ');
       var p=el('path',{d:d,fill:'none',stroke:se.c,'stroke-width':se.w||3,'stroke-linejoin':'round','stroke-linecap':'round','class':se.dash?'fadein':'drawline'});
       if(se.dash)p.setAttribute('stroke-dasharray','6 6');
       g.appendChild(p);
@@ -93,9 +93,9 @@
       reg:[{n:'Flandre',v:R.Flandre,c:'#7FB6A3'},{n:'Belgique',v:DATA.emp.BE,c:'#C9773A',w:4.5,dy:-2},{n:'Wallonie',v:R.Wallonie,c:'#F2A07B',dy:6},{n:'Bruxelles',v:R.Bruxelles,c:'#9C98F0',dy:6}],
       eu:[{n:'Union',v:DATA.emp.EU27_2020,c:'#A69C8F',dash:1},{n:'Belgique',v:DATA.emp.BE,c:'#C9773A',w:4.5}]};
     var bs=D.querySelectorAll('#empTg button');
-    function draw(k){lines(host,{series:sets[k],min:55,max:80,ticks:[55,60,65,70,75,80],grid:'#3B332B',mute:'#A69C8F',breaks:1,label:k==='reg'?'Taux d’emploi 2015-2025 : Flandre 77,3 %, Belgique 72,8 %, Wallonie 67,9 %, Bruxelles 63,9 %':'Taux d’emploi 2015-2025 : Union 76,1 %, Belgique 72,8 %'});bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}
+    function draw(k){lines(host,{t0:1999,series:sets[k],min:55,max:80,ticks:[55,60,65,70,75,80],grid:'#3B332B',mute:'#A69C8F',breaks:[2000.5,2004.5,2010.5,2016.5,2020.5],years:MOB?[1999,2008,2017,2025]:[1999,2003,2007,2011,2015,2019,2025],label:k==='reg'?'Taux d’emploi 1999-2025 : Flandre de 67,4 à 77,3 %, Belgique de 64,3 à 72,8 %, Wallonie de 60,2 à 67,9 %, Bruxelles de 58,4 à 63,9 %':'Taux d’emploi : Belgique de 64,3 % en 1999 à 72,8 % en 2025 ; Union de 67,3 % en 2009 à 76,1 % en 2025'});bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}
     bs.forEach(function(b){b.addEventListener('click',function(){draw(b.dataset.k)})});draw('reg');
-    CJD.series(host,[{n:'Flandre',v:R.Flandre},{n:'Wallonie',v:R.Wallonie},{n:'Bruxelles',v:R.Bruxelles},{n:'Belgique',v:DATA.emp.BE},{n:'Union',v:DATA.emp.EU27_2020}],T0,null,'Ruptures de série en 2017 et 2021.');
+    CJD.series(host,[{n:'Flandre',v:R.Flandre},{n:'Wallonie',v:R.Wallonie},{n:'Bruxelles',v:R.Bruxelles},{n:'Belgique',v:DATA.emp.BE},{n:'Union (depuis 2009)',v:DATA.emp.EU27_2020}],1999,null,'Ruptures de série signalées par Eurostat en 2001, 2005, 2011, 2017 et 2021 (1999 : début de la série).');
     CJD.set('empEU',['Pays','Taux d’emploi 2025 (%)'],DATA.eu27.slice().sort(function(a,b){return b[1]-a[1]}).map(function(c){return [c[0],c[1]]}),'Moyenne de l’Union : 76,1 %.');
 
     var dd=DATA.eu27.slice().sort(function(a,b){return a[1]-b[1]}),box=D.getElementById('empEU');
@@ -171,9 +171,9 @@
 
   /* 3. Durée et jeunes */
   (function(){
-    function sm(id,k,mx,ticks,lab){lines(D.getElementById(id),{w:MOB?420:600,h:MOB?300:340,series:[{n:'Union',v:DATA[k].EU27_2020,c:'#6A665F',dash:1,dy:k==='ltu'?10:0},{n:'Belgique',v:DATA[k].BE,c:'#E2402B',w:4,dy:k==='ltu'?-6:0}],min:0,max:mx,ticks:ticks,grid:'#D7D4CC',mute:'#6A665F',breaks:1,label:lab})}
-    sm('ltuChart','ltu',6,[0,2,4,6],'Chômage de longue durée 2015-2025 : Belgique de 4,0 % à 2,0 %, Union de 4,9 % à 1,9 %');
-    sm('youChart','youth',25,[0,5,10,15,20,25],'Chômage des 15-24 ans 2015-2025 : Belgique 17,4 %, Union 15,2 % en 2025');
+    function sm(id,k,mx,ticks,lab){lines(D.getElementById(id),{t0:2009,years:MOB?[2009,2017,2025]:[2009,2013,2017,2021,2025],w:MOB?420:600,h:MOB?300:340,series:[{n:'Union',v:DATA[k].EU27_2020,c:'#6A665F',dash:1,dy:k==='ltu'?10:0},{n:'Belgique',v:DATA[k].BE,c:'#E2402B',w:4,dy:k==='ltu'?-6:0}],min:0,max:mx,ticks:ticks,grid:'#D7D4CC',mute:'#6A665F',breaks:[2010.5,2016.5,2020.5],label:lab})}
+    sm('ltuChart','ltu',6,[0,2,4,6],'Chômage de longue durée 2009-2025 : Belgique de 3,2 % à 2,0 %, avec un pic de 4,0 % en 2015 ; Union de 3,1 % à 1,9 %, pic de 5,4 % en 2013-2014');
+    sm('youChart','youth',30,[0,10,20,30],'Chômage des 15-24 ans 2009-2025 : Belgique de 22,0 % à 17,4 %, Union de 21,2 % à 15,2 %, pic de 25,2 % en 2013');
   })();
 
   /* 4. Recherche */

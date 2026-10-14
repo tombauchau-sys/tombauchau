@@ -34,7 +34,7 @@
     (o.events||[]).forEach(function(e){var x=X(e.y);s.appendChild(el('line',{x1:x,x2:x,y1:T,y2:B,stroke:o.grid,'stroke-dasharray':'2 5'}));if(!MOB||e.m)s.appendChild(el('text',{x:x+6,y:T+12,style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?16:22)+'px;fill:'+o.ink},e.t))});
     var g=el('g',{});
     o.series.forEach(function(se){
-      var d=se.v.map(function(v,j){return (j?'L':'M')+X(T0+j).toFixed(1)+' '+Y(v).toFixed(1)}).join(' ');
+      var pen=0,d=se.v.map(function(v,j){if(v==null){pen=0;return ''}var c=(pen?'L':'M')+X(T0+j).toFixed(1)+' '+Y(v).toFixed(1);pen=1;return c}).join(' ');
       var p=el('path',{d:d,fill:'none',stroke:se.c,'stroke-width':se.w||3,'stroke-linejoin':'round','stroke-linecap':'round','class':se.dash?'fadein':'drawline'});
       if(se.dash)p.setAttribute('stroke-dasharray','6 6');g.appendChild(p);
       var lv=se.v[se.v.length-1];
@@ -62,9 +62,10 @@
     host.appendChild(s);
   })();
   /* 1. Dette */
-  lines(D.getElementById('debtChart'),{t0:2000,t1:2025,min:50,max:120,ticks:[60,80,100,120],grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',years:MOB?[2000,2010,2020,2025]:[2000,2005,2010,2015,2020,2025],
-    refs:[{v:60,c:'#E2402B',t:'60 % : valeur de référence européenne',dy:16}],events:[{y:2008,t:'crise financière'},{y:2020,t:'pandémie',m:1}],
-    series:[{n:'Union',v:DATA.debt.EU,c:'#A69C8F',dash:1},{n:'Belgique',v:DATA.debt.BE,c:'#C9773A',w:4.5}],label:'Dette publique 2000-2025 : Belgique de 109,7 % à 107,9 % du PIB, Union de 66,6 % à 81,7 %'});
+  lines(D.getElementById('debtChart'),{t0:1980,t1:2025,min:50,max:145,ticks:[60,80,100,120,140],grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',years:MOB?[1980,1995,2010,2025]:[1980,1985,1990,1995,2000,2005,2010,2015,2020,2025],
+    refs:[{v:60,c:'#E2402B',t:'60 % : valeur de référence européenne',dy:16}],events:[{y:1992,t:'Maastricht'},{y:2008,t:'crise financière'},{y:2020,t:'pandémie',m:1}],
+    series:[{n:'Union',v:DATA.debtL.EU,c:'#A69C8F',dash:1},{n:'Belgique',v:DATA.debtL.BE,c:'#C9773A',w:4.5}],label:'Dette publique 1980-2025 : Belgique de 76,8 % du PIB en 1980 à 138,9 % en 1993, 87,5 % en 2007 et 107,9 % en 2025 ; Union (depuis 1995) de 70,6 % à 81,7 %'});
+  CJD.rename('debtChart',['Union (% du PIB ; 1995-1999 : FMI)','Belgique (% du PIB ; 1980-1994 : FMI)'],'1980-1994 (Belgique) et 1995-1999 (Union) : FMI ; ensuite Eurostat. Les deux sources concordent pour la Belgique en 1995 (131,3 % et 131,5 %).');
 
   (function(){
     var S=DATA.sub.debt,box=D.getElementById('subChart'),W=MOB?400:1000,row=MOB?58:54,L=MOB?120:250,R=W-(MOB?50:110),mx=95,Hh=S.length*row+30;
@@ -83,20 +84,21 @@
 
   /* 2. Déficit */
   (function(){
-    var box=D.getElementById('defChart'),T0=2000,T1=2025,W=MOB?420:1000,Hh=MOB?320:400,L=MOB?40:56,R=W-(MOB?60:130),T=20,B=Hh-40,mn=-10,mx=1;
-    CJD.series(box,[{n:'Belgique (% du PIB)',v:DATA.def.BE},{n:'Union (% du PIB)',v:DATA.def.EU}],T0);
+    var box=D.getElementById('defChart'),T0=1980,T1=2025,W=MOB?420:1000,Hh=MOB?340:440,L=MOB?40:56,R=W-(MOB?60:130),T=20,B=Hh-40,mn=-17,mx=1;
+    CJD.series(box,[{n:'Belgique (% du PIB ; 1980-1994 : FMI)',v:DATA.defL.BE},{n:'Union (% du PIB ; 1991-1999 : FMI)',v:DATA.defL.EU}],T0,null,'1980-1994 (Belgique) et 1991-1999 (Union) : FMI, Perspectives de l’économie mondiale ; ensuite Eurostat. Pour la Belgique, les deux sources sont identiques de 1995 à 2025.');
     function X(y){return L+(y-T0+.5)/(T1-T0+1)*(R-L)} function Y(v){return T+(mx-v)/(mx-mn)*(B-T)}
-    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Solde public 2000-2025 : Belgique −5,2 % en 2025, Union −3,1 %, plus bas −9,0 % en 2020'});
-    [0,-3,-6,-9].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v===-3?'#E2402B':'#D7D4CC','stroke-width':v===-3?2:1,'stroke-dasharray':v===-3?'3 5':''}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+'#6A665F'},(v?'−'+Math.abs(v):'0')+' %'))});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Solde public 1980-2025 : Belgique −16,0 % en 1981, proche de l’équilibre entre 2000 et 2007, −9,0 % en 2020, −5,2 % en 2025 ; Union −3,1 % en 2025'});
+    [0,-3,-6,-9,-12,-15].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v===-3?'#E2402B':'#D7D4CC','stroke-width':v===-3?2:1,'stroke-dasharray':v===-3?'3 5':''}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+'#6A665F'},(v?'−'+Math.abs(v):'0')+' %'))});
     var bw=(R-L)/(T1-T0+1)*.62,g=el('g',{'class':'seg-bar'});
-    DATA.def.BE.forEach(function(v,i){var x=X(T0+i)-bw/2,y0=Y(0),y1=Y(v);g.appendChild(el('rect',{x:x,y:Math.min(y0,y1),width:bw,height:Math.max(1.5,Math.abs(y1-y0)),fill:v<-3?'#E2402B':'#1A1A1A','class':'s',style:'transform-origin:top'}))});
+    DATA.defL.BE.forEach(function(v,i){var x=X(T0+i)-bw/2,y0=Y(0),y1=Y(v);g.appendChild(el('rect',{x:x,y:Math.min(y0,y1),width:bw,height:Math.max(1.5,Math.abs(y1-y0)),fill:v<-3?'#E2402B':'#1A1A1A','class':'s',style:'transform-origin:top'}))});
     s.appendChild(g);
-    var d=DATA.def.EU.map(function(v,j){return (j?'L':'M')+X(T0+j).toFixed(1)+' '+Y(v).toFixed(1)}).join(' ');
+    var pen=0,d=DATA.defL.EU.map(function(v,j){if(v==null){pen=0;return ''}var c=(pen?'L':'M')+X(T0+j).toFixed(1)+' '+Y(v).toFixed(1);pen=1;return c}).join(' ');
     s.appendChild(el('path',{d:d,fill:'none',stroke:'#6A665F','stroke-width':2.5,'stroke-dasharray':'6 5','class':'fadein'}));
-    (MOB?[2000,2010,2020,2025]:[2000,2005,2010,2015,2020,2025]).forEach(function(y){s.appendChild(el('text',{x:X(y),y:Hh-12,'text-anchor':'middle',style:TX+'#6A665F'},y))});
+    (MOB?[1980,1995,2010,2025]:[1980,1985,1990,1995,2000,2005,2010,2015,2020,2025]).forEach(function(y){s.appendChild(el('text',{x:X(y),y:Hh-12,'text-anchor':'middle',style:TX+'#6A665F'},y))});
+    s.appendChild(el('line',{x1:X(1994.5),x2:X(1994.5),y1:T,y2:B,stroke:'#6A665F','stroke-dasharray':'2 5'}));s.appendChild(el('text',{x:X(1994.5)+6,y:B-8,style:'font-family:var(--sans);font-size:'+(MOB?12:14)+'px;fill:#6A665F'},'← FMI · Eurostat →'));
     s.appendChild(el('text',{x:X(2025)+bw,y:Y(-5.2)+5,style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:#E2402B'},'−5,2 %'+(MOB?'':' Belgique')));
     s.appendChild(el('text',{x:X(2025)+bw,y:Y(-3.1)-6,'class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:#6A665F'},'−3,1 %'+(MOB?'':' Union')));
-    s.appendChild(el('text',{x:L+6,y:Y(-3)+16,style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:#E2402B'},MOB?'−3 % : référence':'−3 % : valeur de référence'));
+    s.appendChild(el('text',{x:X(1997),y:Y(-3)+18,style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?13:16)+'px;fill:#E2402B'},MOB?'−3 % : réf.':'−3 % : valeur de référence'));
     box.appendChild(s);
   })();
 
@@ -140,12 +142,12 @@
 
   /* 4. Intérêts : euros courants et euros constants de 2025 (déflateur : IPCH, Eurostat prc_hicp_ainr, 2025 = 100) */
   (function(){
-    var I=DATA.int,P=DATA.ipch,box=D.getElementById('intChart'),W=MOB?420:1000,Hh=MOB?330:420,L=MOB?44:60,R=W-20,T=MOB?62:48,B=Hh-34,mx=18000,n=I.length;
+    var I=DATA.int,P=DATA.ipch,Y0=DATA.intY0,box=D.getElementById('intChart'),W=MOB?420:1000,Hh=MOB?330:420,L=MOB?44:60,R=W-20,T=MOB?62:48,B=Hh-34,mx=38000,n=I.length;
     var K=I.map(function(v,i){return v*100/P[i]});
-    CJD.set('intChart',['Année','Intérêts, millions d’euros courants','IPCH Belgique (2025 = 100)','Intérêts, millions d’euros de 2025 (calcul Chiffre Juste)'],I.map(function(v,i){return [2015+i,v,P[i],Math.round(K[i]*10)/10]}));
+    CJD.set('intChart',['Année','Intérêts, millions d’euros courants','IPCH Belgique (2025 = 100)','Intérêts, millions d’euros de 2025 (calcul Chiffre Juste)'],I.map(function(v,i){return [Y0+i,v,P[i],Math.round(K[i]*10)/10]}),'Rupture de série en 2009 (Eurostat). 2024 et 2025 provisoires.');
     function Y(v){return B-v/mx*(B-T)}
-    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Intérêts payés 2015-2025. En euros courants : 12,4 milliards en 2015, 8,6 en 2021, 14,3 en 2025. En euros de 2025, inflation déduite : 16,8 milliards en 2015, 10,4 en 2021, 14,3 en 2025.'}),g=el('g',{'class':'seg-bar'});
-    [0,5000,10000,15000].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:'#3B332B'}));s.appendChild(el('text',{x:L-8,y:Y(v)+4,'text-anchor':'end',style:TX+'#A69C8F'},v/1000+' Md'))});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Intérêts payés 1996-2025. En euros courants : 18,9 milliards en 1996, 12,4 en 2015, 8,6 en 2021, 14,3 en 2025. En euros de 2025, inflation déduite : 36,3 milliards en 1996, 16,8 en 2015, 10,4 en 2021, 14,3 en 2025.'}),g=el('g',{'class':'seg-bar'});
+    [0,10000,20000,30000].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:'#3B332B'}));s.appendChild(el('text',{x:L-8,y:Y(v)+4,'text-anchor':'end',style:TX+'#A69C8F'},v/1000+' Md'))});
     var C1='#A69C8F',C2='#C9773A',lab=function(x,y,t,c){g.appendChild(el('text',{x:x,y:y,'text-anchor':'middle',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?13:15)+'px;fill:'+c},t))};
     var lg=el('g',{}),ly=MOB?8:10;
     lg.appendChild(el('rect',{x:L,y:ly,width:12,height:12,fill:C1}));lg.appendChild(el('text',{x:L+18,y:ly+11,style:TX+'#EDE6DC'},'euros courants (de chaque année)'));
@@ -153,7 +155,7 @@
     lg.appendChild(el('rect',{x:lx2,y:ly2,width:12,height:12,fill:C2}));lg.appendChild(el('text',{x:lx2+18,y:ly2+11,style:TX+'#EDE6DC'},'euros de 2025 (inflation déduite)'));
     s.appendChild(lg);
     var slot=(R-L)/n,bw=slot*(MOB?.36:.38),gap=slot*.04;
-    I.forEach(function(v,i){var y=2015+i,x0=L+i*slot+(slot-2*bw-gap)/2,x1=x0+bw+gap,k=K[i],show=MOB?(y===2015||y===2021||y===2025):true;
+    I.forEach(function(v,i){var y=Y0+i,x0=L+i*slot+(slot-2*bw-gap)/2,x1=x0+bw+gap,k=K[i],show=MOB?(y===1996||y===2021||y===2025):(y===1996||y===2008||y===2015||y===2021||y===2025);
       g.appendChild(el('rect',{x:x0,y:Y(v),width:bw,height:B-Y(v),fill:C1,'class':'s',style:'transform-origin:bottom'}));
       g.appendChild(el('rect',{x:x1,y:Y(k),width:bw,height:B-Y(k),fill:C2,'class':'s',style:'transform-origin:bottom'}));
       if(show){
@@ -161,16 +163,17 @@
         else if(MOB){lab(x1+bw/2,Y(k)-8,fr(k/1000),C2);var cx=x0+bw/2+4,cy=Y(v)+8;g.appendChild(el('text',{x:cx,y:cy,'text-anchor':'end',transform:'rotate(-90 '+cx+' '+cy+')',style:'font-family:var(--sans);font-weight:700;font-size:12px;fill:#1E1914'},fr(v/1000)))}
         else{lab(x1+bw/2+2,Y(k)-8,fr(k/1000),C2);lab(x0+bw/2-2,Y(v)-8,fr(v/1000),C1)}
       }
-      if(!MOB||i%2===0)g.appendChild(el('text',{x:L+i*slot+slot/2,y:Hh-12,'text-anchor':'middle',style:TX+'#A69C8F'},y+(y>=2024?'*':'')));
+      if(y%(MOB?10:5)===0||y===2025||y===1996)g.appendChild(el('text',{x:L+i*slot+slot/2,y:Hh-12,'text-anchor':'middle',style:TX+'#A69C8F'},y+(y>=2024?'*':'')));
     });
     s.appendChild(g);box.appendChild(s);
   })();
 
 
   /* 4b. Investissement */
-  lines(D.getElementById('invChart'),{t0:2000,t1:2025,min:1.5,max:4.5,ticks:[2,3,4],grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',years:MOB?[2000,2010,2020,2025]:[2000,2005,2010,2015,2020,2025],
+  lines(D.getElementById('invChart'),{t0:1995,t1:2025,min:1.5,max:4.5,ticks:[2,3,4],grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',years:MOB?[1995,2005,2015,2025]:[1995,2000,2005,2010,2015,2020,2025],
     events:[{y:2008,t:'écart max. : 1,7 pt'}],
-    series:[{n:'Union',v:DATA.inv.EU,c:'#6A665F',dash:1,dy:-4},{n:'Belgique',v:DATA.inv.BE,c:'#E2402B',w:4.5,dy:4}],label:'Investissement public 2000-2025 : Belgique de 2,4 % à 3,1 % du PIB, Union de 3,3 % à 3,9 %'});
+    series:[{n:'Union',v:DATA.inv.EU,c:'#6A665F',dash:1,dy:-4},{n:'Belgique',v:DATA.inv.BE,c:'#E2402B',w:4.5,dy:4}],label:'Investissement public 1995-2025 : Belgique de 2,2 % à 3,1 % du PIB, Union (depuis 2000) de 3,3 % à 3,9 %'});
+  CJD.rename('invChart',['Union (% du PIB, depuis 2000)','Belgique (% du PIB)'],'Rupture de série en 2009 ; 2024-2025 provisoires. Eurostat ne publie pas l’agrégat de l’Union avant 2000.');
 
   /* 5. Recherche */
   (function(){
