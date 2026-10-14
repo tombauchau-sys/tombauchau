@@ -396,3 +396,23 @@ html.calm .cj-tip{box-shadow:none}
 /* Pictogramme « presse » : chiffre relayé par la presse, source primaire non consultée */
 .presse{display:inline-block;vertical-align:.25em;margin-left:4px;padding:0 6px 0 18px;border:1px solid currentColor;border-radius:999px;font:700 10.5px/1.6 var(--sans);letter-spacing:.06em;text-transform:uppercase;position:relative;opacity:.85;white-space:nowrap}
 .presse::before{content:"";position:absolute;left:5px;top:50%;width:8px;height:7px;margin-top:-3.5px;border:1.5px solid currentColor;border-radius:1px;box-sizing:border-box}
+/* Grille des familles de pensée */
+.famgrid{margin:28px 0 32px;border:1.5px solid currentColor;border-radius:8px;padding:14px 18px;max-width:980px}
+.famgrid .famt{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.famgrid .famt span{display:block;font-weight:400;letter-spacing:0;text-transform:none;font-size:13px;opacity:.75;margin-top:2px}
+.famgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.famgrid li{display:grid;grid-template-columns:minmax(150px,240px) 1fr;gap:12px;font-size:15px;line-height:1.45;padding:4px 0;border-top:1px solid rgba(128,128,128,.3)}
+.famgrid li b{font-weight:700}
+.famgrid a{color:inherit;text-underline-offset:2px}
+.famgrid em{opacity:.7}
+@media (max-width:640px){.famgrid li{grid-template-columns:1fr;gap:2px}}
+/* Pistes proposées par les chercheurs */
+.sols{margin-top:48px}
+.sols-n{max-width:80ch;font-size:15.5px;opacity:.85;margin:8px 0 16px}
+.sols-t{overflow-x:auto}
+.sols table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.45;min-width:760px}
+.sols th,.sols td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid rgba(128,128,128,.35)}
+.sols thead th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid currentColor}
+.sols tbody th{font-weight:700}
+.sols a{color:inherit;text-underline-offset:2px}
+@media (max-width:640px){.sols table{min-width:0}}

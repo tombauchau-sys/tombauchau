@@ -232,3 +232,20 @@
     f.appendChild(bt);
   });
 })();
+
+/* Grille commune des lectures : les mêmes cinq familles, dans le même ordre, pour chaque dossier (les cartes, elles, changent d’ordre à chaque visite) */
+(function(){
+  var D=document,box=D.getElementById('reads');if(!box)return;
+  var arts=[].slice.call(box.querySelectorAll('.read[data-fam]'));if(!arts.length)return;
+  var F=[['L','Libérale'],['S','Sociale-démocrate'],['C','Conservatrice ou démocrate-chrétienne'],['E','Écologiste'],['K','Critique (marxiste, sociologie critique)']];
+  var g=D.createElement('div');g.className='famgrid';
+  var h='<p class="famt">Grille commune à tous les dossiers <span>famille politique ou intellectuelle la plus proche, à titre indicatif</span></p><ul>';
+  F.forEach(function(f){
+    var who=arts.filter(function(a){return a.getAttribute('data-fam')===f[0]}).map(function(a){var n=a.querySelector('h3');a.id=a.id||('lect-'+(arts.indexOf(a)+1));return '<a href="#'+a.id+'">'+(n?n.textContent:'')+'</a>'});
+    h+='<li><b>'+f[1]+'</b><span>'+(who.length?who.join(' · '):'<em>pas de lecture propre trouvée sur ce sujet</em>')+'</span></li>';
+  });
+  var o=arts.filter(function(a){return a.getAttribute('data-fam')==='O'}).map(function(a){var n=a.querySelector('h3');a.id=a.id||('lect-'+(arts.indexOf(a)+1));return '<a href="#'+a.id+'">'+(n?n.textContent:'')+'</a>'});
+  if(o.length)h+='<li><b>Autres approches</b><span>'+o.join(' · ')+'</span></li>';
+  g.innerHTML=h+'</ul>';
+  box.parentNode.insertBefore(g,box);
+})();
