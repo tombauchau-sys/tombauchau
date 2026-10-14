@@ -25,7 +25,7 @@
   })();
 
   /* Courbes à départs variables */
-  function lines2(host,o){
+  function lines2(host,o){CJD.series(host,o.series,o.t0);
     var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -65,6 +65,7 @@
   /* Chiffre noir */
   (function(){
     var N=[['Sexuelles, en famille',25.4],['Sexuelles, hors famille',15.7],['Escroqueries en ligne',10.1],['Piratage informatique',9.5],['Hameçonnage',6.6]];
+    CJD.set('darkChart',['Type de faits','Victimes ayant signalé à la police (%), 2021'],N.map(function(n){return [n[0],n[1]]}));
     var W=MOB?420:600,rh=38,L=MOB?170:220,R=W-60,Hh=N.length*rh+10;
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Part des victimes ayant signalé les faits à la police, 2021 : '+N.map(function(n){return n[0]+' '+fr(n[1])+' %'}).join(', ')});
     N.forEach(function(n,i){var y=6+i*rh,w=(R-L)*n[1]/30;s.appendChild(el('text',{x:L-10,y:y+20,'text-anchor':'end',style:TX+PP.ink},n[0]));s.appendChild(el('rect',{x:L,y:y+6,width:w.toFixed(1),height:rh-16,fill:'#3E3A8C','class':'fadein'}));s.appendChild(el('text',{x:L+w+8,y:y+20,'class':'fadein',style:TX+PP.ink+';font-weight:700'},fr(n[1])+' %'))});
@@ -73,6 +74,7 @@
   lines2(D.getElementById('homChart'),o2({t0:2008,t1:2024,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:90,min:0,max:2.5,ticks:[0,0.5,1,1.5,2,2.5],tdec:1,dec:2,years:MOB?[2008,2016,2024]:[2008,2012,2016,2020,2024],
     series:[{n:'',v:DATA.hom,s:2008,c:'#C0341E',w:4}],marks:[[2015,2.06,'2,06','#1A1A1A',-12]],
     label:'Homicides volontaires enregistrés pour 100 000 habitants en Belgique : 1,91 en 2008, 2,06 en 2015, 1,40 en 2024'},PP));
+  CJD.rename('homChart',['Belgique']);
 
   /* Fiche 02 : prisons */
   lines2(D.getElementById('prisChart'),o2({t0:2008,t1:2025,rm:MOB?78:200,min:8000,max:13500,ticks:[8000,9000,10000,11000,12000,13000],dec:0,years:MOB?[2008,2012,2016,2020,2025]:[2008,2010,2012,2014,2016,2018,2020,2022,2025],

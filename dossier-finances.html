@@ -602,6 +602,36 @@ html.calm .chart .fadein{opacity:1}
 .chart svg{overflow:visible}
 .axt-y + .chart{margin-top:6px}
 .axwrap{min-width:0}
+/* Données des graphiques */
+.cj-data{margin:10px 0 4px;max-width:110ch;font-family:var(--sans);font-size:14px;color:inherit}
+.cj-data summary{cursor:pointer;display:inline-block;padding:6px 12px;border:1.5px solid currentColor;border-radius:999px;font-weight:600;opacity:.85;list-style:none}
+.cj-data summary::-webkit-details-marker{display:none}
+.cj-data summary::before{content:'+ ';font-weight:700}
+.cj-data[open] summary::before{content:'− '}
+.cj-data summary:hover,.cj-data summary:focus-visible{opacity:1}
+.cj-box{margin-top:10px}
+.cj-scroll{max-height:360px;overflow:auto;border:1px solid currentColor;border-radius:6px}
+.cj-data table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.cj-data caption{text-align:left;padding:8px 10px;font-size:13px;opacity:.85}
+.cj-data th,.cj-data td{padding:5px 10px;border-top:1px solid rgba(128,128,128,.35);text-align:right;white-space:nowrap}
+.cj-data th[scope=row],.cj-data thead th:first-child{text-align:left;white-space:normal}
+.cj-data thead th{position:sticky;top:0;background:var(--cj-bg,#F7F6F2);color:#1A1A1A;font-weight:700;white-space:normal;vertical-align:bottom}
+.cj-note{font-size:13px;margin:8px 0 0;opacity:.85}
+.cj-dl{margin-top:10px;font:inherit;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cj-dl:hover,.cj-dl:focus-visible{background:rgba(128,128,128,.18)}
+/* Comment citer */
+.cj-cite{margin:28px 0 8px;padding:18px 20px;border:1.5px solid currentColor;border-radius:10px;max-width:110ch;font-family:var(--sans);font-size:15px;line-height:1.55}
+.cj-cite-t{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.cj-ref{margin:0 0 10px;overflow-wrap:anywhere}
+.cj-cite-n{font-size:13px;opacity:.85;margin:0 0 12px}
+.cj-cite-n a{color:inherit}
+.cj-copy{font:inherit;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cj-copy:hover,.cj-copy:focus-visible{background:rgba(128,128,128,.18)}
+.srcl.prec{border-left:3px solid currentColor;padding-left:12px}
+.cj-sel{margin:26px 0 0;max-width:90ch;font-family:var(--sans);font-size:15px;line-height:1.55}
+.cj-sel summary{cursor:pointer;font-weight:700;display:inline-block;padding:6px 12px;border:1.5px solid currentColor;border-radius:999px}
+.cj-sel p{margin:12px 0 0}
+.cj-sel a{color:inherit}
 </style>
 </head>
 <body>
@@ -631,6 +661,7 @@ html.calm .chart .fadein{opacity:1}
       <a class="skew" href="#dossier"><span>Passer</span></a>
     </div>
     <p class="verdict note" id="verdict" hidden></p>
+    <div class="why" id="why" hidden><h3>Pourquoi on se trompe souvent</h3><p>Un montant en milliards ne dit rien seul. Le bon repère est la richesse produite : 14,3 milliards représentent 2,2 % du PIB, beaucoup moins qu’en 1995 (9,0 %).</p><h3>Le mécanisme</h3><p>La charge d’intérêts dépend du montant de la dette et du taux moyen payé. La dette est refinancée petit à petit : une hausse des taux ne se répercute que progressivement, à mesure que d’anciens emprunts bon marché sont remplacés.</p><h3>Pour réutiliser cette idée</h3><p>Devant un montant budgétaire, rapportez-le au PIB ou au budget total, et comparez-le dans le temps. C’est la seule façon de savoir s’il est « grand ».</p></div>
     <div class="why" id="why" hidden><h3>Pourquoi on se trompe souvent</h3><p>Un montant en milliards ne dit rien seul. Le bon repère est la richesse produite : 14,3 milliards représentent 2,2 % du PIB, beaucoup moins qu’en 1995 (9,0 %).</p><h3>Le mécanisme</h3><p>La charge d’intérêts dépend du montant de la dette et du taux moyen payé. La dette est refinancée petit à petit : une hausse des taux ne se répercute que progressivement, à mesure que d’anciens emprunts bon marché sont remplacés.</p><h3>Pour réutiliser cette idée</h3><p>Devant un montant budgétaire, rapportez-le au PIB ou au budget total. Pour le comparer dans le temps, déduisez l’inflation : un milliard de 2015 achetait davantage qu’un milliard de 2025.</p></div>
   </div>
 </section>
@@ -647,7 +678,7 @@ html.calm .chart .fadein{opacity:1}
       <div><b>14,3 Md€</b><span>d’intérêts payés en 2025 : +66 % depuis 2021 en euros courants, +37 % une fois l’inflation déduite</span><span class="src">Eurostat gov_10a_main, 2025, provisoire ; IPCH prc_hicp_ainr</span></div>
       <div><b>AA- · A1 · A+</b><span>notes de S&amp;P, Moody’s et Fitch</span><span class="src">communiqués des agences, 2026</span></div>
     </div>
-    <p class="maj">Dossier vérifié le 10 octobre 2026 · prochaine mise à jour : notification d’avril 2027 · <a href="#europe">Voir ce dossier pour un autre pays</a></p>
+    <p class="maj">Dossier vérifié le 10 octobre 2026 · prochaine mise à jour : notification d’automne d’Eurostat (21 octobre 2026), puis d’avril 2027 · <a href="#europe">Voir ce dossier pour un autre pays</a></p>
   </div>
 </section>
 
@@ -685,6 +716,25 @@ html.calm .chart .fadein{opacity:1}
     <h3 class="sub">Comparer les pays</h3>
     <p class="cmp-def">Cochez ou décochez les pays ; le tableau sous le graphique donne les valeurs exactes. Tous les indicateurs : <a href="comparer.html">page Comparer</a>.</p>
     <div id="eu-cmp"></div>
+  </div>
+</section>
+<div id="approfondir" aria-hidden="true"></div>
+
+<!-- V2 · Niveau 1 : comprendre en deux minutes -->
+<section class="twomin" aria-labelledby="t2min">
+  <div class="wrap tm">
+    <div>
+      <span class="kick">Comprendre en deux minutes</span>
+      <h2 id="t2min">La dette publique belge est-elle un problème ?</h2>
+      <p class="ans">Elle est élevée (107,9 % du PIB contre 81,7 % dans l’Union) et remonte depuis 2023, avec un déficit de 5,2 % du PIB et des intérêts en hausse (14,3 milliards d’euros en 2025). Mais une dette n’est ni bonne ni mauvaise en soi : tout dépend de ce qu’elle finance, de ce qu’elle coûte et de la capacité à la porter. La Belgique a d’ailleurs déjà réduit sa dette de 50 points entre 1993 et 2007.</p>
+      <ol class="keys" aria-label="Trois idées à retenir"><li>Le déficit est un flux (ce qui manque sur un an), la dette un stock (l’accumulation des déficits passés).</li><li>La dette baisse si la croissance dépasse le taux d’intérêt et si le budget hors intérêts est équilibré. En 2025, le déficit hors intérêts (3,0 % du PIB) la fait monter.</li><li>L’essentiel de la dette est fédéral, mais celle des Communautés et des Régions a presque doublé en dix ans.</li></ol>
+      <a class="deeper" href="#approfondir">Approfondir ↓</a>
+    </div>
+    <aside>
+      <div class="tm-num"><b>107,9 %</b><span>de dette publique en % du PIB, fin 2025 (Union : 81,7 %)</span><small>Eurostat, gov_10dd_edpt1</small></div>
+      <p class="tm-warn"><b>L’erreur la plus fréquente :</b> diviser la dette par habitant (58 000 €) comme si chacun la devait, ou lire une note d’agence comme un fait.</p>
+      <p class="tm-concl">Aucun seuil de dette « sûr » ne fait consensus : ce qui compte est la trajectoire, le coût et l’usage de l’argent emprunté.</p>
+    </aside>
   </div>
 </section>
 <div id="approfondir" aria-hidden="true"></div>
@@ -774,6 +824,8 @@ html.calm .chart .fadein{opacity:1}
     <p class="srcl">Dette brute consolidée des administrations publiques, en % du PIB, 2000-2025. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a>, notification d’avril 2026 (mise à jour du 22 avril 2026), consulté le 10 octobre 2026.</p>
     
     <div class="canwhat" data-r><p class="cw-t">La dette en % du PIB</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Ce que les pouvoirs publics doivent, rapporté à la richesse produite en une année.</li><li>Comment la Belgique se situe en Europe, avec la définition commune du traité de Maastricht.</li><li>La tendance sur longue période.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si la dette est soutenable : cela dépend du taux d’intérêt, de la croissance, des échéances et de la confiance des prêteurs.</li><li>Ce que possèdent les pouvoirs publics : c’est une dette brute, les actifs ne sont pas déduits.</li><li>Ce que la dette a financé : investissement ou dépenses courantes.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La charge d’intérêts et le taux moyen payé.</li><li>Le solde hors intérêts (solde primaire).</li><li>L’investissement public (fiche 05).</li></ul></div></div>
+
+    <div class="canwhat" data-r><p class="cw-t">La dette en % du PIB</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Ce que les pouvoirs publics doivent, rapporté à la richesse produite en une année.</li><li>Comment la Belgique se situe en Europe, avec la définition commune du traité de Maastricht.</li><li>La tendance sur longue période.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si la dette est soutenable : cela dépend du taux d’intérêt, de la croissance, des échéances et de la confiance des prêteurs.</li><li>Ce que possèdent les pouvoirs publics : c’est une dette brute, les actifs ne sont pas déduits.</li><li>Ce que la dette a financé : investissement ou dépenses courantes.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>La charge d’intérêts et le taux moyen payé.</li><li>Le solde hors intérêts (solde primaire).</li><li>L’investissement public (fiche 05).</li></ul></div></div>
 <h3 class="sub" data-r>Qui porte la dette ?</h3>
     <p class="lede sm" data-r>L’essentiel est dû par l’État fédéral. Mais la dette des Communautés et des Régions a presque doublé en dix ans, de 12,6 % à 20,4 % du PIB.</p>
     <div class="chart" id="subChart" data-yt="Niveau de pouvoir" data-xt="Dette, en % du PIB"></div>
@@ -795,6 +847,8 @@ html.calm .chart .fadein{opacity:1}
     </div>
     <p class="srcl">Sources : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr" target="_blank" rel="noopener">gov_10dd_edpt1</a> (soldes par sous-secteur), <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table?lang=fr" target="_blank" rel="noopener">gov_10a_main</a> (recettes et dépenses, mise à jour du 21 juillet 2026, 2025 provisoire).</p>
     
+    <div class="canwhat" data-r><p class="cw-t">Le déficit public</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>L’écart, sur une année, entre les recettes et les dépenses de toutes les administrations.</li><li>La position de la Belgique par rapport à la valeur de référence européenne de 3 %.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Quelle part vient de la conjoncture (une récession creuse le déficit) et quelle part est durable.</li><li>Quel niveau de pouvoir est responsable, sans la répartition par sous-secteur.</li><li>Si l’argent finance des investissements ou des dépenses courantes.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le solde structurel, corrigé de la conjoncture.</li><li>Le solde primaire, hors intérêts.</li><li>Le solde de chaque niveau de pouvoir.</li></ul></div></div>
+
     <div class="canwhat" data-r><p class="cw-t">Le déficit public</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>L’écart, sur une année, entre les recettes et les dépenses de toutes les administrations.</li><li>La position de la Belgique par rapport à la valeur de référence européenne de 3 %.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Quelle part vient de la conjoncture (une récession creuse le déficit) et quelle part est durable.</li><li>Quel niveau de pouvoir est responsable, sans la répartition par sous-secteur.</li><li>Si l’argent finance des investissements ou des dépenses courantes.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le solde structurel, corrigé de la conjoncture.</li><li>Le solde primaire, hors intérêts.</li><li>Le solde de chaque niveau de pouvoir.</li></ul></div></div>
 <div class="trap" data-r><span class="note">piège !</span><p>Le déficit de 2023 était de 4,4 % du PIB quand l’Union a ouvert la procédure en 2024. Il vaut aujourd’hui 4,1 % : les comptes publics sont révisés pendant plusieurs années. Un chiffre récent doit toujours être daté.</p></div>
   </div>
@@ -853,6 +907,18 @@ html.calm .chart .fadein{opacity:1}
     <p class="lede" data-r>Chaque conclusion porte un badge (grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="index.html#methode">Voir la méthode</a>.</p>
     <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
     <div id="rq" class="rq-light"></div>
+  <details class="cj-sel" data-r><summary>Comment ces études ont été choisies</summary><p>Ce n’est pas une revue systématique : la sélection est raisonnée, pas exhaustive. Les études sont cherchées dans les revues de littérature et méta-analyses récentes, dans les bases d’articles et de documents de travail en sciences sociales (Google Scholar, RePEc, NBER, IZA) et dans les publications des institutions et centres de recherche belges (Banque nationale, Bureau fédéral du Plan, Conseil supérieur de l’emploi, universités).</p><p><b>Retenues</b> : les études publiées (revue à comité de lecture, document de travail d’une institution reconnue ou rapport public), dont la méthode est décrite, portant sur la Belgique ou sur un pays comparable ; les études belges sont privilégiées quand elles existent. <b>Écartées</b> : les textes d’opinion, les études sans méthode décrite et celles qui n’ont pas pu être lues à la source. Quand des études sérieuses aboutissent à des conclusions opposées, le badge « Débattu » l’indique et les deux côtés sont cités.</p><p>Une étude importante manque ? Signalez-la (voir la <a href="index.html#methode">méthode</a>, point 07).</p></details></div>
+</section>
+
+<!-- V2 · Du chiffre à la décision -->
+<section class="sec brun grain decide" id="decision" aria-labelledby="tDc">
+  <div class="wrap">
+    <span class="kick" data-r>Du chiffre à la décision</span>
+    <h2 class="giant" id="tDc" data-r>Réduire la dette : <span>quatre options, aucune gratuite.</span></h2>
+    <p class="lede" data-r>Pour ramener le déficit vers 3 % du PIB et stabiliser la dette, quatre grandes options sont combinables. Pour chacune : le mécanisme, ce que la recherche documente, ce qui reste incertain et ce qu’on sacrifie. Le site ne recommande aucune option : le choix dépend des objectifs qu’on privilégie.</p>
+    <div class="opts4"><article class="opt" data-r><h3>Réduire les dépenses</h3><dl><dt>Le mécanisme</dt><dd>Moins de dépenses publiques, donc un déficit hors intérêts plus faible.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Selon Alesina, Favero et Giavazzi (2019), les plans fondés sur la baisse des dépenses coûtent moins de croissance que ceux fondés sur les hausses d’impôts. <span class="ev doc">documenté</span> En pleine crise, l’austérité a coûté plus de croissance que prévu (Blanchard et Leigh, 2013).</dd><dt>Ce qui reste incertain</dt><dd>Les méthodes de ces études sont contestées, et aucune ne porte spécifiquement sur la Belgique. Couper dans l’investissement peut freiner la croissance future.</dd><dt>Ce qu’on sacrifie</dt><dd>Des services publics ou des prestations sociales, selon les dépenses visées.</dd></dl></article><article class="opt" data-r><h3>Augmenter les recettes</h3><dl><dt>Le mécanisme</dt><dd>Plus d’impôts ou de cotisations, donc plus de recettes.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> Les recettes publiques belges sont déjà élevées : 49,0 % du PIB en 2025, contre 46,4 % dans l’Union (Eurostat). <span class="ev doc">documenté</span> Les plans fondés sur les impôts seraient plus coûteux en croissance (Alesina et al., 2019, résultat discuté).</dd><dt>Ce qui reste incertain</dt><dd>L’effet dépend de l’impôt choisi : revenus, patrimoine, consommation ou entreprises ne pèsent pas sur les mêmes personnes.</dd><dt>Ce qu’on sacrifie</dt><dd>Le pouvoir d’achat ou la compétitivité, selon qui paie.</dd></dl></article><article class="opt" data-r><h3>Miser sur la croissance et l’investissement</h3><dl><dt>Le mécanisme</dt><dd>Si l’économie croît plus vite que le taux d’intérêt, la dette baisse en % du PIB.</dd><dt>Ce qui est documenté</dt><dd><span class="ev doc">documenté</span> L’investissement public augmente la production à court et à long terme, surtout s’il est efficace (Abiad, Furceri et Topalova, 2016).</dd><dt>Ce qui reste incertain</dt><dd><span class="ev hyp">hypothèse</span> Que la croissance suffise à compenser le déficit actuel : en 2025, elle dépassait le taux d’intérêt, mais la dette a quand même augmenté de 4 points.</dd><dt>Ce qu’on sacrifie</dt><dd>Une dette plus élevée à court terme, en pariant sur un rendement futur.</dd></dl></article><article class="opt" data-r><h3>Étaler l’ajustement dans le temps</h3><dl><dt>Le mécanisme</dt><dd>Corriger le déficit progressivement plutôt que brutalement.</dd><dt>Ce qui est documenté</dt><dd>Le cadre européen réformé en 2024 prévoit une trajectoire d’ajustement de 4 ans, prolongeable jusqu’à 7 ans.</dd><dt>Ce qui reste incertain</dt><dd>Si les taux d’intérêt montent pendant l’ajustement, la facture s’alourdit : les intérêts ont déjà augmenté de 66 % depuis 2021.</dd><dt>Ce qu’on sacrifie</dt><dd>La rapidité de la réduction de la dette, et une partie des marges en cas de nouvelle crise.</dd></dl></article></div>
+    <div class="trade" data-r><h3 class="sub">Les arbitrages : on ne peut pas tout maximiser à la fois</h3><table><thead><tr><th scope="col">Si l’on privilégie…</th><th scope="col">… on prend le risque de sacrifier</th></tr></thead><tbody><tr><td>Réduire vite la dette</td><td>La croissance à court terme et l’emploi</td></tr><tr><td>Protéger les services publics et la sécurité sociale</td><td>La stabilité des prélèvements, ou la vitesse de l’ajustement</td></tr><tr><td>Léguer moins de dette aux générations futures</td><td>Les investissements faits pour elles : écoles, climat, infrastructures</td></tr><tr><td>Respecter strictement les règles européennes</td><td>Des marges budgétaires en cas de crise</td></tr></tbody></table></div>
+    <p class="maj">Les effets cités viennent de la partie Recherche et de la fiche 05, avec leurs sources. « Documenté » signifie établi par des études ou des statistiques officielles ; « hypothèse » signifie plausible mais non démontré.</p>
   </div>
 </section>
 
@@ -933,6 +999,17 @@ html.calm .chart .fadein{opacity:1}
   </div>
 </section>
 
+<!-- V2 · Vérifier sa compréhension -->
+<section class="sec papier check" aria-labelledby="tCk">
+  <div class="wrap">
+    <span class="kick" data-r>Vérifier sa compréhension · questions de transfert</span>
+    <h2 class="giant" id="tCk" data-r>Et ailleurs, <span>ça marche comment ?</span></h2>
+    <p class="lede" data-r>Ces questions ne testent pas la mémoire des chiffres : elles vérifient qu’on sait appliquer le mécanisme à une situation nouvelle. Chaque réponse est expliquée.</p>
+    <div class="qz" data-ok="b" data-r><p class="qq">1. Un pays a une dette de 100 % du PIB. Sa croissance (inflation comprise) est de 4 %, le taux d’intérêt moyen sur sa dette de 2 %, et son budget hors intérêts est équilibré. Que devient sa dette en % du PIB ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Elle augmente, puisque le pays paie des intérêts.</button><button type="button" data-k="b" aria-pressed="false">Elle baisse, d’environ 2 points.</button><button type="button" data-k="c" aria-pressed="false">Elle reste stable.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> Les intérêts augmentent la dette en euros, mais le PIB augmente plus vite : le ratio baisse.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> La croissance (4 %) dépasse le taux d’intérêt (2 %) : (2 − 4) / 1,04 × 100 ≈ −1,9 point.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Elle resterait stable si le taux d’intérêt était égal à la croissance.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> quand la croissance dépasse le taux d’intérêt, l’effet « boule de neige » joue en faveur du pays : la dette baisse en % du PIB même sans excédent. C’est l’inverse quand les taux dépassent la croissance, comme en Belgique dans les années 1980.</p><p class="qlive" aria-live="polite"></p></div>
+<div class="qz" data-ok="b" data-r><p class="qq">2. Deux gouvernements empruntent chacun 1 milliard. Le premier construit une ligne de tram utilisée pendant 40 ans, le second paie les dépenses courantes de l’année. Qu’est-ce qui les distingue ?</p><div class="qopts" role="group" aria-label="Réponses possibles"><button type="button" data-k="a" aria-pressed="false">Rien : 1 milliard de dette reste 1 milliard de dette.</button><button type="button" data-k="b" aria-pressed="false">La dette est identique, mais le premier finance un équipement qui rendra des services à ceux qui la rembourseront.</button><button type="button" data-k="c" aria-pressed="false">Le second est interdit par les règles européennes.</button></div><p class="qfb" data-k="a" hidden><b>Pas tout à fait.</b> La dette est la même, mais ce qu’elle laisse aux générations suivantes ne l’est pas.</p><p class="qfb" data-k="b" hidden><b>Exact.</b> C’est l’idée de la « règle d’or » : étaler le coût d’un investissement sur ceux qui en profitent.</p><p class="qfb" data-k="c" hidden><b>Pas tout à fait.</b> Les règles européennes portent sur le déficit et la dette totaux, pas sur l’usage de l’argent emprunté.</p><p class="qmech" hidden><b>Le mécanisme à retenir :</b> pour juger une dette, regardez ce qu’elle finance et ce qu’elle rapportera, pas seulement son montant. Un investissement mal choisi peut toutefois ne rien rapporter.</p><p class="qlive" aria-live="polite"></p></div>
+  </div>
+</section>
+
 <!-- 12. Citer -->
 <section class="band grain cite" style="background:var(--peach)" aria-labelledby="tK">
   <div class="wrap bandin">
@@ -991,7 +1068,7 @@ html.calm .chart .fadein{opacity:1}
         <li>Smith, A. (1776). <i>An Inquiry into the Nature and Causes of the Wealth of Nations</i>, livre V.</li>
       </ul></div>
     </div>
-    <p class="maj">Journal des corrections · 10 octobre 2026 : ajout de l’encadré « La dette n’est ni bonne ni mauvaise en soi », de la partie historique 1980-2025 et de trois idées reçues, de la fiche 05 sur l’investissement public et d’une quatrième question de recherche.</p>
+    <p class="maj">Journal des corrections · 10 octobre 2026 : ajout de l’encadré « La dette n’est ni bonne ni mauvaise en soi », de la partie historique 1980-2025 et de trois idées reçues, de la fiche 05 sur l’investissement public et d’une quatrième question de recherche. 12 octobre 2026 : revérification à la source primaire ; citation de Blanchard et Giavazzi reformulée au plus près du texte ; notes des agences : dates précisées, perspectives retirées faute de source primaire ; intérêts présentés aussi en euros de 2025. 14 octobre 2026 : dépenses par fonction de l’Union pour 2024 mises à jour après révision par Eurostat (total 48,9 % du PIB au lieu de 49,1 ; santé 7,3 au lieu de 7,4 ; enseignement 4,7 au lieu de 4,8) ; prochaine mise à jour avancée à la notification d’automne d’Eurostat (21 octobre 2026).</p><div class="cj-cite"><p class="cj-cite-t">Comment citer ce dossier</p><p class="cj-ref">Bauchau, T. (2026). <i>Finances publiques</i> [dossier]. Chiffre Juste, version du 10 octobre 2026. Consulté le <span class="cj-today">…</span>, à l’adresse https://tombauchau-sys.github.io/tombauchau/dossier-finances.html</p><p class="cj-cite-n">Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique) : Chiffre Juste rassemble et explique des données, il ne les produit pas. Les données de chaque graphique sont téléchargeables (« Voir les données du graphique »). Code et données du site : <a href="https://github.com/tombauchau-sys/tombauchau" target="_blank" rel="noopener">dépôt public GitHub</a>.</p><button type="button" class="cj-copy">Copier la référence</button></div>
     <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="index.html#methode">page Méthode</a>.</p>
   </div>
 </section>
@@ -1001,7 +1078,27 @@ html.calm .chart .fadein{opacity:1}
   <div class="meta"><span>Chiffre Juste · Dossier 02 · Finances publiques · vérifié le 10 octobre 2026</span><span><a href="lexique.html">Lexique</a> · <a href="index.html#dossiers">Tous les dossiers →</a></span></div>
   <div class="wm" aria-hidden="true">Chiffre Juste</div>
 </footer>
-<script>(function(){
+<script>/* Registre des données des graphiques : chaque graphique y dépose les valeurs exactes qu’il dessine, pour le tableau « Voir les données » et le téléchargement CSV */
+var CJD={t:{},
+  set:function(h,cols,rows,note){var id=h&&(h.id||h);if(typeof id==='string'&&id)this.t[id]={cols:cols,rows:rows,note:note||''}},
+  series:function(h,ser,t0,names,note){
+    var m={},xs=[];
+    ser.forEach(function(se,j){
+      var pts=se.pts||(se.v||[]).map(function(v,k){return [(se.s!=null?se.s:t0)+k,v]});
+      pts.forEach(function(p){if(p[1]==null||typeof p[1]!=='number'||isNaN(p[1]))return;var k=String(p[0]);if(!(k in m)){m[k]={};xs.push(p[0])}m[k][j]=p[1]});
+    });
+    xs.sort(function(a,b){return a-b});
+    var half=xs.some(function(x){return x%1!==0});
+    var cols=[half?'Semestre':'Année'].concat(ser.map(function(se,j){return (names&&names[j])||se.n||('Série '+(j+1))}));
+    this.set(h,cols,xs.map(function(x){return [half?Math.floor(x)+(x%1?'-S2':'-S1'):x].concat(ser.map(function(se,j){var v=m[String(x)][j];return v==null?null:v}))}),note);
+  },
+  rename:function(id,names,note){var t=this.t[id];if(!t)return;names.forEach(function(n,i){if(n)t.cols[i+1]=n});if(note)t.note=note},
+  cats:function(h,cats,ser,first,note){
+    this.set(h,[first||'Catégorie'].concat(ser.map(function(se,j){return se.n||('Série '+(j+1))})),cats.map(function(c,i){return [c].concat(ser.map(function(se){var v=se.v[i];return v==null?null:v}))}),note);
+  }
+};
+
+(function(){
   var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg',DATA={"debt": {"BE": [109.7, 108.5, 105.6, 101.8, 97.2, 95.2, 91.5, 87.5, 93.2, 99.9, 100.3, 102.8, 104.4, 105.1, 106.6, 105.7, 105.8, 102.6, 100.2, 97.7, 111.4, 108.7, 103.3, 102.5, 103.9, 107.9], "EU": [66.6, 65.8, 65.6, 66.8, 67.1, 67.2, 65.0, 62.4, 65.1, 75.7, 80.4, 81.7, 85.0, 86.8, 86.9, 85.1, 84.1, 81.5, 79.5, 77.5, 89.5, 86.7, 82.4, 80.5, 80.7, 81.7]}, "def": {"BE": [-0.1, 0.2, 0.0, -1.9, -0.2, -2.7, 0.2, 0.1, -1.1, -5.4, -4.1, -4.4, -4.3, -3.2, -3.2, -2.5, -2.4, -0.8, -1.0, -2.0, -9.0, -5.4, -3.5, -4.1, -4.4, -5.2], "EU": [-1.2, -2.0, -2.8, -3.1, -2.7, -2.4, -1.4, -0.6, -2.1, -6.1, -6.0, -4.1, -3.7, -3.1, -2.4, -1.9, -1.4, -0.9, -0.4, -0.5, -6.7, -4.6, -3.2, -3.4, -3.1, -3.1]}, "cofBE": {"GF01": 7.1, "GF02": 1.3, "GF03": 1.7, "GF04": 6.4, "GF05": 1.2, "GF06": 0.4, "GF07": 8.0, "GF08": 1.2, "GF09": 6.3, "GF10": 20.4, "TOTAL": 54.1}, "cofEU": {"TOTAL": 48.9, "GF01": 6.1, "GF02": 1.5, "GF03": 1.7, "GF04": 5.3, "GF05": 0.8, "GF06": 0.7, "GF07": 7.3, "GF08": 1.2, "GF09": 4.7, "GF10": 19.6}, "int": [12396.3, 11882.9, 10697.2, 10006.2, 9627.9, 9126.6, 8580.8, 8755.2, 11677.1, 13524.4, 14281.7], "sub": {"debt": [["État fédéral", 86.9, 89.2], ["Communautés et Régions", 20.4, 12.6], ["Pouvoirs locaux", 4.3, 5.9], ["Sécurité sociale", 0.1, 2.0]], "def": [["État fédéral", -3.8], ["Communautés et Régions", -1.4], ["Pouvoirs locaux", -0.1], ["Sécurité sociale", 0.0]]}, "inv": {"BE": [2.4, 2.1, 2.1, 2.1, 2.0, 2.1, 1.9, 2.0, 2.0, 2.3, 2.2, 2.4, 2.5, 2.3, 2.5, 2.5, 2.4, 2.5, 2.7, 2.6, 2.8, 2.8, 2.7, 2.9, 3.1, 3.1], "EU": [3.3, 3.3, 3.3, 3.5, 3.4, 3.4, 3.5, 3.6, 3.7, 4.0, 3.8, 3.5, 3.3, 3.2, 3.1, 3.2, 2.9, 2.9, 3.1, 3.2, 3.5, 3.4, 3.3, 3.6, 3.7, 3.9]}, "hist": [76.8, 89.7, 99.6, 110.3, 114.6, 119.4, 124.7, 129.2, 129.7, 126.4, 130.3, 131.8, 134.7, 138.9, 137.1, 131.5, 129.2, 124.3, 119.3, 115.4, 109.7, 108.5, 105.6, 101.8, 97.2, 95.2, 91.5, 87.5, 93.2, 99.9, 100.3, 102.8, 104.4, 105.1, 106.6, 105.7, 105.8, 102.6, 100.2, 97.7, 111.4, 108.7, 103.3, 102.5, 103.9, 107.9], "ipch": [73.81, 75.11, 76.78, 78.55, 79.54, 79.88, 82.45, 90.97, 93.05, 97.06, 100.0]};
   H.classList.add('js');
   function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
@@ -1027,7 +1124,7 @@ html.calm .chart .fadein{opacity:1}
   })();
 
   /* Courbes */
-  function lines(host,o){
+  function lines(host,o){CJD.series(host,o.series,o.t0||T0);
     var T0=o.t0,T1=o.t1,n=T1-T0,W=MOB?420:1000,Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(MOB?70:140),T=26,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/n*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -1051,6 +1148,7 @@ html.calm .chart .fadein{opacity:1}
   /* 0b. Histoire 1980-2025 */
   (function(){
     var host=D.getElementById('histChart'),V=DATA.hist,T0=1980,T1=2025,W=MOB?420:1000,Hh=MOB?340:440,L=MOB?40:56,R=W-(MOB?50:110),T=40,B=Hh-40,mn=60,mx=150;
+    CJD.series(host,[{n:'Dette publique belge (% du PIB)',v:V}],T0);
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette publique belge 1980-2025 : 76,8 % en 1980, pic de 138,9 % en 1993, 87,3 % en 2007, 107,9 % en 2025'});
     [[1980,1993,'boule de neige','rgba(226,64,43,.16)'],[1993,2007,'assainissement','rgba(127,182,163,.18)'],[2008,2011,'banques','rgba(201,119,58,.18)'],[2020,2021,'Covid','rgba(201,119,58,.18)']].forEach(function(p){
@@ -1070,6 +1168,7 @@ html.calm .chart .fadein{opacity:1}
 
   (function(){
     var S=DATA.sub.debt,box=D.getElementById('subChart'),W=MOB?400:1000,row=MOB?58:54,L=MOB?120:250,R=W-(MOB?50:110),mx=95,Hh=S.length*row+30;
+    CJD.set('subChart',['Niveau de pouvoir','2015 (% du PIB)','2025 (% du PIB)'],S.map(function(r){return [r[0],r[2],r[1]]}));
     function X(v){return L+v/mx*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette par niveau de pouvoir, 2015 et 2025 : fédéral 89,2 puis 86,9 % du PIB ; Communautés et Régions 12,6 puis 20,4 % ; pouvoirs locaux 5,9 puis 4,3 % ; sécurité sociale 2,0 puis 0,1 %'}),g=el('g',{'class':'pills'});
     S.forEach(function(r,i){var y=i*row+6,hh=(row-16)/2;
@@ -1085,6 +1184,7 @@ html.calm .chart .fadein{opacity:1}
   /* 2. Déficit */
   (function(){
     var box=D.getElementById('defChart'),T0=2000,T1=2025,W=MOB?420:1000,Hh=MOB?320:400,L=MOB?40:56,R=W-(MOB?60:130),T=20,B=Hh-40,mn=-10,mx=1;
+    CJD.series(box,[{n:'Belgique (% du PIB)',v:DATA.def.BE},{n:'Union (% du PIB)',v:DATA.def.EU}],T0);
     function X(y){return L+(y-T0+.5)/(T1-T0+1)*(R-L)} function Y(v){return T+(mx-v)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Solde public 2000-2025 : Belgique −5,2 % en 2025, Union −3,1 %, plus bas −9,0 % en 2020'});
     [0,-3,-6,-9].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v===-3?'#E2402B':'#D7D4CC','stroke-width':v===-3?2:1,'stroke-dasharray':v===-3?'3 5':''}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+'#6A665F'},(v?'−'+Math.abs(v):'0')+' %'))});
@@ -1100,7 +1200,7 @@ html.calm .chart .fadein{opacity:1}
     box.appendChild(s);
   })();
 
-  function hbars(id,rows,o){
+  function hbars(id,rows,o){CJD.set(id,['Catégorie','Valeur'],rows.map(function(r){return [r[0],r[1]]}));
     var box=D.getElementById(id),W=MOB?420:600,row=o.row||(MOB?40:44),L=MOB?170:215,R=W-(MOB?60:70),mn=o.min,mx=o.max,Hh=rows.length*row+26;
     function X(v){return L+(v-mn)/(mx-mn)*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label}),g=el('g',{'class':'pills'});
@@ -1114,12 +1214,15 @@ html.calm .chart .fadein{opacity:1}
   }
   var SD=DATA.sub.def.map(function(r){return [r[0],r[1],r[1]<-1?'#E2402B':'#fff']});
   hbars('subDef',SD,{min:-4.8,max:0.6,signed:1,label:'Solde 2025 par niveau de pouvoir : fédéral −3,8 % du PIB, Communautés et Régions −1,4 %, pouvoirs locaux −0,1 %, sécurité sociale 0,0 %'});
+  CJD.rename('subDef',['Solde 2025 (% du PIB)']);
   hbars('revExp',[['Recettes · Belgique',49.0,'#7FB6A3'],['Recettes · Union',46.4,'#fff'],['Dépenses · Belgique',54.2,'#E2402B'],['Dépenses · Union',49.5,'#fff']],{min:0,max:62,label:'Recettes et dépenses publiques 2025 : Belgique 49,0 % et 54,2 % du PIB ; Union 46,4 % et 49,5 %'});
+  CJD.rename('revExp',['2025 (% du PIB)']);
 
   /* 3. COFOG */
   (function(){
     var F=[['GF10','Protection sociale','Protection sociale'],['GF07','Santé','Santé'],['GF01','Services généraux (dont intérêts)','Services généraux*'],['GF04','Affaires économiques','Affaires éco.'],['GF09','Enseignement','Enseignement'],['GF03','Ordre et sécurité publics','Ordre public'],['GF02','Défense','Défense'],['GF05','Environnement','Environnement'],['GF08','Loisirs, culture, cultes','Culture, loisirs'],['GF06','Logement et équipements','Logement']];
     var box=D.getElementById('cofChart'),W=MOB?400:1000,row=MOB?46:44,L=MOB?120:290,R=W-(MOB?20:150),mx=MOB?30:26,Hh=F.length*row+36;
+    CJD.set('cofChart',['Fonction (COFOG)','Belgique 2024 (% du PIB)','Union 2024 (% du PIB)'],F.map(function(f){return [f[1],DATA.cofBE[f[0]],DATA.cofEU[f[0]]]}).concat([['Total',DATA.cofBE.TOTAL,DATA.cofEU.TOTAL]]));
     function X(v){return L+v/mx*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dépenses publiques par fonction 2024, Belgique et Union, en % du PIB : protection sociale 20,4 contre 19,6 ; santé 8,0 contre 7,3 ; enseignement 6,3 contre 4,7'}),g=el('g',{'class':'pills'});
     [0,5,10,15,20].forEach(function(v){s.appendChild(el('line',{x1:X(v),x2:X(v),y1:4,y2:Hh-28,stroke:'rgba(26,26,26,.2)'}));s.appendChild(el('text',{x:X(v),y:Hh-10,'text-anchor':'middle',style:TX+'#1A1A1A'},v+' %'))});
@@ -1139,6 +1242,7 @@ html.calm .chart .fadein{opacity:1}
   (function(){
     var I=DATA.int,P=DATA.ipch,box=D.getElementById('intChart'),W=MOB?420:1000,Hh=MOB?330:420,L=MOB?44:60,R=W-20,T=MOB?62:48,B=Hh-34,mx=18000,n=I.length;
     var K=I.map(function(v,i){return v*100/P[i]});
+    CJD.set('intChart',['Année','Intérêts, millions d’euros courants','IPCH Belgique (2025 = 100)','Intérêts, millions d’euros de 2025 (calcul Chiffre Juste)'],I.map(function(v,i){return [2015+i,v,P[i],Math.round(K[i]*10)/10]}));
     function Y(v){return B-v/mx*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Intérêts payés 2015-2025. En euros courants : 12,4 milliards en 2015, 8,6 en 2021, 14,3 en 2025. En euros de 2025, inflation déduite : 16,8 milliards en 2015, 10,4 en 2021, 14,3 en 2025.'}),g=el('g',{'class':'seg-bar'});
     [0,5000,10000,15000].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:'#3B332B'}));s.appendChild(el('text',{x:L-8,y:Y(v)+4,'text-anchor':'end',style:TX+'#A69C8F'},v/1000+' Md'))});
@@ -1292,6 +1396,83 @@ html.calm .chart .fadein{opacity:1}
     if(yt)w.appendChild(p('axt-y','Axe vertical',yt));
     w.appendChild(c);
     if(xt)w.appendChild(p('axt-x','Axe horizontal',xt));
+  });
+})();
+
+/* Données des graphiques : sous chaque graphique, un tableau « Voir les données » et un téléchargement CSV des valeurs exactes dessinées */
+(function(){
+  var D=document;if(typeof CJD==='undefined')return;
+  var snap=JSON.parse(JSON.stringify(CJD.t));
+  function num(v,csv,dp){if(v==null)return '';if(typeof v!=='number')return String(v);return csv?String(v).replace('.',','):v.toLocaleString('fr-BE',{minimumFractionDigits:dp||0,maximumFractionDigits:Math.max(dp||0,3)})}
+  function dec(v){if(typeof v!=='number')return 0;var s=String(v),i=s.indexOf('.');return i<0?0:Math.min(3,s.length-i-1)}
+  function q(t){t=String(t==null?'':t).replace(/\s+/g,' ').trim();return /[";\n]/.test(t)?'"'+t.replace(/"/g,'""')+'"':t}
+  function srcOf(w){
+    for(var n=w;n&&n!==D.body;n=n.parentNode){
+      for(var s=n.nextElementSibling;s;s=s.nextElementSibling){
+        if(s.classList&&s.classList.contains('srcl'))return s;
+        var i=s.querySelector&&s.querySelector('.srcl');if(i)return i;
+        if(s.querySelector&&s.querySelector('.chart'))return null;
+      }
+    }
+    return null;
+  }
+  var today=new Date().toISOString().slice(0,10);
+  Object.keys(snap).forEach(function(id){
+    var c=D.getElementById(id);if(!c)return;
+    var d=snap[id],w=c.closest('.axwrap')||c,src=srcOf(w),svg=c.querySelector('svg');
+    var det=D.createElement('details');det.className='cj-data';
+    var sm=D.createElement('summary');sm.textContent='Voir les données du graphique';det.appendChild(sm);
+    var box=D.createElement('div');box.className='cj-box';
+    var tb=D.createElement('table'),cap=D.createElement('caption');
+    cap.textContent=(c.getAttribute('data-yt')?'Unité : '+c.getAttribute('data-yt')+'. ':'')+'Case vide : donnée non publiée pour cette année ou ce pays.';
+    tb.appendChild(cap);
+    var th=D.createElement('thead'),tr=D.createElement('tr');
+    d.cols.forEach(function(h,i){var e=D.createElement('th');e.scope='col';e.textContent=h;tr.appendChild(e)});th.appendChild(tr);tb.appendChild(th);
+    var bd=D.createElement('tbody');
+    var dp=d.cols.map(function(c,i){return d.rows.reduce(function(m,r){return Math.max(m,dec(r[i]))},0)});
+    d.rows.forEach(function(r){var tr=D.createElement('tr');r.forEach(function(v,i){var e=D.createElement(i?'td':'th');if(!i)e.scope='row';e.textContent=i?num(v,0,dp[i]):String(v);tr.appendChild(e)});bd.appendChild(tr)});
+    tb.appendChild(bd);
+    var sc=D.createElement('div');sc.className='cj-scroll';sc.tabIndex=0;sc.setAttribute('role','region');sc.setAttribute('aria-label','Tableau des données');sc.appendChild(tb);box.appendChild(sc);
+    if(d.note){var nt=D.createElement('p');nt.className='cj-note';nt.textContent=d.note;box.appendChild(nt)}
+    var bt=D.createElement('button');bt.type='button';bt.className='cj-dl';bt.textContent='Télécharger ces données (CSV)';
+    bt.addEventListener('click',function(){
+      var L=[];
+      L.push(['Site','Chiffre Juste'].map(q).join(';'));
+      L.push(['Page',D.title].map(q).join(';'));
+      L.push(['Adresse',location.href.split('#')[0]+'#'+id].map(q).join(';'));
+      if(svg&&svg.getAttribute('aria-label'))L.push(['Graphique',svg.getAttribute('aria-label')].map(q).join(';'));
+      if(c.getAttribute('data-yt'))L.push(['Unité ou axe vertical',c.getAttribute('data-yt')].map(q).join(';'));
+      if(c.getAttribute('data-xt'))L.push(['Axe horizontal',c.getAttribute('data-xt')].map(q).join(';'));
+      if(src)L.push(['Source et notes',src.textContent].map(q).join(';'));
+      if(d.note)L.push(['Remarque',d.note].map(q).join(';'));
+      L.push(['Téléchargé le',today].map(q).join(';'));
+      L.push(['Conditions','Mise en forme : Chiffre Juste, licence CC BY 4.0. Les données restent celles de leurs producteurs : vérifier et citer la source primaire. Case vide = donnée non publiée.'].map(q).join(';'));
+      L.push('');
+      L.push(d.cols.map(q).join(';'));
+      d.rows.forEach(function(r){L.push(r.map(function(v,i){return q(i?num(v,1):String(v))}).join(';'))});
+      var txt='﻿'+L.join('\r\n'),fn='chiffre-juste-'+((location.pathname.split('/').pop()||'').replace('.html','')||'page')+'-'+id+'.csv';
+      function plain(){var blob=new Blob([txt],{type:'text/csv;charset=utf-8'}),a=D.createElement('a');a.href=URL.createObjectURL(blob);a.download=fn;D.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)}
+      if(window.claude&&window.claude.use){window.claude.use('downloads').then(function(dl){if(!dl)return plain();dl.save({filename:fn,data:txt}).catch(function(){})},plain)}else plain();
+    });
+    box.appendChild(bt);det.appendChild(box);
+    var after=src&&src.parentNode===w.parentNode&&src.previousElementSibling===w?src:w;
+    after.parentNode.insertBefore(det,after.nextSibling);
+  });
+})();
+
+/* Comment citer : date de consultation du jour et copie de la référence */
+(function(){
+  var D=document,M=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],t=new Date();
+  var today=(t.getDate()===1?'1er':t.getDate())+' '+M[t.getMonth()]+' '+t.getFullYear();
+  D.querySelectorAll('.cj-today').forEach(function(s){s.textContent=today});
+  D.querySelectorAll('.cj-cite').forEach(function(c){
+    var b=c.querySelector('.cj-copy'),r=c.querySelector('.cj-ref');if(!b||!r)return;
+    b.addEventListener('click',function(){
+      var txt=r.textContent.replace(/\s+/g,' ').trim();
+      function ok(){b.textContent='Référence copiée';setTimeout(function(){b.textContent='Copier la référence'},2000)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){sel()})}else sel();
+      function sel(){var g=D.createRange();g.selectNodeContents(r);var s=window.getSelection();s.removeAllRanges();s.addRange(g);b.textContent='Référence sélectionnée : Ctrl+C pour copier'}
+    });
   });
 })();
 </script>

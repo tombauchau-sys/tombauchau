@@ -332,6 +332,36 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
 .chart svg{overflow:visible}
 .axt-y + .chart{margin-top:6px}
 .axwrap{min-width:0}
+/* Données des graphiques */
+.cj-data{margin:10px 0 4px;max-width:110ch;font-family:var(--sans);font-size:14px;color:inherit}
+.cj-data summary{cursor:pointer;display:inline-block;padding:6px 12px;border:1.5px solid currentColor;border-radius:999px;font-weight:600;opacity:.85;list-style:none}
+.cj-data summary::-webkit-details-marker{display:none}
+.cj-data summary::before{content:'+ ';font-weight:700}
+.cj-data[open] summary::before{content:'− '}
+.cj-data summary:hover,.cj-data summary:focus-visible{opacity:1}
+.cj-box{margin-top:10px}
+.cj-scroll{max-height:360px;overflow:auto;border:1px solid currentColor;border-radius:6px}
+.cj-data table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.cj-data caption{text-align:left;padding:8px 10px;font-size:13px;opacity:.85}
+.cj-data th,.cj-data td{padding:5px 10px;border-top:1px solid rgba(128,128,128,.35);text-align:right;white-space:nowrap}
+.cj-data th[scope=row],.cj-data thead th:first-child{text-align:left;white-space:normal}
+.cj-data thead th{position:sticky;top:0;background:var(--cj-bg,#F7F6F2);color:#1A1A1A;font-weight:700;white-space:normal;vertical-align:bottom}
+.cj-note{font-size:13px;margin:8px 0 0;opacity:.85}
+.cj-dl{margin-top:10px;font:inherit;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cj-dl:hover,.cj-dl:focus-visible{background:rgba(128,128,128,.18)}
+/* Comment citer */
+.cj-cite{margin:28px 0 8px;padding:18px 20px;border:1.5px solid currentColor;border-radius:10px;max-width:110ch;font-family:var(--sans);font-size:15px;line-height:1.55}
+.cj-cite-t{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.cj-ref{margin:0 0 10px;overflow-wrap:anywhere}
+.cj-cite-n{font-size:13px;opacity:.85;margin:0 0 12px}
+.cj-cite-n a{color:inherit}
+.cj-copy{font:inherit;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cj-copy:hover,.cj-copy:focus-visible{background:rgba(128,128,128,.18)}
+.srcl.prec{border-left:3px solid currentColor;padding-left:12px}
+.cj-sel{margin:26px 0 0;max-width:90ch;font-family:var(--sans);font-size:15px;line-height:1.55}
+.cj-sel summary{cursor:pointer;font-weight:700;display:inline-block;padding:6px 12px;border:1.5px solid currentColor;border-radius:999px}
+.cj-sel p{margin:12px 0 0}
+.cj-sel a{color:inherit}
 </style>
 </head>
 <body>
@@ -567,16 +597,36 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
         <li>Topalov, C. (1994). <i>Naissance du chômeur, 1880-1910</i>. Albin Michel.</li>
       </ul></div>
     </div>
-  </div>
+  <div class="cj-cite"><p class="cj-cite-t">Comment citer ce fiche</p><p class="cj-ref">Bauchau, T. (2026). <i>Le chômage : définitions et chiffres</i> [fiche]. Chiffre Juste, version du 10 octobre 2026. Consulté le <span class="cj-today">…</span>, à l’adresse https://tombauchau-sys.github.io/tombauchau/fiche-chomage.html</p><p class="cj-cite-n">Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique) : Chiffre Juste rassemble et explique des données, il ne les produit pas. Les données de chaque graphique sont téléchargeables (« Voir les données du graphique »). Code et données du site : <a href="https://github.com/tombauchau-sys/tombauchau" target="_blank" rel="noopener">dépôt public GitHub</a>.</p><button type="button" class="cj-copy">Copier la référence</button></div></div>
 </section>
 </main>
 
 <footer>
-  <div class="meta"><span>Chiffre Juste · Fiche Emploi n° 1 · vérifiée le 10 octobre 2026</span><span><a href="lexique.html">Lexique</a> · <a href="index.html">Retour à l’accueil →</a></span></div>
+  <div class="meta"><span>Chiffre Juste · Fiche Emploi n° 1 · vérifiée le 10 octobre 2026 · prochaine mise à jour : chiffres annuels 2026 (printemps 2027)</span><span><a href="lexique.html">Lexique</a> · <a href="index.html">Retour à l’accueil →</a></span></div>
   <div class="wm" aria-hidden="true">Chiffre Juste</div>
 </footer>
 
-<script>
+<script>/* Registre des données des graphiques : chaque graphique y dépose les valeurs exactes qu’il dessine, pour le tableau « Voir les données » et le téléchargement CSV */
+var CJD={t:{},
+  set:function(h,cols,rows,note){var id=h&&(h.id||h);if(typeof id==='string'&&id)this.t[id]={cols:cols,rows:rows,note:note||''}},
+  series:function(h,ser,t0,names,note){
+    var m={},xs=[];
+    ser.forEach(function(se,j){
+      var pts=se.pts||(se.v||[]).map(function(v,k){return [(se.s!=null?se.s:t0)+k,v]});
+      pts.forEach(function(p){if(p[1]==null||typeof p[1]!=='number'||isNaN(p[1]))return;var k=String(p[0]);if(!(k in m)){m[k]={};xs.push(p[0])}m[k][j]=p[1]});
+    });
+    xs.sort(function(a,b){return a-b});
+    var half=xs.some(function(x){return x%1!==0});
+    var cols=[half?'Semestre':'Année'].concat(ser.map(function(se,j){return (names&&names[j])||se.n||('Série '+(j+1))}));
+    this.set(h,cols,xs.map(function(x){return [half?Math.floor(x)+(x%1?'-S2':'-S1'):x].concat(ser.map(function(se,j){var v=m[String(x)][j];return v==null?null:v}))}),note);
+  },
+  rename:function(id,names,note){var t=this.t[id];if(!t)return;names.forEach(function(n,i){if(n)t.cols[i+1]=n});if(note)t.note=note},
+  cats:function(h,cats,ser,first,note){
+    this.set(h,[first||'Catégorie'].concat(ser.map(function(se,j){return se.n||('Série '+(j+1))})),cats.map(function(c,i){return [c].concat(ser.map(function(se){var v=se.v[i];return v==null?null:v}))}),note);
+  }
+};
+
+
 (function(){
   var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg';
   H.classList.add('js');
@@ -644,6 +694,7 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
   /* Sous-utilisation */
   (function(){
     var box=D.getElementById('slack'),parts=[['Chômeurs au sens de l’OIT',339,6.0,'#E2402B'],['Temps partiel subi',216,3.8,'#F09A3E'],['Disponibles, ne cherchent pas',112,2.0,'#9C98F0'],['Cherchent, pas disponibles',45,0.8,'#EFA3CB']];
+    CJD.set('slack',['Groupe (15-74 ans)','Milliers de personnes','% de la main-d’œuvre élargie'],parts.map(function(p){return [p[0],p[1],p[2]]}));
     if(MOB){
       var W=400,y=10,h=60,sc=W/712,x=0,s=el('svg',{viewBox:'0 0 400 330',role:'img','aria-label':'712 000 personnes : 339 000 chômeurs, 216 000 en temps partiel subi, 112 000 disponibles sans chercher, 45 000 cherchant sans être disponibles'});
       parts.forEach(function(p,i){var w=p[1]*sc;s.appendChild(el('rect',{x:x+1.5,y:y,width:w-1.5,height:h,rx:i===0?12:0,fill:p[3],stroke:'#1A1A1A','stroke-width':2.5,'class':'s',style:'transition-delay:'+(i*0.18)+'s'}));x+=w;
@@ -672,6 +723,7 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
   /* Série */
   (function(){
     var box=D.getElementById('series'),txt=D.getElementById('evText');
+    CJD.series('series',[{n:'Belgique (%)',v:BE},{n:'Union (%)',v:EU}],2009,null,'Ruptures de série en 2011, 2017 et 2021.');
     var EV=[[2013,'Crise des dettes dans la zone euro : 11,6 % de chômage dans l’Union. La Belgique, à 8,6 %, reste nettement en dessous.'],
       [2017,'Nouvelle enquête : un panel interrogé quatre fois en quinze mois et un nouveau calage. La baisse de 2016 à 2017 mêle réalité et changement d’instrument.'],
       [2020,'Jusqu’à 1 415 628 salariés en chômage temporaire en avril 2020. Statbel a corrigé 2020 selon les règles de 2021, mais ceux qui ne cherchaient pas d’emploi sont inactifs : le taux seul ne montre pas le choc.'],
@@ -708,6 +760,7 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
   (function(){
     var raw=[['Belgique',6.2],['Bulgarie',3.5],['Tchéquie',2.8],['Danemark',6.4],['Allemagne',3.8],['Estonie',7.5],['Irlande',4.7],['Grèce',8.9],['Espagne*',10.5],['France*',7.7],['Croatie',4.9],['Italie',6.1],['Chypre',4.4],['Lettonie',6.9],['Lituanie',6.9],['Luxembourg',6.5],['Hongrie',4.4],['Malte',3.1],['Pays-Bas',3.9],['Autriche',5.7],['Pologne',3.1],['Portugal',6.0],['Roumanie',6.1],['Slovénie',3.9],['Slovaquie',5.4],['Finlande',9.7],['Suède',8.8]];
     var dd=raw.slice().sort(function(a,b){return b[1]-a[1]}),box=D.getElementById('europeChart');
+    CJD.set('europeChart',['Pays','Taux de chômage 2025 (%)'],dd.map(function(c){return [c[0],c[1]]}));
     var W=MOB?400:1000,row=MOB?24:26,T=10,L=MOB?94:150,R=MOB?362:900,mx=11,Hh=T+dd.length*row+34;
     function X(v){return L+v/mx*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Taux de chômage 2025 des 27 pays de l’Union, Belgique 6,2 %, moyenne 6,0 %'});
@@ -824,6 +877,83 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
     if(yt)w.appendChild(p('axt-y','Axe vertical',yt));
     w.appendChild(c);
     if(xt)w.appendChild(p('axt-x','Axe horizontal',xt));
+  });
+})();
+
+/* Données des graphiques : sous chaque graphique, un tableau « Voir les données » et un téléchargement CSV des valeurs exactes dessinées */
+(function(){
+  var D=document;if(typeof CJD==='undefined')return;
+  var snap=JSON.parse(JSON.stringify(CJD.t));
+  function num(v,csv,dp){if(v==null)return '';if(typeof v!=='number')return String(v);return csv?String(v).replace('.',','):v.toLocaleString('fr-BE',{minimumFractionDigits:dp||0,maximumFractionDigits:Math.max(dp||0,3)})}
+  function dec(v){if(typeof v!=='number')return 0;var s=String(v),i=s.indexOf('.');return i<0?0:Math.min(3,s.length-i-1)}
+  function q(t){t=String(t==null?'':t).replace(/\s+/g,' ').trim();return /[";\n]/.test(t)?'"'+t.replace(/"/g,'""')+'"':t}
+  function srcOf(w){
+    for(var n=w;n&&n!==D.body;n=n.parentNode){
+      for(var s=n.nextElementSibling;s;s=s.nextElementSibling){
+        if(s.classList&&s.classList.contains('srcl'))return s;
+        var i=s.querySelector&&s.querySelector('.srcl');if(i)return i;
+        if(s.querySelector&&s.querySelector('.chart'))return null;
+      }
+    }
+    return null;
+  }
+  var today=new Date().toISOString().slice(0,10);
+  Object.keys(snap).forEach(function(id){
+    var c=D.getElementById(id);if(!c)return;
+    var d=snap[id],w=c.closest('.axwrap')||c,src=srcOf(w),svg=c.querySelector('svg');
+    var det=D.createElement('details');det.className='cj-data';
+    var sm=D.createElement('summary');sm.textContent='Voir les données du graphique';det.appendChild(sm);
+    var box=D.createElement('div');box.className='cj-box';
+    var tb=D.createElement('table'),cap=D.createElement('caption');
+    cap.textContent=(c.getAttribute('data-yt')?'Unité : '+c.getAttribute('data-yt')+'. ':'')+'Case vide : donnée non publiée pour cette année ou ce pays.';
+    tb.appendChild(cap);
+    var th=D.createElement('thead'),tr=D.createElement('tr');
+    d.cols.forEach(function(h,i){var e=D.createElement('th');e.scope='col';e.textContent=h;tr.appendChild(e)});th.appendChild(tr);tb.appendChild(th);
+    var bd=D.createElement('tbody');
+    var dp=d.cols.map(function(c,i){return d.rows.reduce(function(m,r){return Math.max(m,dec(r[i]))},0)});
+    d.rows.forEach(function(r){var tr=D.createElement('tr');r.forEach(function(v,i){var e=D.createElement(i?'td':'th');if(!i)e.scope='row';e.textContent=i?num(v,0,dp[i]):String(v);tr.appendChild(e)});bd.appendChild(tr)});
+    tb.appendChild(bd);
+    var sc=D.createElement('div');sc.className='cj-scroll';sc.tabIndex=0;sc.setAttribute('role','region');sc.setAttribute('aria-label','Tableau des données');sc.appendChild(tb);box.appendChild(sc);
+    if(d.note){var nt=D.createElement('p');nt.className='cj-note';nt.textContent=d.note;box.appendChild(nt)}
+    var bt=D.createElement('button');bt.type='button';bt.className='cj-dl';bt.textContent='Télécharger ces données (CSV)';
+    bt.addEventListener('click',function(){
+      var L=[];
+      L.push(['Site','Chiffre Juste'].map(q).join(';'));
+      L.push(['Page',D.title].map(q).join(';'));
+      L.push(['Adresse',location.href.split('#')[0]+'#'+id].map(q).join(';'));
+      if(svg&&svg.getAttribute('aria-label'))L.push(['Graphique',svg.getAttribute('aria-label')].map(q).join(';'));
+      if(c.getAttribute('data-yt'))L.push(['Unité ou axe vertical',c.getAttribute('data-yt')].map(q).join(';'));
+      if(c.getAttribute('data-xt'))L.push(['Axe horizontal',c.getAttribute('data-xt')].map(q).join(';'));
+      if(src)L.push(['Source et notes',src.textContent].map(q).join(';'));
+      if(d.note)L.push(['Remarque',d.note].map(q).join(';'));
+      L.push(['Téléchargé le',today].map(q).join(';'));
+      L.push(['Conditions','Mise en forme : Chiffre Juste, licence CC BY 4.0. Les données restent celles de leurs producteurs : vérifier et citer la source primaire. Case vide = donnée non publiée.'].map(q).join(';'));
+      L.push('');
+      L.push(d.cols.map(q).join(';'));
+      d.rows.forEach(function(r){L.push(r.map(function(v,i){return q(i?num(v,1):String(v))}).join(';'))});
+      var txt='﻿'+L.join('\r\n'),fn='chiffre-juste-'+((location.pathname.split('/').pop()||'').replace('.html','')||'page')+'-'+id+'.csv';
+      function plain(){var blob=new Blob([txt],{type:'text/csv;charset=utf-8'}),a=D.createElement('a');a.href=URL.createObjectURL(blob);a.download=fn;D.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)}
+      if(window.claude&&window.claude.use){window.claude.use('downloads').then(function(dl){if(!dl)return plain();dl.save({filename:fn,data:txt}).catch(function(){})},plain)}else plain();
+    });
+    box.appendChild(bt);det.appendChild(box);
+    var after=src&&src.parentNode===w.parentNode&&src.previousElementSibling===w?src:w;
+    after.parentNode.insertBefore(det,after.nextSibling);
+  });
+})();
+
+/* Comment citer : date de consultation du jour et copie de la référence */
+(function(){
+  var D=document,M=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],t=new Date();
+  var today=(t.getDate()===1?'1er':t.getDate())+' '+M[t.getMonth()]+' '+t.getFullYear();
+  D.querySelectorAll('.cj-today').forEach(function(s){s.textContent=today});
+  D.querySelectorAll('.cj-cite').forEach(function(c){
+    var b=c.querySelector('.cj-copy'),r=c.querySelector('.cj-ref');if(!b||!r)return;
+    b.addEventListener('click',function(){
+      var txt=r.textContent.replace(/\s+/g,' ').trim();
+      function ok(){b.textContent='Référence copiée';setTimeout(function(){b.textContent='Copier la référence'},2000)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){sel()})}else sel();
+      function sel(){var g=D.createRange();g.selectNodeContents(r);var s=window.getSelection();s.removeAllRanges();s.addRange(g);b.textContent='Référence sélectionnée : Ctrl+C pour copier'}
+    });
   });
 })();
 </script>

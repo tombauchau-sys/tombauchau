@@ -24,7 +24,7 @@
   })();
 
   /* Courbes à départs variables */
-  function lines2(host,o){
+  function lines2(host,o){CJD.series(host,o.series,o.t0);
     var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -51,7 +51,7 @@
   function o2(a,b){for(var k in b)a[k]=b[k];return a}
 
   /* Barres horizontales groupées, avec unité */
-  function hb(host,o){
+  function hb(host,o){CJD.cats(host,o.cats,o.series);
     var W=MOB?420:(o.w||1000),rh=o.rh||46,L=MOB?130:(o.L||220),R=W-80,k=o.series.length,Hh=o.cats.length*rh+40;
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
     o.cats.forEach(function(c,i){var y=10+i*rh;s.appendChild(el('text',{x:L-10,y:y+rh/2+2,'text-anchor':'end',style:TX+o.ink+';font-weight:600'},c));
@@ -95,6 +95,7 @@
     var bs=D.querySelectorAll('#priceUnit button');
     bs.forEach(function(b){b.onclick=function(){real=b.dataset.u==='r';bs.forEach(function(x){x.setAttribute('aria-pressed',x===b)});draw()}});
     draw();
+    CJD.series(host,[{n:'Belgique, c€ courants',pts:DATA.price},{n:'Union, c€ courants',pts:DATA.priceEU},{n:'Belgique, c€ de 2025 (calcul Chiffre Juste)',pts:defl(DATA.price,DATA.ipchBE)},{n:'Union, c€ de 2025 (calcul Chiffre Juste)',pts:defl(DATA.priceEU,DATA.ipchEU)}],2019,null,'Euros de 2025 : prix divisé par l’IPCH annuel moyen (prc_hicp_ainr, 2025 = 100) ; 2026 non converti, faute d’indice annuel.');
   })();
 
   /* Recherche */

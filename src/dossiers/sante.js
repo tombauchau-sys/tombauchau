@@ -26,7 +26,7 @@
   })();
 
   /* Courbes à départs variables */
-  function lines2(host,o){
+  function lines2(host,o){CJD.series(host,o.series,o.t0);
     var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -71,6 +71,7 @@
     label:'Dépenses de santé en % du PIB : Belgique 9,2 % en 2003, 11,1 % en 2024 ; Union 9,9 % en 2023'},DK));
   (function(){
     var N=[['20 % les plus modestes',DATA.unmet[0]],['2e cinquième',DATA.unmet[1]],['3e cinquième',DATA.unmet[2]],['4e cinquième',DATA.unmet[3]],['20 % les plus aisés',DATA.unmet[4]]];
+    CJD.set('unmetChart',['Cinquième de revenu','Renoncement à un examen médical (% des 16 ans et plus), 2025'],N.map(function(n){return [n[0],n[1]]}));
     var W=MOB?420:600,rh=44,L=MOB?160:190,R=W-60,Hh=N.length*rh+10;
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Part des 16 ans et plus ayant renoncé à un examen médical en 2025, selon le revenu : '+N.map(function(n){return n[0]+' '+fr(n[1])+' %'}).join(', ')});
     N.forEach(function(n,i){var y=6+i*rh,w=(R-L)*n[1]/3.5;s.appendChild(el('text',{x:L-10,y:y+24,'text-anchor':'end',style:TX+DK.ink},n[0]));s.appendChild(el('rect',{x:L,y:y+8,width:Math.max(w,2).toFixed(1),height:rh-20,fill:'#C9773A','class':'fadein'}));s.appendChild(el('text',{x:L+Math.max(w,2)+8,y:y+24,'class':'fadein',style:TX+DK.ink+';font-weight:700'},fr(n[1])+' %'))});

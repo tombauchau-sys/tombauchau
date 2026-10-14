@@ -25,7 +25,7 @@
   })();
 
   /* Courbes à départs variables */
-  function lines2(host,o){
+  function lines2(host,o){CJD.series(host,o.series,o.t0);
     var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -57,6 +57,7 @@
     var P=[['Lecture, 2000-2025',[-12,-29,-23,-49,-68,-91]],['Mathématiques, 2003-2025',[-31,-20,-39,-51,-64,-55]],['Sciences, 2006-2025',[-4,-4,-30,-8,-33,-40]]];
     var host=D.getElementById('pisaChart'),W=MOB?420:1000,col=MOB?1:3,pw=W/col,rh=30,L=MOB?170:180,top=34,ph=top+SY.length*rh+10,Hh=ph*(MOB?3:1);
     var lab=[];P.forEach(function(p){lab.push(p[0]+' : '+SY.map(function(n,i){return n+' '+p[1][i]}).join(', '))});
+    CJD.set(host,['Système éducatif'].concat(P.map(function(p){return 'Écart '+p[0].toLowerCase()+' (points PISA)'})),SY.map(function(n,i){return [n].concat(P.map(function(p){return p[1][i]}))}));
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Évolution des scores PISA en points. '+lab.join('. ')});
     P.forEach(function(p,k){var ox=MOB?0:k*pw,oy=MOB?k*ph:0,x0=ox+L,sc=(pw-L-48)/95;
       s.appendChild(el('text',{x:x0,y:oy+18,style:'font-family:var(--sans);font-weight:700;font-size:14px;fill:#1A1A1A'},p[0]));
@@ -73,6 +74,7 @@
   lines2(D.getElementById('redChart'),o2({t0:2003,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:90,min:0,max:60,ticks:[0,20,40,60],unit:' %',dec:0,years:MOB?[2003,2012,2025]:[2003,2009,2012,2015,2018,2022,2025],
     series:[{n:'',pts:DATA.red,c:'#C9773A',w:4}],marks:[[2003,39,'39 %','#EDE6DC',-12,'start'],[2012,48,'48 %','#EDE6DC',-12],[2022,33,'33 %','#EDE6DC',24]],
     label:'Élèves de 15 ans ayant redoublé, Fédération Wallonie-Bruxelles : 39 % en 2003, 48 % en 2012, 33 % en 2022, 35 % en 2025'},DK));
+  CJD.rename('redChart',['FWB : élèves de 15 ans ayant redoublé au moins une fois (%)']);
   lines2(D.getElementById('eslChart'),o2({t0:1992,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:120,min:0,max:20,ticks:[0,5,10,15,20],unit:' %',years:MOB?[1992,2008,2025]:[1992,2000,2008,2016,2025],
     series:[{n:'Union',v:DATA.eslEU,s:2015,c:'#A69C8F',dash:1,dy:-4},{n:'Belgique',v:DATA.esl,s:1992,c:'#C9773A',w:4,dy:8}],
     marks:[[1992,18.1,'18,1 %','#EDE6DC',-12,'start']],

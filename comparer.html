@@ -602,6 +602,36 @@ html.calm .chart .fadein{opacity:1}
 .chart svg{overflow:visible}
 .axt-y + .chart{margin-top:6px}
 .axwrap{min-width:0}
+/* Données des graphiques */
+.cj-data{margin:10px 0 4px;max-width:110ch;font-family:var(--sans);font-size:14px;color:inherit}
+.cj-data summary{cursor:pointer;display:inline-block;padding:6px 12px;border:1.5px solid currentColor;border-radius:999px;font-weight:600;opacity:.85;list-style:none}
+.cj-data summary::-webkit-details-marker{display:none}
+.cj-data summary::before{content:'+ ';font-weight:700}
+.cj-data[open] summary::before{content:'− '}
+.cj-data summary:hover,.cj-data summary:focus-visible{opacity:1}
+.cj-box{margin-top:10px}
+.cj-scroll{max-height:360px;overflow:auto;border:1px solid currentColor;border-radius:6px}
+.cj-data table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.cj-data caption{text-align:left;padding:8px 10px;font-size:13px;opacity:.85}
+.cj-data th,.cj-data td{padding:5px 10px;border-top:1px solid rgba(128,128,128,.35);text-align:right;white-space:nowrap}
+.cj-data th[scope=row],.cj-data thead th:first-child{text-align:left;white-space:normal}
+.cj-data thead th{position:sticky;top:0;background:var(--cj-bg,#F7F6F2);color:#1A1A1A;font-weight:700;white-space:normal;vertical-align:bottom}
+.cj-note{font-size:13px;margin:8px 0 0;opacity:.85}
+.cj-dl{margin-top:10px;font:inherit;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cj-dl:hover,.cj-dl:focus-visible{background:rgba(128,128,128,.18)}
+/* Comment citer */
+.cj-cite{margin:28px 0 8px;padding:18px 20px;border:1.5px solid currentColor;border-radius:10px;max-width:110ch;font-family:var(--sans);font-size:15px;line-height:1.55}
+.cj-cite-t{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.cj-ref{margin:0 0 10px;overflow-wrap:anywhere}
+.cj-cite-n{font-size:13px;opacity:.85;margin:0 0 12px}
+.cj-cite-n a{color:inherit}
+.cj-copy{font:inherit;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cj-copy:hover,.cj-copy:focus-visible{background:rgba(128,128,128,.18)}
+.srcl.prec{border-left:3px solid currentColor;padding-left:12px}
+.cj-sel{margin:26px 0 0;max-width:90ch;font-family:var(--sans);font-size:15px;line-height:1.55}
+.cj-sel summary{cursor:pointer;font-weight:700;display:inline-block;padding:6px 12px;border:1.5px solid currentColor;border-radius:999px}
+.cj-sel p{margin:12px 0 0}
+.cj-sel a{color:inherit}
 
 .cmp-page{padding-top:140px}.cmp-page .cmp-how{margin-top:56px;max-width:80ch}.cmp-page .cmp-how ul{font:17px/1.55 var(--sans);padding-left:1.2em;display:grid;gap:10px}
 </style>

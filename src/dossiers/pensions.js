@@ -25,7 +25,7 @@
   })();
 
   /* Courbes à départs variables */
-  function lines2(host,o){
+  function lines2(host,o){CJD.series(host,o.series,o.t0);
     var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -53,6 +53,7 @@
     series:[{n:'',v:DATA.dep,s:1960,c:'#C9773A',w:4.5,end:false},{n:'',pts:DATA.proj,c:'#C9773A',w:3,dash:1,end:false}],
     marks:[[1960,18.5,'18,5','#EDE6DC',24,'start'],[1985,20.3,'20,3','#EDE6DC',22],[2025,31.8,'31,8','#EDE6DC',-14],[2070,48.3,'48,3 (projection)','#C9773A',-14,'end']],
     label:'Personnes de 65 ans et plus pour 100 personnes de 15 à 64 ans : 18,5 en 1960, 31,8 en 2025, 48,3 projeté en 2070'});
+  CJD.rename('depChart',['Observé (Eurostat, demo_pjanind)','Projection EUROPOP2023, scénario de base'],'Une projection n’est pas une prévision. Rupture de série en 2011.');
 
   /* Fiche 01 : coût */
   lines2(D.getElementById('costChart'),{t0:2001,t1:2024,min:6,max:12,ticks:[6,8,10,12],unit:' %',grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',bg:'#F7F6F2',years:MOB?[2001,2010,2020,2024]:[2001,2004,2008,2012,2016,2020,2024],

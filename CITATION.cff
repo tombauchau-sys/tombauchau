@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Pour citer Chiffre Juste, utilisez la référence ci-dessous. Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique)."
+title: "Chiffre Juste : chiffres vérifiés sur la Belgique et l'Europe"
+type: dataset
+authors:
+  - family-names: Bauchau
+    given-names: Tom
+date-released: 2026-10-14
+url: "https://tombauchau-sys.github.io/tombauchau/"
+repository-code: "https://github.com/tombauchau-sys/tombauchau"
+license: CC-BY-4.0
+abstract: "Outil citoyen et pédagogique : chiffres vérifiés à leur source primaire sur la Belgique et les 27 pays de l'Union européenne (emploi, finances publiques, pensions, immigration, justice, santé, éducation, inégalités, climat, logement), avec leurs définitions, leurs limites et un registre public de vérification."
+keywords:
+  - Belgique
+  - Union européenne
+  - statistiques publiques
+  - vérification des faits
+  - Eurostat

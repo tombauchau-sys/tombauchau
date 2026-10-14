@@ -29,3 +29,10 @@ Voir la charte éditoriale et la page Méthode : chaque chiffre est daté et rel
 ## Licence
 
 Textes et graphiques : Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/deed.fr — réutilisation libre en citant « Chiffre Juste ». Les données restent soumises aux conditions de leurs producteurs (Eurostat, Statbel, etc.).
+
+## Citer et reproduire
+
+- Référence : voir `CITATION.cff` (GitHub affiche un bouton « Cite this repository »). Chaque dossier contient aussi un encadré « Comment citer ».
+- Données : sous chaque graphique, « Voir les données du graphique » affiche et télécharge en CSV les valeurs exactes dessinées (registre `CJD`, fichier `src/dossiers/cjd.js`).
+- Vérifications : `verif/registre.csv` (une ligne par affirmation contrôlée) ; journal public des changements : page `nouveautes.html` (source `src/nouveautes/nv_journal.py` et journaux des dossiers).
+- Identifiant pérenne (DOI) : à obtenir en reliant le dépôt à Zenodo et en publiant une « release » GitHub.

@@ -24,7 +24,7 @@
   })();
 
   /* Courbes */
-  function lines(host,o){
+  function lines(host,o){CJD.series(host,o.series,o.t0||T0);
     var T0=o.t0,T1=o.t1,n=T1-T0,W=MOB?420:1000,Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(MOB?70:140),T=26,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/n*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -48,6 +48,7 @@
   /* 0b. Histoire 1980-2025 */
   (function(){
     var host=D.getElementById('histChart'),V=DATA.hist,T0=1980,T1=2025,W=MOB?420:1000,Hh=MOB?340:440,L=MOB?40:56,R=W-(MOB?50:110),T=40,B=Hh-40,mn=60,mx=150;
+    CJD.series(host,[{n:'Dette publique belge (% du PIB)',v:V}],T0);
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette publique belge 1980-2025 : 76,8 % en 1980, pic de 138,9 % en 1993, 87,3 % en 2007, 107,9 % en 2025'});
     [[1980,1993,'boule de neige','rgba(226,64,43,.16)'],[1993,2007,'assainissement','rgba(127,182,163,.18)'],[2008,2011,'banques','rgba(201,119,58,.18)'],[2020,2021,'Covid','rgba(201,119,58,.18)']].forEach(function(p){
@@ -67,6 +68,7 @@
 
   (function(){
     var S=DATA.sub.debt,box=D.getElementById('subChart'),W=MOB?400:1000,row=MOB?58:54,L=MOB?120:250,R=W-(MOB?50:110),mx=95,Hh=S.length*row+30;
+    CJD.set('subChart',['Niveau de pouvoir','2015 (% du PIB)','2025 (% du PIB)'],S.map(function(r){return [r[0],r[2],r[1]]}));
     function X(v){return L+v/mx*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette par niveau de pouvoir, 2015 et 2025 : fédéral 89,2 puis 86,9 % du PIB ; Communautés et Régions 12,6 puis 20,4 % ; pouvoirs locaux 5,9 puis 4,3 % ; sécurité sociale 2,0 puis 0,1 %'}),g=el('g',{'class':'pills'});
     S.forEach(function(r,i){var y=i*row+6,hh=(row-16)/2;
@@ -82,6 +84,7 @@
   /* 2. Déficit */
   (function(){
     var box=D.getElementById('defChart'),T0=2000,T1=2025,W=MOB?420:1000,Hh=MOB?320:400,L=MOB?40:56,R=W-(MOB?60:130),T=20,B=Hh-40,mn=-10,mx=1;
+    CJD.series(box,[{n:'Belgique (% du PIB)',v:DATA.def.BE},{n:'Union (% du PIB)',v:DATA.def.EU}],T0);
     function X(y){return L+(y-T0+.5)/(T1-T0+1)*(R-L)} function Y(v){return T+(mx-v)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Solde public 2000-2025 : Belgique −5,2 % en 2025, Union −3,1 %, plus bas −9,0 % en 2020'});
     [0,-3,-6,-9].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v===-3?'#E2402B':'#D7D4CC','stroke-width':v===-3?2:1,'stroke-dasharray':v===-3?'3 5':''}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+'#6A665F'},(v?'−'+Math.abs(v):'0')+' %'))});
@@ -97,7 +100,7 @@
     box.appendChild(s);
   })();
 
-  function hbars(id,rows,o){
+  function hbars(id,rows,o){CJD.set(id,['Catégorie','Valeur'],rows.map(function(r){return [r[0],r[1]]}));
     var box=D.getElementById(id),W=MOB?420:600,row=o.row||(MOB?40:44),L=MOB?170:215,R=W-(MOB?60:70),mn=o.min,mx=o.max,Hh=rows.length*row+26;
     function X(v){return L+(v-mn)/(mx-mn)*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label}),g=el('g',{'class':'pills'});
@@ -111,12 +114,15 @@
   }
   var SD=DATA.sub.def.map(function(r){return [r[0],r[1],r[1]<-1?'#E2402B':'#fff']});
   hbars('subDef',SD,{min:-4.8,max:0.6,signed:1,label:'Solde 2025 par niveau de pouvoir : fédéral −3,8 % du PIB, Communautés et Régions −1,4 %, pouvoirs locaux −0,1 %, sécurité sociale 0,0 %'});
+  CJD.rename('subDef',['Solde 2025 (% du PIB)']);
   hbars('revExp',[['Recettes · Belgique',49.0,'#7FB6A3'],['Recettes · Union',46.4,'#fff'],['Dépenses · Belgique',54.2,'#E2402B'],['Dépenses · Union',49.5,'#fff']],{min:0,max:62,label:'Recettes et dépenses publiques 2025 : Belgique 49,0 % et 54,2 % du PIB ; Union 46,4 % et 49,5 %'});
+  CJD.rename('revExp',['2025 (% du PIB)']);
 
   /* 3. COFOG */
   (function(){
     var F=[['GF10','Protection sociale','Protection sociale'],['GF07','Santé','Santé'],['GF01','Services généraux (dont intérêts)','Services généraux*'],['GF04','Affaires économiques','Affaires éco.'],['GF09','Enseignement','Enseignement'],['GF03','Ordre et sécurité publics','Ordre public'],['GF02','Défense','Défense'],['GF05','Environnement','Environnement'],['GF08','Loisirs, culture, cultes','Culture, loisirs'],['GF06','Logement et équipements','Logement']];
     var box=D.getElementById('cofChart'),W=MOB?400:1000,row=MOB?46:44,L=MOB?120:290,R=W-(MOB?20:150),mx=MOB?30:26,Hh=F.length*row+36;
+    CJD.set('cofChart',['Fonction (COFOG)','Belgique 2024 (% du PIB)','Union 2024 (% du PIB)'],F.map(function(f){return [f[1],DATA.cofBE[f[0]],DATA.cofEU[f[0]]]}).concat([['Total',DATA.cofBE.TOTAL,DATA.cofEU.TOTAL]]));
     function X(v){return L+v/mx*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dépenses publiques par fonction 2024, Belgique et Union, en % du PIB : protection sociale 20,4 contre 19,6 ; santé 8,0 contre 7,3 ; enseignement 6,3 contre 4,7'}),g=el('g',{'class':'pills'});
     [0,5,10,15,20].forEach(function(v){s.appendChild(el('line',{x1:X(v),x2:X(v),y1:4,y2:Hh-28,stroke:'rgba(26,26,26,.2)'}));s.appendChild(el('text',{x:X(v),y:Hh-10,'text-anchor':'middle',style:TX+'#1A1A1A'},v+' %'))});
@@ -136,6 +142,7 @@
   (function(){
     var I=DATA.int,P=DATA.ipch,box=D.getElementById('intChart'),W=MOB?420:1000,Hh=MOB?330:420,L=MOB?44:60,R=W-20,T=MOB?62:48,B=Hh-34,mx=18000,n=I.length;
     var K=I.map(function(v,i){return v*100/P[i]});
+    CJD.set('intChart',['Année','Intérêts, millions d’euros courants','IPCH Belgique (2025 = 100)','Intérêts, millions d’euros de 2025 (calcul Chiffre Juste)'],I.map(function(v,i){return [2015+i,v,P[i],Math.round(K[i]*10)/10]}));
     function Y(v){return B-v/mx*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Intérêts payés 2015-2025. En euros courants : 12,4 milliards en 2015, 8,6 en 2021, 14,3 en 2025. En euros de 2025, inflation déduite : 16,8 milliards en 2015, 10,4 en 2021, 14,3 en 2025.'}),g=el('g',{'class':'seg-bar'});
     [0,5000,10000,15000].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:'#3B332B'}));s.appendChild(el('text',{x:L-8,y:Y(v)+4,'text-anchor':'end',style:TX+'#A69C8F'},v/1000+' Md'))});

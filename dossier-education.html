@@ -602,6 +602,36 @@ html.calm .chart .fadein{opacity:1}
 .chart svg{overflow:visible}
 .axt-y + .chart{margin-top:6px}
 .axwrap{min-width:0}
+/* Données des graphiques */
+.cj-data{margin:10px 0 4px;max-width:110ch;font-family:var(--sans);font-size:14px;color:inherit}
+.cj-data summary{cursor:pointer;display:inline-block;padding:6px 12px;border:1.5px solid currentColor;border-radius:999px;font-weight:600;opacity:.85;list-style:none}
+.cj-data summary::-webkit-details-marker{display:none}
+.cj-data summary::before{content:'+ ';font-weight:700}
+.cj-data[open] summary::before{content:'− '}
+.cj-data summary:hover,.cj-data summary:focus-visible{opacity:1}
+.cj-box{margin-top:10px}
+.cj-scroll{max-height:360px;overflow:auto;border:1px solid currentColor;border-radius:6px}
+.cj-data table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.cj-data caption{text-align:left;padding:8px 10px;font-size:13px;opacity:.85}
+.cj-data th,.cj-data td{padding:5px 10px;border-top:1px solid rgba(128,128,128,.35);text-align:right;white-space:nowrap}
+.cj-data th[scope=row],.cj-data thead th:first-child{text-align:left;white-space:normal}
+.cj-data thead th{position:sticky;top:0;background:var(--cj-bg,#F7F6F2);color:#1A1A1A;font-weight:700;white-space:normal;vertical-align:bottom}
+.cj-note{font-size:13px;margin:8px 0 0;opacity:.85}
+.cj-dl{margin-top:10px;font:inherit;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cj-dl:hover,.cj-dl:focus-visible{background:rgba(128,128,128,.18)}
+/* Comment citer */
+.cj-cite{margin:28px 0 8px;padding:18px 20px;border:1.5px solid currentColor;border-radius:10px;max-width:110ch;font-family:var(--sans);font-size:15px;line-height:1.55}
+.cj-cite-t{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.cj-ref{margin:0 0 10px;overflow-wrap:anywhere}
+.cj-cite-n{font-size:13px;opacity:.85;margin:0 0 12px}
+.cj-cite-n a{color:inherit}
+.cj-copy{font:inherit;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+.cj-copy:hover,.cj-copy:focus-visible{background:rgba(128,128,128,.18)}
+.srcl.prec{border-left:3px solid currentColor;padding-left:12px}
+.cj-sel{margin:26px 0 0;max-width:90ch;font-family:var(--sans);font-size:15px;line-height:1.55}
+.cj-sel summary{cursor:pointer;font-weight:700;display:inline-block;padding:6px 12px;border:1.5px solid currentColor;border-radius:999px}
+.cj-sel p{margin:12px 0 0}
+.cj-sel a{color:inherit}
 </style>
 </head>
 <body>
@@ -748,6 +778,7 @@ html.calm .chart .fadein{opacity:1}
     <p class="lede" data-r>Sur vingt ans, les résultats PISA baissent dans presque tous les systèmes voisins. La chute est particulièrement forte en Flandre et aux Pays-Bas. L’enseignement francophone baisse moins et rejoint ainsi la Flandre en lecture (466 et 467 points en 2025). En mathématiques, la Flandre garde une avance.</p>
     <div class="chart" id="pisaChart" data-yt="Système scolaire" data-xt="Évolution du score moyen PISA, en points"></div>
     <p class="srcl">Évolution des scores moyens PISA, en points (FWB : enseignement de la Fédération Wallonie-Bruxelles) : lecture de 2000 à 2025, mathématiques de 2003 à 2025, sciences de 2006 à 2025. Source : aSPe (ULiège), <a href="https://www.pisa-fwb.uliege.be/cms/c_13724472/fr/pisa2025-synthese-et-slides" target="_blank" rel="noopener">PISA 2025, synthèse et diaporama</a>, septembre 2026, d’après l’OCDE. Pour repère, en 2022 : mathématiques 474 (Fédération Wallonie-Bruxelles), 501 (Flandre), 472 (moyenne OCDE), selon <a href="https://www.pisa-fwb.uliege.be/upload/docs/application/pdf/2023-12/synthese_resultats_pisa_2022.pdf" target="_blank" rel="noopener">aSPe, décembre 2023</a>.</p>
+    <p class="srcl prec"><b>Marge d’incertitude.</b> PISA teste un échantillon d’élèves : chaque score moyen est une estimation, entourée d’une erreur d’échantillonnage, et la comparaison entre deux cycles ajoute une erreur de liaison entre les tests. Une variation de quelques points peut donc ne pas être statistiquement significative ; les grandes baisses (Pays-Bas, Flandre, France) dépassent largement ces marges. Les rapports de l’OCDE et de l’aSPe indiquent, pour chaque évolution, si elle est significative.</p>
     <div class="canwhat" data-r><p class="cw-t">Le score PISA</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Ce que savent faire, en moyenne, des élèves de 15 ans en lecture, mathématiques et sciences.</li><li>Comment un système évolue et se compare à d’autres, avec les mêmes épreuves.</li><li>Les écarts entre élèves selon l’origine sociale ou migratoire.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Ce que vaut une école en particulier : c’est un échantillon national.</li><li>Pourquoi les résultats baissent : la crise sanitaire, les écrans, la composition des élèves et les réformes sont autant d’hypothèses.</li><li>Tout ce que l’école apporte : citoyenneté, créativité, formation professionnelle échappent largement à ces épreuves.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Les écarts selon l’origine sociale.</li><li>Les épreuves externes (CEB en Fédération Wallonie-Bruxelles).</li><li>Les rapports complets de l’aSPe et de l’université de Gand.</li></ul></div></div>
     <div class="trap" data-r><span class="note">attention</span><p>Un score PISA a une marge d’erreur de quelques points. En 2022, l’écart de 2 points entre l’enseignement francophone et la moyenne de l’OCDE en mathématiques n’était pas statistiquement significatif : on ne peut pas dire que l’un fait mieux que l’autre.</p></div>
   </div>
@@ -795,7 +826,7 @@ html.calm .chart .fadein{opacity:1}
     <p class="lede" data-r>Chaque conclusion porte un badge (adapté de la grille du GIEC) et chaque étude son type ou son niveau sur l’échelle de Maryland. <a href="index.html#methode">Voir la méthode</a>.</p>
     <div class="legend-badges" data-r><span class="bdg b-et">Établi</span><span class="bdg b-ma">Majoritaire</span><span class="bdg b-de">Débattu</span><span class="bdg b-pe">Peu étudié</span></div>
     <div id="rq" class="rq-light"></div>
-  </div>
+  <details class="cj-sel" data-r><summary>Comment ces études ont été choisies</summary><p>Ce n’est pas une revue systématique : la sélection est raisonnée, pas exhaustive. Les études sont cherchées dans les revues de littérature et méta-analyses récentes, dans les bases d’articles et de documents de travail en sciences sociales (Google Scholar, RePEc, NBER, IZA) et dans les publications des institutions et centres de recherche belges (Banque nationale, Bureau fédéral du Plan, Conseil supérieur de l’emploi, universités).</p><p><b>Retenues</b> : les études publiées (revue à comité de lecture, document de travail d’une institution reconnue ou rapport public), dont la méthode est décrite, portant sur la Belgique ou sur un pays comparable ; les études belges sont privilégiées quand elles existent. <b>Écartées</b> : les textes d’opinion, les études sans méthode décrite et celles qui n’ont pas pu être lues à la source. Quand des études sérieuses aboutissent à des conclusions opposées, le badge « Débattu » l’indique et les deux côtés sont cités.</p><p>Une étude importante manque ? Signalez-la (voir la <a href="index.html#methode">méthode</a>, point 07).</p></details></div>
 </section>
 
 <!-- V2 · Du chiffre à la décision -->
@@ -925,7 +956,7 @@ html.calm .chart .fadein{opacity:1}
       </ul></div>
     </div>
     <p class="maj">Rédigé avec l’aide d’une intelligence artificielle pour la collecte et la mise en forme ; chaque chiffre et chaque référence ont été vérifiés à la source, et la relecture finale est humaine. Les scores PISA 2025 détaillés par Communauté (hors lecture) n’étaient disponibles que dans des graphiques ou dans la presse lors de la vérification : ils ne sont pas repris. Une erreur ? Chaque correction est datée et publiée. Méthode complète : <a href="index.html#methode">page Méthode</a>.</p>
-    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication. 12 octobre 2026 : passage sur le tronc commun mis à jour (décret de mai 2026, circulaire n° 9744) ; sources de presse remplacées par les textes officiels.</p>
+    <p class="maj">Journal des corrections · 11 octobre 2026 : première publication. 12 octobre 2026 : passage sur le tronc commun mis à jour (décret de mai 2026, circulaire n° 9744) ; sources de presse remplacées par les textes officiels. 14 octobre 2026 : loi du 23 mars 2019 citée d’après Justel (texte officiel) au lieu d’un article de presse ; marge d’incertitude des scores PISA signalée.</p><div class="cj-cite"><p class="cj-cite-t">Comment citer ce dossier</p><p class="cj-ref">Bauchau, T. (2026). <i>Éducation</i> [dossier]. Chiffre Juste, version du 11 octobre 2026. Consulté le <span class="cj-today">…</span>, à l’adresse https://tombauchau-sys.github.io/tombauchau/dossier-education.html</p><p class="cj-cite-n">Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique) : Chiffre Juste rassemble et explique des données, il ne les produit pas. Les données de chaque graphique sont téléchargeables (« Voir les données du graphique »). Code et données du site : <a href="https://github.com/tombauchau-sys/tombauchau" target="_blank" rel="noopener">dépôt public GitHub</a>.</p><button type="button" class="cj-copy">Copier la référence</button></div>
   </div>
 </section>
 </main>
@@ -934,7 +965,27 @@ html.calm .chart .fadein{opacity:1}
   <div class="meta"><span>Chiffre Juste · Dossier 07 · Éducation · vérifié le 11 octobre 2026</span><span><a href="lexique.html">Lexique</a> · <a href="index.html#dossiers">Tous les dossiers →</a></span></div>
   <div class="wm" aria-hidden="true">Chiffre Juste</div>
 </footer>
-<script>(function(){
+<script>/* Registre des données des graphiques : chaque graphique y dépose les valeurs exactes qu’il dessine, pour le tableau « Voir les données » et le téléchargement CSV */
+var CJD={t:{},
+  set:function(h,cols,rows,note){var id=h&&(h.id||h);if(typeof id==='string'&&id)this.t[id]={cols:cols,rows:rows,note:note||''}},
+  series:function(h,ser,t0,names,note){
+    var m={},xs=[];
+    ser.forEach(function(se,j){
+      var pts=se.pts||(se.v||[]).map(function(v,k){return [(se.s!=null?se.s:t0)+k,v]});
+      pts.forEach(function(p){if(p[1]==null||typeof p[1]!=='number'||isNaN(p[1]))return;var k=String(p[0]);if(!(k in m)){m[k]={};xs.push(p[0])}m[k][j]=p[1]});
+    });
+    xs.sort(function(a,b){return a-b});
+    var half=xs.some(function(x){return x%1!==0});
+    var cols=[half?'Semestre':'Année'].concat(ser.map(function(se,j){return (names&&names[j])||se.n||('Série '+(j+1))}));
+    this.set(h,cols,xs.map(function(x){return [half?Math.floor(x)+(x%1?'-S2':'-S1'):x].concat(ser.map(function(se,j){var v=m[String(x)][j];return v==null?null:v}))}),note);
+  },
+  rename:function(id,names,note){var t=this.t[id];if(!t)return;names.forEach(function(n,i){if(n)t.cols[i+1]=n});if(note)t.note=note},
+  cats:function(h,cats,ser,first,note){
+    this.set(h,[first||'Catégorie'].concat(ser.map(function(se,j){return se.n||('Série '+(j+1))})),cats.map(function(c,i){return [c].concat(ser.map(function(se){var v=se.v[i];return v==null?null:v}))}),note);
+  }
+};
+
+(function(){
   var D=document,H=D.documentElement,NS='http://www.w3.org/2000/svg',DATA={"esl": [18.1, 17.4, 16.1, 15.1, 12.9, 12.7, 14.5, 15.2, 13.8, 13.8, 14.1, 14.3, 13.1, 12.9, 12.6, 12.1, 12.0, 11.1, 11.9, 12.3, 12.0, 11.0, 9.8, 10.1, 8.8, 8.9, 8.6, 8.4, 8.1, 6.7, 6.4, 6.2, 7.0, 7.3], "eslEU": [11.0, 10.6, 10.5, 10.5, 10.1, 10.0, 9.7, 9.6, 9.6, 9.6, 9.1], "ter": [40.6, 41.9, 41.3, 42.3, 42.5, 43.8, 42.5, 43.0, 42.7, 44.2, 43.1, 44.3, 45.7, 47.4, 47.3, 48.5, 50.9, 51.4, 50.0, 50.7, 52.7], "terEU": [36.5, 36.8, 37.6, 38.7, 39.6, 40.7, 41.5, 42.0, 43.1, 43.9, 44.8], "red": [[2003, 39], [2009, 46], [2012, 48], [2015, 46], [2018, 41], [2022, 33], [2025, 35]]};
   H.classList.add('js');
   function el(n,a,t){var e=D.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
@@ -961,7 +1012,7 @@ html.calm .chart .fadein{opacity:1}
   })();
 
   /* Courbes à départs variables */
-  function lines2(host,o){
+  function lines2(host,o){CJD.series(host,o.series,o.t0);
     var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -993,6 +1044,7 @@ html.calm .chart .fadein{opacity:1}
     var P=[['Lecture, 2000-2025',[-12,-29,-23,-49,-68,-91]],['Mathématiques, 2003-2025',[-31,-20,-39,-51,-64,-55]],['Sciences, 2006-2025',[-4,-4,-30,-8,-33,-40]]];
     var host=D.getElementById('pisaChart'),W=MOB?420:1000,col=MOB?1:3,pw=W/col,rh=30,L=MOB?170:180,top=34,ph=top+SY.length*rh+10,Hh=ph*(MOB?3:1);
     var lab=[];P.forEach(function(p){lab.push(p[0]+' : '+SY.map(function(n,i){return n+' '+p[1][i]}).join(', '))});
+    CJD.set(host,['Système éducatif'].concat(P.map(function(p){return 'Écart '+p[0].toLowerCase()+' (points PISA)'})),SY.map(function(n,i){return [n].concat(P.map(function(p){return p[1][i]}))}));
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Évolution des scores PISA en points. '+lab.join('. ')});
     P.forEach(function(p,k){var ox=MOB?0:k*pw,oy=MOB?k*ph:0,x0=ox+L,sc=(pw-L-48)/95;
       s.appendChild(el('text',{x:x0,y:oy+18,style:'font-family:var(--sans);font-weight:700;font-size:14px;fill:#1A1A1A'},p[0]));
@@ -1009,6 +1061,7 @@ html.calm .chart .fadein{opacity:1}
   lines2(D.getElementById('redChart'),o2({t0:2003,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:90,min:0,max:60,ticks:[0,20,40,60],unit:' %',dec:0,years:MOB?[2003,2012,2025]:[2003,2009,2012,2015,2018,2022,2025],
     series:[{n:'',pts:DATA.red,c:'#C9773A',w:4}],marks:[[2003,39,'39 %','#EDE6DC',-12,'start'],[2012,48,'48 %','#EDE6DC',-12],[2022,33,'33 %','#EDE6DC',24]],
     label:'Élèves de 15 ans ayant redoublé, Fédération Wallonie-Bruxelles : 39 % en 2003, 48 % en 2012, 33 % en 2022, 35 % en 2025'},DK));
+  CJD.rename('redChart',['FWB : élèves de 15 ans ayant redoublé au moins une fois (%)']);
   lines2(D.getElementById('eslChart'),o2({t0:1992,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:120,min:0,max:20,ticks:[0,5,10,15,20],unit:' %',years:MOB?[1992,2008,2025]:[1992,2000,2008,2016,2025],
     series:[{n:'Union',v:DATA.eslEU,s:2015,c:'#A69C8F',dash:1,dy:-4},{n:'Belgique',v:DATA.esl,s:1992,c:'#C9773A',w:4,dy:8}],
     marks:[[1992,18.1,'18,1 %','#EDE6DC',-12,'start']],
@@ -1136,6 +1189,83 @@ html.calm .chart .fadein{opacity:1}
     if(yt)w.appendChild(p('axt-y','Axe vertical',yt));
     w.appendChild(c);
     if(xt)w.appendChild(p('axt-x','Axe horizontal',xt));
+  });
+})();
+
+/* Données des graphiques : sous chaque graphique, un tableau « Voir les données » et un téléchargement CSV des valeurs exactes dessinées */
+(function(){
+  var D=document;if(typeof CJD==='undefined')return;
+  var snap=JSON.parse(JSON.stringify(CJD.t));
+  function num(v,csv,dp){if(v==null)return '';if(typeof v!=='number')return String(v);return csv?String(v).replace('.',','):v.toLocaleString('fr-BE',{minimumFractionDigits:dp||0,maximumFractionDigits:Math.max(dp||0,3)})}
+  function dec(v){if(typeof v!=='number')return 0;var s=String(v),i=s.indexOf('.');return i<0?0:Math.min(3,s.length-i-1)}
+  function q(t){t=String(t==null?'':t).replace(/\s+/g,' ').trim();return /[";\n]/.test(t)?'"'+t.replace(/"/g,'""')+'"':t}
+  function srcOf(w){
+    for(var n=w;n&&n!==D.body;n=n.parentNode){
+      for(var s=n.nextElementSibling;s;s=s.nextElementSibling){
+        if(s.classList&&s.classList.contains('srcl'))return s;
+        var i=s.querySelector&&s.querySelector('.srcl');if(i)return i;
+        if(s.querySelector&&s.querySelector('.chart'))return null;
+      }
+    }
+    return null;
+  }
+  var today=new Date().toISOString().slice(0,10);
+  Object.keys(snap).forEach(function(id){
+    var c=D.getElementById(id);if(!c)return;
+    var d=snap[id],w=c.closest('.axwrap')||c,src=srcOf(w),svg=c.querySelector('svg');
+    var det=D.createElement('details');det.className='cj-data';
+    var sm=D.createElement('summary');sm.textContent='Voir les données du graphique';det.appendChild(sm);
+    var box=D.createElement('div');box.className='cj-box';
+    var tb=D.createElement('table'),cap=D.createElement('caption');
+    cap.textContent=(c.getAttribute('data-yt')?'Unité : '+c.getAttribute('data-yt')+'. ':'')+'Case vide : donnée non publiée pour cette année ou ce pays.';
+    tb.appendChild(cap);
+    var th=D.createElement('thead'),tr=D.createElement('tr');
+    d.cols.forEach(function(h,i){var e=D.createElement('th');e.scope='col';e.textContent=h;tr.appendChild(e)});th.appendChild(tr);tb.appendChild(th);
+    var bd=D.createElement('tbody');
+    var dp=d.cols.map(function(c,i){return d.rows.reduce(function(m,r){return Math.max(m,dec(r[i]))},0)});
+    d.rows.forEach(function(r){var tr=D.createElement('tr');r.forEach(function(v,i){var e=D.createElement(i?'td':'th');if(!i)e.scope='row';e.textContent=i?num(v,0,dp[i]):String(v);tr.appendChild(e)});bd.appendChild(tr)});
+    tb.appendChild(bd);
+    var sc=D.createElement('div');sc.className='cj-scroll';sc.tabIndex=0;sc.setAttribute('role','region');sc.setAttribute('aria-label','Tableau des données');sc.appendChild(tb);box.appendChild(sc);
+    if(d.note){var nt=D.createElement('p');nt.className='cj-note';nt.textContent=d.note;box.appendChild(nt)}
+    var bt=D.createElement('button');bt.type='button';bt.className='cj-dl';bt.textContent='Télécharger ces données (CSV)';
+    bt.addEventListener('click',function(){
+      var L=[];
+      L.push(['Site','Chiffre Juste'].map(q).join(';'));
+      L.push(['Page',D.title].map(q).join(';'));
+      L.push(['Adresse',location.href.split('#')[0]+'#'+id].map(q).join(';'));
+      if(svg&&svg.getAttribute('aria-label'))L.push(['Graphique',svg.getAttribute('aria-label')].map(q).join(';'));
+      if(c.getAttribute('data-yt'))L.push(['Unité ou axe vertical',c.getAttribute('data-yt')].map(q).join(';'));
+      if(c.getAttribute('data-xt'))L.push(['Axe horizontal',c.getAttribute('data-xt')].map(q).join(';'));
+      if(src)L.push(['Source et notes',src.textContent].map(q).join(';'));
+      if(d.note)L.push(['Remarque',d.note].map(q).join(';'));
+      L.push(['Téléchargé le',today].map(q).join(';'));
+      L.push(['Conditions','Mise en forme : Chiffre Juste, licence CC BY 4.0. Les données restent celles de leurs producteurs : vérifier et citer la source primaire. Case vide = donnée non publiée.'].map(q).join(';'));
+      L.push('');
+      L.push(d.cols.map(q).join(';'));
+      d.rows.forEach(function(r){L.push(r.map(function(v,i){return q(i?num(v,1):String(v))}).join(';'))});
+      var txt='﻿'+L.join('\r\n'),fn='chiffre-juste-'+((location.pathname.split('/').pop()||'').replace('.html','')||'page')+'-'+id+'.csv';
+      function plain(){var blob=new Blob([txt],{type:'text/csv;charset=utf-8'}),a=D.createElement('a');a.href=URL.createObjectURL(blob);a.download=fn;D.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)}
+      if(window.claude&&window.claude.use){window.claude.use('downloads').then(function(dl){if(!dl)return plain();dl.save({filename:fn,data:txt}).catch(function(){})},plain)}else plain();
+    });
+    box.appendChild(bt);det.appendChild(box);
+    var after=src&&src.parentNode===w.parentNode&&src.previousElementSibling===w?src:w;
+    after.parentNode.insertBefore(det,after.nextSibling);
+  });
+})();
+
+/* Comment citer : date de consultation du jour et copie de la référence */
+(function(){
+  var D=document,M=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],t=new Date();
+  var today=(t.getDate()===1?'1er':t.getDate())+' '+M[t.getMonth()]+' '+t.getFullYear();
+  D.querySelectorAll('.cj-today').forEach(function(s){s.textContent=today});
+  D.querySelectorAll('.cj-cite').forEach(function(c){
+    var b=c.querySelector('.cj-copy'),r=c.querySelector('.cj-ref');if(!b||!r)return;
+    b.addEventListener('click',function(){
+      var txt=r.textContent.replace(/\s+/g,' ').trim();
+      function ok(){b.textContent='Référence copiée';setTimeout(function(){b.textContent='Copier la référence'},2000)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){sel()})}else sel();
+      function sel(){var g=D.createRange();g.selectNodeContents(r);var s=window.getSelection();s.removeAllRanges();s.addRange(g);b.textContent='Référence sélectionnée : Ctrl+C pour copier'}
+    });
   });
 })();
 </script>

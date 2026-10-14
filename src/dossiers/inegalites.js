@@ -25,7 +25,7 @@
   })();
 
   /* Courbes à départs variables */
-  function lines2(host,o){
+  function lines2(host,o){CJD.series(host,o.series,o.t0);
     var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -52,7 +52,7 @@
   function o2(a,b){for(var k in b)a[k]=b[k];return a}
 
   /* Barres horizontales groupées */
-  function hbars(host,o){
+  function hbars(host,o){CJD.cats(host,o.cats,o.series);
     var W=MOB?420:(o.w||1000),rh=o.rh||46,L=MOB?120:(o.L||200),R=W-70,k=o.series.length,Hh=o.cats.length*rh+40;
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
     o.cats.forEach(function(c,i){var y=10+i*rh;s.appendChild(el('text',{x:L-10,y:y+rh/2+2,'text-anchor':'end',style:TX+o.ink+';font-weight:600'},c));
@@ -69,6 +69,7 @@
     series:[{n:'',pts:DATA.pov1,c:'#C9773A',w:4,end:false},{n:'Union',v:DATA.povEU,s:2015,c:'#A69C8F',dash:1,dy:-4},{n:'Belgique',pts:DATA.pov2,c:'#C9773A',w:4.5,dy:8}],
     marks:[[2019,14.8,'2019 : 14,8 %','#EDE6DC',28,'end']],
     label:'Taux de risque de pauvreté en Belgique : 16,0 % en 1995, 14,8 % en 2019 (après la réforme de l’enquête), 10,9 % en 2025 ; Union : 16,3 % en 2025'},DK));
+  CJD.rename('povChart',['Belgique, enquête ECHP (%)','Union (%)','Belgique, enquête SILC (%)'],'Ruptures de série en 2003 (ECHP vers SILC, aucune donnée en 2002) et en 2019.');
 
   hbars(D.getElementById('ageChart'),{cats:['Moins de 18 ans','18-24 ans','65 ans et plus','Ensemble'],max:25,ink:'#1A1A1A',
     series:[{n:'2019',v:[19.0,16.0,15.8,14.8],c:'#9A9488'},{n:'2025',v:[14.5,12.6,9.3,10.9],c:'#C0341E'}],
@@ -84,6 +85,7 @@
   /* Patrimoine : barre empilée */
   (function(){
     var P=[['50 % les moins riches',8.4,'#EDE6DC','#1A1A1A'],['40 % du milieu',36.6,'#3D3A35','#fff'],['10 % les plus riches',55.0,'#701C0E','#fff']];
+    CJD.set('wealthChart',['Groupe de ménages','Part du patrimoine net (%), 2e trimestre 2023'],P.map(function(p){return [p[0],p[1]]}));
     var W=MOB?420:1000,L=10,R=W-10,Hh=MOB?150:120,x=L;
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Patrimoine net des ménages belges au 2e trimestre 2023 : 8,4 % pour les 50 % les moins riches, 36,6 % pour les 40 % du milieu, 55 % pour les 10 % les plus riches'});
     P.forEach(function(p,i){var w=(R-L)*p[1]/100;s.appendChild(el('rect',{x:x.toFixed(1),y:10,width:(w-2).toFixed(1),height:50,fill:p[2],'class':'fadein'}));

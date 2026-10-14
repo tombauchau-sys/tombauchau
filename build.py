@@ -30,6 +30,7 @@ PAGES = {
     '__REGISTRE__': ('registre-verification.html', 'https://claude.ai/artifact/Dg6d1Tr6wmDe1SFiUjHjYC'),
     '__COMPARER__': ('comparer.html', 'https://claude.ai/artifact/P1ppwNCEvjgmHgZ9VkbXmD'),
     '__LEXIQUE__': ('lexique.html', 'https://claude.ai/artifact/LQDyy5p1qNjdLvMPncXWce'),
+    '__NOUVEAUTES__': ('nouveautes.html', 'https://claude.ai/artifact/MKkMEQ9idW3eqNF3dmgM98'),
 }
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,6 +79,7 @@ SEO_TITLES = {
     'dossier-climat.html': 'Climat et énergie en Belgique · Chiffre Juste',
     'dossier-logement.html': 'Logement en Belgique : prix, loyers · Chiffre Juste',
     'comparer.html': 'Comparer les 27 pays de l’Union européenne · Chiffre Juste',
+    'nouveautes.html': 'Nouveautés et corrections · Chiffre Juste',
     'lexique.html': 'Lexique politique, économique et européen · Chiffre Juste',
     'registre-verification.html': 'Registre de vérification des chiffres · Chiffre Juste',
 }
@@ -234,7 +236,39 @@ def build_fiche():
     s = s.replace('</style>', v2 + '</style>', 1)
     i = s.rindex('</script>')
     s = s[:i] + '\n' + read('dossiers/common.js') + s[i:]
+    j = s.index('<script>') + 8
+    s = s[:j] + read('dossiers/cjd.js') + '\n' + s[j:]
+    s = add_cite(s, 'Le chômage : définitions et chiffres', 'fiche-chomage.html', 'fiche')
     return s, 'Chômage · Chiffre Juste', FICHE_DESC
+
+
+SELECTION_NOTE = ('<details class="cj-sel" data-r><summary>Comment ces études ont été choisies</summary>'
+    '<p>Ce n’est pas une revue systématique : la sélection est raisonnée, pas exhaustive. Les études sont cherchées dans les revues de littérature et méta-analyses récentes, dans les bases d’articles et de documents de travail en sciences sociales (Google Scholar, RePEc, NBER, IZA) et dans les publications des institutions et centres de recherche belges (Banque nationale, Bureau fédéral du Plan, Conseil supérieur de l’emploi, universités).</p>'
+    '<p><b>Retenues</b> : les études publiées (revue à comité de lecture, document de travail d’une institution reconnue ou rapport public), dont la méthode est décrite, portant sur la Belgique ou sur un pays comparable ; les études belges sont privilégiées quand elles existent. <b>Écartées</b> : les textes d’opinion, les études sans méthode décrite et celles qui n’ont pas pu être lues à la source. Quand des études sérieuses aboutissent à des conclusions opposées, le badge « Débattu » l’indique et les deux côtés sont cités.</p>'
+    '<p>Une étude importante manque ? Signalez-la (voir la <a href="__HOME__#methode">méthode</a>, point 07).</p></details>')
+
+
+MOIS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre']
+
+
+def add_cite(body, titre, fname, genre):
+    """Encadré « Comment citer » : référence complète, version datée (date de vérification), date de consultation remplie par le navigateur."""
+    m = re.search(r'(?:Dossier|Fiche[^<]*?) vérifiée? le (\d{1,2}(?:er)? \w+ (\d{4}))', body)
+    ver, an = (m.group(1), m.group(2)) if m else (None, BUILD_DATE[:4])
+    url = BASE + fname
+    ref = (f'Bauchau, T. ({an}). <i>{titre}</i> [{genre}]. Chiffre Juste' + (f', version du {ver}' if ver else '') +
+           f'. Consulté le <span class="cj-today">…</span>, à l’adresse {url}')
+    box = ('<div class="cj-cite"><p class="cj-cite-t">Comment citer ce ' + genre + '</p>'
+           '<p class="cj-ref">' + ref + '</p>'
+           '<p class="cj-cite-n">Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique) : Chiffre Juste rassemble et explique des données, il ne les produit pas. Les données de chaque graphique sont téléchargeables (« Voir les données du graphique »). Code et données du site : <a href="https://github.com/tombauchau-sys/tombauchau" target="_blank" rel="noopener">dépôt public GitHub</a>.</p>'
+           '<button type="button" class="cj-copy">Copier la référence</button></div>')
+    if genre == 'fiche':
+        k = body.index('</div>\n</section>\n</main>')
+        return body[:k] + box + body[k:]
+    ms = list(re.finditer(r'<p class="maj">Journal des corrections.*?</p>', body, re.S)) or list(re.finditer(r'<p class="maj">.*?</p>', body, re.S))
+    assert ms, fname
+    e = ms[-1].end()
+    return body[:e] + box + body[e:]
 
 
 def build_dossier(name):
@@ -259,8 +293,13 @@ def build_dossier(name):
     assert mk in body, name
     body = body.replace(mk, read('compare/section.html') + mk, 1)
     body = re.sub(r'(<p class="maj">Dossier vérifié[^<]*)</p>', r'\1 · <a href="#europe">Voir ce dossier pour un autre pays</a></p>', body, count=1)
+    i = body.index('id="recherche"')
+    j = body.index('</section>', i)
+    k = body.rindex('</div>', i, j)
+    body = body[:k] + SELECTION_NOTE + body[k:]
+    body = add_cite(body, DOSSIERS[name][0].split(' · ')[0], 'dossier-' + name + '.html', 'dossier')
     cmp = cmp_script(DOSSIER_IND[name], 'CJC.dossier({ind:' + json.dumps(DOSSIER_IND[name]) + '});')
-    return head + nav + body + '<script>' + js + '\n' + read('dossiers/common.js') + '</script>\n<script>' + cmp + '</script>\n', title, desc
+    return head + nav + body + '<script>' + read('dossiers/cjd.js') + '\n' + js + '\n' + read('dossiers/common.js') + '</script>\n<script>' + cmp + '</script>\n', title, desc
 
 
 def build_registre():
@@ -319,16 +358,94 @@ def build_lexique():
     return head + nav + body + '<script>' + js + '</script>\n', title, desc
 
 
+def build_nouveautes():
+    """Page « Nouveautés et corrections » : journal du site, journaux des dossiers (repris automatiquement) et calendrier des prochaines mises à jour."""
+    import html as H
+    sys.path.insert(0, str(SRC / 'nouveautes'))
+    import nv_journal as SJ
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
+    css += """
+.nv-page{padding-top:140px}
+.nv-page h2.sub{margin-top:64px}
+.nv-log{list-style:none;padding:0;margin:24px 0 0;max-width:90ch;font:17px/1.55 var(--sans)}
+.nv-log>li{padding:18px 0;border-top:1px solid rgba(26,26,26,.18)}
+.nv-log time{display:block;font-weight:700;margin-bottom:6px}
+.nv-log ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.nv-log a{color:var(--ink)}
+.nv-cal{width:100%;max-width:1000px;border-collapse:collapse;margin-top:24px;font:16px/1.45 var(--sans)}
+.nv-cal th,.nv-cal td{text-align:left;padding:10px 12px;border-top:1px solid rgba(26,26,26,.18);vertical-align:top}
+.nv-cal thead th{border-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.nv-cal a{color:var(--ink)}
+.nv-how{max-width:80ch;font:17px/1.55 var(--sans)}
+.nv-how ul{padding-left:1.2em;display:grid;gap:10px}
+@media (max-width:640px){.nv-cal thead{display:none}.nv-cal tr{display:block;padding:10px 0;border-top:1px solid rgba(26,26,26,.18)}.nv-cal td,.nv-cal th{display:block;border:0;padding:2px 0}}
+"""
+    pages = [('fiche', 'Fiche chômage', '__FICHE__', fiche)] + [(n, DOSSIERS[n][0].split(' · ')[0], '__' + n.upper() + '__', read(f'dossiers/{n}-body.html')) for n in DOSSIERS]
+    cal, logs = [], []
+    for key, nom, ph, src in pages:
+        txt = re.sub(r'<[^>]+>', '', src)
+        mv = re.search(r'[Vv]érifiée? le (\d{1,2}(?:er)? \w+ \d{4})', txt)
+        mn = re.search(r'prochaine mise à jour : ([^\n<]+)', src)
+        cal.append(f'<tr><th scope="row"><a href="{ph}">{nom}</a></th><td>{mv.group(1) if mv else "—"}</td><td>{mn.group(1).strip() if mn else "—"}</td></tr>')
+        mj = re.search(r'<p class="maj">Journal des corrections · (.*?)</p>', src, re.S)
+        if mj:
+            for d, t in re.findall(r'(\d{1,2}(?:er)? \w+ \d{4}) : (.*?)(?=\s\d{1,2}(?:er)? \w+ \d{4} : |$)', mj.group(1), re.S):
+                logs.append((d, nom, ph, t.strip()))
+    MO = {'octobre': 10, 'novembre': 11, 'décembre': 12, 'septembre': 9}
+    def key_d(d):
+        j, m, a = d.split(' ')
+        return (int(a), MO.get(m, 0), int(j.replace('er', '')))
+    dates = sorted({d for d, _ in SJ.SITE} | {l[0] for l in logs}, key=key_d, reverse=True)
+    items = []
+    for d in dates:
+        lis = [f'<li>{H.escape(t)}</li>' for dd, ts in SJ.SITE if dd == d for t in ts]
+        lis += [f'<li><a href="{ph}">{nom}</a> : {t}</li>' for dd, nom, ph, t in logs if dd == d]
+        items.append(f'<li><time>{d}</time><ul>{"".join(lis)}</ul></li>')
+    body = f"""<main id="top">
+<section class="sec papier nv-page" aria-labelledby="nvT">
+  <div class="wrap">
+    <span class="kick">Nouveautés et corrections</span>
+    <h1 class="giant" id="nvT">Ce qui a changé, <span>et quand.</span></h1>
+    <p class="lede">Un chiffre corrigé n’est jamais remplacé en silence. Cette page rassemble les ajouts et les corrections de tout le site, du plus récent au plus ancien, et les prochaines publications attendues des sources. Le détail ligne par ligne des vérifications est dans le <a href="__REGISTRE__">registre de vérification</a>.</p>
+    <h2 class="sub">Journal</h2>
+    <ol class="nv-log">{''.join(items)}</ol>
+    <h2 class="sub">Prochaines mises à jour</h2>
+    <p class="nv-how">Les instituts publient à dates fixes : quand une nouvelle donnée paraît, le dossier est mis à jour et la date de vérification change. Une date ancienne invite à consulter la source, dont le lien figure sous chaque graphique.</p>
+    <table class="nv-cal"><thead><tr><th scope="col">Page</th><th scope="col">Dernière vérification</th><th scope="col">Prochaine mise à jour attendue</th></tr></thead><tbody>{''.join(cal)}</tbody></table>
+    <div class="nv-how">
+      <h2 class="sub">Comment le site est tenu à jour</h2>
+      <ul>
+        <li><b>Chaque mois</b>, les tables utilisées (Eurostat et sources belges) sont comparées à leur dernière mise à jour publiée ; une nouvelle donnée ou une révision donne lieu à une vérification à la source, puis à une entrée dans ce journal.</li>
+        <li><b>Les révisions comptent</b> : les instituts corrigent souvent les années récentes. Une valeur révisée est mise à jour et signalée ici, comme une erreur corrigée.</li>
+        <li><b>Signaler une erreur</b> : voir la <a href="__HOME__#methode">méthode</a>, point 07.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Chiffre Juste · Nouveautés et corrections</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+</footer>
+"""
+    title = 'Nouveautés et corrections · Chiffre Juste'
+    desc = 'Journal des ajouts et corrections de Chiffre Juste, et calendrier des prochaines mises à jour des sources.'
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
+    return head + NAV_SIMPLE + body + '<script>' + A11Y_INIT + '</script>\n', title, desc
+
+
 def main():
     artifact = '--artifact' in sys.argv
-    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer, 'lexique.html': build_lexique}
+    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer, 'lexique.html': build_lexique, 'nouveautes.html': build_nouveautes}
     for n in DOSSIERS:
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|COMPARER|LEXIQUE|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc, fname), encoding='utf-8')

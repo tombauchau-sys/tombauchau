@@ -25,7 +25,7 @@
   })();
 
   /* Courbes à départs variables */
-  function lines2(host,o){
+  function lines2(host,o){CJD.series(host,o.series,o.t0);
     var T0=o.t0,T1=o.t1,W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?40:56,R=W-(o.rm||(MOB?70:140)),T=30,B=Hh-40,mn=o.min,mx=o.max;
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -57,9 +57,10 @@
     series:[{n:'',pts:DATA.frHist,c:'#C9773A',w:3,end:false},{n:'étrangers',v:DATA.fr,s:1998,c:'#C9773A',w:4.5,dy:8},{n:'nés à l’étranger',v:DATA.born,s:2010,c:'#EFA3CB',w:3,dash:1,dy:-4}],
     marks:[[1930,3.8,'3,8 %','#EDE6DC',-12,'start'],[1961,4.9,'4,9 %','#EDE6DC',-12],[1981,8.9,'8,9 %','#EDE6DC',-14],[2000,8.8,'8,8 %','#EDE6DC',24]],
     label:'Part des étrangers dans la population belge : 3,8 % en 1930, 8,9 % en 1981, 8,8 % en 2000, 14,2 % en 2025. Part des personnes nées à l’étranger : 13,9 % en 2010, 20,2 % en 2025'},DK));
+  CJD.rename('histChart',['Étrangers, 1930-1991 (Poulain, recensements)','Étrangers, 1998-2025 (Eurostat, migr_pop1ctz)','Nés à l’étranger (Eurostat, migr_pop3ctb)'],'Rupture de série en 2011.');
 
   /* Barres verticales génériques */
-  function bars(host,o){
+  function bars(host,o){CJD.series(host,o.series.map(function(se,j){return {n:se.n||(o.legend&&o.legend[j]&&o.legend[j][0]),v:se.v,s:+o.labels[0]}}),+o.labels[0]);
     var W=o.w||(MOB?420:1000),Hh=o.h||(MOB?300:400),L=MOB?44:60,R=W-16,T=24,B=Hh-36,mn=o.min,mx=o.max,n=o.labels.length,k=o.series.length;
     function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label}),bw=(R-L)/n;
@@ -79,9 +80,10 @@
     legend:[['Solde naturel','#9A9488'],['Solde migratoire','#C0341E']],
     notes:MOB?[]:[[2022,127.5,'2022 : 127 500',-6,'end']],
     label:'Solde naturel et solde migratoire en Belgique, 1960-2025, en milliers : le solde naturel dépasse 40 000 par an au début des années 1960 et devient négatif après 2020 ; le solde migratoire atteint 127 502 en 2022'},PP));
+  CJD.series('growChart',[{n:'Solde naturel (personnes)',v:DATA.ng},{n:'Solde migratoire (personnes)',v:DATA.mig}],1960);
 
   /* Barres horizontales empilées 100 % */
-  function stack(host,o){
+  function stack(host,o){CJD.set(host,['Catégorie'].concat(o.names),o.rows.map(function(r){return [r[0]].concat(r[1])}));
     var W=MOB?420:600,rowH=MOB?54:60,L=MOB?86:110,R=W-12,Hh=o.rows.length*rowH+(o.legendRows||1)*26+14;
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
     o.rows.forEach(function(r,i){var y=10+i*rowH,x=L;s.appendChild(el('text',{x:L-10,y:y+24,'text-anchor':'end',style:TX+o.ink+';font-weight:700'},r[0]));
@@ -100,11 +102,13 @@
   bars(D.getElementById('asyChart'),o2({min:0,max:40000,ticks:[0,10000,20000,30000,40000],labels:yrs(2008,2025),show:MOB?[2008,2015,2020,2025]:yrs(2008,2025),
     series:[{v:DATA.asy,c:'#C9773A'}],notes:[[2015,39065,'39 065'],[2020,12930,'12 930'],[2025,27540,'27 540']],
     label:'Premières demandes d’asile en Belgique de 2008 à 2025 : 11 395 en 2008, 39 065 en 2015, 12 930 en 2020, 32 710 en 2024, 27 540 en 2025'},DK));
+  CJD.rename('asyChart',['Premières demandes d’asile']);
   lines2(D.getElementById('recChart'),o2({t0:2015,t1:2025,w:MOB?420:600,h:MOB?300:340,rm:MOB?60:125,min:0,max:70,ticks:[0,20,40,60],unit:' %',years:MOB?[2015,2019,2023,2025]:[2015,2017,2019,2021,2023,2025],
     series:[{n:'Belgique',v:DATA.rec,s:2015,c:'#C9773A',w:4}],marks:[[2016,60.2,'60,2 %','#EDE6DC',-12],[2024,48.7,'48,7 %','#EDE6DC',-12]],
     label:'Part des décisions de première instance accordant une protection en Belgique : 53,8 % en 2015, 60,2 % en 2016, 34,9 % en 2020, 48,7 % en 2024, 29,7 % en 2025'},DK));
   (function(){
     var N=[['Palestine',2815],['Érythrée',2590],['Afghanistan',2395],['RD Congo',2110],['Turquie',2105],['Burundi',1435],['Syrie',1280],['Cameroun',1135],['Guinée',1085]];
+    CJD.set('natChart',['Nationalité','Premières demandes d’asile, 2025'],N.map(function(n){return [n[0],n[1]]}));
     var W=MOB?420:600,rh=30,L=MOB?96:110,R=W-70,Hh=N.length*rh+10,mx=3000;
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Premières demandes d’asile en Belgique en 2025 par nationalité : '+N.map(function(n){return n[0]+' '+n[1].toLocaleString('fr-BE')}).join(', ')});
     N.forEach(function(n,i){var y=6+i*rh,w=(R-L)*n[1]/mx;s.appendChild(el('text',{x:L-10,y:y+16,'text-anchor':'end',style:TX+DK.ink},n[0]));s.appendChild(el('rect',{x:L,y:y+3,width:w.toFixed(1),height:rh-12,fill:'#C9773A','class':'fadein'}));s.appendChild(el('text',{x:L+w+8,y:y+16,'class':'fadein',style:TX+DK.mute},n[1].toLocaleString('fr-BE')))});

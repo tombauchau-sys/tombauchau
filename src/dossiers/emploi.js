@@ -26,7 +26,7 @@
   })();
 
   /* Courbes génériques */
-  function lines(host,o){
+  function lines(host,o){CJD.series(host,o.series,o.t0||T0);
     var W=o.w||(MOB?420:1000),Hh=o.h||(MOB?360:480),L=MOB?38:52,R=W-(o.w?(MOB?60:125):(MOB?70:150)),T=26,B=Hh-40,mn=o.min,mx=o.max,n=T1-T0;
     function X(y){return L+(y-T0)/n*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':o.label});
@@ -53,6 +53,7 @@
   /* 0b. Histoire */
   (function(){
     var S=DATA.slope,box=D.getElementById('slopeChart'),W=MOB?400:1000,Hh=MOB?360:420,L=MOB?110:300,R=W-(MOB?110:300),T=30,B=Hh-40,mn=15,mx=85;
+    CJD.set('slopeChart',['Groupe','1993 (%)','2025 (%)'],S.map(function(r){return [r[0],r[1],r[2]]}));
     function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Taux d’emploi 1993 et 2025 : femmes 48,9 puis 69,3 % ; 55-64 ans 22,2 puis 61,5 % ; ensemble 61,2 puis 72,8 % ; hommes 73,4 puis 76,4 %'});
     s.appendChild(el('text',{x:L,y:Hh-10,'text-anchor':'middle',style:'font-family:var(--serif);font-size:'+(MOB?20:26)+'px;fill:#A69C8F'},'1993'));
@@ -73,6 +74,7 @@
   })();
   (function(){
     var host=D.getElementById('uChart'),V=DATA.uhist,T0=1993,T1=2025,W=MOB?420:1000,Hh=MOB?280:340,L=MOB?40:56,R=W-(MOB?50:100),T=34,B=Hh-36,mx=12;
+    CJD.series(host,[{n:'Taux de chômage (%)',v:V}],T0,null,'Rupture de méthode en 2015 (ligne pointillée sur le graphique).');
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-v/mx*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Chômage en Belgique 1993-2025 : 9,5 % au milieu des années 1990, 5,5 % en 2019 et 2023, 6,2 % en 2025'});
     [0,4,8,12].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:'#3B332B'}));s.appendChild(el('text',{x:L-10,y:Y(v)+5,'text-anchor':'end',style:TX+'#A69C8F'},v+' %'))});
@@ -93,6 +95,8 @@
     var bs=D.querySelectorAll('#empTg button');
     function draw(k){lines(host,{series:sets[k],min:55,max:80,ticks:[55,60,65,70,75,80],grid:'#3B332B',mute:'#A69C8F',breaks:1,label:k==='reg'?'Taux d’emploi 2015-2025 : Flandre 77,3 %, Belgique 72,8 %, Wallonie 67,9 %, Bruxelles 63,9 %':'Taux d’emploi 2015-2025 : Union 76,1 %, Belgique 72,8 %'});bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}
     bs.forEach(function(b){b.addEventListener('click',function(){draw(b.dataset.k)})});draw('reg');
+    CJD.series(host,[{n:'Flandre',v:R.Flandre},{n:'Wallonie',v:R.Wallonie},{n:'Bruxelles',v:R.Bruxelles},{n:'Belgique',v:DATA.emp.BE},{n:'Union',v:DATA.emp.EU27_2020}],T0,null,'Ruptures de série en 2017 et 2021.');
+    CJD.set('empEU',['Pays','Taux d’emploi 2025 (%)'],DATA.eu27.slice().sort(function(a,b){return b[1]-a[1]}).map(function(c){return [c[0],c[1]]}),'Moyenne de l’Union : 76,1 %.');
 
     var dd=DATA.eu27.slice().sort(function(a,b){return a[1]-b[1]}),box=D.getElementById('empEU');
     var W=MOB?400:1000,row=MOB?22:24,T=8,L=MOB?96:150,R2=MOB?350:900,mn=60,mx=86,Hh=T+dd.length*row+30;
@@ -117,6 +121,7 @@
   (function(){
     var G=[['Diplômés du supérieur',86.0,86.8],['Femmes',69.3,71.3],['Nés dans le pays',75.0,77.2],['Hommes',76.4,80.9],['55-64 ans',61.5,66.4],['Diplôme du secondaire',67.8,75.1],['Nés hors de l’Union',60.7,68.6],['Peu diplômés',46.7,58.1]];
     var box=D.getElementById('gapChart'),W=MOB?400:1000,row=MOB?40:44,L=MOB?150:300,R=W-(MOB?20:120),T=24,Hh=T+G.length*row+16,mn=MOB?-16:-13,mx=1;
+    CJD.set('gapChart',['Groupe','Belgique 2025 (%)','Union 2025 (%)','Écart (points)'],G.map(function(r){return [r[0],r[1],r[2],Math.round((r[1]-r[2])*10)/10]}));
     function X(v){return L+(v-mn)/(mx-mn)*(R-L)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Écart de taux d’emploi Belgique moins Union en 2025 : supérieur -0,8 point, peu diplômés -11,4 points, nés hors UE -7,9, 55-64 ans -4,9'}),g=el('g',{'class':'pills'});
     [-12,-8,-4,0].forEach(function(v){s.appendChild(el('line',{x1:X(v),x2:X(v),y1:T-6,y2:Hh-10,stroke:v?'#3B332B':'#EDE6DC','stroke-width':v?1:1.5}));s.appendChild(el('text',{x:X(v),y:T-10,'text-anchor':'middle',style:TX+'#A69C8F'},(v?fr(v,0).replace('-','−'):'0')+(v?(MOB?'':' pt'):(MOB?'':' = moyenne UE'))))});
@@ -134,6 +139,7 @@
   (function(){
     var Y=[['2008',null,null,250705],['2021',455996,29439],['2022',471927,30444],['2023',493681,32826],['2024',514551,35445],['2025',537728,38915]];
     var box=D.getElementById('invChart'),W=MOB?400:640,Hh=MOB?320:400,L=MOB?52:66,R=W-10,T=34,B=Hh-36,mx=600000;
+    CJD.set('invChart',['Année','Salariés et chômeurs','Indépendants','Total'],Y.map(function(r){return [+r[0],r[1],r[2],r[3]||r[1]+r[2]]}),'2008 : total seul, sans ventilation.');
     function Yp(v){return B-v/mx*(B-T)}
     var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Personnes en invalidité : 250 705 en 2008, 485 435 en 2021, 576 643 en 2025'});
     [0,200000,400000,600000].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Yp(v),y2:Yp(v),stroke:'rgba(26,26,26,.25)'}));s.appendChild(el('text',{x:L-8,y:Yp(v)+4,'text-anchor':'end',style:TX+'#1A1A1A'},v?nb(v/1000)+' k':'0'))});
@@ -152,6 +158,7 @@
     box.appendChild(s);
 
     var RG=[['Flandre',267356],['Wallonie',205779],['Bruxelles',50741],['Étranger',13852]],rb=D.getElementById('invReg');
+    CJD.set('invReg',['Région de résidence','Invalides salariés et chômeurs, 2025'],RG.map(function(r){return [r[0],r[1]]}));
     var W2=MOB?400:1000,row=36,L2=MOB?84:110,R2=W2-(MOB?70:110),H2=RG.length*row+8;
     var s2=el('svg',{viewBox:'0 0 '+W2+' '+H2,role:'img','aria-label':'Invalides salariés et chômeurs 2025 par Région : Flandre 267 356, Wallonie 205 779, Bruxelles 50 741, étranger 13 852'}),g2=el('g',{'class':'pills'});
     RG.forEach(function(r,i){var y=4+i*row,w=r[1]/270000*(R2-L2);
