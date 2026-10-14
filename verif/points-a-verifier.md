@@ -25,9 +25,9 @@ Liste mise à jour le 14 octobre 2026. Le détail de chaque contrôle figure dan
 ## Restent signalés comme tels sur le site (source de presse ou relais, faute de source primaire lisible)
 
 - [ ] **Fiche chômage** — Actiris : 16,0 % en août 2026 (Belga). Les pages d’Actiris n’ont pas pu être lues automatiquement : à relire dans un navigateur (actiris.brussels, rapports mensuels).
-- [ ] **Justice** — 710 détenus sur un matelas au sol en mars 2026 (La Libre). Les documents du Comité des ministres consultés (2024) donnent d’autres dates (134 au 23 septembre 2024).
-- [ ] **Inégalités** — Explications de la baisse de la pauvreté depuis 2019 : RTBF (avec Ive Marx, UAntwerpen). Chercher une publication du CSB ou de Statbel.
-- [ ] **Finances / Pensions** — Comité d’étude sur le vieillissement 2026 : lien officiel du Bureau du Plan ajouté ; chiffres relus sur le relais (plan.be refuse la lecture automatique).
+- [ ] **Justice** — Détenus au sol : record de 784 le 27 avril 2026 (Bruzz, 21/09/2026 : chiffres syndicaux « confirmés par l’administration pénitentiaire ») ; remplace 710 (La Libre). Reste une source de presse : chercher un chiffre publié par le SPF Justice ou le CCSP.
+- [ ] **Inégalités** — Explications de la baisse de la pauvreté depuis 2019 : RTBF (avec Ive Marx, UAntwerpen). Publications repérées mais illisibles automatiquement (à ouvrir dans un navigateur) : SPF Sécurité sociale, analyse SILC 2024 (socialsecurity.belgium.be) ; Mariani et Cantillon (UAntwerpen) sur l’évolution de la pauvreté relative.
+- [ ] **Finances / Pensions** — Comité d’étude sur le vieillissement 2026 : chiffres confirmés par un second relais (La Libre, 9 juillet 2026), hypothèse de productivité ajoutée ; le rapport lui-même reste à ouvrir dans un navigateur (plan.be refuse la lecture automatique).
 - [ ] **Logement** — Loi Brunfaut (1949) et part du logement social (6,1 %) : Housing Europe ; 1889 et 1919 appuyés sur Lambrichs (2000-2001).
 - [ ] **Fiche chômage** — ONEM : 55 246 sorties au 31 mars 2026, vérifié à la rédaction ; le site de l’ONEM refuse désormais la lecture automatique.
 
@@ -36,7 +36,7 @@ Liste mise à jour le 14 octobre 2026. Le détail de chaque contrôle figure dan
 - [ ] **Accueil, carte et comparateur** — relire les séries des 27 pays (données du 10 octobre 2026) lors de chaque mise à jour.
 - [ ] **Accueil** — notes des agences de notation (81 notes) : à relire à la source.
 - [ ] **Commerce extérieur** — l’année 2025 est publiée (Comext) : la matrice des échanges entre pays reste en 2024.
-- [ ] **Finances** — investissement public de l’Union : série non relue le 14 octobre.
+- [x] **Finances** — investissement public de l’Union 2000-2025 : relu le 14 octobre, identique.
 
 ## Limites signalées sur le site
 
