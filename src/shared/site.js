@@ -91,4 +91,18 @@
       addEventListener('resize',upd);upd();
     }
   }
+  /* ---------- Tableaux trop larges : cartes empilées sur mobile ---------- */
+  function stack(){
+    if(innerWidth>640)return;
+    D.querySelectorAll('table').forEach(function(t){
+      if(t.classList.contains('stk')||t.closest('.cj-data,.cjs'))return;
+      var p=t.parentElement;if(!p||t.scrollWidth<=p.clientWidth+2)return;
+      var hs=[].map.call(t.querySelectorAll('thead th'),function(h){return h.textContent.trim()});
+      if(!hs.length||hs.length>8)return;
+      t.querySelectorAll('tbody tr').forEach(function(r){var i=0;[].forEach.call(r.children,function(c){var span=+c.getAttribute('colspan')||1;if(!c.hasAttribute('data-label'))c.setAttribute('data-label',hs[i]||'');i+=span})});
+      t.classList.add('stk');
+    });
+  }
+  stack();setTimeout(stack,800);addEventListener('resize',function(){clearTimeout(stack.t);stack.t=setTimeout(stack,200)});
+  new MutationObserver(function(m){if(innerWidth<=640&&m.some(function(x){return x.addedNodes.length})){clearTimeout(stack.u);stack.u=setTimeout(stack,150)}}).observe(D.body,{childList:true,subtree:true});
 })();

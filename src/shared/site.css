@@ -61,3 +61,15 @@ nav.top .cjs-btn:focus-visible,.navm:focus-visible{outline:2px solid var(--coppe
 @media (max-width:640px){.cj-toc{top:48px}.cj-toc>button{padding:8px 16px}.cj-toc ol{padding-inline:16px}}
 [id]{scroll-margin-top:110px}
 @media print{nav.top,.cj-toc,.cj-side,.cjs,.a11y{display:none!important}}
+/* Tableaux en cartes empilées sur mobile (quand ils ne tiennent pas en largeur) */
+@media (max-width:640px){
+  table.stk,table.stk tbody,table.stk tr,table.stk td,table.stk th{display:block;width:auto!important}
+  table.stk{min-width:0!important}
+  table.stk thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.stk tr{border:1px solid currentColor;border-radius:6px;padding:8px 12px;margin:0 0 10px}
+  table.stk td,table.stk tbody th{display:grid;grid-template-columns:118px minmax(0,1fr);gap:10px;border:0!important;padding:4px 0!important;text-align:left!important;white-space:normal!important}
+  table.stk td::before,table.stk tbody th::before{content:attr(data-label);font-weight:600;font-size:12.5px;opacity:.75}
+  table.stk td[data-label=""],table.stk tbody th[data-label=""]{grid-template-columns:1fr}
+  table.stk td[data-label=""]::before,table.stk tbody th[data-label=""]::before{display:none}
+  table.stk caption{display:block;text-align:left}
+}

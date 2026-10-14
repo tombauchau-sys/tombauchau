@@ -376,3 +376,16 @@ html.calm .chart .fadein{opacity:1}
 .maj.verif-badge .vb-ok{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--copper);color:var(--brown);font-size:12px;font-weight:700;margin-right:4px;vertical-align:1px}
 .maj.verif-badge a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .maj.verif-badge .vb-next{color:var(--cream-dim)}
+/* Les colonnes de grille ne débordent jamais de l’écran (un tableau ouvert ne doit pas élargir la page) */
+.duo>*,.agrid3>*,.three-q>*,.opts4>*,.tm>*{min-width:0}
+/* Info-bulle des graphiques */
+.cj-tip{position:fixed;z-index:70;display:none;pointer-events:none;background:#F7F6F2;color:#222;border:1.5px solid #1A1A1A;border-radius:6px;box-shadow:4px 4px 0 #1A1A1A;padding:8px 12px;font-size:13.5px;line-height:1.35;max-width:300px}
+.cj-tip b{display:block;font-size:15px;margin-bottom:2px}
+.cj-tip span{display:block;font-variant-numeric:tabular-nums;font-weight:600}
+.cj-tip i{font-style:normal;font-weight:400;color:#55514B}
+.cj-tip small{display:block;margin-top:4px;color:#55514B;font-size:12px}
+html.calm .cj-tip{box-shadow:none}
+/* Partager ce chiffre */
+.cj-share{display:inline-flex;margin-top:10px;background:none;border:1px solid currentColor;border-radius:999px;padding:3px 12px;font-size:12.5px;font-weight:600;opacity:.8;color:inherit}
+.cj-share:hover,.cj-share:focus-visible{opacity:1;background:rgba(201,119,58,.15)}
+.cj-share::before{content:"↗";margin-right:6px}

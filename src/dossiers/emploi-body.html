@@ -93,8 +93,8 @@
     <p class="lede" data-r>En 1993, à peine plus de six Belges de 20 à 64 ans sur dix travaillaient. Ils sont plus de sept sur dix aujourd’hui. Presque toute la hausse vient des femmes et des travailleurs âgés : le taux d’emploi des hommes, lui, a peu bougé.</p>
     <div class="chart" id="slopeChart" data-yt="% des 20-64 ans" data-xt="Année (1993 et 2025)"></div>
     <p class="srcl">Taux d’emploi en 1993 et en 2025, en %. 1993 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a_h/default/table?lang=fr" target="_blank" rel="noopener">lfsi_emp_a_h</a> (série historique, valeurs estimées) ; 2025 : Eurostat, lfsi_emp_a. Les deux séries coïncident sur les années communes (67,2 % en 2015). Ruptures de série en 1999, 2001, 2017 et 2021.</p>
-    <h3 class="sub" data-r>Le chômage depuis 1993</h3>
-    <div class="chart" id="uChart" data-yt="% des actifs de 15 à 74 ans" data-xt="Année"></div>
+    <h3 class="sub" data-r>Depuis 1993, le chômage oscille entre 5,5 % et 9,5 % des actifs</h3>
+    <div class="chart" id="uChart" data-periods="2008-2009|crise financière;2020-2021|pandémie" data-yt="% des actifs de 15 à 74 ans" data-xt="Année"></div>
     <p class="srcl">Taux de chômage au sens du BIT, 15-74 ans, en %. 1993-2014 : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/une_rt_a_h/default/table?lang=fr" target="_blank" rel="noopener">une_rt_a_h</a> (ancienne méthode) ; 2015-2025 : une_rt_a. En 2015, les deux méthodes donnent 8,5 % et 8,7 %.</p>
     <h3 class="sub" data-r>Trois idées reçues</h3>
     <div class="myths">
@@ -115,7 +115,7 @@
       <button type="button" data-k="reg" aria-pressed="true">Les trois Régions</button>
       <button type="button" data-k="eu" aria-pressed="false">Belgique et Union</button>
     </div>
-    <div class="chart" id="empChart" data-yt="% des 20-64 ans" data-xt="Année"></div>
+    <div class="chart" id="empChart" data-periods="2008-2009|crise financière;2020-2021|pandémie" data-yt="% des 20-64 ans" data-xt="Année"></div>
     <p class="srcl">Taux d’emploi des 20-64 ans, en %, 1999-2025 (Union : depuis 2009, premier agrégat publié dans lfsi_emp_a). Croix rouges : ruptures de série signalées par Eurostat (2001, 2005, 2011, 2017, 2021) ; les comparaisons de part et d’autre d’une rupture sont à faire avec prudence. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=fr" target="_blank" rel="noopener">lfsi_emp_a</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/lfst_r_lfe2emprt/default/table?lang=fr" target="_blank" rel="noopener">lfst_r_lfe2emprt</a>, mise à jour du 10 septembre 2026, consulté le 10 octobre 2026.</p>
     
     <div class="canwhat" data-r><p class="cw-t">Le taux d’emploi</p><div class="cw-yes"><h4>Ce qu’il permet de dire</h4><ul><li>Quelle part des 20-64 ans a travaillé au moins une heure pendant la semaine de référence.</li><li>Comment la Belgique et ses Régions se situent, avec une définition commune à toute l’Union.</li><li>L’évolution dans le temps, en tenant compte des ruptures de série.</li></ul></div><div class="cw-no"><h4>Ce qu’il ne permet pas de dire</h4><ul><li>Si les emplois sont à temps plein, bien payés ou de bonne qualité.</li><li>Pourquoi un groupe travaille moins qu’un autre.</li><li>Si la population vit mieux : un taux d’emploi plus élevé ne prouve ni de meilleurs salaires ni moins d’inégalités.</li></ul></div><div class="cw-more"><h4>Pour aller plus loin</h4><ul><li>Le temps partiel et les heures travaillées.</li><li>Le taux d’emploi en équivalent temps plein.</li><li>Les salaires et la pauvreté des travailleurs.</li></ul></div></div>
@@ -171,8 +171,8 @@
     <h2 class="giant" id="tD" data-r>Le chômage <span>qui dure.</span></h2>
     <p class="lede" data-r>Le chômage de longue durée a été divisé par deux en dix ans et rejoint la moyenne européenne. Le chômage des jeunes, lui, reste au-dessus.</p>
     <div class="duo">
-      <figure data-r><figcaption><b>Chômage de longue durée</b><span>chômeurs depuis un an ou plus, en % des actifs</span></figcaption><div class="chart sm" id="ltuChart" data-yt="% des actifs" data-xt="Année"></div></figure>
-      <figure data-r><figcaption><b>Chômage des 15-24 ans</b><span>en % des jeunes actifs, pas de tous les jeunes</span></figcaption><div class="chart sm" id="youChart" data-yt="% des actifs de 15 à 24 ans" data-xt="Année"></div></figure>
+      <figure data-r><figcaption><b>Le chômage de longue durée est revenu à 2 % des actifs (3,9 % en 2014)</b><span>Chômage de longue durée : chômeurs depuis un an ou plus, en % des actifs</span></figcaption><div class="chart sm" id="ltuChart" data-yt="% des actifs" data-xt="Année"></div></figure>
+      <figure data-r><figcaption><b>17,4 % des jeunes actifs sont au chômage en 2025, plus que dans l’Union (15,2 %)</b><span>Chômage des 15-24 ans : en % des jeunes actifs, pas de tous les jeunes</span></figcaption><div class="chart sm" id="youChart" data-yt="% des actifs de 15 à 24 ans" data-xt="Année"></div></figure>
     </div>
     <p class="srcl">Belgique en couleur, Union européenne en pointillés, 2009-2025 (Eurostat ne publie pas ces séries avant 2009 dans leur définition actuelle). Croix rouges : ruptures de série de l’enquête belge (2011, 2017, 2021). Données 2009-2014 consultées le 14 octobre 2026. Source : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/une_ltu_a/default/table?lang=fr" target="_blank" rel="noopener">une_ltu_a</a> et <a href="https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table?lang=fr" target="_blank" rel="noopener">une_rt_a</a>, consulté le 10 octobre 2026.</p>
     <div class="trap" data-r><span class="note">piège !</span><p>« 17,4 % des jeunes sont au chômage » est faux. Ce sont 17,4 % des jeunes <i>actifs</i>, c’est-à-dire de ceux qui travaillent ou cherchent. La plupart des 15-24 ans étudient et ne sont pas comptés.</p></div>
