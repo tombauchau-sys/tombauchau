@@ -271,13 +271,95 @@ def add_cite(body, titre, fname, genre):
     return body[:e] + box + body[e:]
 
 
+def verif_badge(body, name):
+    """Badge de confiance en tête du dossier : date de vérification, nombre d’affirmations contrôlées, sources liées, registre."""
+    import csv
+    n_aff = sum(1 for r in csv.DictReader(open(ROOT / 'verif' / 'registre.csv', encoding='utf-8')) if name in [p.strip() for p in r['page'].split('/')])
+    n_src = len({h for h in re.findall(r'href="(https?://[^"#]+)', body)})
+    m = re.search(r'<p class="maj">Dossier vérifié le ([^·<]+?)\s*·\s*([^<]*)</p>', body)
+    assert m, name
+    date, nxt = m.group(1).strip(), m.group(2).strip()
+    badge = ('<p class="maj verif-badge"><span class="vb-ok" aria-hidden="true">✓</span> <b>Dossier vérifié le ' + date + '</b>'
+             f' · {n_aff} affirmations contrôlées à la source · {n_src} sources liées · <a href="__REGISTRE__">voir le registre</a>'
+             ' · <a href="__NOUVEAUTES__">corrections</a><br><span class="vb-next">' + nxt[0].upper() + nxt[1:] + '</span></p>')
+    return body[:m.start()] + badge + body[m.end():]
+
+
+def _txt(h):
+    import html as H
+    return re.sub(r'\s+', ' ', H.unescape(re.sub(r'<[^>]+>', ' ', h))).strip()
+
+
+def search_index():
+    """Index de la recherche globale, construit avec le site : dossiers (parties, fiches, chiffres clés), lexique, indicateurs, pages."""
+    out = []
+    def add(t, c, u, k):
+        t, c = _txt(t), _txt(c)
+        if t and (t, u) not in {(e[0], e[2]) for e in out}:
+            out.append([t, c[:240], u, k])
+    names = {'emploi': 'Emploi', 'finances': 'Finances publiques', 'pensions': 'Pensions', 'immigration': 'Immigration', 'justice': 'Justice', 'sante': 'Santé', 'education': 'Éducation', 'inegalites': 'Inégalités', 'climat': 'Climat', 'logement': 'Logement'}
+    if (SRC / 'dossiers' / 'fiscalite-body.html').exists():
+        names['fiscalite'] = 'Fiscalité'
+    for n in names:
+        ph = '__' + n.upper() + '__'
+        b = read(f'dossiers/{n}-body.html')
+        add('Dossier ' + names[n], DOSSIERS[n][1], ph, 'Dossier')
+        for sec in re.finditer(r'<section[^>]*aria-labelledby="([^"]+)"[^>]*>(.*?)</section>', b, re.S):
+            hid, inner = sec.group(1), sec.group(2)
+            h = re.search(r'<h[12][^>]*id="' + re.escape(hid) + r'"[^>]*>(.*?)</h[12]>', inner, re.S)
+            if not h:
+                continue
+            p = re.search(r'<p class="(?:lede|ans|lead)[^"]*"[^>]*>(.*?)</p>', inner, re.S) or re.search(r'<p[^>]*>(.*?)</p>', inner, re.S)
+            add(h.group(1), names[n] + ' · ' + (p.group(1) if p else ''), ph + '#' + hid, names[n])
+            for card in re.finditer(r'<a href="#([^"]+)"><span class="n">\d+</span><h3>(.*?)</h3><p>(.*?)</p>', inner):
+                add(card.group(2), names[n] + ' · ' + card.group(3), ph + '#' + card.group(1), names[n])
+            for fact in re.finditer(r'<div><b>(.*?)</b><span>(.*?)</span>', inner):
+                add(_txt(fact.group(1)) + ' ' + _txt(fact.group(2)), names[n] + ' · chiffre clé', ph + '#' + hid, 'Chiffre')
+            for h3 in re.finditer(r'<h3[^>]*>(.*?)</h3>', inner):
+                t = _txt(h3.group(1))
+                if 12 < len(t) < 120 and not t.startswith(('Pourquoi la réponse', 'La confusion', 'Le mécanisme', 'Pour réutiliser')):
+                    add(t, names[n], ph + '#' + hid, names[n])
+    add('Fiche : le chômage', FICHE_DESC, '__FICHE__', 'Fiche')
+    home = read('accueil/body.html')
+    for sec in re.finditer(r'<section[^>]*id="([^"]+)"[^>]*aria-labelledby="([^"]+)"[^>]*>(.*?)</section>', home, re.S):
+        sid, inner = sec.group(1), sec.group(3)
+        h = re.search(r'<h2[^>]*>(.*?)</h2>', inner, re.S)
+        if h:
+            add(h.group(1), 'Accueil', '__HOME__#' + sid, 'Page')
+        if sid in ('methode', 'apropos'):
+            for h3 in re.finditer(r'<h3[^>]*>(?:<span[^>]*>\d+</span>)?(.*?)</h3>\s*(?:<p[^>]*>(.*?)</p>)?', inner, re.S):
+                add(h3.group(1), ('Méthode · ' if sid == 'methode' else 'À propos · ') + (h3.group(2) or ''), '__HOME__#' + sid, 'Méthode')
+    ind = json.loads(read('compare/indicators.json'))
+    for k, v in ind.items():
+        add(v.get('lab', k), 'Comparer les 27 pays · ' + v.get('def', '') + ' Source : ' + v.get('src', ''), '__COMPARER__', 'Indicateur')
+    sys.path.insert(0, str(SRC / 'lexique'))
+    import build_lexique as BL
+    for e in BL.load():
+        add(e['t'], e['d'], '__LEXIQUE__#t-' + BL.slug(e['t']), 'Lexique')
+    add('Registre de vérification', 'Chaque affirmation contrôlée à sa source primaire', '__REGISTRE__', 'Page')
+    add('Nouveautés et corrections', 'Journal des ajouts et corrections', '__NOUVEAUTES__', 'Page')
+    add('Comparer les pays', 'Comparer les 27 pays de l’Union sur une trentaine d’indicateurs', '__COMPARER__', 'Page')
+    return out
+
+
+_SHARED = None
+def shared(html):
+    """Ajoute à chaque page le menu mobile, la recherche globale et le sommaire des dossiers."""
+    global _SHARED
+    if _SHARED is None:
+        idx = json.dumps(search_index(), ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+        _SHARED = (read('shared/site.css'), '<script>var CJS=' + idx + ';\n' + read('shared/site.js') + '</script>\n')
+    css, js = _SHARED
+    i = html.index('</style>')
+    return html[:i] + css + html[i:] + js
+
+
 def build_dossier(name):
     fiche = read('fiche/fiche-chomage.html')
     css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
     title, desc = DOSSIERS[name]
     head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
-    nav = '''<div class="cursor" id="cursor" aria-hidden="true"></div>
-<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+    nav = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
   <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
@@ -291,7 +373,14 @@ def build_dossier(name):
     body = read(f'dossiers/{name}-body.html')
     mk = '<div id="approfondir" aria-hidden="true"></div>'
     assert mk in body, name
-    body = body.replace(mk, read('compare/section.html') + mk, 1)
+    # « Et ailleurs en Europe ? » après les fiches, juste avant « Recherche » : on compare mieux ce qu’on a déjà compris
+    r = body.index('id="recherche"')
+    r0 = body.rindex('<section', 0, r)
+    c0 = body.rfind('<!--', 0, r0)
+    if c0 >= 0 and body[c0:r0].strip().endswith('-->') and '<' not in body[c0:r0].strip()[4:-3]:
+        r0 = c0
+    body = body[:r0] + read('compare/section.html') + '\n' + body[r0:]
+    body = verif_badge(body, name)
     body = re.sub(r'(<p class="maj">Dossier vérifié[^<]*)</p>', r'\1 · <a href="#europe">Voir ce dossier pour un autre pays</a></p>', body, count=1)
     i = body.index('id="recherche"')
     j = body.index('</section>', i)
@@ -312,8 +401,7 @@ def build_registre():
     return html, 'Registre de vérification · Chiffre Juste', 'Chaque affirmation de Chiffre Juste contrôlée à sa source primaire : valeur affichée, source consultée, statut.'
 
 
-NAV_SIMPLE = '''<div class="cursor" id="cursor" aria-hidden="true"></div>
-<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+NAV_SIMPLE = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
   <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
@@ -327,8 +415,8 @@ A11Y_INIT = ("(function(){var D=document,H=D.documentElement,ab=D.getElementById
             "try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}"
             "function set(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}"
             "set(calm);ab.onclick=function(){set(!calm)};"
-            "var c=D.getElementById('cursor'),x=0,y=0,cx=0,cy=0;D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');c.classList.toggle('big',!!(e.target.closest&&e.target.closest('a,button,input,select,label')))});"
-            "(function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();})();\n")
+            ""
+            "})();\n")
 
 
 def build_comparer():
@@ -444,6 +532,7 @@ def main():
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
+        html = shared(html)
         site = links(html, 'site')
         left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|MAP|DATA|WORLD)__', site))
         if left:

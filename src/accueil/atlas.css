@@ -147,7 +147,7 @@
 .bfly .hd{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
 .bfly .hd .a{color:var(--red)}
 
-.js .dz [data-r]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .dz [data-r]{transform:translateY(14px);transition:transform .7s var(--ease)}
 .js .dz [data-r].in{opacity:1;transform:none}
 .drawline{stroke-dasharray:var(--len,2000);stroke-dashoffset:var(--len,2000)}
 .play .drawline{animation:trace 2.2s var(--ease-io) forwards}

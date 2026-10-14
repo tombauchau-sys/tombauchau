@@ -338,7 +338,7 @@
       var m=Math.max(Math.abs(va||0),Math.abs(vb||0))||1;
       return '<li><span class="s l"><span class="bar" style="width:'+(Math.abs(va||0)/m*100*.7).toFixed(1)+'%"></span><b>'+(va==null?'—':r[3](va))+'</b></span><span class="lab">'+r[0]+'<small>'+(r[1]?r[1]+(yy?', '+yy:''):yy)+(ve!=null?' · UE : '+r[3](ve):'')+'</small></span><span class="s r"><span class="bar" style="width:'+(Math.abs(vb||0)/m*100*.7).toFixed(1)+'%"></span><b>'+(vb==null?'—':r[3](vb))+'</b></span></li>'}).join('')}
     h+='<section class="dz papier" aria-labelledby="dC3"><div class="w"><p class="kicker" data-r>Mêmes sources, mêmes années</p><h2 id="dC3" data-r>Les mêmes indicateurs, <span class="s">côte à côte.</span></h2>'+
-      '<table class="rtcmp" data-r><thead><tr><th>Note de la dette, oct. 2026</th><th class="a">'+na+'</th><th>'+nb+'</th></tr></thead><tbody>'+AG.map(function(g){var x=RT[a][g[0]],y=RT[b][g[0]];return '<tr><td>'+g[1]+'</td><td class="a"><b>'+(x?x.r:'—')+'</b> <small>'+(x?x.o:'non noté')+'</small></td><td><b>'+(y?y.r:'—')+'</b> <small>'+(y?y.o:'non noté')+'</small></td></tr>'}).join('')+'</tbody></table>'+
+      '<table class="rtcmp" data-r><thead><tr><th>Note de la dette, oct. 2026</th><th class="a">'+na+'</th><th>'+nb+'</th></tr></thead><tbody>'+AG.map(function(g){var x=RT[a][g[0]],y=RT[b][g[0]];return '<tr><td>'+g[1]+'</td><td class="a"><b>'+(x?x.r:'—')+'</b> '+(x?'':'<small>non noté</small>')+'</td><td><b>'+(y?y.r:'—')+'</b> '+(y?'':'<small>non noté</small>')+'</td></tr>'}).join('')+'</tbody></table>'+
       '<ul class="bfly" data-r><li><span class="hd a" style="text-align:right">'+na+'</span><span class="lab hd">Indicateur</span><span class="hd">'+nb+'</span></li>'+rowsHTML(R)+'</ul>'+
       '<p class="src" style="margin-top:12px;font-size:12.5px;color:var(--grey)">Les barres comparent les deux pays sur chaque ligne ; elles ne sont pas à la même échelle d’une ligne à l’autre. '+srcs(['nama_10_gdp','tps00001','tec00115','prc_hicp_aind','une_rt_a','gov_10dd_edpt1','gov_10a_exp','gov_10a_main','ilc_peps01n','ilc_di12','demo_mlexpec'])+' Notes : agences, vérifiées le 10/10/2026.</p></div></section>';
     /* Budget comparé */
@@ -374,12 +374,12 @@
     var r=RT[c];
     var cards=AG.map(function(a){var x=r[a[0]];
       if(!x)return '<div class="agc"><span class="ag">'+a[1]+'</span><b class="nr">—</b><span class="ol">ne note plus ce pays</span><span class="dt">notation retirée à la demande de l’État</span></div>';
-      return '<div class="agc"><span class="ag">'+a[1]+'</span><b>'+x.r+'</b><span class="ol ol-'+(x.o==='stable'?'s':x.o==='positive'?'p':'n')+'">perspective '+x.o+'</span><span class="dt">dernière décision : '+mdate(x.d)+'</span></div>'}).join('');
+      return '<div class="agc"><span class="ag">'+a[1]+'</span><b>'+x.r+'</b><span class="dt">dernière décision : '+mdate(x.d)+'</span></div>'}).join('');
     var ladder=SCALE.map(function(s,i){var on=AG.filter(function(a){return r[a[0]]&&r[a[0]].n===i+1}).map(function(a){return a[1].split(' ')[0]});
       return '<li class="'+(on.length?'on':'')+(i===9?' ig':'')+'"><span>'+s[0]+'</span><i>'+s[1]+'</i>'+(on.length?'<em>'+on.join(', ')+'</em>':'')+'</li>'}).join('');
     return '<div class="rating" data-r><div class="rtop"><div><h3>La note de la dette</h3><p class="def">L’avis de trois agences privées sur la capacité de l’État à rembourser sa dette à temps. De AAA (risque minimal) à D (défaut).</p></div></div>'+
       '<div class="agrid">'+cards+'</div><ol class="ladder" aria-label="Échelle des notes">'+ladder+'</ol>'+
-      '<p class="lnote">Sous BBB− / Baa3, la dette est dite « spéculative ». Au 10 octobre 2026, aucun pays de l’Union n’y est classé par les trois agences.</p>'+
+      '<p class="lnote">Sous BBB− / Baa3, la dette est dite « spéculative ». Au 10 octobre 2026, aucun pays de l’Union n’y est classé par les trois agences. Les perspectives (stable, positive, négative) ne sont pas affichées : elles n’ont pas pu être vérifiées dans les communiqués des agences.</p>'+
       '<div class="limits"><div><b>Des avis, pas des mesures.</b><p>Une note est une opinion argumentée, publiée par une entreprise privée. Les trois agences ne sont pas toujours d’accord, ni au même moment.</p></div><div><b>Un poids réel.</b><p>Une baisse de note peut renchérir le coût de l’emprunt public : certains investisseurs ne peuvent détenir que des titres bien notés.</p></div><div><b>Une histoire contestée.</b><p>Les agences ont été critiquées pour avoir noté trop haut avant 2008, puis dégradé brutalement pendant la crise de la zone euro. Elles sont encadrées dans l’UE depuis 2009 (règlement CRA, supervision de l’ESMA).</p></div></div></div>';
   }
 

@@ -204,14 +204,11 @@ footer .meta{max-width:1240px;margin:0 auto;display:flex;justify-content:space-b
 footer .wordmark{margin-top:16px}
 
 /* ---------- Révélations ---------- */
-.js [data-r]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-r]{transform:translateY(14px);transition:transform .7s var(--ease)}
 .js [data-r].in{opacity:1;transform:none}
 .js .frame:not(.in){opacity:0;transform:scale(.9) rotate(-2deg)}
 
 /* ---------- Curseur ---------- */
-.cursor{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--copper);pointer-events:none;z-index:60;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s ease;display:none;mix-blend-mode:normal}
-.cursor.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(201,119,58,.25);border:1.5px solid var(--copper)}
-@media (pointer:fine){.cursor{display:block}}.cursor{opacity:0}.cursor.on{opacity:1}
 
 /* ---------- Accessibilité ---------- */
 .a11y{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:8px;background:var(--off);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:4px 14px 4px 4px;font-size:13px;font-weight:600}
@@ -222,7 +219,6 @@ html.calm .draw,html.calm .gate .gl{stroke-dashoffset:0!important}
 html.calm .split .ch{transform:none!important}
 html.calm [data-r],html.calm .frame{opacity:1!important;transform:none!important}
 html.calm .crowd i{transform:none}
-html.calm .cursor{display:none!important}
 html.calm .grain::before{display:none}
 html.calm .hero{background-image:none}
 html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
@@ -253,7 +249,7 @@ html.calm .intro .lead .w{color:var(--cream)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.draw,.gate .gl{stroke-dashoffset:0!important}.split .ch{transform:none!important}.js [data-r],.js .frame{opacity:1!important;transform:none!important}.crowd i{transform:none}}
 </style>
 
-<div class="gate grain" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateT">
+<div class="gate grain" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateT"><script>/* La page d’entrée ne s’affiche qu’à la première visite, et jamais quand on arrive sur une section précise */try{if(localStorage.getItem('cj-gate1')==='1'||location.hash)document.getElementById('gate').style.display='none';localStorage.setItem('cj-gate1','1')}catch(e){}</script>
   <div class="gbar"><span><b>Référentiel</b> de chiffres vérifiés</span><span>Europe · la Belgique d’abord · FR</span></div>
   <div class="gstage"><svg class="world" id="world" viewBox="-40 -40 1080 600" role="img" aria-label="Carte du monde ; la Belgique est signalée en rouge"></svg></div>
   <div class="go">
@@ -264,7 +260,6 @@ html.calm .intro .lead .w{color:var(--cream)}
   <p class="mark" id="gateT" aria-label="Chiffre Juste"><span aria-hidden="true">Chiffre <span class="l2">J<span class="q"><i class="qq">?</i><i class="uu">u</i></span>ste</span></span></p>
 </div>
 
-<div class="cursor" id="cursor" aria-hidden="true"></div>
 <button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
 
 <nav class="top" aria-label="Navigation principale">
@@ -401,7 +396,7 @@ var MAP=__MAP__;
     D.getElementById('enter-topic').addEventListener('click',function(){open(false);setTimeout(function(){var t=D.getElementById('questions');if(t){t.scrollIntoView();var h=t.querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}},2350)});
     D.getElementById('skip').addEventListener('click',function(){open(true)});
     D.addEventListener('keydown',function(e){if(!done&&(e.key==='Escape'))open(true)});
-    var seen=false;try{seen=sessionStorage.getItem('cj-gate')==='1';sessionStorage.setItem('cj-gate','1')}catch(e){}
+    if(g.style.display==='none'){done=true;g.hidden=true;g.classList.add('out');startHero();return}
     D.documentElement.style.overflow='hidden';new MutationObserver(function(){if(g.classList.contains('out'))D.documentElement.style.overflow=''}).observe(g,{attributes:true});
   })();
 
@@ -459,11 +454,8 @@ var MAP=__MAP__;
   D.querySelectorAll('[data-r]').forEach(function(n,i){n.style.transitionDelay=(n.closest('.rows')?(i%6)*0.07:0)+'s';io.observe(n)});
   io.observe(D.getElementById('frame'));io.observe(D.getElementById('fw'));
 
-  /* Curseur et boutons magnétiques */
+  /* Boutons magnétiques */
   (function(){
-    var c=D.getElementById('cursor'),x=innerWidth/2,y=innerHeight/2,cx=x,cy=y;
-    D.addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;c.classList.add('on');var t=e.target.closest&&e.target.closest('a,button,[data-cursor],.c,.tile');c.classList.toggle('big',!!t)});
-    (function loop(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop)})();
     D.querySelectorAll('[data-magnet]').forEach(function(b){
       b.addEventListener('pointermove',function(e){if(calm||reduce)return;var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.25)+'px,'+((e.clientY-r.top-r.height/2)*.35)+'px)'});
       b.addEventListener('pointerleave',function(){b.style.transform=''});
