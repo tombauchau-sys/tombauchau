@@ -367,7 +367,7 @@ def build_dossier(name):
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
   <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
-  <a href="__HOME__" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="__HOME__" class="mark" aria-label="Chiffre Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Chiffre </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
   <a href="__HOME__#dossiers" class="on"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
   <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
   <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
@@ -409,7 +409,7 @@ NAV_SIMPLE = '''<button type="button" class="a11y" id="a11y" aria-pressed="false
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
   <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
-  <a href="__HOME__" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="__HOME__" class="mark" aria-label="Chiffre Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Chiffre </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
   <a href="__HOME__#dossiers"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
   <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
   <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>

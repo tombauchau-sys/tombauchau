@@ -12,6 +12,8 @@ SITE = [
         'Pictogramme « presse » à côté des chiffres qui ne sont confirmés que par la presse ; méthode des séries raccordées et de l’enquête SILC expliquée.',
         'Accueil : perspectives des agences de notation retirées (non vérifiées à la source) ; curseur animé et fondus de texte supprimés.',
         'Identité visuelle : la page d’entrée (carte du monde, nuages, logo « Chiffre J?ste ») devient la première section de l’accueil, sans clic obligatoire ; le « ? » se retourne en « u » quand on descend. Le logo et les nuages reviennent dans tous les dossiers.',
+        'Classements, thème Éducation : budget de l’enseignement de chaque pays, par habitant (en euros et en pouvoir d’achat), en % du PIB et en part des dépenses publiques.',
+        'Logo « Chiffre J?ste » dans la barre de navigation de toutes les pages.',
         'Correction : des sections présentes en double dans les dossiers Emploi, Finances et Pensions ont été supprimées.',
     ]),
     ('14 octobre 2026', [

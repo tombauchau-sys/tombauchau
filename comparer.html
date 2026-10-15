@@ -771,6 +771,21 @@ section.seuil>.wrap{position:relative;z-index:1}
 html.calm .wm .q .qq,html.calm .cj-clouds .cl{animation:none!important}
 html.calm .cj-clouds .cl.a{transform:translateX(6vw)}html.calm .cj-clouds .cl.b{transform:translateX(72vw)}html.calm .cj-clouds .cl.c{transform:translateX(38vw)}
 @media (prefers-reduced-motion:reduce){.wm .q .qq,.cj-clouds .cl{animation:none!important}.cj-clouds .cl.a{transform:translateX(6vw)}.cj-clouds .cl.b{transform:translateX(72vw)}.cj-clouds .cl.c{transform:translateX(38vw)}}
+/* Logo « Chiffre J?ste » dans la barre de navigation (le « ? » devient « u » au survol) */
+nav.top a.mark .lg,nav.top a.mark .lg span{width:auto;height:auto;border:0;border-radius:0;transform:none;transition:none}
+nav.top a.mark .lg{display:inline-flex;align-items:baseline;font-weight:700;font-size:21px;letter-spacing:-.04em;white-space:nowrap;line-height:1;color:inherit}
+nav.top a.mark .lg .q{display:inline-block;position:relative;width:.56em;text-align:center;perspective:400px}
+nav.top a.mark .lg .q i{font-style:normal;display:inline-block;transform-origin:50% 60%}
+nav.top a.mark .lg .qq{color:var(--red,#E2402B);animation:cjwob 2.4s ease-in-out infinite}
+nav.top a.mark .lg .uu{position:absolute;left:0;right:0;top:0;transform:rotateX(90deg);opacity:0}
+nav.top a.mark:hover .lg .qq,nav.top a.mark:focus-visible .lg .qq{animation:none;transform:rotateX(-90deg);opacity:0;transition:transform .32s ease,opacity .1s linear .22s}
+nav.top a.mark:hover .lg .uu,nav.top a.mark:focus-visible .lg .uu{transform:none;opacity:1;transition:transform .4s cubic-bezier(.2,.8,.2,1) .3s,opacity .1s linear .3s}
+@media (min-width:641px){nav.top{grid-template-columns:repeat(2,1fr) minmax(176px,auto) repeat(3,1fr)!important}}
+@media (min-width:641px) and (max-width:900px){nav.top a.mark .lg{font-size:17px}}
+@media (max-width:640px){nav.top{grid-template-columns:1fr 84px 1fr!important}nav.top a.mark .lg{font-size:24px}nav.top a.mark .lg .w1,nav.top a.mark .lg .w2{display:none}}
+html.calm nav.top a.mark .lg .qq{animation:none!important}
+@media (prefers-reduced-motion:reduce){nav.top a.mark .lg .qq{animation:none!important}}
+nav.top a.mark .lg .w1{margin-right:.24em}
 </style>
 </head>
 <body>
@@ -779,7 +794,7 @@ html.calm .cj-clouds .cl.a{transform:translateX(6vw)}html.calm .cj-clouds .cl.b{
 <nav class="top" aria-label="Navigation principale">
   <a href="index.html#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
   <a href="index.html#classements"><span class="lbl" data-t="Classements">Classements</span></a>
-  <a href="index.html" class="mark" aria-label="Chiffre Juste, accueil"><span></span></a>
+  <a href="index.html" class="mark" aria-label="Chiffre Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Chiffre </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
   <a href="index.html#dossiers"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
   <a href="index.html#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
   <a href="index.html#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
