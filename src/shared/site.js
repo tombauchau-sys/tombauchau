@@ -106,3 +106,22 @@
   stack();setTimeout(stack,800);addEventListener('resize',function(){clearTimeout(stack.t);stack.t=setTimeout(stack,200)});
   new MutationObserver(function(m){if(innerWidth<=640&&m.some(function(x){return x.addedNodes.length})){clearTimeout(stack.u);stack.u=setTimeout(stack,150)}}).observe(D.body,{childList:true,subtree:true});
 })();
+
+/* Signature visuelle de la page d’entrée, reprise sur tout le site :
+   - le logo « Chiffre J?ste » en pied de page, dont le « ? » se retourne en « u » quand on arrive au bout de la page ;
+   - des nuages qui dérivent derrière la question d’ouverture de chaque dossier. */
+(function(){
+  var D=document,calm=function(){return D.documentElement.classList.contains('calm')||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)};
+  D.querySelectorAll('.wm').forEach(function(w){
+    if(w.querySelector('.q')||!/Chiffre\s+Juste/.test(w.textContent))return;
+    w.innerHTML='Chiffre J<span class="q"><i class="qq">?</i><i class="uu">u</i></span>ste';
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){w.classList.toggle('flip',e.isIntersecting&&e.intersectionRatio>.5)})},{threshold:[0,.5,1]});io.observe(w)}
+    else w.classList.add('flip');
+  });
+  var CLOUD='M0 30 Q-4 6 22 8 Q30 -14 56 -2 Q76 -14 90 8 Q116 6 110 30 Z';
+  D.querySelectorAll('section.seuil').forEach(function(s){
+    var c=D.createElement('div');c.className='cj-clouds';c.setAttribute('aria-hidden','true');
+    c.innerHTML=[['a',.9,18],['b',.62,64],['c',.75,82]].map(function(p){return '<svg class="cl '+p[0]+'" style="top:'+p[2]+'%" viewBox="-6 -18 124 52" width="'+Math.round(170*p[1])+'"><path d="'+CLOUD+'"/></svg>'}).join('');
+    s.insertBefore(c,s.firstChild);
+  });
+})();

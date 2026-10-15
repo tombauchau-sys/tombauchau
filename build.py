@@ -211,7 +211,7 @@ def build_home():
     src = read('accueil/head.html')
     head = src[:src.index('</style>')]
     add = read('accueil/atlas.css') + "\n.grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}\n"
-    gate_html = src[src.index('<div class="gate grain"'):src.index('<nav class="top"')]
+    gate_html = src[src.index('<section class="gate grain"'):src.index('<nav class="top"')]
     body = read('accueil/body.html').replace('<div class="frame"><svg id="map"', '<div class="mframe"><svg id="map"')
     js = src[src.index('<script>', src.index('<nav class="top"')):]  # script principal (le premier <script> est celui de la page d’entrée)
     pre = js[:js.index("  /* Lettres à faire monter */")].replace("var MAP=__MAP__;", "var MAP=__MAP__,DATA=__DATA__;")

@@ -131,6 +131,25 @@ nav.top .cjs-btn:focus-visible,.navm:focus-visible{outline:2px solid var(--coppe
   table.stk td[data-label=""]::before,table.stk tbody th[data-label=""]::before{display:none}
   table.stk caption{display:block;text-align:left}
 }
+/* Logo de pied de page « Chiffre J?ste » : le point d’interrogation devient « u » */
+.wm .q{display:inline-block;position:relative;width:.56em;text-align:center;perspective:400px;vertical-align:baseline}
+.wm .q i{font-style:normal;display:inline-block;transform-origin:50% 60%}
+.wm .q .qq{color:var(--red,#E2402B);animation:cjwob 2.4s ease-in-out infinite}
+.wm .q .uu{position:absolute;left:0;right:0;top:0;transform:rotateX(90deg);opacity:0}
+.wm.flip .q .qq{animation:none;transform:rotateX(-90deg);opacity:0;transition:transform .32s ease,opacity .1s linear .22s}
+.wm.flip .q .uu{transform:none;opacity:1;transition:transform .4s cubic-bezier(.2,.8,.2,1) .3s,opacity .1s linear .3s}
+@keyframes cjwob{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg) translateY(-.03em)}}
+/* Nuages qui dérivent derrière la question d’ouverture des dossiers */
+section.seuil{position:relative;overflow:hidden}
+.cj-clouds{position:absolute;inset:0;pointer-events:none;z-index:0}
+.cj-clouds .cl{position:absolute;left:0;fill:none;stroke:var(--cream-dim,#A69C8F);stroke-width:2;stroke-linejoin:round;opacity:.35;animation:cjdrift 46s linear infinite}
+.cj-clouds .cl.b{animation-duration:64s;animation-delay:-22s}
+.cj-clouds .cl.c{animation-duration:54s;animation-delay:-38s;opacity:.25}
+@keyframes cjdrift{from{transform:translateX(-220px)}to{transform:translateX(calc(100vw + 40px))}}
+section.seuil>.wrap{position:relative;z-index:1}
+html.calm .wm .q .qq,html.calm .cj-clouds .cl{animation:none!important}
+html.calm .cj-clouds .cl.a{transform:translateX(6vw)}html.calm .cj-clouds .cl.b{transform:translateX(72vw)}html.calm .cj-clouds .cl.c{transform:translateX(38vw)}
+@media (prefers-reduced-motion:reduce){.wm .q .qq,.cj-clouds .cl{animation:none!important}.cj-clouds .cl.a{transform:translateX(6vw)}.cj-clouds .cl.b{transform:translateX(72vw)}.cj-clouds .cl.c{transform:translateX(38vw)}}
 </style>
 </head>
 <body>
@@ -281,6 +300,25 @@ fp.onchange=draw;fq.oninput=draw;draw();
   }
   stack();setTimeout(stack,800);addEventListener('resize',function(){clearTimeout(stack.t);stack.t=setTimeout(stack,200)});
   new MutationObserver(function(m){if(innerWidth<=640&&m.some(function(x){return x.addedNodes.length})){clearTimeout(stack.u);stack.u=setTimeout(stack,150)}}).observe(D.body,{childList:true,subtree:true});
+})();
+
+/* Signature visuelle de la page d’entrée, reprise sur tout le site :
+   - le logo « Chiffre J?ste » en pied de page, dont le « ? » se retourne en « u » quand on arrive au bout de la page ;
+   - des nuages qui dérivent derrière la question d’ouverture de chaque dossier. */
+(function(){
+  var D=document,calm=function(){return D.documentElement.classList.contains('calm')||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)};
+  D.querySelectorAll('.wm').forEach(function(w){
+    if(w.querySelector('.q')||!/Chiffre\s+Juste/.test(w.textContent))return;
+    w.innerHTML='Chiffre J<span class="q"><i class="qq">?</i><i class="uu">u</i></span>ste';
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){w.classList.toggle('flip',e.isIntersecting&&e.intersectionRatio>.5)})},{threshold:[0,.5,1]});io.observe(w)}
+    else w.classList.add('flip');
+  });
+  var CLOUD='M0 30 Q-4 6 22 8 Q30 -14 56 -2 Q76 -14 90 8 Q116 6 110 30 Z';
+  D.querySelectorAll('section.seuil').forEach(function(s){
+    var c=D.createElement('div');c.className='cj-clouds';c.setAttribute('aria-hidden','true');
+    c.innerHTML=[['a',.9,18],['b',.62,64],['c',.75,82]].map(function(p){return '<svg class="cl '+p[0]+'" style="top:'+p[2]+'%" viewBox="-6 -18 124 52" width="'+Math.round(170*p[1])+'"><path d="'+CLOUD+'"/></svg>'}).join('');
+    s.insertBefore(c,s.firstChild);
+  });
 })();
 </script>
 </body>
