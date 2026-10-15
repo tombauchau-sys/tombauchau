@@ -64,7 +64,7 @@ def links(html, mode):
     return html
 
 
-BASE = 'https://tombauchau-sys.github.io/tombauchau/'
+BASE = 'https://auplusjuste.be/'
 BUILD_DATE = __import__('datetime').date.today().isoformat()
 # Titres pour les moteurs de recherche (60 caractères environ), par fichier
 SEO_TITLES = {

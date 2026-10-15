@@ -198,7 +198,7 @@
 /* Partager un chiffre : une image carrée avec le chiffre, ce qu’il mesure, sa source et la date de vérification (le format qui circule dans le débat public) */
 (function(){
   var D=document;
-  var canon=D.querySelector('link[rel=canonical]'),url=(canon?canon.href:'https://tombauchau-sys.github.io/tombauchau/').replace(/^https?:\/\//,'');
+  var canon=D.querySelector('link[rel=canonical]'),url=(canon?canon.href:'https://auplusjuste.be/').replace(/^https?:\/\//,'');
   var vb=D.querySelector('.verif-badge b,.maj'),ver=vb?(vb.textContent.match(/vérifiée? le ([^·]+)/)||[])[1]:'';
   function wrap(ctx,t,w){var ws=t.split(/\s+/),L=[],l='';ws.forEach(function(x){var n=l?l+' '+x:x;if(ctx.measureText(n).width>w&&l){L.push(l);l=x}else l=n});if(l)L.push(l);return L}
   function draw(num,lab,src){

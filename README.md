@@ -1,6 +1,6 @@
 # Au plus Juste
 
-Site citoyen de chiffres vérifiés sur la Belgique et l’Europe : https://tombauchau-sys.github.io/tombauchau/
+Site citoyen de chiffres vérifiés sur la Belgique et l’Europe : https://auplusjuste.be/
 
 ## Organisation
 
