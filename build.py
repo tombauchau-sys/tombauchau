@@ -27,6 +27,7 @@ PAGES = {
     '__INEGALITES__': ('dossier-inegalites.html', 'https://claude.ai/artifact/1YHWYRbbFUwdpQybjQe92u'),
     '__CLIMAT__': ('dossier-climat.html', 'https://claude.ai/artifact/XeD7pKwARAY12Gqj6xhVqH'),
     '__LOGEMENT__': ('dossier-logement.html', 'https://claude.ai/artifact/KnCCYmNraookxjwkZf9twj'),
+    '__FISCALITE__': ('dossier-fiscalite.html', 'https://claude.ai/artifact/T7v9dVfbcm6AYfiy8GYtqu'),
     '__REGISTRE__': ('registre-verification.html', 'https://claude.ai/artifact/Dg6d1Tr6wmDe1SFiUjHjYC'),
     '__COMPARER__': ('comparer.html', 'https://claude.ai/artifact/P1ppwNCEvjgmHgZ9VkbXmD'),
     '__LEXIQUE__': ('lexique.html', 'https://claude.ai/artifact/LQDyy5p1qNjdLvMPncXWce'),
@@ -46,6 +47,7 @@ DOSSIERS = {
     'inegalites': ('Inégalités et pauvreté · Chiffre Juste', 'Inégalités et pauvreté en Belgique : risque de pauvreté, privations, redistribution, Gini, patrimoine, écarts entre Régions, histoire de l’aide sociale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'climat': ('Climat et énergie · Chiffre Juste', 'Climat et énergie en Belgique : émissions de gaz à effet de serre par secteur, renouvelables, nucléaire, dépendance énergétique, prix de l’électricité, précarité énergétique, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'logement': ('Logement · Chiffre Juste', 'Le logement en Belgique : prix, rapport prix/revenu, propriétaires et locataires, surcharge des coûts, logement social, sans-abrisme, jeunes chez leurs parents, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'fiscalite': ('Fiscalité · Chiffre Juste', 'La fiscalité en Belgique : niveau des prélèvements depuis 1965, composition (travail, consommation, patrimoine), qui paie selon le salaire, transferts entre Régions, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'pensions': ('Pensions et vieillissement · Chiffre Juste', 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
 }
 HOME_DESC = 'Chiffre Juste, outil citoyen : des chiffres vérifiés sur la Belgique et les 27 pays de l’Union. Notes des agences, budget public par fonction, dette, pauvreté, commerce entre pays, classements, avec sources et limites.'
@@ -76,8 +78,9 @@ SEO_TITLES = {
     'dossier-sante.html': 'Santé en Belgique : espérance de vie, soins · Chiffre Juste',
     'dossier-education.html': 'Éducation en Belgique : PISA, diplômes · Chiffre Juste',
     'dossier-inegalites.html': 'Inégalités et pauvreté en Belgique · Chiffre Juste',
-    'dossier-climat.html': 'Climat et énergie en Belgique · Chiffre Juste',
+    'dossier-fiscalite.html': 'Impôts en Belgique : 45,1 % du PIB en 2024, composition, taux selon le salaire, impôts sur le patrimoine, transferts entre Régions. Chiffres vérifiés et sourcés.', 'dossier-climat.html': 'Climat et énergie en Belgique · Chiffre Juste',
     'dossier-logement.html': 'Logement en Belgique : prix, loyers · Chiffre Juste',
+    'dossier-fiscalite.html': 'Impôts et fiscalité en Belgique : qui paie quoi · Chiffre Juste',
     'comparer.html': 'Comparer les 27 pays de l’Union européenne · Chiffre Juste',
     'nouveautes.html': 'Nouveautés et corrections · Chiffre Juste',
     'lexique.html': 'Lexique politique, économique et européen · Chiffre Juste',
@@ -153,6 +156,7 @@ DOSSIER_IND = {
     'inegalites': ['arope', 'gini', 'depriv'],
     'climat': ['ghg', 'renew', 'gf05'],
     'logement': ['hpi', 'overburden', 'overcrowd'],
+    'fiscalite': ['tax', 'revenue', 'spend'],
 }
 MEMBERS = ['BE','BG','CZ','DK','DE','EE','IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE','EU27_2020']
 
@@ -222,7 +226,7 @@ def build_home():
     out = (out.replace('__MAP__', read('geo/map.json'))
               .replace('__WORLD__', read('geo/world.json'))
               .replace('__DATA__', read('data/cj-data.json')))
-    titles = {'emploi': 'Emploi et inactivité', 'finances': 'Finances publiques', 'pensions': 'Pensions et vieillissement', 'immigration': 'Immigration et asile', 'justice': 'Justice et sécurité', 'sante': 'Santé', 'education': 'Éducation', 'inegalites': 'Inégalités et pauvreté', 'climat': 'Climat et énergie', 'logement': 'Logement'}
+    titles = {'emploi': 'Emploi et inactivité', 'finances': 'Finances publiques', 'pensions': 'Pensions et vieillissement', 'immigration': 'Immigration et asile', 'justice': 'Justice et sécurité', 'sante': 'Santé', 'education': 'Éducation', 'inegalites': 'Inégalités et pauvreté', 'climat': 'Climat et énergie', 'logement': 'Logement', 'fiscalite': 'Fiscalité'}
     groups = [{'t': titles[n], 'href': '__' + n.upper() + '__', 'ind': DOSSIER_IND[n]} for n in titles]
     allids = sorted({i for n in titles for i in DOSSIER_IND[n]})
     out += '<script>' + cmp_script(allids, 'CJC.home(' + json.dumps(groups, ensure_ascii=False) + ');') + '</script>\n'
@@ -297,7 +301,7 @@ def search_index():
         t, c = _txt(t), _txt(c)
         if t and (t, u) not in {(e[0], e[2]) for e in out}:
             out.append([t, c[:240], u, k])
-    names = {'emploi': 'Emploi', 'finances': 'Finances publiques', 'pensions': 'Pensions', 'immigration': 'Immigration', 'justice': 'Justice', 'sante': 'Santé', 'education': 'Éducation', 'inegalites': 'Inégalités', 'climat': 'Climat', 'logement': 'Logement'}
+    names = {'emploi': 'Emploi', 'finances': 'Finances publiques', 'pensions': 'Pensions', 'immigration': 'Immigration', 'justice': 'Justice', 'sante': 'Santé', 'education': 'Éducation', 'inegalites': 'Inégalités', 'climat': 'Climat', 'logement': 'Logement', 'fiscalite': 'Fiscalité'}
     if (SRC / 'dossiers' / 'fiscalite-body.html').exists():
         names['fiscalite'] = 'Fiscalité'
     for n in names:
@@ -393,7 +397,7 @@ def build_dossier(name):
 
 def build_registre():
     import csv
-    names = {'emploi':'Emploi','finances':'Finances publiques','pensions':'Pensions','immigration':'Immigration','justice':'Justice','sante':'Santé','education':'Éducation','inegalites':'Inégalités','climat':'Climat et énergie','logement':'Logement','fiche':'Fiche chômage','accueil':'Accueil et carte'}
+    names = {'emploi':'Emploi','finances':'Finances publiques','pensions':'Pensions','immigration':'Immigration','justice':'Justice','sante':'Santé','education':'Éducation','inegalites':'Inégalités','climat':'Climat et énergie','logement':'Logement','fiscalite':'Fiscalité','fiche':'Fiche chômage','accueil':'Accueil et carte'}
     rows = list(csv.DictReader(open(ROOT / 'verif' / 'registre.csv', encoding='utf-8')))
     data = [[names.get(r['page'], r['page']), r['affirmation'], r['valeur_site'], r['source_primaire'], r['valeur_source'], r['statut'], r['note']] for r in rows]
     js = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
@@ -534,7 +538,7 @@ def main():
         html, title, desc = fn()
         html = shared(html)
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc, fname), encoding='utf-8')

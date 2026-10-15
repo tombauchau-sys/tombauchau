@@ -1,5 +1,18 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
+    ('15 octobre 2026', [
+        'Nouveau dossier Fiscalité : niveau des prélèvements depuis 1965, composition, qui paie selon le salaire, impôts sur le patrimoine et transferts entre Régions.',
+        'Navigation : sommaire collant dans chaque dossier, recherche dans tout le site (touche /), menu replié sur mobile, tableaux lisibles en cartes sur téléphone.',
+        'En tête de chaque dossier, un badge de vérification : date, nombre d’affirmations contrôlées, sources, lien vers le registre.',
+        'Graphiques : valeur exacte au survol, périodes historiques ombrées, titres qui disent ce que montre le graphique, bouton « Partager ce chiffre ».',
+        'Recherche : chaque badge de preuve est justifié (sur quoi il repose, ce qui le ferait changer) ; l’échelle de Maryland est réservée aux évaluations d’impact, les autres sources sont désignées par leur type.',
+        'Lectures : une grille commune (libérale, sociale-démocrate, conservatrice, écologiste, critique) et douze nouvelles lectures pour combler les familles manquantes.',
+        'Dans chaque dossier, un tableau des pistes proposées par des chercheurs de bords différents, avec ce que la preuve en dit et leurs limites.',
+        'Études belges ou européennes ajoutées là où il en manquait (santé, éducation, justice, logement) ; leur absence est signalée ailleurs.',
+        'Pictogramme « presse » à côté des chiffres qui ne sont confirmés que par la presse ; méthode des séries raccordées et de l’enquête SILC expliquée.',
+        'Accueil : perspectives des agences de notation retirées (non vérifiées à la source) ; page d’entrée affichée à la première visite seulement ; curseur animé et fondus de texte supprimés.',
+        'Correction : des sections présentes en double dans les dossiers Emploi, Finances et Pensions ont été supprimées.',
+    ]),
     ('14 octobre 2026', [
         'Sous chacun des 60 graphiques, « Voir les données du graphique » : les valeurs exactes dessinées, téléchargeables en CSV avec la source, l’unité et la date.',
         'Dans chaque dossier et dans la fiche chômage, un encadré « Comment citer », avec la version (date de vérification) et la date de consultation.',

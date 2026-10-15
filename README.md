@@ -36,3 +36,14 @@ Textes et graphiques : Creative Commons Attribution 4.0 International (CC BY 4.0
 - Données : sous chaque graphique, « Voir les données du graphique » affiche et télécharge en CSV les valeurs exactes dessinées (registre `CJD`, fichier `src/dossiers/cjd.js`).
 - Vérifications : `verif/registre.csv` (une ligne par affirmation contrôlée) ; journal public des changements : page `nouveautes.html` (source `src/nouveautes/nv_journal.py` et journaux des dossiers).
 - Identifiant pérenne (DOI) : à obtenir en reliant le dépôt à Zenodo et en publiant une « release » GitHub.
+
+
+## Charte graphique
+
+Une règle courte, pour que les pages restent cohérentes :
+
+- **Sombre = récit, clair = données.** Les sections brunes racontent (histoire, recherche, décisions, lectures) ; les sections papier présentent les chiffres et leurs définitions.
+- **Une couleur par dossier** sur l'accueil (variable `--cc`), reprise pour le dossier.
+- **Les mêmes graphiques partout** : axes titrés avec leur unité, phrase-titre qui dit ce que montre le graphique, source sous le graphique, données téléchargeables, valeur au survol, ruptures de série marquées d'une croix rouge.
+- **Le texte n'est jamais animé en transparence** : seules les courbes se dessinent.
+- **Le chiffre d'abord, la source juste dessous**, et le pictogramme « presse » quand la source primaire n'a pas pu être consultée.
