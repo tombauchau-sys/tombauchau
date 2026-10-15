@@ -1,4 +1,4 @@
-/* Chiffre Juste · comparaison entre pays (dossiers, page Comparer, accueil) */
+/* Au plus Juste · comparaison entre pays (dossiers, page Comparer, accueil) */
 var CJC=(function(){
   var NS='http://www.w3.org/2000/svg',D=document;
   var EU='EU27_2020';

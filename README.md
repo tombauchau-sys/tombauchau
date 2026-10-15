@@ -1,4 +1,4 @@
-# Chiffre Juste
+# Au plus Juste
 
 Site citoyen de chiffres vérifiés sur la Belgique et l’Europe : https://tombauchau-sys.github.io/tombauchau/
 
@@ -28,7 +28,7 @@ Voir la charte éditoriale et la page Méthode : chaque chiffre est daté et rel
 
 ## Licence
 
-Textes et graphiques : Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/deed.fr — réutilisation libre en citant « Chiffre Juste ». Les données restent soumises aux conditions de leurs producteurs (Eurostat, Statbel, etc.).
+Textes et graphiques : Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/deed.fr — réutilisation libre en citant « Au plus Juste ». Les données restent soumises aux conditions de leurs producteurs (Eurostat, Statbel, etc.).
 
 ## Citer et reproduire
 

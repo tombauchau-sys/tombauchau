@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Construit toutes les pages de Chiffre Juste à partir du dossier src/.
+"""Construit toutes les pages d’Au plus Juste à partir du dossier src/.
 
 Usage :  python3 build.py            -> pages du site à la racine du dépôt
          python3 build.py --artifact -> en plus, versions « Claude » dans .artifacts/
@@ -38,19 +38,19 @@ FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&display=swap">
 '''
 DOSSIERS = {
-    'emploi': ('Emploi et inactivité · Chiffre Juste', 'Emploi et inactivité en Belgique : taux d’emploi, chômage, invalidité, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'finances': ('Finances publiques · Chiffre Juste', 'Dette, déficit, dépenses par fonction, intérêts et notes des agences : les finances publiques belges en chiffres vérifiés, avec l’état de la recherche et des lectures plurielles.'),
-    'immigration': ('Immigration et asile · Chiffre Juste', 'Immigration et asile en Belgique : personnes nées à l’étranger, étrangers, demandes d’asile, emploi des immigrés, histoire depuis 1930, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'justice': ('Justice et sécurité · Chiffre Juste', 'Justice et sécurité en Belgique : criminalité enregistrée et chiffre noir, prisons surpeuplées, récidive, histoire pénale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'sante': ('Santé · Chiffre Juste', 'Santé en Belgique : espérance de vie et années en bonne santé, dépenses et accès aux soins, mortalité évitable, inégalités sociales, histoire de l’assurance maladie, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'education': ('Éducation · Chiffre Juste', 'Éducation en Belgique : compétences des élèves (PISA), redoublement, décrochage, diplômes et emploi, histoire de l’école, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'inegalites': ('Inégalités et pauvreté · Chiffre Juste', 'Inégalités et pauvreté en Belgique : risque de pauvreté, privations, redistribution, Gini, patrimoine, écarts entre Régions, histoire de l’aide sociale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'climat': ('Climat et énergie · Chiffre Juste', 'Climat et énergie en Belgique : émissions de gaz à effet de serre par secteur, renouvelables, nucléaire, dépendance énergétique, prix de l’électricité, précarité énergétique, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'logement': ('Logement · Chiffre Juste', 'Le logement en Belgique : prix, rapport prix/revenu, propriétaires et locataires, surcharge des coûts, logement social, sans-abrisme, jeunes chez leurs parents, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'fiscalite': ('Fiscalité · Chiffre Juste', 'La fiscalité en Belgique : niveau des prélèvements depuis 1965, composition (travail, consommation, patrimoine), qui paie selon le salaire, transferts entre Régions, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
-    'pensions': ('Pensions et vieillissement · Chiffre Juste', 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'emploi': ('Emploi et inactivité · Au plus Juste', 'Emploi et inactivité en Belgique : taux d’emploi, chômage, invalidité, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'finances': ('Finances publiques · Au plus Juste', 'Dette, déficit, dépenses par fonction, intérêts et notes des agences : les finances publiques belges en chiffres vérifiés, avec l’état de la recherche et des lectures plurielles.'),
+    'immigration': ('Immigration et asile · Au plus Juste', 'Immigration et asile en Belgique : personnes nées à l’étranger, étrangers, demandes d’asile, emploi des immigrés, histoire depuis 1930, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'justice': ('Justice et sécurité · Au plus Juste', 'Justice et sécurité en Belgique : criminalité enregistrée et chiffre noir, prisons surpeuplées, récidive, histoire pénale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'sante': ('Santé · Au plus Juste', 'Santé en Belgique : espérance de vie et années en bonne santé, dépenses et accès aux soins, mortalité évitable, inégalités sociales, histoire de l’assurance maladie, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'education': ('Éducation · Au plus Juste', 'Éducation en Belgique : compétences des élèves (PISA), redoublement, décrochage, diplômes et emploi, histoire de l’école, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'inegalites': ('Inégalités et pauvreté · Au plus Juste', 'Inégalités et pauvreté en Belgique : risque de pauvreté, privations, redistribution, Gini, patrimoine, écarts entre Régions, histoire de l’aide sociale, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'climat': ('Climat et énergie · Au plus Juste', 'Climat et énergie en Belgique : émissions de gaz à effet de serre par secteur, renouvelables, nucléaire, dépendance énergétique, prix de l’électricité, précarité énergétique, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'logement': ('Logement · Au plus Juste', 'Le logement en Belgique : prix, rapport prix/revenu, propriétaires et locataires, surcharge des coûts, logement social, sans-abrisme, jeunes chez leurs parents, histoire, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'fiscalite': ('Fiscalité · Au plus Juste', 'La fiscalité en Belgique : niveau des prélèvements depuis 1965, composition (travail, consommation, patrimoine), qui paie selon le salaire, transferts entre Régions, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
+    'pensions': ('Pensions et vieillissement · Au plus Juste', 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
 }
-HOME_DESC = 'Chiffre Juste, outil citoyen : des chiffres vérifiés sur la Belgique et les 27 pays de l’Union. Notes des agences, budget public par fonction, dette, pauvreté, commerce entre pays, classements, avec sources et limites.'
+HOME_DESC = 'Au plus Juste, outil citoyen : des chiffres vérifiés sur la Belgique et les 27 pays de l’Union. Notes des agences, budget public par fonction, dette, pauvreté, commerce entre pays, classements, avec sources et limites.'
 FICHE_DESC = 'Chômage en Belgique, 2025 : 6,2 % selon Statbel et Eurostat. Définition, sources croisées, ruptures de série, limites et sept lectures d’intellectuels.'
 
 
@@ -68,23 +68,23 @@ BASE = 'https://tombauchau-sys.github.io/tombauchau/'
 BUILD_DATE = __import__('datetime').date.today().isoformat()
 # Titres pour les moteurs de recherche (60 caractères environ), par fichier
 SEO_TITLES = {
-    'index.html': 'Chiffre Juste · chiffres vérifiés sur la Belgique et l’Europe',
-    'fiche-chomage.html': 'Chômage en Belgique : définitions et chiffres · Chiffre Juste',
-    'dossier-emploi.html': 'Emploi et inactivité en Belgique · Chiffre Juste',
-    'dossier-finances.html': 'Dette et finances publiques belges · Chiffre Juste',
-    'dossier-pensions.html': 'Pensions et vieillissement en Belgique · Chiffre Juste',
-    'dossier-immigration.html': 'Immigration et asile en Belgique · Chiffre Juste',
-    'dossier-justice.html': 'Justice, criminalité et prisons en Belgique · Chiffre Juste',
-    'dossier-sante.html': 'Santé en Belgique : espérance de vie, soins · Chiffre Juste',
-    'dossier-education.html': 'Éducation en Belgique : PISA, diplômes · Chiffre Juste',
-    'dossier-inegalites.html': 'Inégalités et pauvreté en Belgique · Chiffre Juste',
-    'dossier-fiscalite.html': 'Impôts en Belgique : 45,1 % du PIB en 2024, composition, taux selon le salaire, impôts sur le patrimoine, transferts entre Régions. Chiffres vérifiés et sourcés.', 'dossier-climat.html': 'Climat et énergie en Belgique · Chiffre Juste',
-    'dossier-logement.html': 'Logement en Belgique : prix, loyers · Chiffre Juste',
-    'dossier-fiscalite.html': 'Impôts et fiscalité en Belgique : qui paie quoi · Chiffre Juste',
-    'comparer.html': 'Comparer les 27 pays de l’Union européenne · Chiffre Juste',
-    'nouveautes.html': 'Nouveautés et corrections · Chiffre Juste',
-    'lexique.html': 'Lexique politique, économique et européen · Chiffre Juste',
-    'registre-verification.html': 'Registre de vérification des chiffres · Chiffre Juste',
+    'index.html': 'Au plus Juste · chiffres vérifiés sur la Belgique et l’Europe',
+    'fiche-chomage.html': 'Chômage en Belgique : définitions et chiffres · Au plus Juste',
+    'dossier-emploi.html': 'Emploi et inactivité en Belgique · Au plus Juste',
+    'dossier-finances.html': 'Dette et finances publiques belges · Au plus Juste',
+    'dossier-pensions.html': 'Pensions et vieillissement en Belgique · Au plus Juste',
+    'dossier-immigration.html': 'Immigration et asile en Belgique · Au plus Juste',
+    'dossier-justice.html': 'Justice, criminalité et prisons en Belgique · Au plus Juste',
+    'dossier-sante.html': 'Santé en Belgique : espérance de vie, soins · Au plus Juste',
+    'dossier-education.html': 'Éducation en Belgique : PISA, diplômes · Au plus Juste',
+    'dossier-inegalites.html': 'Inégalités et pauvreté en Belgique · Au plus Juste',
+    'dossier-fiscalite.html': 'Impôts en Belgique : 45,1 % du PIB en 2024, composition, taux selon le salaire, impôts sur le patrimoine, transferts entre Régions. Chiffres vérifiés et sourcés.', 'dossier-climat.html': 'Climat et énergie en Belgique · Au plus Juste',
+    'dossier-logement.html': 'Logement en Belgique : prix, loyers · Au plus Juste',
+    'dossier-fiscalite.html': 'Impôts et fiscalité en Belgique : qui paie quoi · Au plus Juste',
+    'comparer.html': 'Comparer les 27 pays de l’Union européenne · Au plus Juste',
+    'nouveautes.html': 'Nouveautés et corrections · Au plus Juste',
+    'lexique.html': 'Lexique politique, économique et européen · Au plus Juste',
+    'registre-verification.html': 'Registre de vérification des chiffres · Au plus Juste',
 }
 AUTHOR = {'@type': 'Person', 'name': 'Tom Bauchau'}
 # Descriptions pour les moteurs de recherche (160 caractères au plus)
@@ -93,7 +93,7 @@ SEO_DESC = {'index.html': 'Outil citoyen : chiffres vérifiés sur la Belgique e
 
 def jsonld(fname, title, desc):
     url = BASE + ('' if fname == 'index.html' else fname)
-    site = {'@type': 'WebSite', '@id': BASE + '#site', 'name': 'Chiffre Juste', 'url': BASE, 'inLanguage': 'fr', 'author': AUTHOR,
+    site = {'@type': 'WebSite', '@id': BASE + '#site', 'name': 'Au plus Juste', 'url': BASE, 'inLanguage': 'fr', 'author': AUTHOR,
             'description': 'Outil citoyen de chiffres vérifiés sur la Belgique et l’Europe, avec sources, définitions et limites.'}
     if fname == 'index.html':
         data = site
@@ -104,7 +104,7 @@ def jsonld(fname, title, desc):
             sys.path.insert(0, str(SRC / 'lexique'))
             import build_lexique as BL
             terms = BL.load()
-            data = {'@type': 'DefinedTermSet', 'name': 'Lexique de Chiffre Juste', 'url': url, 'inLanguage': 'fr',
+            data = {'@type': 'DefinedTermSet', 'name': 'Lexique d’Au plus Juste', 'url': url, 'inLanguage': 'fr',
                     'description': desc, 'dateModified': BUILD_DATE, 'isPartOf': {'@id': BASE + '#site'},
                     'hasDefinedTerm': [{'@type': 'DefinedTerm', 'name': e['t'], 'description': e['d'],
                                         'url': url + '#t-' + BL.slug(e['t'])} for e in terms]}
@@ -130,7 +130,7 @@ def wrap(html, title, desc, fname='index.html'):
             f'<meta property="og:description" content="{e(desc)}">\n'
             f'<meta property="og:url" content="{url}">\n'
             f'<meta property="og:type" content="{"website" if fname == "index.html" else "article"}">\n'
-            '<meta property="og:site_name" content="Chiffre Juste">\n<meta property="og:locale" content="fr_BE">\n'
+            '<meta property="og:site_name" content="Au plus Juste">\n<meta property="og:locale" content="fr_BE">\n'
             '<meta name="twitter:card" content="summary">\n'
             + jsonld(fname, seo, desc))
     return head + html[:i] + '\n</head>\n<body>\n' + html[i:] + '</body>\n</html>\n'
@@ -230,7 +230,7 @@ def build_home():
     groups = [{'t': titles[n], 'href': '__' + n.upper() + '__', 'ind': DOSSIER_IND[n]} for n in titles]
     allids = sorted({i for n in titles for i in DOSSIER_IND[n]})
     out += '<script>' + cmp_script(allids, 'CJC.home(' + json.dumps(groups, ensure_ascii=False) + ');') + '</script>\n'
-    return out, 'Atlas Chiffre Juste', HOME_DESC
+    return out, 'Atlas Au plus Juste', HOME_DESC
 
 
 def build_fiche():
@@ -243,7 +243,7 @@ def build_fiche():
     j = s.index('<script>') + 8
     s = s[:j] + read('dossiers/cjd.js') + '\n' + s[j:]
     s = add_cite(s, 'Le chômage : définitions et chiffres', 'fiche-chomage.html', 'fiche')
-    return s, 'Chômage · Chiffre Juste', FICHE_DESC
+    return s, 'Chômage · Au plus Juste', FICHE_DESC
 
 
 SELECTION_NOTE = ('<details class="cj-sel" data-r><summary>Comment ces études ont été choisies</summary>'
@@ -260,11 +260,11 @@ def add_cite(body, titre, fname, genre):
     m = re.search(r'(?:Dossier|Fiche[^<]*?) vérifiée? le (\d{1,2}(?:er)? \w+ (\d{4}))', body)
     ver, an = (m.group(1), m.group(2)) if m else (None, BUILD_DATE[:4])
     url = BASE + fname
-    ref = (f'Bauchau, T. ({an}). <i>{titre}</i> [{genre}]. Chiffre Juste' + (f', version du {ver}' if ver else '') +
+    ref = (f'Bauchau, T. ({an}). <i>{titre}</i> [{genre}]. Au plus Juste' + (f', version du {ver}' if ver else '') +
            f'. Consulté le <span class="cj-today">…</span>, à l’adresse {url}')
     box = ('<div class="cj-cite"><p class="cj-cite-t">Comment citer ce ' + genre + '</p>'
            '<p class="cj-ref">' + ref + '</p>'
-           '<p class="cj-cite-n">Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique) : Chiffre Juste rassemble et explique des données, il ne les produit pas. Les données de chaque graphique sont téléchargeables (« Voir les données du graphique »). Code et données du site : <a href="https://github.com/tombauchau-sys/tombauchau" target="_blank" rel="noopener">dépôt public GitHub</a>.</p>'
+           '<p class="cj-cite-n">Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique) : Au plus Juste rassemble et explique des données, il ne les produit pas. Les données de chaque graphique sont téléchargeables (« Voir les données du graphique »). Code et données du site : <a href="https://github.com/tombauchau-sys/tombauchau" target="_blank" rel="noopener">dépôt public GitHub</a>.</p>'
            '<button type="button" class="cj-copy">Copier la référence</button></div>')
     if genre == 'fiche':
         k = body.index('</div>\n</section>\n</main>')
@@ -367,7 +367,7 @@ def build_dossier(name):
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
   <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
-  <a href="__HOME__" class="mark" aria-label="Chiffre Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Chiffre </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
+  <a href="__HOME__" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
   <a href="__HOME__#dossiers" class="on"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
   <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
   <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
@@ -402,14 +402,14 @@ def build_registre():
     data = [[names.get(r['page'], r['page']), r['affirmation'], r['valeur_site'], r['source_primaire'], r['valeur_source'], r['statut'], r['note']] for r in rows]
     js = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
     html = read('registre/registre.html').replace('__REGDATA__', js)
-    return html, 'Registre de vérification · Chiffre Juste', 'Chaque affirmation de Chiffre Juste contrôlée à sa source primaire : valeur affichée, source consultée, statut.'
+    return html, 'Registre de vérification · Au plus Juste', 'Chaque affirmation d’Au plus Juste contrôlée à sa source primaire : valeur affichée, source consultée, statut.'
 
 
 NAV_SIMPLE = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
   <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
-  <a href="__HOME__" class="mark" aria-label="Chiffre Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Chiffre </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
+  <a href="__HOME__" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
   <a href="__HOME__#dossiers"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
   <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
   <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
@@ -426,7 +426,7 @@ A11Y_INIT = ("(function(){var D=document,H=D.documentElement,ab=D.getElementById
 def build_comparer():
     fiche = read('fiche/fiche-chomage.html')
     css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css') + '\n.cmp-page{padding-top:140px}.cmp-page .cmp-how{margin-top:56px;max-width:80ch}.cmp-page .cmp-how ul{font:17px/1.55 var(--sans);padding-left:1.2em;display:grid;gap:10px}\n'
-    title = 'Comparer les pays · Chiffre Juste'
+    title = 'Comparer les pays · Au plus Juste'
     desc = 'Comparer les 27 pays de l’Union sur une trentaine d’indicateurs Eurostat : emploi, finances publiques, santé, éducation, pauvreté, climat, logement, justice. Pays à cocher, graphiques et tableaux.'
     head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
     nav = NAV_SIMPLE
@@ -444,8 +444,8 @@ def build_lexique():
     nav = NAV_SIMPLE
     init = A11Y_INIT
     body, lcss, js, n = BL.build(read, nav, init)
-    title = 'Lexique · Chiffre Juste'
-    desc = f'Lexique de Chiffre Juste : {n} définitions des termes politiques, économiques, sociaux et européens du débat public, des institutions belges aux traités de l’Union (Maastricht, Lisbonne…).'
+    title = 'Lexique · Au plus Juste'
+    desc = f'Lexique d’Au plus Juste : {n} définitions des termes politiques, économiques, sociaux et européens du débat public, des institutions belges aux traités de l’Union (Maastricht, Lisbonne…).'
     head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + lcss + '</style>\n'
     return head + nav + body + '<script>' + js + '</script>\n', title, desc
 
@@ -518,12 +518,12 @@ def build_nouveautes():
 </main>
 
 <footer>
-  <div class="meta"><span>Chiffre Juste · Nouveautés et corrections</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
-  <div class="wm" aria-hidden="true">Chiffre Juste</div>
+  <div class="meta"><span>Au plus Juste · Nouveautés et corrections</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="wm" aria-hidden="true">Au plus Juste</div>
 </footer>
 """
-    title = 'Nouveautés et corrections · Chiffre Juste'
-    desc = 'Journal des ajouts et corrections de Chiffre Juste, et calendrier des prochaines mises à jour des sources.'
+    title = 'Nouveautés et corrections · Au plus Juste'
+    desc = 'Journal des ajouts et corrections d’Au plus Juste, et calendrier des prochaines mises à jour des sources.'
     head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
     return head + NAV_SIMPLE + body + '<script>' + A11Y_INIT + '</script>\n', title, desc
 

@@ -96,7 +96,7 @@
     var bs=D.querySelectorAll('#priceUnit button');
     bs.forEach(function(b){b.onclick=function(){real=b.dataset.u==='r';bs.forEach(function(x){x.setAttribute('aria-pressed',x===b)});draw()}});
     draw();
-    CJD.series(host,[{n:'Belgique, c€ courants',pts:DATA.price},{n:'Union, c€ courants',pts:DATA.priceEU},{n:'Belgique, c€ de 2025 (calcul Chiffre Juste)',pts:defl(DATA.price,DATA.ipchBE)},{n:'Union, c€ de 2025 (calcul Chiffre Juste)',pts:defl(DATA.priceEU,DATA.ipchEU)}],2007,null,'Euros de 2025 : prix divisé par l’IPCH annuel moyen (prc_hicp_ainr, 2025 = 100) ; 2026 non converti, faute d’indice annuel.');
+    CJD.series(host,[{n:'Belgique, c€ courants',pts:DATA.price},{n:'Union, c€ courants',pts:DATA.priceEU},{n:'Belgique, c€ de 2025 (calcul Au plus Juste)',pts:defl(DATA.price,DATA.ipchBE)},{n:'Union, c€ de 2025 (calcul Au plus Juste)',pts:defl(DATA.priceEU,DATA.ipchEU)}],2007,null,'Euros de 2025 : prix divisé par l’IPCH annuel moyen (prc_hicp_ainr, 2025 = 100) ; 2026 non converti, faute d’indice annuel.');
   })();
 
   /* Recherche */

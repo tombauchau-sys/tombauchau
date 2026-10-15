@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Lexique de Chiffre Juste : source unique des définitions.
+"""Lexique d’Au plus Juste : source unique des définitions.
 
 Chaque entrée : t (terme), c (rubrique), d (définition), al (autres noms, sigles),
 ex (repère chiffré déjà vérifié sur le site), v (où le terme sert sur le site),
@@ -127,7 +127,7 @@ T('Banque centrale européenne', 'eur',
   'Banque centrale des pays de la zone euro, établie à Francfort. Son mandat principal est la stabilité des prix ; depuis 2021, elle vise une inflation de 2 % à moyen terme. Avec les banques centrales nationales de la zone euro, elle forme l’Eurosystème.',
   al=['BCE', 'Eurosystème'])
 T('Eurostat', 'eur',
-  'Office statistique de l’Union européenne, établi à Luxembourg. Il harmonise les définitions et publie les statistiques comparables des États membres, transmises par les instituts nationaux (Statbel, BNB, etc.). C’est la source principale des comparaisons de Chiffre Juste.',
+  'Office statistique de l’Union européenne, établi à Luxembourg. Il harmonise les définitions et publie les statistiques comparables des États membres, transmises par les instituts nationaux (Statbel, BNB, etc.). C’est la source principale des comparaisons d’Au plus Juste.',
   v=[CMP])
 T('Zone euro', 'eur',
   'Ensemble des États membres qui ont adopté l’euro comme monnaie. La monnaie unique existe depuis le 1er janvier 1999 ; les billets et pièces circulent depuis le 1er janvier 2002. La zone compte 21 pays depuis l’entrée de la Bulgarie en 2026.',
@@ -230,7 +230,7 @@ T('Inflation', 'eco',
   'Hausse générale et durable des prix à la consommation, mesurée par la variation d’un indice des prix. Une inflation de 3 % signifie qu’il faut 3 % d’euros en plus pour acheter le même panier qu’un an plus tôt.',
   al=['hausse des prix'], ex='Belgique : environ +21 % de hausse des prix entre 2021 et 2025 (IPCH).', v=[at(FIN, 'f-interets')])
 T('Indice des prix à la consommation harmonisé', 'eco',
-  'Indice des prix calculé selon une méthode commune à tous les pays de l’Union, publié par Eurostat. Il sert à comparer l’inflation entre pays et c’est l’indicateur suivi par la Banque centrale européenne. Chiffre Juste l’utilise pour convertir des montants en euros constants.',
+  'Indice des prix calculé selon une méthode commune à tous les pays de l’Union, publié par Eurostat. Il sert à comparer l’inflation entre pays et c’est l’indicateur suivi par la Banque centrale européenne. Au plus Juste l’utilise pour convertir des montants en euros constants.',
   al=['IPCH', 'HICP'], v=[at(FIN, 'f-interets'), at(LOG, 'f-acheter')])
 T('Euros courants et euros constants', 'eco',
   'Un montant en euros courants est exprimé aux prix de son année. Exprimé en euros constants (par exemple « en euros de 2025 »), il est corrigé de l’inflation, ce qui permet de comparer des années entre elles. Les ratios en % du PIB n’ont pas besoin de cette correction, puisque le PIB évolue lui aussi avec les prix.',
@@ -491,7 +491,7 @@ T('Effet rebond', 'env',
 
 # ===================== Statistique et méthode =====================
 T('Source primaire', 'met',
-  'Organisme qui produit la donnée (Eurostat, Statbel, BNB, ONEM…) ou étude qui publie le résultat, par opposition à un article de presse ou à un site qui la reprend. Chiffre Juste vérifie chaque chiffre dans sa source primaire.',
+  'Organisme qui produit la donnée (Eurostat, Statbel, BNB, ONEM…) ou étude qui publie le résultat, par opposition à un article de presse ou à un site qui la reprend. Au plus Juste vérifie chaque chiffre dans sa source primaire.',
   al=['source', 'source secondaire'])
 T('Enquête et données administratives', 'met',
   'Une enquête interroge un échantillon de personnes et extrapole à la population (enquête sur les forces de travail, enquête sur les revenus et conditions de vie). Les données administratives proviennent des registres des institutions (inscriptions, paiements, plaintes) : elles sont exhaustives mais dépendent des règles de l’institution.',

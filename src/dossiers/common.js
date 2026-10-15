@@ -98,7 +98,7 @@
     var bt=D.createElement('button');bt.type='button';bt.className='cj-dl';bt.textContent='Télécharger ces données (CSV)';
     bt.addEventListener('click',function(){
       var L=[];
-      L.push(['Site','Chiffre Juste'].map(q).join(';'));
+      L.push(['Site','Au plus Juste'].map(q).join(';'));
       L.push(['Page',D.title].map(q).join(';'));
       L.push(['Adresse',location.href.split('#')[0]+'#'+id].map(q).join(';'));
       if(svg&&svg.getAttribute('aria-label'))L.push(['Graphique',svg.getAttribute('aria-label')].map(q).join(';'));
@@ -107,11 +107,11 @@
       if(src)L.push(['Source et notes',src.textContent].map(q).join(';'));
       if(d.note)L.push(['Remarque',d.note].map(q).join(';'));
       L.push(['Téléchargé le',today].map(q).join(';'));
-      L.push(['Conditions','Mise en forme : Chiffre Juste, licence CC BY 4.0. Les données restent celles de leurs producteurs : vérifier et citer la source primaire. Case vide = donnée non publiée.'].map(q).join(';'));
+      L.push(['Conditions','Mise en forme : Au plus Juste, licence CC BY 4.0. Les données restent celles de leurs producteurs : vérifier et citer la source primaire. Case vide = donnée non publiée.'].map(q).join(';'));
       L.push('');
       L.push(d.cols.map(q).join(';'));
       d.rows.forEach(function(r){L.push(r.map(function(v,i){return q(i?num(v,1):String(v))}).join(';'))});
-      var txt='﻿'+L.join('\r\n'),fn='chiffre-juste-'+((location.pathname.split('/').pop()||'').replace('.html','')||'page')+'-'+id+'.csv';
+      var txt='﻿'+L.join('\r\n'),fn='au-plus-juste-'+((location.pathname.split('/').pop()||'').replace('.html','')||'page')+'-'+id+'.csv';
       function plain(){var blob=new Blob([txt],{type:'text/csv;charset=utf-8'}),a=D.createElement('a');a.href=URL.createObjectURL(blob);a.download=fn;D.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)}
       if(window.claude&&window.claude.use){window.claude.use('downloads').then(function(dl){if(!dl)return plain();dl.save({filename:fn,data:txt}).catch(function(){})},plain)}else plain();
     });
@@ -205,7 +205,7 @@
     var c=D.createElement('canvas'),S=1080;c.width=S;c.height=S;var x=c.getContext('2d'),P=84;
     x.fillStyle='#F7F6F2';x.fillRect(0,0,S,S);x.fillStyle='#C9773A';x.fillRect(0,0,S,18);
     var F='"Instrument Sans",system-ui,sans-serif';
-    x.fillStyle='#1E1914';x.font='700 30px '+F;x.fillText('CHIFFRE JUSTE',P,110);
+    x.fillStyle='#1E1914';x.font='700 30px '+F;x.fillText('AU PLUS JUSTE',P,110);
     x.fillStyle='#6A665F';x.font='500 28px '+F;x.fillText(D.title.split(' · ')[0],P,152);
     var fs=230;x.font='700 '+fs+'px '+F;while(x.measureText(num).width>S-2*P&&fs>90){fs-=10;x.font='700 '+fs+'px '+F}
     x.fillStyle='#E2402B';x.fillText(num,P-6,250+fs*0.8);
@@ -226,7 +226,7 @@
     var bt=D.createElement('button');bt.type='button';bt.className='cj-share';bt.textContent='Partager ce chiffre';
     bt.setAttribute('aria-label','Télécharger une image de ce chiffre : '+b.textContent.trim()+' '+sp.textContent.trim());
     bt.addEventListener('click',function(){
-      var go=function(){save(draw(b.textContent.replace(/\s+/g,' ').trim(),sp.textContent.replace(/\s+/g,' ').trim(),sr?sr.textContent.replace(/\s+/g,' ').trim():'voir la page'),'chiffre-juste-'+((location.pathname.split('/').pop()||'page').replace('.html',''))+'-'+(i+1)+'.png')};
+      var go=function(){save(draw(b.textContent.replace(/\s+/g,' ').trim(),sp.textContent.replace(/\s+/g,' ').trim(),sr?sr.textContent.replace(/\s+/g,' ').trim():'voir la page'),'au-plus-juste-'+((location.pathname.split('/').pop()||'page').replace('.html',''))+'-'+(i+1)+'.png')};
       if(D.fonts&&D.fonts.load)D.fonts.load('700 40px "Instrument Sans"').then(go,go);else go();
     });
     f.appendChild(bt);

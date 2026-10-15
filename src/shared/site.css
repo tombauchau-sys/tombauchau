@@ -73,7 +73,7 @@ nav.top .cjs-btn:focus-visible,.navm:focus-visible{outline:2px solid var(--coppe
   table.stk td[data-label=""]::before,table.stk tbody th[data-label=""]::before{display:none}
   table.stk caption{display:block;text-align:left}
 }
-/* Logo de pied de page « Chiffre J?ste » : le point d’interrogation devient « u » */
+/* Logo de pied de page « Au plus J?ste » : le point d’interrogation devient « u » */
 .wm .q{display:inline-block;position:relative;width:.56em;text-align:center;perspective:400px;vertical-align:baseline}
 .wm .q i{font-style:normal;display:inline-block;transform-origin:50% 60%}
 .wm .q .qq{color:var(--red,#E2402B);animation:cjwob 2.4s ease-in-out infinite}
@@ -92,7 +92,7 @@ section.seuil>.wrap{position:relative;z-index:1}
 html.calm .wm .q .qq,html.calm .cj-clouds .cl{animation:none!important}
 html.calm .cj-clouds .cl.a{transform:translateX(6vw)}html.calm .cj-clouds .cl.b{transform:translateX(72vw)}html.calm .cj-clouds .cl.c{transform:translateX(38vw)}
 @media (prefers-reduced-motion:reduce){.wm .q .qq,.cj-clouds .cl{animation:none!important}.cj-clouds .cl.a{transform:translateX(6vw)}.cj-clouds .cl.b{transform:translateX(72vw)}.cj-clouds .cl.c{transform:translateX(38vw)}}
-/* Logo « Chiffre J?ste » dans la barre de navigation (le « ? » devient « u » au survol) */
+/* Logo « Au plus J?ste » dans la barre de navigation (le « ? » devient « u » au survol) */
 nav.top a.mark .lg,nav.top a.mark .lg span{width:auto;height:auto;border:0;border-radius:0;transform:none;transition:none}
 nav.top a.mark .lg{display:inline-flex;align-items:baseline;font-weight:700;font-size:21px;letter-spacing:-.04em;white-space:nowrap;line-height:1;color:inherit}
 nav.top a.mark .lg .q{display:inline-block;position:relative;width:.56em;text-align:center;perspective:400px}

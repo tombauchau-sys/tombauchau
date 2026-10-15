@@ -1,4 +1,4 @@
-# Points à vérifier — Chiffre Juste
+# Points à vérifier — Au plus Juste
 
 Liste mise à jour le 14 octobre 2026. Le détail de chaque contrôle figure dans le registre de vérification (verif/registre.csv).
 

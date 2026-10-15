@@ -118,7 +118,7 @@
 
   /* Citer */
   (function(){
-    var T={pri:'Entre 2005 et 2025, les prix des logements ont doublé en Belgique (indice 72,9 puis 144,9, 2015 = 100) ; depuis 2015, une fois l’inflation déduite, la hausse est d’environ 7 % (Eurostat, prc_hpi_a, calcul Chiffre Juste).',
+    var T={pri:'Entre 2005 et 2025, les prix des logements ont doublé en Belgique (indice 72,9 puis 144,9, 2015 = 100) ; depuis 2015, une fois l’inflation déduite, la hausse est d’environ 7 % (Eurostat, prc_hpi_a, calcul Au plus Juste).',
       loc:'En 2025, 25,4 % des locataires du marché privé en Belgique consacraient plus de 40 % de leur revenu disponible au logement, contre 0,9 % des propriétaires remboursant un emprunt (Eurostat, ilc_lvho07c).',
       soc:'Au 1er janvier 2025, 55 572 ménages attendaient un logement social en Région bruxelloise (IBSA, d’après la SLRB) ; le parc comptait 41 809 logements sociaux au 31 décembre 2025 (SLRB, rapport annuel 2025).',
       jeu:'En 2025, 25,1 % des 25-34 ans vivaient chez leurs parents en Belgique, contre 20,7 % en 2024 et 30,1 % dans l’Union (Eurostat, ilc_lvps08).'};

@@ -35,7 +35,7 @@
   }
   function move(d){var a=res.querySelectorAll('a');if(!a.length)return;if(sel>=0)a[sel].removeAttribute('aria-selected');sel=(sel+d+a.length)%a.length;a[sel].setAttribute('aria-selected','true');a[sel].scrollIntoView({block:'nearest'});inp.setAttribute('aria-activedescendant',a[sel].id)}
   function build(){
-    ov=D.createElement('div');ov.className='cjs';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Rechercher dans Chiffre Juste');
+    ov=D.createElement('div');ov.className='cjs';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Rechercher dans Au plus Juste');
     ov.innerHTML='<div class="cjs-box"><div class="cjs-top"><label for="cjs-q">Rechercher dans le site</label><input id="cjs-q" type="search" autocomplete="off" placeholder="Rechercher un chiffre, un dossier, un terme…" role="combobox" aria-expanded="true" aria-controls="cjs-res" aria-autocomplete="list"><button type="button" class="cjs-x">Fermer</button></div><ul class="cjs-res" id="cjs-res" role="listbox" aria-label="Résultats"></ul><p class="cjs-n" aria-live="polite"></p></div>';
     D.body.appendChild(ov);inp=ov.querySelector('input');res=ov.querySelector('.cjs-res');cnt=ov.querySelector('.cjs-n');
     inp.addEventListener('input',run);
@@ -108,13 +108,13 @@
 })();
 
 /* Signature visuelle de la page d’entrée, reprise sur tout le site :
-   - le logo « Chiffre J?ste » en pied de page, dont le « ? » se retourne en « u » quand on arrive au bout de la page ;
+   - le logo « Au plus J?ste » en pied de page, dont le « ? » se retourne en « u » quand on arrive au bout de la page ;
    - des nuages qui dérivent derrière la question d’ouverture de chaque dossier. */
 (function(){
   var D=document,calm=function(){return D.documentElement.classList.contains('calm')||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)};
   D.querySelectorAll('.wm').forEach(function(w){
-    if(w.querySelector('.q')||!/Chiffre\s+Juste/.test(w.textContent))return;
-    w.innerHTML='Chiffre J<span class="q"><i class="qq">?</i><i class="uu">u</i></span>ste';
+    if(w.querySelector('.q')||!/Au plus\s+Juste/.test(w.textContent))return;
+    w.innerHTML='Au plus J<span class="q"><i class="qq">?</i><i class="uu">u</i></span>ste';
     if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){w.classList.toggle('flip',e.isIntersecting&&e.intersectionRatio>.5)})},{threshold:[0,.5,1]});io.observe(w)}
     else w.classList.add('flip');
   });

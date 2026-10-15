@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('15 octobre 2026', [
+        'Le site change de nom : Chiffre Juste devient Au plus Juste, pour ne pas se limiter aux chiffres (définitions, histoire, recherche, débats). Même adresse, même contenu.',
         'Nouveau dossier Fiscalité : niveau des prélèvements depuis 1965, composition, qui paie selon le salaire, impôts sur le patrimoine et transferts entre Régions.',
         'Navigation : sommaire collant dans chaque dossier, recherche dans tout le site (touche /), menu replié sur mobile, tableaux lisibles en cartes sur téléphone.',
         'En tête de chaque dossier, un badge de vérification : date, nombre d’affirmations contrôlées, sources, lien vers le registre.',
@@ -11,9 +12,9 @@ SITE = [
         'Études belges ou européennes ajoutées là où il en manquait (santé, éducation, justice, logement) ; leur absence est signalée ailleurs.',
         'Pictogramme « presse » à côté des chiffres qui ne sont confirmés que par la presse ; méthode des séries raccordées et de l’enquête SILC expliquée.',
         'Accueil : perspectives des agences de notation retirées (non vérifiées à la source) ; curseur animé et fondus de texte supprimés.',
-        'Identité visuelle : la page d’entrée (carte du monde, nuages, logo « Chiffre J?ste ») devient la première section de l’accueil, sans clic obligatoire ; le « ? » se retourne en « u » quand on descend. Le logo et les nuages reviennent dans tous les dossiers.',
+        'Identité visuelle : la page d’entrée (carte du monde, nuages, logo « Au plus J?ste ») devient la première section de l’accueil, sans clic obligatoire ; le « ? » se retourne en « u » quand on descend. Le logo et les nuages reviennent dans tous les dossiers.',
         'Classements, thème Éducation : budget de l’enseignement de chaque pays, par habitant (en euros et en pouvoir d’achat), en % du PIB et en part des dépenses publiques.',
-        'Logo « Chiffre J?ste » dans la barre de navigation de toutes les pages.',
+        'Logo « Au plus J?ste » dans la barre de navigation de toutes les pages.',
         'Correction : des sections présentes en double dans les dossiers Emploi, Finances et Pensions ont été supprimées.',
     ]),
     ('14 octobre 2026', [

@@ -102,7 +102,7 @@
   hb(D.getElementById('wageChart'),{rh:MOB?84:96,cats:['Mi-salaire (50 %)','Bas salaire (67 %)','Salaire moyen (100 %)','Haut salaire (167 %)'],max:50,u:' %',ink:'#EDE6DC',L:220,
     series:[{n:'Belgique',v:Wg.BE,c:'#C9773A'},{n:'Allemagne',v:Wg.DE,c:'#EDE6DC'},{n:'France',v:Wg.FR,c:'#7E9CC4'},{n:'Pays-Bas',v:Wg.NL,c:'#7FB6A3'}],
     label:'Part du salaire brut prélevée en impôt et cotisations personnelles, célibataire sans enfant, 2025 : Belgique 11,6 % à mi-salaire, 27,8 % à 67 %, 38,8 % au salaire moyen, 46,9 % à 167 % ; Allemagne 28,9, 32,5, 37,0 et 41,5 % ; France 21,0, 22,7, 27,1 et 33,0 % ; Pays-Bas 16,5, 23,4, 32,7 et 42,1 %'});
-  CJD.rename('wageChart',['Belgique','Allemagne','France','Pays-Bas'],'Calcul Chiffre Juste à partir d’Eurostat earn_nt_net (2025) : (impôt sur le revenu + cotisations sociales du salarié) / salaire brut. Les cotisations patronales ne sont pas comptées.');
+  CJD.rename('wageChart',['Belgique','Allemagne','France','Pays-Bas'],'Calcul Au plus Juste à partir d’Eurostat earn_nt_net (2025) : (impôt sur le revenu + cotisations sociales du salarié) / salaire brut. Les cotisations patronales ne sont pas comptées.');
 
   lines2(D.getElementById('wedgeChart'),o2({t0:2000,t1:2025,rm:MOB?70:150,min:30,max:55,ticks:[30,40,50],unit:' %',tdec:0,years:MOB?[2000,2012,2025]:[2000,2005,2010,2015,2020,2025],breaks:[2023.5],
     series:[{n:'Union',v:DATA.wedge.EU.v,s:2013,c:'#A69C8F',dash:1,dy:6},{n:'Belgique',v:DATA.wedge.BE.v,s:2000,c:'#C9773A',w:4.5,dy:-6}],
@@ -148,7 +148,7 @@
   /* Citer */
   (function(){
     var T={pre:'En 2024, les impôts et cotisations sociales représentaient 45,1 % du PIB en Belgique, contre 40,3 % dans l’Union, le troisième niveau le plus élevé après le Danemark et la France (Eurostat, gov_10a_taxag).',
-      sal:'En 2025, un célibataire sans enfant au salaire moyen paie en Belgique 38,8 % de son salaire brut en impôt et cotisations personnelles, contre 11,6 % à mi-salaire et 46,9 % à 167 % du salaire moyen (calcul Chiffre Juste d’après Eurostat, earn_nt_net ; cotisations patronales non comprises).',
+      sal:'En 2025, un célibataire sans enfant au salaire moyen paie en Belgique 38,8 % de son salaire brut en impôt et cotisations personnelles, contre 11,6 % à mi-salaire et 46,9 % à 167 % du salaire moyen (calcul Au plus Juste d’après Eurostat, earn_nt_net ; cotisations patronales non comprises).',
       pat:'En 2023, la Belgique prélevait 3,1 % du PIB en impôts sur le patrimoine (précompte immobilier, droits d’enregistrement, successions), contre 1,7 % pour le pays moyen de l’OCDE (OCDE, Revenue Statistics).',
       reg:'En 2019, les transferts implicites entre Régions via l’État fédéral et la sécurité sociale représentaient environ 7,1 milliards d’euros en faveur de la Wallonie, financés par la Flandre (environ 6,2 milliards) et Bruxelles (environ 0,9 milliard) (Cornille et al., Banque nationale de Belgique, 2021).'};
     var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');
