@@ -2,6 +2,8 @@
 
 Site citoyen de chiffres vérifiés sur la Belgique et l’Europe : https://auplusjuste.be/
 
+Contact et signalement d’erreurs : contact@auplusjuste.be
+
 ## Organisation
 
 - `index.html`, `dossier-*.html`, `fiche-chomage.html` : pages publiées (générées, ne pas modifier à la main).

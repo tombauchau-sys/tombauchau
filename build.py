@@ -518,7 +518,7 @@ def build_nouveautes():
 </main>
 
 <footer>
-  <div class="meta"><span>Au plus Juste · Nouveautés et corrections</span><a href="__HOME__#dossiers">Tous les dossiers →</a></div>
+  <div class="meta"><span>Au plus Juste · Nouveautés et corrections</span><span><a href="mailto:contact@auplusjuste.be?subject=Signaler%20une%20erreur">Signaler une erreur</a> · <a href="__HOME__#dossiers">Tous les dossiers →</a></span></div>
   <div class="wm" aria-hidden="true">Au plus Juste</div>
 </footer>
 """

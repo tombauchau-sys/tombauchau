@@ -1,6 +1,8 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('15 octobre 2026', [
+        'Une adresse pour signaler une erreur ou poser une question : contact@auplusjuste.be, accessible depuis chaque dossier (« Signaler une erreur »).',
+        'Relecture des onze dossiers : quatre chiffres corrigés (immigration : 96 % et non 94 % de la croissance de la population ; pensions ; santé ; dette des entités fédérées), des formulations alignées sur les sources, une affirmation sans source retirée (aide alimentaire). Détail dans le journal de chaque dossier.',
         'Nouvelle adresse : le site est désormais à auplusjuste.be. L’ancienne adresse (tombauchau-sys.github.io/tombauchau) redirige automatiquement, les liens déjà partagés continuent de fonctionner.',
         'Le site change de nom : Chiffre Juste devient Au plus Juste, pour ne pas se limiter aux chiffres (définitions, histoire, recherche, débats). Même adresse, même contenu.',
         'Nouveau dossier Fiscalité : niveau des prélèvements depuis 1965, composition, qui paie selon le salaire, impôts sur le patrimoine et transferts entre Régions.',
