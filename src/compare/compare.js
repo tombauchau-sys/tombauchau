@@ -84,7 +84,10 @@ var CJC=(function(){
       list.sort(function(a,b){return a===main?1:b===main?-1:0});
       var col=colors(list);
       head.innerHTML='';head.appendChild(h('h3',{text:it.lab+(it.u&&it.u.indexOf('PIB')>-1?' (% du PIB)':'')}));
-      def.textContent=it.def+(it.note?' '+it.note:'')+' Source : '+it.src+'.';
+      def.textContent=it.def+(it.note?' '+it.note:'')+' Source : ';
+      var mc=/\b([a-z]{2,5}_[a-z0-9]+(?:_[a-z0-9]+)*|tec\d{5}|tps\d{5}|teina\d{3}|tessi\d{3}|tespm\d{3}|tesem\d{3})\b/.exec(it.src||'');
+      if(mc){var sa=D.createElement('a');sa.href=it.bk||('https://ec.europa.eu/eurostat/databrowser/view/'+mc[1]+'/default/table?lang=fr');sa.target='_blank';sa.rel='noopener';sa.textContent=it.src;def.appendChild(sa);def.appendChild(D.createTextNode('.'))}
+      else def.appendChild(D.createTextNode(it.src+'.'));
       axY.lastChild.textContent=it.ax;axX.lastChild.textContent='Année (une observation par an ; '+ (dt.years(cur)[0]||'')+'-'+(dt.years(cur).slice(-1)[0]||'')+')';
       /* Graphique */
       var ys=dt.years(cur),mob=innerWidth<640,W=mob?360:760,H=mob?320:440,L=mob?40:54,R=W-(mob?40:74),T=18,B=H-34;

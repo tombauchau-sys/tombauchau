@@ -1,5 +1,13 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
+    ('16 octobre 2026', [
+        'Liens des classements, de la carte et du comparateur : chaque source ouvre désormais l’indicateur cité. La dette publique renvoyait vers une table Eurostat qui s’ouvre sur le déficit ; elle renvoie maintenant vers la table de la dette (teina225). Exportations, recettes, inégalités (Gini), espérance de vie, fécondité, chômage des jeunes et privation renvoient vers des tables Eurostat dédiées ; charge d’intérêts, dépenses par fonction (COFOG), âge médian, solde migratoire, prisons et prix des logements vers des vues Eurostat déjà filtrées.',
+        'Données mises à jour après la révision des comptes nationaux belges publiée par Eurostat le 15 octobre 2026 : PIB, exportations et importations en % du PIB, croissance 2024-2025 (0,9 % au lieu de 1,1 % et 1,0 %).',
+        'Inflation : la série d’Eurostat utilisée (prc_hicp_aind) est arrêtée depuis février 2026 ; le site reprend la série qui la remplace (prc_hicp_ainr, classification ECOICOP 2). 16 valeurs changent d’un dixième de point.',
+        'Dette par habitant : calculée directement à partir de la dette en euros (et non plus du ratio multiplié par le PIB).',
+        'Budget d’enseignement en pouvoir d’achat : niveaux de prix repris de la nouvelle série d’Eurostat (prc_ppp_ind_1, COICOP 2018) ; la plupart des pays bougent de quelques dizaines de SPA.',
+        'Classements : définitions précisées (dette = stock, solde = flux ; impôts et cotisations selon la définition d’Eurostat ; intérêts = opération D.41), liens vers le lexique (critères de Maastricht, Gini…) et mention de ce que représente la ligne « Union européenne ».',
+    ]),
     ('15 octobre 2026', [
         'Une adresse pour signaler une erreur ou poser une question : contact@auplusjuste.be, accessible depuis chaque dossier (« Signaler une erreur »).',
         'Relecture des onze dossiers : quatre chiffres corrigés (immigration : 96 % et non 94 % de la croissance de la population ; pensions ; santé ; dette des entités fédérées), des formulations alignées sur les sources, une affirmation sans source retirée (aide alimentaire). Détail dans le journal de chaque dossier.',
