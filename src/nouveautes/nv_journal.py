@@ -1,5 +1,9 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
+    ('19 octobre 2026', [
+        'Nouvelle partie « Les grands penseurs » dans les dossiers, en commençant par Justice et sécurité : Platon et Socrate, Beccaria, Kant, Weber et Schmitt. Pour chacun : contexte, idée, mécanisme, ce que les données en disent (en distinguant fait, résultat d’études et interprétation), critiques, actualité belge et sources. Les auteurs ne sont placés que là où leur œuvre traite vraiment du sujet.',
+        'L’échelle de Maryland (note de 1 à 5) est retirée : chaque étude est désormais désignée par sa méthode, dite en clair (corrélation simple, comparaison avant-après, groupes comparables, expérience naturelle, tirage au sort), ou par son type (méta-analyse, revue, statistique officielle…). La méthode est expliquée dans la rubrique Méthode de l’accueil.',
+    ]),
     ('16 octobre 2026', [
         'Liens des classements, de la carte et du comparateur : chaque source ouvre désormais l’indicateur cité. La dette publique renvoyait vers une table Eurostat qui s’ouvre sur le déficit ; elle renvoie maintenant vers la table de la dette (teina225). Exportations, recettes, inégalités (Gini), espérance de vie, fécondité, chômage des jeunes et privation renvoient vers des tables Eurostat dédiées ; charge d’intérêts, dépenses par fonction (COFOG), âge médian, solde migratoire, prisons et prix des logements vers des vues Eurostat déjà filtrées.',
         'Données mises à jour après la révision des comptes nationaux belges publiée par Eurostat le 15 octobre 2026 : PIB, exportations et importations en % du PIB, croissance 2024-2025 (0,9 % au lieu de 1,1 % et 1,0 %).',

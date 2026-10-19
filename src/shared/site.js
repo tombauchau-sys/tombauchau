@@ -64,6 +64,7 @@
     add(D.getElementById('recherche'),'Ce que dit la recherche');
     add(D.getElementById('europe'),'Et ailleurs en Europe ?');
     add(D.getElementById('decision'),'Ce que peuvent faire les pouvoirs publics');
+    add(D.getElementById('penseurs'),'Les grands penseurs');
     add(D.getElementById('lectures'),'Lectures et débats');
     add(D.querySelector('section.cite'),'Citer ce dossier');
     parts=parts.filter(function(p){return p.el});
