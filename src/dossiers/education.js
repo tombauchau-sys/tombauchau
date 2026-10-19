@@ -86,6 +86,12 @@
     marks:[[1992,27.8,'27,8 %','#1A1A1A',24,'start']],
     label:'Part des 25-34 ans diplômés du supérieur : Belgique 27,8 % en 1992, 40,6 % en 2005, 52,7 % en 2025 ; Union 23,1 % en 2002 et 44,8 % en 2025'});
 
+  /* Fiche 04 : trois Régions */
+  (function(){
+    var E=DATA.eslReg;
+    lines2(D.getElementById('eslReg'),{t0:2015,t1:2025,rm:MOB?60:150,years:MOB?[2015,2020,2025]:[2015,2017,2019,2021,2023,2025],min:0,max:18,ticks:[0,6,12,18],unit:' %',grid:'#D7D4CC',mute:'#6A665F',series:[{n:'Union',v:E.EU,s:2015,c:'#6A665F',dash:1,dy:-4},{n:'Wallonie',v:E.BE3,s:2015,c:'#E2402B',w:3.5,dy:-6},{n:'Bruxelles',v:E.BE1,s:2015,c:'#C9A227',w:3.5,dy:10},{n:'Flandre',v:E.BE2,s:2015,c:'#1F6F5C',w:3.5}],label:'Sortie précoce de l’école, 18-24 ans, 2015-2025 : Bruxelles de 15,8 % à 8,8 % ; Wallonie de 13,1 % à 9,8 % ; Flandre de 7,2 % à 5,5 % ; Union de 11,0 % à 9,1 %'});
+  })();
+
   /* Recherche */
   (function(){
     var Q=[
@@ -98,7 +104,8 @@
            {a:'aSPe (ULiège), 2026',t:'PISA 2025, lecture, systèmes classés par modèle',l:0,lt:'statistique officielle',p:'Dans les systèmes « à séparation » (Allemagne, Autriche, Pays-Bas, Communautés belges…), l’inégalité sociale des résultats est plus élevée que dans les autres modèles (97 points contre 70 à 77).',u:'https://www.pisa-fwb.uliege.be/cms/c_13724472/fr/pisa2025-synthese-et-slides',s:'Université de Liège'}],
        x:'Les pays diffèrent par bien d’autres aspects que l’âge d’orientation ; l’effet propre de cette règle reste difficile à isoler.'},
       {q:'Quels moyens améliorent les résultats des élèves ?',j:'Deux expériences par tirage au sort montrent l’effet de certains usages (petites classes, préscolaire) ; elles ne disent rien d’une hausse générale des dépenses. L’étude belge sur l’encadrement différencié décrit l’usage des moyens, sans pouvoir mesurer les résultats des élèves.',c:'Des évaluations belges de l’encadrement différencié ou des moyens supplémentaires accordés à certaines écoles.',b:['b-de','Débattu : tout dépend de l’usage'],v:'Plus de dépenses ne garantit pas de meilleurs résultats. Certains usages ont des effets démontrés, comme les petites classes au début de la scolarité ou un préscolaire de qualité pour les enfants défavorisés.',
-       st:[{a:'Desmet, Dupriez et Galand (UCLouvain), 2017',t:'Bruxelles, cinq implantations secondaires en encadrement différencié suivies quatre ans',l:0,lt:'étude descriptive',p:'Les changements observés chez les élèves (climat, motivation, absentéisme) sont très modestes, et les moyens supplémentaires sont rarement mis au service de la pédagogie. Les résultats scolaires n’ont pas pu être mesurés.',u:'https://ojs.uclouvain.be/index.php/cahiersgirsef/issue/download/4443/1423',s:'Cahiers du Girsef, n° 108'},{a:'Krueger, 1999',t:'Tennessee, élèves et enseignants répartis au hasard entre petites et grandes classes',l:5,p:'Les élèves des petites classes gagnent environ 4 points de percentile la première année, puis environ 1 point par an ; l’effet est plus fort pour les élèves défavorisés.',u:'https://www.nber.org/papers/w6051',s:'Quarterly Journal of Economics'},
+       st:[{a:'Desmet, Dupriez et Galand (UCLouvain), 2017',t:'Bruxelles, cinq implantations secondaires en encadrement différencié suivies quatre ans',l:0,lt:'étude descriptive',p:'Les changements observés chez les élèves (climat, motivation, absentéisme) sont très modestes, et les moyens supplémentaires sont rarement mis au service de la pédagogie. Les résultats scolaires n’ont pas pu être mesurés.',u:'https://ojs.uclouvain.be/index.php/cahiersgirsef/issue/download/4443/1423',s:'Cahiers du Girsef, n° 108'},{a:'Jackson, Johnson et Persico, 2016',t:'États-Unis, réformes du financement des écoles imposées par les tribunaux, enfants nés entre 1955 et 1985 suivis jusqu’en 2011',l:4,p:'Une hausse de 10 % de la dépense par élève pendant les 12 années de scolarité conduit à 0,31 année d’études en plus, à des salaires environ 7 % plus élevés et à 3,2 points de pauvreté en moins à l’âge adulte ; les effets sont beaucoup plus marqués pour les enfants de familles à bas revenu.',u:'https://doi.org/10.1093/qje/qjv036',s:'Quarterly Journal of Economics, 131(1), 157-218'},
+           {a:'Krueger, 1999',t:'Tennessee, élèves et enseignants répartis au hasard entre petites et grandes classes',l:5,p:'Les élèves des petites classes gagnent environ 4 points de percentile la première année, puis environ 1 point par an ; l’effet est plus fort pour les élèves défavorisés.',u:'https://www.nber.org/papers/w6051',s:'Quarterly Journal of Economics'},
            {a:'Heckman et al., 2010',t:'États-Unis, programme préscolaire Perry, enfants tirés au sort',l:5,p:'Rendement social estimé à 7 à 10 % par an, pour les garçons comme pour les filles.',u:'https://nber.org/papers/w15471',s:'Journal of Public Economics'}],
        x:'Ces expériences sont anciennes et américaines. Leur transposition à la Belgique reste à vérifier.'}];
     function lvl(n,t){var M={1:'corrélation simple',2:'avant-après, témoin imparfait',3:'groupes comparables',4:'expérience naturelle',5:'tirage au sort'};return '<span class="lvl"><em>'+(n?'Évaluation d’impact · '+M[n]:t)+'</em></span>'}
@@ -136,7 +143,7 @@
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','pisaChart','redChart','eslChart','terChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','pisaChart','redChart','eslChart','terChart','eslReg'].forEach(function(id){io.observe(D.getElementById(id))});
   (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
   (function(){
   })();
