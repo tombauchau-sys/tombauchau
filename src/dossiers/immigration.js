@@ -121,6 +121,13 @@
     marks:[[1995,42,'42 %','#701C0E',22,'start']],
     label:'Taux d’emploi des 20-64 ans : nés en Belgique 63,1 % en 1995, 69,9 % en 2010 et 75,0 % en 2025 ; nés hors de l’Union vivant en Belgique 42 % en 1995, 49,3 % en 2010 et 60,7 % en 2025 ; nés hors de l’Union dans l’ensemble de l’Union 61,2 % en 2002 et 68,6 % en 2025'});
 
+  /* Fiche 04 : naturalisations et départs */
+  (function(){
+    var A=DATA.acqs,R=DATA.retBE,W=MOB?420:600,Hh=MOB?320:360;
+    lines2(D.getElementById('acqChart'),{t0:2015,t1:2024,w:W,h:Hh,rm:MOB?60:120,years:MOB?[2015,2019,2024]:[2015,2018,2021,2024],min:0,max:6,ticks:[0,2,4,6],unit:' %',grid:'#D7D4CC',mute:'#6A665F',series:[{n:'Pays-Bas',v:A.NL,s:2015,c:'#7FB6A3',w:2.5,dy:-6},{n:'Allemagne',v:A.DE,s:2015,c:'#A69C8F',w:2.5,dy:2},{n:'France',v:A.FR,s:2015,c:'#C9A227',w:2.5,dy:10},{n:'Belgique',v:A.BE,s:2015,c:'#E2402B',w:4,dy:10}],label:'Acquisitions de la nationalité pour 100 résidents étrangers, 2015-2024 : Belgique de 2,14 à 3,68 ; Pays-Bas 3,87 ; Allemagne 2,38 ; France 1,71 en 2024'});
+    lines2(D.getElementById('retChart'),{t0:2019,t1:2025,w:W,h:Hh,rm:MOB?70:150,years:MOB?[2019,2022,2025]:[2019,2021,2023,2025],min:0,max:30,ticks:[0,10,20,30],unit:'',grid:'#D7D4CC',mute:'#6A665F',series:[{n:'ordres de quitter',v:R.ord.map(function(v){return v/1000}),s:2019,c:'#1A1A1A',w:3},{n:'départs constatés',v:R.rtn.map(function(v){return v/1000}),s:2019,c:'#E2402B',w:4}],label:'Belgique, ressortissants de pays tiers, en milliers : ordres de quitter le territoire de 22,0 en 2019 à 25,3 en 2025 ; départs constatés de 4,2 à 5,2'});
+  })();
+
   /* Recherche */
   (function(){
     var Q=[
@@ -182,7 +189,7 @@
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','histChart','growChart','immChart','resChart','asyChart','recChart','natChart','empChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','histChart','growChart','immChart','resChart','asyChart','recChart','natChart','empChart','acqChart','retChart'].forEach(function(id){io.observe(D.getElementById(id))});
   (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
   (function(){
   })();

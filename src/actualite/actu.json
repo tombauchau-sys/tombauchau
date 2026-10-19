@@ -39,6 +39,15 @@
    "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_m/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, irt_lt_mcby_m (mise à jour du 13/10/2026)</a>"
   },
   {
+   "date": "2026-09-30",
+   "date_txt": "30 septembre 2026",
+   "type": "officiel",
+   "theme": "immigration",
+   "texte": "Eurostat publie les chiffres 2025 : en Belgique, <b>25 340</b> ressortissants de pays tiers ont reçu l’ordre de quitter le territoire et 5 245 départs ont été constatés ; <b>73 667</b> premiers titres de séjour ont été délivrés, contre 78 828 en 2024 (47 % pour raisons familiales).",
+   "question": "<a href=\"__IMMIGRATION__#f-statut\">Devenir belge, ou devoir partir : que disent les chiffres ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/migr_eiord/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, migr_eiord, migr_eirtn et migr_resfirst</a>"
+  },
+  {
    "date": "2026-09-10",
    "date_txt": "10 septembre 2026",
    "type": "officiel",
