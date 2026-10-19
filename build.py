@@ -55,6 +55,11 @@ IDEES_URLS = {n: 'https://claude.ai/artifact/' + a for n, a in {'climat': 'VSQ7z
 for _n in DOSSIERS:
     PAGES['__IDEES_' + _n.upper() + '__'] = ('idees-' + _n + '.html', IDEES_URLS[_n])
 THEME_TITLES = {n: DOSSIERS[n][0].split(' · ')[0] for n in DOSSIERS}
+HUB_URLS = {n: 'https://claude.ai/artifact/HUB_PENDING_' + n for n in DOSSIERS}
+ACTU_URLS = {n: 'https://claude.ai/artifact/ACTU_PENDING_' + n for n in DOSSIERS}
+for _n in DOSSIERS:
+    PAGES['__THEME_' + _n.upper() + '__'] = ('theme-' + _n + '.html', HUB_URLS[_n])
+    PAGES['__ACTUP_' + _n.upper() + '__'] = ('actu-' + _n + '.html', ACTU_URLS[_n])
 NAV_TPL = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
@@ -75,8 +80,8 @@ def nav_html(active='', home=False):
     T = [(n, THEME_TITLES[n]) for n in DOSSIERS]
     groups = [
         ('donnees', 'Données', h + '#atlas', 'Explorer les chiffres des 27 pays', [('Carte des 27 pays', h + '#atlas', 'Un pays ou deux pays comparés'), ('Classements', h + '#classements', '46 indicateurs, critères expliqués'), ('Comparer les pays', '__COMPARER__', 'Plusieurs pays, plusieurs indicateurs'), ('Fiche : le chômage', '__FICHE__', 'Définitions et sources croisées')], False),
-        ('questions', 'Questions', h + '#questions', 'Les faits : données, études, actualité', [('L’actualité et les grandes questions', h + '#questions', '')] + [(t, '__' + n.upper() + '__', '') for n, t in T], True),
-        ('idees', 'Idées', h + '#idees', 'Les auteurs et les courants de pensée', [('Index des auteurs', h + '#idees', '')] + [(t, '__IDEES_' + n.upper() + '__', '') for n, t in T], True),
+        ('dossiers', 'Dossiers', h + '#dossiers', 'Chaque dossier : données, penseurs, actualités', [(t, '__THEME_' + n.upper() + '__', '') for n, t in T] + [('Index des auteurs', h + '#idees', '')], True),
+        ('questions', 'Questions', h + '#questions', 'L’actualité et les grandes questions du débat', [('L’actualité datée', h + '#questions', 'Officiel ou presse, chaque fait relié à une question'), ('Les grandes questions', h + '#qdH', 'Une réponse actuelle, un renvoi au dossier')], False),
         ('methode', 'Méthode', h + '#methode', 'Sources, vérification, vocabulaire', [('D’où viennent ces chiffres', h + '#methode', ''), ('Bibliographie (APA 7 et Chicago)', '__BIBLIO__', ''), ('Lexique', '__LEXIQUE__', ''), ('Registre de vérification', '__REGISTRE__', ''), ('Nouveautés et corrections', '__NOUVEAUTES__', ''), ('À propos', h + '#apropos', '')], False),
     ]
     def grp(g):
@@ -91,10 +96,8 @@ def nav_html(active='', home=False):
 
 
 def page_section(fname):
-    if fname.startswith('dossier-'):
-        return 'questions'
-    if fname.startswith('idees-'):
-        return 'idees'
+    if fname.split('-')[0] in ('dossier', 'idees', 'theme', 'actu'):
+        return 'dossiers'
     if fname in ('comparer.html', 'fiche-chomage.html'):
         return 'donnees'
     if fname in ('lexique.html', 'bibliographie.html', 'registre-verification.html', 'nouveautes.html'):
@@ -551,6 +554,7 @@ def build_dossier(name):
     body = body[:k] + SELECTION_NOTE + body[k:]
     body = add_cite(body, DOSSIERS[name][0].split(' · ')[0], 'dossier-' + name + '.html', 'dossier')
     cmp = cmp_script(DOSSIER_IND[name], 'CJC.dossier({ind:' + json.dumps(DOSSIER_IND[name]) + '});')
+    body = body.replace('<main id="top">', '<main id="top">\n' + dsub(name, 'donnees'), 1)
     return head + nav + body + '<script>' + read('dossiers/cjd.js') + '\n' + js + '\n' + read('dossiers/common.js') + '</script>\n<script>' + cmp + '</script>\n', title, desc
 
 
@@ -582,10 +586,131 @@ def build_idees(name):
             f'<p class="bbl"><a href="__BIBLIO__">Toutes les sources du site, en APA 7 et en Chicago →</a></p>'
             f'<p class="bbl"><a href="{fl}">← Retour aux faits : Questions · {theme}</a></p></div></section>\n</main>\n'
             f'<footer><div class="meta"><span>Au plus Juste · Idées et interprétations · {theme}</span><span><a href="mailto:contact@auplusjuste.be?subject=Id%C3%A9es%20%E2%80%93%20{name}">Signaler une erreur</a> · <a href="__HOME__#idees">Tous les thèmes →</a></span></div><div class="wm" aria-hidden="true">Au plus Juste</div></footer>\n')
-    body = hero + pens + lect + tail
+    body = hero.replace('</section>\n', '</section>\n' + dsub(name, 'penseurs'), 1) + pens + lect + tail
     _, js = split_js(name)
     head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
     return head + nav_for('i') + body + '<script>document.documentElement.classList.add("js");\n' + js + '\n' + read('dossiers/common.js') + '</script>\n', title, desc
+
+
+
+def dossier_meta(name):
+    full = read(f'dossiers/{name}-body.html')
+    g = lambda pat, d='': (re.search(pat, full, re.S).group(1) if re.search(pat, full, re.S) else d)
+    hero = g(r'(<section class="hero brun grain" id="dossier".*?</section>)')
+    m = {
+        'num': g(r'Dossier (\d+) · une question du débat', ''),
+        'title': THEME_TITLES[name],
+        'lede': re.search(r'<p class="lede hq"[^>]*>(.*?)</p>', hero, re.S).group(1),
+        'facts': (re.search(r'(<div class="facts"[^>]*>.*?)</div>\s*</section>', hero, re.S).group(1) if 'class="facts"' in hero else ''),
+        'q': g(r'<h2 id="t2min">(.*?)</h2>'),
+        'twomin': g(r'(<section class="twomin".*?</section>)'),
+        'cards': re.findall(r'<a href="#(f-[^"]+)"><span class="n">(\d+)</span><h3>(.*?)</h3><p>(.*?)</p>', full),
+        'maj': g(r'<p class="maj">(Dossier vérifié[^<]*)</p>'),
+        'authors': [a for _, a in authors_of(name)],
+    }
+    return m
+
+
+def dsub(name, cur):
+    """Barre de navigation interne au dossier : page d’entrée · données · penseurs · actualités."""
+    N = name.upper()
+    items = [('donnees', 'Graphiques et données', f'__{N}__'), ('penseurs', 'Penseurs et théories', f'__IDEES_{N}__'), ('actu', 'Actualités', f'__ACTUP_{N}__')]
+    li = ''.join(f'<a href="{u}"' + (' aria-current="page" class="on"' if k == cur else '') + f'>{t}</a>' for k, t, u in items)
+    return (f'<nav class="dsub" aria-label="Parties du dossier"><div class="dsub-in"><a class="dsub-h" href="__THEME_{N}__"'
+            + (' aria-current="page"' if cur == 'hub' else '') + f'><span>Dossier</span>{THEME_TITLES[name]}</a>{li}</div></nav>\n')
+
+
+def eurostat_codes(name):
+    txt = read(f'dossiers/{name}-body.html') + read(f'dossiers/{name}.js')
+    E = json.loads(read('biblio/eurostat.json'))
+    codes = set(re.findall(r'databrowser/view/([A-Za-z0-9_]+)', txt)) | {c for c in E if not c.startswith('_') and re.search(r'\b' + re.escape(c) + r'\b', txt)}
+    out = [(c, E[c]) for c in codes if c in E]
+    def d(v):
+        dd, mm, yy = v[2].split('.')
+        return yy + mm + dd
+    return sorted(out, key=lambda x: d(x[1]), reverse=True)
+
+
+def home_questions(name):
+    body = read('accueil/body.html')
+    i = body.index('id="q-be"')
+    seg = body[i:body.index('</section>', i)]
+    return [li for li in re.findall(r'<li data-r>(<a href="__' + name.upper() + r'__[^"]*">.*?</a>)</li>', seg, re.S)]
+
+
+def build_hub(name):
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
+    M = dossier_meta(name)
+    N = name.upper()
+    title = f'{M["title"]} · dossier · Au plus Juste'
+    desc = DOSSIERS[name][1]
+    sys.path.insert(0, str(SRC / 'actualite'))
+    import render as ACT
+    news = [i for i in ACT.load()['items'] if i['theme'] == name]
+    data = eurostat_codes(name)
+    cards = ''.join(f'<li><b>{n} · {t}</b><span>{p}</span></li>' for a, n, t, p in M['cards'])
+    au = M['authors']
+    pens_txt = ('Ce qu’en disent ' + ', '.join(au[:-1]) + ' et ' + au[-1] + ' ; et les lectures des grands courants de pensée.') if len(au) > 1 else 'Les lectures des grands courants de pensée, avec leur meilleur argument et leur principale critique.'
+    qs = home_questions(name)
+    doors = (
+        '<ol class="doors">'
+        f'<li class="door d1"><a href="__{N}__"><span class="dn">1</span><h3>Graphiques et données</h3><p>Les chiffres, leur définition et leur évolution, la comparaison européenne, l’histoire, ce que mesurent les études, les limites et les sources.</p>'
+        f'<ul class="dl">{cards}</ul><span class="dgo">Ouvrir les données →</span></a></li>'
+        f'<li class="door d2"><a href="__IDEES_{N}__"><span class="dn">2</span><h3>Penseurs et théories</h3><p>{pens_txt}</p><p class="dm">Chaque énoncé porte son statut : fait, résultat d’études, interprétation ou jugement normatif.</p><span class="dgo">Lire les penseurs →</span></a></li>'
+        f'<li class="door d3"><a href="__ACTUP_{N}__"><span class="dn">3</span><h3>Actualités</h3><p>Les faits récents, datés et sourcés, et les dernières mises à jour des statistiques officielles utilisées dans ce dossier.</p>'
+        f'<p class="dm">{len(news)} fait{"s" if len(news) > 1 else ""} daté{"s" if len(news) > 1 else ""} · {len(data)} tables Eurostat suivies</p><span class="dgo">Voir l’actualité →</span></a></li>'
+        '</ol>')
+    qhtml = ('<section class="sec papier hubq" aria-labelledby="tHq"><div class="wrap"><span class="kick" data-r>Les questions du débat sur ce thème</span><h2 class="giant" id="tHq" data-r>Une question, <span>une réponse actuelle.</span></h2>'
+             '<ul class="qlist">' + ''.join(f'<li data-r>{q}</li>' for q in qs) + '</ul></div></section>\n') if qs else ''
+    body = (f'<main id="top">\n<section class="hero brun grain hub" id="hub" aria-labelledby="t1"><div class="wrap">'
+            f'<span class="kick" data-r>Dossier {M["num"]} · une question du débat</span>'
+            f'<h1 class="title" id="t1">{M["title"]}</h1><p class="lede hq" data-r>{M["lede"]}</p>{M["facts"]}</div></section>\n'
+            + dsub(name, 'hub') +
+            f'<section class="sec papier hubdoors" aria-labelledby="tDo"><div class="wrap"><span class="kick" data-r>Trois façons d’entrer dans le sujet</span>'
+            f'<h2 class="giant" id="tDo" data-r>Les données, les idées, <span>l’actualité.</span></h2>{doors}</div></section>\n'
+            + re.sub(r'href="#([^"]+)"', lambda m: f'href="__{N}__#{m.group(1)}"', M['twomin']) + '\n' + qhtml +
+            f'<section class="sec papier hubmaj"><div class="wrap"><p class="maj">{M["maj"]}</p>'
+            f'<p class="bbl"><a href="__BIBLIO__">Toutes les sources du site, en APA 7 et en Chicago →</a></p></div></section>\n</main>\n'
+            f'<footer><div class="meta"><span>Au plus Juste · Dossier {M["num"]} · {M["title"]}</span><span><a href="__HOME__#dossiers">Tous les dossiers →</a></span></div><div class="wm" aria-hidden="true">Au plus Juste</div></footer>\n')
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
+    js = 'document.documentElement.classList.add("js");\n' + read('dossiers/common.js')
+    return head + nav_for('') + body + '<script>' + js + '</script>\n', title, desc
+
+
+def build_actu(name):
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
+    M = dossier_meta(name)
+    N = name.upper()
+    title = f'{M["title"]} : actualités · Au plus Juste'
+    desc = f'{M["title"]} en Belgique : faits récents datés et sourcés, et dernières mises à jour des statistiques officielles utilisées par le dossier d’Au plus Juste.'
+    sys.path.insert(0, str(SRC / 'actualite'))
+    import render as ACT
+    A = ACT.load()
+    news = [i for i in A['items'] if i['theme'] == name]
+    nh = (ACT.items_html(news, False) if news else
+          '<p class="actnone">Pas encore de fait daté retenu pour ce thème. La veille hebdomadaire propose chaque lundi les faits officiels de la semaine ; ils apparaissent ici après vérification.</p>')
+    rows = ''.join(f'<tr><td><time>{v[2].replace(".", "/")}</time></td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/{c}/default/table?lang=fr" target="_blank" rel="noopener">{v[0]}</a></td><td><code>{c}</code></td><td>{"jeu de données" if v[1] == "dataset" else "tableau"}</td></tr>' for c, v in eurostat_codes(name))
+    nxt = re.search(r'prochaine mise à jour\s*:\s*([^<]*)', M['maj'])
+    body = (f'<main id="top">\n<section class="hero brun grain hub" aria-labelledby="t1"><div class="wrap">'
+            f'<span class="kick" data-r>Dossier {M["num"]} · actualités</span><h1 class="title" id="t1">{M["title"]}</h1>'
+            f'<p class="lede hq" data-r>Ce qui vient de se passer sur ce thème, et ce qui a changé dans les données officielles. Chaque fait est daté et sourcé ; la presse n’y sert qu’à dater un événement en cours, jamais à fournir un chiffre.</p></div></section>\n'
+            + dsub(name, 'actu') +
+            f'<section class="sec papier actu qdeb" id="actualite" aria-labelledby="tAc"><div class="wrap"><span class="kick" data-r>Faits datés · mis à jour le {A["maj_txt"]}</span>'
+            '<h2 class="giant" id="tAc" data-r>Ce qui vient <span>de se passer.</span></h2>'
+            '<p class="lede" data-r><b class="off">Officiel</b> : publication d’une institution. <b class="pr">Presse</b> : article de presse, pour dater un événement en cours.</p>'
+            + nh + '</div></section>\n'
+            f'<section class="sec papier actdata" aria-labelledby="tAd"><div class="wrap"><span class="kick" data-r>Données officielles · catalogue d’Eurostat lu le 19 octobre 2026</span>'
+            '<h2 class="giant" id="tAd" data-r>Les données <span>qui ont bougé.</span></h2>'
+            '<p class="lede" data-r>Les tables d’Eurostat utilisées par ce dossier, de la plus récemment mise à jour à la plus ancienne. Une mise à jour peut ajouter une année ou réviser les précédentes : les chiffres du dossier sont revérifiés après chaque publication importante.</p>'
+            f'<div class="acttab"><table><thead><tr><th scope="col">Mise à jour</th><th scope="col">Table</th><th scope="col">Code</th><th scope="col">Type</th></tr></thead><tbody>{rows}</tbody></table></div>'
+            + (f'<p class="actnext"><b>Prochaine mise à jour prévue du dossier</b> : {nxt.group(1).strip()}</p>' if nxt else '') +
+            '</div></section>\n</main>\n'
+            f'<footer><div class="meta"><span>Au plus Juste · Dossier {M["num"]} · {M["title"]} · actualités</span><span><a href="__THEME_{N}__">Retour au dossier →</a></span></div><div class="wm" aria-hidden="true">Au plus Juste</div></footer>\n')
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
+    js = 'document.documentElement.classList.add("js");\n' + read('dossiers/common.js')
+    return head + nav_for('') + body + '<script>' + js + '</script>\n', title, desc
 
 
 def build_registre():
@@ -730,13 +855,15 @@ def main():
     for n in DOSSIERS:
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
         jobs[f'idees-{n}.html'] = (lambda n=n: build_idees(n))
+        jobs[f'theme-{n}.html'] = (lambda n=n: build_hub(n))
+        jobs[f'actu-{n}.html'] = (lambda n=n: build_actu(n))
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
         html = re.sub(r'<nav class="top".*?</nav>', lambda m: nav_html(page_section(fname), fname == 'index.html'), html, count=1, flags=re.S)
         html = shared(html)
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|BIBLIO|IDEES_[A-Z]+|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|BIBLIO|IDEES_[A-Z]+|THEME_[A-Z]+|ACTUP_[A-Z]+|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc, fname), encoding='utf-8')
