@@ -854,6 +854,7 @@
 "y": "2017",
 "ti": "Basic Income: A Radical Proposal for a Free Society and a Sane Economy",
 "src": [
+"Emploi",
 "Inégalités"
 ],
 "pub": "Harvard University Press",
@@ -1657,6 +1658,7 @@
 "pub": "Polity Press",
 "src": [
 "Emploi",
+"Inégalités",
 "Pensions"
 ],
 "cat": "livre"
@@ -2191,6 +2193,7 @@
 "ti": "The Economics of Welfare",
 "pub": "Macmillan",
 "src": [
+"Climat",
 "Fiscalité"
 ],
 "cat": "livre"
@@ -2295,6 +2298,7 @@
 "doi": "10.1177/0019793915570873",
 "ok": "crossref",
 "src": [
+"Emploi",
 "Immigration"
 ],
 "cat": "rech"
@@ -5877,5 +5881,1102 @@
 "Lexique"
 ],
 "cat": "inst"
+},
+{
+"t": "art",
+"a": "Quillian, Lincoln; Heath, Anthony; Pager, Devah; Midtbøen, Arnfinn H.; Fleischmann, Fenella; Hexel, Ole",
+"y": "2019",
+"ti": "Do Some Countries Discriminate More than Others? Evidence from 97 Field Experiments of Racial Discrimination in Hiring",
+"src": [
+"Emploi"
+],
+"j": "Sociological Science",
+"cat": "rech",
+"v": "6",
+"p": "467-496",
+"doi": "10.15195/v6.a18",
+"ok": "crossref"
+},
+{
+"t": "chap",
+"a": "Baert, Stijn",
+"y": "2018",
+"ti": "Hiring Discrimination: An Overview of (Almost) All Correspondence Experiments Since 2005",
+"in_": "S. M. Gaddis (dir.), Audit Studies: Behind the Scenes with Theory, Method, and Nuance, p. 63-77",
+"pub": "Springer",
+"doi": "10.1007/978-3-319-71153-9_3",
+"ok": "crossref",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Jones, Damon; Marinescu, Ioana",
+"y": "2022",
+"ti": "The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska Permanent Fund",
+"src": [
+"Emploi"
+],
+"j": "American Economic Journal: Economic Policy",
+"cat": "rech",
+"v": "14",
+"n": "2",
+"p": "315-340",
+"doi": "10.1257/pol.20190299",
+"ok": "crossref"
+},
+{
+"t": "rep",
+"a": "Vivalt, Eva; Rhodes, Elizabeth; Bartik, Alexander W.; Broockman, David E.; Krause, Patrick; Miller, Sarah",
+"y": "2024",
+"ti": "The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States",
+"pub": "National Bureau of Economic Research",
+"num": "document de travail 32719",
+"doi": "10.3386/w32719",
+"ok": "crossref",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "web",
+"a": "Ministère des Affaires sociales et de la Santé (Finlande); Kela",
+"y": "2020",
+"date": "6 mai",
+"ti": "[Communiqué sur les résultats de l’expérience de revenu de base 2017-2018]",
+"url": "https://stm.fi/en/-/perustulokokeilun-tulokset-tyollisyysvaikutukset-vahaisia-toimeentulo-ja-psyykkinen-terveys-koettiin-paremmaksi",
+"desc": true,
+"check": "titre exact à relever sur la page",
+"src": [
+"Emploi"
+],
+"cat": "inst"
+},
+{
+"t": "book",
+"a": "Polanyi, Karl",
+"y": "1944",
+"ti": "The Great Transformation",
+"pub": "Farrar & Rinehart",
+"src": [
+"Emploi"
+],
+"cat": "livre",
+"classic": true
+},
+{
+"t": "art",
+"a": "Block, Fred; Somers, Margaret",
+"y": "2003",
+"ti": "In the Shadow of Speenhamland: Social Policy and the Old Poor Law",
+"src": [
+"Emploi"
+],
+"j": "Politics & Society",
+"cat": "rech",
+"v": "31",
+"n": "2",
+"p": "283-323",
+"doi": "10.1177/0032329203252272",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Becker, Gary S.",
+"y": "1957",
+"ti": "The Economics of Discrimination",
+"pub": "University of Chicago Press",
+"src": [
+"Emploi"
+],
+"cat": "livre",
+"classic": true
+},
+{
+"t": "book",
+"a": "Becker, Gary S.",
+"y": "1964",
+"ti": "Human Capital: A Theoretical and Empirical Analysis, with Special Reference to Education",
+"pub": "National Bureau of Economic Research et Columbia University Press",
+"src": [
+"Emploi"
+],
+"cat": "livre",
+"classic": true
+},
+{
+"t": "art",
+"a": "Spence, Michael",
+"y": "1973",
+"ti": "Job Market Signaling",
+"src": [
+"Emploi"
+],
+"j": "Quarterly Journal of Economics",
+"cat": "rech",
+"v": "87",
+"n": "3",
+"p": "355-374",
+"doi": "10.2307/1882010",
+"ok": "crossref"
+},
+{
+"t": "chap",
+"a": "Arrow, Kenneth J.",
+"y": "1973",
+"ti": "The Theory of Discrimination",
+"in_": "O. Ashenfelter et A. Rees (dir.), Discrimination in Labor Markets",
+"pub": "Princeton University Press",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Mortensen, Dale T.; Pissarides, Christopher A.",
+"y": "1994",
+"ti": "Job Creation and Job Destruction in the Theory of Unemployment",
+"src": [
+"Emploi"
+],
+"j": "Review of Economic Studies",
+"cat": "rech",
+"v": "61",
+"n": "3",
+"p": "397-415",
+"doi": "10.2307/2297896",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Shimer, Robert",
+"y": "2005",
+"ti": "The Cyclical Behavior of Equilibrium Unemployment and Vacancies",
+"src": [
+"Emploi"
+],
+"j": "American Economic Review",
+"cat": "rech",
+"v": "95",
+"n": "1",
+"p": "25-49",
+"doi": "10.1257/0002828053828572",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Castel, Robert",
+"y": "1995",
+"ti": "Les métamorphoses de la question sociale. Une chronique du salariat",
+"pub": "Fayard",
+"src": [
+"Emploi"
+],
+"cat": "livre"
+},
+{
+"t": "art",
+"a": "Castel, Robert",
+"y": "2013",
+"ti": "Autour du livre. Les métamorphoses de la question sociale",
+"src": [
+"Emploi"
+],
+"j": "Vie sociale",
+"cat": "rech",
+"n": "1",
+"p": "21-39",
+"doi": "10.3917/vsoc.131.0021",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Van Parijs, Philippe",
+"y": "1995",
+"ti": "Real Freedom for All: What (if Anything) Can Justify Capitalism?",
+"pub": "Oxford University Press",
+"src": [
+"Emploi"
+],
+"cat": "livre"
+},
+{
+"t": "book",
+"a": "White, Stuart",
+"y": "2003",
+"ti": "The Civic Minimum: On the Rights and Obligations of Economic Citizenship",
+"pub": "Oxford University Press",
+"src": [
+"Emploi"
+],
+"cat": "livre",
+"doi": "10.1093/0198295057.001.0001",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Rawls, John",
+"y": "1988",
+"ti": "The Priority of Right and Ideas of the Good",
+"src": [
+"Emploi"
+],
+"j": "Philosophy & Public Affairs",
+"cat": "rech",
+"v": "17",
+"n": "4",
+"p": "251-276"
+},
+{
+"t": "off",
+"a": "Office national de l’emploi (ONEM)",
+"y": "2026",
+"date": "11 septembre",
+"ti": "Conséquences de l’arrêt de la Cour constitutionnelle du 10 septembre 2026",
+"url": "https://www.onem.be/actualites/2026/09/11/consequences-de-larret-de-la-cour-constitutionnelle-du-10-septembre-2026",
+"src": [
+"Emploi"
+],
+"cat": "inst"
+},
+{
+"t": "art",
+"a": "Domar, Evsey D.",
+"y": "1944",
+"ti": "The ‘Burden of the Debt’ and the National Income",
+"src": [
+"Finances"
+],
+"j": "American Economic Review",
+"cat": "rech",
+"v": "34",
+"n": "4",
+"p": "798-827"
+},
+{
+"t": "art",
+"a": "Lerner, Abba P.",
+"y": "1943",
+"ti": "Functional Finance and the Federal Debt",
+"src": [
+"Finances"
+],
+"j": "Social Research",
+"cat": "rech",
+"v": "10",
+"n": "1",
+"p": "38-51"
+},
+{
+"t": "art",
+"a": "Barro, Robert J.",
+"y": "1974",
+"ti": "Are Government Bonds Net Wealth?",
+"src": [
+"Finances"
+],
+"j": "Journal of Political Economy",
+"cat": "rech",
+"v": "82",
+"n": "6",
+"p": "1095-1117",
+"doi": "10.1086/260266",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Schumpeter, Joseph A.",
+"y": "1918",
+"ti": "Die Krise des Steuerstaates",
+"pub": "Leuschner & Lubensky",
+"src": [
+"Finances"
+],
+"cat": "livre",
+"classic": true
+},
+{
+"t": "book",
+"a": "Streeck, Wolfgang",
+"y": "2013",
+"ti": "Gekaufte Zeit. Die vertagte Krise des demokratischen Kapitalismus",
+"pub": "Suhrkamp",
+"src": [
+"Finances"
+],
+"cat": "livre",
+"note": "trad. fr. Du temps acheté, Gallimard, 2014"
+},
+{
+"t": "art",
+"a": "De Grauwe, Paul; Ji, Yuemei",
+"y": "2013",
+"ti": "Self-fulfilling crises in the Eurozone: An empirical test",
+"src": [
+"Finances"
+],
+"j": "Journal of International Money and Finance",
+"cat": "rech",
+"v": "34",
+"p": "15-36",
+"doi": "10.1016/j.jimonfin.2012.11.003",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Caselli, Francesca; Wingender, Philippe",
+"y": "2021",
+"ti": "Heterogeneous effects of fiscal rules: The Maastricht fiscal criterion and the counterfactual distribution of government deficits",
+"src": [
+"Finances"
+],
+"j": "European Economic Review",
+"cat": "rech",
+"v": "136",
+"p": "103748",
+"doi": "10.1016/j.euroecorev.2021.103748",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Heinemann, Friedrich; Moessinger, Marc-Daniel; Yeter, Mustafa",
+"y": "2018",
+"ti": "Do fiscal rules constrain fiscal policy? A meta-regression-analysis",
+"src": [
+"Finances"
+],
+"j": "European Journal of Political Economy",
+"cat": "rech",
+"v": "51",
+"p": "69-92",
+"doi": "10.1016/j.ejpoleco.2017.03.008",
+"ok": "crossref"
+},
+{
+"t": "off",
+"a": "Conseil de l’Union européenne",
+"y": "2025",
+"ti": "Recommandation du Conseil approuvant le plan budgétaire et structurel national à moyen terme de la Belgique",
+"num": "document 10151/25",
+"url": "https://data.consilium.europa.eu/doc/document/ST-10151-2025-INIT/en/pdf",
+"src": [
+"Finances"
+],
+"note": "texte lu en anglais",
+"cat": "inst"
+},
+{
+"t": "off",
+"a": "Conseil de l’Union européenne",
+"y": "2026",
+"ti": "Recommandation du Conseil concernant les politiques économiques, sociales, de l’emploi, structurelles et budgétaires de la Belgique",
+"num": "document 11113/26",
+"url": "https://data.consilium.europa.eu/doc/document/ST-11113-2026-INIT/en/pdf",
+"src": [
+"Finances"
+],
+"note": "texte lu en anglais",
+"cat": "inst"
+},
+{
+"t": "art",
+"a": "Diamond, Peter A.",
+"y": "1965",
+"ti": "National Debt in a Neoclassical Growth Model",
+"src": [
+"Pensions"
+],
+"j": "American Economic Review",
+"cat": "rech",
+"v": "55",
+"n": "5",
+"p": "1126-1150"
+},
+{
+"t": "art",
+"a": "Diamond, Peter A.; Orszag, Peter R.",
+"y": "2005",
+"ti": "Saving Social Security",
+"src": [
+"Pensions"
+],
+"j": "Journal of Economic Perspectives",
+"cat": "rech",
+"v": "19",
+"n": "2",
+"p": "11-32",
+"doi": "10.1257/0895330054048722",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Auerbach, Alan J.; Gokhale, Jagadeesh; Kotlikoff, Laurence J.",
+"y": "1991",
+"ti": "Generational Accounts: A Meaningful Alternative to Deficit Accounting",
+"src": [
+"Pensions"
+],
+"j": "Tax Policy and the Economy",
+"cat": "rech",
+"v": "5",
+"p": "55-110",
+"doi": "10.1086/tpe.5.20061801",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Kotlikoff, Laurence J.",
+"y": "1992",
+"ti": "Generational Accounting",
+"pub": "Free Press",
+"src": [
+"Pensions"
+],
+"cat": "livre"
+},
+{
+"t": "art",
+"a": "Haveman, Robert",
+"y": "1994",
+"ti": "Should Generational Accounts Replace Public Budgets and Deficits?",
+"src": [
+"Pensions"
+],
+"j": "Journal of Economic Perspectives",
+"cat": "rech",
+"v": "8",
+"n": "1",
+"p": "95-111",
+"doi": "10.1257/jep.8.1.95",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Kohli, Martin; Rein, Martin; Guillemard, Anne-Marie; van Gunsteren, Herman",
+"y": "1991",
+"ti": "Time for Retirement: Comparative Studies of Early Exit from the Labor Force",
+"pub": "Cambridge University Press",
+"src": [
+"Pensions"
+],
+"cat": "livre",
+"note": "ouvrage collectif, dir."
+},
+{
+"t": "book",
+"a": "Guillemard, Anne-Marie",
+"y": "2003",
+"ti": "L’âge de l’emploi. Les sociétés à l’épreuve du vieillissement",
+"pub": "Armand Colin",
+"src": [
+"Pensions"
+],
+"cat": "livre"
+},
+{
+"t": "book",
+"a": "Pierson, Paul",
+"y": "1994",
+"ti": "Dismantling the Welfare State? Reagan, Thatcher, and the Politics of Retrenchment",
+"pub": "Cambridge University Press",
+"src": [
+"Pensions"
+],
+"cat": "livre",
+"doi": "10.1017/cbo9780511805288",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Pierson, Paul",
+"y": "1996",
+"ti": "The New Politics of the Welfare State",
+"src": [
+"Pensions"
+],
+"j": "World Politics",
+"cat": "rech",
+"v": "48",
+"n": "2",
+"p": "143-179",
+"doi": "10.1353/wp.1996.0004",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Korpi, Walter; Palme, Joakim",
+"y": "2003",
+"ti": "New Politics and Class Politics in the Context of Austerity and Globalization: Welfare State Regress in 18 Countries, 1975-95",
+"src": [
+"Pensions"
+],
+"j": "American Political Science Review",
+"cat": "rech",
+"v": "97",
+"n": "3",
+"p": "425-446",
+"doi": "10.1017/s0003055403000789",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Manoli, Day; Weber, Andrea",
+"y": "2016",
+"ti": "Nonparametric Evidence on the Effects of Financial Incentives on Retirement Decisions",
+"src": [
+"Pensions"
+],
+"j": "American Economic Journal: Economic Policy",
+"cat": "rech",
+"v": "8",
+"n": "4",
+"p": "160-182",
+"doi": "10.1257/pol.20140209",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Seibold, Arthur",
+"y": "2021",
+"ti": "Reference Points for Retirement Behavior: Evidence from German Pension Discontinuities",
+"src": [
+"Pensions"
+],
+"j": "American Economic Review",
+"cat": "rech",
+"v": "111",
+"n": "4",
+"p": "1126-1165",
+"doi": "10.1257/aer.20191136",
+"ok": "crossref"
+},
+{
+"t": "off",
+"a": "Institut national d’assurances sociales pour travailleurs indépendants (INASTI)",
+"y": "2026",
+"date": "29 mai",
+"ti": "Communiqué sur l’adoption de la loi de réforme des pensions",
+"url": "https://news.belgium.be/fr/node/44066/pdf",
+"src": [
+"Pensions"
+],
+"cat": "inst"
+},
+{
+"t": "art",
+"a": "Carens, Joseph H.",
+"y": "1987",
+"ti": "Aliens and Citizens: The Case for Open Borders",
+"src": [
+"Immigration"
+],
+"j": "The Review of Politics",
+"cat": "rech",
+"v": "49",
+"n": "2",
+"p": "251-273",
+"doi": "10.1017/s0034670500033817",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Abizadeh, Arash",
+"y": "2008",
+"ti": "Democratic Theory and Border Coercion",
+"src": [
+"Immigration"
+],
+"j": "Political Theory",
+"cat": "rech",
+"v": "36",
+"n": "1",
+"p": "37-65",
+"doi": "10.1177/0090591707310090",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Borjas, George J.",
+"y": "1987",
+"ti": "Self-Selection and the Earnings of Immigrants",
+"src": [
+"Immigration"
+],
+"j": "American Economic Review",
+"cat": "rech",
+"v": "77",
+"n": "4",
+"p": "531-553"
+},
+{
+"t": "book",
+"a": "Garland, David",
+"y": "2001",
+"ti": "The Culture of Control: Crime and Social Order in Contemporary Society",
+"pub": "University of Chicago Press et Oxford University Press",
+"src": [
+"Justice"
+],
+"cat": "livre",
+"doi": "10.7208/chicago/9780226190174.001.0001",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Lappi-Seppälä, Tapio",
+"y": "2008",
+"ti": "Trust, Welfare, and Political Culture: Explaining Differences in National Penal Policies",
+"src": [
+"Justice"
+],
+"j": "Crime and Justice",
+"cat": "rech",
+"v": "37",
+"n": "1",
+"p": "313-387",
+"doi": "10.1086/525028",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Wacquant, Loïc",
+"y": "1999",
+"ti": "Les prisons de la misère",
+"pub": "Raisons d’agir",
+"src": [
+"Justice"
+],
+"cat": "livre"
+},
+{
+"t": "book",
+"a": "Wacquant, Loïc",
+"y": "2009",
+"ti": "Punishing the Poor: The Neoliberal Government of Social Insecurity",
+"pub": "Duke University Press",
+"src": [
+"Justice"
+],
+"cat": "livre",
+"doi": "10.1215/9780822392255",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Durkheim, Émile",
+"y": "1893",
+"ti": "De la division du travail social",
+"pub": "Alcan",
+"src": [
+"Justice"
+],
+"cat": "livre",
+"classic": true
+},
+{
+"t": "book",
+"a": "McKeown, Thomas",
+"y": "1976",
+"ti": "The Role of Medicine: Dream, Mirage or Nemesis?",
+"pub": "Nuffield Provincial Hospitals Trust",
+"src": [
+"Santé"
+],
+"cat": "livre",
+"note": "éd. Princeton University Press, 1979"
+},
+{
+"t": "art",
+"a": "Szreter, Simon",
+"y": "1988",
+"ti": "The Importance of Social Intervention in Britain’s Mortality Decline c.1850-1914: a Re-interpretation of the Role of Public Health",
+"src": [
+"Santé"
+],
+"j": "Social History of Medicine",
+"cat": "rech",
+"v": "1",
+"n": "1",
+"p": "1-38",
+"doi": "10.1093/shm/1.1.1",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Grossman, Michael",
+"y": "1972",
+"ti": "On the Concept of Health Capital and the Demand for Health",
+"src": [
+"Santé"
+],
+"j": "Journal of Political Economy",
+"cat": "rech",
+"v": "80",
+"n": "2",
+"p": "223-255"
+},
+{
+"t": "rep",
+"a": "Cutler, David M.; Lleras-Muney, Adriana",
+"y": "2006",
+"ti": "Education and Health: Evaluating Theories and Evidence",
+"pub": "National Bureau of Economic Research",
+"num": "document de travail 12352",
+"doi": "10.3386/w12352",
+"ok": "crossref",
+"src": [
+"Santé"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Tudor Hart, Julian",
+"y": "1971",
+"ti": "The Inverse Care Law",
+"src": [
+"Santé"
+],
+"j": "The Lancet",
+"cat": "rech",
+"v": "297",
+"n": "7696",
+"p": "405-412",
+"doi": "10.1016/s0140-6736(71)92410-x",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Cochrane, Archibald L.",
+"y": "1972",
+"ti": "Effectiveness and Efficiency: Random Reflections on Health Services",
+"pub": "Nuffield Provincial Hospitals Trust",
+"src": [
+"Santé"
+],
+"cat": "livre"
+},
+{
+"t": "art",
+"a": "Breen, Richard; Goldthorpe, John H.",
+"y": "1997",
+"ti": "Explaining Educational Differentials: Towards a Formal Rational Action Theory",
+"src": [
+"Éducation"
+],
+"j": "Rationality and Society",
+"cat": "rech",
+"v": "9",
+"n": "3",
+"p": "275-305",
+"doi": "10.1177/104346397009003002",
+"ok": "crossref"
+},
+{
+"t": "rep",
+"a": "Coleman, James S. et al.",
+"y": "1966",
+"ti": "Equality of Educational Opportunity",
+"pub": "US Government Printing Office",
+"src": [
+"Éducation"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Jackson, C. Kirabo; Johnson, Rucker C.; Persico, Claudia",
+"y": "2016",
+"ti": "The Effects of School Spending on Educational and Economic Outcomes: Evidence from School Finance Reforms",
+"src": [
+"Éducation"
+],
+"j": "Quarterly Journal of Economics",
+"cat": "rech",
+"v": "131",
+"n": "1",
+"p": "157-218",
+"doi": "10.1093/qje/qjv036",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Hanushek, Eric A.",
+"y": "2003",
+"ti": "The Failure of Input-Based Schooling Policies",
+"src": [
+"Éducation"
+],
+"j": "The Economic Journal",
+"cat": "rech",
+"v": "113",
+"n": "485",
+"p": "F64-F98",
+"doi": "10.1111/1468-0297.00099",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Krueger, Alan B.",
+"y": "2003",
+"ti": "Economic Considerations and Class Size",
+"src": [
+"Éducation"
+],
+"j": "The Economic Journal",
+"cat": "rech",
+"v": "113",
+"n": "485",
+"p": "F34-F63"
+},
+{
+"t": "art",
+"a": "Kuznets, Simon",
+"y": "1955",
+"ti": "Economic Growth and Income Inequality",
+"src": [
+"Inégalités"
+],
+"j": "American Economic Review",
+"cat": "rech",
+"v": "45",
+"n": "1",
+"p": "1-28"
+},
+{
+"t": "chap",
+"a": "Sen, Amartya",
+"y": "1980",
+"ti": "Equality of What?",
+"in_": "S. McMurrin (dir.), The Tanner Lectures on Human Values, vol. 1",
+"pub": "Cambridge University Press",
+"src": [
+"Inégalités"
+],
+"cat": "rech"
+},
+{
+"t": "book",
+"a": "Sen, Amartya",
+"y": "1992",
+"ti": "Inequality Reexamined",
+"pub": "Clarendon Press et Harvard University Press",
+"src": [
+"Inégalités"
+],
+"cat": "livre",
+"doi": "10.1093/0198289286.001.0001",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Lakner, Christoph; Milanovic, Branko",
+"y": "2016",
+"ti": "Global Income Distribution: From the Fall of the Berlin Wall to the Great Recession",
+"src": [
+"Inégalités"
+],
+"j": "World Bank Economic Review",
+"cat": "rech",
+"v": "30",
+"n": "2",
+"p": "203-232",
+"doi": "10.1093/wber/lhv039",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Milanovic, Branko",
+"y": "2016",
+"ti": "Global Inequality: A New Approach for the Age of Globalization",
+"pub": "Harvard University Press",
+"src": [
+"Inégalités"
+],
+"cat": "livre"
+},
+{
+"t": "art",
+"a": "Korpi, Walter; Palme, Joakim",
+"y": "1998",
+"ti": "The Paradox of Redistribution and Strategies of Equality: Welfare State Institutions, Inequality, and Poverty in the Western Countries",
+"src": [
+"Inégalités"
+],
+"j": "American Sociological Review",
+"cat": "rech",
+"v": "63",
+"n": "5",
+"p": "661-687",
+"doi": "10.2307/2657333",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Coase, Ronald H.",
+"y": "1960",
+"ti": "The Problem of Social Cost",
+"src": [
+"Climat"
+],
+"j": "Journal of Law and Economics",
+"cat": "rech",
+"v": "3",
+"p": "1-44",
+"doi": "10.1086/466560",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Weitzman, Martin L.",
+"y": "2009",
+"ti": "On Modeling and Interpreting the Economics of Catastrophic Climate Change",
+"src": [
+"Climat"
+],
+"j": "Review of Economics and Statistics",
+"cat": "rech",
+"v": "91",
+"n": "1",
+"p": "1-19",
+"doi": "10.1162/rest.91.1.1",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Beck, Ulrich",
+"y": "1986",
+"ti": "Risikogesellschaft. Auf dem Weg in eine andere Moderne",
+"pub": "Suhrkamp",
+"src": [
+"Climat"
+],
+"cat": "livre",
+"note": "trad. fr. La société du risque, Aubier, 2001"
+},
+{
+"t": "art",
+"a": "Glaeser, Edward; Gyourko, Joseph",
+"y": "2018",
+"ti": "The Economic Implications of Housing Supply",
+"src": [
+"Logement"
+],
+"j": "Journal of Economic Perspectives",
+"cat": "rech",
+"v": "32",
+"n": "1",
+"p": "3-30",
+"doi": "10.1257/jep.32.1.3",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Aalbers, Manuel B.",
+"y": "2016",
+"ti": "The Financialization of Housing: A Political Economy Approach",
+"pub": "Routledge",
+"src": [
+"Logement"
+],
+"cat": "livre",
+"doi": "10.4324/9781315668666",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Jordà, Òscar; Schularick, Moritz; Taylor, Alan M.",
+"y": "2016",
+"ti": "The Great Mortgaging: Housing Finance, Crises and Business Cycles",
+"src": [
+"Logement"
+],
+"j": "Economic Policy",
+"cat": "rech",
+"v": "31",
+"n": "85",
+"p": "107-152"
+},
+{
+"t": "book",
+"a": "Madden, David; Marcuse, Peter",
+"y": "2016",
+"ti": "In Defense of Housing: The Politics of Crisis",
+"pub": "Verso",
+"src": [
+"Logement"
+],
+"cat": "livre"
+},
+{
+"t": "book",
+"a": "Tilly, Charles",
+"y": "1990",
+"ti": "Coercion, Capital, and European States, AD 990-1990",
+"pub": "Basil Blackwell",
+"src": [
+"Fiscalité"
+],
+"cat": "livre"
+},
+{
+"t": "book",
+"a": "Levi, Margaret",
+"y": "1988",
+"ti": "Of Rule and Revenue",
+"pub": "University of California Press",
+"src": [
+"Fiscalité"
+],
+"cat": "livre",
+"doi": "10.1525/9780520909540",
+"ok": "crossref"
+},
+{
+"t": "book",
+"a": "Steinmo, Sven",
+"y": "1993",
+"ti": "Taxation and Democracy: Swedish, British, and American Approaches to Financing the Modern State",
+"pub": "Yale University Press",
+"src": [
+"Fiscalité"
+],
+"cat": "livre"
+},
+{
+"t": "art",
+"a": "Diamond, Peter; Saez, Emmanuel",
+"y": "2011",
+"ti": "The Case for a Progressive Tax: From Basic Research to Policy Recommendations",
+"src": [
+"Fiscalité"
+],
+"j": "Journal of Economic Perspectives",
+"cat": "rech",
+"v": "25",
+"n": "4",
+"p": "165-190",
+"doi": "10.1257/jep.25.4.165",
+"ok": "crossref"
+},
+{
+"t": "art",
+"a": "Kleven, Henrik J.; Knudsen, Martin B.; Kreiner, Claus T.; Pedersen, Søren; Saez, Emmanuel",
+"y": "2011",
+"ti": "Unwilling or Unable to Cheat? Evidence From a Tax Audit Experiment in Denmark",
+"src": [
+"Fiscalité"
+],
+"j": "Econometrica",
+"cat": "rech",
+"v": "79",
+"n": "3",
+"p": "651-692",
+"doi": "10.3982/ecta9113",
+"ok": "crossref"
 }
 ]
