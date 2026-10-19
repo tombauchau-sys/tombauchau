@@ -55,8 +55,8 @@ IDEES_URLS = {n: 'https://claude.ai/artifact/' + a for n, a in {'climat': 'VSQ7z
 for _n in DOSSIERS:
     PAGES['__IDEES_' + _n.upper() + '__'] = ('idees-' + _n + '.html', IDEES_URLS[_n])
 THEME_TITLES = {n: DOSSIERS[n][0].split(' · ')[0] for n in DOSSIERS}
-HUB_URLS = {n: 'https://claude.ai/artifact/HUB_PENDING_' + n for n in DOSSIERS}
-ACTU_URLS = {n: 'https://claude.ai/artifact/ACTU_PENDING_' + n for n in DOSSIERS}
+HUB_URLS = {n: 'https://claude.ai/artifact/' + a for n, a in {'emploi': 'VNQhb16z3PJKkhastiLkTL', 'finances': 'WERrP8K8zcPHJA9HHa1HS7', 'pensions': 'Tt4xvDmtwL6mWB4qwunokh', 'immigration': 'P5xZnCyebMc1v7rcjwZfWQ', 'justice': '3Y7zmKZS3kReFBsDh7dybZ', 'sante': '7zSJ8NbvpSLqGCUuuja9vb', 'education': 'AZQPZphPQEyFQ45cgyYuJB', 'inegalites': 'XyWruzJapNzkrPjcAU2zwo', 'climat': 'B9BSjMhjFQ9NvrrXHrvn14', 'logement': '4AGbVZybkP9p17c3CgbiqL', 'fiscalite': 'XFsQ6wygidDLy8hGMbtULj'}.items()}
+ACTU_URLS = {n: 'https://claude.ai/artifact/' + a for n, a in {'emploi': 'T9VuaJEQpyzLMAY1dZ3aEM', 'finances': 'NLoHLoCZnqLna79VF8eYCf', 'pensions': 'ESXL8WueRipFRE2vaA82Vn', 'immigration': 'Den3ZZzqqdqgvu2dQLNCFe', 'justice': 'LUM1kAR6RMoLMjSFkiDtyS', 'sante': 'SbpGAzZ6um6m4EVFGibhQZ', 'education': 'SNT9rnxT7dyTvu6rHknVSt', 'inegalites': 'Ahu7viuwRNoYFjZM6Nf18N', 'climat': 'QP9dQU5Y5XP91uiax21xvJ', 'logement': '6iuxVhDZkieSLLtUrf3anq', 'fiscalite': 'GePjiuSEXNWyX2xTnoeRPi'}.items()}
 for _n in DOSSIERS:
     PAGES['__THEME_' + _n.upper() + '__'] = ('theme-' + _n + '.html', HUB_URLS[_n])
     PAGES['__ACTUP_' + _n.upper() + '__'] = ('actu-' + _n + '.html', ACTU_URLS[_n])
