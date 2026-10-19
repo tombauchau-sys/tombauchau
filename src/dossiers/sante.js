@@ -83,6 +83,12 @@
     series:[{n:'prévention, Union',v:DATA.prvEU,s:2011,c:'#3D3A35',dash:1,dy:-6},{n:'prévention, Belgique',v:DATA.prv,s:2011,c:'#701C0E',w:4.5,dy:8},{n:'soins, Union',v:DATA.trtEU,s:2011,c:'#3D3A35',dash:1,dy:-2},{n:'soins, Belgique',v:DATA.trt,s:2011,c:'#1A1A1A',w:4.5,dy:6}],
     label:'Mortalité évitable pour 100 000 habitants en 2023 : par la prévention, Belgique 137, Union 151 ; par les soins, Belgique 59, Union 87'});
 
+  /* Fiche 04 : reste à charge */
+  (function(){
+    var O=DATA.oop;
+    lines2(D.getElementById('oopChart'),{t0:2015,t1:2024,rm:MOB?60:150,years:MOB?[2015,2019,2024]:[2015,2017,2019,2021,2024],min:0,max:25,ticks:[0,5,10,15,20,25],unit:' %',grid:'#D7D4CC',mute:'#6A665F',series:[{n:'Belgique',v:O.BE,s:2015,c:'#E2402B',w:4},{n:'Union',v:O.EU,s:2015,c:'#6A665F',dash:1},{n:'Pays-Bas',v:O.NL.slice(1),s:2016,c:'#7FB6A3',w:2.5,dy:-6},{n:'Allemagne',v:O.DE,s:2015,c:'#A69C8F',w:2.5,dy:6},{n:'France',v:O.FR,s:2015,c:'#C9A227',w:2.5,dy:16}],label:'Paiements directs des ménages en % des dépenses courantes de santé, 2015-2024 : Belgique de 19,4 % à 21,8 % ; Union de 16,4 % à 15,1 % ; Pays-Bas 11,9 % ; Allemagne 11,1 % ; France 10,2 % en 2024'});
+  })();
+
   /* Recherche */
   (function(){
     var Q=[
@@ -134,7 +140,7 @@
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','leChart','hlyChart','spendChart','unmetChart','avChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','leChart','hlyChart','spendChart','unmetChart','avChart','oopChart'].forEach(function(id){io.observe(D.getElementById(id))});
   (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
   (function(){
   })();
