@@ -573,7 +573,7 @@
 
 /* menu : soulignement de la rubrique en cours */
 (function(){
-  var map={atlas:'#atlas',dossier:'#atlas',classements:'#classements',dossiers:'#dossiers',methode:'#methode',apropos:'#apropos'};
+  var map={atlas:'#atlas',dossier:'#atlas',classements:'#atlas',questions:'#questions',dossiers:'#questions',idees:'#idees',methode:'#methode',apropos:'#methode'};
   var links=[].slice.call(document.querySelectorAll('nav.top > a:not(.mark)'));
   function spy(){var y=innerHeight*.35,cur='#atlas';Object.keys(map).forEach(function(id){var n=document.getElementById(id);if(n&&n.offsetHeight&&n.getBoundingClientRect().top<=y)cur=map[id]});
     links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===cur)})}

@@ -101,10 +101,37 @@ nav.top a.mark .lg .qq{color:var(--red,#E2402B);animation:cjwob 2.4s ease-in-out
 nav.top a.mark .lg .uu{position:absolute;left:0;right:0;top:0;transform:rotateX(90deg);opacity:0}
 nav.top a.mark:hover .lg .qq,nav.top a.mark:focus-visible .lg .qq{animation:none;transform:rotateX(-90deg);opacity:0;transition:transform .32s ease,opacity .1s linear .22s}
 nav.top a.mark:hover .lg .uu,nav.top a.mark:focus-visible .lg .uu{transform:none;opacity:1;transition:transform .4s cubic-bezier(.2,.8,.2,1) .3s,opacity .1s linear .3s}
-@media (min-width:641px){nav.top{grid-template-columns:repeat(2,1fr) minmax(176px,auto) repeat(4,1fr)!important}}
-@media (min-width:641px) and (max-width:900px){nav.top a.mark .lg{font-size:17px}nav.top{grid-template-columns:repeat(2,1fr) 136px repeat(4,1fr)!important}nav.top>a:not(.mark){font-size:13px;padding-inline:2px}}
-@media (min-width:641px) and (max-width:760px){nav.top{grid-template-columns:repeat(2,1fr) 116px repeat(4,1fr)!important}nav.top a.mark .lg{font-size:15px}nav.top>a:not(.mark){font-size:12px}}
+@media (min-width:641px){nav.top{grid-template-columns:repeat(2,minmax(0,1fr)) minmax(176px,auto) repeat(2,minmax(0,1fr))!important}}
+@media (min-width:641px) and (max-width:900px){nav.top a.mark .lg{font-size:17px}}
+
 @media (max-width:640px){nav.top{grid-template-columns:1fr 84px 1fr!important}nav.top a.mark .lg{font-size:24px}nav.top a.mark .lg .w1,nav.top a.mark .lg .w2{display:none}}
 html.calm nav.top a.mark .lg .qq{animation:none!important}
 @media (prefers-reduced-motion:reduce){nav.top a.mark .lg .qq{animation:none!important}}
 nav.top a.mark .lg .w1{margin-right:.24em}
+
+/* ===== Menu principal : quatre rubriques déroulantes ===== */
+nav.top>a[data-dd] .car{font-size:.75em;margin-left:6px;opacity:.75;transition:transform .25s}
+nav.top>a[data-dd][aria-expanded="true"] .car{transform:rotate(180deg)}
+nav.top .mdd{position:absolute;top:100%;z-index:45;width:min(560px,calc(100vw - 32px));background:var(--off,#F4F1EA);color:var(--ink,#1A1A1A);border:1px solid var(--ink,#1A1A1A);box-shadow:0 18px 40px rgba(0,0,0,.28);padding:16px 16px 10px;max-height:calc(100vh - 80px);overflow:auto;text-align:left}
+nav.top .mdd.cols{width:min(640px,calc(100vw - 32px))}
+nav.top .mdd[hidden]{display:none}
+nav.top .mdd-h{margin:0 0 8px;font:700 12px var(--sans,system-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--grey,#6A665F)}
+nav.top .mdd-h span{display:block;font-weight:500;letter-spacing:0;text-transform:none;font-size:13.5px;margin-top:2px}
+nav.top .mdd ul{list-style:none;margin:0;padding:0;display:grid;gap:0 16px}
+nav.top .mdd.cols ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+nav.top .mdd.cols li:first-child{grid-column:1/-1}
+nav.top .mdd a{display:block;height:auto;padding:9px 8px;border:0;border-bottom:1px solid var(--rule,#D9D3C7);font-size:15px;font-weight:600;line-height:1.25;text-align:left;color:inherit;overflow:visible;justify-content:flex-start}
+nav.top .mdd a::after{display:none}
+nav.top .mdd a small{display:block;font-weight:400;font-size:13px;color:var(--grey,#6A665F);margin-top:2px}
+nav.top .mdd a:hover,nav.top .mdd a:focus-visible{background:#E9E5DC}
+nav.top .mdd a:focus-visible{outline:2px solid var(--copper,#C9773A);outline-offset:-2px}
+@media (max-width:640px){
+  nav.top .mdd{display:none!important}
+  nav.top.open .mdd{display:block!important;position:static;order:4;grid-column:1/-1;width:auto;box-shadow:none;border:0;border-top:1px solid var(--hair,#3B332B);background:transparent;color:inherit;padding:0 20px 10px;max-height:none}
+  nav.top.open .mdd .mdd-h{display:none}
+  nav.top.open .mdd.cols ul{grid-template-columns:1fr}
+  nav.top.open .mdd a{border-bottom:0;padding:7px 0 7px 14px;font-weight:500;font-size:15.5px}
+  nav.top.open .mdd a small{color:inherit;opacity:.7}
+  nav.top.open .mdd a:hover,nav.top.open .mdd a:focus-visible{background:transparent;text-decoration:underline}
+  nav.top>a[data-dd] .car{display:none}
+}

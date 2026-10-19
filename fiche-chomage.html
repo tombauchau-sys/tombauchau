@@ -562,13 +562,40 @@ nav.top a.mark .lg .qq{color:var(--red,#E2402B);animation:cjwob 2.4s ease-in-out
 nav.top a.mark .lg .uu{position:absolute;left:0;right:0;top:0;transform:rotateX(90deg);opacity:0}
 nav.top a.mark:hover .lg .qq,nav.top a.mark:focus-visible .lg .qq{animation:none;transform:rotateX(-90deg);opacity:0;transition:transform .32s ease,opacity .1s linear .22s}
 nav.top a.mark:hover .lg .uu,nav.top a.mark:focus-visible .lg .uu{transform:none;opacity:1;transition:transform .4s cubic-bezier(.2,.8,.2,1) .3s,opacity .1s linear .3s}
-@media (min-width:641px){nav.top{grid-template-columns:repeat(2,1fr) minmax(176px,auto) repeat(4,1fr)!important}}
-@media (min-width:641px) and (max-width:900px){nav.top a.mark .lg{font-size:17px}nav.top{grid-template-columns:repeat(2,1fr) 136px repeat(4,1fr)!important}nav.top>a:not(.mark){font-size:13px;padding-inline:2px}}
-@media (min-width:641px) and (max-width:760px){nav.top{grid-template-columns:repeat(2,1fr) 116px repeat(4,1fr)!important}nav.top a.mark .lg{font-size:15px}nav.top>a:not(.mark){font-size:12px}}
+@media (min-width:641px){nav.top{grid-template-columns:repeat(2,minmax(0,1fr)) minmax(176px,auto) repeat(2,minmax(0,1fr))!important}}
+@media (min-width:641px) and (max-width:900px){nav.top a.mark .lg{font-size:17px}}
+
 @media (max-width:640px){nav.top{grid-template-columns:1fr 84px 1fr!important}nav.top a.mark .lg{font-size:24px}nav.top a.mark .lg .w1,nav.top a.mark .lg .w2{display:none}}
 html.calm nav.top a.mark .lg .qq{animation:none!important}
 @media (prefers-reduced-motion:reduce){nav.top a.mark .lg .qq{animation:none!important}}
 nav.top a.mark .lg .w1{margin-right:.24em}
+
+/* ===== Menu principal : quatre rubriques déroulantes ===== */
+nav.top>a[data-dd] .car{font-size:.75em;margin-left:6px;opacity:.75;transition:transform .25s}
+nav.top>a[data-dd][aria-expanded="true"] .car{transform:rotate(180deg)}
+nav.top .mdd{position:absolute;top:100%;z-index:45;width:min(560px,calc(100vw - 32px));background:var(--off,#F4F1EA);color:var(--ink,#1A1A1A);border:1px solid var(--ink,#1A1A1A);box-shadow:0 18px 40px rgba(0,0,0,.28);padding:16px 16px 10px;max-height:calc(100vh - 80px);overflow:auto;text-align:left}
+nav.top .mdd.cols{width:min(640px,calc(100vw - 32px))}
+nav.top .mdd[hidden]{display:none}
+nav.top .mdd-h{margin:0 0 8px;font:700 12px var(--sans,system-ui);letter-spacing:.1em;text-transform:uppercase;color:var(--grey,#6A665F)}
+nav.top .mdd-h span{display:block;font-weight:500;letter-spacing:0;text-transform:none;font-size:13.5px;margin-top:2px}
+nav.top .mdd ul{list-style:none;margin:0;padding:0;display:grid;gap:0 16px}
+nav.top .mdd.cols ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+nav.top .mdd.cols li:first-child{grid-column:1/-1}
+nav.top .mdd a{display:block;height:auto;padding:9px 8px;border:0;border-bottom:1px solid var(--rule,#D9D3C7);font-size:15px;font-weight:600;line-height:1.25;text-align:left;color:inherit;overflow:visible;justify-content:flex-start}
+nav.top .mdd a::after{display:none}
+nav.top .mdd a small{display:block;font-weight:400;font-size:13px;color:var(--grey,#6A665F);margin-top:2px}
+nav.top .mdd a:hover,nav.top .mdd a:focus-visible{background:#E9E5DC}
+nav.top .mdd a:focus-visible{outline:2px solid var(--copper,#C9773A);outline-offset:-2px}
+@media (max-width:640px){
+  nav.top .mdd{display:none!important}
+  nav.top.open .mdd{display:block!important;position:static;order:4;grid-column:1/-1;width:auto;box-shadow:none;border:0;border-top:1px solid var(--hair,#3B332B);background:transparent;color:inherit;padding:0 20px 10px;max-height:none}
+  nav.top.open .mdd .mdd-h{display:none}
+  nav.top.open .mdd.cols ul{grid-template-columns:1fr}
+  nav.top.open .mdd a{border-bottom:0;padding:7px 0 7px 14px;font-weight:500;font-size:15.5px}
+  nav.top.open .mdd a small{color:inherit;opacity:.7}
+  nav.top.open .mdd a:hover,nav.top.open .mdd a:focus-visible{background:transparent;text-decoration:underline}
+  nav.top>a[data-dd] .car{display:none}
+}
 </style>
 </head>
 <body>
@@ -577,12 +604,15 @@ nav.top a.mark .lg .w1{margin-right:.24em}
 <button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
 
 <nav class="top" aria-label="Navigation principale">
-  <a href="index.html#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
-  <a href="index.html#classements"><span class="lbl" data-t="Classements">Classements</span></a>
+  <a href="index.html#atlas" class="on" data-dd="dd-donnees" aria-haspopup="true" aria-expanded="false" aria-controls="dd-donnees"><span class="lbl" data-t="Données">Données</span><span class="car" aria-hidden="true">▾</span></a>
+  <div class="mdd" id="dd-donnees" hidden><p class="mdd-h">Données<span>Explorer les chiffres des 27 pays</span></p><ul><li><a href="index.html#atlas">Carte des 27 pays<small>Un pays ou deux pays comparés</small></a></li><li><a href="index.html#classements">Classements<small>46 indicateurs, critères expliqués</small></a></li><li><a href="comparer.html">Comparer les pays<small>Plusieurs pays, plusieurs indicateurs</small></a></li><li><a href="fiche-chomage.html">Fiche : le chômage<small>Définitions et sources croisées</small></a></li></ul></div>
+  <a href="index.html#questions" data-dd="dd-questions" aria-haspopup="true" aria-expanded="false" aria-controls="dd-questions"><span class="lbl" data-t="Questions">Questions</span><span class="car" aria-hidden="true">▾</span></a>
+  <div class="mdd cols" id="dd-questions" hidden><p class="mdd-h">Questions<span>Les faits : données, études, actualité</span></p><ul><li><a href="index.html#questions">L’actualité et les grandes questions</a></li><li><a href="dossier-emploi.html">Emploi et inactivité</a></li><li><a href="dossier-finances.html">Finances publiques</a></li><li><a href="dossier-immigration.html">Immigration et asile</a></li><li><a href="dossier-justice.html">Justice et sécurité</a></li><li><a href="dossier-sante.html">Santé</a></li><li><a href="dossier-education.html">Éducation</a></li><li><a href="dossier-inegalites.html">Inégalités et pauvreté</a></li><li><a href="dossier-climat.html">Climat et énergie</a></li><li><a href="dossier-logement.html">Logement</a></li><li><a href="dossier-fiscalite.html">Fiscalité</a></li><li><a href="dossier-pensions.html">Pensions et vieillissement</a></li></ul></div>
   <a href="index.html" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
-  <a href="dossier-emploi.html" class="on"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
-  <a href="index.html#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
-  <a href="index.html#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
+  <a href="index.html#idees" data-dd="dd-idees" aria-haspopup="true" aria-expanded="false" aria-controls="dd-idees"><span class="lbl" data-t="Idées">Idées</span><span class="car" aria-hidden="true">▾</span></a>
+  <div class="mdd cols" id="dd-idees" hidden><p class="mdd-h">Idées<span>Les auteurs et les courants de pensée</span></p><ul><li><a href="index.html#idees">Index des auteurs</a></li><li><a href="idees-emploi.html">Emploi et inactivité</a></li><li><a href="idees-finances.html">Finances publiques</a></li><li><a href="idees-immigration.html">Immigration et asile</a></li><li><a href="idees-justice.html">Justice et sécurité</a></li><li><a href="idees-sante.html">Santé</a></li><li><a href="idees-education.html">Éducation</a></li><li><a href="idees-inegalites.html">Inégalités et pauvreté</a></li><li><a href="idees-climat.html">Climat et énergie</a></li><li><a href="idees-logement.html">Logement</a></li><li><a href="idees-fiscalite.html">Fiscalité</a></li><li><a href="idees-pensions.html">Pensions et vieillissement</a></li></ul></div>
+  <a href="index.html#methode" data-dd="dd-methode" aria-haspopup="true" aria-expanded="false" aria-controls="dd-methode"><span class="lbl" data-t="Méthode">Méthode</span><span class="car" aria-hidden="true">▾</span></a>
+  <div class="mdd" id="dd-methode" hidden><p class="mdd-h">Méthode<span>Sources, vérification, vocabulaire</span></p><ul><li><a href="index.html#methode">D’où viennent ces chiffres</a></li><li><a href="bibliographie.html">Bibliographie (APA 7 et Chicago)</a></li><li><a href="lexique.html">Lexique</a></li><li><a href="registre-verification.html">Registre de vérification</a></li><li><a href="nouveautes.html">Nouveautés et corrections</a></li><li><a href="index.html#apropos">À propos</a></li></ul></div>
 </nav>
 
 <main id="top">
@@ -1286,7 +1316,26 @@ var CJD={t:{},
     mb.innerHTML='<i aria-hidden="true"></i>Menu';
     mb.addEventListener('click',function(){var o=!nav.classList.contains('open');nav.classList.toggle('open',o);mb.setAttribute('aria-expanded',o)});
     nav.insertBefore(mb,nav.firstChild);
-    nav.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+    nav.addEventListener('click',function(e){var a=e.target.closest('a');if(a&&!(a.hasAttribute('data-dd')&&dd.touch())){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+  }
+
+  /* ---------- Menus déroulants ---------- */
+  var dd={touch:function(){return !(window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches)},small:function(){return window.matchMedia&&matchMedia('(max-width:640px)').matches}};
+  if(nav){
+    var tops=[].slice.call(nav.querySelectorAll('a[data-dd]')),ddCur=null,tm;
+    function place(a,p){if(dd.small())return;var r=a.getBoundingClientRect(),nr=nav.getBoundingClientRect(),w=p.offsetWidth,l=r.left-nr.left+r.width/2-w/2;l=Math.max(8,Math.min(l,nr.width-w-8));p.style.left=l+'px'}
+    function close(){if(!ddCur)return;ddCur.p.hidden=true;ddCur.a.setAttribute('aria-expanded','false');ddCur=null}
+    function open(a){var p=D.getElementById(a.getAttribute('data-dd'));if(!p)return;if(ddCur&&ddCur.a!==a)close();p.hidden=false;a.setAttribute('aria-expanded','true');ddCur={a:a,p:p};place(a,p)}
+    tops.forEach(function(a){var p=D.getElementById(a.getAttribute('data-dd'));if(!p)return;
+      a.addEventListener('click',function(e){if(dd.small())return;if(dd.touch()){if(!ddCur||ddCur.a!==a){e.preventDefault();open(a)}else close()}else close()});
+      a.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key===' '){e.preventDefault();open(a);var f=p.querySelector('a');f&&f.focus()}});
+      [a,p].forEach(function(n){n.addEventListener('mouseenter',function(){if(dd.touch()||dd.small())return;clearTimeout(tm);open(a)});n.addEventListener('mouseleave',function(){if(dd.touch()||dd.small())return;tm=setTimeout(close,220)})});
+      p.addEventListener('click',function(e){if(e.target.closest('a'))close()});
+      p.addEventListener('focusout',function(e){if(!p.contains(e.relatedTarget)&&e.relatedTarget!==a)close()});
+    });
+    D.addEventListener('click',function(e){if(ddCur&&!e.target.closest('nav.top'))close()});
+    D.addEventListener('keydown',function(e){if(e.key==='Escape'&&ddCur){var a=ddCur.a;close();a.focus()}});
+    addEventListener('resize',close);
   }
 
   /* ---------- Recherche ---------- */

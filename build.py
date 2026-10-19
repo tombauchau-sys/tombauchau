@@ -68,6 +68,40 @@ NAV_TPL = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><
 '''
 
 
+def nav_html(active='', home=False):
+    """Menu principal : quatre rubriques déroulantes autour du logo."""
+    import html as H
+    h = '' if home else '__HOME__'
+    T = [(n, THEME_TITLES[n]) for n in DOSSIERS]
+    groups = [
+        ('donnees', 'Données', h + '#atlas', 'Explorer les chiffres des 27 pays', [('Carte des 27 pays', h + '#atlas', 'Un pays ou deux pays comparés'), ('Classements', h + '#classements', '46 indicateurs, critères expliqués'), ('Comparer les pays', '__COMPARER__', 'Plusieurs pays, plusieurs indicateurs'), ('Fiche : le chômage', '__FICHE__', 'Définitions et sources croisées')], False),
+        ('questions', 'Questions', h + '#questions', 'Les faits : données, études, actualité', [('L’actualité et les grandes questions', h + '#questions', '')] + [(t, '__' + n.upper() + '__', '') for n, t in T], True),
+        ('idees', 'Idées', h + '#idees', 'Les auteurs et les courants de pensée', [('Index des auteurs', h + '#idees', '')] + [(t, '__IDEES_' + n.upper() + '__', '') for n, t in T], True),
+        ('methode', 'Méthode', h + '#methode', 'Sources, vérification, vocabulaire', [('D’où viennent ces chiffres', h + '#methode', ''), ('Bibliographie (APA 7 et Chicago)', '__BIBLIO__', ''), ('Lexique', '__LEXIQUE__', ''), ('Registre de vérification', '__REGISTRE__', ''), ('Nouveautés et corrections', '__NOUVEAUTES__', ''), ('À propos', h + '#apropos', '')], False),
+    ]
+    def grp(g):
+        k, lab, href, sub, items, cols = g
+        on = ' class="on"' if active == k else ''
+        a = f'  <a href="{href}"{on} data-dd="dd-{k}" aria-haspopup="true" aria-expanded="false" aria-controls="dd-{k}"><span class="lbl" data-t="{lab}">{lab}</span><span class="car" aria-hidden="true">▾</span></a>\n'
+        li = ''.join(f'<li><a href="{u}">{H.escape(t)}' + (f'<small>{H.escape(d)}</small>' if d else '') + '</a></li>' for t, u, d in items)
+        p = f'  <div class="mdd{" cols" if cols else ""}" id="dd-{k}" hidden><p class="mdd-h">{lab}<span>{sub}</span></p><ul>{li}</ul></div>\n'
+        return a + p
+    mark = f'  <a href="{h or "#atlas"}" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>\n'
+    return ('<nav class="top" aria-label="Navigation principale">\n' + grp(groups[0]) + grp(groups[1]) + mark + grp(groups[2]) + grp(groups[3]) + '</nav>')
+
+
+def page_section(fname):
+    if fname.startswith('dossier-'):
+        return 'questions'
+    if fname.startswith('idees-'):
+        return 'idees'
+    if fname in ('comparer.html', 'fiche-chomage.html'):
+        return 'donnees'
+    if fname in ('lexique.html', 'bibliographie.html', 'registre-verification.html', 'nouveautes.html'):
+        return 'methode'
+    return ''
+
+
 def nav_for(active=''):
     return NAV_TPL.replace('{Q}', ' class="on"' if active == 'q' else '').replace('{I}', ' class="on"' if active == 'i' else '')
 
@@ -699,6 +733,7 @@ def main():
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
+        html = re.sub(r'<nav class="top".*?</nav>', lambda m: nav_html(page_section(fname), fname == 'index.html'), html, count=1, flags=re.S)
         html = shared(html)
         site = links(html, 'site')
         left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|BIBLIO|IDEES_[A-Z]+|MAP|DATA|WORLD)__', site))
