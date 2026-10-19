@@ -92,4 +92,9 @@
 "une_ltu_a":["Chômage de longue durée par sexe - données annuelles","dataset","10.09.2026"],
 "une_rt_a":["Chômage par sexe et âge - données annuelles","dataset","10.09.2026"],
 "une_rt_a_h":["Chômage par sexe et âge - données annuelles (1992-2020)","dataset","20.07.2026"],
-"yth_demo_030":["Age moyen estimé des jeunes quand ils quittent le domicile parental","dataset","16.04.2026"]}
+"yth_demo_030":["Age moyen estimé des jeunes quand ils quittent le domicile parental","dataset","16.04.2026"],
+"jvs_a_rate_r2":["Taux de vacances d'emploi par activité de la NACE Rév. 2 - données annuelles (2008-2025)","dataset","20.03.2026"],
+"lfsa_eppga":["Personnes en emploi à temps partiel par âge - % de l'emploi total","dataset","10.09.2026"],
+"lfsa_ewhan2":["Moyenne d'heures de travail effectivement prestées par semaine dans l'activité principale (2008-2026)","dataset","10.09.2026"],
+"lfsa_igar":["Personnes non comprises dans les forces de travail ne recherchant pas d'emploi par raison principale","dataset","10.09.2026"],
+"ilc_iw01":["Taux de risque de pauvreté au travail par âge, sexe et activité la plus fréquente","dataset","05.10.2026"]}

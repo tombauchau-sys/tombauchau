@@ -510,3 +510,21 @@ html.calm .cj-tip{box-shadow:none}
 .acttab thead th{font:700 12px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
 .acttab time{font-weight:700;white-space:nowrap}.acttab a{color:inherit;text-underline-offset:3px}.acttab code{font-size:13px}
 .actnext{font:16px/1.5 var(--sans);margin-top:16px}
+/* Emploi : fiches 05-07 (réserve, écarts, qualité) */
+figure.wide{margin:52px 0 0;max-width:980px;border-top:1px solid currentColor;padding-top:16px}
+figure.wide figcaption b{display:block;font-weight:700;font-size:20px}
+figure.wide figcaption span{display:block;font-size:14.5px;opacity:.75;margin-top:2px}
+.facts3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:44px;max-width:1080px}
+.facts3 p{margin:0;font-size:16.5px;line-height:1.5;border-top:2px solid currentColor;padding-top:12px}
+.facts3 b{font-weight:700}
+.facts3 b.big{font-family:var(--serif);font-weight:400;font-size:26px;display:block;line-height:1.15;margin-bottom:4px}
+.qtab{margin-top:40px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.qtab table{width:100%;min-width:760px;border-collapse:collapse;font-size:15px}
+.qtab caption{text-align:left;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);padding-bottom:10px}
+.qtab th,.qtab td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-top:1px solid var(--rule)}
+.qtab thead th{font-size:13px;color:var(--grey);font-weight:600;border-top:2px solid var(--ink)}
+.qtab tbody th{font-weight:600;max-width:260px}
+.qtab td:nth-child(2),.qtab td:nth-child(3){font-family:var(--serif);font-size:20px;white-space:nowrap}
+@media (max-width:900px){.facts3{grid-template-columns:1fr;gap:20px}}
+.facts3+.srcl{margin-top:28px}
+.trap p{color:var(--line,#1A1A1A)}

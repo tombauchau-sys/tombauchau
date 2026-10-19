@@ -3,6 +3,15 @@
  "maj_txt": "19 octobre 2026",
  "items": [
   {
+   "date": "2026-10-16",
+   "date_txt": "16 octobre 2026",
+   "type": "officiel",
+   "theme": "emploi",
+   "texte": "Chômage mensuel (données corrigées des variations saisonnières) : <b>5,9 %</b> en Belgique en août 2026, après 6,3 % en juin et 6,0 % en juillet ; 6,1 % dans l’Union. Ces estimations mensuelles sont provisoires et révisées chaque mois.",
+   "question": "<a href=\"__FICHE__\">Le chômage : que compte vraiment ce chiffre ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/une_rt_m/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, une_rt_m (mise à jour du 16/10/2026)</a>"
+  },
+  {
    "date": "2026-10-15",
    "date_txt": "15 oct. 2026",
    "type": "officiel",
@@ -19,6 +28,24 @@
    "texte": "Pas encore d’accord sur le budget fédéral pluriannuel jusqu’en 2029 ; le Premier ministre propose un « frein à l’endettement » si aucun accord n’est trouvé d’ici la fin de l’année. Les montants d’économies cités par la presse varient d’un article à l’autre : nous ne les reprenons pas.",
    "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
    "source": "<a href=\"https://www.vrt.be/vrtnws/en/2026/10/15/prime-minister-de-wever-insists-on-debt-brake-if-multi-year-budg/\" target=\"_blank\" rel=\"noopener\">VRT NWS, 15/10/2026</a> (presse)"
+  },
+  {
+   "date": "2026-09-10",
+   "date_txt": "10 septembre 2026",
+   "type": "officiel",
+   "theme": "emploi",
+   "texte": "La Cour constitutionnelle confirme l’essentiel de la réforme du chômage, mais annule une partie du régime transitoire : des chômeurs de longue durée ne disposaient plus que de 9, 8 ou 6 mois de droit, alors que le nouveau régime prévoit en principe au moins douze mois. L’ONEM analyse les dossiers concernés ; leur nombre n’est pas publié.",
+   "question": "<a href=\"__EMPLOI__#decision\">Que peuvent faire les pouvoirs publics ?</a>",
+   "source": "<a href=\"https://www.onem.be/actualites/2026/09/11/consequences-de-larret-de-la-cour-constitutionnelle-du-10-septembre-2026\" target=\"_blank\" rel=\"noopener\">ONEM, conséquences de l’arrêt du 10/09/2026</a>"
+  },
+  {
+   "date": "2026-09-10",
+   "date_txt": "10 septembre 2026",
+   "type": "officiel",
+   "theme": "emploi",
+   "texte": "Taux d’emploi des 20-64 ans au 2e trimestre 2026 : <b>72,9 %</b> en Belgique (données corrigées des variations saisonnières), stable depuis un an, contre 76,4 % dans l’Union. Eurostat publie le même jour les séries annuelles 2025 utilisées dans les fiches 05 à 07.",
+   "question": "<a href=\"__EMPLOI__#f-emploi\">Où se situe l’écart avec la moyenne européenne ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, lfsi_emp_q (mise à jour du 10/09/2026)</a>"
   },
   {
    "date": "2026-09-01",
