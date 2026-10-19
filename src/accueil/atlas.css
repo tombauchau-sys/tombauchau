@@ -400,3 +400,8 @@ nav.top .ddp a.ddq{display:block;height:auto;border:0;margin:0 0 12px;padding:6p
 @media (max-width:640px){.trend table{font-size:14px}.trend td b{font-size:15px}}
 @media (max-width:480px){.facts8 b{font-size:22px;white-space:normal;overflow-wrap:anywhere}}
 @media (max-width:480px){.kg .v{font-size:24px;overflow-wrap:anywhere}.yearpick{flex-wrap:wrap;gap:8px 12px}.yearpick input{width:100%}}
+.methode .mtbib{font:600 18px var(--sans);margin-top:14px}.methode .mtbib a{color:inherit;text-underline-offset:4px}
+.ranks .rkcrit{margin-top:18px;border:1.5px solid var(--line);border-radius:16px;background:#fff;padding:14px 20px}
+.ranks .rkcrit summary{cursor:pointer;font-weight:700;font-size:15px}
+.ranks .rkcrit summary:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.ranks .rkcrit ul{margin:12px 0 4px;padding-left:20px}.ranks .rkcrit li{font-size:15px;line-height:1.5;margin:0 0 9px}

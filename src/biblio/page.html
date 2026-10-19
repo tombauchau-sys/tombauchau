@@ -1,0 +1,40 @@
+<main id="top">
+<section class="sec papier bb-page" id="bbPage" data-style="apa" aria-labelledby="bbT">
+  <div class="wrap">
+    <span class="kick">Méthode · bibliographie · __BBN__ références</span>
+    <h1 class="giant" id="bbT">Toutes nos <span>sources.</span></h1>
+    <p class="lede">Chaque chiffre, étude, texte de loi ou ouvrage cité sur Au plus Juste, au même endroit, dans deux styles de citation universitaires : APA (7<sup>e</sup> édition) et Chicago (auteur-date, 17<sup>e</sup> édition). Choisissez le style, cherchez un auteur ou filtrez par dossier.</p>
+
+    <div class="bb-tools">
+      <div class="bb-row">
+        <div class="bb-style" role="group" aria-label="Style de citation"><span>Style</span><button type="button" data-s="apa" aria-pressed="true">APA 7</button><button type="button" data-s="chi" aria-pressed="false">Chicago</button></div>
+        <label for="bbQ"><span>Chercher</span><input type="search" id="bbQ" autocomplete="off" placeholder="Auteur, titre, revue, code Eurostat…"></label>
+        <label for="bbF"><span>Cité dans</span><select id="bbF"><option value="">Tout le site</option>__BBOPTS__</select></label>
+      </div>
+      <nav class="bb-toc" aria-label="Rubriques de la bibliographie">__BBTOC__</nav>
+      <p class="bb-count" id="bbN" aria-live="polite"></p>
+    </div>
+
+    __BBLIST__
+    <p class="bb-none" id="bbNone" hidden>Aucune référence ne correspond. Essayez un autre mot ou un autre dossier.</p>
+
+    <div class="bb-how" id="b-methode">
+      <h2 class="sub">Comment cette bibliographie est établie</h2>
+      <ul>
+        <li><b>Origine.</b> Elle rassemble les listes de sources des onze dossiers, les études citées dans leurs tableaux, les auteurs de la partie « Les grands penseurs », les sources du lexique, de la carte, des classements et de la fiche chômage.</li>
+        <li><b>Vérification.</b> Les __BBDATA__ jeux de données d’Eurostat portent leur titre officiel et leur date de dernière mise à jour, relevés dans le catalogue d’Eurostat le 19 octobre 2026. Pour __BBCR__ articles, les auteurs (prénoms compris), la revue, le volume, le numéro, les pages et le DOI ont été contrôlés dans la base <a href="https://www.crossref.org/" target="_blank" rel="noopener">Crossref</a> ; ils portent la mention « métadonnées vérifiées ». Les autres références reprennent les informations publiées par l’éditeur ou l’institution.</li>
+        <li><b>Ce qui reste à vérifier.</b> Quand un titre exact n’a pas encore pu être relevé, il est décrit entre crochets et signalé « à vérifier » plutôt qu’inventé.</li>
+        <li><b>Classiques.</b> Pour les œuvres anciennes (Platon, Smith, Kant, Marx…), l’année indiquée est celle de la première publication ; l’édition consultée n’est pas précisée.</li>
+        <li><b>Prénoms.</b> En Chicago, les prénoms sont écrits en entier quand la source les donne ; sinon, les initiales sont conservées.</li>
+        <li><b>Presse.</b> Un article de presse ne sert qu’à dater un événement ; il n’est jamais la source d’un chiffre.</li>
+        <li><b>Contrôle des chiffres.</b> La correspondance entre chaque chiffre du site et sa source est tenue dans le <a href="__REGISTRE__">registre de vérification</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="meta"><span>Au plus Juste · Bibliographie · établie le 19 octobre 2026</span><span><a href="mailto:contact@auplusjuste.be?subject=Bibliographie">Signaler une erreur</a> · <a href="__HOME__#methode">Méthode →</a></span></div>
+  <div class="wm" aria-hidden="true">Au plus Juste</div>
+</footer>

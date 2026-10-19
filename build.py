@@ -32,6 +32,7 @@ PAGES = {
     '__COMPARER__': ('comparer.html', 'https://claude.ai/artifact/P1ppwNCEvjgmHgZ9VkbXmD'),
     '__LEXIQUE__': ('lexique.html', 'https://claude.ai/artifact/LQDyy5p1qNjdLvMPncXWce'),
     '__NOUVEAUTES__': ('nouveautes.html', 'https://claude.ai/artifact/MKkMEQ9idW3eqNF3dmgM98'),
+    '__BIBLIO__': ('bibliographie.html', 'https://claude.ai/artifact/QTMzZD1FWW3XYzuJknJnrQ'),
 }
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,6 +86,7 @@ SEO_TITLES = {
     'nouveautes.html': 'Nouveautés et corrections · Au plus Juste',
     'lexique.html': 'Lexique politique, économique et européen · Au plus Juste',
     'registre-verification.html': 'Registre de vérification des chiffres · Au plus Juste',
+    'bibliographie.html': 'Bibliographie complète, APA 7 et Chicago · Au plus Juste',
 }
 AUTHOR = {'@type': 'Person', 'name': 'Tom Bauchau'}
 # Descriptions pour les moteurs de recherche (160 caractères au plus)
@@ -452,6 +454,18 @@ def build_lexique():
     return head + nav + body + '<script>' + js + '</script>\n', title, desc
 
 
+def build_biblio():
+    sys.path.insert(0, str(SRC / 'biblio'))
+    import build_biblio as BB
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
+    body, bcss, js, n = BB.build(read, NAV_SIMPLE, A11Y_INIT)
+    title = 'Bibliographie · Au plus Juste'
+    desc = f'Les {n} sources d’Au plus Juste (statistiques officielles, textes, études, ouvrages, presse) en APA 7 et en Chicago, avec les dossiers où elles sont citées.'
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + bcss + '</style>\n'
+    return head + NAV_SIMPLE + body + '<script>' + js + '</script>\n', title, desc
+
+
 def build_nouveautes():
     """Page « Nouveautés et corrections » : journal du site, journaux des dossiers (repris automatiquement) et calendrier des prochaines mises à jour."""
     import html as H
@@ -532,7 +546,7 @@ def build_nouveautes():
 
 def main():
     artifact = '--artifact' in sys.argv
-    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer, 'lexique.html': build_lexique, 'nouveautes.html': build_nouveautes}
+    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer, 'lexique.html': build_lexique, 'nouveautes.html': build_nouveautes, 'bibliographie.html': build_biblio}
     for n in DOSSIERS:
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
     outdir = ROOT / '.artifacts'
@@ -540,7 +554,7 @@ def main():
         html, title, desc = fn()
         html = shared(html)
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|BIBLIO|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc, fname), encoding='utf-8')

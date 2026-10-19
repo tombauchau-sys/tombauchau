@@ -453,3 +453,4 @@ html.calm .cj-tip{box-shadow:none}
   .pen dl{grid-template-columns:1fr;gap:4px}
   .pen dt{padding-top:14px}
 }
+.bbl{font:600 17px var(--sans);margin:10px 0 0}.bbl a{color:inherit;text-underline-offset:4px}
