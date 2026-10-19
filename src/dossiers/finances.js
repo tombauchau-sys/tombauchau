@@ -198,6 +198,28 @@
     lines(hl,{t0:1995,t1:2025,years:MOB?[1995,2010,2025]:[1995,2000,2005,2010,2015,2020,2025],h:MOB?340:440,series:[{n:'Italie',v:LT.IT,c:'#A69C8F',dash:1,dy:-24},{n:'France',v:LT.FR,c:'#7FB6A3',w:2.5,dy:-6},{n:'Allemagne',v:LT.DE,c:'#EDE6DC',w:2.5,dy:26},{n:'Belgique',v:LT.BE,c:'#C9773A',w:4,dy:12}],min:-1,max:13,ticks:[0,4,8,12],grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',refs:[],events:[{y:2011,t:'crise de la zone euro'}],label:'Taux à dix ans, moyenne annuelle 1995-2025 : Belgique de 7,48 % à 3,17 % (−0,15 % en 2020), Allemagne de 6,85 % à 2,59 %, France 3,35 % en 2025, Italie 3,59 % en 2025'});
   })();
 
+  /* 4d. Fiche 09 : les 27 en 2025 */
+  (function(){
+    var P=DATA.eu2025,A=DATA.eu2025agg,box=D.getElementById('euScatter'),W=MOB?400:1000,Hh=MOB?380:520,L=MOB?40:60,R=W-(MOB?14:30),T=20,B=Hh-40,x0=20,x1=150,y0=-9,y1=4;
+    CJD.set('euScatter',['Pays','Dette (% du PIB)','Solde (% du PIB)','Intérêts payés (% du PIB)'],P.map(function(r){return [r[0],r[1],r[2],r[3]]}).concat([['Union européenne',A[0],A[1],A[2]]]),'2025, notification d’avril 2026. Eurostat, gov_10dd_edpt1.');
+    function X(v){return L+(v-x0)/(x1-x0)*(R-L)} function Y(v){return T+(y1-v)/(y1-y0)*(B-T)}
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette et solde 2025 des 27 pays. Belgique : dette 107,9 %, solde −5,2 %. France 115,6 % et −5,1 %. Italie 137,1 % et −3,1 %. Grèce 146,1 % et +1,7 %. Roumanie 59,3 % et −7,9 %. Pologne 59,7 % et −7,3 %. Union 81,7 % et −3,1 %.'});
+    [20,60,100,140].forEach(function(v){s.appendChild(el('line',{x1:X(v),x2:X(v),y1:T,y2:B,stroke:'#E3E0D8'}));s.appendChild(el('text',{x:X(v),y:Hh-14,'text-anchor':'middle',style:TX+'#6A665F'},v+' %'))});
+    [-8,-4,0,4].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v?'#E3E0D8':'#1A1A1A','stroke-width':v?1:1.2}));s.appendChild(el('text',{x:L-8,y:Y(v)+5,'text-anchor':'end',style:TX+'#6A665F'},(v>0?'+':'')+String(v).replace('-','−')))});
+    s.appendChild(el('line',{x1:X(60),x2:X(60),y1:T,y2:B,stroke:'#E2402B','stroke-dasharray':'5 5'}));
+    s.appendChild(el('line',{x1:L,x2:R,y1:Y(-3),y2:Y(-3),stroke:'#E2402B','stroke-dasharray':'5 5'}));
+    s.appendChild(el('text',{x:X(60)+6,y:T+14,style:TX+'#E2402B'},'60 %'));s.appendChild(el('text',{x:R-4,y:Y(-3)-6,'text-anchor':'end',style:TX+'#E2402B'},'−3 %'));
+    var lab={'Belgique':1,'France':1,'Italie':1,'Grèce':1,'Roumanie':1,'Pologne':1,'Allemagne':1,'Espagne':1,'Pays-Bas':!MOB,'Hongrie':!MOB,'Autriche':!MOB,'Danemark':!MOB,'Chypre':!MOB},off={'France':[8,-10],'Belgique':[-10,20],'Pologne':[8,-8],'Roumanie':[8,14],'Autriche':[-8,-10],'Hongrie':[8,-6],'Allemagne':[8,-8]};
+    var g=el('g',{'class':'fadein'});
+    P.forEach(function(r){var be=r[0]==='Belgique',cx=X(r[1]),cy=Y(r[2]);
+      g.appendChild(el('circle',{cx:cx,cy:cy,r:be?9:6,fill:be?'#E2402B':'#A69C8F',stroke:'#1A1A1A','stroke-width':be?2:1,'fill-opacity':be?1:.75}));
+      if(lab[r[0]]){var o=off[r[0]]||[8,4],end=o[0]<0;g.appendChild(el('text',{x:cx+o[0],y:cy+o[1],'text-anchor':end?'end':'start',style:'font-family:var(--sans);font-weight:'+(be?700:500)+';font-size:'+(MOB?12:14)+'px;fill:'+(be?'#E2402B':'#1A1A1A')},r[0]+(be?' '+fr(r[1])+' % ; '+sg(r[2])+' %':'')))}
+    });
+    g.appendChild(el('rect',{x:X(A[0])-6,y:Y(A[1])-6,width:12,height:12,fill:'#1A1A1A',transform:'rotate(45 '+X(A[0])+' '+Y(A[1])+')'}));
+    g.appendChild(el('text',{x:X(A[0])+10,y:Y(A[1])+18,style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?12:14)+'px;fill:#1A1A1A'},'Union'));
+    s.appendChild(g);box.appendChild(s);
+  })();
+
   /* 5. Recherche */
   (function(){
     var Q=[
@@ -226,7 +248,7 @@
       {q:'Les règles budgétaires européennes limitent-elles les déficits ?',j:'Une méta-analyse de 30 études et une étude quasi expérimentale sur le critère de 3 %. Effet probable mais estimé avec peu de précision quand on corrige les biais, d’où « Débattu ».',c:'Des évaluations du nouveau cadre européen de 2024, fondé sur une trajectoire de dépenses nettes, une fois plusieurs années de données disponibles.',b:['b-de','Débattu'],v:'Plutôt oui, mais l’effet est moins sûr qu’on ne le dit. Le seuil de 3 % attire les déficits vers lui et réduit les déficits très élevés ; mais une fois corrigés le biais de publication et le fait que les pays vertueux adoptent plus volontiers des règles, l’effet moyen des règles n’est plus statistiquement significatif.',
        st:[{a:'Heinemann, Moessinger et Yeter, 2018',t:'30 études publiées sur l’effet des règles budgétaires chiffrées',l:0,lt:'méta-analyse',p:'Les études concluent en moyenne à un effet modérateur des règles. Cet effet s’affaiblit quand les études ne tiennent pas compte du choix des pays d’adopter une règle, et un biais de publication est détecté ; ensemble, ces biais ramènent la précision des estimations sous les seuils usuels.',u:'https://doi.org/10.1016/j.ejpoleco.2017.03.008',s:'European Journal of Political Economy, 51, 69-92'},
            {a:'Caselli et Wingender, 2021',t:'Pays de l’Union, distribution des déficits avant et après le critère de Maastricht',l:3,p:'Le seuil de 3 % agit comme un « aimant » : la distribution des déficits présente environ 20 % de masse en excès autour du plafond par rapport à une situation sans règle, surtout parce que les déficits très élevés deviennent plus rares (résultats du document de travail du FMI de 2018, publié en revue en 2021).',u:'https://doi.org/10.1016/j.euroecorev.2021.103748',s:'European Economic Review, 136, 103748'}],
-       x:'La Belgique est sous procédure de déficit excessif depuis juillet 2024 (fiche 02). Le nouveau cadre européen (règlement (UE) 2024/1263) n’a pas encore été évalué.'}];
+       x:'La Belgique est sous procédure de déficit excessif depuis juillet 2024 (fiche 02) ; le Conseil l’a mise en suspens le 3 juillet 2026, la trajectoire convenue étant respectée (fiche 09). Le nouveau cadre européen (règlement (UE) 2024/1263) n’a pas encore été évalué.'}];
     function lvl(n,t){var M={1:'corrélation simple',2:'avant-après, témoin imparfait',3:'groupes comparables',4:'expérience naturelle',5:'tirage au sort'};return '<span class="lvl"><em>'+(n?'Évaluation d’impact · '+M[n]:t)+'</em></span>'}
     D.getElementById('rq').innerHTML=Q.map(function(q,i){return '<article class="rq" data-r><div class="qh"><span class="qn">'+(i+1)+'</span><div><h3>'+q.q+'</h3><div class="verd"><span class="bdg '+q.b[0]+'">'+q.b[1]+'</span>'+(q.b2?'<span class="bdg '+q.b2[0]+'">'+q.b2[1]+'</span>':'')+'<p>'+q.v+'</p>'+(q.j?'<div class="why-b"><p><b>Pourquoi ce badge :</b> '+q.j+'</p><p><b>Ce qui le ferait changer :</b> '+q.c+'</p></div>':'')+'</div></div></div><ul class="studies">'+q.st.map(function(s){return '<li class="study"><div class="meta"><span>'+s.s+'</span>'+lvl(s.l,s.lt)+'</div><h4>'+s.a+' · '+s.t+'</h4><p>'+s.p+'</p><a href="'+s.u+'" target="_blank" rel="noopener">Lire la source ↗</a></li>'}).join('')+'</ul><p class="unknown">'+q.x+'</p></article>'}).join('');
   })();
@@ -261,7 +283,7 @@
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','histChart','debtChart','subChart','defChart','subDef','revExp','cofChart','intChart','invChart','rgChart','pbChart','holdChart','ltChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','histChart','debtChart','subChart','defChart','subDef','revExp','cofChart','intChart','invChart','rgChart','pbChart','holdChart','ltChart','euScatter'].forEach(function(id){io.observe(D.getElementById(id))});
   (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
   (function(){
   })();

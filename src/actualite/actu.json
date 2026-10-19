@@ -84,6 +84,15 @@
    "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/gov_10q_ggnfa/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, gov_10q_ggnfa (mise à jour du 21/07/2026)</a>"
   },
   {
+   "date": "2026-07-03",
+   "date_txt": "3 juillet 2026",
+   "type": "officiel",
+   "theme": "finances",
+   "texte": "Le Conseil de l’Union met en suspens la procédure de déficit excessif ouverte contre la Belgique : la trajectoire convenue est respectée (dépenses nettes : +3,7 % en 2025 pour un plafond de 3,6 %, écart couvert par la clause défense). Prévisions de la Commission : déficit de 5,2 % du PIB en 2026 et 5,4 % en 2027, dette de 110,5 % puis 112,8 %.",
+   "question": "<a href=\"__FINANCES__#f-europe\">La Belgique sous surveillance européenne : qu’est-ce que cela implique ?</a>",
+   "source": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-11113-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">Conseil de l’UE, document 11113/26</a>"
+  },
+  {
    "date": "2026-06-12",
    "date_txt": "12 juin 2026",
    "type": "officiel",
