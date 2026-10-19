@@ -82,6 +82,24 @@
     marks:[[2025.25,12976,'12 976 en cellule (mars 2025)','#EDE6DC',-14,'end']],
     label:'Détenus et capacité officielle des prisons belges : 9 811 détenus pour 8 445 places en 2008 ; 12 581 pour 11 040 en 2024 ; 12 976 détenus en cellule au 31 mars 2025'},DK));
 
+  /* Fiche 04 : taux de détention des 27 */
+  (function(){
+    var dd=DATA.eu24.slice().sort(function(a,b){return a[1]-b[1]}),box=D.getElementById('prisEU');
+    CJD.set('prisEU',['Pays','Détenus pour 100 000 habitants (2024)','Part de détenus non définitivement jugés (%)'],DATA.eu24.slice().sort(function(a,b){return b[1]-a[1]}).map(function(c){return [c[0],c[1],c[2]]}),'Eurostat, crim_pris_cap et crim_pris_tri.');
+    var W=MOB?400:1000,row=MOB?22:24,T=8,L=MOB?96:150,R2=MOB?350:900,mn=0,mx=200,Hh=T+dd.length*row+30;
+    function X(v){return L+(v-mn)/(mx-mn)*(R2-L)}
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Détenus pour 100 000 habitants en 2024, de la Finlande (56,9) à la Hongrie (192,6). Belgique 106,5, Pays-Bas 66,6, Allemagne 70,5, France 117,5.'});
+    [0,50,100,150,200].forEach(function(v){s.appendChild(el('line',{x1:X(v),x2:X(v),y1:T,y2:Hh-24,stroke:'#3B332B'}));s.appendChild(el('text',{x:X(v),y:Hh-6,'text-anchor':'middle',style:TX+'#A69C8F'},v))});
+    var g=el('g',{'class':'pills'});
+    dd.forEach(function(c,i){var y=T+i*row+row/2,be=c[0]==='Belgique',nb=c[0]==='France'||c[0]==='Pays-Bas'||c[0]==='Allemagne';
+      g.appendChild(el('line',{x1:X(mn),x2:X(c[1]),y1:y,y2:y,stroke:be?'#C9773A':'#5A4F44','stroke-width':be?3:1.5,'class':'bar',style:'transform-origin:left;transition-delay:'+(i*0.025)+'s'}));
+      g.appendChild(el('circle',{cx:X(c[1]),cy:y,r:be?7:5,fill:be?'#C9773A':'#EDE6DC',stroke:'#1E1914','stroke-width':2}));
+      g.appendChild(el('text',{x:L-12,y:y+4,'text-anchor':'end',style:'font-family:var(--sans);font-weight:'+(be?700:500)+';font-size:'+(MOB?13:15)+'px;fill:'+(be?'#C9773A':'#EDE6DC')},c[0]));
+      if(be||nb||i===0||i===dd.length-1)g.appendChild(el('text',{x:X(c[1])+12,y:y+4,style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?13:14)+'px;fill:'+(be?'#C9773A':'#EDE6DC')},fr(c[1])));
+    });
+    s.appendChild(g);box.appendChild(s);
+  })();
+
   /* Recherche */
   (function(){
     var Q=[
@@ -137,7 +155,7 @@
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','crimeChart','darkChart','homChart','prisChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','crimeChart','darkChart','homChart','prisChart','prisEU'].forEach(function(id){io.observe(D.getElementById(id))});
   (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
   (function(){
   })();
