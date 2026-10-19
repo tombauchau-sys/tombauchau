@@ -22,6 +22,7 @@ SECTIONS = [('stat', 'Statistiques officielles', 'Jeux de données et tableaux d
             ('inst', 'Institutions, droit et textes officiels', 'Traités, lois, décisions, rapports et pages des institutions belges, européennes et internationales.'),
             ('rech', 'Recherche', 'Articles de revues à comité de lecture, documents de travail, rapports de recherche et thèses.'),
             ('livre', 'Ouvrages et œuvres de référence', 'Livres, classiques de la pensée politique, économique et sociale. Pour les classiques, l’année est celle de la première publication.'),
+            ('media', 'Documentaires', 'Programmes audiovisuels présentés dans les dossiers comme supports de discussion, avec une lecture critique ; ils ne valent jamais preuve.'),
             ('presse', 'Presse', 'Articles de presse utilisés uniquement pour dater un événement en cours ; ils ne valent pas confirmation officielle.')]
 
 

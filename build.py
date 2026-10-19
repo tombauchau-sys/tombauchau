@@ -537,6 +537,15 @@ def build_dossier(name):
                 f'<p>Ce que les chiffres ne tranchent pas, les auteurs l’interprètent : {who}, et les grandes lectures du débat, avec leurs critiques.</p>'
                 f'<p><a class="idgo" href="{idl}">Lire « Idées et interprétations » sur ce thème →</a></p></div></section>\n')
     body = body[:d1] + band_mid + body[d1:]
+    sys.path.insert(0, str(SRC / 'medias'))
+    import arte as ARTE
+    vs = ARTE.section(name, None)
+    if vs:
+        c = body.index('<section class="band grain cite"')
+        cc = body.rfind('<!--', 0, c)
+        if cc >= 0 and '-->' in body[cc:c] and body[body.index('-->', cc) + 3:c].strip() == '':
+            c = cc
+        body = body[:c] + vs + body[c:]
     mk = '<div id="approfondir" aria-hidden="true"></div>'
     assert mk in body, name
     # « Et ailleurs en Europe ? » après les fiches, juste avant « Recherche » : on compare mieux ce qu’on a déjà compris

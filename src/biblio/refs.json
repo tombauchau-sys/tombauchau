@@ -6978,5 +6978,168 @@
 "p": "651-692",
 "doi": "10.3982/ecta9113",
 "ok": "crossref"
+},
+{
+"t": "web",
+"a": "ARTE",
+"ti": "Les États peuvent-ils s’endetter sans fin ?",
+"url": "https://www.arte.tv/fr/videos/127469-002-A/les-etats-peuvent-ils-s-endetter-sans-fin/",
+"src": [
+"Finances"
+],
+"note": "collection « 42 » ; sous-titres consultés le 19 octobre 2026",
+"cat": "media"
+},
+{
+"t": "web",
+"a": "ARTE",
+"ti": "Tax Wars. La guerre des impôts",
+"url": "https://www.arte.tv/fr/videos/106711-000-A/tax-wars/",
+"src": [
+"Fiscalité"
+],
+"note": "documentaire ; sous-titres consultés le 19 octobre 2026",
+"cat": "media"
+},
+{
+"t": "web",
+"a": "ARTE",
+"ti": "Peut-on mieux répartir la richesse ?",
+"url": "https://www.arte.tv/fr/videos/115510-011-A/peut-on-mieux-repartir-la-richesse/",
+"src": [
+"Inégalités"
+],
+"note": "collection « 42 » ; sous-titres consultés le 19 octobre 2026",
+"cat": "media"
+},
+{
+"t": "web",
+"a": "ARTE",
+"ti": "Pourquoi se loger est-il si cher ?",
+"url": "https://www.arte.tv/fr/videos/115519-007-A/pourquoi-se-loger-est-il-si-cher/",
+"src": [
+"Logement"
+],
+"note": "collection « 42 » ; sous-titres consultés le 19 octobre 2026",
+"cat": "media"
+},
+{
+"t": "web",
+"a": "ARTE",
+"ti": "Faut-il repenser l’école ?",
+"url": "https://www.arte.tv/fr/videos/127323-005-A/les-questions-qui-fachent/",
+"src": [
+"Éducation"
+],
+"note": "« Les questions qui fâchent » ; sous-titres allemands consultés le 19 octobre 2026",
+"cat": "media"
+},
+{
+"t": "web",
+"a": "ARTE",
+"ti": "SOS santé",
+"url": "https://www.arte.tv/fr/videos/111747-002-A/arte-regards/",
+"src": [
+"Santé"
+],
+"note": "ARTE Regards ; sous-titres espagnols consultés le 19 octobre 2026",
+"cat": "media"
+},
+{
+"t": "web",
+"a": "ARTE",
+"ti": "Des prisons sans murs, un autre modèle carcéral",
+"url": "https://www.arte.tv/fr/videos/111747-003-A/arte-regards/",
+"src": [
+"Justice"
+],
+"note": "ARTE Regards ; sous-titres anglais consultés le 19 octobre 2026",
+"cat": "media"
+},
+{
+"t": "art",
+"a": "Hope, David; Limberg, Julian",
+"y": "2022",
+"ti": "The economic consequences of major tax cuts for the rich",
+"j": "Socio-Economic Review",
+"v": "20",
+"n": "2",
+"p": "539-559",
+"doi": "10.1093/ser/mwab061",
+"ok": "crossref",
+"src": [
+"Fiscalité",
+"Inégalités"
+],
+"cat": "rech"
+},
+{
+"t": "off",
+"a": "Cour de justice de l’Union européenne",
+"y": "2024",
+"date": "10 septembre",
+"ti": "Arrêt Commission c. Irlande et Apple, affaire C-465/20 P (communiqué de presse)",
+"url": "https://curia.europa.eu/jcms/jcms/p1_4551743",
+"src": [
+"Fiscalité"
+],
+"cat": "inst"
+},
+{
+"t": "off",
+"a": "Nations unies, Département des affaires économiques et sociales",
+"y": "2018",
+"date": "16 mai",
+"ti": "World Urbanization Prospects 2018 (communiqué de presse)",
+"url": "https://population.un.org/WUP/PUBLICATIONS/Files/WUP2018-PressRelease.pdf",
+"src": [
+"Logement"
+],
+"cat": "inst"
+},
+{
+"t": "web",
+"a": "OCDE",
+"y": "2022",
+"ti": "Implementation Framework of the Global Minimum Tax (consultation publique)",
+"url": "https://www.oecd.org/en/events/public-consultations/2022/03/implementation-framework-of-the-global-minimum-tax.html",
+"src": [
+"Fiscalité"
+],
+"cat": "inst"
+},
+{
+"t": "web",
+"a": "SPF Finances",
+"ti": "Pilier 2 (impôt minimum mondial)",
+"url": "https://financien.belgium.be/nl/node/17567",
+"src": [
+"Fiscalité"
+],
+"note": "page en néerlandais",
+"cat": "inst"
+},
+{
+"t": "rep",
+"a": "Eurostat",
+"y": "2020",
+"ti": "Government debt and link with the deficit",
+"url": "https://ec.europa.eu/eurostat/documents/3217494/11470676/KS-EK-20-002-EN-N.pdf/37f13094-3a02-3b9a-89c6-bb5b684cccd7?t=1603963411000",
+"num": "KS-EK-20-002",
+"src": [
+"Finances"
+],
+"cat": "inst"
+},
+{
+"t": "web",
+"a": "Ostrom, Elinor",
+"y": "2009",
+"ti": "Beyond Markets and States: Polycentric Governance of Complex Economic Systems (conférence Nobel)",
+"url": "https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/lecture/",
+"src": [
+"Logement"
+],
+"cat": "rech"
 }
 ]
