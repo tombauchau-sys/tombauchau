@@ -1,0 +1,60 @@
+{
+ "maj": "2026-10-19",
+ "maj_txt": "19 octobre 2026",
+ "items": [
+  {
+   "date": "2026-10-15",
+   "date_txt": "15 oct. 2026",
+   "type": "officiel",
+   "theme": "finances",
+   "texte": "Eurostat révise la croissance belge : <b>0,9 %</b> en 2024 et en 2025 (au lieu de 1,1 % et 1,0 %).",
+   "question": "<a href=\"__HOME__#atlas\">Une hausse du PIB veut-elle dire que la population s’enrichit ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/tec00115/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, tec00115</a>"
+  },
+  {
+   "date": "2026-10-15",
+   "date_txt": "15 oct. 2026",
+   "type": "presse",
+   "theme": "finances",
+   "texte": "Pas encore d’accord sur le budget fédéral pluriannuel jusqu’en 2029 ; le Premier ministre propose un « frein à l’endettement » si aucun accord n’est trouvé d’ici la fin de l’année. Les montants d’économies cités par la presse varient d’un article à l’autre : nous ne les reprenons pas.",
+   "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
+   "source": "<a href=\"https://www.vrt.be/vrtnws/en/2026/10/15/prime-minister-de-wever-insists-on-debt-brake-if-multi-year-budg/\" target=\"_blank\" rel=\"noopener\">VRT NWS, 15/10/2026</a> (presse)"
+  },
+  {
+   "date": "2026-09-01",
+   "date_txt": "1er sept. 2026",
+   "type": "officiel",
+   "theme": "justice",
+   "texte": "Le nouveau Code pénal entre en vigueur : les peines sont classées en huit niveaux.",
+   "question": "<a href=\"__JUSTICE__#recherche\">La prison réduit-elle la récidive ?</a>",
+   "source": "<a href=\"https://www.justice.belgium.be/fr/nouvelles/autres_communiques/1er_septembre_historique_entree_en_vigueur_du_nouveau_code_penal\" target=\"_blank\" rel=\"noopener\">SPF Justice, 1/09/2026</a>"
+  },
+  {
+   "date": "2026-07-21",
+   "date_txt": "21 juil. 2026",
+   "type": "officiel",
+   "theme": "finances",
+   "texte": "Dette publique trimestrielle : <b>109,1 %</b> du PIB en Belgique au 1er trimestre 2026 (107,9 % fin 2025), contre 88,9 % dans la zone euro et 82,9 % dans l’Union.",
+   "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/gov_10q_ggdebt/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, gov_10q_ggdebt</a>"
+  },
+  {
+   "date": "2026-06-12",
+   "date_txt": "12 juin 2026",
+   "type": "officiel",
+   "theme": "immigration",
+   "texte": "Le pacte européen sur la migration et l’asile, adopté en mai 2024, s’applique désormais.",
+   "question": "<a href=\"__IMMIGRATION__#recherche\">Durcir la politique d’asile fait-il baisser les demandes ?</a>",
+   "source": "<a href=\"https://www.consilium.europa.eu/fr/policies/eu-pact-migration-asylum/\" target=\"_blank\" rel=\"noopener\">Conseil de l’Union européenne</a>"
+  },
+  {
+   "date": "2026-03-01",
+   "date_txt": "1er mars 2026",
+   "type": "officiel",
+   "theme": "emploi",
+   "texte": "Réforme du chômage : droit limité à 24 mois au plus (12 mois de base, jusqu’à 12 de plus selon le passé professionnel), allocations d’insertion à 1 an. Pour les bénéficiaires déjà indemnisés, la fin du droit arrive par vagues entre le 1er janvier 2026 et le 1er juillet 2027. Ses effets sur l’emploi n’ont pas encore été évalués.",
+   "question": "<a href=\"__EMPLOI__#recherche\">Pourquoi la Belgique travaille-t-elle moins que ses voisins ?</a>",
+   "source": "<a href=\"https://www.onem.be/reforme-de-la-reglementation-du-chomage\" target=\"_blank\" rel=\"noopener\">ONEM, réforme de l’assurance chômage</a>"
+  }
+ ]
+}

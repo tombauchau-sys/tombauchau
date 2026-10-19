@@ -51,6 +51,84 @@ DOSSIERS = {
     'fiscalite': ('Fiscalité · Au plus Juste', 'La fiscalité en Belgique : niveau des prélèvements depuis 1965, composition (travail, consommation, patrimoine), qui paie selon le salaire, transferts entre Régions, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
     'pensions': ('Pensions et vieillissement · Au plus Juste', 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, histoire du système, état de la recherche et lectures plurielles. Chiffres vérifiés et sourcés.'),
 }
+IDEES_URLS = {n: 'https://claude.ai/artifact/' + a for n, a in {'climat': 'VSQ7zvw7aDJyKWqUKu5Aug', 'education': 'AMRJ2U7NegW5AzD95PKWiG', 'emploi': 'HwuyQSzV39s2PnFFe6bo1H', 'finances': '2jGiyiRwSYaouZwqYZd8Az', 'fiscalite': '597c859R7dZdzmAi3kqrX9', 'immigration': 'AZCpUCwhVPJytempQ4v3nR', 'inegalites': 'CGsfW5CV74JCsmDKD7h8ev', 'justice': 'WQKUUiNfLdN1Vti2fsUC15', 'logement': '3wKEV9mCrpNMCQxuJT56mh', 'pensions': '8hQCW6HC958PPTZ1zAhJkR', 'sante': 'GaSKgMSbkEetwMV6ywD1qh'}.items()}
+for _n in DOSSIERS:
+    PAGES['__IDEES_' + _n.upper() + '__'] = ('idees-' + _n + '.html', IDEES_URLS[_n])
+THEME_TITLES = {n: DOSSIERS[n][0].split(' · ')[0] for n in DOSSIERS}
+NAV_TPL = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+<nav class="top" aria-label="Navigation principale">
+  <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
+  <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
+  <a href="__HOME__" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
+  <a href="__HOME__#questions"{Q}><span class="lbl" data-t="Questions">Questions</span></a>
+  <a href="__HOME__#idees"{I}><span class="lbl" data-t="Idées">Idées</span></a>
+  <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
+  <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
+</nav>
+'''
+
+
+def nav_for(active=''):
+    return NAV_TPL.replace('{Q}', ' class="on"' if active == 'q' else '').replace('{I}', ' class="on"' if active == 'i' else '')
+
+
+def cut_section(body, sid):
+    """Retire la section id=sid (et son commentaire d’en-tête) ; renvoie (corps sans la section, section)."""
+    if f'id="{sid}"' not in body:
+        return body, ''
+    i = body.index(f'id="{sid}"')
+    s0 = body.rindex('<section', 0, i)
+    c0 = body.rfind('<!--', 0, s0)
+    if c0 >= 0 and body[c0:s0].strip().endswith('-->') and '\n' not in body[c0:s0].strip() and '<' not in body[c0 + 4:s0].strip()[:-3]:
+        s0 = c0
+    e = body.index('</section>', i) + len('</section>')
+    return body[:s0] + body[e:], body[s0:e]
+
+
+def fold(s):
+    import unicodedata
+    return ''.join(c for c in unicodedata.normalize('NFD', s.lower()) if unicodedata.category(c) != 'Mn')
+
+
+def author_slug(n):
+    return 'a-' + re.sub(r'[^a-z0-9]+', '-', fold(n)).strip('-')
+
+
+def tag_authors(pens):
+    """Ajoute un id stable à chaque carte d’auteur (pour l’index des auteurs)."""
+    out, pos = [], 0
+    for m in re.finditer(r'<details class="pen" data-r>(.*?class="pn-n">([^<]+))', pens, re.S):
+        out.append(pens[pos:m.start()] + f'<details class="pen" data-r id="{author_slug(m.group(2))}">' + m.group(1))
+        pos = m.end()
+    return ''.join(out) + pens[pos:]
+
+
+def split_js(name):
+    """Sépare le bloc « Lectures » (rendu des lectures plurielles) du reste du script du dossier."""
+    js = read(f'dossiers/{name}.js').replace('__DATA__', read(f'dossiers/{name}-data.json'))
+    a = js.index('var Lx')
+    s0 = js.rindex('(function(){', 0, a)
+    e = js.index("join('');", js.index("getElementById('reads').innerHTML=", a))
+    e1 = js.index('})();', e) + len('})();')
+    return js[:s0] + js[e1:], '(function(){var D=document;\n' + js[s0:e1] + '\n})();\n'
+
+
+def theory_parts(name):
+    body = read(f'dossiers/{name}-body.html')
+    body, pens = cut_section(body, 'penseurs')
+    body, lect = cut_section(body, 'lectures')
+    fl = '__' + name.upper() + '__'
+    def relink(h):
+        ids = set(re.findall(r'id="([^"]+)"', h))
+        return re.sub(r'href="#([^"]+)"', lambda m: m.group(0) if m.group(1) in ids else f'href="{fl}#{m.group(1)}"', h)
+    return body, relink(tag_authors(pens)) if pens else '', relink(lect)
+
+
+def authors_of(name):
+    _, pens, _ = theory_parts(name)
+    return re.findall(r'<details class="pen" data-r id="([^"]+)">.*?class="pn-n">([^<]+)', pens, re.S)
+
+
 HOME_DESC = 'Au plus Juste, outil citoyen : des chiffres vérifiés sur la Belgique et les 27 pays de l’Union. Notes des agences, budget public par fonction, dette, pauvreté, commerce entre pays, classements, avec sources et limites.'
 FICHE_DESC = 'Chômage en Belgique, 2025 : 6,2 % selon Statbel et Eurostat. Définition, sources croisées, ruptures de série, limites et sept lectures d’intellectuels.'
 
@@ -60,6 +138,7 @@ def read(p):
 
 
 def links(html, mode):
+    html = re.sub(r'__([A-Z]+)__#(penseurs|lectures|a-[a-z-]+)', r'__IDEES_\1__#\2', html)
     for ph, (site, art) in PAGES.items():
         html = html.replace(ph, site if mode == 'site' else art)
     return html
@@ -209,12 +288,49 @@ def cmp_script(ids, init):
             + read('compare/compare.js') + '\n' + init + '\n')
 
 
+def idees_section():
+    import html as H
+    cards, idx = [], {}
+    for n in DOSSIERS:
+        full = read(f'dossiers/{n}-body.html')
+        q = re.sub(r'<[^>]+>', '', re.search(r'<h2 id="t2min">(.*?)</h2>', full, re.S).group(1))
+        au = authors_of(n)
+        who = ', '.join(a for _, a in au) if au else 'Lectures des grands courants de pensée'
+        cards.append(f'<li data-r><a href="__IDEES_{n.upper()}__"><h3>{THEME_TITLES[n]}</h3><p>{H.escape(q)}</p><p><b>{H.escape(who)}</b></p></a></li>')
+        for slug, a in au:
+            idx.setdefault(a, []).append((n, slug))
+    meth = {'Socrate': 'questionner avant de répondre', 'René Descartes': 'douter avec méthode', 'Max Weber': 'séparer les faits et les valeurs', 'Jean-Paul Sartre': 'laisser le choix à celui qui décide'}
+    for a in meth:
+        idx.setdefault(a, [])
+    def key(a):
+        last = a.split(' et ')[0].split()[-1]
+        return fold(last)
+    items = []
+    for a in sorted(idx, key=key):
+        links = ' · '.join(f'<a href="__IDEES_{n.upper()}__#{slug}">{THEME_TITLES[n]}</a>' for n, slug in idx[a])
+        if a in meth:
+            links = (links + ' · ' if links else '') + f'<a href="#questions">Comment nous répondons ({meth[a]})</a>'
+        items.append(f'<li><b>{H.escape(a)}</b>{links}</li>')
+    return ('<section class="dz papier idees" id="idees" aria-labelledby="idH"><div class="w">'
+            '<p class="kicker" data-r>Rubrique théorique · les auteurs et les courants de pensée</p>'
+            '<h2 id="idH" data-r>Idées <span class="s">et interprétations.</span></h2>'
+            '<p class="lede" data-r>Ici, pas de chiffres nouveaux : les grands auteurs exposent leurs analyses et leurs interprétations, et les grands courants de pensée leurs lectures du débat. '
+            'Chaque auteur est situé dans son époque ; son idée est confrontée aux données et à ses critiques, et chaque énoncé porte son statut (fait, résultat d’études, interprétation, jugement normatif). '
+            'Les faits, les données des administrations et l’actualité sont dans la rubrique <a href="#questions">Questions</a>.</p>'
+            '<ul class="idg">' + ''.join(cards) + '</ul>'
+            '<div class="ida" data-r><h3>Index des auteurs</h3><ul>' + ''.join(items) + '</ul></div>'
+            '</div></section>')
+
+
 def build_home():
     src = read('accueil/head.html')
     head = src[:src.index('</style>')]
     add = read('accueil/atlas.css') + "\n.grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}\n"
     gate_html = src[src.index('<section class="gate grain"'):src.index('<nav class="top"')]
+    sys.path.insert(0, str(SRC / 'actualite'))
+    import render as ACT
     body = read('accueil/body.html').replace('<div class="frame"><svg id="map"', '<div class="mframe"><svg id="map"')
+    body = body.replace('__ACTU_LIST__', ACT.home_list()).replace('__ACTU_MAJ__', ACT.load()['maj_txt']).replace('__IDEES_SECTION__', idees_section())
     js = src[src.index('<script>', src.index('<nav class="top"')):]  # script principal (le premier <script> est celui de la page d’entrée)
     pre = js[:js.index("  /* Lettres à faire monter */")].replace("var MAP=__MAP__;", "var MAP=__MAP__,DATA=__DATA__;")
     letters = """  /* Lettres à faire monter */
@@ -365,19 +481,25 @@ def build_dossier(name):
     css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
     title, desc = DOSSIERS[name]
     head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
-    nav = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
-<nav class="top" aria-label="Navigation principale">
-  <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
-  <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
-  <a href="__HOME__" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
-  <a href="__HOME__#dossiers" class="on"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
-  <a href="__HOME__#questions"><span class="lbl" data-t="Questions">Questions</span></a>
-  <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
-  <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
-</nav>
-'''
-    js = read(f'dossiers/{name}.js').replace('__DATA__', read(f'dossiers/{name}-data.json'))
-    body = read(f'dossiers/{name}-body.html')
+    nav = nav_for('q')
+    js, _ = split_js(name)
+    body, pens, lect = theory_parts(name)
+    body = re.sub(r'(<span class="kick" data-r>)Dossier (\d+) · une question du débat', r'\1Questions · les faits · thème \2', body, count=1)
+    sys.path.insert(0, str(SRC / 'actualite'))
+    import render as ACT
+    idl = '__IDEES_' + name.upper() + '__'
+    auth = [a for _, a in authors_of(name)]
+    who = ('les analyses de ' + ', '.join(auth[:-1]) + ' et ' + auth[-1]) if len(auth) > 1 else ('l’analyse de ' + auth[0] if auth else 'les lectures des grands courants de pensée')
+    band_top = ('<section class="band grain idlink" aria-label="Deux rubriques"><div class="wrap"><p><b>Ici, les faits</b> : données des administrations, statistiques européennes, études, actualité. '
+                f'<b>Les idées</b> ({who}, et les lectures des courants de pensée) sont dans la rubrique <a href="{idl}">Idées et interprétations →</a></p></div></section>\n')
+    m2 = re.search(r'<section class="twomin".*?</section>\n?', body, re.S)
+    body = body[:m2.end()] + ACT.theme_block(name) + band_top + body[m2.end():]
+    d0 = body.index('id="decision"')
+    d1 = body.index('</section>', d0) + len('</section>')
+    band_mid = (f'\n<section class="band grain idlink idnext" aria-labelledby="tId"><div class="wrap"><h2 id="tId">Et les idées ?</h2>'
+                f'<p>Ce que les chiffres ne tranchent pas, les auteurs l’interprètent : {who}, et les grandes lectures du débat, avec leurs critiques.</p>'
+                f'<p><a class="idgo" href="{idl}">Lire « Idées et interprétations » sur ce thème →</a></p></div></section>\n')
+    body = body[:d1] + band_mid + body[d1:]
     mk = '<div id="approfondir" aria-hidden="true"></div>'
     assert mk in body, name
     # « Et ailleurs en Europe ? » après les fiches, juste avant « Recherche » : on compare mieux ce qu’on a déjà compris
@@ -398,6 +520,40 @@ def build_dossier(name):
     return head + nav + body + '<script>' + read('dossiers/cjd.js') + '\n' + js + '\n' + read('dossiers/common.js') + '</script>\n<script>' + cmp + '</script>\n', title, desc
 
 
+def build_idees(name):
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
+    theme = THEME_TITLES[name]
+    title = f'{theme} : idées et interprétations · Au plus Juste'
+    auth = [a for _, a in authors_of(name)]
+    desc = (f'{theme} : ce qu’en disent ' + (', '.join(auth) if auth else 'les grands courants de pensée') + ', avec leurs critiques, et les lectures plurielles du débat. Rubrique théorique d’Au plus Juste.')[:300]
+    full = read(f'dossiers/{name}-body.html')
+    _, pens, lect = theory_parts(name)
+    q = re.search(r'<h2 id="t2min">(.*?)</h2>', full, re.S).group(1)
+    works = re.search(r'(<h3 class="mt">Œuvres citées dans les lectures</h3>\s*<ul>.*?</ul>)', full, re.S)
+    fl = '__' + name.upper() + '__'
+    hero = (f'<main id="top">\n<section class="hero brun grain idhero" aria-labelledby="t1"><div class="wrap">'
+            f'<span class="kick" data-r>Idées et interprétations · rubrique théorique</span>'
+            f'<div class="titlebox"><h1 class="title" id="t1">{theme}</h1></div>'
+            f'<p class="lede hq" data-r>{q}</p>'
+            '<p class="lede" data-r>Cette rubrique ne donne pas de chiffres nouveaux : elle présente des analyses et des interprétations. '
+            'Chaque auteur est situé dans son époque, son idée est résumée, puis confrontée aux données et à ses critiques ; chaque énoncé porte son statut (fait, résultat d’études, interprétation, jugement normatif). '
+            f'Les faits, les données des administrations et l’actualité sont dans la rubrique <a href="{fl}">Questions · {theme}</a>.</p>'
+            + ('' if pens else '<p class="lede" data-r>Aucun des auteurs de notre liste ne s’applique à ce thème sans lien forcé : seules les lectures des grands courants sont présentées ici.</p>')
+            + '</div></section>\n')
+    tail = ('<section class="sec papier" id="sources" aria-labelledby="tB"><div class="wrap"><span class="kick">Sources</span>'
+            '<h2 class="giant" id="tB">Les textes <span>cités.</span></h2>'
+            '<p>Les références de chaque auteur figurent dans sa carte (« Sources »).</p>'
+            + (works.group(1) if works else '') +
+            f'<p class="bbl"><a href="__BIBLIO__">Toutes les sources du site, en APA 7 et en Chicago →</a></p>'
+            f'<p class="bbl"><a href="{fl}">← Retour aux faits : Questions · {theme}</a></p></div></section>\n</main>\n'
+            f'<footer><div class="meta"><span>Au plus Juste · Idées et interprétations · {theme}</span><span><a href="mailto:contact@auplusjuste.be?subject=Id%C3%A9es%20%E2%80%93%20{name}">Signaler une erreur</a> · <a href="__HOME__#idees">Tous les thèmes →</a></span></div><div class="wm" aria-hidden="true">Au plus Juste</div></footer>\n')
+    body = hero + pens + lect + tail
+    _, js = split_js(name)
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + '</style>\n'
+    return head + nav_for('i') + body + '<script>document.documentElement.classList.add("js");\n' + js + '\n' + read('dossiers/common.js') + '</script>\n', title, desc
+
+
 def build_registre():
     import csv
     names = {'emploi':'Emploi','finances':'Finances publiques','pensions':'Pensions','immigration':'Immigration','justice':'Justice','sante':'Santé','education':'Éducation','inegalites':'Inégalités','climat':'Climat et énergie','logement':'Logement','fiscalite':'Fiscalité','fiche':'Fiche chômage','accueil':'Accueil et carte'}
@@ -408,17 +564,7 @@ def build_registre():
     return html, 'Registre de vérification · Au plus Juste', 'Chaque affirmation d’Au plus Juste contrôlée à sa source primaire : valeur affichée, source consultée, statut.'
 
 
-NAV_SIMPLE = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
-<nav class="top" aria-label="Navigation principale">
-  <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
-  <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
-  <a href="__HOME__" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>
-  <a href="__HOME__#dossiers"><span class="lbl" data-t="Dossiers">Dossiers</span></a>
-  <a href="__HOME__#questions"><span class="lbl" data-t="Questions">Questions</span></a>
-  <a href="__HOME__#methode"><span class="lbl" data-t="Méthode">Méthode</span></a>
-  <a href="__HOME__#apropos" class="lang"><span class="lbl" data-t="À propos">À propos</span></a>
-</nav>
-'''
+NAV_SIMPLE = nav_for('')
 A11Y_INIT = ("(function(){var D=document,H=D.documentElement,ab=D.getElementById('a11y'),calm=false;H.classList.add('js');"
             "try{calm=localStorage.getItem('cj-a11y')==='1'}catch(e){}"
             "function set(on){calm=on;H.classList.toggle('calm',on);ab.setAttribute('aria-pressed',on);ab.querySelector('b').textContent=on?'Activé':'Désactivé';try{localStorage.setItem('cj-a11y',on?'1':'0')}catch(e){}}"
@@ -549,12 +695,13 @@ def main():
     jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer, 'lexique.html': build_lexique, 'nouveautes.html': build_nouveautes, 'bibliographie.html': build_biblio}
     for n in DOSSIERS:
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
+        jobs[f'idees-{n}.html'] = (lambda n=n: build_idees(n))
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
         html = shared(html)
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|BIBLIO|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|BIBLIO|IDEES_[A-Z]+|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc, fname), encoding='utf-8')
