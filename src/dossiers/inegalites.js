@@ -94,6 +94,12 @@
     D.getElementById('wealthChart').appendChild(s);
   })();
 
+  /* Fiche 04 : S80/S20 */
+  (function(){
+    var S=DATA.s8020;
+    lines2(D.getElementById('s8020Chart'),{t0:2015,t1:2025,rm:MOB?60:150,years:MOB?[2015,2020,2025]:[2015,2017,2019,2021,2023,2025],min:3,max:5.5,ticks:[3,4,5],unit:'',dec:2,grid:'#D7D4CC',mute:'#6A665F',breaks:[2018.5],series:[{n:'France',v:S.FR,s:2015,c:'#C9A227',w:2.5,dy:-10},{n:'Allemagne',v:S.DE,s:2015,c:'#A69C8F',w:2.5,dy:4},{n:'Union',v:S.EU,s:2015,c:'#6A665F',dash:1,dy:20},{n:'Pays-Bas',v:S.NL,s:2015,c:'#7FB6A3',w:2.5},{n:'Belgique',v:S.BE,s:2015,c:'#E2402B',w:4}],label:'Rapport S80/S20, 2015-2025 : Belgique de 3,83 à 3,25 ; Pays-Bas 3,76 ; Union 4,62 ; Allemagne 4,68 ; France de 4,29 à 4,74'});
+  })();
+
   /* Recherche */
   (function(){
     var Q=[
@@ -151,7 +157,7 @@
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','povChart','ageChart','preChart','giniChart','wealthChart'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','povChart','ageChart','preChart','giniChart','wealthChart','s8020Chart'].forEach(function(id){io.observe(D.getElementById(id))});
   (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
   (function(){
   })();
