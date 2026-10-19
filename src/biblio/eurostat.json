@@ -54,7 +54,7 @@
 "migr_pop1ctz":["Population au 1er janvier par classe d'âge, sexe et nationalité","dataset","25.09.2026"],
 "migr_pop3ctb":["Population au 1er janvier par classe d'âge, sexe et pays de naissance","dataset","25.09.2026"],
 "migr_resfirst":["Permis délivrés pour la première fois par raison, durée de validité et nationalité","dataset","28.09.2026"],
-"nama_10_gdp":["Produit intérieur brut (PIB) et principales composantes (production, dépenses et revenu) - données annuelles","dataset","15.10.2026"],
+"nama_10_gdp":["Produit intérieur brut (PIB) et principales composantes (production, dépenses et revenu) - données annuelles","dataset","19.10.2026"],
 "nama_10_pe":["Population et emploi - comptes nationaux - données annuelles","dataset","16.10.2026"],
 "nrg_bal_peh":["Production d'électricité et de chaleur secondaire par type de combustible","dataset","02.06.2026"],
 "nrg_ind_id":["Dépendance aux importations énergétiques","dataset","16.07.2026"],
@@ -97,4 +97,8 @@
 "lfsa_eppga":["Personnes en emploi à temps partiel par âge - % de l'emploi total","dataset","10.09.2026"],
 "lfsa_ewhan2":["Moyenne d'heures de travail effectivement prestées par semaine dans l'activité principale (2008-2026)","dataset","10.09.2026"],
 "lfsa_igar":["Personnes non comprises dans les forces de travail ne recherchant pas d'emploi par raison principale","dataset","10.09.2026"],
-"ilc_iw01":["Taux de risque de pauvreté au travail par âge, sexe et activité la plus fréquente","dataset","05.10.2026"]}
+"ilc_iw01":["Taux de risque de pauvreté au travail par âge, sexe et activité la plus fréquente","dataset","05.10.2026"],
+"tec00131":["Taux d'épargne des ménages","table","14.10.2026"],
+"gov_10q_ggnfa":["Comptes non-financiers trimestriels des administrations publiques","dataset","21.07.2026"],
+"irt_lt_mcby_a":["Critère de convergence de l'UEM - données annuelles","dataset","25.02.2026"],
+"irt_lt_mcby_m":["Critère de convergence de l'UEM - données mensuelles","dataset","13.10.2026"]}

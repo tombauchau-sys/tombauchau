@@ -30,6 +30,15 @@
    "source": "<a href=\"https://www.vrt.be/vrtnws/en/2026/10/15/prime-minister-de-wever-insists-on-debt-brake-if-multi-year-budg/\" target=\"_blank\" rel=\"noopener\">VRT NWS, 15/10/2026</a> (presse)"
   },
   {
+   "date": "2026-10-13",
+   "date_txt": "13 octobre 2026",
+   "type": "officiel",
+   "theme": "finances",
+   "texte": "Taux à dix ans de l’État belge : <b>4,12 %</b> en septembre 2026, après 3,64 % en juillet et 3,76 % en août. L’écart avec l’Allemagne (3,47 %) est de 0,65 point ; la France emprunte à 4,44 %.",
+   "question": "<a href=\"__FINANCES__#f-taux\">Combien coûte d’emprunter pour l’État ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_m/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, irt_lt_mcby_m (mise à jour du 13/10/2026)</a>"
+  },
+  {
    "date": "2026-09-10",
    "date_txt": "10 septembre 2026",
    "type": "officiel",
@@ -64,6 +73,15 @@
    "texte": "Dette publique trimestrielle : <b>109,1 %</b> du PIB en Belgique au 1er trimestre 2026 (107,9 % fin 2025), contre 88,9 % dans la zone euro et 82,9 % dans l’Union.",
    "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
    "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/gov_10q_ggdebt/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, gov_10q_ggdebt</a>"
+  },
+  {
+   "date": "2026-07-21",
+   "date_txt": "21 juillet 2026",
+   "type": "officiel",
+   "theme": "finances",
+   "texte": "Déficit public trimestriel (corrigé des variations saisonnières) : <b>−4,8 %</b> du PIB au 1er trimestre 2026, après −5,7 % au 4e trimestre 2025 ; −3,1 % dans l’Union.",
+   "question": "<a href=\"__FINANCES__#f-deficit\">Qui dépense plus qu’il ne perçoit ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/gov_10q_ggnfa/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, gov_10q_ggnfa (mise à jour du 21/07/2026)</a>"
   },
   {
    "date": "2026-06-12",
