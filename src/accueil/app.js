@@ -216,6 +216,32 @@
   var dos=D.getElementById('dossier');
   function fcell(v,l,e){return '<div><b>'+v+'</b><span class="l">'+l+'</span><span class="e">'+e+'</span></div>'}
   function euCmp(v,eu,fmt){return 'UE : <em>'+fmt(eu)+'</em>'}
+
+  /* ======================= Tendances et actualité officielle (par pays) ======================= */
+  var EURO={AT:1,BE:1,BG:2026,HR:2023,CY:1,EE:1,FI:1,FR:1,DE:1,EL:1,IE:1,IT:1,LV:1,LT:1,LU:1,MT:1,NL:1,PT:1,SK:1,SI:1,ES:1};
+  /* Procédures de déficit excessif ouvertes : Conseil de l’UE, page consultée le 19 octobre 2026 (dernière revue le 10 juillet 2026) */
+  var EDP={BE:'26 juillet 2024',FR:'26 juillet 2024',HU:'26 juillet 2024',IT:'26 juillet 2024',PL:'26 juillet 2024',SK:'26 juillet 2024',RO:'3 avril 2020',AT:'8 juillet 2025',FI:'20 janvier 2026',BG:'10 juillet 2026'};
+  var EDPURL='https://www.consilium.europa.eu/fr/policies/excessive-deficit-procedure/';
+  var TRD=[['debt','Dette publique','% du PIB','teina225',1],['unemp','Chômage','% des actifs','une_rt_a',1],['emp','Taux d’emploi, 20-64 ans','%','lfsi_emp_a',1],['arope','Pauvreté ou exclusion sociale','% de la population','ilc_peps01n',1],['gini','Inégalités de revenu (Gini)','0 à 100','tessi190',0],['lifeexp','Espérance de vie à la naissance','ans','tps00205',0],['tax','Impôts et cotisations','% du PIB','gov_10a_taxag',1],['renew','Énergies renouvelables','% de la consommation finale','nrg_ind_ren',1]];
+  function trendRow(c,t){var o=S(c,t[0]),y0=2015,v0=at(o,y0),l=last(o);if(v0==null||!l||l[1]==null)return null;
+    var e0=at(S(EU,t[0]),y0),e1=at(S(EU,t[0]),l[0]),d=l[1]-v0,u=t[4]?' pt':(t[0]==='lifeexp'?' an'+(Math.abs(d)>=2?'s':''):'');
+    return {k:t[0],lab:t[1],unit:t[2],src:t[3],y1:l[0],v0:v0,v1:l[1],d:d,eu:(e0!=null&&e1!=null)?e1-e0:null,u:u}}
+  function trendTable(cs){var rows=TRD.map(function(t){return cs.map(function(c){return trendRow(c,t)})}).filter(function(r){return r.every(Boolean)});
+    var head='<tr><th scope="col">Indicateur</th>'+cs.map(function(c){return '<th scope="col">'+name(c)+'<br><small>2015 → dernière année</small></th>'}).join('')+'<th scope="col">Union<br><small>2015 → dernière année</small></th></tr>';
+    var body=rows.map(function(r){var a=r[0];return '<tr><th scope="row">'+a.lab+'<small>'+a.unit+' · '+esl(a.src)+'</small></th>'+r.map(function(x){return '<td>'+num(x.v0,1)+' → '+num(x.v1,1)+' <small>('+x.y1+')</small><b>'+sgn(x.d,1)+x.u+'</b></td>'}).join('')+(function(){var e=trendRow(EU,TRD.filter(function(t){return t[0]===a.k})[0]);return '<td>'+(e?num(e.v0,1)+' → '+num(e.v1,1)+' <small>('+e.y1+')</small><b>'+sgn(e.d,1)+e.u+'</b>':'—')+'</td>'})()+'</tr>'}).join('');
+    return '<div class="trtab" data-r><table><thead>'+head+'</thead><tbody>'+body+'</tbody></table></div>'}
+  function newsBox(c){var nm=name(c),e=EURO[c],x=EDP[c],L=le(c);
+    var li='<li><b>Monnaie</b> : '+(e?(e===1?L+' utilise l’euro.':L+' utilise l’euro depuis le 1er janvier '+e+'.'):L+' n’utilise pas l’euro.')+'</li>'+
+      '<li><b>Règles budgétaires européennes</b> : '+(x?'procédure de déficit excessif ouverte par le Conseil de l’UE le '+x+' (déficit au-dessus de 3 % du PIB, ou dette au-dessus de 60 % sans baisse suffisante). Le pays doit suivre une trajectoire de dépenses fixée par le Conseil.':(c==='MT'?'la procédure de déficit excessif ouverte en 2024 a été close par le Conseil le 12 juin 2026.':'pas de procédure de déficit excessif en cours.'))+' <span class="srcx">Source : <a href="'+EDPURL+'" target="_blank" rel="noopener">Conseil de l’UE</a>, état au 10 juillet 2026.</span></li>'+
+      (c==='BE'?'<li><b>Actualité belge</b> : budget fédéral, réforme du chômage, nouveau Code pénal… <a href="#questions">voir la rubrique Au plus Juste</a>, où chaque fait daté renvoie à une question du débat.</li>':'');
+    return '<ul class="trnews">'+li+'</ul>'}
+  function trendSection(cs,id){var one=cs.length===1;
+    return '<section class="dz papier trend" aria-labelledby="'+id+'"><div class="w"><p class="kicker" data-r>Tendances depuis 2015 · actualité officielle · Eurostat et Conseil de l’UE</p><h2 id="'+id+'" data-r>'+(one?'Ce qui a changé <span class="s">en dix ans.</span>':'Deux pays, <span class="s">dix ans d’évolution.</span>')+'</h2>'+
+      '<p class="lede" data-r>Valeur de 2015, dernière valeur publiée et écart en points (pt). Une évolution décrit ce qui a changé ; elle ne dit pas pourquoi. Plusieurs causes jouent en même temps (conjoncture, crise sanitaire, inflation de 2022, politiques publiques), et certaines séries comportent des ruptures de méthode signalées par Eurostat.</p>'+
+      trendTable(cs)+
+      '<h3 class="trh" data-r>L’actualité qui touche '+(one?'ce pays':'ces deux pays')+'</h3>'+
+      '<div class="'+(one?'':'grid2')+'" data-r>'+cs.map(function(c){return '<div>'+(one?'':'<p class="kicker">'+name(c)+'</p>')+newsBox(c)+'</div>'}).join('')+'</div>'+
+      '<p class="note2" data-r>Nous ne reprenons ici que des décisions et publications officielles, identiques pour les 27 pays. L’actualité politique propre à chaque pays n’est rédigée, pour l’instant, que pour la Belgique.</p></div></section>'}
   function renderA(c){
     var nm=name(c),p25=at(S(c,'population'),2026),p24=at(S(c,'population'),2025),gdp=at(S(c,'gdp_meur'),2025)*1e6,gdpEU=at(S(EU,'gdp_meur'),2025)*1e6;
     var gr=last(S(c,'growth')),inf=last(S(c,'inflation')),u=last(S(c,'unemp')),dt=last(S(c,'debt')),df=last(S(c,'deficit'));
@@ -231,6 +257,7 @@
       fcell(pc(dt[1]),'de dette publique, % du PIB, '+dt[0],euCmp(0,at(S(EU,'debt'),dt[0]),pc))+
       fcell(spc(df[1]),'de solde public, % du PIB, '+df[0],euCmp(0,at(S(EU,'deficit'),df[0]),spc))+
       '</div><p class="src8">'+srcs(['tps00001','nama_10_gdp','tec00115','tec00118','une_rt_a','teina225'],'PIB par habitant : calcul Au plus Juste')+'</p></div></section>';
+    h+=trendSection([c],'dA9');
     /* Budget */
     var tot=at(C[c].cofog.TOTAL,Y1),sp=at(C[c].cofog.GF10,Y1);
     h+='<section class="dz papier" aria-labelledby="dA2"><div class="w"><p class="kicker" data-r>Dépenses publiques par fonction · COFOG · Eurostat gov_10a_exp</p><h2 id="dA2" data-r>Où va <span class="s">l’argent public ?</span></h2>'+
@@ -357,7 +384,7 @@
       '<div class="grid2"><div class="chartcard" data-r id="kDebt"><h3>Dette publique</h3><p class="def">En % du PIB.</p></div><div class="chartcard" data-r id="kUnemp"><h3>Chômage</h3><p class="def">En % des actifs de 15 à 74 ans.</p></div>'+
       '<div class="chartcard" data-r id="kArope"><h3>Pauvreté ou exclusion sociale</h3><p class="def">En % de la population.</p></div><div class="chartcard" data-r id="kSoc"><h3>Protection sociale</h3><p class="def">Dépenses publiques, en % du PIB.</p></div></div>'+
       '<p class="keyrow" style="color:var(--cream)"><span><i style="border-color:#E2402B"></i>'+na+'</span><span><i style="border-color:#EDE6DC"></i>'+nb+'</span><span><i class="d" style="border-color:#A69C8F"></i>moyenne de l’Union</span></p></div></section>';
-    dos.innerHTML=h;afterRender();
+    h+=trendSection([a,b],'dC9');dos.innerHTML=h;afterRender();
     function three(id,k,from,to,min,refs){lineChart(D.getElementById(id),{dark:true,from:from,to:to,min:min,refs:refs,aria:na+', '+nb+' et Union',series:[{d:k==='soc'?C[EU].cofog.GF10:S(EU,k),color:'#A69C8F',dash:1,w:2,name:'UE'},{d:k==='soc'?C[b].cofog.GF10:S(b,k),color:'#EDE6DC',name:nb},{d:k==='soc'?C[a].cofog.GF10:S(a,k),color:'#E2402B',name:na}]})}
     three('kDebt','debt',2013,2025,0,[{v:60,label:'60 %'}]);three('kUnemp','unemp',2013,2025,0);three('kArope','arope',2015,2025);three('kSoc','soc',2013,2024);
     var KS={kDebt:['teina225'],kUnemp:['une_rt_a'],kArope:['ilc_peps01n'],kSoc:['gov_10a_exp|'+BK.gf10]};Object.keys(KS).forEach(function(id){D.getElementById(id).insertAdjacentHTML('beforeend','<p class="src">'+srcs(KS[id])+'</p>')});

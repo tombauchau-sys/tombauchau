@@ -42,7 +42,7 @@
 .bulle h2{font-family:var(--serif);font-size:44px;line-height:1}
 .bulle h2 i{font-style:normal;color:var(--grey);font-size:.7em;margin:0 .15em}
 .tag-s{border:1.5px solid var(--line);border-radius:999px;padding:3px 11px;font-size:12px;font-weight:600;white-space:nowrap}
-.kg{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin-top:16px}
+.kg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;margin-top:16px}
 .kg .v{display:block;font-weight:700;font-size:clamp(26px,2.6vw,34px);letter-spacing:-.02em;line-height:1}
 .kg .t{display:block;font-size:13px;line-height:1.3;margin-top:4px}
 .kg .e{display:block;font-size:12px;color:var(--grey);margin-top:2px}
@@ -161,8 +161,8 @@ html.calm .dz [data-r]{opacity:1!important;transform:none!important}
   .side-col{display:contents}
   .switch{order:1}.side-col>div:not(.switch){order:1}.mapcol{order:2}.bulle#bulle{order:3}
   .atlas .mframe{max-width:760px}
-  .grid2,.trade{grid-template-columns:1fr}
-  .facts8{grid-template-columns:1fr 1fr}
+  .grid2,.trade{grid-template-columns:minmax(0,1fr)}
+  .facts8{grid-template-columns:repeat(2,minmax(0,1fr))}
   .facts8>div{border-right:1px solid var(--hair)!important;padding-left:16px!important}
   .facts8>div:nth-child(2n){border-right:0!important}
   .facts8>div:nth-child(2n+1){padding-left:0!important}
@@ -358,3 +358,45 @@ nav.top .ddp a.ddq{display:block;height:auto;border:0;margin:0 0 12px;padding:6p
 .qdeb .qsrc{font-size:12.5px;color:var(--grey)}
 
 @media (max-width:640px){.unit{display:grid;width:100%;grid-template-columns:repeat(3,1fr);border-radius:16px}.unit button{padding:8px 6px;font-size:12.5px;line-height:1.25}.unit button+button{border-left:2px solid var(--ink)}}
+/* Rubrique Au plus Juste · actualité et méthode */
+.qdeb .qact{margin-top:34px}
+.qdeb .qact .qth{margin-top:0}
+.qdeb .qanote{font-size:14.5px;line-height:1.5;color:#3D3A35;max-width:760px;margin:0 0 16px}
+.qdeb .qanote b,.qdeb .qalist li>span{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 9px}
+.qdeb .off{background:var(--ink);color:#fff}
+.qdeb .pr{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--copper)}
+.qdeb .qalist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.qdeb .qalist li{display:flex;flex-direction:column;gap:7px;padding:16px 18px;border:1.5px solid var(--line);border-radius:16px;background:#fff;min-width:0}
+.qdeb .qalist li>span{align-self:flex-start}
+.qdeb .qalist time{font-size:13px;font-weight:700;color:var(--grey)}
+.qdeb .qalist p{margin:0;font-size:15px;line-height:1.45}
+.qdeb .qalist .qaq{font-size:14px}
+.qdeb .qalist .qaq a,.qdeb .qalist .qas a{color:inherit}
+.qdeb .qalist .qas{font-size:12.5px;color:var(--grey);margin-top:auto}
+.qdeb .qmeth{margin-top:22px;border:1.5px solid var(--line);border-radius:16px;background:#fff;padding:14px 20px}
+.qdeb .qmeth summary{cursor:pointer;font-weight:700;font-size:15px}
+.qdeb .qmeth summary:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.qdeb .qmeth ul{margin:12px 0 4px;padding-left:20px}
+.qdeb .qmeth li{font-size:15px;line-height:1.5;margin:0 0 9px}
+@media (max-width:1000px){.qdeb .qalist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.qdeb .qalist{grid-template-columns:1fr}}
+/* Tendances et actualité par pays */
+.trend .trtab{overflow-x:auto;margin-top:22px;-webkit-overflow-scrolling:touch}
+.trend table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px;background:#fff;border:1.5px solid var(--line);border-radius:14px}
+.trend th,.trend td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--rule)}
+.trend thead th{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--grey)}
+.trend thead th small{text-transform:none;letter-spacing:0;font-weight:400}
+.trend tbody th{font-weight:600}
+.trend tbody th small{display:block;font-weight:400;font-size:12.5px;color:var(--grey)}
+.trend tbody th small a{color:inherit}
+.trend td b{display:block;font-size:17px}
+.trend td small{color:var(--grey)}
+.trend .trh{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:36px 0 10px}
+.trend .trnews{margin:0;padding-left:18px}
+.trend .trnews li{font-size:15.5px;line-height:1.5;margin:0 0 8px}
+.trend .trnews a{color:inherit}
+.trend .srcx{display:block;font-size:12.5px;color:var(--grey)}
+.trend .note2{font-size:14px;color:var(--grey);margin-top:18px}
+@media (max-width:640px){.trend table{font-size:14px}.trend td b{font-size:15px}}
+@media (max-width:480px){.facts8 b{font-size:22px;white-space:normal;overflow-wrap:anywhere}}
+@media (max-width:480px){.kg .v{font-size:24px;overflow-wrap:anywhere}.yearpick{flex-wrap:wrap;gap:8px 12px}.yearpick input{width:100%}}
