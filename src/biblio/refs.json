@@ -5946,10 +5946,8 @@
 "a": "Ministère des Affaires sociales et de la Santé (Finlande); Kela",
 "y": "2020",
 "date": "6 mai",
-"ti": "[Communiqué sur les résultats de l’expérience de revenu de base 2017-2018]",
+"ti": "Results of the basic income experiment: small employment effects, better perceived economic security and mental wellbeing",
 "url": "https://stm.fi/en/-/perustulokokeilun-tulokset-tyollisyysvaikutukset-vahaisia-toimeentulo-ja-psyykkinen-terveys-koettiin-paremmaksi",
-"desc": true,
-"check": "titre exact à relever sur la page",
 "src": [
 "Emploi"
 ],
