@@ -3,6 +3,7 @@ SITE = [
     ('21 octobre 2026', [
         'Audit du site et premières corrections. La mention de méthode est réécrite sur l’accueil et dans les onze dossiers : elle précise le rôle de l’intelligence artificielle (collecte des données, rédaction des synthèses, code), limite le mot « vérifié » à ce qui figure au registre de vérification, et indique que la relecture par l’auteur est en cours et qu’une relecture extérieure est prévue. Les ajouts postérieurs au 15 octobre 2026 sont en cours d’inscription au registre.',
         'Finances publiques, accueil, carte et lexique : chiffres mis à jour avec la notification d’Eurostat du 21 octobre 2026 (dette belge de 108,1 % du PIB fin 2025, intérêts de 14,5 milliards d’euros, valeurs des 27 pays révisées).',
+        'Fiscalité, Finances publiques, accueil et carte : tables annuelles d’Eurostat révisées le 21 octobre 2026 (prélèvements obligatoires, recettes, dépenses par fonction, investissement public) ; une erreur de lecture corrigée dans la fiche 05 de la Fiscalité (successions et donations : 0,7 % du PIB et non 0,6 %).',
         'Quatre titres reformulés pour décrire au lieu de juger (Éducation, Immigration, Santé, Inégalités) ; notices Kuznets et Schmitt revues pour distinguer illustration, test et interprétation.',
     ]),
     ('19 octobre 2026', [

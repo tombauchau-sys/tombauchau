@@ -126,7 +126,7 @@
     var box=D.getElementById('cofChart'),W=MOB?400:1000,row=MOB?46:44,L=MOB?120:290,R=W-(MOB?20:150),mx=MOB?30:26,Hh=F.length*row+36;
     CJD.set('cofChart',['Fonction (COFOG)','Belgique 2024 (% du PIB)','Union 2024 (% du PIB)'],F.map(function(f){return [f[1],DATA.cofBE[f[0]],DATA.cofEU[f[0]]]}).concat([['Total',DATA.cofBE.TOTAL,DATA.cofEU.TOTAL]]));
     function X(v){return L+v/mx*(R-L)}
-    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dépenses publiques par fonction 2024, Belgique et Union, en % du PIB : protection sociale 20,4 contre 19,6 ; santé 8,0 contre 7,3 ; enseignement 6,3 contre 4,7'}),g=el('g',{'class':'pills'});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dépenses publiques par fonction 2024, Belgique et Union, en % du PIB : protection sociale 20,4 contre 19,5 ; santé 8,0 contre 7,3 ; enseignement 6,3 contre 4,7'}),g=el('g',{'class':'pills'});
     [0,5,10,15,20].forEach(function(v){s.appendChild(el('line',{x1:X(v),x2:X(v),y1:4,y2:Hh-28,stroke:'rgba(26,26,26,.2)'}));s.appendChild(el('text',{x:X(v),y:Hh-10,'text-anchor':'middle',style:TX+'#1A1A1A'},v+' %'))});
     F.forEach(function(f,i){var y=i*row+row/2+2,be=DATA.cofBE[f[0]],eu=DATA.cofEU[f[0]],d=Math.round((be-eu)*10)/10;
       g.appendChild(el('line',{x1:X(Math.min(be,eu)),x2:X(Math.max(be,eu)),y1:y,y2:y,stroke:'#1A1A1A','stroke-width':3,'class':'bar'}));
@@ -172,7 +172,7 @@
   /* 4b. Investissement */
   lines(D.getElementById('invChart'),{t0:1995,t1:2025,min:1.5,max:4.5,ticks:[2,3,4],grid:'#D7D4CC',mute:'#6A665F',ink:'#1A1A1A',years:MOB?[1995,2005,2015,2025]:[1995,2000,2005,2010,2015,2020,2025],
     events:[{y:2008,t:'écart max. : 1,7 pt'}],
-    series:[{n:'Union',v:DATA.inv.EU,c:'#6A665F',dash:1,dy:-4},{n:'Belgique',v:DATA.inv.BE,c:'#E2402B',w:4.5,dy:4}],label:'Investissement public 1995-2025 : Belgique de 2,2 % à 3,1 % du PIB, Union (depuis 2000) de 3,3 % à 3,9 %'});
+    series:[{n:'Union',v:DATA.inv.EU,c:'#6A665F',dash:1,dy:-4},{n:'Belgique',v:DATA.inv.BE,c:'#E2402B',w:4.5,dy:4}],label:'Investissement public 1995-2025 : Belgique de 2,2 % à 3,2 % du PIB, Union (depuis 2000) de 3,3 % à 3,9 %'});
   CJD.rename('invChart',['Union (% du PIB, depuis 2000)','Belgique (% du PIB)'],'Rupture de série en 2009 ; 2024-2025 provisoires. Eurostat ne publie pas l’agrégat de l’Union avant 2000.');
 
   /* 4b. Dynamique, détenteurs, taux (fiches 06-08) */
@@ -273,7 +273,7 @@
   (function(){
     var T={dette:'Fin 2025, la dette publique belge atteignait 108,1 % du PIB, soit 693 milliards d’euros, contre 81,5 % en moyenne dans l’Union européenne (Eurostat, gov_10dd_edpt1, notification d’octobre 2026).',
       def:'En 2025, le déficit public belge était de 5,2 % du PIB, dont 2,2 points d’intérêts, contre 3,1 % dans l’Union européenne (Eurostat, gov_10dd_edpt1).',
-      int:'Les pouvoirs publics belges ont payé 14,5 milliards d’euros d’intérêts en 2025, contre 8,6 milliards en 2021 en euros courants : +66 %. Une fois l’inflation déduite (8,6 milliards de 2021 valent environ 10,4 milliards de 2025), la hausse est d’environ 37 % (Eurostat, gov_10a_main, chiffres provisoires ; IPCH, prc_hicp_ainr ; calcul Au plus Juste).',
+      int:'Les pouvoirs publics belges ont payé 14,5 milliards d’euros d’intérêts en 2025, contre 8,6 milliards en 2021 en euros courants : +69 %. Une fois l’inflation déduite (8,6 milliards de 2021 valent environ 10,4 milliards de 2025), la hausse est d’environ 39 % (Eurostat, gov_10a_main, chiffres provisoires ; IPCH, prc_hicp_ainr ; calcul Au plus Juste).',
       ent:'La dette des Communautés et des Régions est passée de 12,6 % à 20,4 % du PIB entre 2015 et 2025 (Eurostat, gov_10dd_edpt1, secteur S1312).'};
     var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');
     function set(k){q.textContent=T[k];c.textContent='';cs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}

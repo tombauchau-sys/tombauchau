@@ -18,8 +18,8 @@
     g.addEventListener('input',function(){go.textContent=g.value+' %'});
     D.getElementById('reveal').addEventListener('click',function(){
       var v=+g.value;
-      vd.innerHTML=(Math.abs(v-45.1)<=4?'Bien vu : ':'Vous avez dit '+v+' %. ')+'En 2024, les impôts et cotisations sociales représentent 45,1 % du PIB en Belgique, contre 40,3 % dans l’Union : le troisième niveau le plus élevé des 27, après le Danemark et la France.<span class="down" aria-hidden="true">↓</span>';
-      vd.hidden=false;go.textContent='45,1 %';g.value=45;
+      vd.innerHTML=(Math.abs(v-45.1)<=4?'Bien vu : ':'Vous avez dit '+v+' %. ')+'En 2024, les impôts et cotisations sociales représentent 45,2 % du PIB en Belgique, contre 40,2 % dans l’Union : le troisième niveau le plus élevé des 27, après le Danemark et la France.<span class="down" aria-hidden="true">↓</span>';
+      vd.hidden=false;go.textContent='45,2 %';g.value=45;
     });
   })();
 
@@ -78,18 +78,18 @@
   lines2(D.getElementById('histChart'),o2({t0:1965,t1:2024,rm:MOB?78:200,min:20,max:50,ticks:[20,30,40,50],unit:' %',tdec:0,years:MOB?[1965,1985,2005,2024]:[1965,1970,1975,1980,1985,1990,1995,2000,2005,2010,2015,2020,2024],
     series:[{n:'pays moyen de l’OCDE',v:DATA.oecd.totO.v,s:1965,c:'#A69C8F',dash:1,dy:6},{n:'Belgique',v:DATA.oecd.tot.v,s:1965,c:'#C9773A',w:4.5,dy:-4}],
     label:'Recettes fiscales, cotisations sociales comprises, en % du PIB, définition de l’OCDE : Belgique 30,8 % en 1965, 44,1 % en 1987, 44,8 % en 2013 et 42,6 % en 2024 ; pays moyen de l’OCDE 24,9 % en 1965 et 34,1 % en 2024'},DK));
-  CJD.rename('histChart',['Pays moyen de l’OCDE','Belgique'],'Définition de l’OCDE (Revenue Statistics) : plus étroite que celle d’Eurostat, qui donne 45,1 % pour la Belgique en 2024.');
+  CJD.rename('histChart',['Pays moyen de l’OCDE','Belgique'],'Définition de l’OCDE (Revenue Statistics) : plus étroite que celle d’Eurostat, qui donne 45,2 % pour la Belgique en 2024.');
 
   var R=DATA.rank24,N={BE:'Belgique',DK:'Danemark',FR:'France',AT:'Autriche',LU:'Luxembourg',IT:'Italie',FI:'Finlande',SE:'Suède',EL:'Grèce',DE:'Allemagne',EU27_2020:'Union',NL:'Pays-Bas',SI:'Slovénie',HR:'Croatie',CY:'Chypre',PL:'Pologne',ES:'Espagne',PT:'Portugal',EE:'Estonie',SK:'Slovaquie',LV:'Lettonie',HU:'Hongrie',CZ:'Tchéquie',LT:'Lituanie',BG:'Bulgarie',MT:'Malte',RO:'Roumanie',IE:'Irlande'};
   var rows=Object.keys(R).map(function(k){return [N[k]||k,R[k],k==='BE'||k==='EU27_2020']}).sort(function(a,b){return b[1]-a[1]});
   rank(D.getElementById('rankChart'),{rows:rows,max:50,unit:'% du PIB, 2024',ink:'#1A1A1A',bar:'#A69C8F',hi:'#C0341E',
-    label:'Impôts et cotisations sociales en % du PIB, 2024, 27 pays : Danemark 45,5 %, France 45,3 %, Belgique 45,1 %, Union 40,3 %, Irlande 22,4 % (le PIB irlandais est gonflé par les multinationales)'});
+    label:'Impôts et cotisations sociales en % du PIB, 2024, 27 pays : Danemark 45,5 %, France 45,3 %, Belgique 45,2 %, Union 40,2 %, Irlande 22,6 % (le PIB irlandais est gonflé par les multinationales)'});
 
   /* Fiche 02 : sur quoi */
   var C=DATA.comp24;
   hb(D.getElementById('compChart'),{cats:['Impôts sur les revenus et bénéfices','Cotisations sociales','TVA','Autres impôts sur la production','Succession et donation','Autres impôts courants'],max:20,u:' %',ink:'#1A1A1A',L:300,
     series:[{n:'Belgique',v:[C.rev[0],C.ssc[0],C.tva[0],C.prod[0],C.cap[0],C.oth[0]],c:'#C0341E'},{n:'Union',v:[C.rev[1],C.ssc[1],C.tva[1],C.prod[1],C.cap[1],C.oth[1]],c:'#6A665F'}],
-    label:'Composition des prélèvements en % du PIB, 2024 : impôts sur les revenus et bénéfices Belgique 16,5, Union 12,8 ; cotisations sociales 15,4 et 14,0 ; TVA 6,1 et 7,1 ; autres impôts sur la production 6,0 et 5,8 ; succession et donation 0,7 et 0,3'});
+    label:'Composition des prélèvements en % du PIB, 2024 : impôts sur les revenus et bénéfices Belgique 16,6, Union 12,8 ; cotisations sociales 15,5 et 13,9 ; TVA 6,1 et 7,1 ; autres impôts sur la production 6,0 et 5,7 ; succession et donation 0,7 et 0,3'});
   CJD.rename('compChart',['Belgique','Union'],'Eurostat gov_10a_taxag, % du PIB, 2024. Autres impôts sur la production : impôts sur les produits hors TVA (accises, droits d’enregistrement…) et autres impôts sur la production (dont précompte immobilier). Succession et donation : impôts en capital (D91).');
 
   lines2(D.getElementById('structChart'),o2({t0:1965,t1:2024,rm:MOB?78:230,min:0,max:18,ticks:[0,5,10,15],unit:' %',tdec:0,years:MOB?[1965,1985,2005,2024]:[1965,1975,1985,1995,2005,2015,2024],
@@ -148,7 +148,7 @@
 
   /* Citer */
   (function(){
-    var T={pre:'En 2024, les impôts et cotisations sociales représentaient 45,1 % du PIB en Belgique, contre 40,3 % dans l’Union, le troisième niveau le plus élevé après le Danemark et la France (Eurostat, gov_10a_taxag).',
+    var T={pre:'En 2024, les impôts et cotisations sociales représentaient 45,2 % du PIB en Belgique, contre 40,2 % dans l’Union, le troisième niveau le plus élevé après le Danemark et la France (Eurostat, gov_10a_taxag).',
       sal:'En 2025, un célibataire sans enfant au salaire moyen paie en Belgique 38,8 % de son salaire brut en impôt et cotisations personnelles, contre 11,6 % à mi-salaire et 46,9 % à 167 % du salaire moyen (calcul Au plus Juste d’après Eurostat, earn_nt_net ; cotisations patronales non comprises).',
       pat:'En 2023, la Belgique prélevait 3,1 % du PIB en impôts sur le patrimoine (précompte immobilier, droits d’enregistrement, successions), contre 1,7 % pour le pays moyen de l’OCDE (OCDE, Revenue Statistics).',
       reg:'En 2019, les transferts implicites entre Régions via l’État fédéral et la sécurité sociale représentaient environ 7,1 milliards d’euros en faveur de la Wallonie, financés par la Flandre (environ 6,2 milliards) et Bruxelles (environ 0,9 milliard) (Cornille et al., Banque nationale de Belgique, 2021).'};
