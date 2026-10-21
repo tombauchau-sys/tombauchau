@@ -1,7 +1,16 @@
 {
- "maj": "2026-10-19",
- "maj_txt": "19 octobre 2026",
+ "maj": "2026-10-21",
+ "maj_txt": "21 octobre 2026",
  "items": [
+  {
+   "date": "2026-10-21",
+   "date_txt": "21 octobre 2026",
+   "type": "officiel",
+   "theme": "finances",
+   "texte": "Notification d’octobre d’Eurostat : dette publique belge de <b>108,1 %</b> du PIB fin 2025 (693 milliards d’euros, contre 107,9 % annoncés en avril), déficit inchangé à 5,2 %, intérêts de 2,3 % du PIB. Union : 81,5 % et −3,1 %. La Belgique reste quatrième pour la dette et troisième pour le déficit parmi les 27.",
+   "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-21102026-ap\" target=\"_blank\" rel=\"noopener\">Eurostat, communiqué du 21/10/2026</a> ; <a href=\"https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">gov_10dd_edpt1</a>"
+  },
   {
    "date": "2026-10-16",
    "date_txt": "16 octobre 2026",

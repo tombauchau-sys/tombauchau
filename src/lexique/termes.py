@@ -243,7 +243,7 @@ T('Administrations publiques', 'eco',
   al=['S13', 'secteur public', 'pouvoirs publics'], v=[FIN])
 T('Dette publique', 'eco',
   'Total des emprunts contractés par les administrations publiques et non encore remboursés, au sens du traité de Maastricht : dette brute (les actifs publics ne sont pas déduits), consolidée (les prêts entre administrations ne sont comptés qu’une fois) et à sa valeur nominale.',
-  al=['dette brute', 'dette de Maastricht', 'endettement public'], ex='Belgique : 107,9 % du PIB fin 2025 ; Union : 81,7 %.', v=[at(FIN, 'f-dette'), CMP])
+  al=['dette brute', 'dette de Maastricht', 'endettement public'], ex='Belgique : 108,1 % du PIB fin 2025 ; Union : 81,5 %.', v=[at(FIN, 'f-dette'), CMP])
 T('Dette nette', 'eco',
   'Dette brute dont on déduit certains actifs financiers des administrations publiques (dépôts, prêts, titres). Elle n’a pas de définition européenne unique, ce qui la rend moins comparable entre pays.',
   v=[at(FIN, 'f-dette')])
@@ -258,7 +258,7 @@ T('Déficit structurel', 'eco',
   al=['solde structurel'])
 T('Charge d’intérêts', 'eco',
   'Intérêts payés chaque année par les administrations publiques sur leur dette. Elle dépend du montant de la dette et du taux moyen payé ; comme la dette est refinancée progressivement, une hausse des taux ne s’y répercute que petit à petit.',
-  al=['intérêts de la dette', 'taux d’intérêt implicite'], ex='Belgique : 14,3 milliards d’euros en 2025, soit 2,2 % du PIB.', v=[at(FIN, 'f-interets')])
+  al=['intérêts de la dette', 'taux d’intérêt implicite'], ex='Belgique : 14,5 milliards d’euros en 2025, soit 2,3 % du PIB.', v=[at(FIN, 'f-interets')])
 T('Effet boule de neige', 'eco',
   'Dynamique par laquelle la dette augmente d’elle-même, en % du PIB, quand le taux d’intérêt moyen payé (r) dépasse le taux de croissance du PIB en valeur (g). À l’inverse, quand g dépasse r, le ratio de dette peut baisser même avec un léger déficit hors intérêts.',
   al=['r - g', 'r moins g'], v=[at(FIN, 'f-dette')])

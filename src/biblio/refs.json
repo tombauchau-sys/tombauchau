@@ -7141,5 +7141,20 @@
 "Logement"
 ],
 "cat": "rech"
+},
+{
+"t": "art",
+"a": "Huysmans, Jef",
+"y": "2000",
+"ti": "The European Union and the Securitization of Migration",
+"j": "Journal of Common Market Studies",
+"v": "38",
+"n": "5",
+"p": "751-777",
+"doi": "10.1111/1468-5965.00263",
+"src": [
+"Immigration"
+],
+"cat": "rech"
 }
 ]

@@ -18,7 +18,7 @@
     g.addEventListener('input',function(){go.textContent=fr(+g.value)+' Md€'});
     D.getElementById('reveal').addEventListener('click',function(){
       var v=+g.value,a=Math.abs(v-V);
-      vd.innerHTML=(a<1.5?'Bien vu : ':'Vous avez dit '+fr(v)+' milliards. ')+'C’est 14,3 milliards d’euros en 2025, environ 1 200 € par habitant. En 2024, les intérêts (13,5 milliards) dépassaient déjà les dépenses de défense (environ 8 milliards).<span class="down" aria-hidden="true">↓</span>';
+      vd.innerHTML=(a<1.5?'Bien vu : ':'Vous avez dit '+fr(v)+' milliards. ')+'C’est 14,5 milliards d’euros en 2025, environ 1 200 € par habitant. En 2024, les intérêts (13,6 milliards) dépassaient déjà les dépenses de défense (environ 8 milliards).<span class="down" aria-hidden="true">↓</span>';
       vd.hidden=false;go.textContent='14,3 Md€';g.value=V;
     });
   })();
@@ -50,7 +50,7 @@
     var host=D.getElementById('histChart'),V=DATA.hist,T0=1980,T1=2025,W=MOB?420:1000,Hh=MOB?340:440,L=MOB?40:56,R=W-(MOB?50:110),T=40,B=Hh-40,mn=60,mx=150;
     CJD.series(host,[{n:'Dette publique belge (% du PIB)',v:V}],T0);
     function X(y){return L+(y-T0)/(T1-T0)*(R-L)} function Y(v){return B-(v-mn)/(mx-mn)*(B-T)}
-    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette publique belge 1980-2025 : 76,8 % en 1980, pic de 138,9 % en 1993, 87,3 % en 2007, 107,9 % en 2025'});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette publique belge 1980-2025 : 76,8 % en 1980, pic de 138,9 % en 1993, 87,3 % en 2007, 108,1 % en 2025'});
     [[1980,1993,'boule de neige','rgba(226,64,43,.16)'],[1993,2007,'assainissement','rgba(127,182,163,.18)'],[2008,2011,'banques','rgba(201,119,58,.18)'],[2020,2021,'Covid','rgba(201,119,58,.18)']].forEach(function(p){
       s.appendChild(el('rect',{x:X(p[0]),y:T,width:X(p[1])-X(p[0]),height:B-T,fill:p[3]}));
       if(!MOB||p[0]<2000)s.appendChild(el('text',{x:(X(p[0])+X(p[1]))/2,y:T-10,'text-anchor':'middle',style:'font-family:var(--main);font-weight:600;font-size:'+(MOB?15:22)+'px;fill:#EDE6DC'},p[2]))});
@@ -58,13 +58,13 @@
     (MOB?[1980,1995,2010,2025]:[1980,1985,1990,1995,2000,2005,2010,2015,2020,2025]).forEach(function(y){s.appendChild(el('text',{x:X(y),y:Hh-12,'text-anchor':'middle',style:TX+'#A69C8F'},y))});
     var d=V.map(function(v,j){return (j?'L':'M')+X(T0+j).toFixed(1)+' '+Y(v).toFixed(1)}).join(' ');
     s.appendChild(el('path',{d:d,fill:'none',stroke:'#C9773A','stroke-width':4.5,'stroke-linejoin':'round','class':'drawline'}));
-    [[1993,138.9,'138,9 %',-14],[2007,87.3,'87,3 %',24],[2025,107.9,'107,9 %',-12],[1980,76.8,'76,8 %',-12]].forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:6,fill:'#C9773A',stroke:'#1E1914','stroke-width':2.5,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+k[3],'text-anchor':k[0]===2025?'end':k[0]===1980?'start':'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:#EDE6DC'},k[2]))});
+    [[1993,138.9,'138,9 %',-14],[2007,87.3,'87,3 %',24],[2025,108.1,'108,1 %',-12],[1980,76.8,'76,8 %',-12]].forEach(function(k){var x=X(k[0]),y=Y(k[1]);s.appendChild(el('circle',{cx:x,cy:y,r:6,fill:'#C9773A',stroke:'#1E1914','stroke-width':2.5,'class':'fadein'}));s.appendChild(el('text',{x:x,y:y+k[3],'text-anchor':k[0]===2025?'end':k[0]===1980?'start':'middle','class':'fadein',style:'font-family:var(--sans);font-weight:700;font-size:'+(MOB?14:16)+'px;fill:#EDE6DC'},k[2]))});
     host.appendChild(s);
   })();
   /* 1. Dette */
   lines(D.getElementById('debtChart'),{t0:1980,t1:2025,min:50,max:145,ticks:[60,80,100,120,140],grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',years:MOB?[1980,1995,2010,2025]:[1980,1985,1990,1995,2000,2005,2010,2015,2020,2025],
     refs:[{v:60,c:'#E2402B',t:'60 % : valeur de référence européenne',dy:16}],events:[{y:1992,t:'Maastricht'},{y:2008,t:'crise financière'},{y:2020,t:'pandémie',m:1}],
-    series:[{n:'Union',v:DATA.debtL.EU,c:'#A69C8F',dash:1},{n:'Belgique',v:DATA.debtL.BE,c:'#C9773A',w:4.5}],label:'Dette publique 1980-2025 : Belgique de 76,8 % du PIB en 1980 à 138,9 % en 1993, 87,5 % en 2007 et 107,9 % en 2025 ; Union (depuis 1995) de 70,6 % à 81,7 %'});
+    series:[{n:'Union',v:DATA.debtL.EU,c:'#A69C8F',dash:1},{n:'Belgique',v:DATA.debtL.BE,c:'#C9773A',w:4.5}],label:'Dette publique 1980-2025 : Belgique de 76,8 % du PIB en 1980 à 138,9 % en 1993, 87,5 % en 2007 et 108,1 % en 2025 ; Union (depuis 1995) de 70,6 % à 81,5 %'});
   CJD.rename('debtChart',['Union (% du PIB ; 1995-1999 : FMI)','Belgique (% du PIB ; 1980-1994 : FMI)'],'1980-1994 (Belgique) et 1995-1999 (Union) : FMI ; ensuite Eurostat. Les deux sources concordent pour la Belgique en 1995 (131,3 % et 131,5 %).');
 
   (function(){
@@ -115,7 +115,7 @@
     s.appendChild(g);box.appendChild(s);
   }
   var SD=DATA.sub.def.map(function(r){return [r[0],r[1],r[1]<-1?'#E2402B':'#fff']});
-  hbars('subDef',SD,{min:-4.8,max:0.6,signed:1,label:'Solde 2025 par niveau de pouvoir : fédéral −3,8 % du PIB, Communautés et Régions −1,4 %, pouvoirs locaux −0,1 %, sécurité sociale 0,0 %'});
+  hbars('subDef',SD,{min:-4.8,max:0.6,signed:1,label:'Solde 2025 par niveau de pouvoir : fédéral −3,7 % du PIB, Communautés et Régions −1,4 %, pouvoirs locaux −0,1 %, sécurité sociale 0,0 %'});
   CJD.rename('subDef',['Solde 2025 (% du PIB)']);
   hbars('revExp',[['Recettes · Belgique',49.0,'#7FB6A3'],['Recettes · Union',46.4,'#fff'],['Dépenses · Belgique',54.2,'#E2402B'],['Dépenses · Union',49.5,'#fff']],{min:0,max:62,label:'Recettes et dépenses publiques 2025 : Belgique 49,0 % et 54,2 % du PIB ; Union 46,4 % et 49,5 %'});
   CJD.rename('revExp',['2025 (% du PIB)']);
@@ -179,7 +179,7 @@
   (function(){
     var Y1=MOB?[1996,2008,2025]:[1996,2001,2006,2011,2016,2021,2025],RG=DATA.rg;
     function sm(id,o){var h=D.getElementById(id);var W0=MOB;lines(h,{t0:1996,t1:2025,years:Y1,h:MOB?300:360,series:o.series,min:o.min,max:o.max,ticks:o.ticks,grid:'#3B332B',mute:'#A69C8F',ink:'#EDE6DC',refs:o.refs,label:o.label})}
-    sm('rgChart',{series:[{n:'croissance nominale',v:RG.g,c:'#A69C8F',dash:1,dy:-8},{n:'taux apparent',v:RG.r,c:'#C9773A',w:4,dy:12}],min:-4,max:12,ticks:[-4,0,4,8,12],label:'Taux d’intérêt apparent de la dette belge, de 6,5 % en 1996 à 2,2 % en 2025 (minimum 1,6 % en 2022) ; croissance du PIB nominal, de −3,3 % en 2020 à 11,0 % en 2022, 3,5 % en 2025'});
+    sm('rgChart',{series:[{n:'croissance nominale',v:RG.g,c:'#A69C8F',dash:1,dy:-8},{n:'taux apparent',v:RG.r,c:'#C9773A',w:4,dy:12}],min:-4,max:12,ticks:[-4,0,4,8,12],label:'Taux d’intérêt apparent de la dette belge, de 6,5 % en 1996 à 2,3 % en 2025 (minimum 1,6 % en 2022) ; croissance du PIB nominal, de −3,3 % en 2020 à 11,0 % en 2022, 3,5 % en 2025'});
     sm('pbChart',{series:[{n:'solde primaire',v:RG.pb,c:'#C9773A',w:4}],min:-8,max:8,ticks:[-8,-4,0,4,8],refs:[{v:0,c:'#EDE6DC',t:'équilibre',dy:-8}],label:'Solde primaire de la Belgique, en % du PIB : excédent de 4,6 % en 1996 et 6,8 % en 2001, −7,1 % en 2020, −3,0 % en 2025'});
     var Hd=DATA.hold,host=D.getElementById('holdChart'),K=[['nr','Non-résidents','#E2402B'],['bnb','Banque nationale','#7FB6A3'],['bank','Banques belges','#C9773A'],['ofi','Autres institutions financières','#EFA3CB'],['hh','Ménages et entreprises','#A69C8F']];
     CJD.set('holdChart',['Année'].concat(K.map(function(k){return k[1]+' (% du PIB)'})).concat(['Total (% du PIB)']),Hd.tot.map(function(t,i){return [2005+i].concat(K.map(function(k){return Hd[k[0]][i]})).concat([t])}),'Dette brute consolidée selon le secteur détenteur. Eurostat, gov_10dd_ggd.');
@@ -201,9 +201,9 @@
   /* 4d. Fiche 09 : les 27 en 2025 */
   (function(){
     var P=DATA.eu2025,A=DATA.eu2025agg,box=D.getElementById('euScatter'),W=MOB?400:1000,Hh=MOB?380:520,L=MOB?40:60,R=W-(MOB?14:30),T=20,B=Hh-40,x0=20,x1=150,y0=-9,y1=4;
-    CJD.set('euScatter',['Pays','Dette (% du PIB)','Solde (% du PIB)','Intérêts payés (% du PIB)'],P.map(function(r){return [r[0],r[1],r[2],r[3]]}).concat([['Union européenne',A[0],A[1],A[2]]]),'2025, notification d’avril 2026. Eurostat, gov_10dd_edpt1.');
+    CJD.set('euScatter',['Pays','Dette (% du PIB)','Solde (% du PIB)','Intérêts payés (% du PIB)'],P.map(function(r){return [r[0],r[1],r[2],r[3]]}).concat([['Union européenne',A[0],A[1],A[2]]]),'2025, notification d’octobre 2026. Eurostat, gov_10dd_edpt1.');
     function X(v){return L+(v-x0)/(x1-x0)*(R-L)} function Y(v){return T+(y1-v)/(y1-y0)*(B-T)}
-    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette et solde 2025 des 27 pays. Belgique : dette 107,9 %, solde −5,2 %. France 115,6 % et −5,1 %. Italie 137,1 % et −3,1 %. Grèce 146,1 % et +1,7 %. Roumanie 59,3 % et −7,9 %. Pologne 59,7 % et −7,3 %. Union 81,7 % et −3,1 %.'});
+    var s=el('svg',{viewBox:'0 0 '+W+' '+Hh,role:'img','aria-label':'Dette et solde 2025 des 27 pays. Belgique : dette 108,1 %, solde −5,2 %. France 115,7 % et −5,1 %. Italie 136,7 % et −3,1 %. Grèce 145,4 % et +2,0 %. Roumanie 58,9 % et −7,8 %. Pologne 59,6 % et −7,2 %. Union 81,5 % et −3,1 %.'});
     [20,60,100,140].forEach(function(v){s.appendChild(el('line',{x1:X(v),x2:X(v),y1:T,y2:B,stroke:'#E3E0D8'}));s.appendChild(el('text',{x:X(v),y:Hh-14,'text-anchor':'middle',style:TX+'#6A665F'},v+' %'))});
     [-8,-4,0,4].forEach(function(v){s.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:v?'#E3E0D8':'#1A1A1A','stroke-width':v?1:1.2}));s.appendChild(el('text',{x:L-8,y:Y(v)+5,'text-anchor':'end',style:TX+'#6A665F'},(v>0?'+':'')+String(v).replace('-','−')))});
     s.appendChild(el('line',{x1:X(60),x2:X(60),y1:T,y2:B,stroke:'#E2402B','stroke-dasharray':'5 5'}));
@@ -241,7 +241,7 @@
       {q:'La dette belge est-elle soutenable ?',j:'Le lien entre dette, taux d’intérêt, croissance et solde hors intérêts est une relation comptable. Le niveau de dette soutenable dépend, lui, d’hypothèses sur les taux et la croissance futurs.',c:'Le mécanisme ne changera pas ; le jugement sur le seuil évolue avec les taux d’intérêt et les projections du Comité d’étude sur le vieillissement.',b:['b-et','Établi : le mécanisme'],b2:['b-de','Débattu : le seuil'],v:'Le mécanisme est connu : la dette baisse si la croissance dépasse le taux d’intérêt et si le budget hors intérêts est en équilibre. Aucun niveau de dette « sûr » ne fait consensus.',
        st:[{a:'Blanchard, 2019',t:'Analyse historique et théorique',l:0,lt:'analyse',p:'Tant que le taux d’intérêt reste sous la croissance, la dette peut avoir un coût budgétaire faible. Mais des primes de risque peuvent apparaître brutalement quand la dette est élevée.',u:'https://ideas.repec.org/a/aea/aecrev/v109y2019i4p1197-1229.html',s:'American Economic Review'},
            {a:'Comité d’étude sur le vieillissement, 2026',t:'Projections à l’horizon 2070',l:0,lt:'simulation',p:'Coût budgétaire du vieillissement : +1,5 point de PIB entre 2025 et 2070, surtout les soins de santé (+2,1 points). Hypothèse centrale : productivité en hausse de 1,1 % par an en moyenne ; avec 0,9 % par an, le coût atteint +3,3 points. L’estimation dépasse de 0,2 point celle du rapport précédent.',u:'https://blog.forumforthefuture.be/fr/article/vieillissement-en-belgique-a-lhorizon-2070-les-depenses-sociales-augmentent-jusquen-2050-puis-se-stabilisent-.../31873',s:'Bureau fédéral du Plan (relayé)'}],
-       x:'Calcul Au plus Juste à partir d’Eurostat, avec le PIB révisé le 19 octobre 2026 (voir la fiche 06) : en 2025, la croissance (3,5 % en valeur) dépassait le taux d’intérêt moyen (2,2 %), ce qui réduisait la dette d’environ 1,3 point. Mais le déficit primaire (3,0 points) et d’autres ajustements, surtout des opérations financières (environ 2,3 points), l’ont fait monter de 4 points au total.'},
+       x:'Calcul Au plus Juste à partir d’Eurostat, avec la notification d’octobre 2026 (voir la fiche 06) : en 2025, la croissance (3,5 % en valeur) dépassait le taux d’intérêt moyen (2,3 %), ce qui réduisait la dette d’environ 1,2 point. Mais le déficit primaire (3,0 points) et d’autres ajustements, surtout des opérations financières (environ 2,4 points), l’ont fait monter de 4,1 points au total.'},
       {q:'Les marchés jugent-ils la dette d’un pays de la zone euro sur ses seuls fondamentaux ?',j:'Une étude économétrique publiée en revue, centrée sur la crise de 2010-2012, et la comparaison avec des pays qui ont leur propre banque centrale. Le résultat est discuté, d’où « Débattu ».',c:'Des études montrant que, sur la même période, les écarts de taux s’expliquent entièrement par la dette, le déficit et la croissance.',b:['b-de','Débattu'],v:'Pas toujours. Pendant la crise de 2010-2011, une part importante de la hausse des écarts de taux des pays du sud de la zone euro n’était pas liée à leur dette ou à leur déficit, mais à une perte de confiance qui pouvait s’autoréaliser. Des pays hors zone euro aussi endettés n’ont pas connu la même hausse. La Belgique a vu son écart avec l’Allemagne monter à 1,62 point en 2011 (fiche 08).',
        st:[{a:'De Grauwe et Ji, 2013',t:'Zone euro et pays « autonomes », données de panel jusqu’en 2011',l:0,lt:'étude économétrique',p:'Une part importante de la hausse des écarts de taux des pays périphériques en 2010-2011 était déconnectée de l’évolution de leur dette et de leur marge budgétaire ; des pays hors zone euro aussi endettés n’ont pas subi la même défiance. Les auteurs en concluent que les marchés obligataires de la zone euro sont plus fragiles, faute de prêteur en dernier ressort.',u:'https://doi.org/10.1016/j.jimonfin.2012.11.003',s:'Journal of International Money and Finance, 34, 15-36'}],
        x:'Depuis 2012, la Banque centrale européenne s’est dotée d’instruments pour intervenir sur les marchés de la dette publique ; l’étude porte sur la période précédente. Ses conclusions ne disent pas à partir de quel niveau de dette la confiance se perd.'},
@@ -271,9 +271,9 @@
 
   /* 7. Citer */
   (function(){
-    var T={dette:'Fin 2025, la dette publique belge atteignait 107,9 % du PIB, soit 692 milliards d’euros, contre 81,7 % en moyenne dans l’Union européenne (Eurostat, gov_10dd_edpt1, notification d’avril 2026).',
+    var T={dette:'Fin 2025, la dette publique belge atteignait 108,1 % du PIB, soit 693 milliards d’euros, contre 81,5 % en moyenne dans l’Union européenne (Eurostat, gov_10dd_edpt1, notification d’octobre 2026).',
       def:'En 2025, le déficit public belge était de 5,2 % du PIB, dont 2,2 points d’intérêts, contre 3,1 % dans l’Union européenne (Eurostat, gov_10dd_edpt1).',
-      int:'Les pouvoirs publics belges ont payé 14,3 milliards d’euros d’intérêts en 2025, contre 8,6 milliards en 2021 en euros courants : +66 %. Une fois l’inflation déduite (8,6 milliards de 2021 valent environ 10,4 milliards de 2025), la hausse est d’environ 37 % (Eurostat, gov_10a_main, chiffres provisoires ; IPCH, prc_hicp_ainr ; calcul Au plus Juste).',
+      int:'Les pouvoirs publics belges ont payé 14,5 milliards d’euros d’intérêts en 2025, contre 8,6 milliards en 2021 en euros courants : +66 %. Une fois l’inflation déduite (8,6 milliards de 2021 valent environ 10,4 milliards de 2025), la hausse est d’environ 37 % (Eurostat, gov_10a_main, chiffres provisoires ; IPCH, prc_hicp_ainr ; calcul Au plus Juste).',
       ent:'La dette des Communautés et des Régions est passée de 12,6 % à 20,4 % du PIB entre 2015 et 2025 (Eurostat, gov_10dd_edpt1, secteur S1312).'};
     var q=D.getElementById('quote'),c=D.getElementById('copied'),cs=D.querySelectorAll('#chips button');
     function set(k){q.textContent=T[k];c.textContent='';cs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)})}

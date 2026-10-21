@@ -438,7 +438,7 @@ var MAP=__MAP__;
 
   /* Bandeau défilant : chiffres vérifiés, sens qui suit le défilement */
   (function(){
-    var items=[['6,2 %','de chômage en 2025'],['11 867 634','habitants au 1er janvier 2026'],['107,9 %','de dette publique, fin 2025'],['18,3 %','à risque de pauvreté ou d’exclusion'],['−32,6 %','d’émissions depuis 1990'],['72,8 %','des 20-64 ans en emploi']];
+    var items=[['6,2 %','de chômage en 2025'],['11 867 634','habitants au 1er janvier 2026'],['108,1 %','de dette publique, fin 2025'],['18,3 %','à risque de pauvreté ou d’exclusion'],['−32,6 %','d’émissions depuis 1990'],['72,8 %','des 20-64 ans en emploi']];
     var h='';for(var k=0;k<2;k++)items.forEach(function(it){h+='<span><b class="f">'+it[0]+'</b><span class="s">'+it[1]+'</span><span class="x" aria-hidden="true">×</span></span>'});
     var t=D.getElementById('track');t.innerHTML=h;
     var last=window.scrollY,m=D.getElementById('marquee');
@@ -472,7 +472,7 @@ var MAP=__MAP__;
   var DIFF={ES:1,FR:1};
   var GRID={SE:[4,0],FI:[5,0],IE:[0,1],DK:[3,1],EE:[5,1],NL:[2,2],DE:[3,2],PL:[4,2],LV:[5,2],BE:[2,3],LU:[3,3],CZ:[4,3],LT:[5,3],FR:[1,4],AT:[3,4],SK:[4,4],PT:[0,5],ES:[1,5],IT:[2,5],SI:[3,5],HU:[4,5],RO:[5,5],HR:[3,6],BG:[5,6],MT:[2,7],GR:[4,7],CY:[6,7]};
   var FICHE='__FICHE__';
-  var BE_FULL=[['Population','11 867 634 hab.'],['Économie','PIB +1,0 %'],['Finances publiques','Dette 107,9 % du PIB'],['Emploi','Chômage 6,2 %',FICHE],['Inégalités','Pauvreté ou exclusion 18,3 %'],['Climat','Émissions −32,6 % depuis 1990']];
+  var BE_FULL=[['Population','11 867 634 hab.'],['Économie','PIB +1,0 %'],['Finances publiques','Dette 108,1 % du PIB'],['Emploi','Chômage 6,2 %',FICHE],['Inégalités','Pauvreté ou exclusion 18,3 %'],['Climat','Émissions −32,6 % depuis 1990']];
   var svg=D.getElementById('map'),W=MAP.W,Hh=MAP.H,pad=95;
   svg.setAttribute('viewBox',(-pad)+' '+(-pad)+' '+(W+2*pad)+' '+(Hh+2*pad));
   var defs=el('defs',{}),lg=el('linearGradient',{id:'sky',x1:0,y1:0,x2:0,y2:1});
