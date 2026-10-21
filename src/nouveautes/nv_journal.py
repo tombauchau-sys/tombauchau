@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('21 octobre 2026', [
+        'Inégalités : le classement de la Belgique est nuancé (« parmi les écarts de revenus les plus faibles de l’Union » au lieu de « le plus faible ») ; avec la Slovaquie et la Tchéquie, elle forme le groupe de tête, et l’ordre entre ces trois pays dépend de l’indicateur et reste dans la marge d’une enquête par échantillon.',
         'Audit du site et premières corrections. La mention de méthode est réécrite sur l’accueil et dans les onze dossiers : elle précise le rôle de l’intelligence artificielle (collecte des données, rédaction des synthèses, code), limite le mot « vérifié » à ce qui figure au registre de vérification, et indique que la relecture par l’auteur est en cours et qu’une relecture extérieure est prévue. Les ajouts postérieurs au 15 octobre 2026 sont en cours d’inscription au registre.',
         'Finances publiques, accueil, carte et lexique : chiffres mis à jour avec la notification d’Eurostat du 21 octobre 2026 (dette belge de 108,1 % du PIB fin 2025, intérêts de 14,5 milliards d’euros, valeurs des 27 pays révisées).',
         'Fiscalité, Finances publiques, accueil et carte : tables annuelles d’Eurostat révisées le 21 octobre 2026 (prélèvements obligatoires, recettes, dépenses par fonction, investissement public) ; une erreur de lecture corrigée dans la fiche 05 de la Fiscalité (successions et donations : 0,7 % du PIB et non 0,6 %).',
