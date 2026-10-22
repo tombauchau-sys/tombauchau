@@ -1,0 +1,197 @@
+{
+ "maj": "2026-10-22",
+ "maj_txt": "22 octobre 2026",
+ "groupes": {
+  "eco": "Économie et finances publiques",
+  "travail": "Travail et protection sociale",
+  "societe": "Société",
+  "education": "Éducation",
+  "climat": "Climat et énergie",
+  "logement": "Logement"
+ },
+ "items": [
+  {
+   "date": "2026-07-03",
+   "date_txt": "3 juillet 2026",
+   "niveau": "Union européenne",
+   "groupe": "eco",
+   "dossiers": [
+    "finances"
+   ],
+   "type": "officiel",
+   "texte": "Le Conseil de l’Union met en suspens la procédure de déficit excessif ouverte contre la Belgique : la trajectoire de dépenses convenue est jugée respectée.",
+   "source": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-11113-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">Conseil de l’UE, document 11113/26</a>"
+  },
+  {
+   "date": "2024-07-26",
+   "date_txt": "26 juillet 2024",
+   "niveau": "Union européenne",
+   "groupe": "eco",
+   "dossiers": [
+    "finances"
+   ],
+   "type": "officiel",
+   "texte": "Le Conseil constate l’existence d’un déficit excessif en Belgique, le critère du déficit n’étant pas respecté (décision 2024/2125).",
+   "source": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-5032-2025-INIT/fr/pdf\" target=\"_blank\" rel=\"noopener\">Conseil de l’UE, document 5032/25, considérant 4</a>"
+  },
+  {
+   "date": "2024-04-29",
+   "date_txt": "29 avril 2024",
+   "niveau": "Union européenne",
+   "groupe": "eco",
+   "dossiers": [
+    "finances",
+    "fiscalite"
+   ],
+   "type": "officiel",
+   "texte": "Nouvelles règles budgétaires européennes : le règlement (UE) 2024/1263 sur la coordination des politiques économiques et la surveillance budgétaire remplace le règlement de 1997 ; il entre en vigueur le 30 avril 2024.",
+   "source": "<a href=\"https://eur-lex.europa.eu/eli/reg/2024/1263/oj/eng\" target=\"_blank\" rel=\"noopener\">EUR-Lex, règlement (UE) 2024/1263</a>"
+  },
+  {
+   "date": "2026-09-10",
+   "date_txt": "10 septembre 2026",
+   "niveau": "Belgique (Cour constitutionnelle)",
+   "groupe": "travail",
+   "dossiers": [
+    "emploi"
+   ],
+   "type": "officiel",
+   "texte": "La Cour constitutionnelle confirme l’essentiel de la réforme du chômage, mais annule une partie du régime transitoire, qui laissait à certains chômeurs de longue durée moins de douze mois de droit.",
+   "source": "<a href=\"https://www.onem.be/actualites/2026/09/11/consequences-de-larret-de-la-cour-constitutionnelle-du-10-septembre-2026\" target=\"_blank\" rel=\"noopener\">ONEM, conséquences de l’arrêt du 10/09/2026</a>"
+  },
+  {
+   "date": "2026-05-29",
+   "date_txt": "29 mai 2026",
+   "niveau": "Belgique (fédéral)",
+   "groupe": "travail",
+   "dossiers": [
+    "pensions"
+   ],
+   "type": "officiel",
+   "texte": "La Chambre adopte la réforme des pensions, en vigueur au 1er janvier 2027 : malus en cas de départ anticipé, bonus en cas de report, nouvelles conditions de carrière pour la pension anticipée.",
+   "source": "<a href=\"https://news.belgium.be/fr/node/44066/pdf\" target=\"_blank\" rel=\"noopener\">INASTI, communiqué du 29/05/2026</a>"
+  },
+  {
+   "date": "2025-07-18",
+   "date_txt": "18 juillet 2025",
+   "niveau": "Belgique (fédéral)",
+   "groupe": "travail",
+   "dossiers": [
+    "emploi"
+   ],
+   "type": "officiel",
+   "texte": "La Chambre adopte la loi-programme qui réforme le chômage (Moniteur belge du 29 juillet 2025) : allocations limitées à 24 mois au plus, allocations d’insertion à un an ; pour les personnes déjà indemnisées, fin du droit par vagues du 1er janvier 2026 au 1er juillet 2027.",
+   "source": "<a href=\"https://www.onem.be/page/reforme-de-lassurance-chomage\" target=\"_blank\" rel=\"noopener\">ONEM, réforme de l’assurance chômage</a>"
+  },
+  {
+   "date": "2026-09-01",
+   "date_txt": "1er septembre 2026",
+   "niveau": "Belgique (fédéral)",
+   "groupe": "societe",
+   "dossiers": [
+    "justice"
+   ],
+   "type": "officiel",
+   "texte": "Le nouveau Code pénal entre en vigueur : les peines sont classées en huit niveaux.",
+   "source": "<a href=\"https://www.justice.belgium.be/fr/nouvelles/autres_communiques/1er_septembre_historique_entree_en_vigueur_du_nouveau_code_penal\" target=\"_blank\" rel=\"noopener\">SPF Justice, 1/09/2026</a>"
+  },
+  {
+   "date": "2024-05-14",
+   "date_txt": "14 mai 2024",
+   "niveau": "Union européenne",
+   "groupe": "societe",
+   "dossiers": [
+    "immigration"
+   ],
+   "type": "officiel",
+   "texte": "Le Conseil adopte le pacte sur la migration et l’asile (filtrage aux frontières, procédure d’asile commune, base Eurodac, solidarité entre États). Ses règles s’appliquent depuis le 12 juin 2026.",
+   "source": "<a href=\"https://www.consilium.europa.eu/fr/policies/eu-pact-migration-asylum/\" target=\"_blank\" rel=\"noopener\">Conseil de l’Union européenne</a>"
+  },
+  {
+   "date": "2026-06-17",
+   "date_txt": "17 juin 2026",
+   "niveau": "Fédération Wallonie-Bruxelles",
+   "groupe": "education",
+   "dossiers": [
+    "education"
+   ],
+   "type": "officiel",
+   "texte": "Réforme du degré inférieur du secondaire : dès la rentrée 2026-2027, la première secondaire suit les référentiels du tronc commun ; les élèves sans CEB rejoignent des classes communes avec ceux qui l’ont obtenu (32 périodes obligatoires).",
+   "source": "<a href=\"https://gallilex.cfwb.be/sites/default/files/circulaires/2026-06/53244_0000.pdf\" target=\"_blank\" rel=\"noopener\">FWB, circulaire n° 9744 du 17 juin 2026</a>"
+  },
+  {
+   "date": "2019-03-23",
+   "date_txt": "23 mars 2019",
+   "niveau": "Belgique (fédéral)",
+   "groupe": "education",
+   "dossiers": [
+    "education"
+   ],
+   "type": "officiel",
+   "texte": "La loi abaisse l’âge de l’obligation scolaire de 6 à 5 ans, à partir de la rentrée de septembre 2020.",
+   "source": "<a href=\"https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=fr&amp;la=F&amp;table_name=loi&amp;cn=1983062931\" target=\"_blank\" rel=\"noopener\">loi du 29 juin 1983 consolidée, Justel</a>"
+  },
+  {
+   "date": "2026-09-21",
+   "date_txt": "depuis le 21 septembre 2026",
+   "niveau": "France · pour comparer",
+   "groupe": "education",
+   "dossiers": [
+    "education"
+   ],
+   "type": "presse",
+   "texte": "En France, un mouvement lycéen parti de Créteil s’étend à de nombreuses villes : les élèves réclament des enseignants remplacés, des classes moins chargées, des bâtiments rénovés et une réforme de Parcoursup. Le 4 octobre, le Premier ministre annonce cinq chantiers (remplacements, emplois du temps, bâti, Parcoursup, démocratie lycéenne).",
+   "source": "<a href=\"https://www.amnesty.fr/actualites/france-mouvement-lyceens-blocus-lycees-point-sur-la-situation\" target=\"_blank\" rel=\"noopener\">Amnesty International France, 2/10/2026</a> ; <a href=\"https://www.letudiant.fr/lycee/mouvement-lyceen-alors-que-la-mobilisation-continue-le-gouvernement-lance-cinq-chantiers-prioritaires.html\" target=\"_blank\" rel=\"noopener\">L’Étudiant, 5/10/2026</a>"
+  },
+  {
+   "date": "2026-03-18",
+   "date_txt": "18 mars 2026",
+   "niveau": "Union européenne",
+   "groupe": "climat",
+   "dossiers": [
+    "climat"
+   ],
+   "type": "ref",
+   "texte": "La loi européenne sur le climat (règlement (UE) 2021/1119), qui fixe la neutralité climatique en 2050, est modifiée par le règlement (UE) 2026/667 : objectif de −90 % d’émissions nettes en 2040 par rapport à 1990 (publication au Journal officiel).",
+   "source": "<a href=\"https://app.climatepolicyradar.org/document/regulation-eu-2021-1119-establishing-the-framework-for-achieving-climate-neutrality-european-climate-law_df60\" target=\"_blank\" rel=\"noopener\">Climate Policy Radar, fiche du règlement (UE) 2021/1119</a>"
+  },
+  {
+   "date": "2025-05-17",
+   "date_txt": "17 mai 2025",
+   "niveau": "Belgique (fédéral)",
+   "groupe": "climat",
+   "dossiers": [
+    "climat"
+   ],
+   "type": "ref",
+   "texte": "Fin de la sortie programmée du nucléaire : la loi abroge les articles centraux de la loi de 2003, dont l’interdiction de construire de nouvelles capacités et l’échéance de 2025.",
+   "source": "<a href=\"https://climate-laws.org/document/act-on-nuclear-energy-for-industrial-electricity-production_572c\" target=\"_blank\" rel=\"noopener\">Climate Change Laws of the World (LSE), loi du 17 mai 2025</a>"
+  },
+  {
+   "date": "2025-01-01",
+   "date_txt": "1er janvier 2025",
+   "niveau": "Région wallonne",
+   "groupe": "logement",
+   "dossiers": [
+    "logement",
+    "fiscalite"
+   ],
+   "type": "officiel",
+   "texte": "Achat d’une habitation propre et unique en Wallonie : droits d’enregistrement de 3 % au lieu de 12,5 % pour les actes signés à partir de cette date ; le chèque-habitat est supprimé pour les nouveaux achats.",
+   "source": "<a href=\"https://www.wallonie.be/sites/default/files/2024-12/R%C3%A9forme_droits_enregistrement-FAQ.pdf\" target=\"_blank\" rel=\"noopener\">Wallonie, réforme des droits d’enregistrement (FAQ)</a>"
+  },
+  {
+   "date": "2025-01-01",
+   "date_txt": "1er janvier 2025",
+   "niveau": "Région flamande",
+   "groupe": "logement",
+   "dossiers": [
+    "logement",
+    "fiscalite"
+   ],
+   "type": "ref",
+   "texte": "Achat d’une habitation propre et unique en Flandre : droits d’enregistrement réduits de 3 % à 2 % pour les actes signés à partir de cette date.",
+   "source": "<a href=\"https://www.notaire.be/actualites/pret-la-renovation-et-droits-denregistrement-nouveautes-en-flandre-partir-du-1er-janvier-2025\" target=\"_blank\" rel=\"noopener\">Fednot (notaire.be), 22/11/2024</a>"
+  }
+ ]
+}

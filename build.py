@@ -367,6 +367,9 @@ def build_home():
     sys.path.insert(0, str(SRC / 'actualite'))
     import render as ACT
     body = read('accueil/body.html').replace('<div class="frame"><svg id="map"', '<div class="mframe"><svg id="map"')
+    import mesures as MES
+    for _g in MES.load()['groupes']:
+        body = body.replace(f'__MES_{_g}__', MES.group_block(_g))
     body = body.replace('__ACTU_LIST__', ACT.home_list()).replace('__ACTU_MAJ__', ACT.load()['maj_txt']).replace('__IDEES_SECTION__', idees_section())
     js = src[src.index('<script>', src.index('<nav class="top"')):]  # script principal (le premier <script> est celui de la page d’entrée)
     pre = js[:js.index("  /* Lettres à faire monter */")].replace("var MAP=__MAP__;", "var MAP=__MAP__,DATA=__DATA__;")
@@ -697,7 +700,12 @@ def build_actu(name):
     sys.path.insert(0, str(SRC / 'actualite'))
     import render as ACT
     A = ACT.load()
+    import mesures as MES
     news = [i for i in A['items'] if i['theme'] == name]
+    mb = MES.dossier_block(name)
+    mes_sec = ('<section class="sec papier actu qdeb" id="decisions" aria-labelledby="tMs"><div class="wrap"><span class="kick" data-r>Lois, règlements, arrêts · liste vérifiée le ' + MES.load()['maj_txt'] + '</span>'
+               '<h2 class="giant" id="tMs" data-r>Les décisions <span>qui comptent.</span></h2><p class="lede" data-r>Les décisions publiques récentes qui changent les règles sur ce thème, du plus récent au plus ancien. <b class="off">Officiel</b> : texte ou communiqué d’une institution. <b class="rf">Référence</b> : base de données juridique ou organisme professionnel. <b class="pr">Presse</b> : pour dater un événement en cours.</p>'
+               + mb + '</div></section>\n') if mb else ''
     nh = (ACT.items_html(news, False) if news else
           '<p class="actnone">Pas encore de fait daté retenu pour ce thème. La veille hebdomadaire propose chaque lundi les faits officiels de la semaine ; ils apparaissent ici après vérification.</p>')
     rows = ''.join(f'<tr><td><time>{v[2].replace(".", "/")}</time></td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/{c}/default/table?lang=fr" target="_blank" rel="noopener">{v[0]}</a></td><td><code>{c}</code></td><td>{"jeu de données" if v[1] == "dataset" else "tableau"}</td></tr>' for c, v in eurostat_codes(name))
@@ -710,6 +718,7 @@ def build_actu(name):
             '<h2 class="giant" id="tAc" data-r>Ce qui vient <span>de se passer.</span></h2>'
             '<p class="lede" data-r><b class="off">Officiel</b> : publication d’une institution. <b class="pr">Presse</b> : article de presse, pour dater un événement en cours.</p>'
             + nh + '</div></section>\n'
+            + mes_sec +
             f'<section class="sec papier actdata" aria-labelledby="tAd"><div class="wrap"><span class="kick" data-r>Données officielles · catalogue d’Eurostat lu le 19 octobre 2026</span>'
             '<h2 class="giant" id="tAd" data-r>Les données <span>qui ont bougé.</span></h2>'
             '<p class="lede" data-r>Les tables d’Eurostat utilisées par ce dossier, de la plus récemment mise à jour à la plus ancienne. Une mise à jour peut ajouter une année ou réviser les précédentes : les chiffres du dossier sont revérifiés après chaque publication importante.</p>'

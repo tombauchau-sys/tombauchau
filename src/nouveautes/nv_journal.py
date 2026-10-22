@@ -1,6 +1,8 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('22 octobre 2026', [
+        'Accueil, fiche pays : nouvelle partie « Comprendre la dette » pour les 27 pays (qui la détient, sous quelle forme, à quelles échéances et à quel coût), d’après le guide de recherche sur la dette publique de l’auteur, publié en PDF ; présentation des critères des trois agences de notation et des ratios budgétaires de Moody’s.',
+        'Accueil et pages Actualités : nouvelle rubrique « Les décisions qui comptent » (lois, règlements, arrêts récents, belges et européens), avec l’étiquette Officiel, Référence ou Presse.',
         'Relecture de l’auteur, premier lot (accueil et dossier Emploi) : les remarques sont traitées une à une, vérifiées à la source et appliquées après validation.',
         'Accueil, fiche pays : nouvelle partie « L’évolution de chaque budget, 2013-2024 » (une courbe par fonction, en % du PIB ou en euros de 2024 par habitant) et nouvelle partie « Ce qui s’échange, par type de produit » (biens 2025 par grande catégorie, services par type), pour les 27 pays.',
         'Accueil : sous chaque dossier, la phrase d’accroche en forme de question est remplacée par une ligne qui décrit son contenu ; réponses aux questions « Pourquoi la Belgique travaille-t-elle moins que ses voisins ? » et « Les différences entre la Flandre et la Wallonie s’accentuent-elles ? » complétées par les causes avancées et l’évolution depuis 1999 ; réponse sur les dépenses publiques mise à jour (54,4 % du PIB en 2025).',
