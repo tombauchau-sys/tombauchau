@@ -1,6 +1,8 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('22 octobre 2026', [
+        'Accueil, fiche pays (pilote Belgique, France, Allemagne) : ajout d’une « Lecture sur la durée » (expérience passée, ce qu’en dit la recherche, perspectives officielles) et de données sur la démographie et l’origine du gaz importé, à la demande de l’auteur.',
+        'Finances, fiche 07 : correction (validée par l’auteur) de la part de la dette qui arrive à échéance dans l’année : 13,8 % (échéance restant à courir), et non 8,9 %, qui est la part empruntée pour un an ou moins.',
         'Accueil, fiche pays : pilote de textes pour la Belgique, la France et l’Allemagne (les grandes tendances depuis 2015, et pour chaque graphique social, le contexte et ce qu’annoncent les projections officielles), d’après Eurostat et les recommandations par pays du Semestre européen 2026.',
         'Accueil, fiche pays : nouvelle partie « Comprendre la dette » pour les 27 pays (qui la détient, sous quelle forme, à quelles échéances et à quel coût), d’après le guide de recherche sur la dette publique de l’auteur, publié en PDF ; présentation des critères des trois agences de notation et des ratios budgétaires de Moody’s.',
         'Accueil et pages Actualités : nouvelle rubrique « Les décisions qui comptent » (lois, règlements, arrêts récents, belges et européens), avec l’étiquette Officiel, Référence ou Presse.',
