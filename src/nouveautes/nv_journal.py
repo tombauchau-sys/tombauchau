@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('22 octobre 2026', [
+        'Toutes les pages : la recherche du site ne s’ouvrait plus (erreur JavaScript : deux fonctions portaient le même nom que celles du menu). Corrigé et testé : ouverture, saisie, absence de résultat, fermeture, raccourci clavier « / ».',
         'Accueil, fiche pays : textes par pays étendus au Portugal, à la Suède, au Danemark, à la Finlande, à l’Autriche et à la Pologne (tendances, lecture sur la durée, recherche académique, perspectives officielles).',
         'Accueil, fiche pays : textes par pays étendus aux Pays-Bas, à l’Italie, à l’Espagne, à la Grèce et à l’Irlande (tendances, lecture sur la durée, recherche académique, perspectives officielles).',
         'Accueil, fiche pays (pilote Belgique, France, Allemagne) : ajout d’une « Lecture sur la durée » (expérience passée, ce qu’en dit la recherche, perspectives officielles) et de données sur la démographie et l’origine du gaz importé, à la demande de l’auteur.',
