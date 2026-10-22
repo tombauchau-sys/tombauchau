@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('22 octobre 2026', [
+        'Accueil, fiche pays : pilote de textes pour la Belgique, la France et l’Allemagne (les grandes tendances depuis 2015, et pour chaque graphique social, le contexte et ce qu’annoncent les projections officielles), d’après Eurostat et les recommandations par pays du Semestre européen 2026.',
         'Accueil, fiche pays : nouvelle partie « Comprendre la dette » pour les 27 pays (qui la détient, sous quelle forme, à quelles échéances et à quel coût), d’après le guide de recherche sur la dette publique de l’auteur, publié en PDF ; présentation des critères des trois agences de notation et des ratios budgétaires de Moody’s.',
         'Accueil et pages Actualités : nouvelle rubrique « Les décisions qui comptent » (lois, règlements, arrêts récents, belges et européens), avec l’étiquette Officiel, Référence ou Presse.',
         'Relecture de l’auteur, premier lot (accueil et dossier Emploi) : les remarques sont traitées une à une, vérifiées à la source et appliquées après validation.',

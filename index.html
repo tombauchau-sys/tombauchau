@@ -721,6 +721,11 @@ nav.top .ddp a.ddq{display:block;height:auto;border:0;margin:0 0 12px;padding:6p
 .mnote{font-size:12.5px;opacity:.85;margin-top:10px}
 @media (max-width:600px){.mes li{grid-template-columns:minmax(0,1fr);gap:6px}}
 
+.ptb{margin:26px 0 30px;border-top:2px solid var(--ink,#1A1A1A);padding-top:16px}.ptp{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;background:#E7E1D6;color:#1A1A1A;font-size:10.5px;letter-spacing:.05em}
+.ptl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 34px;margin:12px 0 0}.ptl dt{font-weight:700;font-size:16px}.ptl dd{margin:4px 0 0;font-size:15.5px;line-height:1.5}
+.ptn{margin-top:12px;padding:10px 14px;border-left:3px solid #C9773A;background:rgba(201,119,58,.07);font-size:14px;line-height:1.5}.ptn p+p{margin-top:6px}
+@media (max-width:980px){.ptl{grid-template-columns:minmax(0,1fr)}}
+
 .grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}
 
 /* ===== Commun à toutes les pages : menu mobile, recherche, sommaire des dossiers ===== */
@@ -1390,6 +1395,56 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
       '<div data-r><p class="kicker" style="margin-top:22px">Les ratios budgétaires que regarde Moody’s, '+nm+', 2025</p><ul class="dsr">'+
       row('Dette / PIB',deb,de,' %')+row('Dette / recettes publiques',deb!=null&&rev?deb/rev*100:null,de!=null&&re?de/re*100:null,' %')+row('Intérêts / recettes publiques',it!=null&&rev?it/rev*100:null,ie!=null&&re?ie/re*100:null,' %')+row('Intérêts / PIB',it,ie,' %')+'</ul>'+
       '<p class="src" style="color:var(--cream-dim)">Calcul Au plus Juste à partir de la dette, des recettes et des intérêts publiés par Eurostat (notification d’octobre 2026 et gov_10a_main). Ces ratios figurent dans la méthode de Moody’s ; ils ne suffisent pas à reproduire une note. Sources : Moody’s, <a href="https://ratings.moodys.com/api/rmc-documents/395819" target="_blank" rel="noopener">Rating Methodology: Sovereigns</a>, 22 novembre 2022 ; PNUD, <a href="https://www.undp.org/africa/credit-ratings-resource-platform" target="_blank" rel="noopener">Credit Ratings Resource Platform</a> (fiches <a href="https://www.undp.org/node/464071" target="_blank" rel="noopener">S&amp;P</a> et <a href="https://undp.org/node/464076" target="_blank" rel="noopener">Fitch</a>) ; R. Cantor et F. Packer, « <a href="https://www.newyorkfed.org/medialibrary/media/research/epr/96v02n2/9610cant.pdf" target="_blank" rel="noopener">Determinants and Impact of Sovereign Credit Ratings</a> », <i>FRBNY Economic Policy Review</i>, octobre 1996. Consultés le 22 octobre 2026.</p></div></div>'}
+
+  /* Pilote : textes par pays (BE, FR, DE), d'après les recommandations par pays du Semestre européen 2026 */
+  var PT={"_note": "Pilote (22/10/2026) : textes par pays pour la Belgique, la France et l'Allemagne, à valider par l'auteur avant extension aux 27. Chiffres : base de la carte (Eurostat) ; diagnostic et prévisions : recommandations par pays du Semestre européen 2026.",
+ "BE": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10158-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">recommandation du Conseil sur la Belgique, document 10158/26 du 22 juin 2026</a> (proposition de la Commission COM(2026) 201)",
+  "t": [
+   ["Croissance et niveau de vie", "La croissance reste faible (0,9 % en 2024 et en 2025). Corrigé des écarts de prix, le PIB par habitant reste au-dessus de la moyenne de l’Union, mais s’en rapproche : 119 % de la moyenne en 2015, 114 % en 2025."],
+   ["Emploi", "Le taux d’emploi des 20-64 ans passe de 67,2 % à 72,8 % et le chômage de 8,7 % à 6,2 %, sans que l’écart avec l’Union (76,1 %) se referme. La Commission relève un taux d’emplois vacants élevé (3,8 % contre 2,1 % dans l’Union) et un recul de long terme des compétences de base des élèves."],
+   ["Finances publiques", "Après une baisse jusqu’en 2019 (97,7 % du PIB), la dette remonte à 108,1 % en 2025 et le déficit atteint 5,2 %. En juin 2026, la Commission prévoyait 112,8 % de dette en 2027 et un coût du vieillissement en hausse d’environ 5 points de PIB d’ici 2070, contre 1,4 point en moyenne dans l’Union."],
+   ["Social", "La part de la population en risque de pauvreté ou d’exclusion sociale passe de 21,6 % à 16,5 %, et le coefficient de Gini de 26,2 à 23,4 : la Belgique est parmi les pays de l’Union où les revenus sont les moins inégaux."],
+   ["Climat et énergie", "Les émissions nettes de gaz à effet de serre passent de 10,4 à 8,2 tonnes par habitant (2015-2024). Les renouvelables couvrent 14,9 % de la consommation finale d’énergie en 2025, contre 26,2 % dans l’Union ; selon la Commission, les combustibles fossiles représentent 67,1 % du bouquet énergétique."],
+   ["Ce que recommande l’Union pour 2026-2027", "Contenir la croissance des dépenses nettes, simplifier les règles et les permis, réduire la dépendance aux énergies fossiles, rendre plus efficaces les politiques actives de l’emploi et améliorer les résultats scolaires."]],
+  "s": {
+   "cArope": ["De 21,6 % en 2015 à 16,5 % en 2025, sous la moyenne de l’Union (20,9 %). L’enquête belge a changé en 2019 : les comparaisons de part et d’autre de cette date demandent de la prudence (voir le dossier Inégalités).", "Aucune projection officielle de la pauvreté n’est publiée."],
+   "cGini": ["23,4 en 2025, contre 29,2 dans l’Union : le deuxième plus bas des 27, après la Slovaquie. Le patrimoine est beaucoup plus inégalement réparti que les revenus.", "Aucune projection officielle n’est publiée."],
+   "cLife": ["82,4 ans en 2024, contre 81,5 ans dans l’Union. Le recul de 2020 (80,8 ans, pandémie) est presque effacé dès 2021 (81,7 ans).", "La population vieillit : 31,8 personnes de 65 ans et plus pour 100 personnes de 15 à 64 ans en 2025, contre 27,8 en 2015. La Commission prévoit une hausse des dépenses liées au vieillissement d’environ 5 points de PIB d’ici 2070."],
+   "cUnemp": ["6,2 % en 2025, après un minimum de 5,5 % en 2019 et en 2023 ; l’Union est à 6,0 %. Le chômage belge est proche de la moyenne : l’écart d’emploi vient surtout de l’inactivité.", "La Commission prévoyait en juin 2026 une croissance de 0,7 % en 2026 et de 0,9 % en 2027, un rythme qui ne laisse pas attendre une forte baisse du chômage. Les allocations de chômage sont limitées dans le temps depuis 2026 : leur effet sur l’emploi n’est pas encore évalué."]}},
+ "FR": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10126-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">proposition de recommandation du Conseil sur la France, COM(2026) 210 du 3 juin 2026 (document du Conseil 10126/26)</a>",
+  "t": [
+   ["Croissance et niveau de vie", "La croissance ralentit (0,8 % en 2025). Corrigé des écarts de prix, le PIB par habitant passe sous la moyenne de l’Union : 106 % en 2015, 98 % en 2025."],
+   ["Emploi", "Le taux d’emploi des 20-64 ans monte de 70,2 % à 75,4 % et le chômage baisse de 10,4 % à 7,7 %. La Commission relève un chômage des jeunes de 19,7 % et 12,7 % de jeunes ni en emploi, ni en formation (2025)."],
+   ["Finances publiques", "La dette passe de 97,0 % du PIB en 2015 à 115,7 % en 2025, avec un déficit de 5,1 %. Les dépenses publiques atteignent 57,2 % du PIB, les deuxièmes plus élevées de l’Union. En juin 2026, la Commission prévoyait 120,2 % de dette en 2027 ; la réforme des retraites de 2023 est suspendue jusqu’en janvier 2028."],
+   ["Social", "La part de la population en risque de pauvreté ou d’exclusion sociale monte de 18,4 % à 20,8 % et le coefficient de Gini de 29,2 à 30,4. Selon la Commission, ce risque touche 27,5 % des enfants en 2025."],
+   ["Climat et énergie", "Les émissions nettes passent de 6,3 à 4,7 tonnes par habitant (2015-2024). Les renouvelables atteignent 23,9 % de la consommation finale d’énergie en 2025 ; les transports restent la première source d’émissions."],
+   ["Ce que recommande l’Union pour 2026-2027", "Revenir sous la trajectoire de dépenses convenue, déplacer la fiscalité de la production vers la consommation et l’environnement, simplifier les règles, décarboner les transports et réduire la pauvreté des enfants et des travailleurs."]],
+  "s": {
+   "cArope": ["De 18,4 % en 2015 à 20,8 % en 2025, au niveau de la moyenne de l’Union (20,9 %). La Commission souligne la hausse de la pauvreté des travailleurs, notamment indépendants, et celle des familles avec enfants.", "Aucune projection officielle de la pauvreté n’est publiée."],
+   "cGini": ["30,4 en 2025, au-dessus de la moyenne de l’Union (29,2), en légère hausse depuis 2015 (29,2).", "Aucune projection officielle n’est publiée."],
+   "cLife": ["83,0 ans en 2024, au-dessus de la moyenne de l’Union (81,5 ans) : 8e des 27, à égalité avec Malte.", "La population vieillit : selon la Commission, le rapport entre les 65 ans et plus et les 15-64 ans passerait de 38,2 % en 2022 à 53,2 % en 2050."],
+   "cUnemp": ["7,7 % en 2025, au-dessus de la moyenne de l’Union (6,0 %), après un minimum de 7,4 % en 2023 et 2024.", "La Commission prévoyait en juin 2026 une croissance de 0,8 % en 2026 et de 1,1 % en 2027."]}},
+ "DE": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10121-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">proposition de recommandation du Conseil sur l’Allemagne, COM(2026) 205 du 3 juin 2026 (document du Conseil 10121/26)</a>",
+  "t": [
+   ["Croissance et niveau de vie", "L’économie stagne : −1,0 % en 2023, 0,0 % en 2024, 0,2 % en 2025. Corrigé des écarts de prix, le PIB par habitant reste nettement au-dessus de la moyenne de l’Union, mais l’écart se réduit : 126 % en 2015, 115 % en 2025."],
+   ["Emploi", "Le taux d’emploi des 20-64 ans (81,1 %) est parmi les dix plus élevés de l’Union, et le chômage reste bas (3,8 %). La Commission relève des pénuries de main-d’œuvre signalées par près de 30 % des entreprises, un nombre moyen d’heures travaillées parmi les plus faibles de l’Union et la moitié des salariées à temps partiel."],
+   ["Finances publiques", "La dette baisse de 71,0 % du PIB en 2015 à 62,8 % en 2025 ; le déficit atteint 2,9 %. En juin 2026, la Commission prévoyait 68,0 % de dette en 2027, avec la hausse des dépenses de défense. L’investissement public atteint 3,3 % du PIB, mais seulement 0,4 % une fois l’usure des équipements déduite."],
+   ["Social", "La part de la population en risque de pauvreté ou d’exclusion sociale passe de 20,0 % à 21,2 % ; le coefficient de Gini reste proche de 30 (30,1 en 2025)."],
+   ["Climat et énergie", "Les émissions nettes passent de 11,1 à 8,5 tonnes par habitant (2015-2024). Les renouvelables atteignent 23,9 % de la consommation finale d’énergie en 2025 ; la Commission relève la congestion des réseaux électriques."],
+   ["Ce que recommande l’Union pour 2026-2027", "Rester dans la trajectoire de dépenses, améliorer la qualité de l’investissement public, augmenter les heures travaillées, soutenir l’innovation, rendre le logement plus abordable et moderniser les réseaux."]],
+  "s": {
+   "cArope": ["De 20,0 % en 2015 à 21,2 % en 2025, au niveau de la moyenne de l’Union (20,9 %). La rupture de 2020 dans l’enquête allemande rend la comparaison avec les années antérieures fragile.", "Aucune projection officielle de la pauvreté n’est publiée."],
+   "cGini": ["30,1 en 2025, proche de la moyenne de l’Union (29,2) et stable sur dix ans.", "Aucune projection officielle n’est publiée."],
+   "cLife": ["81,2 ans en 2024, sous la moyenne de l’Union (81,5 ans) : l’écart avec la France ou la Belgique s’est creusé depuis 2015.", "Selon la Commission, la population de 20 à 64 ans passerait de 49 à 45 millions entre 2025 et 2035."],
+   "cUnemp": ["3,8 % en 2025, nettement sous la moyenne de l’Union (6,0 %), mais en hausse depuis 2023 (3,1 %).", "La Commission prévoyait en juin 2026 une croissance de 0,6 % en 2026 et de 0,9 % en 2027."]}}
+}
+;
+  function ptBlock(c){var t=PT[c];return '<div class="ptb" data-r><p class="kicker">En bref · les grandes tendances <span class="ptp">pilote, 3 pays</span></p><dl class="ptl">'+t.t.map(function(x){return '<div><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>'}).join('')+'</dl>'+
+    '<p class="note2">Chiffres : Eurostat, comme les graphiques de cette page. Diagnostic, prévisions et recommandations : '+t.src+', publiés avant la révision des comptes d’octobre 2026 (les chiffres de la Commission peuvent différer de quelques dixièmes). Textes rédigés pour la Belgique, la France et l’Allemagne, à titre de pilote.</p></div>'}
+  function ptNotes(c){var t=PT[c];if(!t||!t.s)return;Object.keys(t.s).forEach(function(id){var h=D.getElementById(id);if(!h)return;var n=t.s[id];h.insertAdjacentHTML('beforeend','<div class="ptn"><p><b>Contexte.</b> '+n[0]+'</p><p><b>Et ensuite ?</b> '+n[1]+'</p></div>')})}
   /* ======================= Carte ======================= */
   var svg=D.getElementById('map'),W=MAP.W,Hh=MAP.H,pad=44;
   svg.setAttribute('viewBox',(-pad)+' '+(-pad)+' '+(W+2*pad)+' '+(Hh+2*pad));
@@ -1547,6 +1602,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
   function trendSection(cs,id){var one=cs.length===1;
     return '<section class="dz papier trend" aria-labelledby="'+id+'"><div class="w"><p class="kicker" data-r>Tendances depuis 2015 · actualité officielle · Eurostat et Conseil de l’UE</p><h2 id="'+id+'" data-r>'+(one?'Ce qui a changé <span class="s">en dix ans.</span>':'Deux pays, <span class="s">dix ans d’évolution.</span>')+'</h2>'+
       '<p class="lede" data-r>Valeur de 2015, dernière valeur publiée et écart en points (pt). Une évolution décrit ce qui a changé ; elle ne dit pas pourquoi. Plusieurs causes jouent en même temps (conjoncture, crise sanitaire, inflation de 2022, politiques publiques), et certaines séries comportent des ruptures de méthode signalées par Eurostat.</p>'+
+      (one&&PT[cs[0]]?ptBlock(cs[0]):'')+
       trendTable(cs)+
       '<h3 class="trh" data-r>L’actualité qui touche '+(one?'ce pays':'ces deux pays')+'</h3>'+
       '<div class="'+(one?'':'grid2')+'" data-r>'+cs.map(function(c){return '<div>'+(one?'':'<p class="kicker">'+name(c)+'</p>')+newsBox(c)+'</div>'}).join('')+'</div>'+
@@ -1626,6 +1682,7 @@ var MAP={"W":760,"H":800,"eu":[{"code":"SE","d":"M435.5,298.5L434.6,299.2L434.3,
     lineChart(D.getElementById('cUnemp'),{from:2013,to:2025,min:0,aria:'Chômage',series:[{d:S(EU,'unemp'),color:EUp,dash:1,w:2,name:'UE'},{d:S(c,'unemp'),color:'#C9773A',name:nm}]});
     var CS={cDebt:['teina225'],cDef:['tec00127'],cRE:['tec00021','gov_10a_exp'],cInt:['gov_10a_main|'+BK.interest],cArope:['ilc_peps01n'],cGini:['tessi190'],cLife:['tps00205'],cUnemp:['une_rt_a']};
     Object.keys(CS).forEach(function(id){D.getElementById(id).insertAdjacentHTML('beforeend','<p class="src">'+srcs(CS[id])+'</p>')});
+    ptNotes(c);
     /* Budget interactif */
     var unit='P',yr=Y1;
     function eurHab(code,k,y){var v=at(C[code].cofog[k],y),g=at(S(code,'gdp_meur'),y),p=popMid(code,y);return v!=null&&g&&p?v/100*g*1e6/p:null}

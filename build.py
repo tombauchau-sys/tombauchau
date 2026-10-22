@@ -383,7 +383,7 @@ def build_home():
     out = head + add + '</style>\n\n' + gate_html + body + '\n' + pre + letters + gate + start + mid + read('accueil/app.js') + '})();\n</script>\n'
     out = (out.replace('__MAP__', read('geo/map.json'))
               .replace('__WORLD__', read('geo/world.json'))
-              .replace('__DATA__', read('data/cj-data.json')))
+              .replace('__DATA__', read('data/cj-data.json')).replace('__PT__', read('data/pays-textes.json')))
     titles = {'emploi': 'Emploi et inactivité', 'finances': 'Finances publiques', 'pensions': 'Pensions et vieillissement', 'immigration': 'Immigration et asile', 'justice': 'Justice et sécurité', 'sante': 'Santé', 'education': 'Éducation', 'inegalites': 'Inégalités et pauvreté', 'climat': 'Climat et énergie', 'logement': 'Logement', 'fiscalite': 'Fiscalité'}
     groups = [{'t': titles[n], 'href': '__' + n.upper() + '__', 'ind': DOSSIER_IND[n]} for n in titles]
     allids = sorted({i for n in titles for i in DOSSIER_IND[n]})

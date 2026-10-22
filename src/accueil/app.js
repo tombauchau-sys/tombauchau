@@ -129,6 +129,12 @@
       '<div data-r><p class="kicker" style="margin-top:22px">Les ratios budgétaires que regarde Moody’s, '+nm+', 2025</p><ul class="dsr">'+
       row('Dette / PIB',deb,de,' %')+row('Dette / recettes publiques',deb!=null&&rev?deb/rev*100:null,de!=null&&re?de/re*100:null,' %')+row('Intérêts / recettes publiques',it!=null&&rev?it/rev*100:null,ie!=null&&re?ie/re*100:null,' %')+row('Intérêts / PIB',it,ie,' %')+'</ul>'+
       '<p class="src" style="color:var(--cream-dim)">Calcul Au plus Juste à partir de la dette, des recettes et des intérêts publiés par Eurostat (notification d’octobre 2026 et gov_10a_main). Ces ratios figurent dans la méthode de Moody’s ; ils ne suffisent pas à reproduire une note. Sources : Moody’s, <a href="https://ratings.moodys.com/api/rmc-documents/395819" target="_blank" rel="noopener">Rating Methodology: Sovereigns</a>, 22 novembre 2022 ; PNUD, <a href="https://www.undp.org/africa/credit-ratings-resource-platform" target="_blank" rel="noopener">Credit Ratings Resource Platform</a> (fiches <a href="https://www.undp.org/node/464071" target="_blank" rel="noopener">S&amp;P</a> et <a href="https://undp.org/node/464076" target="_blank" rel="noopener">Fitch</a>) ; R. Cantor et F. Packer, « <a href="https://www.newyorkfed.org/medialibrary/media/research/epr/96v02n2/9610cant.pdf" target="_blank" rel="noopener">Determinants and Impact of Sovereign Credit Ratings</a> », <i>FRBNY Economic Policy Review</i>, octobre 1996. Consultés le 22 octobre 2026.</p></div></div>'}
+
+  /* Pilote : textes par pays (BE, FR, DE), d'après les recommandations par pays du Semestre européen 2026 */
+  var PT=__PT__;
+  function ptBlock(c){var t=PT[c];return '<div class="ptb" data-r><p class="kicker">En bref · les grandes tendances <span class="ptp">pilote, 3 pays</span></p><dl class="ptl">'+t.t.map(function(x){return '<div><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>'}).join('')+'</dl>'+
+    '<p class="note2">Chiffres : Eurostat, comme les graphiques de cette page. Diagnostic, prévisions et recommandations : '+t.src+', publiés avant la révision des comptes d’octobre 2026 (les chiffres de la Commission peuvent différer de quelques dixièmes). Textes rédigés pour la Belgique, la France et l’Allemagne, à titre de pilote.</p></div>'}
+  function ptNotes(c){var t=PT[c];if(!t||!t.s)return;Object.keys(t.s).forEach(function(id){var h=D.getElementById(id);if(!h)return;var n=t.s[id];h.insertAdjacentHTML('beforeend','<div class="ptn"><p><b>Contexte.</b> '+n[0]+'</p><p><b>Et ensuite ?</b> '+n[1]+'</p></div>')})}
   /* ======================= Carte ======================= */
   var svg=D.getElementById('map'),W=MAP.W,Hh=MAP.H,pad=44;
   svg.setAttribute('viewBox',(-pad)+' '+(-pad)+' '+(W+2*pad)+' '+(Hh+2*pad));
@@ -286,6 +292,7 @@
   function trendSection(cs,id){var one=cs.length===1;
     return '<section class="dz papier trend" aria-labelledby="'+id+'"><div class="w"><p class="kicker" data-r>Tendances depuis 2015 · actualité officielle · Eurostat et Conseil de l’UE</p><h2 id="'+id+'" data-r>'+(one?'Ce qui a changé <span class="s">en dix ans.</span>':'Deux pays, <span class="s">dix ans d’évolution.</span>')+'</h2>'+
       '<p class="lede" data-r>Valeur de 2015, dernière valeur publiée et écart en points (pt). Une évolution décrit ce qui a changé ; elle ne dit pas pourquoi. Plusieurs causes jouent en même temps (conjoncture, crise sanitaire, inflation de 2022, politiques publiques), et certaines séries comportent des ruptures de méthode signalées par Eurostat.</p>'+
+      (one&&PT[cs[0]]?ptBlock(cs[0]):'')+
       trendTable(cs)+
       '<h3 class="trh" data-r>L’actualité qui touche '+(one?'ce pays':'ces deux pays')+'</h3>'+
       '<div class="'+(one?'':'grid2')+'" data-r>'+cs.map(function(c){return '<div>'+(one?'':'<p class="kicker">'+name(c)+'</p>')+newsBox(c)+'</div>'}).join('')+'</div>'+
@@ -365,6 +372,7 @@
     lineChart(D.getElementById('cUnemp'),{from:2013,to:2025,min:0,aria:'Chômage',series:[{d:S(EU,'unemp'),color:EUp,dash:1,w:2,name:'UE'},{d:S(c,'unemp'),color:'#C9773A',name:nm}]});
     var CS={cDebt:['teina225'],cDef:['tec00127'],cRE:['tec00021','gov_10a_exp'],cInt:['gov_10a_main|'+BK.interest],cArope:['ilc_peps01n'],cGini:['tessi190'],cLife:['tps00205'],cUnemp:['une_rt_a']};
     Object.keys(CS).forEach(function(id){D.getElementById(id).insertAdjacentHTML('beforeend','<p class="src">'+srcs(CS[id])+'</p>')});
+    ptNotes(c);
     /* Budget interactif */
     var unit='P',yr=Y1;
     function eurHab(code,k,y){var v=at(C[code].cofog[k],y),g=at(S(code,'gdp_meur'),y),p=popMid(code,y);return v!=null&&g&&p?v/100*g*1e6/p:null}
