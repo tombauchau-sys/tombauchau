@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('22 octobre 2026', [
+        'Accueil, fiche pays : textes par pays étendus aux Pays-Bas, à l’Italie, à l’Espagne, à la Grèce et à l’Irlande (tendances, lecture sur la durée, recherche académique, perspectives officielles).',
         'Accueil, fiche pays (pilote Belgique, France, Allemagne) : ajout d’une « Lecture sur la durée » (expérience passée, ce qu’en dit la recherche, perspectives officielles) et de données sur la démographie et l’origine du gaz importé, à la demande de l’auteur.',
         'Finances, fiche 07 : correction (validée par l’auteur) de la part de la dette qui arrive à échéance dans l’année : 13,8 % (échéance restant à courir), et non 8,9 %, qui est la part empruntée pour un an ou moins.',
         'Accueil, fiche pays : pilote de textes pour la Belgique, la France et l’Allemagne (les grandes tendances depuis 2015, et pour chaque graphique social, le contexte et ce qu’annoncent les projections officielles), d’après Eurostat et les recommandations par pays du Semestre européen 2026.',

@@ -132,10 +132,10 @@
 
   /* Pilote : textes par pays (BE, FR, DE), d'après les recommandations par pays du Semestre européen 2026 */
   var PT=__PT__;
-  function ptBlock(c){var t=PT[c];return '<div class="ptb" data-r><p class="kicker">En bref · les grandes tendances <span class="ptp">pilote, 3 pays</span></p><dl class="ptl">'+t.t.map(function(x){return '<div><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>'}).join('')+'</dl>'+
+  function ptBlock(c){var t=PT[c];return '<div class="ptb" data-r><p class="kicker">En bref · les grandes tendances <span class="ptp">textes par pays, en cours</span></p><dl class="ptl">'+t.t.map(function(x){return '<div><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>'}).join('')+'</dl>'+
     (t.l?'<h3 class="ptlh">Lecture sur la durée : expérience passée et perspectives</h3><div class="ptl3">'+t.l.map(function(x){return '<div><p class="kicker">'+x[0]+'</p><p>'+x[1]+'</p></div>'}).join('')+'</div>':'')+
     (t.refs?'<p class="note2"><b>Références :</b> '+t.refs.join(' ; ')+'.</p>':'')+
-    '<p class="note2">Chiffres : Eurostat, comme les graphiques de cette page, sauf la dette avant 1995 et les projections à 2031 (FMI). Diagnostic, prévisions et recommandations : '+t.src+', publiés avant la révision des comptes d’octobre 2026 (les chiffres de la Commission peuvent différer de quelques dixièmes). Textes rédigés pour la Belgique, la France et l’Allemagne, à titre de pilote.</p></div>'}
+    '<p class="note2">Chiffres : Eurostat, comme les graphiques de cette page, sauf la dette avant 1995 et les projections à 2031 (FMI). Diagnostic, prévisions et recommandations : '+t.src+', publiés avant la révision des comptes d’octobre 2026 : les chiffres de la Commission peuvent différer de ceux des graphiques. Textes rédigés pays par pays ; les autres pays suivront.</p></div>'}
   function ptNotes(c){var t=PT[c];if(!t||!t.s)return;Object.keys(t.s).forEach(function(id){var h=D.getElementById(id);if(!h)return;var n=t.s[id];h.insertAdjacentHTML('beforeend','<div class="ptn"><p><b>Contexte.</b> '+n[0]+'</p><p><b>Et ensuite ?</b> '+n[1]+'</p></div>')})}
   /* ======================= Carte ======================= */
   var svg=D.getElementById('map'),W=MAP.W,Hh=MAP.H,pad=44;
