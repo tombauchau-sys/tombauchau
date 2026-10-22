@@ -1,5 +1,5 @@
 {
- "_note": "Pilote (22/10/2026) : textes par pays pour la Belgique, la France et l'Allemagne, à valider par l'auteur avant extension aux 27. Chiffres : base de la carte (Eurostat) ; diagnostic et prévisions : recommandations par pays du Semestre européen 2026.",
+ "_note": "Textes par pays (22/10/2026) : Belgique, France, Allemagne, Pays-Bas, Italie, Espagne, Grèce, Irlande, Portugal, Suède, Danemark, Finlande, Autriche, Pologne ; les autres pays suivront. Chiffres : base de la carte (Eurostat) et FMI ; diagnostic et prévisions : recommandations par pays du Semestre européen 2026 ; interprétation : sources académiques citées.",
  "BE": {
   "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10158-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">recommandation du Conseil sur la Belgique, document 10158/26 du 22 juin 2026</a> (proposition de la Commission COM(2026) 201)",
   "t": [
@@ -573,6 +573,439 @@
    "cUnemp": [
     "4,7 % en 2025, sous la moyenne de l’Union (6,0 %).",
     "La Commission prévoyait en juin 2026 un recul du PIB de 1,2 % en 2026 puis une hausse de 3,4 % en 2027, des chiffres dominés par les multinationales."
+   ]
+  }
+ },
+ "PT": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10139-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">proposition de recommandation du Conseil sur le Portugal, COM(2026) 222 du 3 juin 2026 (document du Conseil 10139/26)</a>",
+  "t": [
+   [
+    "Croissance et niveau de vie",
+    "Croissance de 1,9 % en 2025. Corrigé des écarts de prix, le PIB par habitant passe de 76 % à 81 % de la moyenne de l’Union (2015-2025) : il se rapproche de la moyenne, mais reste nettement en dessous."
+   ],
+   [
+    "Emploi",
+    "Le taux d’emploi des 20-64 ans passe de 67,9 % à 79,6 % (2015-2025) et le chômage de 13,0 % à 6,0 %, le niveau de la moyenne de l’Union. Le chômage des jeunes reste élevé (19,5 %)."
+   ],
+   [
+    "Finances publiques",
+    "La dette baisse de 131,0 % du PIB en 2015 et 134,1 % en 2020 à 89,2 % en 2025, la troisième plus forte baisse de l’Union depuis 2020, après la Grèce et Chypre. Le budget est en excédent (0,7 %). La Commission prévoyait en juin 2026 un léger déficit en 2026 (0,1 %) et une dette de 86,0 % en 2027 ; elle relève que la dépense nette dépasse la limite fixée par le Conseil."
+   ],
+   [
+    "Social",
+    "La pauvreté ou l’exclusion sociale baisse de 26,4 % à 18,6 % (2015-2025), sous la moyenne de l’Union (20,9 %), et le coefficient de Gini de 34,0 à 30,9. Selon la Commission, les prix des logements ont plus que doublé depuis 2015, l’une des plus fortes hausses de l’Union, surtout sur le littoral et dans les villes."
+   ],
+   [
+    "Climat et énergie",
+    "Les émissions nettes passent de 6,3 à 4,9 tonnes par habitant (2015-2024) ; les renouvelables de 30,5 % à 36,7 % de la consommation finale d’énergie (2015-2025). Selon la Commission, la production d’électricité est l’une des plus décarbonées de l’Union, mais le pétrole fournit 93 % de l’énergie consommée par les transports."
+   ],
+   [
+    "Démographie et gaz",
+    "La population est l’une des plus âgées de l’Union : 38,6 personnes de 65 ans et plus pour 100 de 15 à 64 ans en 2025, le troisième rapport le plus élevé. Le solde naturel est négatif (−23 039 en 2015, −34 053 en 2025), mais la population passe de 10,3 à 11,4 millions entre 2019 et 2025 grâce au solde migratoire. Le gaz d’origine russe passe de 13,6 % à 6,8 % des importations de gaz (2021-2024)."
+   ],
+   [
+    "Ce que recommande l’Union pour 2026-2027",
+    "Respecter la trajectoire de dépenses, assurer la soutenabilité des pensions et développer les pensions complémentaires, réduire les quelque 800 avantages fiscaux, décarboner les transports, remédier aux pénuries de personnel de santé et augmenter l’offre de logements abordables et sociaux."
+   ]
+  ],
+  "l": [
+   [
+    "Sur la longue durée",
+    "La dette portugaise baisse dans les années 1990 (63,5 % du PIB en 1995, 54,2 % en 2000), puis remonte à 72,7 % en 2007, avant la crise financière. La crise de la zone euro la porte à 128,6 % en 2012 : le Portugal demande en avril 2011 une aide de l’Union et du FMI, jusqu’à 78 milliards d’euros, et sort du programme en juin 2014. Après le pic de la pandémie (134,1 % en 2020), la dette baisse rapidement."
+   ],
+   [
+    "Ce qu’en dit la recherche",
+    "Blanchard (2007), écrit avant la crise, décrit le mécanisme : la perspective de l’entrée dans l’euro, à la fin des années 1990, provoque un boom de la production et de gros déficits extérieurs ; le boom se transforme ensuite en marasme, alors que les déficits extérieurs et budgétaires restent élevés. Il examine comment un pays peut s’ajuster sans pouvoir dévaluer sa monnaie. Aujourd’hui, la situation est inverse : le taux d’intérêt moyen payé sur la dette (2,3 % en 2025) est très inférieur à la croissance du PIB en valeur (6,0 %), ce qui, avec l’excédent budgétaire, fait baisser la dette selon l’arithmétique de Blanchard (2019)."
+   ],
+   [
+    "Perspectives",
+    "Le FMI projette une dette de 72,0 % du PIB en 2031. La Commission prévoit une hausse des dépenses publiques de pensions de 12,8 % du PIB en 2025 à 15,1 % en 2045, la troisième plus élevée de l’Union à cet horizon. Ce sont des projections, sensibles aux hypothèses."
+   ]
+  ],
+  "refs": [
+   "<a href=\"https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO\" target=\"_blank\" rel=\"noopener\">FMI, Perspectives de l’économie mondiale (DataMapper, GGXWDG_NGDP), consulté le 22 octobre 2026</a>",
+   "O. Blanchard, <a href=\"https://www.piie.com/sites/default/files/documents/wp19-4.pdf\" target=\"_blank\" rel=\"noopener\">« Public Debt and Low Interest Rates »</a>, PIIE Working Paper 19-4, 2019",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/nrg_ti_gas/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, nrg_ti_gas</a> (importations de gaz par pays d’origine)",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, demo_gind</a> (solde naturel)",
+   "O. Blanchard, <a href=\"https://link.springer.com/article/10.1007/s10258-006-0015-4\" target=\"_blank\" rel=\"noopener\">« Adjustment within the euro. The difficult case of Portugal »</a>, <i>Portuguese Economic Journal</i>, vol. 6, 2007, p. 1-21",
+   "<a href=\"https://economy-finance.ec.europa.eu/eu-financial-assistance/euro-area-countries/financial-assistance-portugal_en\" target=\"_blank\" rel=\"noopener\">Commission européenne, assistance financière au Portugal (2011-2014)</a>"
+  ],
+  "s": {
+   "cArope": [
+    "18,6 % en 2025, sous la moyenne de l’Union (20,9 %), après 26,4 % en 2015.",
+    "Aucune projection officielle de la pauvreté n’est publiée."
+   ],
+   "cGini": [
+    "30,9 en 2025, au-dessus de la moyenne de l’Union (29,2), après 34,0 en 2015.",
+    "Aucune projection officielle n’est publiée."
+   ],
+   "cLife": [
+    "82,5 ans en 2024, au-dessus de la moyenne de l’Union (81,5 ans).",
+    "Les dépenses publiques de pensions passeraient de 12,8 % à 15,1 % du PIB entre 2025 et 2045 (Commission)."
+   ],
+   "cUnemp": [
+    "6,0 % en 2025, au niveau de la moyenne de l’Union, après 13,0 % en 2015.",
+    "La Commission prévoyait en juin 2026 une croissance de 1,7 % en 2026 et de 1,8 % en 2027."
+   ]
+  }
+ },
+ "SE": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10199-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">projet de recommandation du Conseil sur la Suède (document du Conseil 10199/26 du 22 juin 2026), fondé sur la proposition COM(2026) 227 du 3 juin 2026</a>",
+  "t": [
+   [
+    "Croissance et niveau de vie",
+    "Croissance de 1,4 % en 2025. Corrigé des écarts de prix, le PIB par habitant reste au-dessus de la moyenne de l’Union (111 % en 2025), mais il a nettement reculé depuis 2015 (126 %)."
+   ],
+   [
+    "Emploi",
+    "Le taux d’emploi des 20-64 ans est élevé (81,8 % en 2025, le quatrième de l’Union), mais le chômage aussi : 8,8 %, le quatrième plus élevé, et 24,3 % chez les jeunes, le troisième. Selon la Commission, la Suède a le chômage le plus élevé de l’Union parmi les personnes nées hors de l’Union."
+   ],
+   [
+    "Finances publiques",
+    "La dette baisse de 45,0 % du PIB en 2015 à 35,1 % en 2025, l’une des plus basses de l’Union ; le déficit est de 1,6 %. La Commission prévoyait en juin 2026 un déficit de 2,8 % en 2026, surtout à cause de la défense (2,9 % du PIB en 2025, 3,8 % prévus en 2026), et un dépassement de la limite de dépense nette en 2026."
+   ],
+   [
+    "Social",
+    "La pauvreté ou l’exclusion sociale est stable (18,2 % en 2015, 18,6 % en 2025), sous la moyenne de l’Union (20,9 %) ; le coefficient de Gini monte de 26,7 à 28,6. Selon la Commission, la dette privée est parmi les plus élevées de l’Union et le contrôle des loyers est le plus strict de l’OCDE, ce qui allonge les files d’attente pour un logement et freine la mobilité."
+   ],
+   [
+    "Climat et énergie",
+    "La Suède est le seul pays de l’Union dont les émissions nettes sont négatives (−0,6 tonne par habitant en 2024) : ses forêts et ses sols absorbent davantage que ce qu’elle émet. Les renouvelables couvrent 65,4 % de la consommation finale d’énergie (2025), la première part de l’Union. La Commission relève pourtant une hausse des émissions en 2024, surtout dans le transport routier, et un retard sur les objectifs de 2030."
+   ],
+   [
+    "Démographie et gaz",
+    "Le solde naturel reste positif mais se réduit (+23 963 en 2015, +5 279 en 2025) ; la fécondité baisse de 1,85 à 1,43 enfant par femme (2015-2024). Le gaz d’origine russe passe de 10,8 % à 6,7 % des importations de gaz (2021-2024)."
+   ],
+   [
+    "Ce que recommande l’Union pour 2026-2027",
+    "Respecter la trajectoire de dépenses, réformer le marché locatif et construire davantage, réduire ou supprimer la déductibilité des intérêts hypothécaires, réduire les émissions du transport routier, accélérer les permis pour l’éolien et les réseaux, améliorer les résultats scolaires et l’intégration des migrants sur le marché du travail."
+   ]
+  ],
+  "l": [
+   [
+    "Sur la longue durée",
+    "Au début des années 1990, la Suède traverse une grave crise bancaire : la dette publique atteint 66,1 % du PIB en 1993 et 68,7 % en 1995 (FMI). Elle baisse ensuite presque sans interruption : 50,4 % en 2000, 39,3 % en 2007, 34,5 % en 2025. La crise financière et la pandémie ne l’ont fait remonter que temporairement (46,1 % en 2014, 40,5 % en 2020)."
+   ],
+   [
+    "Ce qu’en dit la recherche",
+    "Englund (1999) retrace la crise. Après la déréglementation du crédit, à partir de 1985, les établissements financiers rivalisent pour croître ; avec une politique économique expansionniste, les prix des actifs s’envolent. Trois chocs frappent ensuite un secteur privé très endetté : un virage de la politique monétaire, une réforme fiscale qui renchérit le coût de l’emprunt après impôt, et la crise du mécanisme de change européen. Les prix immobiliers chutent, les faillites se multiplient ; l’État garantit l’ensemble des engagements des banques, pour un coût direct estimé à environ 2 % du PIB. Trente ans plus tard, l’immobilier et l’endettement des ménages restent les fragilités que souligne la Commission, même si elle a conclu en juin 2026 que la Suède ne connaît plus de déséquilibres macroéconomiques. Le taux d’intérêt moyen payé sur la dette (1,9 % en 2025) est très inférieur à la croissance du PIB en valeur (6,5 %) (Blanchard, 2019)."
+   ],
+   [
+    "Perspectives",
+    "Le FMI projette une dette de 30,7 % du PIB en 2031, en baisse malgré la hausse des dépenses de défense. Les risques que souligne la Commission sont l’immobilier, l’endettement des ménages et la baisse des niveaux scolaires depuis 2018 (enquête PISA). Ce sont des projections, sensibles aux hypothèses."
+   ]
+  ],
+  "refs": [
+   "<a href=\"https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO\" target=\"_blank\" rel=\"noopener\">FMI, Perspectives de l’économie mondiale (DataMapper, GGXWDG_NGDP), consulté le 22 octobre 2026</a>",
+   "O. Blanchard, <a href=\"https://www.piie.com/sites/default/files/documents/wp19-4.pdf\" target=\"_blank\" rel=\"noopener\">« Public Debt and Low Interest Rates »</a>, PIIE Working Paper 19-4, 2019",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/nrg_ti_gas/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, nrg_ti_gas</a> (importations de gaz par pays d’origine)",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, demo_gind</a> (solde naturel)",
+   "P. Englund, <a href=\"https://ideas.repec.org/a/oup/oxford/v15y1999i3p80-97.html\" target=\"_blank\" rel=\"noopener\">« The Swedish Banking Crisis: Roots and Consequences »</a>, <i>Oxford Review of Economic Policy</i>, vol. 15, n° 3, 1999, p. 80-97"
+  ],
+  "s": {
+   "cArope": [
+    "18,6 % en 2025, sous la moyenne de l’Union (20,9 %), presque inchangé depuis 2015 (18,2 %).",
+    "Aucune projection officielle de la pauvreté n’est publiée."
+   ],
+   "cGini": [
+    "28,6 en 2025, sous la moyenne de l’Union (29,2), mais en hausse depuis 2015 (26,7).",
+    "Aucune projection officielle n’est publiée."
+   ],
+   "cLife": [
+    "83,8 ans en 2024, la deuxième plus élevée de l’Union.",
+    "La Suède compte aussi le plus grand nombre d’années de vie en bonne santé à 65 ans de l’Union (14,2 ans en 2024)."
+   ],
+   "cUnemp": [
+    "8,8 % en 2025, le quatrième plus élevé de l’Union (6,0 %), après 7,5 % en 2015.",
+    "La Commission prévoyait en juin 2026 une croissance de 1,8 % en 2026 et de 2,2 % en 2027."
+   ]
+  }
+ },
+ "DK": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10119-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">proposition de recommandation du Conseil sur le Danemark, COM(2026) 204 du 3 juin 2026 (document du Conseil 10119/26)</a>",
+  "t": [
+   [
+    "Croissance et niveau de vie",
+    "Croissance de 3,5 % en 2025, parmi les cinq plus fortes de l’Union. Corrigé des écarts de prix, le PIB par habitant est le quatrième de l’Union (127 % de la moyenne en 2025), au même niveau qu’en 2015. Selon la Commission, la croissance de la productivité est concentrée dans quelques grandes entreprises."
+   ],
+   [
+    "Emploi",
+    "Le taux d’emploi des 20-64 ans passe de 75,4 % à 79,8 % (2015-2025). Le chômage (6,4 % en 2025) est proche de la moyenne de l’Union, mais le chômage de longue durée est l’un des plus bas (0,9 %). La Commission décrit un marché du travail tendu, avec des pénuries dans la santé, les soins et le numérique."
+   ],
+   [
+    "Finances publiques",
+    "La dette baisse de 44,6 % du PIB en 2015 à 27,2 % en 2025, la troisième plus basse de l’Union, et le budget est en excédent (2,9 %, le deuxième de l’Union). La Commission prévoyait en juin 2026 un excédent réduit à 0,5 % en 2027, en raison notamment de la hausse des dépenses de défense (2,2 % du PIB en 2025, 2,6 % prévus en 2026)."
+   ],
+   [
+    "Social",
+    "La pauvreté ou l’exclusion sociale est stable et sous la moyenne de l’Union (18,6 % en 2015, 17,9 % en 2025 ; Union : 20,9 %). Coefficient de Gini : 28,2. La Commission relève une pénurie de logements abordables et de longues attentes pour les logements sociaux."
+   ],
+   [
+    "Climat et énergie",
+    "Les renouvelables produisent 92,4 % de l’électricité en 2025, la part la plus élevée de l’Union selon la Commission, et couvrent 48,2 % de la consommation finale d’énergie, la troisième part de l’Union. Les émissions nettes passent de 8,8 à 6,1 tonnes par habitant (2015-2024). Le réseau électrique est saturé : le gestionnaire a suspendu temporairement les nouveaux contrats de raccordement."
+   ],
+   [
+    "Démographie et gaz",
+    "Le solde naturel reste positif mais diminue (+5 650 en 2015, +1 258 en 2025) ; la fécondité, 1,47 enfant par femme en 2024, est parmi les plus élevées de l’Union. Eurostat n’enregistre pas d’importations de gaz d’origine russe au Danemark en 2021 ni en 2024."
+   ],
+   [
+    "Ce que recommande l’Union pour 2026-2027",
+    "Respecter la trajectoire de dépenses, faciliter le financement de l’innovation dans les PME, accélérer l’électrification et le renforcement des réseaux, réduire l’intensité de l’agriculture, lutter contre le décrochage scolaire et construire davantage de logements dans les grandes villes."
+   ]
+  ],
+  "l": [
+   [
+    "Sur la longue durée",
+    "Au début des années 1990, la dette danoise est élevée : 78,7 % du PIB en 1993 (FMI). Elle baisse ensuite de façon continue jusqu’à 29,5 % en 2007, remonte avec la crise financière (48,7 % en 2014), puis redescend à 27,4 % en 2025. Le Danemark dégage aussi le plus fort excédent extérieur de l’Union (12,3 % du PIB en 2025)."
+   ],
+   [
+    "Ce qu’en dit la recherche",
+    "Le marché du travail danois est l’exemple type de la « flexicurité » : règles d’embauche et de licenciement souples, assurance chômage généreuse (surtout pour les bas salaires, car elle est plafonnée) et politique active de l’emploi. Dans une étude préliminaire sur la crise de 2008, Andersen (2011) constate que l’emploi s’est ajusté vite, mais que la plupart des périodes de chômage sont restées courtes : environ 60 % des chômeurs quittent le registre en 13 semaines. Les évaluations qu’il cite sont nuancées : certaines formes d’accompagnement raccourcissent le chômage, d’autres n’ont pas d’effet mesurable. Il avertit qu’une hausse durable du chômage pèserait lourdement sur l’équilibre financier du modèle. Le taux d’intérêt moyen payé sur la dette (2,8 % en 2025) reste inférieur à la croissance du PIB en valeur (4,4 %) (Blanchard, 2019)."
+   ],
+   [
+    "Perspectives",
+    "Le FMI projette une dette de 26,3 % du PIB en 2031. Les contraintes que relève la Commission sont la saturation du réseau électrique, les pénuries de compétences, la hausse du décrochage scolaire et le manque de logements abordables. Ce sont des projections, sensibles aux hypothèses."
+   ]
+  ],
+  "refs": [
+   "<a href=\"https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO\" target=\"_blank\" rel=\"noopener\">FMI, Perspectives de l’économie mondiale (DataMapper, GGXWDG_NGDP), consulté le 22 octobre 2026</a>",
+   "O. Blanchard, <a href=\"https://www.piie.com/sites/default/files/documents/wp19-4.pdf\" target=\"_blank\" rel=\"noopener\">« Public Debt and Low Interest Rates »</a>, PIIE Working Paper 19-4, 2019",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/nrg_ti_gas/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, nrg_ti_gas</a> (importations de gaz par pays d’origine)",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, demo_gind</a> (solde naturel)",
+   "T. M. Andersen, <a href=\"https://www.cpb.nl/sites/default/files/paper-flex-andersen.pdf\" target=\"_blank\" rel=\"noopener\">« A flexicurity labour market in the great recession – the case of Denmark »</a>, université d’Aarhus, version préliminaire, janvier 2011 (conférence CPB-ROA, La Haye)"
+  ],
+  "s": {
+   "cArope": [
+    "17,9 % en 2025, sous la moyenne de l’Union (20,9 %), presque inchangé depuis 2015 (18,6 %).",
+    "Aucune projection officielle de la pauvreté n’est publiée."
+   ],
+   "cGini": [
+    "28,2 en 2025, sous la moyenne de l’Union (29,2).",
+    "Aucune projection officielle n’est publiée."
+   ],
+   "cLife": [
+    "82,0 ans en 2024, au-dessus de la moyenne de l’Union (81,5 ans), après 80,7 ans en 2015.",
+    "Le rapport entre les 65 ans et plus et les 15-64 ans passe de 28,8 à 32,8 (2015-2025), sous la moyenne de l’Union (34,5)."
+   ],
+   "cUnemp": [
+    "6,4 % en 2025, proche de la moyenne de l’Union (6,0 %).",
+    "La Commission prévoyait en juin 2026 une croissance de 1,9 % en 2026 et de 1,8 % en 2027, et relève une légère tendance à la hausse du chômage."
+   ]
+  }
+ },
+ "FI": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10198-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">projet de recommandation du Conseil sur la Finlande (document du Conseil 10198/26 du 22 juin 2026), fondé sur la proposition COM(2026) 226 du 3 juin 2026</a>",
+  "t": [
+   [
+    "Croissance et niveau de vie",
+    "Croissance de 0,8 % en 2025, après un recul en 2023 (−1,2 %). Corrigé des écarts de prix, le PIB par habitant recule de 109 % à 101 % de la moyenne de l’Union (2015-2025)."
+   ],
+   [
+    "Emploi",
+    "Le chômage atteint 9,7 % en 2025, le deuxième plus élevé de l’Union après l’Espagne, et 21,8 % chez les jeunes. Le taux d’emploi des 20-64 ans (76,3 %) est plus élevé qu’en 2015 (71,8 %), mais il a baissé en 2025 selon la Commission."
+   ],
+   [
+    "Finances publiques",
+    "La dette passe de 68,8 % du PIB en 2015 à 88,4 % en 2025 ; le déficit est de 3,8 %. Le 20 janvier 2026, le Conseil a adressé à la Finlande une recommandation pour corriger son déficit excessif ; la procédure est en suspens depuis l’évaluation de la Commission de juin 2026. Les dépenses publiques (57,7 % du PIB en 2024) sont les plus élevées de l’Union, et la défense passerait de 1,7 % à 2,6 % du PIB entre 2025 et 2026."
+   ],
+   [
+    "Social",
+    "La pauvreté ou l’exclusion sociale (17,2 % en 2025, 16,9 % en 2015) et le coefficient de Gini (27,1) sont sous la moyenne de l’Union. La Commission relève que les besoins médicaux non satisfaits déclarés sont parmi les plus élevés de l’Union et que plusieurs régions chargées des services sociaux et de santé accumulent des déficits."
+   ],
+   [
+    "Climat et énergie",
+    "Les renouvelables couvrent 53,0 % de la consommation finale d’énergie (2025), la deuxième part de l’Union. Mais les émissions nettes, qui déduisent l’absorption par les forêts et les sols, passent de 6,2 à 8,7 tonnes par habitant (2015-2024) : selon Statistique Finlande, le secteur des terres est devenu une source nette d’émissions (+4,5 millions de tonnes en 2022), surtout à cause des sols tourbeux des forêts et d’un puits forestier plus faible."
+   ],
+   [
+    "Démographie et gaz",
+    "Le solde naturel devient négatif (+2 980 en 2015, −13 377 en 2025) et la fécondité chute de 1,65 à 1,25 enfant par femme (2015-2024). Le rapport entre les 65 ans et plus et les 15-64 ans est le quatrième de l’Union (38,1 en 2025). Le gaz d’origine russe passe de 75,1 % à 6,5 % des importations de gaz (2021-2024)."
+   ],
+   [
+    "Ce que recommande l’Union pour 2026-2027",
+    "Respecter la trajectoire de correction du déficit, en tenant compte de la défense ; mener des revues de dépenses régulières ; soutenir la recherche et le financement des jeunes entreprises ; décarboner l’industrie et les transports et gérer durablement les forêts ; mieux cibler les politiques de l’emploi et rendre les services sociaux et de santé plus efficaces."
+   ]
+  ],
+  "l": [
+   [
+    "Sur la longue durée",
+    "Jusqu’en 1990, la dette finlandaise est très faible (13,9 % du PIB en 1990). La dépression du début des années 1990 la porte à 54,2 % en 1993 (FMI). Elle redescend à 33,9 % en 2007, puis augmente presque sans interruption depuis la crise financière : 50,1 % en 2010, 68,8 % en 2015, 88,4 % en 2025."
+   ],
+   [
+    "Ce qu’en dit la recherche",
+    "Gorodnichenko, Mendoza et Tesar (2012) étudient la récession de 1991-1993, selon eux « la plus profonde d’un pays industrialisé depuis les années 1930 ». Ils l’attribuent à l’effondrement du commerce avec l’Union soviétique, qui a imposé une réorganisation coûteuse de l’industrie et une hausse brutale du coût de l’énergie. La période récente montre une autre fragilité : la croissance du PIB en valeur (2,0 % en 2025) ne dépasse pas le taux d’intérêt moyen payé sur la dette (environ 2 %) ; la dette ne peut donc baisser qu’avec un excédent budgétaire hors intérêts, alors que le pays est en déficit (Blanchard, 2019)."
+   ],
+   [
+    "Perspectives",
+    "Le FMI projette une dette de 101,2 % du PIB en 2031 ; la Commission prévoyait 93,1 % fin 2027. Les défis que met en avant la Commission sont la hausse des dépenses de défense, le vieillissement, le chômage et la situation des régions de la frontière orientale. Ce sont des projections, sensibles aux hypothèses."
+   ]
+  ],
+  "refs": [
+   "<a href=\"https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO\" target=\"_blank\" rel=\"noopener\">FMI, Perspectives de l’économie mondiale (DataMapper, GGXWDG_NGDP), consulté le 22 octobre 2026</a>",
+   "O. Blanchard, <a href=\"https://www.piie.com/sites/default/files/documents/wp19-4.pdf\" target=\"_blank\" rel=\"noopener\">« Public Debt and Low Interest Rates »</a>, PIIE Working Paper 19-4, 2019",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/nrg_ti_gas/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, nrg_ti_gas</a> (importations de gaz par pays d’origine)",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, demo_gind</a> (solde naturel)",
+   "Y. Gorodnichenko, E. G. Mendoza et L. L. Tesar, <a href=\"https://nber.org/papers/w14874\" target=\"_blank\" rel=\"noopener\">« The Finnish Great Depression: From Russia with Love »</a>, <i>American Economic Review</i>, vol. 102, n° 4, 2012, p. 1619-1643",
+   "<a href=\"https://stat.fi/en/publication/cl8a4c4tivtd00bvyvo6fy0sv\" target=\"_blank\" rel=\"noopener\">Statistique Finlande, « Greenhouse gas emissions fell in 2022 – the land use sector was a net emission source », 14 décembre 2023</a>"
+  ],
+  "s": {
+   "cArope": [
+    "17,2 % en 2025, sous la moyenne de l’Union (20,9 %).",
+    "Aucune projection officielle de la pauvreté n’est publiée."
+   ],
+   "cGini": [
+    "27,1 en 2025, sous la moyenne de l’Union (29,2), en légère hausse depuis 2015 (25,2).",
+    "Aucune projection officielle n’est publiée."
+   ],
+   "cLife": [
+    "82,2 ans en 2024, au-dessus de la moyenne de l’Union (81,5 ans).",
+    "Le rapport entre les 65 ans et plus et les 15-64 ans est le quatrième de l’Union (38,1 en 2025)."
+   ],
+   "cUnemp": [
+    "9,7 % en 2025, le deuxième plus élevé de l’Union (6,0 %).",
+    "La Commission prévoyait en juin 2026 une croissance de 0,8 % en 2026 et de 1,4 % en 2027."
+   ]
+  }
+ },
+ "AT": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10186-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">projet de recommandation du Conseil sur l’Autriche (document du Conseil 10186/26 du 22 juin 2026), fondé sur la proposition COM(2026) 220 du 3 juin 2026</a>",
+  "t": [
+   [
+    "Croissance et niveau de vie",
+    "Croissance de 0,7 % en 2025, l’une des plus faibles de l’Union, après deux années de recul (−0,7 % en 2023, −0,3 % en 2024). Corrigé des écarts de prix, le PIB par habitant reste élevé (118 % de la moyenne de l’Union en 2025), mais il recule depuis 2015 (128 %)."
+   ],
+   [
+    "Emploi",
+    "Le chômage est de 5,7 % en 2025 et le taux d’emploi des 20-64 ans de 77,6 %. Selon la Commission, 49,6 % des femmes travaillent à temps partiel, et la durée hebdomadaire moyenne du travail (35,8 heures) est inférieure à celle de l’Union (37,3). L’écart de salaire horaire entre femmes et hommes est le troisième de l’Union (17,6 % en 2024)."
+   ],
+   [
+    "Finances publiques",
+    "La dette passe de 85,6 % du PIB en 2015 à 80,7 % en 2025, mais le déficit s’est creusé (4,1 % en 2025). Le 8 juillet 2025, le Conseil a adressé à l’Autriche une recommandation pour corriger son déficit excessif ; la procédure est en suspens depuis l’évaluation de la Commission de juin 2026. Les dépenses publiques de pensions atteignent 14,5 % du PIB en 2025, parmi les plus élevées de l’Union."
+   ],
+   [
+    "Social",
+    "La pauvreté ou l’exclusion sociale monte de 16,9 % à 18,6 % (2015-2025), sous la moyenne de l’Union (20,9 %). La Commission relève une dégradation de la situation sociale en 2025 : un enfant sur quatre est menacé de pauvreté ou d’exclusion sociale, au-dessus de la moyenne de l’Union."
+   ],
+   [
+    "Climat et énergie",
+    "Les renouvelables couvrent 44,2 % de la consommation finale d’énergie (2025) et 83,9 % de l’électricité, mais selon la Commission les énergies fossiles fournissaient encore plus de la moitié de l’énergie en 2024. Les émissions nettes passent de 8,7 à 7,6 tonnes par habitant (2015-2024). Les prix de l’énergie sont nettement supérieurs à la moyenne de l’Union, en grande partie à cause du gaz utilisé pour produire l’électricité."
+   ],
+   [
+    "Démographie et gaz",
+    "Le solde naturel devient négatif (+1 308 en 2015, −11 835 en 2025) et la fécondité baisse de 1,49 à 1,31 enfant par femme (2015-2024). Le rapport entre les 65 ans et plus et les 15-64 ans (30,9 en 2025) reste sous la moyenne de l’Union (34,5). La donnée d’Eurostat sur la part du gaz importé d’origine russe (0 %) paraît incohérente : nous ne la reprenons pas en attendant de pouvoir la vérifier."
+   ],
+   [
+    "Ce que recommande l’Union pour 2026-2027",
+    "Respecter la trajectoire de correction du déficit ; rendre plus soutenables les pensions, la santé et les soins de longue durée, notamment en relevant l’âge effectif de départ à la retraite ; alléger la fiscalité du travail sans perte de recettes ; accélérer les renouvelables et les réseaux ; augmenter les heures travaillées et le travail à temps plein des femmes, notamment par l’accueil des jeunes enfants."
+   ]
+  ],
+  "l": [
+   [
+    "Sur la longue durée",
+    "La dette autrichienne monte de 56,2 % du PIB en 1990 à 68,2 % en 1995, puis reste stable jusqu’à la crise financière (65,8 % en 2007). Elle grimpe ensuite à 85,6 % en 2015, redescend à 71,0 % en 2019, remonte avec la pandémie (83,2 % en 2020) et s’établit à 81,4 % en 2025 (FMI)."
+   ],
+   [
+    "Ce qu’en dit la recherche",
+    "L’enjeu de long terme le plus étudié est celui des pensions. Knell, Köhler-Töglhofer et Prammer (Banque nationale d’Autriche, 2006) concluent que les réformes alors récentes ont nettement amélioré la soutenabilité budgétaire, surtout parce qu’elles devaient relever l’âge effectif de départ à la retraite et réduire la générosité du régime public. Vingt ans plus tard, la Commission juge encore l’âge légal et l’âge effectif de départ bas, et recommande de relever ce dernier : la question reste ouverte. Le taux d’intérêt moyen payé sur la dette (2,1 % en 2025) est inférieur à la croissance du PIB en valeur (3,6 %), mais le déficit suffit à faire monter la dette (Blanchard, 2019)."
+   ],
+   [
+    "Perspectives",
+    "Le FMI projette une dette de 84,3 % du PIB en 2031 ; la Commission prévoyait 84,9 % fin 2027. Les pressions viennent des pensions, de la santé et des soins de longue durée, selon la Commission. Ce sont des projections, sensibles aux hypothèses."
+   ]
+  ],
+  "refs": [
+   "<a href=\"https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO\" target=\"_blank\" rel=\"noopener\">FMI, Perspectives de l’économie mondiale (DataMapper, GGXWDG_NGDP), consulté le 22 octobre 2026</a>",
+   "O. Blanchard, <a href=\"https://www.piie.com/sites/default/files/documents/wp19-4.pdf\" target=\"_blank\" rel=\"noopener\">« Public Debt and Low Interest Rates »</a>, PIIE Working Paper 19-4, 2019",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, demo_gind</a> (solde naturel)",
+   "M. Knell, W. Köhler-Töglhofer et D. Prammer, <a href=\"https://ideas.repec.org/a/onb/oenbmp/y2006iq2-06b4.html\" target=\"_blank\" rel=\"noopener\">« The Austrian Pension System – How Recent Reforms Have Changed Fiscal Sustainability and Pension Benefits »</a>, <i>Monetary Policy &amp; the Economy</i>, Banque nationale d’Autriche, T2 2006, p. 69-93"
+  ],
+  "s": {
+   "cArope": [
+    "18,6 % en 2025, sous la moyenne de l’Union (20,9 %), mais en hausse depuis 2015 (16,9 %).",
+    "La Commission relève une dégradation de la situation sociale en 2025, notamment pour les enfants."
+   ],
+   "cGini": [
+    "27,4 en 2025, sous la moyenne de l’Union (29,2), stable depuis 2015 (27,2).",
+    "Aucune projection officielle n’est publiée."
+   ],
+   "cLife": [
+    "82,1 ans en 2024, au-dessus de la moyenne de l’Union (81,5 ans).",
+    "Les dépenses publiques de pensions atteignent 14,5 % du PIB en 2025, parmi les plus élevées de l’Union (Commission)."
+   ],
+   "cUnemp": [
+    "5,7 % en 2025, sous la moyenne de l’Union (6,0 %).",
+    "La Commission prévoyait en juin 2026 une croissance de 0,6 % en 2026 et de 0,9 % en 2027."
+   ]
+  }
+ },
+ "PL": {
+  "src": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-10138-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">proposition de recommandation du Conseil sur la Pologne, COM(2026) 221 du 3 juin 2026 (document du Conseil 10138/26)</a>",
+  "t": [
+   [
+    "Croissance et niveau de vie",
+    "Croissance de 3,8 % en 2025, parmi les plus fortes de l’Union. Corrigé des écarts de prix, le PIB par habitant passe de 70 % à 81 % de la moyenne de l’Union (2015-2025). Selon la Commission, l’Est du pays reste en retard (61,3 % de la moyenne de l’Union en 2024)."
+   ],
+   [
+    "Emploi",
+    "Le chômage tombe de 7,7 % à 3,1 % (2015-2025), le deuxième plus bas de l’Union, à égalité avec Malte, et le taux d’emploi des 20-64 ans passe de 66,3 % à 78,8 %. La Commission relève un faible taux d’activité des femmes de 55 à 64 ans (48,3 %, contre 59,4 % dans l’Union)."
+   ],
+   [
+    "Finances publiques",
+    "Le déficit atteint 7,2 % du PIB en 2025, le deuxième plus élevé de l’Union après la Roumanie, et la dette monte de 51,1 % à 59,6 % (2015-2025). Les dépenses de défense atteignent 3,4 % du PIB en 2025, 1,8 point de plus qu’en 2021, selon la Commission. Une procédure de déficit excessif est en cours, en suspens depuis l’évaluation de la Commission de juin 2026."
+   ],
+   [
+    "Social",
+    "La pauvreté ou l’exclusion sociale baisse de 22,5 % à 15,0 % (2015-2025), la deuxième plus basse de l’Union, et le coefficient de Gini de 30,6 à 24,9. La Commission relève en revanche la baisse du rapport entre la pension moyenne et le salaire moyen (66 % en 2005, 55 % en 2024)."
+   ],
+   [
+    "Climat et énergie",
+    "Les renouvelables couvrent 18,7 % de la consommation finale d’énergie (2025), l’une des plus faibles parts de l’Union ; les émissions nettes restent élevées (8,7 tonnes par habitant en 2024). Selon la Commission, le charbon fournit 60 % du chauffage urbain et environ 15 % des ménages se chauffent au charbon. En 2025, faute de capacité du réseau, des demandes de raccordement pour environ 42 GW de renouvelables ont été refusées, davantage que toute la capacité renouvelable installée du pays."
+   ],
+   [
+    "Démographie et gaz",
+    "Le solde naturel est très négatif et se creuse : −25 613 en 2015, −167 483 en 2025. La fécondité tombe de 1,32 à 1,14 enfant par femme (2015-2024), la quatrième plus basse de l’Union. Le gaz d’origine russe passe de 56,5 % des importations de gaz en 2021 à 0 % en 2024."
+   ],
+   [
+    "Ce que recommande l’Union pour 2026-2027",
+    "Respecter la trajectoire de dépenses en tenant compte de la défense ; dépenser plus efficacement et élargir les recettes ; réformer les pensions (âge de départ, régimes spéciaux, pauvreté des retraités) ; développer les réseaux électriques et les renouvelables, et supprimer les subventions au charbon ; améliorer l’éducation et l’emploi des groupes défavorisés."
+   ]
+  ],
+  "l": [
+   [
+    "Sur la longue durée",
+    "La Pologne quitte l’économie planifiée en 1989-1990. La dette publique passe de 48,6 % du PIB en 1995 à 36,3 % en 2000, puis oscille entre 44 % et 60 % (FMI). Depuis 2015 au moins, le niveau de vie se rapproche nettement de la moyenne de l’Union."
+   ],
+   [
+    "Ce qu’en dit la recherche",
+    "Lipton et Sachs (1990) décrivent et défendent le programme lancé en janvier 1990 : une réforme rapide et globale, plutôt que graduelle, pour casser l’hyperinflation de 1989. Les prix bondissent d’environ 78 % en janvier 1990, puis la hausse retombe autour de 5 % par mois. Le choix d’une transition rapide plutôt que progressive a été longuement discuté par les économistes. Aujourd’hui, la croissance du PIB en valeur (8,4 % en 2025) dépasse largement le taux d’intérêt moyen payé sur la dette (environ 4,9 %) ; mais avec un déficit de 7,2 %, la dette augmente quand même (Blanchard, 2019)."
+   ],
+   [
+    "Perspectives",
+    "Le FMI projette une dette de 82,0 % du PIB en 2031, soit plus de 22 points de hausse en six ans ; la Commission prévoyait 68,3 % fin 2027. Les défis mis en avant par la Commission sont la baisse du niveau des pensions, la dépendance au charbon et les goulets d’étranglement du réseau électrique. Ce sont des projections, sensibles aux hypothèses."
+   ]
+  ],
+  "refs": [
+   "<a href=\"https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO\" target=\"_blank\" rel=\"noopener\">FMI, Perspectives de l’économie mondiale (DataMapper, GGXWDG_NGDP), consulté le 22 octobre 2026</a>",
+   "O. Blanchard, <a href=\"https://www.piie.com/sites/default/files/documents/wp19-4.pdf\" target=\"_blank\" rel=\"noopener\">« Public Debt and Low Interest Rates »</a>, PIIE Working Paper 19-4, 2019",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/nrg_ti_gas/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, nrg_ti_gas</a> (importations de gaz par pays d’origine)",
+   "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, demo_gind</a> (solde naturel)",
+   "D. Lipton et J. Sachs, <a href=\"https://www.brookings.edu/articles/creating-a-market-economy-in-eastern-europe-the-case-of-poland/\" target=\"_blank\" rel=\"noopener\">« Creating a Market Economy in Eastern Europe: The Case of Poland »</a>, <i>Brookings Papers on Economic Activity</i>, 1990, n° 1, p. 75-148"
+  ],
+  "s": {
+   "cArope": [
+    "15,0 % en 2025, le deuxième plus bas de l’Union (20,9 %), après 22,5 % en 2015.",
+    "Aucune projection officielle de la pauvreté n’est publiée."
+   ],
+   "cGini": [
+    "24,9 en 2025, parmi les plus bas de l’Union (29,2), après 30,6 en 2015.",
+    "Aucune projection officielle n’est publiée."
+   ],
+   "cLife": [
+    "78,5 ans en 2024, sous la moyenne de l’Union (81,5 ans).",
+    "Selon la Commission, environ la moitié des retraités pourraient ne toucher que la pension minimale d’ici 2040."
+   ],
+   "cUnemp": [
+    "3,1 % en 2025, le deuxième plus bas de l’Union (6,0 %).",
+    "La Commission prévoyait en juin 2026 une croissance de 3,5 % en 2026 et de 2,8 % en 2027."
    ]
   }
  }
