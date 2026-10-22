@@ -117,8 +117,14 @@
   var SD=DATA.sub.def.map(function(r){return [r[0],r[1],r[1]<-1?'#E2402B':'#fff']});
   hbars('subDef',SD,{min:-4.8,max:0.6,signed:1,label:'Solde 2025 par niveau de pouvoir : fédéral −3,7 % du PIB, Communautés et Régions −1,4 %, pouvoirs locaux −0,1 %, sécurité sociale 0,0 %'});
   CJD.rename('subDef',['Solde 2025 (% du PIB)']);
-  hbars('revExp',[['Recettes · Belgique',49.0,'#7FB6A3'],['Recettes · Union',46.4,'#fff'],['Dépenses · Belgique',54.2,'#E2402B'],['Dépenses · Union',49.5,'#fff']],{min:0,max:62,label:'Recettes et dépenses publiques 2025 : Belgique 49,0 % et 54,2 % du PIB ; Union 46,4 % et 49,5 %'});
+  hbars('revExp',[['Recettes · Belgique',49.2,'#7FB6A3'],['Recettes · Union',46.3,'#fff'],['Dépenses · Belgique',54.4,'#E2402B'],['Dépenses · Union',49.4,'#fff']],{min:0,max:62,label:'Recettes et dépenses publiques 2025 : Belgique 49,2 % et 54,4 % du PIB ; Union 46,3 % et 49,4 %'});
   CJD.rename('revExp',['2025 (% du PIB)']);
+  (function(){var R=DATA.rte;lines(D.getElementById('rteChart'),{t0:1995,t1:2025,years:MOB?[1995,2010,2025]:[1995,2000,2005,2010,2015,2020,2025],h:MOB?340:440,min:40,max:60,ticks:[40,45,50,55,60],grid:'rgba(26,26,26,.2)',mute:'#1A1A1A',ink:'#1A1A1A',
+    series:[{n:'dépenses · Union',v:R.teEU,c:'#5A3A1E',dash:1,w:2,dy:-10},{n:'recettes · Union',v:R.trEU,c:'#FFFFFF',dash:1,w:2,dy:4},{n:'dépenses · Belgique',v:R.teBE,c:'#1A1A1A',w:4},{n:'recettes · Belgique',v:R.trBE,c:'#FFFFFF',w:4,dy:10}],
+    events:[{y:2009,t:'crise financière'},{y:2020,t:'covid'}],
+    label:'Dépenses et recettes publiques en % du PIB, 1995-2025. Belgique : dépenses 55,4 en 2014, 51,8 en 2019, 54,4 en 2025 ; recettes 52,2, 49,7 et 49,2. Union : dépenses 49,4 et recettes 46,3 en 2025'})})();
+  if(MOB){var lgR=D.createElement('p');lgR.className='mlegend';lgR.innerHTML='<span><i style="background:#1A1A1A"></i>dépenses, Belgique</span><span><i style="background:#fff"></i>recettes, Belgique</span><span><i style="background:#5A3A1E"></i>dépenses, Union (pointillés)</span><span><i style="background:#fff;opacity:.6"></i>recettes, Union (pointillés)</span>';D.getElementById('rteChart').appendChild(lgR)}
+  CJD.rename('rteChart',['Dépenses, Union (% du PIB)','Recettes, Union (% du PIB)','Dépenses, Belgique (% du PIB)','Recettes, Belgique (% du PIB)'],'2024 et 2025 provisoires. Eurostat, gov_10a_main, mise à jour du 21 octobre 2026.');
 
   /* 3. COFOG */
   (function(){
@@ -283,7 +289,7 @@
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var n=e.target;n.classList.add('in');n.classList.add('play');if(n.id==='t1')n.classList.add('go');io.unobserve(n)})},{threshold:.15});
   D.querySelectorAll('[data-r]').forEach(function(n){io.observe(n)});
-  ['t1','histChart','debtChart','subChart','defChart','subDef','revExp','cofChart','intChart','invChart','rgChart','pbChart','holdChart','ltChart','euScatter'].forEach(function(id){io.observe(D.getElementById(id))});
+  ['t1','histChart','debtChart','subChart','defChart','subDef','revExp','cofChart','rteChart','intChart','invChart','rgChart','pbChart','holdChart','ltChart','euScatter'].forEach(function(id){io.observe(D.getElementById(id))});
   (function(){var t=D.getElementById('t1');[].slice.call(t.children).forEach(function(sp){var w=sp.textContent.split(/(\s+)/);sp.textContent='';w.forEach(function(wd){if(/^\s+$/.test(wd)){sp.appendChild(D.createTextNode(wd));return}var b=D.createElement('span');b.className='wd';wd.split('').forEach(function(ch,i){var c=D.createElement('span');c.className='ch';c.textContent=ch;c.style.transitionDelay=(i*0.035)+'s';b.appendChild(c)});sp.appendChild(b)})})})();
   (function(){
   })();

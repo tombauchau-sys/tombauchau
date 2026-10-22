@@ -267,7 +267,7 @@ T('Recettes publiques', 'eco',
   al=['prélèvements obligatoires', 'pression fiscale'], v=[FIN, CMP])
 T('Dépenses publiques', 'eco',
   'Ensemble des dépenses des administrations publiques : rémunérations, achats, prestations sociales, subventions, intérêts et investissements. Exprimées en % du PIB, elles ne disent pas qui finance quoi : un pays peut dépenser moins en public parce que les ménages paient davantage en privé.',
-  ex='Belgique : 54,2 % du PIB en 2025 (provisoire) ; Union : 49,5 %.', v=[at(FIN, 'f-depenses'), CMP])
+  ex='Belgique : 54,4 % du PIB en 2025 (provisoire) ; Union : 49,4 %.', v=[at(FIN, 'f-depenses'), CMP])
 T('COFOG', 'eco',
   'Classification des fonctions des administrations publiques, établie par les Nations unies. Elle range chaque dépense selon sa finalité dans dix fonctions (services généraux, défense, ordre et sécurité, affaires économiques, environnement, logement, santé, loisirs et culture, enseignement, protection sociale), ce qui permet de comparer les pays et les années.',
   al=['dépenses par fonction', 'classification des fonctions des administrations publiques'], v=[at(FIN, 'f-depenses')])

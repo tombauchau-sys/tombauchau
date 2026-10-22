@@ -7154,5 +7154,42 @@
 "Immigration"
 ],
 "cat": "rech"
+},
+{
+"t": "rep",
+"a": "Organisation de coopération et de développement économiques (OCDE)",
+"y": "2026",
+"ti": "Foundations for Growth and Competitiveness 2026 : Belgium",
+"pub": "Éditions OCDE",
+"url": "https://www.oecd.org/en/publications/foundations-for-growth-and-competitiveness-2026_40a7532f-en/full-report/belgium_66bcf709.html",
+"src": [
+"Emploi"
+],
+"cat": "inst"
+},
+{
+"t": "art",
+"a": "Van der Linden, Bruno",
+"y": "2009",
+"ti": "Selon quels critères (dé)centraliser les interventions publiques sur le marché du travail ?",
+"j": "Regards économiques",
+"n": "68",
+"url": "https://ojs.uclouvain.be/index.php/regardseco/article/download/15543/13683",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Meunier, Olivier",
+"y": "2008",
+"ti": "Regard sur l’économie wallonne : une brève analyse des comptes régionaux 1995-2006",
+"pub": "IWEPS, Les brèves de l’IWEPS, n° 3",
+"url": "https://www.iweps.be/wp-content/uploads/2024/12/Breves3.pdf",
+"src": [
+"Emploi"
+],
+"cat": "inst"
 }
 ]

@@ -81,6 +81,22 @@
     return '<svg viewBox="0 0 '+W+' '+Hh+'" aria-hidden="true"><path d="'+P(e)+'" fill="none" stroke="#6A665F" stroke-width="1.5" stroke-dasharray="3 3"/><path d="'+P(a)+'" fill="none" stroke="#C9773A" stroke-width="2.5" stroke-linejoin="round"/></svg>';
   }
 
+
+  /* Commerce par type de biens et de services (Eurostat ext_lt_intratrd, bop_its6_det ; lus le 22/10/2026) */
+  var TPG=[['Alimentation, boissons et tabac','CTCI 0-1'],['Matières premières, hors énergie','bois, minerais, engrais bruts… · CTCI 2 et 4'],['Énergie','pétrole, gaz, électricité · CTCI 3'],['Produits chimiques et pharmaceutiques','médicaments, plastiques… · CTCI 5'],['Autres produits manufacturés','métaux, textiles, vêtements, meubles, instruments · CTCI 6 et 8'],['Machines et véhicules','CTCI 7'],['Non classés ailleurs','CTCI 9']];
+  var TPS=[['Travail à façon sur des biens d’autrui',''],['Entretien et réparation',''],['Transports','marchandises et passagers'],['Voyages','dépenses des visiteurs, tourisme et affaires'],['Construction',''],['Assurances et pensions',''],['Services financiers',''],['Redevances de propriété intellectuelle','brevets, licences, marques'],['Télécommunications, informatique et information',''],['Autres services aux entreprises','conseil, recherche, services techniques'],['Services culturels et personnels',''],['Biens et services des administrations','ambassades, bases militaires…']];
+  function tpRows(lab,ex,im,totE){var it=lab.map(function(l,i){return {l:l,e:ex[i+1],m:im[i+1]}}).filter(function(o){return o.e!=null||o.m!=null});
+    it.sort(function(a,b){return (b.e||0)-(a.e||0)});var mx=0;it.forEach(function(o){mx=Math.max(mx,o.e||0,o.m||0)});
+    var md=function(v){return v==null?'non publié':num(v/1000,1)+' Md€'};
+    return '<ul class="tpl">'+it.map(function(o){return '<li><span class="nm">'+o.l[0]+(o.l[1]?'<small>'+o.l[1]+'</small>':'')+'</span><span class="bars"><span class="be" style="width:'+(Math.max(o.e||0,0)/mx*100).toFixed(1)+'%"></span><span class="bi" style="width:'+(Math.max(o.m||0,0)/mx*100).toFixed(1)+'%"></span></span><span class="val">'+md(o.e)+(o.e!=null&&totE?' <small>('+pc(o.e/totE*100,0)+' des exportations)</small>':'')+'<small>importé : '+md(o.m)+'</small></span></li>'}).join('')+'</ul>'}
+  function tpBlock(c){var t=DATA.tp&&DATA.tp[c];if(!t)return '';var nm=name(c);
+    var gi=t.ge.slice(1).map(function(v,i){return [v,i]}).sort(function(a,b){return (b[0]||0)-(a[0]||0)})[0],si=t.sc.slice(1).map(function(v,i){return [v,i]}).sort(function(a,b){return (b[0]||0)-(a[0]||0)})[0];
+    return '<div class="tpb"><h3 class="evoh" data-r>Ce qui s’échange, par type de produit</h3>'+
+      '<p class="lede sm" data-r>En 2025, '+le(c)+' a exporté <b>'+num(t.ge[0]/1000,0)+' milliards d’euros de biens</b> et <b>'+(t.sc[0]!=null?num(t.sc[0]/1000,0)+' milliards de services':'des services (total non publié)')+'</b>. Premier poste en biens : '+TPG[gi[1]][0].toLowerCase()+' ('+pc(gi[0]/t.ge[0]*100,0)+'). Premier poste en services : '+TPS[si[1]][0].toLowerCase()+(t.sc[0]?' ('+pc(si[0]/t.sc[0]*100,0)+')':'')+'.</p>'+
+      '<div class="keyrow tpk"><span><i class="kbe"></i>exporté</span><span><i class="kbi"></i>importé</span></div>'+
+      '<div class="tp2"><div data-r><p class="kicker">Biens, 2025</p>'+tpRows(TPG,t.ge,t.gi,t.ge[0])+'</div>'+
+      '<div data-r><p class="kicker">Services, '+t.y+'</p>'+tpRows(TPS,t.sc,t.sd,t.sc[0])+'</div></div>'+
+      '<p class="src" style="color:var(--line)">Biens : commerce total avec le monde (dans et hors de l’Union), classification type pour le commerce international (CTCI), en euros courants : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/ext_lt_intratrd/default/table?lang=fr" target="_blank" rel="noopener">ext_lt_intratrd</a>, mise à jour du 16 octobre 2026. Services : balance des paiements, exportations (crédits) et importations (débits) avec le reste du monde : Eurostat, <a href="https://ec.europa.eu/eurostat/databrowser/view/bop_its6_det/default/table?lang=fr" target="_blank" rel="noopener">bop_its6_det</a>, mise à jour du 16 avril 2026. Lus le 22 octobre 2026. « Non publié » : donnée confidentielle ou absente. Une exportation peut être une réexportation : un bien importé puis revendu compte deux fois dans les échanges, une seule fois dans le PIB.</p></div>'}
   /* ======================= Carte ======================= */
   var svg=D.getElementById('map'),W=MAP.W,Hh=MAP.H,pad=44;
   svg.setAttribute('viewBox',(-pad)+' '+(-pad)+' '+(W+2*pad)+' '+(Hh+2*pad));
@@ -270,6 +286,9 @@
       '<div class="limits" data-r><div><b>Une fonction n’est pas un ministère.</b><p>Les portefeuilles changent à chaque gouvernement. La classification COFOG des Nations unies range chaque dépense selon sa finalité : c’est ce qui permet de comparer les pays et les années.</p></div>'+
       '<div><b>Tous les niveaux de pouvoir.</b><p>'+(c==='BE'?'État fédéral, Régions, Communautés, provinces, communes et sécurité sociale sont additionnés : aucun de ces budgets, pris seul, ne donne ce total.':'Administration centrale, collectivités locales et sécurité sociale sont additionnées (secteur S13).')+'</p></div>'+
       '<div><b>La dette se cache dans « services généraux ».</b><p>Les intérêts payés y sont comptés : '+pc(at(S(c,'interest'),Y1))+' du PIB en '+Y1+' pour '+le(c)+', contre '+pc(at(S(EU,'interest'),Y1))+' dans l’Union.</p></div></div>'+
+      '<div class="evo"><h3 class="evoh" data-r>L’évolution de chaque budget, 2013-2024</h3><p class="lede sm" data-r>Une courbe par fonction : '+nm+' en orange, moyenne de l’Union en pointillés. En % du PIB, une baisse peut venir d’un PIB qui croît plus vite que la dépense ; en euros de 2024 par habitant, on voit si l’effort réel augmente.</p>'+
+      '<div class="unit" role="group" aria-label="Unité des courbes"><button type="button" id="eP" aria-pressed="true">% du PIB</button><button type="button" id="eR" aria-pressed="false">€ de 2024 par habitant</button></div>'+
+      '<div class="grid2 evog" id="cofEvo"></div><p class="src">'+srcs(['gov_10a_exp','nama_10_gdp','tps00001'],'€ de 2024 par habitant (2015-2024) : calcul Au plus Juste avec l’IPCH du pays (prc_hicp_ainr). 2024 : provisoire pour certains pays')+'</p></div>'+
       '</div></section>';
     /* Santé financière */
     h+='<section class="dz brun grain" aria-labelledby="dA3"><div class="w"><p class="kicker" data-r>Finances publiques · Eurostat, notification PDE d’avril 2026 (teina225, tec00127) et gov_10a_main</p><h2 id="dA3" data-r>La santé <span class="s">financière.</span></h2>'+ratingBlock(c)+
@@ -298,7 +317,7 @@
       '<p class="src" style="color:var(--line)">'+(ex[1]>100?'Les exportations dépassent le PIB : le PIB compte une valeur ajoutée, les exportations une valeur brute, qui inclut ce qui a été importé puis réexporté.':'Le solde en biens ne compte ni le tourisme, ni la finance, ni les transports : ces services figurent dans les exportations totales.')+'</p></div>'+
       '<div data-r><p class="kicker">Premiers clients en biens, 2024</p><ul class="fn" style="margin-top:8px">'+parts.map(function(p){return '<li style="grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) 100px"><span class="nm" style="font-size:22px">'+PN(p[0])+'</span><span class="bar"><span style="width:'+(p[1]/pmx*100).toFixed(1)+'%;--cc:#FFF4E2"></span></span><span class="val">'+eur(p[1])+'</span></li>'}).join('')+'</ul>'+
       '<p class="note" style="font-size:24px;margin-top:14px;transform:rotate(-2deg)">pour voir les flux dans les deux sens, comparez deux pays ↑</p></div></div>'+
-      '<p class="src" style="color:var(--line);margin-top:18px">'+srcs(['DS-045409','nama_10_gdp'])+'</p></div></section>';
+      '<p class="src" style="color:var(--line);margin-top:18px">'+srcs(['DS-045409','nama_10_gdp'])+' Les partenaires restent en 2024 ; le détail par produit ci-dessous porte sur 2025.</p>'+tpBlock(c)+'</div></section>';
     dos.innerHTML=h;afterRender();
     /* Graphiques */
     var EUc='#A69C8F';
@@ -332,6 +351,13 @@
     var yrI=D.getElementById('yr');yrI.oninput=function(){yr=+this.value;D.getElementById('yrO').textContent=yr;drawBudget()};
     ['uP','uR','uE'].forEach(function(id){D.getElementById(id).onclick=function(){unit=id.charAt(1);['uP','uR','uE'].forEach(function(j){D.getElementById(j).setAttribute('aria-pressed',j===id?'true':'false')});drawBudget()}});
     drawBudget();
+    function drawEvo(u){var host=D.getElementById('cofEvo');host.innerHTML='';var y0=u==='R'?2015:2013;
+      COF.forEach(function(f){var card=D.createElement('div');card.className='chartcard';card.setAttribute('data-r','');card.innerHTML='<h3>'+f[1]+'</h3><p class="def">'+f[2]+'</p>';host.appendChild(card);
+        var mk=function(code){var o={};for(var y=y0;y<=2024;y++){var v=u==='R'?realHab(code,f[0],y):at(C[code].cofog[f[0]],y);if(v!=null)o[y]=v}return o};
+        lineChart(card,{from:y0,to:2024,min:0,fmt:u==='R'?function(v){return num(Math.round(v/10)*10,0)+' €'}:pc,aria:f[1]+', '+nm+' et Union, '+y0+'-2024, '+(u==='R'?'en euros de 2024 par habitant':'en % du PIB'),series:[{d:mk(EU),color:'#6A665F',dash:1,w:2,name:'UE'},{d:mk(c),color:'#C9773A',name:nm}]})});
+      afterRender()}
+    ['eP','eR'].forEach(function(id){D.getElementById(id).onclick=function(){['eP','eR'].forEach(function(j){D.getElementById(j).setAttribute('aria-pressed',j===id?'true':'false')});drawEvo(id.charAt(1))}});
+    drawEvo('P');
   }
 
   /* ======================= Dossier : deux pays ======================= */
