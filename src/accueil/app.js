@@ -228,7 +228,7 @@
     var p=last(S(c,'population')),g=gdpHab(c,2025),ge=gdpHab(EU,2025),dt=last(S(c,'debt')),u=last(S(c,'unemp'));
     bul.innerHTML='<div class="head"><h2>'+name(c)+'</h2><span class="tag-s">Fiche pays · Eurostat</span></div>'+
       '<div class="kg">'+
-      '<div><span class="v">'+hab(at(S(c,'population'),2026))+'</span><span class="t">d’habitants au 1er janvier 2026</span></div>'+
+      '<div><span class="v">'+hab(at(S(c,'population'),2026))+'</span><span class="t">d’habitants au 1er janvier 2026 (Eurostat)</span>'+(c==='BE'?'<span class="e">Statbel : 11 867 634. Les deux offices publient des chiffres différents pour la même date.</span>':'')+'</div>'+
       '<div><span class="v">'+num(Math.round(g/100)*100,0)+' €</span><span class="t">de PIB par habitant, 2025 (euros courants)</span><span class="e">UE : '+num(Math.round(ge/100)*100,0)+' €</span></div>'+
       '<div><span class="v">'+pc(dt[1])+'</span><span class="t">de dette publique, en % du PIB, '+dt[0]+'</span><span class="e">UE : '+pc(at(S(EU,'debt'),dt[0]))+'</span></div>'+
       '<div><span class="v">'+pc(u[1])+'</span><span class="t">de chômage, '+u[0]+'</span><span class="e">UE : '+pc(at(S(EU,'unemp'),u[0]))+'</span></div>'+
