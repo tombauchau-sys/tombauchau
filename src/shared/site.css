@@ -135,3 +135,6 @@ nav.top .mdd a:focus-visible{outline:2px solid var(--copper,#C9773A);outline-off
   nav.top.open .mdd a:hover,nav.top.open .mdd a:focus-visible{background:transparent;text-decoration:underline}
   nav.top>a[data-dd] .car{display:none}
 }
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;left:12px;top:-60px;z-index:10000;background:#1C1A17;color:#fff;padding:10px 14px;border-radius:6px;font:600 15px/1.2 system-ui,sans-serif;text-decoration:none;transition:top .15s}.skip:focus{top:12px;outline:3px solid #E8A33D}
+html{overflow-x:clip}

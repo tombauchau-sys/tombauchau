@@ -490,7 +490,7 @@ html.calm .cj-tip{box-shadow:none}
 .hubdoors .dn{font:700 13px var(--sans);letter-spacing:.1em;color:var(--grey,#6A665F)}
 .hubdoors h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1.05;margin:0}
 .hubdoors p{margin:0;font:16px/1.5 var(--sans)}
-.hubdoors .dm{font-size:14px;color:#3D3A35}
+.hubdoors .dm{font-size:14px;color:#2E2B27}
 .hubdoors .dl{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
 .hubdoors .dl b{display:block;font:600 14.5px var(--sans)}.hubdoors .dl span{display:block;font:13.5px/1.4 var(--sans);color:#3D3A35}
 .hubdoors .dgo{margin-top:auto;font:700 15px var(--sans);padding-top:8px}

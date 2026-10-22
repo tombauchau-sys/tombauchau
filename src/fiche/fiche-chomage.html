@@ -35,7 +35,7 @@ sup{font-size:.65em;line-height:0}
 .papier{background:var(--off);color:var(--ink)}
 .kick{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .brun .kick{color:var(--copper)} .papier .kick{color:var(--grey)}
-.giant{font-family:var(--serif);font-size:clamp(56px,9vw,132px);line-height:.9;letter-spacing:-.02em}
+.giant{font-family:var(--serif);font-size:clamp(56px,9vw,132px);line-height:.9;letter-spacing:-.02em}@media (max-width:380px){.giant{font-size:44px;overflow-wrap:anywhere;hyphens:auto}}
 .giant span{color:var(--grey)} .brun .giant span{color:var(--cream-dim)}
 .lede{font-size:clamp(19px,1.9vw,24px);line-height:1.35;max-width:46ch}
 .papier .lede{color:#3D3A35}
@@ -52,7 +52,7 @@ nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:v
 nav.top a{display:flex;align-items:center;justify-content:center;height:56px;text-decoration:none;font-weight:500;font-size:15px;border-right:1px solid var(--hair);position:relative;overflow:hidden}
 nav.top a:last-child{border-right:0}
 nav.top a .lbl{display:block;transition:transform .45s var(--ease)}
-nav.top a .lbl::after{content:attr(data-t);position:absolute;left:0;right:0;top:100%;text-align:center;color:var(--copper)}
+nav.top a .lbl::after{content:attr(data-t);content:attr(data-t) / "";position:absolute;left:0;right:0;top:100%;text-align:center;color:var(--copper)}
 nav.top a:hover .lbl{transform:translateY(-100%)}
 nav.top a.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--copper)}
 nav.top .mark span{width:30px;height:30px;border-radius:50%;border:6px solid var(--cream);border-right-color:transparent;transform:rotate(-30deg);transition:transform .8s var(--ease)}
@@ -242,7 +242,8 @@ html.calm{--cream-dim:#D8CFC3;--grey:#4A4741}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.drawline{stroke-dashoffset:0!important}.split .ch{transform:none!important;opacity:1!important}.js [data-r],.fadein{opacity:1!important;transform:none!important}.seg-bar rect.s,.pills .bar{transform:none!important}}
 </style>
 
-<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+<a class="skip" href="#top">Aller au contenu</a>
+<button type="button" class="a11y" id="a11y" aria-pressed="false"><b aria-hidden="true">Désactivé</b>Mode accessibilité</button>
 
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>

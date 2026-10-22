@@ -1,0 +1,46 @@
+{
+ "_note": "Source unique des chiffres clés répétés sur l'accueil (bandeau et carte Belgique). Les valeurs Eurostat sont lues dans cj-data.json (dernière année disponible) et climat-data.json ; seules les valeurs d'autres sources sont saisies ici. Le build remplace les marqueurs __CK_…__ et vérifie qu'aucun marqueur ne reste.",
+ "pop": {
+  "valeur": "11 867 634",
+  "libelle": "population au 1er janvier 2026",
+  "source": "Statbel (registre national), cité par L'Avenir le 10/06/2026",
+  "consulte": "2026-10-22"
+ },
+ "eurostat_be": {
+  "unemp": "une_rt_a",
+  "debt": "teina225",
+  "arope": "ilc_peps01n",
+  "emp": "lfsi_emp_a",
+  "growth": "tec00115"
+ },
+ "climat": {
+  "ghg": "sdg_13_10 (indice 1990 = 100), climat-data.json"
+ },
+ "anciennes": [
+  {
+   "motif": "18,3\\s?%[^.<]{0,60}pauvreté ou d.exclusion",
+   "raison": "pauvreté ou exclusion 2024, remplacée par 16,5 % (2025) le 22/10/2026"
+  },
+  {
+   "motif": "dépenses publiques[^.<]{0,80}54,2\\s?%",
+   "raison": "dépenses 2025 avant révision d'Eurostat (54,4 %)"
+  },
+  {
+   "motif": "recettes[^.<]{0,40}49,0\\s?%",
+   "raison": "recettes 2025 avant révision d'Eurostat (49,2 %)"
+  },
+  {
+   "motif": "Effet surtout pour les moins diplômés",
+   "raison": "contresens sur Lochmann et al. (2019), corrigé le 22/10/2026"
+  },
+  {
+   "motif": "class=\"bdg b-ma\">Majoritaire|'b-ma','Majoritaire",
+   "raison": "badge renommé « Convergent » le 22/10/2026"
+  },
+  {
+   "motif": "Ce qu’on sacrifie",
+   "raison": "rubrique renommée « Coûts et risques » le 22/10/2026"
+  }
+ ],
+ "_note_anciennes": "Valeurs ou formulations corrigées : le build signale toute réapparition dans les pages publiées (hors Nouveautés et Registre, qui les citent volontairement)."
+}

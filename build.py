@@ -60,7 +60,8 @@ ACTU_URLS = {n: 'https://claude.ai/artifact/' + a for n, a in {'emploi': 'T9VuaJ
 for _n in DOSSIERS:
     PAGES['__THEME_' + _n.upper() + '__'] = ('theme-' + _n + '.html', HUB_URLS[_n])
     PAGES['__ACTUP_' + _n.upper() + '__'] = ('actu-' + _n + '.html', ACTU_URLS[_n])
-NAV_TPL = '''<button type="button" class="a11y" id="a11y" aria-pressed="false"><b>Désactivé</b>Mode accessibilité</button>
+NAV_TPL = '''<a class="skip" href="#top">Aller au contenu</a>
+<button type="button" class="a11y" id="a11y" aria-pressed="false"><b aria-hidden="true">Désactivé</b>Mode accessibilité</button>
 <nav class="top" aria-label="Navigation principale">
   <a href="__HOME__#atlas"><span class="lbl" data-t="Carte">Carte</span></a>
   <a href="__HOME__#classements"><span class="lbl" data-t="Classements">Classements</span></a>
@@ -233,6 +234,13 @@ def jsonld(fname, title, desc):
 def wrap(html, title, desc, fname='index.html'):
     """Version site : document HTML complet avec métadonnées pour les moteurs de recherche."""
     seo = SEO_TITLES.get(fname, title)
+    def og_image(fname, seo):
+        m = re.match(r'(?:dossier|theme|actu|idees)-([a-z]+)\.html$', fname)
+        slug = m.group(1) if m and (ROOT / 'og' / (m.group(1) + '.png')).exists() else 'accueil'
+        img = BASE + 'og/' + slug + '.png'
+        alt = ('Au plus Juste : ' + seo.split(' · ')[0]) if slug != 'accueil' else 'Au plus Juste : chiffres vérifiés sur la Belgique et l’Europe'
+        return (f'<meta property="og:image" content="{img}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+                f'<meta property="og:image:alt" content="{alt.replace(chr(34), "&quot;")}">\n<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:image" content="{img}">\n')
     desc = SEO_DESC.get(fname, desc)
     html = re.sub(r'<title>[^<]*</title>', '<title>' + seo.replace('\\', '') + '</title>', html, count=1)
     url = BASE + ('' if fname == 'index.html' else fname)
@@ -249,7 +257,7 @@ def wrap(html, title, desc, fname='index.html'):
             f'<meta property="og:url" content="{url}">\n'
             f'<meta property="og:type" content="{"website" if fname == "index.html" else "article"}">\n'
             '<meta property="og:site_name" content="Au plus Juste">\n<meta property="og:locale" content="fr_BE">\n'
-            '<meta name="twitter:card" content="summary">\n'
+            + og_image(fname, seo)
             + jsonld(fname, seo, desc))
     return head + html[:i] + '\n</head>\n<body>\n' + html[i:] + '</body>\n</html>\n'
 
@@ -359,8 +367,52 @@ def idees_section():
             '</div></section>')
 
 
+def chiffres_cles():
+    """Source unique des chiffres répétés sur l'accueil : valeurs calculées depuis les données du site."""
+    cj = json.loads(read('data/cj-data.json'))['c']['BE']
+    ck = json.loads(read('data/chiffres-cles.json'))
+    fr = lambda v: (f'{v:.1f}').replace('.', ',').replace('-', '−')
+    out = {'pop': ck['pop']['valeur']}
+    for k in ck['eurostat_be']:
+        y = max(cj[k], key=int)
+        v = cj[k][y]
+        out[k] = (('+' if k == 'growth' and v > 0 else '') + fr(v) + ' %')
+        out[k + '_y'] = y
+    g = json.loads(read('dossiers/climat-data.json'))['ghg']
+    out['ghg'] = fr(g[-1] - 100) + ' %'
+    out['ghg_y'] = str(1990 + len(g) - 1)
+    return out
+
+
+def apply_ck(txt):
+    for k, v in chiffres_cles().items():
+        txt = txt.replace(f'__CK_{k}__', v)
+    if '__CK_' in txt:
+        raise SystemExit('Marqueur de chiffre clé non résolu : ' + txt[txt.index('__CK_'):txt.index('__CK_') + 30])
+    return txt
+
+
+def check_anciennes(pages):
+    """Signale la réapparition de valeurs ou formulations déjà corrigées."""
+    rules = json.loads(read('data/chiffres-cles.json')).get('anciennes', [])
+    hits = []
+    for fn in pages:
+        if fn in ('nouveautes.html', 'registre-verification.html'):
+            continue
+        p = ROOT / fn
+        if not p.exists():
+            continue
+        t = p.read_text(encoding='utf-8')
+        for r in rules:
+            if re.search(r['motif'], t):
+                hits.append(f'{fn} : {r["raison"]}')
+    for h in hits:
+        print('ATTENTION valeur déjà corrigée :', h)
+    return hits
+
+
 def build_home():
-    src = read('accueil/head.html')
+    src = apply_ck(read('accueil/head.html'))
     head = src[:src.index('</style>')]
     add = read('accueil/atlas.css') + "\n.grow{transform:scaleY(0);transition:transform .8s var(--ease)}.play .grow{transform:none}html.calm .grow{transform:none!important}\n"
     gate_html = src[src.index('<section class="gate grain"'):src.index('<nav class="top"')]
@@ -890,6 +942,7 @@ def main():
             (outdir / fname).write_text(links(html, 'artifact'), encoding='utf-8')
         print('construit', fname)
     write_seo_files(list(jobs))
+    check_anciennes(list(jobs))
 
 
 if __name__ == '__main__':
