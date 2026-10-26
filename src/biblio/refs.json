@@ -7338,5 +7338,61 @@
 "pub": "IZA",
 "num": "Discussion Paper 16849",
 "cat": "rech"
+},
+{
+"t": "art",
+"a": "Calnitsky, David; Latner, Jonathan P.",
+"y": "2017",
+"ti": "Basic Income in a Small Town: Understanding the Elusive Effects on Work",
+"j": "Social Problems",
+"v": "64",
+"n": "3",
+"p": "373-397",
+"doi": "10.1093/socpro/spw040",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Marinescu, I.",
+"y": "2018",
+"ti": "No Strings Attached: The Behavioral Effects of U.S. Unconditional Cash Transfer Programs",
+"url": "https://www.nber.org/papers/w24337",
+"src": [
+"Emploi"
+],
+"pub": "NBER",
+"num": "Working Paper 24337",
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Gibson, Marcia; Hearty, Wendy; Craig, Peter",
+"y": "2020",
+"ti": "The public health effects of interventions similar to basic income: a scoping review",
+"j": "The Lancet Public Health",
+"v": "5",
+"n": "3",
+"p": "e165-e176",
+"doi": "10.1016/S2468-2667(20)30005-0",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Crosta, T.; Karlan, D.; Ong, F.; Rüschenpöhler, J.; Udry, C. R.",
+"y": "2024",
+"ti": "Unconditional Cash Transfers: A Bayesian Meta-Analysis of Randomized Evaluations in Low and Middle Income Countries",
+"url": "https://www.nber.org/papers/w32779",
+"src": [
+"Emploi"
+],
+"pub": "NBER",
+"num": "Working Paper 32779",
+"cat": "rech"
 }
 ]

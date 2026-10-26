@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('26 octobre 2026', [
+        'Emploi, question 5 (revenu versé sans condition) : relecture de l’auteur vérifiée à la source. Verdict élargi : l’effet sur le travail va d’un léger gain à une baisse nette de la participation (Dauphin, Canada, 1975-1977). Trois synthèses ajoutées, dont une méta-analyse limitée aux pays à revenu faible ou intermédiaire ; une revue aux méthodes mêlées n’est pas retenue comme preuve.',
         'Emploi : relecture de l’auteur, appuyée sur Elicit et vérifiée à la source (textes intégraux) pour trois questions de la partie Recherche : accompagnement et formation, allocations et retour à l’emploi, discrimination à l’embauche. Une erreur de chiffre et deux formulations trop générales corrigées, onze études ajoutées. Détail dans le journal du dossier et au registre.',
     ]),
     ('22 octobre 2026', [
