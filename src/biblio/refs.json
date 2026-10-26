@@ -7407,5 +7407,93 @@
 "pub": "Banque nationale de Belgique",
 "num": "Economic Review, avril 2024",
 "cat": "inst"
+},
+{
+"t": "art",
+"a": "Alesina, Alberto; Favero, Carlo; Giavazzi, Francesco",
+"y": "2019",
+"ti": "Effects of Austerity: Expenditure- and Tax-based Approaches",
+"j": "Journal of Economic Perspectives",
+"v": "33",
+"n": "2",
+"p": "141-162",
+"doi": "10.1257/jep.33.2.141",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Alesina, A.; Barbiero, O.; Favero, C.; Giavazzi, F.; Paradisi, M.",
+"y": "2015",
+"ti": "Austerity in 2009-2013",
+"url": "https://www.nber.org/papers/w20827",
+"src": [
+"Finances"
+],
+"pub": "NBER",
+"num": "Working Paper 20827",
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Cronin, David; McQuinn, Kieran",
+"y": "2021",
+"ti": "Fiscal policy and growth forecasts in the EU: are official forecasters still misestimating fiscal multipliers?",
+"j": "Review of World Economics",
+"v": "157",
+"n": "3",
+"p": "453-462",
+"doi": "10.1007/s10290-021-00428-z",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Gómez-Puig, Marta; Sosvilla-Rivero, Simón",
+"y": "2015",
+"ti": "On the bi-directional causal relationship between public debt and economic growth in EMU countries",
+"j": "Journal of Policy Modeling",
+"v": "37",
+"n": "6",
+"p": "974-989",
+"doi": "10.1016/j.jpolmod.2015.09.004",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Guajardo, Jaime; Leigh, Daniel; Pescatori, Andrea",
+"y": "2014",
+"ti": "Expansionary Austerity? International Evidence",
+"j": "Journal of the European Economic Association",
+"v": "12",
+"n": "4",
+"p": "949-968",
+"doi": "10.1111/jeea.12083",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Ramos-Herrera, María del Carmen; Sosvilla-Rivero, Simón",
+"y": "2017",
+"ti": "An empirical characterization of the effects of public debt on economic growth",
+"j": "Applied Economics",
+"v": "49",
+"n": "35",
+"p": "3495-3508",
+"url": "https://ideas.repec.org/a/taf/applec/v49y2017i35p3495-3508.html",
+"src": [
+"Finances"
+],
+"cat": "rech"
 }
 ]
