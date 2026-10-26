@@ -1473,7 +1473,7 @@
 },
 {
 "t": "rep",
-"a": "Institut national d’assurance maladie-invalidité (INAMI)",
+"a": "Bruyneel, L. et al. (Agence InterMutualiste et INAMI)",
 "y": "2024",
 "ti": "Incapacité de travail de longue durée et invalidité dues à des troubles psychosociaux",
 "url": "https://www.inami.fgov.be/SiteCollectionDocuments/PSYA_etude_avril_2024.pdf",
@@ -7394,5 +7394,18 @@
 "pub": "NBER",
 "num": "Working Paper 32779",
 "cat": "rech"
+},
+{
+"t": "rep",
+"a": "Gelade, W.; Saks, Y.",
+"y": "2024",
+"ti": "Rising number of sick pay recipients in Belgium: causes and results of reintegration policies",
+"url": "https://www.nbb.be/de/node/517734",
+"src": [
+"Emploi"
+],
+"pub": "Banque nationale de Belgique",
+"num": "Economic Review, avril 2024",
+"cat": "inst"
 }
 ]
