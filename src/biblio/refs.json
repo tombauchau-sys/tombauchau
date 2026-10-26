@@ -7191,5 +7191,152 @@
 "Emploi"
 ],
 "cat": "inst"
+},
+{
+"t": "art",
+"a": "Vooren, Melvin; Haelermans, Carla; Groot, Wim; van den Brink, Henriëtte Maassen",
+"y": "2019",
+"ti": "The effectiveness of active labour market policies: a meta-analysis",
+"j": "Journal of Economic Surveys",
+"v": "33",
+"n": "1",
+"p": "125-149",
+"doi": "10.1111/joes.12269",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Canzian, Giulia; Meroni, Elena Claudia; Santangelo, Giulia",
+"y": "2023",
+"ti": "Evaluation of a Flemish Active Labour Market Policy in the framework of the European Social Fund. Results and challenges",
+"j": "Socio-Economic Planning Sciences",
+"v": "88",
+"doi": "10.1016/j.seps.2023.101622",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Smith, Catherine",
+"y": "2025",
+"ti": "L’impact de la formation qualifiante sur l’insertion en emploi des demandeurs d’emploi à Bruxelles",
+"j": "Brussels Studies",
+"n": "208",
+"doi": "10.4000/14ycb",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Filges, Trine; Geerdsen, Lars Pico; Knudsen, Anne-Sofie Due; Jørgensen, Anne-Marie Klint",
+"y": "2015",
+"ti": "Unemployment Benefit Exhaustion: Incentive Effects on Job-Finding Rates",
+"j": "Research on Social Work Practice",
+"v": "25",
+"n": "1",
+"p": "21-43",
+"doi": "10.1177/1049731514529830",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "de Groot, Nynke; van der Klaauw, Bas",
+"y": "2019",
+"ti": "The effects of reducing the entitlement period to unemployment insurance benefits",
+"j": "Labour Economics",
+"v": "57",
+"p": "195-208",
+"doi": "10.1016/j.labeco.2019.02.003",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Cockx, B.; Ries, J.",
+"y": "2004",
+"ti": "The Exhaustion of Unemployment Benefits in Belgium: Does it Enhance the Probability of Employment?",
+"url": "https://hdl.handle.net/10419/20417",
+"src": [
+"Emploi"
+],
+"pub": "IZA",
+"num": "Discussion Paper 1177",
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Zhan, Z.",
+"y": "2020",
+"ti": "Does Extending Unemployment Benefits Improve Job Quality? Comment",
+"url": "https://mpra.ub.uni-muenchen.de/102722/",
+"src": [
+"Emploi"
+],
+"pub": "MPRA",
+"num": "Paper 102722",
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Zschirnt, Eva; Ruedin, Didier",
+"y": "2016",
+"ti": "Ethnic discrimination in hiring decisions: a meta-analysis of correspondence tests 1990–2015",
+"j": "Journal of Ethnic and Migration Studies",
+"v": "42",
+"n": "7",
+"doi": "10.1080/1369183X.2015.1133279",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Carlsson, Magnus; Fumarco, Luca; Rooth, Dan-Olof",
+"y": "2018",
+"ti": "Ethnic discrimination in hiring, labour market tightness and the business cycle – evidence from field experiments",
+"j": "Applied Economics",
+"doi": "10.1080/00036846.2017.1406653",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Leysen, Bert; Verhaeghe, Pieter-Paul; Derous, Eva",
+"y": "2025",
+"ti": "Even grounds: assessing discrimination in recruitment in the public sector",
+"j": "International Journal of Public Sector Management",
+"doi": "10.1108/IJPSM-06-2024-0193",
+"src": [
+"Emploi"
+],
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Devos, L. et al.",
+"y": "2024",
+"ti": "Labour Market Disadvantages of Citizens with a Migration Background in Belgium: A Systematic Review",
+"url": "https://hdl.handle.net/10419/295872",
+"src": [
+"Emploi"
+],
+"pub": "IZA",
+"num": "Discussion Paper 16849",
+"cat": "rech"
 }
 ]

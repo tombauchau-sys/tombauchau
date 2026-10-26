@@ -1,5 +1,8 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
+    ('26 octobre 2026', [
+        'Emploi : relecture de l’auteur, appuyée sur Elicit et vérifiée à la source (textes intégraux) pour trois questions de la partie Recherche : accompagnement et formation, allocations et retour à l’emploi, discrimination à l’embauche. Une erreur de chiffre et deux formulations trop générales corrigées, onze études ajoutées. Détail dans le journal du dossier et au registre.',
+    ]),
     ('22 octobre 2026', [
         'Dossiers pilotes Immigration et Logement (audit externe) : sous le résumé en deux minutes, un encadré « Vérifier ce résumé » donne pour chaque affirmation sa source, sa date, ce que le chiffre ne dit pas et la fiche où l’approfondir, ainsi que le périmètre du dossier.',
         'Encadrés « Qui décide ? » : vérification complémentaire (énergie, fiscalité communale et TVA, jeunesse, crédit hypothécaire, pensions complémentaires, hôpitaux) ; Inégalités : la directive européenne de 2022 sur les salaires minimaux a été partiellement annulée par la Cour de justice le 11 novembre 2025, ce que l’encadré indique désormais.',
