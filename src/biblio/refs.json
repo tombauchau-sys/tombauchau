@@ -7495,5 +7495,58 @@
 "Finances"
 ],
 "cat": "rech"
+},
+{
+"t": "art",
+"a": "Ardanaz, Martín; Cavallo, Eduardo; Izquierdo, Alejandro; Puig, Jorge",
+"y": "2021",
+"ti": "Growth-friendly fiscal rules? Safeguarding public investment from budget cuts through fiscal rule design",
+"j": "Journal of International Money and Finance",
+"v": "111",
+"p": "102319",
+"doi": "10.1016/j.jimonfin.2020.102319",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Deleidi, Matteo; Iafrate, Francesca; Levrero, Enrico Sergio",
+"y": "2020",
+"ti": "Public investment fiscal multipliers: An empirical assessment for European countries",
+"j": "Structural Change and Economic Dynamics",
+"v": "52",
+"p": "354-365",
+"doi": "10.1016/j.strueco.2019.12.004",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Mourougane, A. et al.",
+"y": "2016",
+"ti": "Can an Increase in Public Investment Sustainably Lift Economic Growth?",
+"url": "https://doi.org/10.1787/a25a7723-en",
+"src": [
+"Finances"
+],
+"pub": "OCDE",
+"num": "Economics Department Working Paper 1351",
+"cat": "inst"
+},
+{
+"t": "art",
+"a": "Wijsman, Sebastiaan; Crombez, Christophe",
+"y": "2020",
+"ti": "Do fiscal rules decrease public investment? Evidence from European panel data",
+"j": "European Journal of Economics and Economic Policies: Intervention",
+"doi": "10.4337/ejeep.2020.0070",
+"src": [
+"Finances"
+],
+"cat": "rech"
 }
 ]
