@@ -1,7 +1,43 @@
 {
- "maj": "2026-10-21",
- "maj_txt": "21 octobre 2026",
+ "maj": "2026-10-26",
+ "maj_txt": "26 octobre 2026",
  "items": [
+  {
+   "date": "2026-10-23",
+   "date_txt": "23 octobre 2026",
+   "type": "officiel",
+   "theme": "immigration",
+   "texte": "Demandes d’asile dans l’Union en juillet 2026 : <b>34 145</b> premières demandes, 39 % de moins qu’en juillet 2025 (55 680) et 8 % de moins qu’en juin. France, Italie, Grèce, Espagne et Allemagne totalisent 72 % des demandes. Le communiqué ne donne pas le chiffre belge des premières demandes ; il cite la Belgique pour 100 demandes de mineurs non accompagnés (cinquième rang).",
+   "question": "<a href=\"__IMMIGRATION__#f-asile\">Combien de demandes, combien de protections accordées ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20261023-1\" target=\"_blank\" rel=\"noopener\">Eurostat, news du 23/10/2026</a> (données migr_asyappctzm)"
+  },
+  {
+   "date": "2026-10-22",
+   "date_txt": "22 octobre 2026",
+   "type": "presse",
+   "theme": "finances",
+   "texte": "Budget fédéral pluriannuel : toujours pas d’accord après une nouvelle soirée de discussions. Le Premier ministre dit à la Chambre que les négociations entrent dans leur phase décisive ; les options d’économies sont examinées en intercabinets. Nous ne reprenons pas les montants cités par la presse.",
+   "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
+   "source": "<a href=\"https://www.rtbf.be/article/le-recap-de-ce-jeudi-22-octobre-2026-budget-federal-toujours-bloque-tempete-austen-en-approche-et-parcours-du-tour-de-france-2027-devoile-11804364\" target=\"_blank\" rel=\"noopener\">RTBF, 22/10/2026</a> (presse)"
+  },
+  {
+   "date": "2026-10-21",
+   "date_txt": "21 octobre 2026",
+   "type": "officiel",
+   "theme": "finances",
+   "texte": "Dette publique trimestrielle : <b>110,2 %</b> du PIB en Belgique au 2e trimestre 2026, après 109,4 % au 1er trimestre (chiffre révisé, 109,1 % annoncés en juillet) et 106,4 % un an plus tôt. Union : 82,9 % ; zone euro : 88,8 %. La Belgique a le quatrième ratio le plus élevé, après la Grèce, l’Italie et la France. Données provisoires.",
+   "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-21102026-bp\" target=\"_blank\" rel=\"noopener\">Eurostat, communiqué du 21/10/2026</a>"
+  },
+  {
+   "date": "2026-10-21",
+   "date_txt": "21 octobre 2026",
+   "type": "officiel",
+   "theme": "finances",
+   "texte": "Déficit public trimestriel (corrigé des variations saisonnières) : <b>−5,3 %</b> du PIB en Belgique au 2e trimestre 2026, après −5,0 % au 1er trimestre (révisé ; −4,8 % annoncés en juillet). Union : −3,5 % ; zone euro : −3,3 %. Données provisoires.",
+   "question": "<a href=\"__FINANCES__#f-deficit\">Qui dépense plus qu’il ne perçoit ?</a>",
+   "source": "<a href=\"https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-21102026-cp\" target=\"_blank\" rel=\"noopener\">Eurostat, communiqué du 21/10/2026</a>"
+  },
   {
    "date": "2026-10-21",
    "date_txt": "21 octobre 2026",
@@ -10,6 +46,15 @@
    "texte": "Notification d’octobre d’Eurostat : dette publique belge de <b>108,1 %</b> du PIB fin 2025 (693 milliards d’euros, contre 107,9 % annoncés en avril), déficit inchangé à 5,2 %, intérêts de 2,3 % du PIB. Union : 81,5 % et −3,1 %. La Belgique reste quatrième pour la dette et troisième pour le déficit parmi les 27.",
    "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
    "source": "<a href=\"https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-21102026-ap\" target=\"_blank\" rel=\"noopener\">Eurostat, communiqué du 21/10/2026</a> ; <a href=\"https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">gov_10dd_edpt1</a>"
+  },
+  {
+   "date": "2026-10-19",
+   "date_txt": "19 octobre 2026",
+   "type": "presse",
+   "theme": "sante",
+   "texte": "Le Conseil général de l’INAMI n’adopte pas le budget 2027 de l’assurance soins de santé : les représentants du gouvernement, dont l’accord unanime est requis, se sont abstenus. La décision revient désormais au gouvernement. Nous ne reprenons pas de montant.",
+   "question": "<a href=\"__SANTE__#f-cout\">Combien dépense-t-on, et qui paie ?</a>",
+   "source": "<a href=\"https://www.lalibre.be/belgique/politique-belge/2026/10/19/budget-des-soins-de-sante-2027-le-gouvernement-federal-echoue-a-trouver-un-accord-22VFUZUSIBAO7EAME6LYHDIOBU/\" target=\"_blank\" rel=\"noopener\">La Libre, 19/10/2026</a> (presse)"
   },
   {
    "date": "2026-10-16",
@@ -28,15 +73,6 @@
    "texte": "Eurostat révise la croissance belge : <b>0,9 %</b> en 2024 et en 2025 (au lieu de 1,1 % et 1,0 %).",
    "question": "<a href=\"__HOME__#atlas\">Une hausse du PIB veut-elle dire que la population s’enrichit ?</a>",
    "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/tec00115/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, tec00115</a>"
-  },
-  {
-   "date": "2026-10-15",
-   "date_txt": "15 oct. 2026",
-   "type": "presse",
-   "theme": "finances",
-   "texte": "Pas encore d’accord sur le budget fédéral pluriannuel jusqu’en 2029 ; le Premier ministre propose un « frein à l’endettement » si aucun accord n’est trouvé d’ici la fin de l’année. Les montants d’économies cités par la presse varient d’un article à l’autre : nous ne les reprenons pas.",
-   "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
-   "source": "<a href=\"https://www.vrt.be/vrtnws/en/2026/10/15/prime-minister-de-wever-insists-on-debt-brake-if-multi-year-budg/\" target=\"_blank\" rel=\"noopener\">VRT NWS, 15/10/2026</a> (presse)"
   },
   {
    "date": "2026-10-13",
@@ -84,24 +120,6 @@
    "source": "<a href=\"https://www.justice.belgium.be/fr/nouvelles/autres_communiques/1er_septembre_historique_entree_en_vigueur_du_nouveau_code_penal\" target=\"_blank\" rel=\"noopener\">SPF Justice, 1/09/2026</a>"
   },
   {
-   "date": "2026-07-21",
-   "date_txt": "21 juil. 2026",
-   "type": "officiel",
-   "theme": "finances",
-   "texte": "Dette publique trimestrielle : <b>109,1 %</b> du PIB en Belgique au 1er trimestre 2026 (107,9 % fin 2025), contre 88,9 % dans la zone euro et 82,9 % dans l’Union.",
-   "question": "<a href=\"__FINANCES__#f-dette\">La dette publique est-elle forcément un problème ?</a>",
-   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/gov_10q_ggdebt/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, gov_10q_ggdebt</a>"
-  },
-  {
-   "date": "2026-07-21",
-   "date_txt": "21 juillet 2026",
-   "type": "officiel",
-   "theme": "finances",
-   "texte": "Déficit public trimestriel (corrigé des variations saisonnières) : <b>−4,8 %</b> du PIB au 1er trimestre 2026, après −5,7 % au 4e trimestre 2025 ; −3,1 % dans l’Union.",
-   "question": "<a href=\"__FINANCES__#f-deficit\">Qui dépense plus qu’il ne perçoit ?</a>",
-   "source": "<a href=\"https://ec.europa.eu/eurostat/databrowser/view/gov_10q_ggnfa/default/table?lang=fr\" target=\"_blank\" rel=\"noopener\">Eurostat, gov_10q_ggnfa (mise à jour du 21/07/2026)</a>"
-  },
-  {
    "date": "2026-07-03",
    "date_txt": "3 juillet 2026",
    "type": "officiel",
@@ -109,33 +127,6 @@
    "texte": "Le Conseil de l’Union met en suspens la procédure de déficit excessif ouverte contre la Belgique : la trajectoire convenue est respectée (dépenses nettes : +3,7 % en 2025 pour un plafond de 3,6 %, écart couvert par la clause défense). Prévisions de la Commission : déficit de 5,2 % du PIB en 2026 et 5,4 % en 2027, dette de 110,5 % puis 112,8 %.",
    "question": "<a href=\"__FINANCES__#f-europe\">La Belgique sous surveillance européenne : qu’est-ce que cela implique ?</a>",
    "source": "<a href=\"https://data.consilium.europa.eu/doc/document/ST-11113-2026-INIT/en/pdf\" target=\"_blank\" rel=\"noopener\">Conseil de l’UE, document 11113/26</a>"
-  },
-  {
-   "date": "2026-06-12",
-   "date_txt": "12 juin 2026",
-   "type": "officiel",
-   "theme": "immigration",
-   "texte": "Le pacte européen sur la migration et l’asile, adopté en mai 2024, s’applique désormais.",
-   "question": "<a href=\"__IMMIGRATION__#recherche\">Durcir la politique d’asile fait-il baisser les demandes ?</a>",
-   "source": "<a href=\"https://www.consilium.europa.eu/fr/policies/eu-pact-migration-asylum/\" target=\"_blank\" rel=\"noopener\">Conseil de l’Union européenne</a>"
-  },
-  {
-   "date": "2026-05-29",
-   "date_txt": "29 mai 2026",
-   "type": "officiel",
-   "theme": "pensions",
-   "texte": "La Chambre adopte définitivement la réforme des pensions, en vigueur au 1<sup>er</sup> janvier 2027 : une année de carrière compte à partir de 156 jours (104 auparavant) ; malus de 2 % à 5 % par année d’anticipation selon l’année de naissance (à partir de 1961) ; bonus de 2 % à 5 % par année de report au-delà de l’âge légal ; pension anticipée à 60 ans après 42 années de carrière d’au moins 234 jours.",
-   "question": "<a href=\"__PENSIONS__#f-age\">Quand part-on, et que change la réforme ?</a>",
-   "source": "<a href=\"https://news.belgium.be/fr/node/44066/pdf\" target=\"_blank\" rel=\"noopener\">INASTI, communiqué du 29/05/2026</a>"
-  },
-  {
-   "date": "2026-03-01",
-   "date_txt": "1er mars 2026",
-   "type": "officiel",
-   "theme": "emploi",
-   "texte": "Réforme du chômage : droit limité à 24 mois au plus (12 mois de base, jusqu’à 12 de plus selon le passé professionnel), allocations d’insertion à 1 an. Pour les bénéficiaires déjà indemnisés, la fin du droit arrive par vagues entre le 1er janvier 2026 et le 1er juillet 2027. Ses effets sur l’emploi n’ont pas encore été évalués.",
-   "question": "<a href=\"__EMPLOI__#recherche\">Pourquoi la Belgique travaille-t-elle moins que ses voisins ?</a>",
-   "source": "<a href=\"https://www.onem.be/reforme-de-la-reglementation-du-chomage\" target=\"_blank\" rel=\"noopener\">ONEM, réforme de l’assurance chômage</a>"
   }
  ]
 }
