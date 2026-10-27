@@ -8034,5 +8034,100 @@
    "Pensions"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Peri, Giovanni; Yasenov, Vasil",
+  "y": "2019",
+  "ti": "The Labor Market Effects of a Refugee Wave: Synthetic Control Method Meets the Mariel Boatlift",
+  "j": "Journal of Human Resources",
+  "v": "54",
+  "n": "2",
+  "p": "267-309",
+  "url": "https://muse.jhu.edu/article/724354",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Clemens, Michael A.; Hunt, Jennifer",
+  "y": "2019",
+  "ti": "The Labor Market Effects of Refugee Waves: Reconciling Conflicting Results",
+  "j": "ILR Review",
+  "v": "72",
+  "n": "4",
+  "p": "818-857",
+  "url": "https://nber.org/papers/w23433",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Christl, Michael",
+  "y": "2020",
+  "ti": "The Labour Market Effects of a Refugee Wave. A Replication Study of Peri and Yasenov",
+  "j": "International Journal for Re-Views in Empirical Economics",
+  "v": "4",
+  "n": "4",
+  "p": "1-15",
+  "doi": "10.18718/81781.19",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "Dennison, James",
+  "y": "2026",
+  "ti": "The Effects of Immigration in Europe",
+  "pub": "European University Institute, RSC Working Paper 2026/36",
+  "url": "https://cadmus.eui.eu",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "Amior, Michael; Stuhler, Jan",
+  "y": "2024",
+  "ti": "Immigration, monopsony and the distribution of firm pay",
+  "pub": "CEP Discussion Paper 1971",
+  "url": "https://researchonline.lse.ac.uk/id/eprint/126815",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "Gyetvay, Sam; Keita, Sekou",
+  "y": "2023",
+  "ti": "Competition, Mobility and Immigration",
+  "pub": "Job market paper, University of British Columbia",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Docquier, Frédéric; Özden, Çağlar; Peri, Giovanni",
+  "y": "2014",
+  "ti": "The Labour Market Effects of Immigration and Emigration in OECD Countries",
+  "j": "Economic Journal",
+  "v": "124",
+  "n": "579",
+  "p": "1106-1145",
+  "url": "https://www.iza.org/publications/dp/6258",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
  }
 ]
