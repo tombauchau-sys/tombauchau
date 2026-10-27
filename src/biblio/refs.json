@@ -7738,5 +7738,29 @@
 "Finances"
 ],
 "cat": "rech"
+},
+{
+"t": "rep",
+"a": "Comité budgétaire européen (European Fiscal Board)",
+"y": "2025",
+"ti": "2025 Annual Report of the European Fiscal Board",
+"url": "https://commission.europa.eu/european-fiscal-board-efb_en#ar2025",
+"src": [
+"Finances"
+],
+"pub": "Commission européenne",
+"cat": "inst"
+},
+{
+"t": "rep",
+"a": "Comité budgétaire européen (European Fiscal Board)",
+"y": "2026",
+"ti": "The implementation of national medium-term fiscal-structural plans: progress to 2025, outlook for 2026",
+"url": "https://commission.europa.eu/european-fiscal-board-efb_en#progress2026",
+"src": [
+"Finances"
+],
+"pub": "Commission européenne",
+"cat": "inst"
 }
 ]
