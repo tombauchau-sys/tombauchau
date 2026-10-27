@@ -8257,5 +8257,45 @@
    "Immigration"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Goos, Mieke; Pipa, Joana; Peixoto, Francisco",
+  "y": "2021",
+  "ti": "Effectiveness of grade retention: A systematic review and meta-analysis",
+  "j": "Educational Research Review",
+  "n": "100401",
+  "doi": "10.1016/j.edurev.2021.100401",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Valbuena, Javier; Mediavilla, Mauro; Choi, Álvaro; Gil, María",
+  "y": "2021",
+  "ti": "Effects of grade retention policies: A literature review of empirical studies applying causal inference",
+  "j": "Journal of Economic Surveys",
+  "doi": "10.1111/joes.12406",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Goos, Mieke; Van Damme, Jan; Onghena, Patrick; Petry, Katja; de Bilde, Jerissa",
+  "y": "2013",
+  "ti": "First-grade retention in the Flemish educational context: Effects on children's academic growth, psychosocial growth, and school career throughout primary education",
+  "j": "Journal of School Psychology",
+  "v": "51",
+  "n": "3",
+  "p": "323-347",
+  "url": "https://lirias.kuleuven.be/1793445",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "rech"
  }
 ]
