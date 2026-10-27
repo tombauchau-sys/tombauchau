@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('27 octobre 2026', [
+        'Finances, question sur le jugement des marchés : étude de 2022 ajoutée sur l’effet des instruments de la BCE depuis 2012 et pendant la pandémie.',
         'Finances, question sur le jugement des marchés : verdict nuancé (les fondamentaux comptent, mais aussi la défiance, la fuite vers la dette allemande et la contagion depuis la Grèce) et deux études ajoutées.',
         'Finances, question sur le jugement des marchés : pays concernés précisés selon l’étude citée (Grèce, Irlande, Portugal, Espagne) et écart belge de 2011 précisé comme moyenne annuelle.',
         'Finances, question sur la soutenabilité de la dette : deux éclairages sur la fragilité d’un écart favorable entre taux et croissance (répression financière ; modèle théorique de l’OFCE).',

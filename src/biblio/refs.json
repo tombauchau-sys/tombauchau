@@ -7670,5 +7670,19 @@
 "pub": "BCE",
 "num": "Working Paper 1419",
 "cat": "rech"
+},
+{
+"t": "art",
+"a": "De Grauwe, Paul; Ji, Yuemei",
+"y": "2022",
+"ti": "The fragility of the Eurozone: Has it disappeared?",
+"j": "Journal of International Money and Finance",
+"v": "120",
+"p": "102546",
+"doi": "10.1016/j.jimonfin.2021.102546",
+"src": [
+"Finances"
+],
+"cat": "rech"
 }
 ]
