@@ -7642,5 +7642,33 @@
 "Finances"
 ],
 "cat": "rech"
+},
+{
+"t": "art",
+"a": "Arghyrou, Michael G.; Kontonikas, Alexandros",
+"y": "2012",
+"ti": "The EMU sovereign-debt crisis: Fundamentals, expectations and contagion",
+"j": "Journal of International Financial Markets, Institutions and Money",
+"v": "22",
+"n": "4",
+"p": "658-677",
+"doi": "10.1016/j.intfin.2012.03.003",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "De Santis, R. A.",
+"y": "2012",
+"ti": "The Euro area sovereign debt crisis: safe haven, credit rating agencies and the spread of the fever from Greece, Ireland and Portugal",
+"url": "https://ideas.repec.org/p/ecb/ecbwps/20121419.html",
+"src": [
+"Finances"
+],
+"pub": "BCE",
+"num": "Working Paper 1419",
+"cat": "rech"
 }
 ]
