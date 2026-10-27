@@ -7684,5 +7684,59 @@
 "Finances"
 ],
 "cat": "rech"
+},
+{
+"t": "art",
+"a": "Caselli, Francesca; Reynaud, Julien",
+"y": "2020",
+"ti": "Do fiscal rules cause better fiscal balances? A new instrumental variable strategy",
+"j": "European Journal of Political Economy",
+"v": "63",
+"p": "101873",
+"doi": "10.1016/j.ejpoleco.2020.101873",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Lehtimäki, Jonne; Kraemer, Robert",
+"y": "2026",
+"ti": "The EU fiscal framework and national fiscal rules: effects on budget balance dynamics",
+"j": "International Economics and Economic Policy",
+"v": "23",
+"p": "61",
+"doi": "10.1007/s10368-026-00757-0",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "McLaughlin, Liam; Claeys, Peter",
+"y": "2026",
+"ti": "Do Fiscal Rules Foster Fiscal Discipline in the EU? Reassessing Evidence Using Novel Instruments",
+"j": "Journal of Economics and Statistics",
+"doi": "10.1515/jbnst-2025-0067",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Brändle, Thomas; Elsener, Marc",
+"y": "2024",
+"ti": "Do fiscal rules matter? A survey of recent evidence",
+"j": "Swiss Journal of Economics and Statistics",
+"v": "160",
+"p": "11",
+"doi": "10.1186/s41937-024-00128-z",
+"src": [
+"Finances"
+],
+"cat": "rech"
 }
 ]
