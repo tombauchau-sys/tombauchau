@@ -8129,5 +8129,76 @@
    "Immigration"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Marbach, Moritz; Vallizadeh, Ehsan; Harder, Niklas; Hangartner, Dominik; Hainmueller, Jens",
+  "y": "2025",
+  "ti": "Does ad hoc language training improve the economic integration of refugees? Evidence from Germany's response to the Syrian refugee crisis",
+  "j": "Journal of the Royal Statistical Society Series A",
+  "v": "188",
+  "n": "4",
+  "p": "1168-1183",
+  "doi": "10.1093/jrsssa/qnae106",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Foged, Mette; van der Werf, Cynthia",
+  "y": "2023",
+  "ti": "Access to language training and the local integration of refugees",
+  "j": "Labour Economics",
+  "v": "84",
+  "n": "102366",
+  "doi": "10.1016/j.labeco.2023.102366",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Cockx, Bart; Lechner, Michael; Bollens, Joost",
+  "y": "2023",
+  "ti": "Priority to unemployed immigrants? A causal machine learning evaluation of training in Belgium",
+  "j": "Labour Economics",
+  "v": "80",
+  "n": "102306",
+  "url": "https://arxiv.org/abs/1912.12864",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Kiviholma, Sanni; Karhunen, Hannu",
+  "y": "2026",
+  "ti": "Labor Policies and Immigrant Employment",
+  "j": "Journal of Economic Surveys",
+  "v": "40",
+  "p": "321-339",
+  "doi": "10.1111/joes.70010",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Fouka, Vasiliki",
+  "y": "2024",
+  "ti": "State Policy and Immigrant Integration",
+  "j": "Annual Review of Political Science",
+  "v": "27",
+  "p": "25-46",
+  "doi": "10.1146/annurev-polisci-051921-102651",
+  "src": [
+   "Immigration"
+  ],
+  "cat": "rech"
  }
 ]
