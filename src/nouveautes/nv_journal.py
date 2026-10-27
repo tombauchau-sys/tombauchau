@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('27 octobre 2026', [
+        'Finances et Pensions : les projections du Comité d’étude sur le vieillissement sont désormais citées d’après son rapport de juillet 2026, chiffres revérifiés ; une comparaison non retrouvée dans le rapport est retirée. Finances : analyse de la Banque nationale sur la soutenabilité des finances du fédéral, des Régions et des Communautés ajoutée ; réserve de la question sur la soutenabilité corrigée (2,3 points, comme la fiche 06) et complétée.',
         'Finances, question « La dette belge est-elle soutenable ? » : verdict précisé (c’est le ratio de dette qui baisse, et un petit déficit reste compatible avec un ratio stable quand le taux est sous la croissance) ; ajout d’une étude de l’Université de Gand sur l’écart entre taux et croissance en Belgique jusqu’en 2040, et d’une étude historique de la KU Leuven.',
     ]),
     ('26 octobre 2026', [

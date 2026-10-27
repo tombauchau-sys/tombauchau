@@ -4147,15 +4147,16 @@
 "cat": "inst"
 },
 {
-"t": "web",
-"a": "Forum for the Future",
-"ti": "Vieillissement en Belgique à l’horizon 2070 : les dépenses sociales augmentent jusqu’en 2050 puis se stabilisent",
+"t": "rep",
+"a": "Conseil supérieur des Finances, Comité d’étude sur le vieillissement",
+"ti": "Rapport annuel (juillet 2026)",
 "src": [
 "Finances",
 "Pensions"
 ],
-"url": "https://blog.forumforthefuture.be/fr/article/vieillissement-en-belgique-a-lhorizon-2070-les-depenses-sociales-augmentent-jusquen-2050-puis-se-stabilisent-.../31873",
-"cat": "inst"
+"url": "https://www.plan.be/sites/default/files/documents/FOR_VERG2026_13333_NL.pdf",
+"cat": "inst",
+"y": "2026"
 },
 {
 "t": "web",
@@ -7574,5 +7575,18 @@
 "pub": "VIVES, KU Leuven",
 "num": "Discussion Paper 24",
 "cat": "rech"
+},
+{
+"t": "art",
+"a": "Cornille, D.; Deroose, M.; Godefroid, H.; Melyn, W.; Stinglhamber, P.; Van Parys, S.",
+"y": "2022",
+"ti": "How sustainable are the finances of the federal government, the regions and the communities in Belgium?",
+"j": "NBB Economic Review",
+"n": "19",
+"url": "https://nbb.be/en/node/408234",
+"src": [
+"Finances"
+],
+"cat": "inst"
 }
 ]
