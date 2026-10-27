@@ -7868,5 +7868,120 @@
    "Pensions"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Jarner, Søren F.; Jallbjørn, Snorre; Andersen, Torben M.",
+  "y": "2024",
+  "ti": "Pension system design: roles and interdependencies of tax-financed and funded pensions",
+  "j": "Scandinavian Actuarial Journal",
+  "v": "2024",
+  "n": "8",
+  "p": "813-847",
+  "doi": "10.1080/03461238.2024.2322640",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Ebbinghaus, Bernhard",
+  "y": "2021",
+  "ti": "Inequalities and poverty risks in old age across Europe: The double-edged income effect of pension systems",
+  "j": "Social Policy & Administration",
+  "v": "55",
+  "n": "3",
+  "p": "440-455",
+  "doi": "10.1111/spol.12683",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Borzutzky, Silvia; Hyde, Mark",
+  "y": "2016",
+  "ti": "Chile's private pension system at 35: impact and lessons",
+  "j": "Journal of International and Comparative Social Policy",
+  "v": "32",
+  "n": "1",
+  "p": "57-73",
+  "doi": "10.1080/21699763.2016.1148623",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Leimer, Dean R.; Lesnoy, Selig D.",
+  "y": "1982",
+  "ti": "Social Security and Private Saving: New Time-Series Evidence",
+  "j": "Journal of Political Economy",
+  "v": "90",
+  "n": "3",
+  "p": "606-629",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Lesnoy, Selig D.; Leimer, Dean R.",
+  "y": "1985",
+  "ti": "Social Security and Private Saving: Theory and Historical Evidence",
+  "j": "Social Security Bulletin",
+  "v": "48",
+  "n": "1",
+  "url": "https://www-origin.ssa.gov/policy/docs/ssb/v48n1/v48n1p14.pdf",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Feldstein, Martin",
+  "y": "1996",
+  "ti": "Social Security and Saving: New Time Series Evidence",
+  "j": "National Tax Journal",
+  "v": "49",
+  "n": "2",
+  "p": "151-164",
+  "url": "https://www.nber.org/papers/w5054",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Slavov, Sita; Gorry, Devon; Gorry, Aspen; Caliendo, Frank N.",
+  "y": "2019",
+  "ti": "Social Security and Saving: An Update",
+  "j": "Public Finance Review",
+  "v": "47",
+  "n": "2",
+  "p": "312-348",
+  "url": "https://ideas.repec.org/p/nbr/nberwo/23506.html",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "FSMA",
+  "y": "2025",
+  "ti": "Le deuxième pilier de pension en images : aperçu 2025",
+  "pub": "Autorité des services et marchés financiers",
+  "url": "https://www.fsma.be/fr/news/le-deuxieme-pilier-de-pension-en-images-apercu-2025",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "inst"
  }
 ]
