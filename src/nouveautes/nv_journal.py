@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('27 octobre 2026', [
+        'Pensions, question sur le coût du vieillissement : verdict précisé et chiffré, deux affirmations sans source retirées, projections européennes de 2024 et trois études ajoutées (effet du vieillissement sur la productivité ; rôle de l’indexation des pensions).',
         'Finances : premier bilan du nouveau cadre budgétaire européen par le Comité budgétaire européen (septembre 2026) et son appréciation du plan belge ajoutés à la question sur les règles et à la fiche 09.',
         'Finances, question sur les règles budgétaires européennes : verdict reformulé pour refléter des résultats opposés (« Les études divergent ») et quatre études ajoutées, dont deux de 2026 aux conclusions contraires.',
         'Finances, question sur le jugement des marchés : étude de 2022 ajoutée sur l’effet des instruments de la BCE depuis 2012 et pendant la pandémie.',

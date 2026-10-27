@@ -7762,5 +7762,41 @@
 ],
 "pub": "Commission européenne",
 "cat": "inst"
+},
+{
+"t": "rep",
+"a": "Commission européenne",
+"y": "2024",
+"ti": "2024 Country Report – Belgium (SWD(2024) 601)",
+"url": "https://economy-finance.ec.europa.eu/document/download/601d8fed-02ee-4e85-9189-e2ad7932505a_en?filename=SWD_2024_601_1_EN_Belgium.pdf",
+"src": [
+"Pensions"
+],
+"cat": "inst"
+},
+{
+"t": "art",
+"a": "Maestas, Nicole; Mullen, Kathleen J.; Powell, David",
+"y": "2023",
+"ti": "The Effect of Population Aging on Economic Growth, the Labor Force, and Productivity",
+"j": "American Economic Journal: Macroeconomics",
+"doi": "10.1257/mac.20190196",
+"src": [
+"Pensions"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Nortier-Ribordy, Frédérique",
+"y": "2023",
+"ti": "Les perspectives financières du système de retraite et du niveau de vie des retraités à l’horizon 2070",
+"j": "Economie et Statistique",
+"n": "538",
+"url": "https://www.insee.fr/fr/statistiques/7615296",
+"src": [
+"Pensions"
+],
+"cat": "rech"
 }
 ]
