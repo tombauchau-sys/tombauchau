@@ -1,5 +1,8 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
+    ('27 octobre 2026', [
+        'Finances, question « La dette belge est-elle soutenable ? » : verdict précisé (c’est le ratio de dette qui baisse, et un petit déficit reste compatible avec un ratio stable quand le taux est sous la croissance) ; ajout d’une étude de l’Université de Gand sur l’écart entre taux et croissance en Belgique jusqu’en 2040, et d’une étude historique de la KU Leuven.',
+    ]),
     ('26 octobre 2026', [
         'Finances, question « Emprunter pour investir » : sources vérifiées à la source (PDF fournis par l’auteur). Étude du FMI précisée (l’effet est plus fort quand l’investissement est financé par l’emprunt), une étude sur la zone euro incluant la Belgique, des simulations de l’OCDE et deux études sur les règles budgétaires et l’investissement public ajoutées.',
         'Finances : relecture de l’auteur vérifiée à la source pour deux questions de la partie Recherche. Austérité : le verdict précise que son coût dépend aussi du moment, deux études ajoutées, ordres de grandeur tirés de l’article publié d’Alesina et al. Dette et croissance : une étude couvrant la Belgique ajoutée, avec sa limite (elle ne démontre pas de causalité).',

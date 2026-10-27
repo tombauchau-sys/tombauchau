@@ -7548,5 +7548,31 @@
 "Finances"
 ],
 "cat": "rech"
+},
+{
+"t": "rep",
+"a": "Heylen, F.; Mareels, M.; Van Langenhove, C.",
+"y": "2023",
+"ti": "Have inflation and monetary tightening changed the game? Long-run perspectives on the interest–growth difference on public debt",
+"url": "https://ideas.repec.org/p/rug/rugwps/23-1065.html",
+"src": [
+"Finances"
+],
+"pub": "Université de Gand",
+"num": "Working Paper 23/1065 (publié : Journal of International Money and Finance, 145, 2024)",
+"cat": "rech"
+},
+{
+"t": "rep",
+"a": "Van Aarle, B.; Konings, J.",
+"y": "2011",
+"ti": "Sustainability of Belgian Public Finance: Challenges and Vulnerabilities",
+"url": "https://ideas.repec.org/p/ete/vivwps/24.html",
+"src": [
+"Finances"
+],
+"pub": "VIVES, KU Leuven",
+"num": "Discussion Paper 24",
+"cat": "rech"
 }
 ]
