@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('27 octobre 2026', [
+        'Immigration, question sur les finances publiques : verdict complété (motif d’arrivée, bilans sur toute la vie), chiffres belges de l’OCDE et de la BNB précisés, deux revues ajoutées. Le dossier Immigration est entièrement relu.',
         'Immigration, question sur la politique d’asile : correction, 2022 n’est pas un pic de demandes d’asile (le record de 2022 est celui des Ukrainiens sous protection temporaire) ; report des demandes entre pays européens chiffré par trois études, dont deux incluent la Belgique.',
         'Immigration, question sur l’emploi des réfugiés et des immigrés : effet des cours de langue nuancé (il dépend du programme et apparaît tardivement), première évaluation belge ajoutée (formation des chômeurs en Flandre) et deux revues récentes.',
         'Immigration, question sur les salaires et l’emploi des natifs : verdict précisé (effets surtout redistributifs), discussion de l’étude sur Mariel désormais sourcée, revue européenne de 2026 et seconde simulation pour la Belgique ajoutées.',
