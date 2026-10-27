@@ -7615,5 +7615,32 @@
 "Finances"
 ],
 "cat": "rech"
+},
+{
+"t": "art",
+"a": "Reinhart, Carmen M.",
+"y": "2012",
+"ti": "Le retour de la répression financière",
+"j": "Banque de France, Revue de la stabilité financière",
+"n": "16",
+"p": "37-48",
+"url": "https://ideas.repec.org/p/cpr/ceprdp/8947.html",
+"src": [
+"Finances"
+],
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Levy-Garboua, Vivien; Maarek, Gérard",
+"y": "2022",
+"ti": "La dette publique peut-elle rester indolore ?",
+"j": "Revue de l’OFCE",
+"n": "179",
+"url": "https://www.ofce.sciences-po.fr/pdf/revue/3-179OFCE.pdf",
+"src": [
+"Finances"
+],
+"cat": "rech"
 }
 ]
