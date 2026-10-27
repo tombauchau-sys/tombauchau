@@ -7588,5 +7588,32 @@
 "Finances"
 ],
 "cat": "inst"
+},
+{
+"t": "rep",
+"a": "Boskin, M. J.",
+"y": "2020",
+"ti": "Are Large Deficits and Debt Dangerous?",
+"url": "https://www.nber.org/papers/w26727",
+"src": [
+"Finances"
+],
+"pub": "NBER",
+"num": "Working Paper 26727",
+"cat": "rech"
+},
+{
+"t": "art",
+"a": "Evans, Richard W.",
+"y": "2020",
+"ti": "Public Debt, Interest Rates, and Negative Shocks",
+"j": "AEA Papers and Proceedings",
+"v": "110",
+"p": "137-140",
+"url": "https://ideas.repec.org/a/aea/apandp/v110y2020p137-40.html",
+"src": [
+"Finances"
+],
+"cat": "rech"
 }
 ]
