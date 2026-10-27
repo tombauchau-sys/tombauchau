@@ -7983,5 +7983,56 @@
    "Pensions"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Hernæs, Erik; Markussen, Simen; Piggott, John; Røed, Knut",
+  "y": "2016",
+  "ti": "Pension reform and labor supply",
+  "j": "Journal of Public Economics",
+  "v": "142",
+  "p": "39-55",
+  "doi": "10.1016/j.jpubeco.2016.08.009",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Hernæs, Erik; Markussen, Simen; Piggott, John; Røed, Knut",
+  "y": "2024",
+  "ti": "The impact of pension reform on employment, retirement, and disability insurance claims",
+  "j": "Journal of Population Economics",
+  "v": "37",
+  "n": "76",
+  "doi": "10.1007/s00148-024-01052-5",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "López-Novella, Maritza",
+  "y": "2012",
+  "ti": "Analysing the impact of eligibility and financial measures aiming at delaying early retirement in Belgium: a “difference-in-differences” approach using panel data",
+  "pub": "Bureau fédéral du Plan, Working Paper 14-12",
+  "url": "https://ideas.repec.org/p/fpb/wpaper/201214.html",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "inst"
+ },
+ {
+  "t": "rep",
+  "a": "Bureau fédéral du Plan",
+  "y": "2012",
+  "ti": "Perspectives économiques 2012-2017",
+  "pub": "Bureau fédéral du Plan",
+  "src": [
+   "Pensions"
+  ],
+  "cat": "inst"
  }
 ]

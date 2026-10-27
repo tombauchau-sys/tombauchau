@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('27 octobre 2026', [
+        'Pensions, question sur le bonus et le malus : verdict précisé (effet faible pour des montants comparables à un bonus-malus, fort quand le gain du travail double, comme en Norvège), évaluation belge de l’ancien bonus pension ajoutée, taux progressifs du nouveau bonus-malus selon l’année de naissance précisés.',
         'Pensions, question sur capitalisation et répartition : verdict réécrit (des risques différents, aucun système plus sûr en général), trois études et les données de la FSMA sur le deuxième pilier ajoutées ; le résultat de Feldstein sur l’épargne est présenté comme disputé, de façon cohérente dans tout le dossier.',
         'Pensions, question sur le recul de l’âge de la retraite : verdict précisé et chiffré (l’emploi augmente, mais une partie des personnes reste hors emploi), quatre évaluations ajoutées, dont une évaluation belge du relèvement de l’âge des femmes en 2006, et une revue systématique ; dates du bonus et du malus précisées.',
         'Pensions, question sur le coût du vieillissement : verdict précisé et chiffré, deux affirmations sans source retirées, projections européennes de 2024 et trois études ajoutées (effet du vieillissement sur la productivité ; rôle de l’indexation des pensions).',
