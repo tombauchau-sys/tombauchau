@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Justice, question sur l’évolution de la criminalité : verdict complété (rapport de l’Institut national de criminologie ; Moniteur de sécurité 2024 : violences sexuelles déclarées stables, fraude en ligne en hausse). Chiffre noir et sentiment d’insécurité mis à jour avec le Moniteur de sécurité 2024.',
         'Logement, question sur la construction : verdict nuancé (l’effet sur les loyers est réel mais modeste ; étude allemande, chaînes de déménagement à Helsinki et aux États-Unis, étude contraire à Minneapolis ; en Belgique, l’offre réagit peu aux prix). Le dossier Logement est entièrement relu par l’auteur.',
         'Logement, question sur les aides au logement : verdict complété (part des allocations de loyer captée par les loyers selon le Royaume-Uni, la Finlande et les États-Unis ; la baisse des droits d’enregistrement flamands de 2022 a fait monter les prix d’environ 3 %, selon la BNB ; le bonus logement profite surtout aux ménages périurbains).',
         'Logement, question sur l’encadrement des loyers : verdict complété (deux revues de la littérature : les locataires en place en profitent, avec des effets secondaires sur la construction, l’entretien et les loyers non encadrés) ; limitation de l’indexation selon le certificat PEB en 2022-2023 décrite d’après les textes des trois Régions.',

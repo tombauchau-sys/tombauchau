@@ -9218,5 +9218,55 @@
    "Logement"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Tseloni, Andromachi; Mailley, Jen; Farrell, Graham; Tilley, Nick",
+  "y": "2010",
+  "ti": "Exploring the international decline in crime rates",
+  "pub": "European Journal of Criminology",
+  "num": "7(5), 375-394",
+  "doi": "10.1177/1477370810367014",
+  "url": "https://doi.org/10.1177/1477370810367014",
+  "cat": "rech",
+  "src": [
+   "Justice"
+  ]
+ },
+ {
+  "t": "rep",
+  "a": "Burssens, Dieter",
+  "y": "2023",
+  "ti": "Tendances de la criminalité. Le crime drop au niveau international et en Belgique",
+  "pub": "Institut national de criminalistique et de criminologie",
+  "num": "Rapport de recherche 57b",
+  "cat": "inst",
+  "src": [
+   "Justice"
+  ],
+  "url": "https://nicc.fgov.be/upload/publicaties/rapport_57b-crime_drop-version_fr-202306.pdf"
+ },
+ {
+  "t": "stat",
+  "a": "Police fédérale",
+  "y": "2025",
+  "ti": "Moniteur de sécurité 2024",
+  "url": "https://www.police.be/statistiques/fr/moniteur-de-securite/moniteur-de-securite-2024",
+  "cat": "stat",
+  "src": [
+   "Justice"
+  ]
+ },
+ {
+  "t": "law",
+  "a": "Belgique",
+  "y": "2022",
+  "ti": "Loi du 21 mars 2022 modifiant le Code pénal en ce qui concerne le droit pénal sexuel",
+  "note": "en vigueur le 1er juin 2022",
+  "url": "https://jeminforme.be/wp-content/uploads/2022/09/LB-ModifiantDroitPenalSexuel-31032022.pdf",
+  "cat": "inst",
+  "src": [
+   "Justice"
+  ]
  }
 ]
