@@ -8762,5 +8762,46 @@
    "Climat"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Brockway, Paul E.; Sorrell, Steve; Semieniuk, Gregor; Heun, Matthew Kuperus; Court, Victor",
+  "y": "2021",
+  "ti": "Energy efficiency and economy-wide rebound effects: A review of the evidence and its implications",
+  "j": "Renewable and Sustainable Energy Reviews",
+  "v": "141",
+  "doi": "10.1016/j.rser.2021.110781",
+  "url": "https://doi.org/10.1016/j.rser.2021.110781",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "chap",
+  "a": "Roels, Staf; Van Gelder, Liesje; Bauwens, Geert; Verbeeck, Griet; Staepels, Liesbeth",
+  "y": "2013",
+  "ti": "Energy performance labels for dwellings versus real energy consumption",
+  "pub": "Proceedings of the 13th IBPSA International Building Simulation Conference, 1698-1705",
+  "url": "https://documentserver.uhasselt.be/handle/1942/15308",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Van Hove, Matthias Y. C.; Laverge, Jelle; Janssens, Arnold; Delghust, Marc",
+  "y": "2022",
+  "ti": "Statistical data-driven analysis and modelling of total energy use in new or thoroughly renovated single-family houses",
+  "j": "E3S Web of Conferences",
+  "v": "362",
+  "p": "13005",
+  "doi": "10.1051/e3sconf/202236213005",
+  "url": "https://doi.org/10.1051/e3sconf/202236213005",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
  }
 ]

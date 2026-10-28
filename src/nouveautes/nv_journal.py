@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Climat, question sur les économies d’énergie : verdict nuancé (le rebond à l’échelle de toute l’économie reste débattu), revue de 2021 et deux études flamandes sur l’écart entre calcul PEB et consommation réelle ajoutées.',
         'Climat, question sur le prix du carbone : verdict précisé (méta-analyse de 80 évaluations : −5 à −21 % ; effet annuel modeste ; fuites de carbone d’environ 13 % pour le ciment et l’acier), trois études ajoutées.',
         'Inégalités, question sur les plus hauts revenus : verdict complété (enquêtes et comparaison européenne), trois études ajoutées, réserve complétée (plus-values ; séries du World Inequality Lab non indépendantes). Le dossier Inégalités est entièrement relu par l’auteur.',
         'Inégalités, question sur le patrimoine : verdict réécrit (r > g n’est pas une loi mécanique ; le prix des actifs et les choix politiques comptent), quatre études et l’enquête patrimoniale de la BNB ajoutées.',

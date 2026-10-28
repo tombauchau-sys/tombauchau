@@ -638,3 +638,9 @@ climat,"Q1 : Döbbeling-Hildebrandt et al. (2024) — −5 à −21 % (−4 à �
 climat,"Q1 : Green (2021) — 0 à 2 %/an ; EU ETS 0 à 1,5 %/an ; 37 études",valeurs,"ERL 16 043004, texte intégral",identique,ajouté,
 climat,"Q1 : OCDE, Teusch et al. (2024) — +1 $/t → −1,3 % ; fuites ≈ 13 %",valeurs,"OCDE ECO WP 1813, texte intégral",identique,ajouté,calcul approximatif des auteurs
 climat,"Q1 (résumé IA) : émissions belges −32,6 % depuis 1990 ; débat 2018 (32 € / 127 €) ; BFP ETS2 (255-415 € ; 26 % / 2,9 %)",—,non vérifié (presse seulement pour l'ETS2),non vérifié,signalé,à reprendre pour la question 3
+climat,"Q2 : Fowlie et al. — 2,5× ; coûts ≈ 2× ; −9,5 %/an ; pas de hausse de température",valeurs,"NBER w21331 (résumé), QJE qjy005",identique,vérifié,précisions ajoutées
+climat,Q2 : Gillingham et al. — « little support for backfire » ; innovation/productivité à comprendre,résumé,RFF DP 14-39 (page RFF),identique,vérifié,réserve des auteurs ajoutée
+climat,Q2 : Brockway et al. (2021) — rebond économie entière « may erode more than half »,résumé,"RSER 141 (résumé, RePEc)",identique,ajouté,pas de backfire dans le résumé
+climat,Q2 : Roels et al. (2013) — 70 logements neufs flamands ; calcul surestime,résumé,UHasselt (résumé),identique,ajouté,contredit le résumé IA (« A/B sous-estimés »)
+climat,Q2 : Van Hove et al. (2022) — MAE ≈ 5 242 kWh/an ; RMSE 7 227,valeurs,"E3S 362, 13005 (résumé, DOAJ)",identique,ajouté,maisons tout-électriques neuves ou rénovées
+climat,Q2 (résumé IA) : passoires surestimées > 50 % ; BNB −2 % (obligation de rénovation) ; Renolution suspendue ; effets d'aubaine,—,non vérifié,non vérifié,signalé,non repris
