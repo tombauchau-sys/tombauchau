@@ -9268,5 +9268,42 @@
   "src": [
    "Justice"
   ]
+ },
+ {
+  "t": "art",
+  "a": "Al Weswasi, Enes; Sivertsson, Fredrik; Bäckman, Olof; Nilsson, Anders",
+  "y": "2023",
+  "ti": "Does sentence length affect the risk for criminal recidivism? A quasi-experimental study of three policy reforms in Sweden",
+  "pub": "Journal of Experimental Criminology",
+  "num": "19, 971-999",
+  "doi": "10.1007/s11292-022-09513-1",
+  "url": "https://doi.org/10.1007/s11292-022-09513-1",
+  "cat": "rech",
+  "src": [
+   "Justice"
+  ]
+ },
+ {
+  "t": "rep",
+  "a": "Gormley, Jay; Hamilton, Melissa; Belton, Ian",
+  "y": "2022",
+  "ti": "The Effectiveness of Sentencing Options on Reoffending",
+  "pub": "Sentencing Council",
+  "url": "https://sentencingcouncil.org.uk/publications/item/the-effectiveness-of-sentencing-options-on-reoffending",
+  "cat": "rech",
+  "src": [
+   "Justice"
+  ]
+ },
+ {
+  "t": "web",
+  "a": "Conseil des ministres",
+  "y": "2026",
+  "ti": "Avant-projet de loi portant des mesures supplémentaires visant à réduire la surpopulation carcérale (communiqué du 22 mai 2026)",
+  "url": "https://news.belgium.be/fr/node/43982/pdf",
+  "cat": "inst",
+  "src": [
+   "Justice"
+  ]
  }
 ]
