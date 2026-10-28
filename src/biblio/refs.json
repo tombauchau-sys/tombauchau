@@ -8526,5 +8526,46 @@
    "Santé"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Blanchet, Thomas; Chancel, Lucas; Gethin, Amory",
+  "y": "2022",
+  "ti": "Why Is Europe More Equal than the United States?",
+  "j": "American Economic Journal: Applied Economics",
+  "v": "14",
+  "n": "4",
+  "p": "480-518",
+  "doi": "10.1257/app.20200703",
+  "url": "https://doi.org/10.1257/app.20200703",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Maier, Sofía; Ricci, Mattia",
+  "y": "2022",
+  "ti": "EUROMOD baseline report",
+  "pub": "JRC Working Papers on Taxation and Structural Reforms 01/2022, Commission européenne",
+  "url": "https://hdl.handle.net/10419/280864",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Van Havere, Toon; Nieuwenhuis, Rense; Thaning, Max; Van Lancker, Wim; Bartova, Alzbeta",
+  "y": "2024",
+  "ti": "Eligibility and benefit adequacy for families in the tax-benefit system: Micro-simulations using EUROMOD",
+  "pub": "rEUsilience working paper",
+  "doi": "10.31219/osf.io/n48jw",
+  "url": "https://doi.org/10.31219/osf.io/n48jw",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
  }
 ]

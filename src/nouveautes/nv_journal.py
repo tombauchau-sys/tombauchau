@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Inégalités, question sur l’effet des impôts et allocations sur la pauvreté : verdict précisé (division par deux hors pensions, par quatre en les comptant), deux microsimulations européennes et l’étude de Blanchet, Chancel et Gethin ajoutées, réserve complétée.',
         'Santé, question sur les inégalités sociales de santé : verdict précisé (gradient selon le diplôme, le revenu, le quartier ; écarts relatifs creusés depuis les années 1990), quatre sources belges et européennes ajoutées ; source de l’écart de 9 et 6 ans corrigée.',
         'Santé, question sur la participation des patients : verdict précisé (moins de soins consommés, y compris utiles ; santé à long terme peu étudiée ; économie surtout pour le budget public), revue de l’OCDE, expérience norvégienne et report de soins 2023-2024 (Sciensano) ajoutés.',
         'Santé, question sur la part des soins dans l’espérance de vie : résumé de Kaplan et Milstein corrigé (environ 10 %, plutôt surestimé), mortalité évitable par région (KCE) et écarts selon le diplôme (Sciensano) ajoutés.',
