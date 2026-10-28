@@ -8379,5 +8379,17 @@
    "Éducation"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "KCE",
+  "y": "2024",
+  "ti": "Performance du système de santé belge : rapport 2024 (Qualité et efficacité)",
+  "pub": "Centre fédéral d’expertise des soins de santé, KCE Report 376B",
+  "url": "https://www.healthybelgium.be/metadata/hspa/2024/HSPA2024_Quality_Effectiveness_FR.pdf",
+  "src": [
+   "Santé"
+  ],
+  "cat": "inst"
  }
 ]
