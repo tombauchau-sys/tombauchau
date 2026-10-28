@@ -203,7 +203,7 @@ SEO_TITLES = {
     'registre-verification.html': 'Registre de vérification des chiffres · Au plus Juste',
     'bibliographie.html': 'Bibliographie complète, APA 7 et Chicago · Au plus Juste',
 }
-AUTHOR = {'@type': 'Person', 'name': 'Tom Bauchau'}
+AUTHOR = {'@type': 'Organization', 'name': 'Au plus Juste'}
 # Descriptions pour les moteurs de recherche (160 caractères au plus)
 SEO_DESC = {'index.html': 'Outil citoyen : chiffres vérifiés sur la Belgique et l’Europe (dette, emploi, pauvreté, climat, logement), avec sources, définitions et limites.', 'comparer.html': 'Comparer les 27 pays de l’Union sur une trentaine d’indicateurs Eurostat : emploi, finances publiques, santé, éducation, pauvreté, climat, logement.', 'dossier-climat.html': 'Climat et énergie en Belgique : émissions par secteur, renouvelables, nucléaire, dépendance énergétique, prix de l’électricité. Chiffres vérifiés.', 'dossier-education.html': 'Éducation en Belgique : compétences des élèves (PISA), redoublement, décrochage, diplômes et emploi. Chiffres vérifiés, sources et limites.', 'dossier-finances.html': 'Dette, déficit, dépenses par fonction, intérêts et notes des agences : les finances publiques belges en chiffres vérifiés, avec leurs limites.', 'dossier-immigration.html': 'Immigration et asile en Belgique : personnes nées à l’étranger, titres de séjour, demandes d’asile, emploi. Chiffres vérifiés et sources.', 'dossier-inegalites.html': 'Inégalités et pauvreté en Belgique : risque de pauvreté, privations, redistribution, Gini, patrimoine. Chiffres vérifiés, sources et limites.', 'dossier-justice.html': 'Justice et sécurité en Belgique : criminalité enregistrée, chiffre noir, prisons surpeuplées, récidive. Chiffres vérifiés et sources.', 'dossier-logement.html': 'Logement en Belgique : prix, rapport prix/revenu, propriétaires et locataires, coût du logement, logement social. Chiffres vérifiés.', 'dossier-pensions.html': 'Pensions et vieillissement en Belgique : dépenses, niveau des pensions, pauvreté des aînés, âge de départ, réforme. Chiffres vérifiés.', 'dossier-sante.html': 'Santé en Belgique : espérance de vie, années en bonne santé, dépenses, accès aux soins, mortalité évitable. Chiffres vérifiés et sources.', 'lexique.html': 'Lexique de 166 termes politiques, économiques, sociaux et européens : institutions belges, traités (Maastricht, Lisbonne…), statistique.'}
 
@@ -473,11 +473,11 @@ def add_cite(body, titre, fname, genre):
     m = re.search(r'(?:Dossier|Fiche[^<]*?) vérifiée? le (\d{1,2}(?:er)? \w+ (\d{4}))', body)
     ver, an = (m.group(1), m.group(2)) if m else (None, BUILD_DATE[:4])
     url = BASE + fname
-    ref = (f'Bauchau, T. ({an}). <i>{titre}</i> [{genre}]. Au plus Juste' + (f', version du {ver}' if ver else '') +
+    ref = (f'Au plus Juste. ({an}). <i>{titre}</i> [{genre}]' + (f', version du {ver}' if ver else '') +
            f'. Consulté le <span class="cj-today">…</span>, à l’adresse {url}')
     box = ('<div class="cj-cite"><p class="cj-cite-t">Comment citer ce ' + genre + '</p>'
            '<p class="cj-ref">' + ref + '</p>'
-           '<p class="cj-cite-n">Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique) : Au plus Juste rassemble et explique des données, il ne les produit pas. Les données de chaque graphique sont téléchargeables (« Voir les données du graphique »). Code et données du site : <a href="https://github.com/tombauchau-sys/tombauchau" target="_blank" rel="noopener">dépôt public GitHub</a>.</p>'
+           '<p class="cj-cite-n">Pour un chiffre précis, citez aussi sa source primaire (indiquée sous chaque graphique) : Au plus Juste rassemble et explique des données, il ne les produit pas. Les données de chaque graphique sont téléchargeables (« Voir les données du graphique »).</p>'
            '<button type="button" class="cj-copy">Copier la référence</button></div>')
     if genre == 'fiche':
         k = body.index('</div>\n</section>\n</main>')
