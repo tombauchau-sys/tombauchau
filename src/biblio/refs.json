@@ -8985,5 +8985,41 @@
    "Fiscalité"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Benzarti, Youssef; Harju, Jarkko",
+  "y": "2020",
+  "ti": "Can Payroll Tax Cuts Help Firms During Recessions?",
+  "pub": "NBER Working Paper 27485",
+  "url": "https://www.nber.org/papers/w27485",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Bíró, Anikó; Branyiczki, Réka; Lindner, Attila; Márk, Lili; Prinz, Dániel",
+  "y": "2022",
+  "ti": "Firm Heterogeneity and the Impact of Payroll Taxes",
+  "pub": "KRTK-KTI Working Papers 2022/23",
+  "url": "https://hdl.handle.net/10419/282216",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Daunfeldt, Sven-Olov; Gidehag, Anton; Westerberg, Hans Seerar",
+  "y": "2023",
+  "ti": "Do reduced labor costs increase employment among minimum wage workers? Evidence from a Swedish payroll tax cut",
+  "pub": "HFI Working Paper 26",
+  "url": "https://hdl.handle.net/10419/300117",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "rech"
  }
 ]

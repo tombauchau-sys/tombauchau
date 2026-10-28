@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Fiscalité, question sur les cotisations sociales : verdict complété (études suédoise, hongroise et finlandaise ; partage entre emploi, salaires et profits), phrase non sourcée sur le coût des baisses générales retirée. Le dossier Fiscalité est entièrement relu par l’auteur.',
         'Fiscalité, question sur l’impôt sur le patrimoine : verdict complété (étude espagnole : épargne inchangée, fort évitement), résumé de Saez et Zucman corrigé. Correction : le taux de la taxe sur les comptes-titres est passé de 0,15 % à 0,30 % le 1er juin 2026.',
         'Fiscalité, question sur les impôts et la croissance : verdict nuancé (le classement de l’OCDE est discuté ; l’effet dépend de l’usage des recettes), deux méta-analyses et la simulation du tax shift belge ajoutées.',
         'Climat, question sur l’impopularité des taxes carbone : ajout de la microsimulation du Bureau du Plan sur l’ETS2 (1 à 1,3 % du revenu des ménages modestes pour le chauffage, contre 0,4 à 0,6 % pour les plus aisés).',

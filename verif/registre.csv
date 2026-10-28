@@ -668,3 +668,7 @@ fiscalite,"Q2 : Saez et Zucman (BPEA 2019) — base 9-13 000 Md$ ; simulation 3 
 fiscalite,"Q2 : Mas-Montserrat et al. (JPubE 246) — −3,21 % de richesse imposable en 4 ans pour +0,1 pt ; épargne inchangée ; perte = 2,75 × recettes 2011",valeurs,"JPubE, texte intégral",identique,ajouté,
 fiscalite,"Q2 : impôts sur le patrimoine BE 2024 — 3,19 % PIB ; T_4100 1,26 ; T_4400 0,89 ; T_4300 0,62 ; T_4200 0,20 ; OCDE moyen 2023 1,68",valeurs,"OCDE DF_RSOECD 2.0 (S13, PT_B1GQ), lu le 28/10/2026",identique,vérifié,"arrondis à 0,1"
 fiscalite,Q2 (résumé IA) : arrêts CC 138/2019 et 27/10/2022 ; rapport Cour des comptes 11/09/2024 ; loi-programme « du 30 mai 2026 »,—,blogs juridiques ; BNP (présomption d'abus depuis le 29/07/2025),partiellement vérifié,signalé,arrêts et date du rapport non vérifiés
+fiscalite,"Q3 : Saez, Schoefer et Seim (AER 109(5)) — salaires nets inchangés ; emploi +2-3 pts ; entreprises se développent ; salaires de tous ↑",résumé,AEA (résumé publié),identique,vérifié,
+fiscalite,Q3 : Toniolo (2025) — bonus à l'emploi : jours prestés ↑ ; premiers engagements : ≈ 1/5 des bénéficiaires n'embauchent pas plus d'un salarié,résumé,UCLouvain DIAL (résumé),« auraient embauché de toute façon » = interprétation,corrigé,chiffres dans la thèse (PDF non lu)
+fiscalite,Q3 : Daunfeldt et al. (2023) ; Bíró et al. (2022) ; Benzarti et Harju (2020),résumés,"Textes intégraux (EconStor, NBER)",identique,ajouté,
+fiscalite,Q3 : « les baisses générales coûtent plus cher par emploi créé »,—,aucune source chiffrée lue,—,corrigé,phrase retirée
