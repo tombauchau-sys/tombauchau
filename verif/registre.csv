@@ -655,3 +655,11 @@ climat,Q3 : De Bevere et Grandjean (IMA 2024) — régressif ; reversement égal
 climat,Q3 (résumé IA) : plafond 45 €/t ; « condition sine qua non » ; BFP « An exploration of the impact of ETS2… » 150-200 € / 250-400 €,—,non trouvé,non vérifié,signalé,non repris
 climat,"Q3 : Costa et Dobbelaere (BFP, art. 21, 07/2025) — 60 €/t ; gaz +16 %, mazout +21 %, essence +10 %, diesel +11 % ; D1-3 1-1,3 % du revenu vs D8-10 0,4-0,6 % ; >1 % : 14,9 % (bas 26,0 / moyen 12,8 / élevé 2,9) ; mazout +34 pts",valeurs,"BFP, article n° 21 (PDF transmis par l'auteur, texte intégral)",identique,vérifié,chauffage seulement ; sans comportement ; « 255-415 € » du résumé IA non vérifiable (graphique) ; pas d'URL stable trouvée
 climat,"Q1/Q3 (résumé IA) : BFP ETS2 « 26 % / 2,9 % », « +16 % / +21 % »",—,BFP article n° 21,conforme,vérifié,mise à jour des lignes « non vérifié » précédentes ; montants en euros toujours non vérifiés
+fiscalite,"Q1 : Arnold et al. (EJ 121) — classement ; +0,25 à 1 % PIB/hab long terme",résumé,Colonne VoxEU (un des auteurs),identique,corrigé,niveau 2 → 1 (association entre pays)
+fiscalite,Q1 : Romer et Romer (AER 100(3)) — −2 à −3 % ; hausses anti-déficit moins coûteuses,résumé,NBER w13264,identique,vérifié,nuance ajoutée
+fiscalite,Q1 : Hope et Limberg (SER 20(2)) — top 1 % ↑ ; pas d'effet significatif croissance/chômage,résumé,LSE III WP 55 (résumé),identique,vérifié,
+fiscalite,"Q1 : Gechert et Heimberger (EER 147) — 441 estimations, 42 études ; effet nul non rejeté",résumé,RePEc (FMM WP 65-2021),identique,ajouté,
+fiscalite,"Q1 : Alinaghi et Reed (2020) — 979 estimations, 49 études ; −0,2 / +0,2 point",valeurs,Document de travail (texte intégral),identique,ajouté,statut de publication à vérifier
+fiscalite,Q1 : Jung (2026) ; Tavares et al. (2026),résumés,Textes intégraux,identique,ajouté,corrélations
+fiscalite,"Q1 : BFP 2015 — ≈ 1,5 % du PIB non financé ; FMI 2020 — déficit 0,7 → 1,7 % « largely due » à l'IPP (tax shift)",valeurs,plan.be (page du rapport) ; IMF CR 20/91,identique,ajouté,effets sur l'emploi : rapport complet non lu
+fiscalite,"Q1 (résumé IA) : 316 600 emplois « grâce au » tax shift ; 10 Md€ / 2 % PIB ; 8,8 → 10 Md€ ; avis CSF",—,Acerta / presse,non vérifié,signalé,"316 600 = création totale d'emplois, pas un effet mesuré"

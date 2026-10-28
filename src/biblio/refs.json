@@ -8890,5 +8890,85 @@
    "Climat"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Gechert, Sebastian; Heimberger, Philipp",
+  "y": "2022",
+  "ti": "Do corporate tax cuts boost economic growth?",
+  "j": "European Economic Review",
+  "v": "147",
+  "url": "https://ideas.repec.org/p/imk/fmmpap/65-2021.html",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Alinaghi, Nazila; Reed, W. Robert",
+  "y": "2020",
+  "ti": "Taxes and Economic Growth in OECD Countries: A Meta-Analysis",
+  "pub": "Document de travail, University of Canterbury",
+  "url": "https://osf.io/6bfgx/",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Jung, Hoyong",
+  "y": "2026",
+  "ti": "The corporate tax–economic growth nexus: the role of institutional quality",
+  "j": "Economics of Governance",
+  "v": "27",
+  "p": "22",
+  "doi": "10.1007/s10101-026-00358-2",
+  "url": "https://doi.org/10.1007/s10101-026-00358-2",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Tavares, André; Couto, Gualter; Pimentel, Pedro",
+  "y": "2026",
+  "ti": "Tax Burden vs Tax Structure: Heterogeneous Growth Effects across EU Countries, Portugal, and New Member States",
+  "j": "Journal of Tax Reform",
+  "v": "12",
+  "n": "3",
+  "p": "674-692",
+  "doi": "10.15826/jtr.2026.12.3.271",
+  "url": "https://doi.org/10.15826/jtr.2026.12.3.271",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "Bureau fédéral du Plan",
+  "y": "2015",
+  "ti": "Macro-economische en budgettaire effecten van de tax shift maatregelen van de federale regering",
+  "pub": "Bureau fédéral du Plan",
+  "url": "https://www.plan.be/nl/publicaties/macro-economische-en-budgettaire-effecten-van-de-1",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "inst"
+ },
+ {
+  "t": "rep",
+  "a": "Fonds monétaire international",
+  "y": "2020",
+  "ti": "Belgium: 2020 Article IV Consultation",
+  "pub": "IMF Country Report 20/91",
+  "url": "https://www.elibrary.imf.org/view/journals/002/2020/091/article-A001-en.xml",
+  "src": [
+   "Fiscalité"
+  ],
+  "cat": "inst"
  }
 ]
