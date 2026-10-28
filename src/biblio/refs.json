@@ -9035,5 +9035,41 @@
   "doi": "10.1016/j.jhe.2026.102155",
   "url": "https://doi.org/10.1016/j.jhe.2026.102155",
   "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "Kholodilin, Konstantin A.",
+  "y": "2022",
+  "ti": "Rent control effects through the lens of empirical research",
+  "src": [
+   "Logement"
+  ],
+  "pub": "DIW Berlin",
+  "num": "DIW Roundup 139",
+  "url": "https://hdl.handle.net/10419/249152",
+  "cat": "rech"
+ },
+ {
+  "t": "law",
+  "a": "Région de Bruxelles-Capitale",
+  "y": "2023",
+  "ti": "Ordonnance du 13 octobre 2023 portant modification de l’article 224/2 du Code bruxellois du Logement",
+  "src": [
+   "Logement"
+  ],
+  "note": "Moniteur belge du 27 octobre 2023",
+  "url": "https://www.ejustice.just.fgov.be/img_l/pdf/2023/10/13/2023046391_F.pdf",
+  "cat": "inst"
+ },
+ {
+  "t": "law",
+  "a": "Communauté flamande",
+  "y": "2022",
+  "ti": "Decreet van 3 oktober 2022 tot beperking van de indexatie van de huurprijzen om de gevolgen van de energiecrisis te verlichten",
+  "src": [
+   "Logement"
+  ],
+  "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1037441",
+  "cat": "inst"
  }
 ]
