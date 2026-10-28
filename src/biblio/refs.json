@@ -8444,5 +8444,87 @@
    "Santé"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Mackenbach, Johan P.; Rubio Valverde, José; Bopp, Matthias; Brønnum-Hansen, Henrik; Costa, Giuseppe; Deboosere, Patrick; et al.",
+  "y": "2019",
+  "ti": "Progress against inequalities in mortality: register-based study of 15 European countries between 1990 and 2015",
+  "j": "European Journal of Epidemiology",
+  "v": "34",
+  "p": "1131-1142",
+  "doi": "10.1007/s10654-019-00580-9",
+  "url": "https://doi.org/10.1007/s10654-019-00580-9",
+  "src": [
+   "Santé"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Decoster, André; Minten, Thomas; Spinnewijn, Johannes",
+  "y": "2021",
+  "ti": "The income gradient in mortality during the Covid-19 crisis: evidence from Belgium",
+  "j": "Journal of Economic Inequality",
+  "v": "19",
+  "n": "3",
+  "p": "551-570",
+  "doi": "10.1007/s10888-021-09505-7",
+  "url": "https://doi.org/10.1007/s10888-021-09505-7",
+  "src": [
+   "Santé"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Otavova, Martina; Masquelier, Bruno; Faes, Christel; van den Borre, Laura; Vandeninden, Bram; de Clercq, Eva; Devleesschauwer, Brecht",
+  "y": "2024",
+  "ti": "Trends in socioeconomic inequalities in cause-specific premature mortality in Belgium, 1998–2019",
+  "j": "BMC Public Health",
+  "v": "24",
+  "p": "470",
+  "doi": "10.1186/s12889-024-17933-z",
+  "url": "https://doi.org/10.1186/s12889-024-17933-z",
+  "src": [
+   "Santé"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Bourguignon, M.; Damiens, J.; Doignon, Y.; Eggerickx, T.; Fontaine, S.; Lusyne, P.; et al.",
+  "y": "2021",
+  "ti": "Variations spatiales et sociodémographiques de mortalité de 2020-2021 en Belgique : l’effet de la pandémie Covid-19",
+  "pub": "Centre de recherche en démographie, UCLouvain, document de travail 27",
+  "url": "https://www.healthybelgium.be/en/health-status/life-expectancy-and-quality-of-life/life-expectancy",
+  "src": [
+   "Santé"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "Van Aerden, K.; Balogh, R.; Chiff, F.; et al.",
+  "y": "",
+  "ti": "Causes of health and mortality inequalities in Belgium: multiple dimensions, multiple causes (résumé, projet CAUSINEQ)",
+  "pub": "BELSPO, BRAIN-be BR/121/A5",
+  "url": "https://www.belspo.be/belspo/brain-be/projects/MeetingDoc/Summary%20CAUSINEQ%20final_SG_CV_KVA.pdf",
+  "src": [
+   "Santé"
+  ],
+  "cat": "inst"
+ },
+ {
+  "t": "web",
+  "a": "Sciensano",
+  "y": "2022",
+  "ti": "Inequalities in mortality",
+  "pub": "healthybelgium.be",
+  "url": "https://www.healthybelgium.be/en/health-status/health-inequalities/inequalities-in-mortality",
+  "src": [
+   "Santé"
+  ],
+  "cat": "inst"
  }
 ]
