@@ -9071,5 +9071,87 @@
   ],
   "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1037441",
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Gibbons, Stephen; Manning, Alan",
+  "y": "2006",
+  "ti": "The incidence of UK housing benefit: Evidence from the 1990s reforms",
+  "src": [
+   "Logement"
+  ],
+  "pub": "Journal of Public Economics",
+  "num": "90(4-5), 799-822",
+  "url": "https://doi.org/10.1016/j.jpubeco.2005.01.002",
+  "cat": "rech",
+  "doi": "10.1016/j.jpubeco.2005.01.002"
+ },
+ {
+  "t": "art",
+  "a": "Viren, Matti",
+  "y": "2013",
+  "ti": "Is the housing allowance shifted to rental prices?",
+  "src": [
+   "Logement"
+  ],
+  "pub": "Empirical Economics",
+  "num": "44(3), 1497-1518",
+  "url": "https://doi.org/10.1007/s00181-012-0589-x",
+  "cat": "rech",
+  "doi": "10.1007/s00181-012-0589-x"
+ },
+ {
+  "t": "art",
+  "a": "Eriksen, Michael D.; Ross, Amanda",
+  "y": "2015",
+  "ti": "Housing Vouchers and the Price of Rental Housing",
+  "src": [
+   "Logement"
+  ],
+  "pub": "American Economic Journal: Economic Policy",
+  "num": "7(3), 154-176",
+  "url": "https://doi.org/10.1257/pol.20130064",
+  "cat": "rech",
+  "doi": "10.1257/pol.20130064"
+ },
+ {
+  "t": "art",
+  "a": "Hilber, Christian A. L.; Turner, Tracy M.",
+  "y": "2014",
+  "ti": "The Mortgage Interest Deduction and its Impact on Homeownership Decisions",
+  "src": [
+   "Logement"
+  ],
+  "pub": "Review of Economics and Statistics",
+  "num": "96(4), 618-637",
+  "url": "https://ideas.repec.org/p/cep/sercdp/0055.html",
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Domènech-Arumí, Gerard; Gobbi, Paula E.; Magerman, Glenn",
+  "y": "2022",
+  "ti": "Housing inequality and how fiscal policy shapes it: Evidence from Belgian real estate",
+  "src": [
+   "Logement"
+  ],
+  "pub": "Banque nationale de Belgique",
+  "num": "Working Paper 423",
+  "url": "https://nbb.be/en/node/406004",
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Xhignesse, Guillaume; Verbist, Gerlinde",
+  "y": "2022",
+  "ti": "An assessment of the spatial efficiency of tax benefits for home mortgages in Belgium",
+  "src": [
+   "Logement"
+  ],
+  "pub": "Housing Studies",
+  "num": "37(7), 1198-1224",
+  "url": "https://doi.org/10.1080/02673037.2018.1562057",
+  "cat": "rech",
+  "doi": "10.1080/02673037.2018.1562057"
  }
 ]
