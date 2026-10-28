@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Climat, question sur l’impopularité des taxes carbone : ajout de la microsimulation du Bureau du Plan sur l’ETS2 (1 à 1,3 % du revenu des ménages modestes pour le chauffage, contre 0,4 à 0,6 % pour les plus aisés).',
         'Climat, question sur l’impopularité des taxes carbone : verdict précisé (14 % pensaient gagner, 70 % auraient gagné ; réplication ; expériences d’enquête internationales), trois sources belges ajoutées (émissions par revenu, coût de l’ETS2, microsimulation). Le dossier Climat est entièrement relu par l’auteur.',
         'Climat, question sur les économies d’énergie : verdict nuancé (le rebond à l’échelle de toute l’économie reste débattu), revue de 2021 et deux études flamandes sur l’écart entre calcul PEB et consommation réelle ajoutées.',
         'Climat, question sur le prix du carbone : verdict précisé (méta-analyse de 80 évaluations : −5 à −21 % ; effet annuel modeste ; fuites de carbone d’environ 13 % pour le ciment et l’acier), trois études ajoutées.',
