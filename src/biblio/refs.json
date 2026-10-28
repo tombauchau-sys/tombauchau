@@ -3009,7 +3009,7 @@
   "n": "2",
   "p": "359-375",
   "doi": "10.1162/rest_a_01055",
-  "url": "https://research.upjohn.org/up_workingpapers/316",
+  "url": "https://doi.org/10.1162/rest_a_01055",
   "ok": "crossref",
   "src": [
    "Logement"
@@ -9153,5 +9153,70 @@
   "url": "https://doi.org/10.1080/02673037.2018.1562057",
   "cat": "rech",
   "doi": "10.1080/02673037.2018.1562057"
+ },
+ {
+  "t": "art",
+  "a": "Bratu, Cristina; Harjunen, Oskari; Saarimaa, Tuukka",
+  "y": "2023",
+  "ti": "JUE Insight: City-wide effects of new housing supply: Evidence from moving chains",
+  "pub": "Journal of Urban Economics",
+  "num": "133, 103528",
+  "doi": "10.1016/j.jue.2022.103528",
+  "url": "https://doi.org/10.1016/j.jue.2022.103528",
+  "src": [
+   "Logement"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Mast, Evan",
+  "y": "2023",
+  "ti": "JUE Insight: The effect of new market-rate housing construction on the low-income housing market",
+  "pub": "Journal of Urban Economics",
+  "num": "133",
+  "doi": "10.1016/j.jue.2021.103383",
+  "url": "https://doi.org/10.1016/j.jue.2021.103383",
+  "src": [
+   "Logement"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Mense, Andreas",
+  "y": "2025",
+  "ti": "The impact of new housing supply on the distribution of rents",
+  "pub": "Journal of Political Economy Macroeconomics",
+  "url": "https://researchonline.lse.ac.uk/id/eprint/127192",
+  "src": [
+   "Logement"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Damiano, Anthony; Frenier, Chris",
+  "y": "2020",
+  "ti": "Build Baby Build?: Housing Submarkets and the Effects of New Construction on Existing Rents",
+  "pub": "University of Minnesota, CURA",
+  "url": "https://www.cura.umn.edu/research/build-baby-build-housing-submarkets-and-effects-new-construction-existing-rents",
+  "src": [
+   "Logement"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Caldera Sánchez, Aida; Johansson, Åsa",
+  "y": "2011",
+  "ti": "The Price Responsiveness of Housing Supply in OECD Countries",
+  "pub": "OCDE",
+  "num": "Economics Department Working Papers 837",
+  "url": "https://www.oecd.org/en/publications/the-price-responsiveness-of-housing-supply-in-oecd-countries_5kgk9qhrnn33-en.html",
+  "src": [
+   "Logement"
+  ],
+  "cat": "rech"
  }
 ]
