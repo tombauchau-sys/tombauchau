@@ -644,3 +644,12 @@ climat,Q2 : Brockway et al. (2021) — rebond économie entière « may erode mo
 climat,Q2 : Roels et al. (2013) — 70 logements neufs flamands ; calcul surestime,résumé,UHasselt (résumé),identique,ajouté,contredit le résumé IA (« A/B sous-estimés »)
 climat,Q2 : Van Hove et al. (2022) — MAE ≈ 5 242 kWh/an ; RMSE 7 227,valeurs,"E3S 362, 13005 (résumé, DOAJ)",identique,ajouté,maisons tout-électriques neuves ou rénovées
 climat,Q2 (résumé IA) : passoires surestimées > 50 % ; BNB −2 % (obligation de rénovation) ; Renolution suspendue ; effets d'aubaine,—,non vérifié,non vérifié,signalé,non repris
+climat,Q3 : Douenne et Fabre — 10 % approuvent ; 14 % pensent gagner ; 70 % gagneraient ; +50 pts ; > 3 000 répondants,valeurs,AEJ:EP 14(1) (résumé RePEc) ; VoxEU (auteurs),identique,vérifié,chiffres tirés de la colonne VoxEU des auteurs
+climat,"Q3 : réplication Rivers, Woerman et Yassin (I4R DP 58)",résumé,EconPapers (résumé),"effet moyen reproduit ; 1,8 % mal classés ; hétérogénéité fragile",ajouté,
+climat,"Q3 : Eurostat ilc_mdes01 2025 — BE 4,2 / 13,2 ; UE 8,8 / 19,6",valeurs,"Eurostat API, lue le 28/10/2026",identique,vérifié,
+climat,"Q3 : SPF Économie (04/11/2025) — 19,7 / 14,8 / 2,6 / 4,1 % (ménages, 2024)",valeurs,news.economie.fgov.be,identique,corrigé,le communiqué ne parle pas de taxe carbone : phrase présentée comme déduction
+climat,Q3 : Jagers et al. 2021 ; Bulut et Samuel 2025,résumés,RPR 38 ; CEE 2025 (textes intégraux),identique,ajouté,taxes hypothétiques
+climat,Q3 : Cooreman et al. 2019 — D1 62 % des émissions / 53 % des dépenses ; D10 136 % / 151 %,valeurs,"BFP WP 8-19, texte intégral (navigateur)",identique,ajouté,données 2014
+climat,Q3 : SPF Santé publique (11/12/2025) — ETS2 207 € / 607 € pour deux ménages types,valeurs,news.belgium.be (communiqué),identique,ajouté,prix du carbone non précisé
+climat,Q3 : De Bevere et Grandjean (IMA 2024) — régressif ; reversement égal légèrement positif pour bas revenus,résumé,IMA 2024 (résumé),identique,ajouté,pas de chiffres ; acceptation non mesurée
+climat,Q3 (résumé IA) : plafond 45 €/t ; « condition sine qua non » ; BFP « An exploration of the impact of ETS2… » 150-200 € / 250-400 €,—,non trouvé,non vérifié,signalé,non repris

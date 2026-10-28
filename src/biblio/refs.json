@@ -8803,5 +8803,81 @@
    "Climat"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Jagers, Sverker C.; Martinsson, Johan; Matti, Simon; Lachapelle, Erick",
+  "y": "2021",
+  "ti": "Bridging the ideological gap? How fairness perceptions mediate the effect of revenue recycling on public support for carbon taxes in the United States, Canada and Germany",
+  "j": "Review of Policy Research",
+  "v": "38",
+  "p": "529-554",
+  "doi": "10.1111/ropr.12439",
+  "url": "https://doi.org/10.1111/ropr.12439",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Bulut, Hamid; Samuel, Robin",
+  "y": "2025",
+  "ti": "Public support for carbon taxes varies across countries and policy design must consider the national context",
+  "j": "Communications Earth & Environment",
+  "doi": "10.1038/s43247-025-02562-0",
+  "url": "https://doi.org/10.1038/s43247-025-02562-0",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Rivers, Nicholas; Woerman, Matt; Yassin, Kareman",
+  "y": "2023",
+  "ti": "Yellow Vests, Pessimistic Beliefs, and Carbon Tax Aversion (2022): A Comment",
+  "pub": "Institute for Replication, Discussion Paper 58",
+  "url": "https://econpapers.repec.org/paper/zbwi4rdps/58.htm",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Cooreman, Gertjan; Frère, Jean-Maurice; Lévay, Petra Zsuzsa; Vanhille, Josefine; Verbist, Gerlinde; Goedemé, Tim",
+  "y": "2019",
+  "ti": "Analysis of the air pollution associated with household consumption in Belgium in 2014: the case of greenhouse gas emissions",
+  "pub": "Bureau fédéral du Plan, Working Paper 8-19",
+  "url": "https://repository.uantwerpen.be/docman/irua/7f4cf3/162958.pdf",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "chap",
+  "a": "De Bevere, Audric; Grandjean, Gilles",
+  "y": "2024",
+  "ti": "The Distributional Implications and Public Acceptability of the EU-ETS 2 in Belgium",
+  "pub": "Résumé, 9e congrès de l’International Microsimulation Association",
+  "url": "https://ima-2024.wifo.ac.at/content/abstracts/audric.html",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "press",
+  "a": "SPF Santé publique; SPF Finances",
+  "y": "2025",
+  "ti": "Fiscalité du carbone et de l’énergie : des progrès, mais un chemin important reste à parcourir pour réussir la transition climatique",
+  "pub": "Communiqué, 11 décembre 2025",
+  "url": "https://news.belgium.be/fr/node/42248/pdf",
+  "src": [
+   "Climat"
+  ],
+  "cat": "inst"
  }
 ]
