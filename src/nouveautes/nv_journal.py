@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Logement, question sur l’encadrement des loyers : verdict complété (deux revues de la littérature : les locataires en place en profitent, avec des effets secondaires sur la construction, l’entretien et les loyers non encadrés) ; limitation de l’indexation selon le certificat PEB en 2022-2023 décrite d’après les textes des trois Régions.',
         'Fiscalité, question sur les cotisations sociales : verdict complété (études suédoise, hongroise et finlandaise ; partage entre emploi, salaires et profits), phrase non sourcée sur le coût des baisses générales retirée. Le dossier Fiscalité est entièrement relu par l’auteur.',
         'Fiscalité, question sur l’impôt sur le patrimoine : verdict complété (étude espagnole : épargne inchangée, fort évitement), résumé de Saez et Zucman corrigé. Correction : le taux de la taxe sur les comptes-titres est passé de 0,15 % à 0,30 % le 1er juin 2026.',
         'Fiscalité, question sur les impôts et la croissance : verdict nuancé (le classement de l’OCDE est discuté ; l’effet dépend de l’usage des recettes), deux méta-analyses et la simulation du tax shift belge ajoutées.',
