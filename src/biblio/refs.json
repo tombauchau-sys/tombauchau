@@ -8391,5 +8391,58 @@
    "Santé"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "wp",
+  "a": "Bensnes, Simon S.; Huitfeldt, Ingrid; Marone, Victoria",
+  "y": "2026",
+  "ti": "The Distributional Effects of Cost-Sharing in a Universal Healthcare System",
+  "pub": "NBER Working Paper 34700",
+  "url": "https://www.nber.org/papers/w34700",
+  "src": [
+   "Santé"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Stadhouders, Niek; Kruse, Florien; Tanke, Marit; Koolman, Xander; Jeurissen, Patrick",
+  "y": "2019",
+  "ti": "Effective healthcare cost-containment policies: A systematic review",
+  "j": "Health Policy",
+  "v": "123",
+  "n": "1",
+  "p": "71-79",
+  "doi": "10.1016/j.healthpol.2018.10.015",
+  "url": "https://doi.org/10.1016/j.healthpol.2018.10.015",
+  "src": [
+   "Santé"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "Hämmerli, Manon; Milstein, Ricarda; Mueller, Michael",
+  "y": "2026",
+  "ti": "Incentivising patient pathways in outpatient care: A review of gatekeeping and cost-sharing policies across the OECD",
+  "pub": "OCDE, OECD Health Working Papers 196",
+  "doi": "10.1787/349dcf1c-en",
+  "url": "https://doi.org/10.1787/349dcf1c-en",
+  "src": [
+   "Santé"
+  ],
+  "cat": "inst"
+ },
+ {
+  "t": "rep",
+  "a": "Demarest, Stefaan; Maetens, Arno; Charafeddine, Rana",
+  "y": "2025",
+  "ti": "Enquête de santé 2023-2024 : accessibilité financière aux soins de santé",
+  "pub": "Sciensano",
+  "url": "https://www.sciensano.be/sites/default/files/ac_report_fr_his2023.pdf",
+  "src": [
+   "Santé"
+  ],
+  "cat": "inst"
  }
 ]

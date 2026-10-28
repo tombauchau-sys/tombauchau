@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Santé, question sur la participation des patients : verdict précisé (moins de soins consommés, y compris utiles ; santé à long terme peu étudiée ; économie surtout pour le budget public), revue de l’OCDE, expérience norvégienne et report de soins 2023-2024 (Sciensano) ajoutés.',
         'Santé, question sur la part des soins dans l’espérance de vie : résumé de Kaplan et Milstein corrigé (environ 10 %, plutôt surestimé), mortalité évitable par région (KCE) et écarts selon le diplôme (Sciensano) ajoutés.',
         'Éducation, question sur les moyens : verdict réécrit (aux États-Unis, dépenser plus a en moyenne un effet positif, surtout sur les parcours ; l’effet dépend de l’usage), deux méta-analyses ajoutées. Le dossier Éducation est entièrement relu.',
         'Éducation, question sur l’orientation précoce : verdict précisé (le poids de l’origine sociale est le résultat le plus solide ; l’effet sur l’écart de résultats est moins net), trois revues ajoutées, révision du tronc commun en 2025 signalée.',
