@@ -59,7 +59,6 @@ HUB_URLS = {n: 'https://claude.ai/artifact/' + a for n, a in {'emploi': 'VNQhb16
 ACTU_URLS = {n: 'https://claude.ai/artifact/' + a for n, a in {'emploi': 'T9VuaJEQpyzLMAY1dZ3aEM', 'finances': 'NLoHLoCZnqLna79VF8eYCf', 'pensions': 'ESXL8WueRipFRE2vaA82Vn', 'immigration': 'Den3ZZzqqdqgvu2dQLNCFe', 'justice': 'LUM1kAR6RMoLMjSFkiDtyS', 'sante': 'SbpGAzZ6um6m4EVFGibhQZ', 'education': 'SNT9rnxT7dyTvu6rHknVSt', 'inegalites': 'Ahu7viuwRNoYFjZM6Nf18N', 'climat': 'QP9dQU5Y5XP91uiax21xvJ', 'logement': '6iuxVhDZkieSLLtUrf3anq', 'fiscalite': 'GePjiuSEXNWyX2xTnoeRPi'}.items()}
 for _n in DOSSIERS:
     PAGES['__THEME_' + _n.upper() + '__'] = ('theme-' + _n + '.html', HUB_URLS[_n])
-    PAGES['__ACTUP_' + _n.upper() + '__'] = ('actu-' + _n + '.html', ACTU_URLS[_n])
 NAV_TPL = '''<a class="skip" href="#top">Aller au contenu</a>
 <button type="button" class="a11y" id="a11y" aria-pressed="false"><b aria-hidden="true">Désactivé</b>Mode accessibilité</button>
 <nav class="top" aria-label="Navigation principale">
@@ -81,7 +80,7 @@ def nav_html(active='', home=False):
     T = [(n, THEME_TITLES[n]) for n in DOSSIERS]
     groups = [
         ('donnees', 'Données', h + '#atlas', 'Explorer les chiffres des 27 pays', [('Carte des 27 pays', h + '#atlas', 'Un pays ou deux pays comparés'), ('Classements', h + '#classements', '46 indicateurs, critères expliqués'), ('Comparer les pays', '__COMPARER__', 'Plusieurs pays, plusieurs indicateurs')], False),
-        ('dossiers', 'Dossiers', h + '#dossiers', 'Chaque dossier : données, penseurs, actualités', [(t, '__THEME_' + n.upper() + '__', '') for n, t in T] + [('Index des auteurs', h + '#idees', '')], True),
+        ('dossiers', 'Dossiers', h + '#dossiers', 'Chaque dossier : données et penseurs', [(t, '__THEME_' + n.upper() + '__', '') for n, t in T] + [('Index des auteurs', h + '#idees', '')], True),
         ('methode', 'Méthode', h + '#methode', 'Sources, vérification, vocabulaire', [('D’où viennent ces chiffres', h + '#methode', ''), ('Bibliographie (APA 7 et Chicago)', '__BIBLIO__', ''), ('Lexique', '__LEXIQUE__', ''), ('Registre de vérification', '__REGISTRE__', ''), ('Nouveautés et corrections', '__NOUVEAUTES__', ''), ('À propos', h + '#apropos', '')], False),
     ]
     def grp(g):
@@ -586,10 +585,10 @@ def build_dossier(name):
     idl = '__IDEES_' + name.upper() + '__'
     auth = [a for _, a in authors_of(name)]
     who = ('les analyses de ' + ', '.join(auth[:-1]) + ' et ' + auth[-1]) if len(auth) > 1 else ('l’analyse de ' + auth[0] if auth else 'les lectures des grands courants de pensée')
-    band_top = ('<section class="band grain idlink" aria-label="Deux rubriques"><div class="wrap"><p><b>Ici, les faits</b> : données des administrations, statistiques européennes, études, actualité. '
+    band_top = ('<section class="band grain idlink" aria-label="Deux rubriques"><div class="wrap"><p><b>Ici, les faits</b> : données des administrations, statistiques européennes, études. '
                 f'<b>Les idées</b> ({who}, et les lectures des courants de pensée) sont dans la rubrique <a href="{idl}">Idées et interprétations →</a></p></div></section>\n')
     m2 = re.search(r'<section class="twomin".*?</section>\n?', body, re.S)
-    body = body[:m2.end()] + ACT.theme_block(name) + band_top + body[m2.end():]
+    body = body[:m2.end()] + band_top + body[m2.end():]
     d0 = body.index('id="decision"')
     d1 = body.index('</section>', d0) + len('</section>')
     band_mid = (f'\n<section class="band grain idlink idnext" aria-labelledby="tId"><div class="wrap"><h2 id="tId">Et les idées ?</h2>'
@@ -644,7 +643,7 @@ def build_idees(name):
             f'<p class="lede hq" data-r>{q}</p>'
             '<p class="lede" data-r>Cette rubrique ne donne pas de chiffres nouveaux : elle présente des analyses et des interprétations. '
             'Chaque auteur est situé dans son époque, son idée est résumée, puis confrontée aux données et à ses critiques ; chaque énoncé porte son statut (fait, résultat d’études, interprétation, jugement normatif). '
-            f'Les faits, les données des administrations et l’actualité sont dans le dossier <a href="{fl}">{theme}</a>.</p>'
+            f'Les faits et les données des administrations sont dans le dossier <a href="{fl}">{theme}</a>.</p>'
             + ('' if pens else '<p class="lede" data-r>Aucun des auteurs de notre liste ne s’applique à ce thème sans lien forcé : seules les lectures des grands courants sont présentées ici.</p>')
             + '</div></section>\n')
     tail = ('<section class="sec papier" id="sources" aria-labelledby="tB"><div class="wrap"><span class="kick">Sources</span>'
@@ -680,9 +679,9 @@ def dossier_meta(name):
 
 
 def dsub(name, cur):
-    """Barre de navigation interne au dossier : page d’entrée · données · penseurs · actualités."""
+    """Barre de navigation interne au dossier : page d’entrée · données · penseurs."""
     N = name.upper()
-    items = [('donnees', 'Graphiques et données', f'__{N}__'), ('penseurs', 'Penseurs et théories', f'__IDEES_{N}__'), ('actu', 'Actualités', f'__ACTUP_{N}__')]
+    items = [('donnees', 'Graphiques et données', f'__{N}__'), ('penseurs', 'Penseurs et théories', f'__IDEES_{N}__')]
     li = ''.join(f'<a href="{u}"' + (' aria-current="page" class="on"' if k == cur else '') + f'>{t}</a>' for k, t, u in items)
     return (f'<nav class="dsub" aria-label="Parties du dossier"><div class="dsub-in"><a class="dsub-h" href="__THEME_{N}__"'
             + (' aria-current="page"' if cur == 'hub' else '') + f'><span>Dossier</span>{THEME_TITLES[name]}</a>{li}</div></nav>\n')
@@ -726,8 +725,6 @@ def build_hub(name):
         f'<li class="door d1"><a href="__{N}__"><span class="dn">1</span><h3>Graphiques et données</h3><p>Les chiffres, leur définition et leur évolution, la comparaison européenne, l’histoire, ce que mesurent les études, les limites et les sources.</p>'
         f'<ul class="dl">{cards}</ul><span class="dgo">Ouvrir les données →</span></a></li>'
         f'<li class="door d2"><a href="__IDEES_{N}__"><span class="dn">2</span><h3>Penseurs et théories</h3><p>{pens_txt}</p><p class="dm">Chaque énoncé porte son statut : fait, résultat d’études, interprétation ou jugement normatif.</p><span class="dgo">Lire les penseurs →</span></a></li>'
-        f'<li class="door d3"><a href="__ACTUP_{N}__"><span class="dn">3</span><h3>Actualités</h3><p>Les faits récents, datés et sourcés, et les dernières mises à jour des statistiques officielles utilisées dans ce dossier.</p>'
-        f'<p class="dm">{len(news)} fait{"s" if len(news) > 1 else ""} daté{"s" if len(news) > 1 else ""} · {len(data)} tables Eurostat suivies</p><span class="dgo">Voir l’actualité →</span></a></li>'
         '</ol>')
     qhtml = ('<section class="sec papier hubq" aria-labelledby="tHq"><div class="wrap"><span class="kick" data-r>Les questions du débat sur ce thème</span><h2 class="giant" id="tHq" data-r>Une question, <span>une réponse actuelle.</span></h2>'
              '<ul class="qlist">' + ''.join(f'<li data-r>{q}</li>' for q in qs) + '</ul></div></section>\n') if qs else ''
@@ -735,8 +732,8 @@ def build_hub(name):
             f'<span class="kick" data-r>Dossier {M["num"]} · une question du débat</span>'
             f'<h1 class="title" id="t1">{M["title"]}</h1><p class="lede hq" data-r>{M["lede"]}</p>{M["facts"]}</div></section>\n'
             + dsub(name, 'hub') +
-            f'<section class="sec papier hubdoors" aria-labelledby="tDo"><div class="wrap"><span class="kick" data-r>Trois façons d’entrer dans le sujet</span>'
-            f'<h2 class="giant" id="tDo" data-r>Les données, les idées, <span>l’actualité.</span></h2>{doors}</div></section>\n'
+            f'<section class="sec papier hubdoors" aria-labelledby="tDo"><div class="wrap"><span class="kick" data-r>Deux façons d’entrer dans le sujet</span>'
+            f'<h2 class="giant" id="tDo" data-r>Les données <span>et les idées.</span></h2>{doors}</div></section>\n'
             + re.sub(r'href="#([^"]+)"', lambda m: f'href="__{N}__#{m.group(1)}"', M['twomin']) + '\n' + qhtml +
             f'<section class="sec papier hubmaj"><div class="wrap"><p class="maj">{M["maj"]}</p>'
             f'<p class="bbl"><a href="__BIBLIO__">Toutes les sources du site, en APA 7 et en Chicago →</a></p></div></section>\n</main>\n'
@@ -930,7 +927,6 @@ def main():
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
         jobs[f'idees-{n}.html'] = (lambda n=n: build_idees(n))
         jobs[f'theme-{n}.html'] = (lambda n=n: build_hub(n))
-        jobs[f'actu-{n}.html'] = (lambda n=n: build_actu(n))
     outdir = ROOT / '.artifacts'
     for fname, fn in jobs.items():
         html, title, desc = fn()
@@ -945,6 +941,9 @@ def main():
             outdir.mkdir(exist_ok=True)
             (outdir / fname).write_text(links(html, 'artifact'), encoding='utf-8')
         print('construit', fname)
+    for n in DOSSIERS:
+        # anciennes pages « Actualités » retirées le 28/10/2026 : simple renvoi vers la page du dossier
+        (ROOT / f'actu-{n}.html').write_text(f'<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=theme-{n}.html"><link rel="canonical" href="{BASE}theme-{n}.html"><title>Page déplacée · Au plus Juste</title></head><body><p>Cette page n’existe plus. <a href="theme-{n}.html">Aller au dossier</a>.</p></body></html>\n', encoding='utf-8')
     write_seo_files(list(jobs))
     check_anciennes(list(jobs))
 
