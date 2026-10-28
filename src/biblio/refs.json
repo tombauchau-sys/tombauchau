@@ -8297,5 +8297,60 @@
    "Éducation"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Van de Werfhorst, Herman G.; Mijs, Jonathan J. B.",
+  "y": "2010",
+  "ti": "Achievement Inequality and the Institutional Structure of Educational Systems: A Comparative Perspective",
+  "j": "Annual Review of Sociology",
+  "v": "36",
+  "p": "407-428",
+  "doi": "10.1146/annurev.soc.012809.102538",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Woessmann, Ludger",
+  "y": "2009",
+  "ti": "International Evidence on School Tracking: A Review",
+  "j": "CESifo DICE Report",
+  "v": "7",
+  "n": "1",
+  "p": "26-34",
+  "url": "https://hdl.handle.net/10419/166958",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Zapfe, Laura; Gross, Christiane",
+  "y": "2021",
+  "ti": "How do characteristics of educational systems shape educational inequalities? Results from a systematic review",
+  "j": "International Journal of Educational Research",
+  "v": "109",
+  "n": "101837",
+  "doi": "10.1016/j.ijer.2021.101837",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "press",
+  "a": "BX1",
+  "y": "2025",
+  "ti": "Fédération Wallonie-Bruxelles : la majorité MR-Engagés s’accorde sur l’application du tronc commun dans le secondaire",
+  "pub": "BX1",
+  "url": "https://bx1.be/categories/news/federation-wallonie-bruxelles-la-majorite-mr-engages-saccorde-sur-lapplication-du-tronc-commun-dans-le-secondaire/",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "inst"
  }
 ]
