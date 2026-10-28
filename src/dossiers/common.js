@@ -85,7 +85,8 @@
     var sm=D.createElement('summary');sm.textContent='Voir les données du graphique';det.appendChild(sm);
     var box=D.createElement('div');box.className='cj-box';
     var tb=D.createElement('table'),cap=D.createElement('caption');
-    cap.textContent=(c.getAttribute('data-yt')?'Unité : '+c.getAttribute('data-yt')+'. ':'')+'Case vide : donnée non publiée pour cette année ou ce pays.';
+    var un=c.hasAttribute('data-cat')?c.getAttribute('data-xt'):c.getAttribute('data-yt');
+    cap.textContent=(un?'Unité : '+un+'. ':'')+'Case vide : donnée non publiée pour cette année ou ce pays.';
     tb.appendChild(cap);
     var th=D.createElement('thead'),tr=D.createElement('tr');
     d.cols.forEach(function(h,i){var e=D.createElement('th');e.scope='col';e.textContent=h;tr.appendChild(e)});th.appendChild(tr);tb.appendChild(th);
@@ -102,8 +103,9 @@
       L.push(['Page',D.title].map(q).join(';'));
       L.push(['Adresse',location.href.split('#')[0]+'#'+id].map(q).join(';'));
       if(svg&&svg.getAttribute('aria-label'))L.push(['Graphique',svg.getAttribute('aria-label')].map(q).join(';'));
-      if(c.getAttribute('data-yt'))L.push(['Unité ou axe vertical',c.getAttribute('data-yt')].map(q).join(';'));
-      if(c.getAttribute('data-xt'))L.push(['Axe horizontal',c.getAttribute('data-xt')].map(q).join(';'));
+      if(c.hasAttribute('data-cat')){if(c.getAttribute('data-yt'))L.push(['Catégories',c.getAttribute('data-yt')].map(q).join(';'));if(c.getAttribute('data-xt'))L.push(['Unité',c.getAttribute('data-xt')].map(q).join(';'))}
+      else{if(c.getAttribute('data-yt'))L.push(['Unité ou axe vertical',c.getAttribute('data-yt')].map(q).join(';'));
+      if(c.getAttribute('data-xt'))L.push(['Axe horizontal',c.getAttribute('data-xt')].map(q).join(';'))}
       if(src)L.push(['Source et notes',src.textContent].map(q).join(';'));
       if(d.note)L.push(['Remarque',d.note].map(q).join(';'));
       L.push(['Téléchargé le',today].map(q).join(';'));

@@ -546,6 +546,10 @@ figure.wide figcaption span{display:block;font-size:14.5px;opacity:.75;margin-to
 
 .actu .lede b.rf{align-self:flex-start;display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:#E7E1D6;color:#1A1A1A}
 .chain{margin-top:28px;border-top:1px solid currentColor;padding-top:14px;max-width:1100px}.chain summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none}.chain summary::-webkit-details-marker{display:none}.chain summary::before{content:"+ ";font-weight:700}.chain[open] summary::before{content:"− "}.chain-p,.chain-n{font-size:15px;line-height:1.5;max-width:75ch;margin:12px 0}.chain-n{font-size:13px;opacity:.85}.chain-tw{overflow-x:auto}.chain table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.45;min-width:640px}.chain th,.chain td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid rgba(0,0,0,.18)}.chain thead th{font-size:12px;letter-spacing:.06em;text-transform:uppercase}.chain tbody th{font-weight:600}.chain a{color:inherit}
+.verd .vlong{flex-basis:100%;max-width:70ch;margin-top:2px}
+.verd .vlong summary{cursor:pointer;font-size:14px;font-weight:700;color:inherit;text-decoration:underline;text-underline-offset:3px;width:max-content;max-width:100%;padding:4px 0}
+.verd .vlong summary:focus-visible{outline:2px solid var(--copper);outline-offset:2px}
+.verd .vlong p{font-size:15.5px;margin-top:4px;opacity:.95}
 
 /* ===== Commun à toutes les pages : menu mobile, recherche, sommaire des dossiers ===== */
 .cjs-btn,.navm{display:none}
@@ -1227,7 +1231,8 @@ var CJD={t:{},
     var sm=D.createElement('summary');sm.textContent='Voir les données du graphique';det.appendChild(sm);
     var box=D.createElement('div');box.className='cj-box';
     var tb=D.createElement('table'),cap=D.createElement('caption');
-    cap.textContent=(c.getAttribute('data-yt')?'Unité : '+c.getAttribute('data-yt')+'. ':'')+'Case vide : donnée non publiée pour cette année ou ce pays.';
+    var un=c.hasAttribute('data-cat')?c.getAttribute('data-xt'):c.getAttribute('data-yt');
+    cap.textContent=(un?'Unité : '+un+'. ':'')+'Case vide : donnée non publiée pour cette année ou ce pays.';
     tb.appendChild(cap);
     var th=D.createElement('thead'),tr=D.createElement('tr');
     d.cols.forEach(function(h,i){var e=D.createElement('th');e.scope='col';e.textContent=h;tr.appendChild(e)});th.appendChild(tr);tb.appendChild(th);
@@ -1244,8 +1249,9 @@ var CJD={t:{},
       L.push(['Page',D.title].map(q).join(';'));
       L.push(['Adresse',location.href.split('#')[0]+'#'+id].map(q).join(';'));
       if(svg&&svg.getAttribute('aria-label'))L.push(['Graphique',svg.getAttribute('aria-label')].map(q).join(';'));
-      if(c.getAttribute('data-yt'))L.push(['Unité ou axe vertical',c.getAttribute('data-yt')].map(q).join(';'));
-      if(c.getAttribute('data-xt'))L.push(['Axe horizontal',c.getAttribute('data-xt')].map(q).join(';'));
+      if(c.hasAttribute('data-cat')){if(c.getAttribute('data-yt'))L.push(['Catégories',c.getAttribute('data-yt')].map(q).join(';'));if(c.getAttribute('data-xt'))L.push(['Unité',c.getAttribute('data-xt')].map(q).join(';'))}
+      else{if(c.getAttribute('data-yt'))L.push(['Unité ou axe vertical',c.getAttribute('data-yt')].map(q).join(';'));
+      if(c.getAttribute('data-xt'))L.push(['Axe horizontal',c.getAttribute('data-xt')].map(q).join(';'))}
       if(src)L.push(['Source et notes',src.textContent].map(q).join(';'));
       if(d.note)L.push(['Remarque',d.note].map(q).join(';'));
       L.push(['Téléchargé le',today].map(q).join(';'));

@@ -496,7 +496,10 @@ def verif_badge(body, name):
     m = re.search(r'<p class="maj">Dossier vérifié le ([^·<]+?)\s*·\s*([^<]*)</p>', body)
     assert m, name
     date, nxt = m.group(1).strip(), m.group(2).strip()
-    badge = ('<p class="maj verif-badge"><span class="vb-ok" aria-hidden="true">✓</span> <b>Dossier vérifié le ' + date + '</b>'
+    jr = re.search(r'<p class="maj">Journal des corrections(.*?)</p>', body, re.S)
+    last = re.findall(r'(\d{1,2}(?:er)? (?:janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre) \d{4})\s*:', jr.group(1)) if jr else []
+    corr = f' · dernière correction le {last[-1]}' if last and last[-1] != date else ''
+    badge = ('<p class="maj verif-badge"><span class="vb-ok" aria-hidden="true">✓</span> <b>Dossier vérifié le ' + date + '</b>' + corr +
              f' · {n_aff} affirmations contrôlées à la source · {n_src} sources liées · <a href="__REGISTRE__">voir le registre</a>'
              ' · <a href="__NOUVEAUTES__">corrections</a><br><span class="vb-next">' + nxt[0].upper() + nxt[1:] + '</span></p>')
     return body[:m.start()] + badge + body[m.end():]
@@ -584,7 +587,8 @@ def build_dossier(name):
     import render as ACT
     idl = '__IDEES_' + name.upper() + '__'
     auth = [a for _, a in authors_of(name)]
-    who = ('les analyses de ' + ', '.join(auth[:-1]) + ' et ' + auth[-1]) if len(auth) > 1 else ('l’analyse de ' + auth[0] if auth else 'les lectures des grands courants de pensée')
+    de = lambda a: ('d’' if a[:1] in 'AEIOUYÉÈÊÂÎÔŒ' else 'de ') + a
+    who = ('les analyses ' + de(', '.join(auth[:-1])) + ' et ' + auth[-1]) if len(auth) > 1 else ('l’analyse ' + de(auth[0]) if auth else 'les lectures des grands courants de pensée')
     band_top = ('<section class="band grain idlink" aria-label="Deux rubriques"><div class="wrap"><p><b>Ici, les faits</b> : données des administrations, statistiques européennes, études. '
                 f'<b>Les idées</b> ({who}, et les lectures des courants de pensée) sont dans la rubrique <a href="{idl}">Idées et interprétations →</a></p></div></section>\n')
     m2 = re.search(r'<section class="twomin".*?</section>\n?', body, re.S)

@@ -9032,8 +9032,9 @@
   "src": [
    "Logement"
   ],
-  "pub": "Journal of Housing Economics",
-  "num": "73, 102155",
+  "j": "Journal of Housing Economics",
+  "v": "73",
+  "p": "102155",
   "doi": "10.1016/j.jhe.2026.102155",
   "url": "https://doi.org/10.1016/j.jhe.2026.102155",
   "cat": "rech"
@@ -9082,8 +9083,10 @@
   "src": [
    "Logement"
   ],
-  "pub": "Journal of Public Economics",
-  "num": "90(4-5), 799-822",
+  "j": "Journal of Public Economics",
+  "v": "90",
+  "n": "4-5",
+  "p": "799-822",
   "url": "https://doi.org/10.1016/j.jpubeco.2005.01.002",
   "cat": "rech",
   "doi": "10.1016/j.jpubeco.2005.01.002"
@@ -9096,8 +9099,10 @@
   "src": [
    "Logement"
   ],
-  "pub": "Empirical Economics",
-  "num": "44(3), 1497-1518",
+  "j": "Empirical Economics",
+  "v": "44",
+  "n": "3",
+  "p": "1497-1518",
   "url": "https://doi.org/10.1007/s00181-012-0589-x",
   "cat": "rech",
   "doi": "10.1007/s00181-012-0589-x"
@@ -9110,8 +9115,10 @@
   "src": [
    "Logement"
   ],
-  "pub": "American Economic Journal: Economic Policy",
-  "num": "7(3), 154-176",
+  "j": "American Economic Journal: Economic Policy",
+  "v": "7",
+  "n": "3",
+  "p": "154-176",
   "url": "https://doi.org/10.1257/pol.20130064",
   "cat": "rech",
   "doi": "10.1257/pol.20130064"
@@ -9124,8 +9131,10 @@
   "src": [
    "Logement"
   ],
-  "pub": "Review of Economics and Statistics",
-  "num": "96(4), 618-637",
+  "j": "Review of Economics and Statistics",
+  "v": "96",
+  "n": "4",
+  "p": "618-637",
   "url": "https://ideas.repec.org/p/cep/sercdp/0055.html",
   "cat": "rech"
  },
@@ -9150,8 +9159,10 @@
   "src": [
    "Logement"
   ],
-  "pub": "Housing Studies",
-  "num": "37(7), 1198-1224",
+  "j": "Housing Studies",
+  "v": "37",
+  "n": "7",
+  "p": "1198-1224",
   "url": "https://doi.org/10.1080/02673037.2018.1562057",
   "cat": "rech",
   "doi": "10.1080/02673037.2018.1562057"
@@ -9161,8 +9172,9 @@
   "a": "Bratu, Cristina; Harjunen, Oskari; Saarimaa, Tuukka",
   "y": "2023",
   "ti": "JUE Insight: City-wide effects of new housing supply: Evidence from moving chains",
-  "pub": "Journal of Urban Economics",
-  "num": "133, 103528",
+  "j": "Journal of Urban Economics",
+  "v": "133",
+  "p": "103528",
   "doi": "10.1016/j.jue.2022.103528",
   "url": "https://doi.org/10.1016/j.jue.2022.103528",
   "src": [
@@ -9175,8 +9187,8 @@
   "a": "Mast, Evan",
   "y": "2023",
   "ti": "JUE Insight: The effect of new market-rate housing construction on the low-income housing market",
-  "pub": "Journal of Urban Economics",
-  "num": "133",
+  "j": "Journal of Urban Economics",
+  "v": "133",
   "doi": "10.1016/j.jue.2021.103383",
   "url": "https://doi.org/10.1016/j.jue.2021.103383",
   "src": [
@@ -9189,7 +9201,7 @@
   "a": "Mense, Andreas",
   "y": "2025",
   "ti": "The impact of new housing supply on the distribution of rents",
-  "pub": "Journal of Political Economy Macroeconomics",
+  "j": "Journal of Political Economy Macroeconomics",
   "url": "https://researchonline.lse.ac.uk/id/eprint/127192",
   "src": [
    "Logement"
@@ -9197,12 +9209,13 @@
   "cat": "rech"
  },
  {
-  "t": "wp",
+  "t": "art",
   "a": "Damiano, Anthony; Frenier, Chris",
-  "y": "2020",
-  "ti": "Build Baby Build?: Housing Submarkets and the Effects of New Construction on Existing Rents",
-  "pub": "University of Minnesota, CURA",
-  "url": "https://www.cura.umn.edu/research/build-baby-build-housing-submarkets-and-effects-new-construction-existing-rents",
+  "y": "2026",
+  "ti": "Build baby build? Housing submarkets and the effects of new construction on existing rents",
+  "j": "Journal of Urban Affairs",
+  "doi": "10.1080/07352166.2026.2628685",
+  "url": "https://doi.org/10.1080/07352166.2026.2628685",
   "src": [
    "Logement"
   ],
@@ -9226,8 +9239,10 @@
   "a": "Tseloni, Andromachi; Mailley, Jen; Farrell, Graham; Tilley, Nick",
   "y": "2010",
   "ti": "Exploring the international decline in crime rates",
-  "pub": "European Journal of Criminology",
-  "num": "7(5), 375-394",
+  "j": "European Journal of Criminology",
+  "v": "7",
+  "n": "5",
+  "p": "375-394",
   "doi": "10.1177/1477370810367014",
   "url": "https://doi.org/10.1177/1477370810367014",
   "cat": "rech",
@@ -9276,8 +9291,9 @@
   "a": "Al Weswasi, Enes; Sivertsson, Fredrik; Bäckman, Olof; Nilsson, Anders",
   "y": "2023",
   "ti": "Does sentence length affect the risk for criminal recidivism? A quasi-experimental study of three policy reforms in Sweden",
-  "pub": "Journal of Experimental Criminology",
-  "num": "19, 971-999",
+  "j": "Journal of Experimental Criminology",
+  "v": "19",
+  "p": "971-999",
   "doi": "10.1007/s11292-022-09513-1",
   "url": "https://doi.org/10.1007/s11292-022-09513-1",
   "cat": "rech",
@@ -9313,13 +9329,13 @@
   "a": "Petrich, Damon M.; Pratt, Travis C.; Jonson, Cheryl Lero; Cullen, Francis T.",
   "y": "2021",
   "ti": "Custodial Sanctions and Reoffending: A Meta-Analytic Review",
-  "pub": "Crime and Justice",
+  "j": "Crime and Justice",
   "url": "https://doi.org/10.1086/715100",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "50",
+  "v": "50",
   "doi": "10.1086/715100"
  },
  {
@@ -9327,20 +9343,22 @@
   "a": "Bhuller, Manudeep; Dahl, Gordon B.; Løken, Katrine V.; Mogstad, Magne",
   "y": "2020",
   "ti": "Incarceration, Recidivism, and Employment",
-  "pub": "Journal of Political Economy",
+  "j": "Journal of Political Economy",
   "url": "https://www.nber.org/papers/w22648",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "128(4), 1269-1324"
+  "v": "128",
+  "n": "4",
+  "p": "1269-1324"
  },
  {
   "t": "art",
   "a": "Al Weswasi, Enes; Bäckman, Olof",
   "y": "2024",
   "ti": "The Effects of Replacing Incarceration with Electronic Monitoring on Crime, Mortality, and Labor Market Exclusion",
-  "pub": "Journal of Quantitative Criminology",
+  "j": "Journal of Quantitative Criminology",
   "url": "https://doi.org/10.1007/s10940-024-09595-2",
   "src": [
    "Justice"
@@ -9353,13 +9371,15 @@
   "a": "Al Weswasi, Enes",
   "y": "2024",
   "ti": "Estimating the incapacitation effect among first-time incarcerated offenders",
-  "pub": "European Journal of Criminology",
+  "j": "European Journal of Criminology",
   "url": "https://doi.org/10.1177/14773708241249808",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "21(6), 799-829",
+  "v": "21",
+  "n": "6",
+  "p": "799-829",
   "doi": "10.1177/14773708241249808"
  },
  {
@@ -9367,26 +9387,29 @@
   "a": "Blokland, Arjan; Wermink, Hilde; Robert, Luc; Maes, Eric",
   "y": "2015",
   "ti": "Wederopsluiting na elektronische detentie en reguliere detentie in België",
-  "pub": "Tijdschrift voor Criminologie",
+  "j": "Tijdschrift voor Criminologie",
   "url": "https://bjutijdschriften.nl/tijdschrift/tijdschriftcriminologie/2015/1/TvC_0165-182X_2015_057_001_002",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "57(1), 31-58"
+  "v": "57",
+  "n": "1",
+  "p": "31-58"
  },
  {
   "t": "art",
   "a": "Dünkel, Frieder",
   "y": "2018",
   "ti": "Electronic Monitoring in Europe – a Panacea for Reforming Criminal Sanctions Systems? A Critical Review",
-  "pub": "Kriminologijos studijos",
+  "j": "Kriminologijos studijos",
   "url": "https://doi.org/10.15388/CrimLithuan.2018.6.3",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "6, 58-77",
+  "v": "6",
+  "p": "58-77",
   "doi": "10.15388/CrimLithuan.2018.6.3"
  },
  {
@@ -9394,13 +9417,14 @@
   "a": "Lange, Martin; Sommerfeld, Katrin",
   "y": "2024",
   "ti": "Do refugees impact crime? Causal evidence from large-scale refugee immigration to Germany",
-  "pub": "Labour Economics",
+  "j": "Labour Economics",
   "url": "https://doi.org/10.1016/j.labeco.2023.102466",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "86, 102466",
+  "v": "86",
+  "p": "102466",
   "doi": "10.1016/j.labeco.2023.102466"
  },
  {
@@ -9408,13 +9432,14 @@
   "a": "Dehos, Fabian T.",
   "y": "2021",
   "ti": "The Refugee Wave to Germany and Its Impact on Crime",
-  "pub": "Regional Science and Urban Economics",
+  "j": "Regional Science and Urban Economics",
   "url": "https://doi.org/10.1016/j.regsciurbeco.2020.103640",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "88, 103640",
+  "v": "88",
+  "p": "103640",
   "doi": "10.1016/j.regsciurbeco.2020.103640"
  },
  {
@@ -9422,13 +9447,14 @@
   "a": "Couttenier, Mathieu; Petrencu, Veronica; Rohner, Dominic; Thoenig, Mathias",
   "y": "2019",
   "ti": "The Violent Legacy of Conflict: Evidence on Asylum Seekers, Crime, and Public Policy in Switzerland",
-  "pub": "American Economic Review",
+  "j": "American Economic Review",
   "url": "https://doi.org/10.1257/aer.20170263",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "109(12)",
+  "v": "109",
+  "n": "12",
   "doi": "10.1257/aer.20170263"
  },
  {
@@ -9436,13 +9462,15 @@
   "a": "Bircan, Tuba; Hooghe, Marc",
   "y": "2011",
   "ti": "Immigration, diversity and crime: an analysis of Belgian national crime statistics, 2001–6",
-  "pub": "European Journal of Criminology",
+  "j": "European Journal of Criminology",
   "url": "https://doi.org/10.1177/1477370811403443",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "8(3), 198-212",
+  "v": "8",
+  "n": "3",
+  "p": "198-212",
   "doi": "10.1177/1477370811403443"
  },
  {
@@ -9450,13 +9478,15 @@
   "a": "Coccia, Mario; Cohn, Ellen G.; Kakar, Suman",
   "y": "2024",
   "ti": "How immigration, level of unemployment, and income inequality affect crime in Europe",
-  "pub": "Crime, Law and Social Change",
+  "j": "Crime, Law and Social Change",
   "url": "https://doi.org/10.1007/s10611-024-10144-y",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "82(2), 363-385",
+  "v": "82",
+  "n": "2",
+  "p": "363-385",
   "doi": "10.1007/s10611-024-10144-y"
  },
  {
@@ -9464,13 +9494,13 @@
   "a": "Ousey, Graham C.; Kubrin, Charis E.",
   "y": "2018",
   "ti": "Immigration and Crime: Assessing a Contentious Issue",
-  "pub": "Annual Review of Criminology",
+  "j": "Annual Review of Criminology",
   "url": "https://doi.org/10.1146/annurev-criminol-032317-092026",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "1",
+  "v": "1",
   "doi": "10.1146/annurev-criminol-032317-092026"
  },
  {
@@ -9478,13 +9508,13 @@
   "a": "Kubrin, Charis E.; Ousey, Graham C.",
   "y": "2025",
   "ti": "Immigration and Crime in Comparative Perspective: An Emerging Framework for Research",
-  "pub": "Crime and Justice",
+  "j": "Crime and Justice",
   "url": "https://doi.org/10.1086/736810",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "54",
+  "v": "54",
   "doi": "10.1086/736810"
  },
  {
@@ -9492,13 +9522,15 @@
   "a": "Marie, Olivier; Pinotti, Paolo",
   "y": "2024",
   "ti": "Immigration and Crime: An International Perspective",
-  "pub": "Journal of Economic Perspectives",
+  "j": "Journal of Economic Perspectives",
   "url": "https://doi.org/10.1257/jep.38.1.181",
   "src": [
    "Justice"
   ],
   "cat": "rech",
-  "num": "38(1), 181-200",
+  "v": "38",
+  "n": "1",
+  "p": "181-200",
   "doi": "10.1257/jep.38.1.181"
  },
  {
@@ -9506,7 +9538,7 @@
   "a": "Mastrobuoni, Giovanni; Pinotti, Paolo",
   "y": "2015",
   "ti": "Legal Status and the Criminal Activity of Immigrants",
-  "pub": "American Economic Journal: Applied Economics",
+  "j": "American Economic Journal: Applied Economics",
   "url": "https://www.aeaweb.org/research/are-immigrants-less-likely-to-commit-crime-legal-status",
   "src": [
    "Justice"
