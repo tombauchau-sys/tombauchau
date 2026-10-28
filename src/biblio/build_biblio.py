@@ -16,7 +16,7 @@ ORGFLAG = {}
 DOSSIER_LINK = {'Emploi': '__EMPLOI__', 'Finances': '__FINANCES__', 'Pensions': '__PENSIONS__', 'Immigration': '__IMMIGRATION__',
                 'Justice': '__JUSTICE__', 'Santé': '__SANTE__', 'Éducation': '__EDUCATION__', 'Inégalités': '__INEGALITES__',
                 'Climat': '__CLIMAT__', 'Logement': '__LOGEMENT__', 'Fiscalité': '__FISCALITE__', 'Lexique': '__LEXIQUE__',
-                'Fiche chômage': '__FICHE__', 'Accueil': '__HOME__#questions', 'Carte': '__HOME__#atlas',
+                'Fiche chômage': '__FICHE__', 'Accueil': '__HOME__', 'Carte': '__HOME__#atlas',
                 'Classements': '__HOME__#classements', 'Comparer': '__COMPARER__'}
 SECTIONS = [('stat', 'Statistiques officielles', 'Jeux de données et tableaux d’Eurostat, puis des autres producteurs publics de statistiques. Le titre est celui du catalogue officiel.'),
             ('inst', 'Institutions, droit et textes officiels', 'Traités, lois, décisions, rapports et pages des institutions belges, européennes et internationales.'),

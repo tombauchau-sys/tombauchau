@@ -35,6 +35,5 @@ def theme_block(theme):
             '<span class="kick" data-r>Actualité · faits datés et sourcés</span>'
             f'<h2 class="giant" id="tAc" data-r>Ce qui vient <span>de se passer.</span></h2>'
             f'<p class="lede" data-r>Faits récents liés à ce thème, mis à jour le {A["maj_txt"]}. <b class="off">Officiel</b> : publication d’une institution. '
-            '<b class="pr">Presse</b> : article de presse, utilisé seulement pour dater un événement en cours. '
-            'Toute l’actualité est réunie dans la <a href="__HOME__#questions">rubrique Questions</a>.</p>'
+            '<b class="pr">Presse</b> : article de presse, utilisé seulement pour dater un événement en cours.</p>'
             + items_html(its, False) + '</div></section>\n')

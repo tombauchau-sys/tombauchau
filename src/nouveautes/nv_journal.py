@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Navigation : la rubrique « Questions » (actualité datée et grandes questions de l’accueil) est retirée du menu et de l’accueil ; les pages « Actualités » de chaque dossier restent. L’encadré « Comment nous répondons » passe dans la partie Méthode. La fiche chômage n’apparaît plus dans le menu Données ; elle reste accessible depuis le dossier Emploi.',
         'Justice, question sur l’immigration et la criminalité : correction, une étude allemande de 2024 trouve une petite hausse des violences après l’arrivée des réfugiés de 2015-2016 ; verdict complété (études italienne, suisse et belge ; revues internationales : pas d’effet moyen marqué, rôle du statut légal et de l’accès au travail). Le dossier Justice est entièrement relu par l’auteur.',
         'Justice, question sur la prison et la récidive : verdict nuancé (méta-analyse de 116 études : pas mieux que les autres peines en moyenne ; en Norvège, la prison réduit la récidive des détenus sans emploi ; en Belgique, moins de retours en prison après surveillance électronique que chez des détenus comparables).',
         'Justice, question sur la sévérité des peines : verdict complété (revue de Chalfin et McCrary ; en Suède, allonger ou raccourcir le temps passé en prison ne change pas la récidive ; revue du Sentencing Council).',

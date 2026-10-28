@@ -80,9 +80,8 @@ def nav_html(active='', home=False):
     h = '' if home else '__HOME__'
     T = [(n, THEME_TITLES[n]) for n in DOSSIERS]
     groups = [
-        ('donnees', 'Données', h + '#atlas', 'Explorer les chiffres des 27 pays', [('Carte des 27 pays', h + '#atlas', 'Un pays ou deux pays comparés'), ('Classements', h + '#classements', '46 indicateurs, critères expliqués'), ('Comparer les pays', '__COMPARER__', 'Plusieurs pays, plusieurs indicateurs'), ('Fiche : le chômage', '__FICHE__', 'Définitions et sources croisées')], False),
+        ('donnees', 'Données', h + '#atlas', 'Explorer les chiffres des 27 pays', [('Carte des 27 pays', h + '#atlas', 'Un pays ou deux pays comparés'), ('Classements', h + '#classements', '46 indicateurs, critères expliqués'), ('Comparer les pays', '__COMPARER__', 'Plusieurs pays, plusieurs indicateurs')], False),
         ('dossiers', 'Dossiers', h + '#dossiers', 'Chaque dossier : données, penseurs, actualités', [(t, '__THEME_' + n.upper() + '__', '') for n, t in T] + [('Index des auteurs', h + '#idees', '')], True),
-        ('questions', 'Questions', h + '#questions', 'L’actualité et les grandes questions du débat', [('L’actualité datée', h + '#questions', 'Officiel ou presse, chaque fait relié à une question'), ('Les grandes questions', h + '#qdH', 'Une réponse actuelle, un renvoi au dossier')], False),
         ('methode', 'Méthode', h + '#methode', 'Sources, vérification, vocabulaire', [('D’où viennent ces chiffres', h + '#methode', ''), ('Bibliographie (APA 7 et Chicago)', '__BIBLIO__', ''), ('Lexique', '__LEXIQUE__', ''), ('Registre de vérification', '__REGISTRE__', ''), ('Nouveautés et corrections', '__NOUVEAUTES__', ''), ('À propos', h + '#apropos', '')], False),
     ]
     def grp(g):
@@ -93,7 +92,7 @@ def nav_html(active='', home=False):
         p = f'  <div class="mdd{" cols" if cols else ""}" id="dd-{k}" hidden><p class="mdd-h">{lab}<span>{sub}</span></p><ul>{li}</ul></div>\n'
         return a + p
     mark = f'  <a href="{h or "#atlas"}" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>\n'
-    return ('<nav class="top" aria-label="Navigation principale">\n' + grp(groups[0]) + grp(groups[1]) + mark + grp(groups[2]) + grp(groups[3]) + '</nav>')
+    return ('<nav class="top" aria-label="Navigation principale">\n' + grp(groups[0]) + grp(groups[1]) + mark + grp(groups[2]) + '</nav>')
 
 
 def page_section(fname):
@@ -359,14 +358,14 @@ def idees_section():
     for a in sorted(idx, key=key):
         links = ' · '.join(f'<a href="__IDEES_{n.upper()}__#{slug}">{THEME_TITLES[n]}</a>' for n, slug in idx[a])
         if a in meth:
-            links = (links + ' · ' if links else '') + f'<a href="#questions">Comment nous répondons ({meth[a]})</a>'
+            links = (links + ' · ' if links else '') + f'<a href="#methode">Comment nous répondons ({meth[a]})</a>'
         items.append(f'<li><b>{H.escape(a)}</b>{links}</li>')
     return ('<section class="dz papier idees" id="idees" aria-labelledby="idH"><div class="w">'
             '<p class="kicker" data-r>Rubrique théorique · les auteurs et les courants de pensée</p>'
             '<h2 id="idH" data-r>Idées <span class="s">et interprétations.</span></h2>'
             '<p class="lede" data-r>Ici, pas de chiffres nouveaux : les grands auteurs exposent leurs analyses et leurs interprétations, et les grands courants de pensée leurs lectures du débat. '
             'Chaque auteur est situé dans son époque ; son idée est confrontée aux données et à ses critiques, et chaque énoncé porte son statut (fait, résultat d’études, interprétation, jugement normatif). '
-            'Les faits, les données des administrations et l’actualité sont dans la rubrique <a href="#questions">Questions</a>.</p>'
+            'Les faits et les données des administrations sont dans les <a href="#dossiers">dossiers</a>.</p>'
             '<ul class="idg">' + ''.join(cards) + '</ul>'
             '<div class="ida" data-r><h3>Index des auteurs</h3><ul>' + ''.join(items) + '</ul></div>'
             '</div></section>')
@@ -581,7 +580,7 @@ def build_dossier(name):
     nav = nav_for('q')
     js, _ = split_js(name)
     body, pens, lect = theory_parts(name)
-    body = re.sub(r'(<span class="kick" data-r>)Dossier (\d+) · une question du débat', r'\1Questions · les faits · thème \2', body, count=1)
+    body = re.sub(r'(<span class="kick" data-r>)Dossier (\d+) · une question du débat', r'\1Les faits · thème \2', body, count=1)
     sys.path.insert(0, str(SRC / 'actualite'))
     import render as ACT
     idl = '__IDEES_' + name.upper() + '__'
@@ -645,7 +644,7 @@ def build_idees(name):
             f'<p class="lede hq" data-r>{q}</p>'
             '<p class="lede" data-r>Cette rubrique ne donne pas de chiffres nouveaux : elle présente des analyses et des interprétations. '
             'Chaque auteur est situé dans son époque, son idée est résumée, puis confrontée aux données et à ses critiques ; chaque énoncé porte son statut (fait, résultat d’études, interprétation, jugement normatif). '
-            f'Les faits, les données des administrations et l’actualité sont dans la rubrique <a href="{fl}">Questions · {theme}</a>.</p>'
+            f'Les faits, les données des administrations et l’actualité sont dans le dossier <a href="{fl}">{theme}</a>.</p>'
             + ('' if pens else '<p class="lede" data-r>Aucun des auteurs de notre liste ne s’applique à ce thème sans lien forcé : seules les lectures des grands courants sont présentées ici.</p>')
             + '</div></section>\n')
     tail = ('<section class="sec papier" id="sources" aria-labelledby="tB"><div class="wrap"><span class="kick">Sources</span>'
@@ -653,7 +652,7 @@ def build_idees(name):
             '<p>Les références de chaque auteur figurent dans sa carte (« Sources »).</p>'
             + (works.group(1) if works else '') +
             f'<p class="bbl"><a href="__BIBLIO__">Toutes les sources du site, en APA 7 et en Chicago →</a></p>'
-            f'<p class="bbl"><a href="{fl}">← Retour aux faits : Questions · {theme}</a></p></div></section>\n</main>\n'
+            f'<p class="bbl"><a href="{fl}">← Retour aux faits : dossier {theme}</a></p></div></section>\n</main>\n'
             f'<footer><div class="meta"><span>Au plus Juste · Idées et interprétations · {theme}</span><span><a href="mailto:contact@auplusjuste.be?subject=Id%C3%A9es%20%E2%80%93%20{name}">Signaler une erreur</a> · <a href="__HOME__#idees">Tous les thèmes →</a></span></div><div class="wm" aria-hidden="true">Au plus Juste</div></footer>\n')
     body = hero.replace('</section>\n', '</section>\n' + dsub(name, 'penseurs'), 1) + pens + lect + tail
     _, js = split_js(name)
@@ -701,7 +700,7 @@ def eurostat_codes(name):
 
 
 def home_questions(name):
-    body = read('accueil/body.html')
+    body = read('accueil/questions-archive.html')
     i = body.index('id="q-be"')
     seg = body[i:body.index('</section>', i)]
     return [li for li in re.findall(r'<li data-r>(<a href="__' + name.upper() + r'__[^"]*">.*?</a>)</li>', seg, re.S)]

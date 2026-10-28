@@ -289,7 +289,7 @@
   function newsBox(c){var nm=name(c),e=EURO[c],x=EDP[c],L=le(c);
     var li='<li><b>Monnaie</b> : '+(e?(e===1?L+' utilise l’euro.':L+' utilise l’euro depuis le 1er janvier '+e+'.'):L+' n’utilise pas l’euro.')+'</li>'+
       '<li><b>Règles budgétaires européennes</b> : '+(x?'procédure de déficit excessif ouverte par le Conseil de l’UE le '+x+' (déficit au-dessus de 3 % du PIB, ou dette au-dessus de 60 % sans baisse suffisante). Le pays doit suivre une trajectoire de dépenses fixée par le Conseil.':(c==='MT'?'la procédure de déficit excessif ouverte en 2024 a été close par le Conseil le 12 juin 2026.':'pas de procédure de déficit excessif en cours.'))+' <span class="srcx">Source : <a href="'+EDPURL+'" target="_blank" rel="noopener">Conseil de l’UE</a>, état au 10 juillet 2026.</span></li>'+
-      (c==='BE'?'<li><b>Actualité belge</b> : budget fédéral, réforme du chômage, nouveau Code pénal… <a href="#questions">voir la rubrique Au plus Juste</a>, où chaque fait daté renvoie à une question du débat.</li>':'');
+      '';
     return '<ul class="trnews">'+li+'</ul>'}
   function trendSection(cs,id){var one=cs.length===1;
     return '<section class="dz papier trend" aria-labelledby="'+id+'"><div class="w"><p class="kicker" data-r>Tendances depuis 2015 · actualité officielle · Eurostat et Conseil de l’UE</p><h2 id="'+id+'" data-r>'+(one?'Ce qui a changé <span class="s">en dix ans.</span>':'Deux pays, <span class="s">dix ans d’évolution.</span>')+'</h2>'+
@@ -641,7 +641,7 @@
 
 /* menu : soulignement de la rubrique en cours */
 (function(){
-  var map={atlas:'#atlas',dossier:'#atlas',classements:'#atlas',questions:'#questions',dossiers:'#questions',idees:'#idees',methode:'#methode',apropos:'#methode'};
+  var map={atlas:'#atlas',dossier:'#atlas',classements:'#atlas',dossiers:'#dossiers',idees:'#idees',methode:'#methode',apropos:'#methode'};
   var links=[].slice.call(document.querySelectorAll('nav.top > a:not(.mark)'));
   function spy(){var y=innerHeight*.35,cur='#atlas';Object.keys(map).forEach(function(id){var n=document.getElementById(id);if(n&&n.offsetHeight&&n.getBoundingClientRect().top<=y)cur=map[id]});
     links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===cur)})}
