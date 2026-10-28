@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Justice, question sur la prison et la récidive : verdict nuancé (méta-analyse de 116 études : pas mieux que les autres peines en moyenne ; en Norvège, la prison réduit la récidive des détenus sans emploi ; en Belgique, moins de retours en prison après surveillance électronique que chez des détenus comparables).',
         'Justice, question sur la sévérité des peines : verdict complété (revue de Chalfin et McCrary ; en Suède, allonger ou raccourcir le temps passé en prison ne change pas la récidive ; revue du Sentencing Council).',
         'Justice, question sur l’évolution de la criminalité : verdict complété (rapport de l’Institut national de criminologie ; Moniteur de sécurité 2024 : violences sexuelles déclarées stables, fraude en ligne en hausse). Chiffre noir et sentiment d’insécurité mis à jour avec le Moniteur de sécurité 2024.',
         'Logement, question sur la construction : verdict nuancé (l’effet sur les loyers est réel mais modeste ; étude allemande, chaînes de déménagement à Helsinki et aux États-Unis, étude contraire à Minneapolis ; en Belgique, l’offre réagit peu aux prix). Le dossier Logement est entièrement relu par l’auteur.',

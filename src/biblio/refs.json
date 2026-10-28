@@ -9305,5 +9305,86 @@
   "src": [
    "Justice"
   ]
+ },
+ {
+  "t": "art",
+  "a": "Petrich, Damon M.; Pratt, Travis C.; Jonson, Cheryl Lero; Cullen, Francis T.",
+  "y": "2021",
+  "ti": "Custodial Sanctions and Reoffending: A Meta-Analytic Review",
+  "pub": "Crime and Justice",
+  "url": "https://doi.org/10.1086/715100",
+  "src": [
+   "Justice"
+  ],
+  "cat": "rech",
+  "num": "50",
+  "doi": "10.1086/715100"
+ },
+ {
+  "t": "art",
+  "a": "Bhuller, Manudeep; Dahl, Gordon B.; Løken, Katrine V.; Mogstad, Magne",
+  "y": "2020",
+  "ti": "Incarceration, Recidivism, and Employment",
+  "pub": "Journal of Political Economy",
+  "url": "https://www.nber.org/papers/w22648",
+  "src": [
+   "Justice"
+  ],
+  "cat": "rech",
+  "num": "128(4), 1269-1324"
+ },
+ {
+  "t": "art",
+  "a": "Al Weswasi, Enes; Bäckman, Olof",
+  "y": "2024",
+  "ti": "The Effects of Replacing Incarceration with Electronic Monitoring on Crime, Mortality, and Labor Market Exclusion",
+  "pub": "Journal of Quantitative Criminology",
+  "url": "https://doi.org/10.1007/s10940-024-09595-2",
+  "src": [
+   "Justice"
+  ],
+  "cat": "rech",
+  "doi": "10.1007/s10940-024-09595-2"
+ },
+ {
+  "t": "art",
+  "a": "Al Weswasi, Enes",
+  "y": "2024",
+  "ti": "Estimating the incapacitation effect among first-time incarcerated offenders",
+  "pub": "European Journal of Criminology",
+  "url": "https://doi.org/10.1177/14773708241249808",
+  "src": [
+   "Justice"
+  ],
+  "cat": "rech",
+  "num": "21(6), 799-829",
+  "doi": "10.1177/14773708241249808"
+ },
+ {
+  "t": "art",
+  "a": "Blokland, Arjan; Wermink, Hilde; Robert, Luc; Maes, Eric",
+  "y": "2015",
+  "ti": "Wederopsluiting na elektronische detentie en reguliere detentie in België",
+  "pub": "Tijdschrift voor Criminologie",
+  "url": "https://bjutijdschriften.nl/tijdschrift/tijdschriftcriminologie/2015/1/TvC_0165-182X_2015_057_001_002",
+  "src": [
+   "Justice"
+  ],
+  "cat": "rech",
+  "num": "57(1), 31-58"
+ },
+ {
+  "t": "art",
+  "a": "Dünkel, Frieder",
+  "y": "2018",
+  "ti": "Electronic Monitoring in Europe – a Panacea for Reforming Criminal Sanctions Systems? A Critical Review",
+  "pub": "Kriminologijos studijos",
+  "url": "https://doi.org/10.15388/CrimLithuan.2018.6.3",
+  "src": [
+   "Justice"
+  ],
+  "cat": "rech",
+  "num": "6, 58-77",
+  "doi": "10.15388/CrimLithuan.2018.6.3"
  }
 ]
