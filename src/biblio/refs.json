@@ -8352,5 +8352,32 @@
    "Éducation"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Jackson, C. Kirabo; Mackevicius, Claire L.",
+  "y": "2024",
+  "ti": "What Impacts Can We Expect from School Spending Policy? Evidence from Evaluations in the United States",
+  "j": "American Economic Journal: Applied Economics",
+  "v": "16",
+  "n": "1",
+  "p": "412-446",
+  "doi": "10.1257/app.20220279",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "rep",
+  "a": "Ayllón, Sara; Lado, Samuel",
+  "y": "2025",
+  "ti": "The Causal Impact of School-Meal Programmes on Children in Developed Economies: A Meta-Analysis",
+  "pub": "IZA Discussion Paper 18042",
+  "url": "https://hdl.handle.net/10419/325100",
+  "src": [
+   "Éducation"
+  ],
+  "cat": "rech"
  }
 ]
