@@ -8667,5 +8667,57 @@
    "Inégalités"
   ],
   "cat": "inst"
+ },
+ {
+  "t": "art",
+  "a": "Atkinson, Anthony B.; Piketty, Thomas; Saez, Emmanuel",
+  "y": "2011",
+  "ti": "Top Incomes in the Long Run of History",
+  "j": "Journal of Economic Literature",
+  "v": "49",
+  "n": "1",
+  "p": "3-71",
+  "doi": "10.1257/jel.49.1.3",
+  "url": "https://doi.org/10.1257/jel.49.1.3",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Alvaredo, Facundo; Bourguignon, François; Ferreira, Francisco H. G.; Lakner, Christoph; Lustig, Nora",
+  "y": "2026",
+  "ti": "Is Income Inequality on the Rise Everywhere?",
+  "pub": "Stone Center on Socio-Economic Inequality, Working Paper 131",
+  "url": "https://stonecenter.gc.cuny.edu/",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Förster, Michael; Llena-Nozal, Ana; Nafilyan, Vahé",
+  "y": "2014",
+  "ti": "Trends in Top Incomes and their Taxation in OECD Countries",
+  "pub": "OCDE, Social, Employment and Migration Working Papers 159",
+  "doi": "10.1787/5jz43jhlz87f-en",
+  "url": "https://doi.org/10.1787/5jz43jhlz87f-en",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "inst"
+ },
+ {
+  "t": "wp",
+  "a": "Morgan, Marc; Neef, Theresa",
+  "y": "2020",
+  "ti": "2020 DINA Update for Europe",
+  "pub": "World Inequality Lab, Technical Note 2020/04",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
  }
 ]

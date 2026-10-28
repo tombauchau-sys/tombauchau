@@ -1,6 +1,7 @@
 # Journal du site : changements qui concernent tout le site (les corrections propres à un dossier sont reprises automatiquement de son journal).
 SITE = [
     ('28 octobre 2026', [
+        'Inégalités, question sur les plus hauts revenus : verdict complété (enquêtes et comparaison européenne), trois études ajoutées, réserve complétée (plus-values ; séries du World Inequality Lab non indépendantes). Le dossier Inégalités est entièrement relu par l’auteur.',
         'Inégalités, question sur le patrimoine : verdict réécrit (r > g n’est pas une loi mécanique ; le prix des actifs et les choix politiques comptent), quatre études et l’enquête patrimoniale de la BNB ajoutées.',
         'Inégalités, question sur le salaire minimum : verdict précisé avec une méta-analyse américaine et la seule évaluation belge trouvée (suppression des salaires réduits des jeunes, 2013-2015).',
         'Inégalités, question sur l’effet des impôts et allocations sur la pauvreté : verdict précisé (division par deux hors pensions, par quatre en les comptant), deux microsimulations européennes et l’étude de Blanchet, Chancel et Gethin ajoutées, réserve complétée.',
