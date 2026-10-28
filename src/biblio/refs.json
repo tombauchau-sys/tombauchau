@@ -8719,5 +8719,48 @@
    "Inégalités"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Döbbeling-Hildebrandt, Niklas; Miersch, Klaas; Khanna, Tarun M.; et al.",
+  "y": "2024",
+  "ti": "Systematic review and meta-analysis of ex-post evaluations on the effectiveness of carbon pricing",
+  "j": "Nature Communications",
+  "v": "15",
+  "p": "4147",
+  "doi": "10.1038/s41467-024-48512-w",
+  "url": "https://doi.org/10.1038/s41467-024-48512-w",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Green, Jessica F.",
+  "y": "2021",
+  "ti": "Does carbon pricing reduce emissions? A review of ex-post analyses",
+  "j": "Environmental Research Letters",
+  "v": "16",
+  "p": "043004",
+  "doi": "10.1088/1748-9326/abdae9",
+  "url": "https://doi.org/10.1088/1748-9326/abdae9",
+  "src": [
+   "Climat"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Teusch, Jonas; D’Arcangelo, Filippo Maria; Kruse, Tobias; Pisu, Mauro",
+  "y": "2024",
+  "ti": "Carbon prices, emissions and international trade in sectors at risk of carbon leakage: Evidence from 140 countries",
+  "pub": "OCDE, Economics Department Working Papers 1813",
+  "doi": "10.1787/116248f5-en",
+  "url": "https://doi.org/10.1787/116248f5-en",
+  "src": [
+   "Climat"
+  ],
+  "cat": "inst"
  }
 ]

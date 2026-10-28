@@ -633,3 +633,8 @@ inegalites,"Q4 : Alvaredo et al. 2026 — Belgique : Gini enquêtes baisse modé
 inegalites,"Q4 : Atkinson, Piketty et Saez — hausse anglophone, pas en Europe continentale",résumé,Version de travail 2010 (texte intégral) ; JEL 49(1) 3-71,identique,ajouté,
 inegalites,Q4 : OCDE (Förster et al. 2014) — plus-values : +1 à 3 pts ; Belgique 12 %,valeurs,"OCDE SEM WP 159, texte intégral",identique,ajouté,"chiffre général, pas belge"
 inegalites,Q4 : Morgan et Neef 2020 — Belgique 2017-2019 : répartition fiscale supposée constante,méthode,"WIL note technique 2020/04, tableau 1",identique,ajouté,
+climat,"Q1 : Bayer et Aklin (PNAS 117(16)), Colmer et al. (REStud 92(3)), Andersson (AEJ:EP 11(4)) — résultats attribués",résumés,"PNAS (Strathprints), RePEc, AEA (résumés relus le 28/10/2026)",identique,vérifié,Colmer et al. : niveau 0 → 3 ; Andersson : élasticité taxe carbone ×3 ajoutée
+climat,"Q1 : Döbbeling-Hildebrandt et al. (2024) — −5 à −21 % (−4 à −15 % corrigé) ; EU ETS −7,3 % ; prix moyen ≈ 20 $",valeurs,"Nature Communications 15:4147, texte intégral",identique,ajouté,pas de lien prix-effet entre dispositifs
+climat,"Q1 : Green (2021) — 0 à 2 %/an ; EU ETS 0 à 1,5 %/an ; 37 études",valeurs,"ERL 16 043004, texte intégral",identique,ajouté,
+climat,"Q1 : OCDE, Teusch et al. (2024) — +1 $/t → −1,3 % ; fuites ≈ 13 %",valeurs,"OCDE ECO WP 1813, texte intégral",identique,ajouté,calcul approximatif des auteurs
+climat,"Q1 (résumé IA) : émissions belges −32,6 % depuis 1990 ; débat 2018 (32 € / 127 €) ; BFP ETS2 (255-415 € ; 26 % / 2,9 %)",—,non vérifié (presse seulement pour l'ETS2),non vérifié,signalé,à reprendre pour la question 3
