@@ -8594,5 +8594,78 @@
    "Inégalités"
   ],
   "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Piketty, Thomas",
+  "y": "2015",
+  "ti": "About Capital in the Twenty-First Century",
+  "j": "American Economic Review",
+  "v": "105",
+  "n": "5",
+  "p": "48-53",
+  "url": "https://ideas.repec.org/a/aea/aecrev/v105y2015i5p48-53.html",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Jakurti, Edison",
+  "y": "2026",
+  "ti": "A Tale of Two Rates: Return on Capital, Economic Growth, and Wealth Concentration in the Long Run",
+  "j": "Review of Political Economy",
+  "v": "38",
+  "n": "3",
+  "p": "927-960",
+  "doi": "10.1080/09538259.2025.2492268",
+  "url": "https://doi.org/10.1080/09538259.2025.2492268",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "wp",
+  "a": "Walk, Marten",
+  "y": "2025",
+  "ti": "The Dynamics of Wealth Inequality: Distributional Effects of Asset Prices in Europe",
+  "pub": "MPRA Paper 126040",
+  "url": "https://mpra.ub.uni-muenchen.de/126040/",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Fuller, Gregory W.; Johnston, Alison; Regan, Aidan",
+  "y": "2020",
+  "ti": "Housing prices and wealth inequality in Western Europe",
+  "j": "West European Politics",
+  "v": "43",
+  "n": "2",
+  "p": "297-320",
+  "doi": "10.1080/01402382.2018.1561054",
+  "url": "https://doi.org/10.1080/01402382.2018.1561054",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "rech"
+ },
+ {
+  "t": "art",
+  "a": "Du Caju, Philip",
+  "y": "2016",
+  "ti": "The distribution of household wealth in Belgium: initial findings of the second wave of the Household Finance and Consumption Survey (HFCS)",
+  "j": "Banque nationale de Belgique, Economic Review",
+  "n": "septembre",
+  "p": "27-43",
+  "url": "https://www.nbb.be/en/articles/distribution-household-wealth-belgium-initial-findings-second-wave-household-finance-and",
+  "src": [
+   "Inégalités"
+  ],
+  "cat": "inst"
  }
 ]
