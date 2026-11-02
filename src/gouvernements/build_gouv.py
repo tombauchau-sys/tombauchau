@@ -89,6 +89,10 @@ def card(g, P, i, n, today):
         t += '<p class="gv-note">Engagements tels qu’écrits dans l’accord, avec ses propres chiffres. Ce résumé ne dit pas s’ils ont été tenus : voir les mesures ci-dessous.</p>'
         if ac.get('note'):
             t += f'<p class="gv-verif">{H.escape(ac["note"])}</p>'
+        if ac.get('chapitres'):
+            t += '<details class="gv-chap"><summary>L’accord chapitre par chapitre</summary>' + ''.join(
+                f'<div><h4>{H.escape(c["t"])} <small>p. {c["p"]}</small></h4><ul>' + ''.join(f'<li>{H.escape(x)}</li>' for x in c['pts']) + '</ul></div>' for c in ac['chapitres'])
+            t += (f'<p class="gv-note">{H.escape(ac["lecture"])} Les pages renvoient au document de la Chambre.</p>' if ac.get('lecture') else '') + '</details>'
     elif ac['url']:
         t += '<p class="gv-todo">Résumé de l’accord : en préparation.</p>'
     h.append(t + '</section>')
@@ -230,6 +234,7 @@ CSS = '''
 b.off{background:#D6F0DA}b.rf{background:#E4E1F7}b.pr{background:#FBE3C6}b.av{background:#F9C9C1}
 .gv-ref{font:italic 14.5px/1.45 var(--sans)!important;color:#4A4741;margin-top:6px!important}
 .gv-tab{border-collapse:collapse;font:16px var(--sans);min-width:min(520px,100%)}.gv-tab th,.gv-tab td{border-bottom:1.5px solid var(--rule);padding:8px 14px 8px 0;text-align:left}.gv-tab td{font-variant-numeric:tabular-nums;font-weight:600}.gv-tab thead th{font:600 13px var(--sans);color:var(--grey)}.gv-tab a{color:var(--ink)}
+.gv-chap{margin-top:16px;border:1.5px solid var(--rule);border-radius:12px;padding:10px 16px}.gv-chap summary{font:600 16px var(--sans);cursor:pointer}.gv-chap h4{font:600 17px var(--sans);margin:16px 0 4px}.gv-chap h4 small{font:500 13px var(--sans);color:var(--grey)}.gv-chap ul{padding-left:1.1em;margin:0;display:grid;gap:4px}.gv-chap li{font-size:16px!important}
 .gv-verif{font-size:14px!important;color:#9E2B1D;margin-top:4px!important}
 .gv-pn{display:flex;justify-content:space-between;margin-top:26px;border-top:1.5px solid var(--rule);padding-top:16px}
 .gv-pn a{font:600 16px var(--sans);color:var(--ink)}
