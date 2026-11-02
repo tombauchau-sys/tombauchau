@@ -33,6 +33,7 @@ PAGES = {
     '__LEXIQUE__': ('lexique.html', 'https://claude.ai/artifact/LQDyy5p1qNjdLvMPncXWce'),
     '__NOUVEAUTES__': ('nouveautes.html', 'https://claude.ai/artifact/MKkMEQ9idW3eqNF3dmgM98'),
     '__BIBLIO__': ('bibliographie.html', 'https://claude.ai/artifact/QTMzZD1FWW3XYzuJknJnrQ'),
+    '__GOUV__': ('gouvernements.html', 'gouvernements.html'),
 }
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +82,7 @@ def nav_html(active='', home=False):
     groups = [
         ('donnees', 'Données', h + '#atlas', 'Explorer les chiffres des 27 pays', [('Carte des 27 pays', h + '#atlas', 'Un pays ou deux pays comparés'), ('Classements', h + '#classements', '46 indicateurs, critères expliqués'), ('Comparer les pays', '__COMPARER__', 'Plusieurs pays, plusieurs indicateurs')], False),
         ('dossiers', 'Dossiers', h + '#dossiers', 'Chaque dossier : données et penseurs', [(t, '__THEME_' + n.upper() + '__', '') for n, t in T] + [('Index des auteurs', h + '#idees', '')], True),
+        ('gouv', 'Gouvernements', '__GOUV__', 'Qui a gouverné depuis 1999, et pour quoi faire', [('Chronologie depuis 1999', '__GOUV__', 'Composition, accord, grandes mesures'), ('Gouvernement en fonction', '__GOUV__#g-de-wever', 'De Wever, depuis le 3 février 2025'), ('Gouvernement précédent', '__GOUV__#g-de-croo', 'De Croo, 2020-2025')], False),
         ('methode', 'Méthode', h + '#methode', 'Sources, vérification, vocabulaire', [('D’où viennent ces chiffres', h + '#methode', ''), ('Bibliographie (APA 7 et Chicago)', '__BIBLIO__', ''), ('Lexique', '__LEXIQUE__', ''), ('Registre de vérification', '__REGISTRE__', ''), ('Nouveautés et corrections', '__NOUVEAUTES__', ''), ('À propos', h + '#apropos', '')], False),
     ]
     def grp(g):
@@ -91,7 +93,7 @@ def nav_html(active='', home=False):
         p = f'  <div class="mdd{" cols" if cols else ""}" id="dd-{k}" hidden><p class="mdd-h">{lab}<span>{sub}</span></p><ul>{li}</ul></div>\n'
         return a + p
     mark = f'  <a href="{h or "#atlas"}" class="mark" aria-label="Au plus Juste, accueil"><span class="lg" aria-hidden="true"><span class="w1">Au plus </span>J<span class="q"><i class="qq">?</i><i class="uu">u</i></span><span class="w2">ste</span></span></a>\n'
-    return ('<nav class="top" aria-label="Navigation principale">\n' + grp(groups[0]) + grp(groups[1]) + mark + grp(groups[2]) + '</nav>')
+    return ('<nav class="top" aria-label="Navigation principale">\n' + grp(groups[0]) + grp(groups[1]) + mark + grp(groups[2]) + grp(groups[3]) + '</nav>')
 
 
 def page_section(fname):
@@ -99,6 +101,8 @@ def page_section(fname):
         return 'dossiers'
     if fname in ('comparer.html', 'fiche-chomage.html'):
         return 'donnees'
+    if fname == 'gouvernements.html':
+        return 'gouv'
     if fname in ('lexique.html', 'bibliographie.html', 'registre-verification.html', 'nouveautes.html'):
         return 'methode'
     return ''
@@ -202,6 +206,7 @@ SEO_TITLES = {
     'lexique.html': 'Lexique politique, économique et européen · Au plus Juste',
     'registre-verification.html': 'Registre de vérification des chiffres · Au plus Juste',
     'bibliographie.html': 'Bibliographie complète, APA 7 et Chicago · Au plus Juste',
+    'gouvernements.html': 'Gouvernements fédéraux belges depuis 1999 · Au plus Juste',
 }
 AUTHOR = {'@type': 'Organization', 'name': 'Au plus Juste'}
 # Descriptions pour les moteurs de recherche (160 caractères au plus)
@@ -846,6 +851,18 @@ def build_biblio():
     return head + NAV_SIMPLE + body + '<script>' + js + '</script>\n', title, desc
 
 
+def build_gouv():
+    sys.path.insert(0, str(SRC / 'gouvernements'))
+    import build_gouv as BG
+    fiche = read('fiche/fiche-chomage.html')
+    css = fiche[fiche.index('<style>') + 7:fiche.index('</style>')] + read('dossiers/dossier.css')
+    body, gcss, js, n = BG.build(read, NAV_SIMPLE, A11Y_INIT)
+    title = 'Gouvernements fédéraux depuis 1999 · Au plus Juste'
+    desc = f'Les {n} gouvernements fédéraux belges depuis 1999 : partis, accord de gouvernement et grandes mesures sociales et économiques, avec leurs sources officielles.'
+    head = f'<title>{title}</title>\n' + FONTS + '<style>' + css + gcss + '</style>\n'
+    return head + NAV_SIMPLE + body + '<script>' + js + '</script>\n', title, desc
+
+
 def build_nouveautes():
     """Page « Nouveautés et corrections » : journal du site, journaux des dossiers (repris automatiquement) et calendrier des prochaines mises à jour."""
     import html as H
@@ -926,7 +943,7 @@ def build_nouveautes():
 
 def main():
     artifact = '--artifact' in sys.argv
-    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer, 'lexique.html': build_lexique, 'nouveautes.html': build_nouveautes, 'bibliographie.html': build_biblio}
+    jobs = {'index.html': build_home, 'fiche-chomage.html': build_fiche, 'registre-verification.html': build_registre, 'comparer.html': build_comparer, 'lexique.html': build_lexique, 'nouveautes.html': build_nouveautes, 'bibliographie.html': build_biblio, 'gouvernements.html': build_gouv}
     for n in DOSSIERS:
         jobs[f'dossier-{n}.html'] = (lambda n=n: build_dossier(n))
         jobs[f'idees-{n}.html'] = (lambda n=n: build_idees(n))
@@ -937,7 +954,7 @@ def main():
         html = re.sub(r'<nav class="top".*?</nav>', lambda m: nav_html(page_section(fname), fname == 'index.html'), html, count=1, flags=re.S)
         html = shared(html)
         site = links(html, 'site')
-        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|BIBLIO|IDEES_[A-Z]+|THEME_[A-Z]+|ACTUP_[A-Z]+|MAP|DATA|WORLD)__', site))
+        left = set(re.findall(r'__(?:HOME|FICHE|EMPLOI|FINANCES|PENSIONS|IMMIGRATION|JUSTICE|SANTE|EDUCATION|INEGALITES|CLIMAT|LOGEMENT|FISCALITE|REGISTRE|COMPARER|LEXIQUE|NOUVEAUTES|BIBLIO|GOUV|IDEES_[A-Z]+|THEME_[A-Z]+|ACTUP_[A-Z]+|MAP|DATA|WORLD)__', site))
         if left:
             sys.exit(f'{fname} : marqueurs non remplacés {left}')
         (ROOT / fname).write_text(wrap(site, title, desc, fname), encoding='utf-8')
