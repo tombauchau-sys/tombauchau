@@ -84,6 +84,8 @@ def card(g, P, i, n, today):
     t += f'<p class="gv-acc"><b>{H.escape(ac["titre"])}</b>' + (f'<span>{H.escape(ac["date"])}</span>' if ac['date'] else '') + '</p>'
     if ac['url']:
         t += f'<p class="gv-doc">{ext("Lire le texte officiel · " + ac["doc"], ac["url"])}</p>'
+    if ac.get('url2'):
+        t += f'<p class="gv-doc">{ext("Texte complet de l’accord (hébergé par la Chambre)", ac["url2"])}</p>'
     if ac['resume']:
         t += '<p class="gv-k">Ce que la coalition s’engage à faire</p><ul class="gv-res">' + ''.join(f'<li>{x}</li>' for x in ac['resume']) + '</ul>'
         t += '<p class="gv-note">Engagements tels qu’écrits dans l’accord, avec ses propres chiffres. Ce résumé ne dit pas s’ils ont été tenus : voir les mesures ci-dessous.</p>'
