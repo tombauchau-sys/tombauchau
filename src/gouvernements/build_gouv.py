@@ -87,6 +87,8 @@ def card(g, P, i, n, today):
     if ac['resume']:
         t += '<p class="gv-k">Ce que la coalition s’engage à faire</p><ul class="gv-res">' + ''.join(f'<li>{x}</li>' for x in ac['resume']) + '</ul>'
         t += '<p class="gv-note">Engagements tels qu’écrits dans l’accord, avec ses propres chiffres. Ce résumé ne dit pas s’ils ont été tenus : voir les mesures ci-dessous.</p>'
+        if ac.get('note'):
+            t += f'<p class="gv-verif">{H.escape(ac["note"])}</p>'
     elif ac['url']:
         t += '<p class="gv-todo">Résumé de l’accord : en préparation.</p>'
     h.append(t + '</section>')
@@ -109,12 +111,18 @@ def card(g, P, i, n, today):
             c, l = V[m['v']]
             srcs = ' · '.join(ext(*s) for s in m['src'])
             ver = f'<p class="gv-verif">À vérifier : {H.escape(m["verif"])}</p>' if m.get('verif') else ''
+            ref = f'<p class="gv-ref">{H.escape(m["ref"])}</p>' if m.get('ref') else ''
             li += (f'<li class="gv-m" data-d="{m["d"]}"><p class="gv-md"><time datetime="{m["date"]}">{H.escape(m["date_txt"])}</time><span class="gv-dom {m["d"]}">{DOM[m["d"]]}</span></p>'
-                   f'<h4>{H.escape(m["titre"])}</h4><p>{H.escape(m["texte"])}</p><p class="gv-src"><b class="{c}">{l}</b> {srcs}</p>{ver}</li>')
+                   f'<h4>{H.escape(m["titre"])}</h4><p>{H.escape(m["texte"])}</p>{ref}<p class="gv-src"><b class="{c}">{l}</b> {srcs}</p>{ver}</li>')
         h.append(f'<section class="gv-sec"><h3>Grandes mesures sociales et économiques</h3>{flt}<ol class="gv-ms">{li}</ol>'
                  '<p class="gv-note">Mesures adoptées pendant le mandat (loi votée, publiée ou entrée en vigueur), choisies pour leur portée. La liste n’est pas exhaustive et ne juge pas leurs effets.</p></section>')
     else:
         h.append('<section class="gv-sec"><h3>Grandes mesures sociales et économiques</h3><p class="gv-todo">En préparation. Les dates et la composition de ce gouvernement sont vérifiées ; ses grandes mesures seront ajoutées une à une, chacune avec sa source officielle.</p></section>')
+    # repères chiffrés
+    if g.get('bilan'):
+        b_ = g['bilan']
+        rows = ''.join(f'<tr><th scope="row"><a href="{u}">{H.escape(n_)}</a></th><td>{x}</td><td>{y}</td></tr>' for n_, x, y, u in b_['lignes'])
+        h.append(f'<section class="gv-sec"><h3>Repères chiffrés</h3><table class="gv-tab"><thead><tr><th></th><th>{b_["debut"]}</th><th>{b_["fin"]}</th></tr></thead><tbody>{rows}</tbody></table><p class="gv-note">{H.escape(b_["note"])}</p></section>')
     # fin
     fs = (' ' + ' · '.join(ext(*s) for s in g['fin_src'])) if g.get('fin_src') else ''
     h.append(f'<section class="gv-sec"><h3>{"Fin du gouvernement" if g["fin"] else "Situation"}</h3><p>{H.escape(g["fin_txt"])}{fs}</p></section>')
@@ -220,6 +228,8 @@ CSS = '''
 .gv-src{font-size:14.5px!important;margin-top:6px!important;color:#4A4741}
 .gv-src b,.gv-ctx b{font:600 11px var(--sans);letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:1px 6px;margin-right:6px}
 b.off{background:#D6F0DA}b.rf{background:#E4E1F7}b.pr{background:#FBE3C6}b.av{background:#F9C9C1}
+.gv-ref{font:italic 14.5px/1.45 var(--sans)!important;color:#4A4741;margin-top:6px!important}
+.gv-tab{border-collapse:collapse;font:16px var(--sans);min-width:min(520px,100%)}.gv-tab th,.gv-tab td{border-bottom:1.5px solid var(--rule);padding:8px 14px 8px 0;text-align:left}.gv-tab td{font-variant-numeric:tabular-nums;font-weight:600}.gv-tab thead th{font:600 13px var(--sans);color:var(--grey)}.gv-tab a{color:var(--ink)}
 .gv-verif{font-size:14px!important;color:#9E2B1D;margin-top:4px!important}
 .gv-pn{display:flex;justify-content:space-between;margin-top:26px;border-top:1.5px solid var(--rule);padding-top:16px}
 .gv-pn a{font:600 16px var(--sans);color:var(--ink)}
