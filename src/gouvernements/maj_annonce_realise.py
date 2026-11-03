@@ -71,9 +71,9 @@ dr = [
     it('partiel', 'Fermer les centrales nucléaires « conformément à la loi de 2003 », les dates définitives dépendant des nouvelles capacités de production.', '127',
        'La loi du 18 décembre 2013 permet à Tihange 1 de fonctionner dix ans de plus que la loi de 2003. L’accord prévoyait lui-même d’adapter le calendrier selon les capacités disponibles.',
        mesure='Prolongation de Tihange 1'),
-    it('non', 'Limiter la croissance du budget des soins de santé à 2 % en 2013 et 3 % en 2014, plus l’indexation.', '109',
-       'Les objectifs budgétaires sont fixés en montants : 26 676 586 000 € pour 2013 (Conseil des ministres du 30 novembre 2012), 27 861 560 000 € pour 2014. Une référence transmise situe ces normes à l’article 122 de la loi-programme du 22 juin 2012 ; le document qui l’accompagnait ne le contient pas : à vérifier dans la loi.',
-       src=[['Conseil des ministres du 30 novembre 2012', 'https://news.belgium.be/fr/node/15181/pdf'], ['Chambre, note de politique (DOC 53 3096/006)', 'https://www.dekamer.be/FLWB/PDF/53/3096/53K3096006.pdf']]),
+    it('adopte', 'Limiter la croissance du budget des soins de santé à 2 % en 2013 et 3 % en 2014, plus l’indexation.', '109',
+       'Inscrit dans la loi-programme du 22 juin 2012, article 122 : « Pour l’année 2013, ce montant est majoré d’une norme de croissance réelle de 2 % », plus l’indice santé et 40 millions d’euros ; « à partir de l’année 2014 », norme de 3 % plus l’indice santé. Cela confirme la norme légale, pas la croissance effective des dépenses : l’objectif 2013 est ensuite fixé à 26 676 586 000 €, avec des économies décidées par le Conseil des ministres.',
+       src=[['Loi-programme du 22 juin 2012, numac 2012021092 (texte reproduit par OpenJustice)', 'https://etaamb.openjustice.be/fr/loiprogramme-du-22-juin-2012_n2012021092.html'], ['Conseil des ministres du 30 novembre 2012', 'https://news.belgium.be/fr/node/15181/pdf']]),
     it('adopte', 'Réduire d’au moins la moitié le nombre d’arrondissements judiciaires.', '137',
        'Loi du 1er décembre 2013 : « Le présent projet de loi crée 12 arrondissements au travers d’une fusion des 27 arrondissements existants. »',
        src=[['Chambre, dossier DOC 53 2858', 'https://www.dekamer.be/FLWB/html/53/F/53K2858.html'], ['Chambre, projet de loi (DOC 53 2858/001)', 'https://www.dekamer.be/FLWB/pdf/53/2858/53K2858001.pdf']]),
@@ -94,8 +94,8 @@ G['di-rupo']['compare'] = {
 # ---------------- Michel I ----------------
 mi = [
     it('chiffre', 'Atteindre l’équilibre budgétaire structurel en 2018.', '4',
-       f'Solde public de 2018 : {d(2018)} du PIB ({d(2014)} en 2014). L’accord vise le solde structurel, corrigé de la conjoncture, que nos séries ne publient pas : la comparaison n’est qu’indicative.',
-       src=[EU_DEF]),
+       f'Objectif non atteint selon la Commission européenne : solde structurel de 2018 estimé à −1,4 % du PIB potentiel dans ses prévisions du printemps 2019 (tableau II.1.1). Solde public (non corrigé de la conjoncture) : {d(2018)} du PIB en 2018 selon les chiffres actuels d’Eurostat, −0,7 % dans l’estimation de 2019. Les soldes structurels sont eux aussi révisés au fil des estimations.',
+       src=[['Commission européenne, prévisions du printemps 2019 (p. 88-89)', 'https://economy-finance.ec.europa.eu/system/files/2019-05/ip102_en.pdf'], EU_DEF]),
     it('chiffre', '« La pression fiscale et parafiscale globale ne peut pas augmenter. »', '3-4',
        f'Impôts et cotisations sociales : {pc(TAX[2014 - 1995])} du PIB en 2014, {pc(TAX[2018 - 1995])} en 2018 (Eurostat, gov_10a_taxag).',
        src=[['Dossier Fiscalité : niveau des prélèvements', '__FISCALITE__#f-niveau']]),
@@ -146,7 +146,7 @@ mi = [
 ]
 check('michel-1', mi)
 G['michel-1']['compare'] = {
-    'intro': 'Le gouvernement Michel I gouverne quatre ans, d’octobre 2014 à décembre 2018, date à laquelle la N-VA le quitte sur le Pacte de Marrakech.',
+    'intro': 'Le gouvernement Michel I gouverne quatre ans, d’octobre 2014 à décembre 2018, date à laquelle la N-VA le quitte sur le Pacte de Marrakech. Deux événements absents de l’accord marquent la législature : le nombre record de demandes d’asile de 2015 et les attentats du 22 mars 2016 (voir le contexte). Leur effet sur les résultats ci-dessous n’est pas mesuré ici.',
     'items': mi,
     'hors': [
         ['Réforme de l’impôt des sociétés (2017)', 'taux de base ramené de 33 % à 29 % en 2018, puis 25 % en 2020 ; l’accord ne prévoyait qu’un « pacte fiscal » sans baisse de taux (p. 96).'],
@@ -175,6 +175,24 @@ for m in G['michel-1']['mesures']:
         m['verif'] = 'Article 24 confirmé (plafond de 19,88 % en 2018) ; autres montants à contrôler dans le texte de la loi.'
     if m['titre'] == 'Travail « faisable et maniable » (loi Peeters)' and 'numac' not in m.get('ref', ''):
         m['ref'] += ' ; numac 2017011012 (transmis, pas encore relu)'
+
+G['michel-1']['contexte'] = [
+    {'date': '2015', 'texte': 'Année record de demandes d’asile depuis 2000 : 35 476 dossiers, soit 44 760 personnes.',
+     'src': [['CGRA, statistiques d’asile de février 2016', 'https://www.cgra.be/fr/actualite/les-statistiques-dasile-du-mois-de-fevrier-2016']]},
+    {'date': '22 mars 2016', 'texte': 'Attentats à l’aéroport de Zaventem et à la station de métro Maelbeek.',
+     'src': [['SPF Justice, aide aux victimes du terrorisme', 'https://www.justice.belgium.be/fr/themes/que_faire_comme/victime/aide_financiere/terrorisme']]},
+]
+for m in G['michel-1']['mesures']:
+    if m['titre'] == 'Création des flexi-jobs':
+        u = ['Loi du 16 novembre 2015, numac 2015205102 (OpenJustice)', 'https://etaamb.openjustice.be/fr/loi-du-16-novembre-2015_n2015205102.html']
+        if u not in m['src']: m['src'].append(u)
+        if '8,82' not in m['texte']: m['texte'] += ' Au départ, le flexi-salaire est d’au moins 8,82 € de l’heure, plus un flexi-pécule de vacances de 7,67 % (article 5).'
+        m['verif'] = 'Taux de la cotisation patronale et date d’entrée en vigueur (article 37) à lire dans le texte.'
+    if m['titre'] == 'Travail « faisable et maniable » (loi Peeters)':
+        u = ['Loi du 5 mars 2017, numac 2017011012 (OpenJustice)', 'https://etaamb.openjustice.be/fr/loi-du-05-mars-2017_n2017011012.html']
+        if u not in m['src']: m['src'].append(u)
+        m['ref'] = m['ref'].replace(' ; numac 2017011012 (transmis, pas encore relu)', ' ; numac 2017011012')
+        m['verif'] = 'Article 4 confirmé (100 heures supplémentaires volontaires par an, jusqu’à 360 par convention collective rendue obligatoire, accord écrit pour six mois renouvelables) ; autres volets à lire dans le texte.'
 
 F.write_text(json.dumps(M, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 print('ok', len(dr), len(mi))

@@ -1723,18 +1723,18 @@
       "mesure": "Prolongation de Tihange 1"
      },
      {
-      "statut": "non",
+      "statut": "adopte",
       "eng": "Limiter la croissance du budget des soins de santé à 2 % en 2013 et 3 % en 2014, plus l’indexation.",
       "p": "109",
-      "constat": "Les objectifs budgétaires sont fixés en montants : 26 676 586 000 € pour 2013 (Conseil des ministres du 30 novembre 2012), 27 861 560 000 € pour 2014. Une référence transmise situe ces normes à l’article 122 de la loi-programme du 22 juin 2012 ; le document qui l’accompagnait ne le contient pas : à vérifier dans la loi.",
+      "constat": "Inscrit dans la loi-programme du 22 juin 2012, article 122 : « Pour l’année 2013, ce montant est majoré d’une norme de croissance réelle de 2 % », plus l’indice santé et 40 millions d’euros ; « à partir de l’année 2014 », norme de 3 % plus l’indice santé. Cela confirme la norme légale, pas la croissance effective des dépenses : l’objectif 2013 est ensuite fixé à 26 676 586 000 €, avec des économies décidées par le Conseil des ministres.",
       "src": [
+       [
+        "Loi-programme du 22 juin 2012, numac 2012021092 (texte reproduit par OpenJustice)",
+        "https://etaamb.openjustice.be/fr/loiprogramme-du-22-juin-2012_n2012021092.html"
+       ],
        [
         "Conseil des ministres du 30 novembre 2012",
         "https://news.belgium.be/fr/node/15181/pdf"
-       ],
-       [
-        "Chambre, note de politique (DOC 53 3096/006)",
-        "https://www.dekamer.be/FLWB/PDF/53/3096/53K3096006.pdf"
        ]
       ]
      },
@@ -2014,16 +2014,20 @@
      "date_txt": "Décembre 2015",
      "d": "social",
      "titre": "Création des flexi-jobs",
-     "texte": "Un travailleur occupé au moins aux 4/5 ailleurs peut travailler en complément dans l’horeca avec un « flexi-salaire » exonéré d’impôt et soumis à une cotisation patronale spéciale.",
+     "texte": "Un travailleur occupé au moins aux 4/5 ailleurs peut travailler en complément dans l’horeca avec un « flexi-salaire » exonéré d’impôt et soumis à une cotisation patronale spéciale. Au départ, le flexi-salaire est d’au moins 8,82 € de l’heure, plus un flexi-pécule de vacances de 7,67 % (article 5).",
      "src": [
       [
        "Chambre, dossier DOC 54 1297",
        "https://www.lachambre.be/FLWB/html/54/F/54K1297.html"
+      ],
+      [
+       "Loi du 16 novembre 2015, numac 2015205102 (OpenJustice)",
+       "https://etaamb.openjustice.be/fr/loi-du-16-novembre-2015_n2015205102.html"
       ]
      ],
      "v": "officiel",
      "ref": "Loi du 16 novembre 2015 portant des dispositions diverses en matière sociale ; adoptée le 22 octobre 2015 ; Moniteur belge du 26 novembre 2015",
-     "verif": "Taux de la cotisation patronale et date d’entrée en vigueur à lire dans le texte."
+     "verif": "Taux de la cotisation patronale et date d’entrée en vigueur (article 37) à lire dans le texte."
     },
     {
      "date": "2015-12-30",
@@ -2051,11 +2055,15 @@
       [
        "Chambre, dossier DOC 54 2247",
        "https://www.lachambre.be/FLWB/html/54/F/54K2247.html"
+      ],
+      [
+       "Loi du 5 mars 2017, numac 2017011012 (OpenJustice)",
+       "https://etaamb.openjustice.be/fr/loi-du-05-mars-2017_n2017011012.html"
       ]
      ],
      "v": "officiel",
-     "ref": "Loi du 5 mars 2017 ; adoptée le 23 février 2017 ; Moniteur belge du 15 mars 2017 ; numac 2017011012 (transmis, pas encore relu)",
-     "verif": "Contenu relevé dans des sources secondaires : à confirmer dans le texte."
+     "ref": "Loi du 5 mars 2017 ; adoptée le 23 février 2017 ; Moniteur belge du 15 mars 2017 ; numac 2017011012",
+     "verif": "Article 4 confirmé (100 heures supplémentaires volontaires par an, jusqu’à 360 par convention collective rendue obligatoire, accord écrit pour six mois renouvelables) ; autres volets à lire dans le texte."
     },
     {
      "date": "2017-03-29",
@@ -2156,14 +2164,18 @@
    },
    "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Michel-I-14-18.pdf",
    "compare": {
-    "intro": "Le gouvernement Michel I gouverne quatre ans, d’octobre 2014 à décembre 2018, date à laquelle la N-VA le quitte sur le Pacte de Marrakech.",
+    "intro": "Le gouvernement Michel I gouverne quatre ans, d’octobre 2014 à décembre 2018, date à laquelle la N-VA le quitte sur le Pacte de Marrakech. Deux événements absents de l’accord marquent la législature : le nombre record de demandes d’asile de 2015 et les attentats du 22 mars 2016 (voir le contexte). Leur effet sur les résultats ci-dessous n’est pas mesuré ici.",
     "items": [
      {
       "statut": "chiffre",
       "eng": "Atteindre l’équilibre budgétaire structurel en 2018.",
       "p": "4",
-      "constat": "Solde public de 2018 : −1,0 % du PIB (−3,2 % en 2014). L’accord vise le solde structurel, corrigé de la conjoncture, que nos séries ne publient pas : la comparaison n’est qu’indicative.",
+      "constat": "Objectif non atteint selon la Commission européenne : solde structurel de 2018 estimé à −1,4 % du PIB potentiel dans ses prévisions du printemps 2019 (tableau II.1.1). Solde public (non corrigé de la conjoncture) : −1,0 % du PIB en 2018 selon les chiffres actuels d’Eurostat, −0,7 % dans l’estimation de 2019. Les soldes structurels sont eux aussi révisés au fil des estimations.",
       "src": [
+       [
+        "Commission européenne, prévisions du printemps 2019 (p. 88-89)",
+        "https://economy-finance.ec.europa.eu/system/files/2019-05/ip102_en.pdf"
+       ],
        [
         "Eurostat, déficit public (gov_10dd_edpt1)",
         "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr"
@@ -2385,7 +2397,29 @@
       "jusqu’à 6 000 € par an pour le travail associatif et l’économie collaborative ; absents de l’accord."
      ]
     ]
-   }
+   },
+   "contexte": [
+    {
+     "date": "2015",
+     "texte": "Année record de demandes d’asile depuis 2000 : 35 476 dossiers, soit 44 760 personnes.",
+     "src": [
+      [
+       "CGRA, statistiques d’asile de février 2016",
+       "https://www.cgra.be/fr/actualite/les-statistiques-dasile-du-mois-de-fevrier-2016"
+      ]
+     ]
+    },
+    {
+     "date": "22 mars 2016",
+     "texte": "Attentats à l’aéroport de Zaventem et à la station de métro Maelbeek.",
+     "src": [
+      [
+       "SPF Justice, aide aux victimes du terrorisme",
+       "https://www.justice.belgium.be/fr/themes/que_faire_comme/victime/aide_financiere/terrorisme"
+      ]
+     ]
+    }
+   ]
   },
   {
    "id": "michel-2",
