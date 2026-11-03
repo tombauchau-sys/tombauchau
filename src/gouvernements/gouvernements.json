@@ -3807,7 +3807,317 @@
     ],
     "note": "2020 est l’année du choc du Covid-19. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement : ils dépendent aussi de la conjoncture, des crises et des décisions des autres niveaux de pouvoir. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
    },
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/De_Croo-20-24.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/De_Croo-20-24.pdf",
+   "compare": {
+    "intro": "Le gouvernement De Croo prête serment le 1er octobre 2020, 494 jours après les élections, en pleine crise du Covid-19, à laquelle l’accord consacre son premier chapitre. À partir de 2022, la flambée des prix de l’énergie entraîne des aides que l’accord ne prévoyait pas. Le mandat se termine par les élections du 9 juin 2024, suivies de huit mois d’affaires courantes.",
+    "items": [
+     {
+      "statut": "chiffre",
+      "eng": "Viser un taux d’emploi d’au moins 80 % en 2030.",
+      "p": "15, 30",
+      "constat": "Échéance postérieure au mandat. Taux d’emploi des 20-64 ans : 69,7 % en 2020, 72,3 % en 2024 (Eurostat).",
+      "src": [
+       [
+        "Dossier Emploi",
+        "__EMPLOI__#f-emploi"
+       ]
+      ]
+     },
+     {
+      "statut": "chiffre",
+      "eng": "Un effort budgétaire fixe de 0,2 % du PIB par an, plus un effort variable, soit environ 1,4 % du PIB d’ici 2024.",
+      "p": "64",
+      "constat": "L’effort se mesure en mesures décidées, pas directement dans le solde. Solde public : −9,0 % du PIB en 2020, −4,4 % en 2024 (Eurostat). En juillet 2024, le Conseil de l’Union ouvre une procédure de déficit excessif (voir les mesures).",
+      "src": [
+       [
+        "Eurostat, déficit public (gov_10dd_edpt1)",
+        "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr"
+       ]
+      ],
+      "ctx": "crise du Covid-19 en 2020, puis crise des prix de l’énergie en 2022."
+     },
+     {
+      "statut": "chiffre",
+      "eng": "Porter l’investissement public de 2,6 % du PIB (2019) à 4 % en 2030.",
+      "p": "40",
+      "constat": "Échéance postérieure au mandat. Investissement public : 2,6 % du PIB en 2019, 3,1 % en 2024 (Eurostat), tous niveaux de pouvoir confondus.",
+      "src": [
+       [
+        "Dossier Finances publiques",
+        "__FINANCES__"
+       ]
+      ]
+     },
+     {
+      "statut": "chiffre",
+      "eng": "Suivre une trajectoire contraignante vers une aide au développement de 0,7 % du revenu national brut d’ici 2030.",
+      "p": "105",
+      "constat": "Échéance postérieure au mandat. Aide publique au développement : 0,47 % du RNB en 2020 (données préliminaires) ; environ 2,6 milliards d’euros en 2023, soit « environ 0,44 % ». Aucune hausse régulière n’apparaît.",
+      "src": [
+       [
+        "SPF Affaires étrangères, aide 2020",
+        "https://diplomatie.belgium.be/en/oecd-praises-increase-belgian-development-assistance-2020"
+       ],
+       [
+        "SPF Affaires étrangères, aide 2023",
+        "https://diplomatie.belgium.be/fr/politique/themes-politiques/sous-la-loupe/chiffre-de-decembre-2024-26-milliards-deuros-consacres-laide-publique-au-developpement-en-2023"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Désigner un commissaire Covid, mandaté pour douze mois renouvelables par périodes de six mois.",
+      "p": "19",
+      "constat": "Désigné par le Comité de concertation du 6 octobre 2020 : « Son mandat couvrira une durée de douze mois, prolongeable par période de six mois. » Nommé par arrêté royal du 9 octobre 2020.",
+      "src": [
+       [
+        "Premier ministre, Comité de concertation du 6 octobre 2020",
+        "https://premier.decroo-i.archive.belgium.be/fr/le-comit%C3%A9-de-concertation-d%C3%A9cide-de-mesures-plus-strictes-et-d%C3%A9signe-un-commissaire-covid-19.html"
+       ],
+       [
+        "Conseil des ministres du 13 novembre 2020",
+        "https://news.belgium.be/fr/composition-et-fonctionnement-de-la-cellule-de-coordination-du-commissaire-covid-19"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Fixer la norme de croissance des soins de santé à 2,5 % à partir de 2022.",
+      "p": "25",
+      "constat": "Loi-programme du 20 décembre 2020.",
+      "mesure": "Norme de croissance des soins de santé à 2,5 %"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Relever la pension minimum vers 1 500 € nets pour une carrière complète.",
+      "p": "30",
+      "constat": "Hausses par étapes du 1er janvier 2021 au 1er janvier 2024. Le montant atteint n’est pas comparé ici aux 1 500 € nets.",
+      "mesure": "Hausse par étapes de la pension minimum et de la GRAPA"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Introduire un bonus de pension pour qui travaille plus longtemps.",
+      "p": "31",
+      "constat": "Loi de mai 2024, avec une condition de carrière effective pour la pension minimum.",
+      "mesure": "Réforme des pensions : bonus et travail effectif"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Augmenter les allocations les plus basses « en direction du seuil de pauvreté ».",
+      "p": "56",
+      "constat": "Minima sociaux relevés par paliers à partir de janvier 2021. L’écart restant avec le seuil de pauvreté n’est pas mesuré ici.",
+      "mesure": "Hausse des autres minima sociaux"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Organiser, avec les partenaires sociaux, la réintégration des malades de longue durée.",
+      "p": "47",
+      "constat": "Trajet « retour au travail » auprès des mutualités au 1er janvier 2022.",
+      "mesure": "Retour au travail des malades de longue durée"
+     },
+     {
+      "statut": "partiel",
+      "eng": "Donner à chaque équivalent temps plein un droit à cinq jours de formation par an.",
+      "p": "47",
+      "constat": "Loi du 3 octobre 2022 : dans les entreprises d’au moins 20 travailleurs, « au moins 4 jours en 2023 » puis « 5 jours par an en 2024 », avec calcul possible en moyenne sur cinq ans et des dérogations par convention collective.",
+      "src": [
+       [
+        "Chambre, dossier DOC 55 2810",
+        "https://www.dekamer.be/FLWB/html/55/F/55K2810.html"
+       ],
+       [
+        "Chambre, projet de loi (DOC 55 2810/001)",
+        "https://www.dekamer.be/FLWB/pdf/55/2810/55K2810001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Faire contribuer davantage ceux qui ont la plus grande capacité contributive.",
+      "p": "62",
+      "constat": "Taxe annuelle sur les comptes-titres de plus d’un million d’euros (loi de février 2021).",
+      "mesure": "Taxe annuelle sur les comptes-titres"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Mettre fin à la régularisation fiscale au 31 décembre 2023.",
+      "p": "62",
+      "constat": "Loi du 16 mars 2021 : « plus aucune déclaration-régularisation ne pourra être introduite après le 31 décembre 2023 ».",
+      "src": [
+       [
+        "Chambre, dossier DOC 55 1736",
+        "https://www.dekamer.be/FLWB/html/55/F/55K1736.html"
+       ]
+      ]
+     },
+     {
+      "statut": "abandon",
+      "eng": "Préparer et mettre en œuvre une large réforme fiscale allégeant le travail, sans hausse de la charge fiscale globale.",
+      "p": "15, 57",
+      "constat": "Aucun projet de loi déposé. Le 20 juillet 2023, le Premier ministre déclare à la Chambre : « Il va de soi que j’aurais préféré me présenter devant cette Assemblée avec un accord fiscal en main. »",
+      "src": [
+       [
+        "Chambre, compte rendu du 20 juillet 2023 (CRIV 55 PLEN 257)",
+        "https://www.dekamer.be/doc/PCRI/pdf/55/ip257.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "non",
+      "eng": "Instaurer une taxe sur les services numériques en 2023, faute d’accord à l’OCDE ou dans l’Union.",
+      "p": "62",
+      "constat": "Aucun projet du gouvernement trouvé ; seule une proposition de loi de l’opposition, devenue caduque en 2024.",
+      "src": [
+       [
+        "Chambre, dossier DOC 55 0096",
+        "https://www.dekamer.be/FLWB/html/55/F/55K0096.html"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Rendre neutres en carbone tous les nouveaux véhicules de société d’ici 2026.",
+      "p": "69",
+      "constat": "Loi du 25 novembre 2021 : « Tous les nouveaux véhicules devront à partir de 2026 rouler sans émission carbone ». C’est une condition de l’avantage fiscal, pas une interdiction.",
+      "src": [
+       [
+        "Chambre, dossier DOC 55 2170",
+        "https://www.dekamer.be/FLWB/html/55/F/55K2170.html"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Élargir le tarif social de l’énergie à tous les bénéficiaires de l’intervention majorée.",
+      "p": "70",
+      "constat": "En vigueur au 1er février 2021, puis prolongé.",
+      "mesure": "Tarif social de l’énergie élargi"
+     },
+     {
+      "statut": "partiel",
+      "eng": "Respecter le calendrier légal de sortie du nucléaire, avec possibilité de prolonger une capacité « pouvant aller jusqu’à 2 GW » en cas de problème d’approvisionnement.",
+      "p": "66",
+      "constat": "Doel 4 et Tihange 3 sont prolongés de dix ans (loi de 2024), décision prise en mars 2022 au nom de la sécurité d’approvisionnement. L’accord permettait cet ajustement.",
+      "mesure": "Prolongation de Doel 4 et Tihange 3"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Confier à la SNCB, pour dix ans, la mission de service public du transport de voyageurs.",
+      "p": "74",
+      "constat": "Arrêté royal du 26 décembre 2022 approuvant les contrats de la SNCB et d’Infrabel pour 2023-2032.",
+      "src": [
+       [
+        "Conseil des ministres (avenants aux contrats de service public)",
+        "https://news.belgium.be/fr/node/43570/pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "non",
+      "eng": "Recruter au moins 1 600 policiers par an.",
+      "p": "82",
+      "constat": "Chiffres annuels de recrutement non trouvés. Pour 2023, la police fédérale indique 1 619 candidats ayant réussi la sélection et 1 043 aspirants entrés en formation : réussir la sélection n’est pas être recruté.",
+      "src": [
+       [
+        "Police fédérale, 15 février 2024",
+        "https://www.police.be/5998/fr/actualites/la-police-federale-na-jamais-investi-autant-de-personnel-et-de-moyens-dans-la-lutte"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Ouvrir l’article 195 de la Constitution à révision.",
+      "p": "88",
+      "constat": "Inclus dans la déclaration de révision de la Constitution de mai 2024. La révision elle-même revient à la législature suivante.",
+      "src": [
+       [
+        "Chambre, dossier DOC 55 4018",
+        "https://www.dekamer.be/FLWB/html/55/F/55K4018.html"
+       ]
+      ]
+     },
+     {
+      "statut": "non",
+      "eng": "Étendre le registre des lobbyistes de la Chambre.",
+      "p": "91",
+      "constat": "Aucun texte adopté ; deux propositions de loi de l’opposition sont devenues caduques en 2024.",
+      "src": [
+       [
+        "Chambre, dossier DOC 55 2394",
+        "https://www.dekamer.be/FLWB/html/55/F/55K2394.html"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Abaisser à 16 ans l’âge du vote aux élections européennes.",
+      "p": "92",
+      "constat": "Loi du 1er juin 2022, avec inscription volontaire des jeunes de 16 et 17 ans. La Cour constitutionnelle l’annule en partie en 2023 (arrêt n° 116/2023).",
+      "src": [
+       [
+        "Chambre, dossier DOC 55 2373",
+        "https://www.dekamer.be/FLWB/html/55/F/55K2373.html"
+       ],
+       [
+        "Cour constitutionnelle, arrêt n° 116/2023 (communiqué)",
+        "https://www.const-court.be/public/f/2023/2023-116f-info.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Porter le congé de naissance de 10 à 20 jours.",
+      "p": "94",
+      "constat": "15 jours en 2021, 20 jours en 2023.",
+      "mesure": "Congé de naissance allongé"
+     },
+     {
+      "statut": "non",
+      "eng": "Obtenir en principe une décision d’asile dans les six mois.",
+      "p": "101",
+      "constat": "Pas de nouvelle loi. Selon le CGRA, ce délai légal « n’est qu’indicatif » ; fin 2023, l’arriéré réel atteint 20 025 dossiers.",
+      "src": [
+       [
+        "CGRA, délais de décision",
+        "https://www.cgra.be/fr/asile/les-delais-de-decision"
+       ],
+       [
+        "CGRA, rapport annuel 2023",
+        "https://www.cgra.be/sites/default/files/jaaverslagen/rapport_annuel_cgra_2023.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "non",
+      "eng": "Ne plus détenir de mineurs en centre fermé.",
+      "p": "104",
+      "constat": "Aucune loi adoptée ; les propositions de loi de l’opposition sont devenues caduques en 2024.",
+      "src": [
+       [
+        "Chambre, dossier DOC 55 2880",
+        "https://www.dekamer.be/FLWB/html/55/F/55K2880.html"
+       ]
+      ]
+     }
+    ],
+    "hors": [
+     [
+      "Aides énergie de 2022",
+      "TVA à 6 % sur l’électricité et le gaz, chèques et forfaits pour les ménages.",
+      "Aides énergie de 2022"
+     ],
+     [
+      "Contribution sur les « surprofits » de l’énergie",
+      "recettes des producteurs d’électricité plafonnées de 2022 à 2023.",
+      "Contributions sur les « surprofits » de l’énergie"
+     ],
+     [
+      "TVA à 6 % permanente sur l’énergie (2023)",
+      "compensée par une accise variable dite « cliquet ».",
+      "TVA à 6 % permanente et « cliquet » sur l’énergie"
+     ]
+    ]
+   }
   },
   {
    "id": "de-wever",
