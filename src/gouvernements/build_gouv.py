@@ -76,6 +76,7 @@ def card(g, P, i, n, today):
     # composition
     h.append('<section class="gv-sec"><h3>Composition</h3>' + chips(g, P) + seats(g) + f'<p class="gv-note">{H.escape(g["sieges_note"])}' +
              (' Source : ' + ext(*g['sieges_src']) if g.get('sieges_src') else '') + '</p>' +
+             (f'<p class="gv-note">{ext("Composition détaillée des ministres (CRISP)", g["compo_url"])}</p>' if g.get('compo_url') else '') +
              (f'<p class="gv-note">Élections du {ftxt(g["election"])} · {form} jours entre le scrutin et la prestation de serment.</p>' if 20 < form < 600 else f'<p class="gv-note">Législature issue des élections du {ftxt(g["election"])}.</p>') +
              (f'<p class="gv-note">{H.escape(g["statut_note"])}</p>' if g.get('statut_note') else '') + '</section>')
     # accord
@@ -86,6 +87,8 @@ def card(g, P, i, n, today):
         t += f'<p class="gv-doc">{ext("Lire le texte officiel · " + ac["doc"], ac["url"])}</p>'
     if ac.get('url2'):
         t += f'<p class="gv-doc">{ext("Texte complet de l’accord (hébergé par la Chambre)", ac["url2"])}</p>'
+    for lab, u in ac.get('liens', []):
+        t += f'<p class="gv-doc">{ext(lab, u)}</p>'
     if ac['resume']:
         t += f'<p class="gv-k">{H.escape(ac.get("k", "Ce que la coalition s’engage à faire"))}</p><ul class="gv-res">' + ''.join(f'<li>{x}</li>' for x in ac['resume']) + '</ul>'
         if not ac.get('k'):

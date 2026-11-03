@@ -210,7 +210,13 @@
       ]
      }
     ],
-    "lecture": "Résumé établi sur le texte intégral (49 pages) : déclaration du Premier ministre (p. 1-10), puis accord de gouvernement en quatre lignes de force et douze chapitres. Les montants y sont en francs belges ; le titre est imprimé « XXe siècle » en page 10, par coquille."
+    "lecture": "Résumé établi sur le texte intégral (49 pages) : déclaration du Premier ministre (p. 1-10), puis accord de gouvernement en quatre lignes de force et douze chapitres. Les montants y sont en francs belges ; le titre est imprimé « XXe siècle » en page 10, par coquille.",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Verhostadt_I_14-07-99.pdf"
+     ]
+    ]
    },
    "statut_note": "Les ministres Ecolo quittent le gouvernement le 5 mai 2003, quelques jours avant les élections.",
    "fin_txt": "Fin de législature : élections du 18 mai 2003, puis affaires courantes jusqu’au gouvernement suivant.",
@@ -341,16 +347,24 @@
      "date_txt": "Janvier 2003",
      "d": "eco",
      "titre": "Sortie progressive du nucléaire",
-     "texte": "Désactivation des réacteurs après 40 ans d’exploitation et interdiction de construire de nouvelles centrales nucléaires.",
+     "texte": "Aucune nouvelle centrale nucléaire ne peut être créée (article 3) ; les réacteurs existants sont désactivés « quarante ans après la date de leur mise en service industrielle » (article 4). C’est la règle d’origine : des lois ultérieures l’ont modifiée.",
      "src": [
       [
        "Chambre, dossier DOC 50 1910",
        "https://www.lachambre.be/FLWB/html/50/F/50K1910.html"
+      ],
+      [
+       "Chambre, texte adopté (DOC 50 1910/005)",
+       "https://www.dekamer.be/FLWB/Pdf/50/1910/50K1910005.pdf"
+      ],
+      [
+       "Texte publié (base FAOLEX de la FAO)",
+       "https://faolex.fao.org/docs/pdf/bel147415.pdf"
       ]
      ],
      "v": "officiel",
-     "ref": "Loi du 31 janvier 2003 ; Moniteur belge du 28 février 2003",
-     "verif": "La règle des 40 ans et l’interdiction de nouvelles centrales sont à confirmer à la lecture des articles de la loi."
+     "ref": "Loi du 31 janvier 2003 ; Moniteur belge du 28 février 2003 ; numac 2003011096",
+     "verif": "Numac transmis, pas encore relu sur le Moniteur."
     },
     {
      "date": "2003-05-15",
@@ -410,7 +424,8 @@
      ]
     ],
     "note": "Série d’emploi d’Eurostat rompue en 2001 : la comparaison 1999-2003 est approximative. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_99-03.pdf"
   },
   {
    "id": "verhofstadt-2",
@@ -519,7 +534,13 @@
       ]
      }
     ],
-    "lecture": "Résumé établi sur le texte intégral de la déclaration (86 pages). Les montants y sont exprimés en euros."
+    "lecture": "Résumé établi sur le texte intégral de la déclaration (86 pages). Les montants y sont exprimés en euros.",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Verhofstadt_14-07-03.pdf"
+     ]
+    ]
    },
    "fin_txt": "Défaite de la coalition aux élections du 10 juin 2007, puis affaires courantes jusqu’au gouvernement intérimaire.",
    "mesures": [
@@ -655,7 +676,8 @@
      ]
     ],
     "note": "Série d’emploi d’Eurostat rompue en 2005. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_03-07.pdf"
   },
   {
    "id": "verhofstadt-3",
@@ -688,12 +710,19 @@
      "<b>Autres points</b> : objectifs de Kyoto pour 2008-2012 ; plan d’action contre la surpopulation carcérale ; ratification du traité de Lisbonne ; réforme de l’État préparée par le groupe Octopus."
     ],
     "chapitres": [],
-    "lecture": "Résumé établi sur le texte intégral de la déclaration du 21 décembre 2007 (9 pages)."
+    "lecture": "Résumé établi sur le texte intégral de la déclaration du 21 décembre 2007 (9 pages).",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Verhofstadt_21-12-07.pdf"
+     ]
+    ]
    },
    "statut_note": "Gouvernement intérimaire de plein exercice, prévu dès le départ pour passer la main à Yves Leterme.",
    "fin_txt": "Fin prévue de l’intérim : remplacé par le gouvernement Leterme I.",
    "mesures": [],
-   "complet": false
+   "complet": false,
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_07-08.pdf"
   },
   {
    "id": "leterme-1",
@@ -778,7 +807,13 @@
       ]
      }
     ],
-    "lecture": "Résumé établi sur le texte intégral de la déclaration et de l’accord (55 pages)."
+    "lecture": "Résumé établi sur le texte intégral de la déclaration et de l’accord (55 pages).",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Leterme_20-03-08.pdf"
+     ]
+    ]
    },
    "statut_note": "Une première démission, présentée en juillet 2008, est refusée par le Roi.",
    "fin_txt": "Démission présentée le 19 décembre 2008 dans le dossier Fortis, acceptée le 22 décembre.",
@@ -832,11 +867,15 @@
       [
        "Conseil des ministres du 23 octobre 2008",
        "https://news.belgium.be/fr/node/9137/pdf"
+      ],
+      [
+       "Conseil des ministres du 14 novembre 2008",
+       "https://news.belgium.be/fr/node/10726/pdf"
       ]
      ],
      "v": "officiel",
-     "ref": "Loi du 15 octobre 2008 ; Moniteur belge du 17 octobre 2008",
-     "verif": "Arrêté royal portant la garantie à 100 000 euros : date et Moniteur à confirmer."
+     "ref": "Loi du 15 octobre 2008 ; Moniteur belge du 17 octobre 2008. Arrêté royal du 14 novembre 2008 ; Moniteur belge du 17 novembre 2008 ; numac 2008003450",
+     "verif": "Date de publication et numac de l’arrêté royal transmis, pas encore relus sur le Moniteur."
     },
     {
      "date": "2008-12-18",
@@ -865,7 +904,8 @@
      "date": "Septembre-octobre 2008",
      "texte": "Crise financière mondiale : l’État intervient dans Fortis, Dexia, KBC et Ethias."
     }
-   ]
+   ],
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Leterme_08-08.pdf"
   },
   {
    "id": "van-rompuy",
@@ -900,7 +940,13 @@
     ],
     "note": "",
     "k": "Ce que le gouvernement annonce",
-    "lecture": "Résumé établi sur le texte intégral de la déclaration (4 pages). Elle ne contient pas de nouveaux engagements chiffrés."
+    "lecture": "Résumé établi sur le texte intégral de la déclaration (4 pages). Elle ne contient pas de nouveaux engagements chiffrés.",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Van_Rompuy_31-12-08.pdf"
+     ]
+    ]
    },
    "fin_txt": "Herman Van Rompuy est désigné premier président permanent du Conseil européen ; Yves Leterme lui succède.",
    "mesures": [
@@ -968,7 +1014,8 @@
      ]
     ],
     "note": "Mandat de onze mois en pleine crise financière. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Van_Rompuy_08-09.pdf"
   },
   {
    "id": "leterme-2",
@@ -995,12 +1042,23 @@
    "sieges_note": "Même coalition que Van Rompuy.",
    "election": "2007-06-10",
    "accord": {
-    "titre": "Pas de nouvel accord de coalition publié en ligne",
-    "date": "",
+    "titre": "Pas de nouvel accord : déclaration du gouvernement",
+    "date": "25 novembre 2009",
     "doc": "",
     "url": "",
-    "resume": [],
-    "note": "Aucun document de déclaration n’a été trouvé pour la reprise de fonctions du 25 novembre 2009 (ni document parlementaire, ni compte rendu identifié)."
+    "resume": [
+     "Continuité avec le gouvernement précédent.",
+     "Lutte contre la crise : protection de l’emploi et du pouvoir d’achat, soutien à la compétitivité, assainissement des finances publiques.",
+     "Réforme du contrôle financier et modernisation des institutions."
+    ],
+    "note": "Résumé transmis d’après le CRISP : le texte de la déclaration n’a pas encore été relu ici.",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Leterme_II_25-11-09.pdf"
+     ]
+    ],
+    "k": "Ce que le gouvernement annonce"
    },
    "statut_note": "En affaires courantes pendant plus d’un an et demi.",
    "fin_txt": "L’Open VLD quitte la coalition sur le dossier Bruxelles-Hal-Vilvorde (avril 2010) ; élections anticipées le 13 juin 2010, puis 541 jours sans nouveau gouvernement.",
@@ -1083,7 +1141,8 @@
      ]
     ],
     "note": "Dont un an et demi d’affaires courantes. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Leterme_09-10.pdf"
   },
   {
    "id": "di-rupo",
@@ -1219,7 +1278,13 @@
       ]
      }
     ],
-    "lecture": "Résumé établi sur le texte intégral de l’accord (177 pages), hébergé par la Chambre ; la déclaration gouvernementale du 7 décembre 2011 figure au DOC 53 0020/001."
+    "lecture": "Résumé établi sur le texte intégral de l’accord (177 pages), hébergé par la Chambre ; la déclaration gouvernementale du 7 décembre 2011 figure au DOC 53 0020/001.",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Di_Rupo_07-12-2011.pdf"
+     ]
+    ]
    },
    "fin_txt": "Fin de législature : élections du 25 mai 2014, puis affaires courantes.",
    "mesures": [
@@ -1352,8 +1417,8 @@
      "texte": "Le précompte mobilier passe de 21 % à 25 % et redevient libératoire ; la cotisation de 4 % est supprimée ; taxe de 0,412 % sur les plus-values d’actions des grandes sociétés.",
      "src": [],
      "v": "a-verifier",
-     "ref": "Loi-programme du 27 décembre 2012",
-     "verif": "Sources secondaires seulement ; date du Moniteur et dossier de la Chambre non trouvés."
+     "ref": "Loi-programme du 27 décembre 2012 ; Moniteur belge du 31 décembre 2012 ; numac 2012021152",
+     "verif": "Références de publication transmises, pas encore relues ; contenu relevé dans des sources secondaires, dossier de la Chambre non trouvé."
     },
     {
      "date": "2013-05-02",
@@ -1505,7 +1570,8 @@
      ]
     ],
     "note": "Chiffres actuels d’Eurostat : l’accord citait 67,8 % d’emploi pour 2011, une donnée de l’époque révisée depuis. Ces chiffres décrivent la situation sans mesurer l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Di_Rupo_11-14.pdf"
   },
   {
    "id": "michel-1",
@@ -1634,7 +1700,13 @@
       ]
      }
     ],
-    "lecture": "Résumé établi sur le texte intégral de la colonne française du document (pages 3 à 244 du document de la Chambre)."
+    "lecture": "Résumé établi sur le texte intégral de la colonne française du document (pages 3 à 244 du document de la Chambre).",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Michel_14-10-2014.pdf"
+     ]
+    ]
    },
    "fin_txt": "La N-VA quitte le gouvernement en désaccord sur le pacte mondial des Nations unies sur les migrations (dit de Marrakech).",
    "mesures": [
@@ -1863,7 +1935,8 @@
      ]
     ],
     "note": "Ces chiffres dépendent aussi de la conjoncture européenne et des autres niveaux de pouvoir. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Michel-I-14-18.pdf"
   },
   {
    "id": "michel-2",
@@ -1897,7 +1970,13 @@
      "Le 18 décembre 2018, il propose à l’opposition une « main tendue » : utilisation à 100 % de l’enveloppe bien-être par les partenaires sociaux, TVA sur l’énergie revue pour alléger les factures, réflexion sur la criminalité et la migration, réponses aux revendications de la marche pour le climat du 2 décembre. L’opposition ne suit pas."
     ],
     "k": "Priorités annoncées à la presse",
-    "lecture": "D’après la fiche de contextualisation du CRISP : malgré les demandes de l’opposition, le gouvernement n’a ni présenté de déclaration au Parlement ni demandé la confiance."
+    "lecture": "D’après la fiche de contextualisation du CRISP (lien ci-dessus) : malgré les demandes de l’opposition, le gouvernement n’a ni présenté de déclaration au Parlement ni demandé la confiance.",
+    "liens": [
+     [
+      "Fiche de contextualisation du CRISP",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Michel_II_18-12-18.pdf"
+     ]
+    ]
    },
    "fin_txt": "Démission présentée le 18 décembre 2018, acceptée le 21 décembre ; affaires courantes, prolongées après les élections du 26 mai 2019, jusqu’au départ de Charles Michel pour la présidence du Conseil européen.",
    "mesures": [],
@@ -1931,24 +2010,45 @@
     {
      "date": "27 septembre 2018",
      "texte": "À l’ONU, Charles Michel annonce que la Belgique approuvera le Pacte mondial pour des migrations sûres, ordonnées et régulières (Pacte de Marrakech). La N-VA s’y oppose à partir de fin octobre.",
-     "srcnote": "CRISP, fiche de contextualisation du gouvernement Michel II"
+     "src": [
+      [
+       "CRISP, contextualisation Michel II",
+       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Michel_II_18-12-18.pdf"
+      ]
+     ]
     },
     {
      "date": "9 décembre 2018",
      "texte": "Les trois ministres et deux secrétaires d’État N-VA démissionnent. MR, CD&V et Open VLD gouvernent seuls avec 52 sièges sur 150. Le lendemain, à Marrakech, Charles Michel confirme l’appui de la Belgique au pacte.",
-     "srcnote": "CRISP, fiche de contextualisation du gouvernement Michel II"
+     "src": [
+      [
+       "CRISP, contextualisation Michel II",
+       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Michel_II_18-12-18.pdf"
+      ]
+     ]
     },
     {
      "date": "18-21 décembre 2018",
      "texte": "Faute d’accord avec l’opposition, Charles Michel présente la démission du gouvernement le 18 décembre ; le Roi l’accepte le 21 et le charge des affaires courantes jusqu’aux élections du 26 mai 2019.",
-     "srcnote": "CRISP, fiche de contextualisation du gouvernement Wilmès"
+     "src": [
+      [
+       "CRISP, contextualisation Wilmès",
+       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
+      ]
+     ]
     },
     {
      "date": "2 juillet 2019",
      "texte": "Le Conseil européen choisit Charles Michel comme président à partir du 1er décembre 2019.",
-     "srcnote": "CRISP, fiche de contextualisation du gouvernement Wilmès"
+     "src": [
+      [
+       "CRISP, contextualisation Wilmès",
+       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
+      ]
+     ]
     }
-   ]
+   ],
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Michel-II-18-18.pdf"
   },
   {
    "id": "wilmes-1",
@@ -1978,7 +2078,13 @@
     "doc": "",
     "url": "",
     "resume": [],
-    "lecture": "D’après la fiche de contextualisation du CRISP : gouvernement chargé des affaires courantes, sans déclaration ni vote de confiance."
+    "lecture": "D’après la fiche de contextualisation du CRISP : gouvernement chargé des affaires courantes, sans déclaration ni vote de confiance.",
+    "liens": [
+     [
+      "Fiche de contextualisation du CRISP",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
+     ]
+    ]
    },
    "statut_note": "Suite du gouvernement démissionnaire, sans vote de confiance : certains historiens ne le comptent pas comme un gouvernement distinct.",
    "fin_txt": "Remplacé, au début de la crise du Covid-19, par un gouvernement de plein exercice (Wilmès II).",
@@ -2005,9 +2111,15 @@
     {
      "date": "27 octobre 2019",
      "texte": "Sophie Wilmès, ministre du Budget, devient la première femme Première ministre de Belgique. Elle confirme la démission du gouvernement, est chargée « de la poursuite de l’expédition des affaires courantes » et ne demande pas la confiance de la Chambre.",
-     "srcnote": "CRISP, fiche de contextualisation du gouvernement Wilmès"
+     "src": [
+      [
+       "CRISP, contextualisation Wilmès",
+       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
+      ]
+     ]
     }
-   ]
+   ],
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Wilmes-I-19-19.pdf"
   },
   {
    "id": "wilmes-2",
@@ -2041,7 +2153,13 @@
     ],
     "note": "",
     "k": "Ce que le gouvernement annonce",
-    "lecture": "Résumé établi sur le compte rendu analytique de la séance du 17 mars 2020 (CRABV 55 PLEN 029). Les lois du 27 mars 2020 accordent finalement les pouvoirs spéciaux pour trois mois, prorogeables une fois."
+    "lecture": "Résumé établi sur le compte rendu analytique de la séance du 17 mars 2020 (CRABV 55 PLEN 029). Les lois du 27 mars 2020 accordent finalement les pouvoirs spéciaux pour trois mois, prorogeables une fois.",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Wilmes_II_17-03-20.pdf"
+     ]
+    ]
    },
    "statut_note": "Pouvoirs spéciaux accordés par les lois du 27 mars 2020 ; pour le reste, le gouvernement agit comme en affaires courantes.",
    "fin_txt": "La confiance, limitée dans le temps, prend fin avec la formation du gouvernement De Croo.",
@@ -2094,15 +2212,20 @@
      "date_txt": "Mars-avril 2020",
      "d": "social",
      "titre": "Chômage temporaire « corona »",
-     "texte": "Chômage temporaire pour force majeure ouvert largement : plus d’un million de travailleurs en avril 2020, 504 657 en moyenne mensuelle sur l’année ; allocation portée de 65 % à 70 % du salaire plafonné, plus un supplément de 5,63 € par jour ; 4,042 milliards d’euros de dépenses supplémentaires.",
+     "texte": "Chômage temporaire pour force majeure ouvert largement, avec des procédures assouplies : plus d’un million de travailleurs en avril 2020, 504 657 en moyenne mensuelle sur l’année ; allocation portée de 65 % à 70 % du salaire plafonné, plus un supplément de 5,63 € par jour ; 4,042 milliards d’euros de dépenses supplémentaires.",
      "src": [
       [
        "ONEM, rapport annuel 2020",
        "https://www.onem.be/espace-presse/rapport-annuel-onem-2020"
+      ],
+      [
+       "Chambre, DOC 55 1303/001 (cite l’arrêté)",
+       "https://www.dekamer.be/FLWB/PDF/55/1303/55K1303001.pdf"
       ]
      ],
-     "v": "a-verifier",
-     "verif": "Les chiffres sont officiels, mais la base légale (arrêtés de pouvoirs spéciaux) n’est pas encore identifiée."
+     "v": "officiel",
+     "ref": "Arrêté royal du 30 mars 2020 visant à adapter les procédures dans le cadre du chômage temporaire dû au virus COVID-19 ; Moniteur belge du 2 avril 2020 ; numac 2020201678. Il s’ajoute à la réglementation générale du chômage : ce n’est pas la seule base des mesures « corona ».",
+     "verif": "Date de publication et numac transmis, pas encore relus sur le Moniteur."
     }
    ],
    "complet": false,
@@ -2134,7 +2257,8 @@
      ]
     ],
     "note": "2020 est l’année du choc du Covid-19. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Wilmes-II-20-20.pdf"
   },
   {
    "id": "de-croo",
@@ -2239,7 +2363,13 @@
       ]
      }
     ],
-    "lecture": "Résumé établi sur le texte intégral de l’accord (pages 10 à 107 du document de la Chambre)."
+    "lecture": "Résumé établi sur le texte intégral de l’accord (pages 10 à 107 du document de la Chambre).",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_De_Croo_01-10-20.pdf"
+     ]
+    ]
    },
    "contexte": [
     {
@@ -2781,7 +2911,8 @@
      ]
     ],
     "note": "2020 est l’année du choc du Covid-19. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement : ils dépendent aussi de la conjoncture, des crises et des décisions des autres niveaux de pouvoir. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/De_Croo-20-24.pdf"
   },
   {
    "id": "de-wever",
@@ -2920,9 +3051,26 @@
       ]
      }
     ],
-    "lecture": "Résumé établi sur le texte intégral de la version française de l’accord (pages 214 à 421 du document de la Chambre). Le barème des plus-values suit le texte néerlandais : la version française omet une tranche."
+    "lecture": "Résumé établi sur le texte intégral de la version française de l’accord (pages 214 à 421 du document de la Chambre). Le barème des plus-values suit le texte néerlandais : la version française omet une tranche.",
+    "liens": [
+     [
+      "Déclaration lue à la Chambre (archives du CRISP)",
+      "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_De_Wever_04-02-25.pdf"
+     ]
+    ]
    },
    "contexte": [
+    {
+     "date": "6 novembre 2025",
+     "texte": "Faute d’accord sur le budget, le Premier ministre est reçu par le Roi ; au lieu de démissionner, il reporte l’échéance d’un accord budgétaire à Noël.",
+     "presse": true,
+     "src": [
+      [
+       "Belga News Agency",
+       "https://www.belganewsagency.eu/de-wever-moves-budget-deadline-to-christmas-after-meeting-with-king-philippe"
+      ]
+     ]
+    },
     {
      "date": "24-28 novembre 2025",
      "texte": "Accord sur un budget pluriannuel : effort structurel de 9,2 milliards d’euros d’ici 2029, selon le ministre du Budget ; nouveau vote de confiance le 28 novembre. L’année 2026 commence sous le régime des douzièmes provisoires.",
@@ -3351,7 +3499,8 @@
      ]
     ],
     "note": "Dernière année avant le mandat et première année complète. Une seule année ne permet pas de juger une législature ; ces chiffres dépendent aussi de la conjoncture et des autres niveaux de pouvoir. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+   },
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/De_Wever-25-.pdf"
   }
  ]
 }
