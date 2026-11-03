@@ -887,12 +887,20 @@
    "sieges_note": "Même coalition que Leterme I.",
    "election": "2007-06-10",
    "accord": {
-    "titre": "Pas de nouvel accord de coalition : déclaration du gouvernement",
+    "titre": "Pas de nouvel accord : déclaration « Œuvrer à la confiance »",
     "date": "31 décembre 2008 ; débat le 2 janvier 2009",
     "doc": "Chambre, compte rendu intégral CRIV 52 PLEN 072",
     "url": "https://www.lachambre.be/doc/PCRI/pdf/52/ip072.pdf",
-    "resume": [],
-    "note": "La déclaration n’a pas été déposée comme document parlementaire : elle figure dans le compte rendu de la séance. Son contenu reste à résumer."
+    "resume": [
+     "<b>Reprise de l’accord précédent</b> : le gouvernement « mettra en œuvre, dans son intégralité, l’accord de gouvernement du gouvernement précédent ».",
+     "<b>Crise et emploi</b> : la crise financière est « la plus grave depuis les années trente » ; l’emploi est « l’objectif premier du gouvernement » ; exécuter au plus vite le plan de relance du gouvernement Leterme et l’accord interprofessionnel ; soutien aux PME.",
+     "<b>Sécurité sociale</b> : la renforcer comme « rempart » contre la pauvreté et l’endettement ; poursuivre la hausse des pensions, avec la Conférence nationale des pensions.",
+     "<b>Budget et climat</b> : préparer un plan pour résorber le déficit structurel ; s’inscrire dans le plan climat européen.",
+     "<b>Institutions</b> : propositions du groupe Lamfalussy sur la structure financière ; commission d’enquête parlementaire sur la séparation des pouvoirs ; relance du dialogue communautaire et groupe de travail sur Bruxelles-Hal-Vilvorde, avec des conclusions dès l’été 2009."
+    ],
+    "note": "",
+    "k": "Ce que le gouvernement annonce",
+    "lecture": "Résumé établi sur le texte intégral de la déclaration (4 pages). Elle ne contient pas de nouveaux engagements chiffrés."
    },
    "fin_txt": "Herman Van Rompuy est désigné premier président permanent du Conseil européen ; Yves Leterme lui succède.",
    "mesures": [
@@ -1880,13 +1888,18 @@
    "sieges_note": "Gouvernement minoritaire : 52 sièges sur 150.",
    "election": "2014-05-25",
    "accord": {
-    "titre": "Pas de nouvel accord",
+    "titre": "Pas de déclaration gouvernementale ni de vote de confiance",
     "date": "",
     "doc": "",
     "url": "",
-    "resume": []
+    "resume": [
+     "Le Premier ministre présente sa coalition remaniée comme une « Orange bleue », avec ces « défis prioritaires » : « Pouvoir d’achat, développement économique et social, soutien aux investissements… ; sécurité & justice ; focus sur politique climatique ».",
+     "Le 18 décembre 2018, il propose à l’opposition une « main tendue » : utilisation à 100 % de l’enveloppe bien-être par les partenaires sociaux, TVA sur l’énergie revue pour alléger les factures, réflexion sur la criminalité et la migration, réponses aux revendications de la marche pour le climat du 2 décembre. L’opposition ne suit pas."
+    ],
+    "k": "Priorités annoncées à la presse",
+    "lecture": "D’après la fiche de contextualisation du CRISP : malgré les demandes de l’opposition, le gouvernement n’a ni présenté de déclaration au Parlement ni demandé la confiance."
    },
-   "fin_txt": "Démission présentée le 18 décembre 2018 sous la menace d’une motion de méfiance, acceptée le 21 décembre ; affaires courantes jusqu’au départ de Charles Michel pour la présidence du Conseil européen.",
+   "fin_txt": "Démission présentée le 18 décembre 2018, acceptée le 21 décembre ; affaires courantes, prolongées après les élections du 26 mai 2019, jusqu’au départ de Charles Michel pour la présidence du Conseil européen.",
    "mesures": [],
    "complet": false,
    "bilan": {
@@ -1912,8 +1925,30 @@
       "__FINANCES__#f-deficit"
      ]
     ],
-    "note": "Mandat de dix mois, presque entièrement en affaires courantes. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
-   }
+    "note": "Mandat de onze mois, presque entièrement en affaires courantes. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
+   },
+   "contexte": [
+    {
+     "date": "27 septembre 2018",
+     "texte": "À l’ONU, Charles Michel annonce que la Belgique approuvera le Pacte mondial pour des migrations sûres, ordonnées et régulières (Pacte de Marrakech). La N-VA s’y oppose à partir de fin octobre.",
+     "srcnote": "CRISP, fiche de contextualisation du gouvernement Michel II"
+    },
+    {
+     "date": "9 décembre 2018",
+     "texte": "Les trois ministres et deux secrétaires d’État N-VA démissionnent. MR, CD&V et Open VLD gouvernent seuls avec 52 sièges sur 150. Le lendemain, à Marrakech, Charles Michel confirme l’appui de la Belgique au pacte.",
+     "srcnote": "CRISP, fiche de contextualisation du gouvernement Michel II"
+    },
+    {
+     "date": "18-21 décembre 2018",
+     "texte": "Faute d’accord avec l’opposition, Charles Michel présente la démission du gouvernement le 18 décembre ; le Roi l’accepte le 21 et le charge des affaires courantes jusqu’aux élections du 26 mai 2019.",
+     "srcnote": "CRISP, fiche de contextualisation du gouvernement Wilmès"
+    },
+    {
+     "date": "2 juillet 2019",
+     "texte": "Le Conseil européen choisit Charles Michel comme président à partir du 1er décembre 2019.",
+     "srcnote": "CRISP, fiche de contextualisation du gouvernement Wilmès"
+    }
+   ]
   },
   {
    "id": "wilmes-1",
@@ -1942,7 +1977,8 @@
     "date": "",
     "doc": "",
     "url": "",
-    "resume": []
+    "resume": [],
+    "lecture": "D’après la fiche de contextualisation du CRISP : gouvernement chargé des affaires courantes, sans déclaration ni vote de confiance."
    },
    "statut_note": "Suite du gouvernement démissionnaire, sans vote de confiance : certains historiens ne le comptent pas comme un gouvernement distinct.",
    "fin_txt": "Remplacé, au début de la crise du Covid-19, par un gouvernement de plein exercice (Wilmès II).",
@@ -1964,7 +2000,14 @@
      "verif": "Loi des douzièmes pour janvier-mars 2020 (votée le 12 décembre 2019) non encore relevée."
     }
    ],
-   "complet": false
+   "complet": false,
+   "contexte": [
+    {
+     "date": "27 octobre 2019",
+     "texte": "Sophie Wilmès, ministre du Budget, devient la première femme Première ministre de Belgique. Elle confirme la démission du gouvernement, est chargée « de la poursuite de l’expédition des affaires courantes » et ne demande pas la confiance de la Chambre.",
+     "srcnote": "CRISP, fiche de contextualisation du gouvernement Wilmès"
+    }
+   ]
   },
   {
    "id": "wilmes-2",
@@ -1989,10 +2032,16 @@
     "doc": "Chambre, compte rendu intégral CRIV 55 PLEN 029",
     "url": "https://www.lachambre.be/doc/PCRI/pdf/55/ip029.pdf",
     "resume": [
-     "Objectif annoncé : « simple et unique : protéger la santé de notre population ».",
-     "Confiance votée le 19 mars 2020 par 82 voix contre 44, sans abstention, pour un mandat limité à la crise."
+     "<b>Objectif</b> : « simple et unique : protéger la santé de notre population » ; d’abord assurer le personnel et le matériel des hôpitaux, avec le Conseil national de sécurité élargi aux entités fédérées.",
+     "<b>Économie</b> : un groupe de suivi, l’Economic Risk Management Group, mesure l’impact de la pandémie sur les entreprises et les travailleurs ; mesures pour salariés et indépendants.",
+     "<b>Budget</b> : vote des douzièmes provisoires avec une provision d’un milliard d’euros réservée à la lutte contre le coronavirus.",
+     "<b>Pouvoirs spéciaux</b> : demandés pour six mois, avec évaluation après trois mois, en santé publique, affaires sociales (dont le droit du travail), sécurité et économie, sous le contrôle de la Chambre.",
+     "<b>Limites</b> : la confiance sera redemandée dans six mois au plus tard ; hors crise, le gouvernement reste dans le périmètre des affaires courantes ; l’objectif reste un gouvernement avec une majorité.",
+     "Confiance votée le 19 mars 2020 par 82 voix contre 44, sans abstention."
     ],
-    "note": "Seuls l’objectif et le vote ont été relevés ; le reste de la déclaration n’est pas encore résumé."
+    "note": "",
+    "k": "Ce que le gouvernement annonce",
+    "lecture": "Résumé établi sur le compte rendu analytique de la séance du 17 mars 2020 (CRABV 55 PLEN 029). Les lois du 27 mars 2020 accordent finalement les pouvoirs spéciaux pour trois mois, prorogeables une fois."
    },
    "statut_note": "Pouvoirs spéciaux accordés par les lois du 27 mars 2020 ; pour le reste, le gouvernement agit comme en affaires courantes.",
    "fin_txt": "La confiance, limitée dans le temps, prend fin avec la formation du gouvernement De Croo.",

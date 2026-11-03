@@ -217,7 +217,7 @@ g['bilan'] = bilan(2009, 2011, 'Dont un an et demi d’affaires courantes.')
 
 # ---------- Michel II, Wilmès I et II ----------
 g = G['michel-2']
-g['bilan'] = bilan(2018, 2019, 'Mandat de dix mois, presque entièrement en affaires courantes.')
+g['bilan'] = bilan(2018, 2019, 'Mandat de onze mois, presque entièrement en affaires courantes.')
 
 g = G['wilmes-1']
 g['mesures'] = [

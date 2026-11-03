@@ -76,7 +76,7 @@ def card(g, P, i, n, today):
     # composition
     h.append('<section class="gv-sec"><h3>Composition</h3>' + chips(g, P) + seats(g) + f'<p class="gv-note">{H.escape(g["sieges_note"])}' +
              (' Source : ' + ext(*g['sieges_src']) if g.get('sieges_src') else '') + '</p>' +
-             (f'<p class="gv-note">Élections du {ftxt(g["election"])} · {form} jours entre le scrutin et la prestation de serment.</p>' if form > 20 else f'<p class="gv-note">Législature issue des élections du {ftxt(g["election"])}.</p>') +
+             (f'<p class="gv-note">Élections du {ftxt(g["election"])} · {form} jours entre le scrutin et la prestation de serment.</p>' if 20 < form < 600 else f'<p class="gv-note">Législature issue des élections du {ftxt(g["election"])}.</p>') +
              (f'<p class="gv-note">{H.escape(g["statut_note"])}</p>' if g.get('statut_note') else '') + '</section>')
     # accord
     ac = g['accord']
@@ -87,14 +87,17 @@ def card(g, P, i, n, today):
     if ac.get('url2'):
         t += f'<p class="gv-doc">{ext("Texte complet de l’accord (hébergé par la Chambre)", ac["url2"])}</p>'
     if ac['resume']:
-        t += '<p class="gv-k">Ce que la coalition s’engage à faire</p><ul class="gv-res">' + ''.join(f'<li>{x}</li>' for x in ac['resume']) + '</ul>'
-        t += '<p class="gv-note">Engagements tels qu’écrits dans l’accord, avec ses propres chiffres. Ce résumé ne dit pas s’ils ont été tenus : voir les mesures ci-dessous.</p>'
+        t += f'<p class="gv-k">{H.escape(ac.get("k", "Ce que la coalition s’engage à faire"))}</p><ul class="gv-res">' + ''.join(f'<li>{x}</li>' for x in ac['resume']) + '</ul>'
+        if not ac.get('k'):
+            t += '<p class="gv-note">Engagements tels qu’écrits dans l’accord, avec ses propres chiffres. Ce résumé ne dit pas s’ils ont été tenus : voir les mesures ci-dessous.</p>'
         if ac.get('note'):
             t += f'<p class="gv-verif">{H.escape(ac["note"])}</p>'
         if ac.get('chapitres'):
             t += '<details class="gv-chap"><summary>L’accord chapitre par chapitre</summary>' + ''.join(
                 f'<div><h4>{H.escape(c["t"])} <small>p. {c["p"]}</small></h4><ul>' + ''.join(f'<li>{H.escape(x)}</li>' for x in c['pts']) + '</ul></div>' for c in ac['chapitres'])
             t += (f'<p class="gv-note">{H.escape(ac["lecture"])} Les pages renvoient au document de la Chambre.</p>' if ac.get('lecture') else '') + '</details>'
+        elif ac.get('lecture'):
+            t += f'<p class="gv-note">{H.escape(ac["lecture"])}</p>'
     elif ac['url']:
         t += '<p class="gv-todo">Résumé de l’accord : en préparation.</p>'
     h.append(t + '</section>')
@@ -104,6 +107,8 @@ def card(g, P, i, n, today):
         for c in g['contexte']:
             src = (' ' + ' · '.join(ext(*s) for s in c['src'])) if c.get('src') else ''
             tag = ' <b class="pr">Presse</b>' if c.get('presse') else ''
+            if c.get('srcnote'):
+                src += f' <i class="gv-sn">Source : {H.escape(c["srcnote"])}</i>'
             cx += f'<li><span>{H.escape(c["date"])}</span>{H.escape(c["texte"])}{tag}{src}</li>'
         h.append(f'<section class="gv-sec"><h3>Contexte</h3><ul class="gv-ctx">{cx}</ul></section>')
     # mesures
