@@ -1231,7 +1231,7 @@
     "cdH"
    ],
    "sieges": 96,
-   "sieges_note": "CD&V-N-VA 30, MR 23, PS 20, Open VLD 18, cdH 10 aux élections du 10 juin 2007. Le cartel CD&V-N-VA compte 30 élus ; sans les élus N-VA, qui ne participent pas au gouvernement, la coalition compte 96 sièges.",
+   "sieges_note": "CD&V-N-VA 30, MR 23, PS 20, Open VLD 18, cdH 10 aux élections du 10 juin 2007. Le cartel CD&V-N-VA compte 30 élus ; sans les élus N-VA, qui ne participent pas au gouvernement, la coalition compte 96 sièges. Confiance votée le 23 décembre 2007 par 97 voix contre 46, avec 1 abstention.",
    "election": "2007-06-10",
    "accord": {
     "titre": "Pas d’accord de coalition : programme en dix points d’un gouvernement « limité dans le temps »",
@@ -1262,6 +1262,10 @@
     [
      "Chambre, liste des membres (DOC 52 0001/001)",
      "https://www.dekamer.be/FLWB/PDF/52/0001/52K0001001.pdf"
+    ],
+    [
+     "Chambre, compte rendu du 23 décembre 2007 (CRIV 52 PLEN 015)",
+     "https://www.dekamer.be/doc/PCRI/pdf/52/ip015.pdf"
     ]
    ],
    "statut_src": [
@@ -1275,7 +1279,96 @@
      "Déclaration du 20 mars 2008 (DOC 52 0020/002)",
      "https://www.lachambre.be/FLWB/PDF/52/0020/52K0020002.pdf"
     ]
-   ]
+   ],
+   "compare": {
+    "intro": "Gouvernement intérimaire de trois mois, chargé d’un programme en dix points en attendant le gouvernement Leterme I. Plusieurs décisions annoncées sont achevées par son successeur.",
+    "items": [
+     {
+      "statut": "chiffre",
+      "eng": "Résorber le déficit prévu pour 2008, estimé entre 0,4 et 0,7 % du PIB.",
+      "p": "4",
+      "constat": "Solde public de 2008 selon les chiffres actuels d’Eurostat : −1,1 % du PIB, année de la crise financière, gérée par les gouvernements suivants.",
+      "src": [
+       [
+        "Eurostat, déficit public (gov_10dd_edpt1)",
+        "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Relever les allocations les plus basses.",
+      "p": "4",
+      "constat": "Prévu au budget 2008, déposé le 19 mars 2008 : pensions minimum des salariés et des indépendants +2 %, garantie de revenus aux personnes âgées +2 %, allocations des invalides +2 % au 1er juillet 2008 (appliqué sous Leterme I).",
+      "src": [
+       [
+        "Chambre, exposé général du budget 2008 (DOC 52 0992/001)",
+        "https://www.dekamer.be/FLWB/pdf/52/0992/52K0992001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Étendre le fonds mazout.",
+      "p": "4",
+      "constat": "Décidé le 11 janvier 2008, en vigueur le 1er février : « le Fonds pourra intervenir auprès de 315.000 ménages par an ».",
+      "src": [
+       [
+        "Conseil des ministres du 11 janvier 2008",
+        "https://news.belgium.be/fr/node/9366/pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Affecter 340 millions d’euros aux dossiers urgents de santé (malades chroniques, maximum à facturer).",
+      "p": "5",
+      "constat": "Inscrit au budget 2008 : « nouvelles initiatives […] pour un total de 340 millions d’euros en base annuelle », dont 16,05 millions pour les malades chroniques.",
+      "src": [
+       [
+        "Chambre, note de politique générale Santé (DOC 52 0995/002)",
+        "https://www.dekamer.be/FLWB/PDF/52/0995/52K0995002.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "abandon",
+      "eng": "Adopter un plan d’action contre la surpopulation carcérale.",
+      "p": "6",
+      "constat": "Aucune décision pendant les trois mois de l’intérim ; le « Masterplan 2008-2012 » est approuvé le 18 avril 2008 par le gouvernement suivant.",
+      "src": [
+       [
+        "Conseil des ministres du 18 avril 2008",
+        "https://news.belgium.be/fr/node/8728/pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Faire ratifier rapidement le traité de Lisbonne.",
+      "p": "7",
+      "constat": "Projet déposé le 29 février 2008 et voté au Sénat le 6 mars ; la Chambre l’adopte le 10 avril 2008, sous Leterme I.",
+      "src": [
+       [
+        "Sénat, dossier 4-568",
+        "https://senate.be/www/?LANG=fr&LEG=4&MIval=dossier&NR=568"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Préparer une réforme de l’État au sein d’un groupe de travail (« Octopus »).",
+      "p": "8",
+      "constat": "Un premier paquet de propositions est déposé au Sénat le 5 mars 2008 par huit partis ; il devient caduc en 2010.",
+      "src": [
+       [
+        "Chambre, dossier 52S0602",
+        "https://www.dekamer.be/doc/FLWB/html/52/F/52S0602.html"
+       ]
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "leterme-1",
@@ -1486,7 +1579,197 @@
      "Chambre, compte rendu du 31 décembre 2008 (CRIV 52 PLEN 072)",
      "https://www.diekammer.be/doc/PCRI/pdf/52/ip072.pdf"
     ]
-   ]
+   ],
+   "compare": {
+    "intro": "Le gouvernement Leterme I gouverne neuf mois. Sa démission est refusée en juillet 2008 ; à l’automne, la crise financière impose des sauvetages bancaires que l’accord ne prévoyait pas. Plusieurs engagements sont réalisés par les gouvernements suivants.",
+    "items": [
+     {
+      "statut": "chiffre",
+      "eng": "Un budget 2008 en équilibre, puis un excédent structurel dès 2009.",
+      "p": "5, 13-15",
+      "constat": "Solde public selon les chiffres actuels d’Eurostat : −1,1 % du PIB en 2008, −5,4 % en 2009, années de la crise financière.",
+      "src": [
+       [
+        "Eurostat, déficit public (gov_10dd_edpt1)",
+        "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr"
+       ]
+      ],
+      "ctx": "sauvetages bancaires de l’automne 2008 (voir les mesures)."
+     },
+     {
+      "statut": "chiffre",
+      "eng": "Porter l’aide au développement à au moins 0,5 % du RNB en 2008, puis 0,7 % en 2010.",
+      "p": "52",
+      "constat": "Selon les données provisoires de l’OCDE, 0,47 % du RNB en 2008. Pour 2009, le gouvernement estime 0,56 % fin 2009 ; en 2010, l’OCDE relève 0,64 %.",
+      "src": [
+       [
+        "OCDE, données préliminaires 2008 (document déposé au Parlement danois)",
+        "https://ft.dk/samling/20081/almdel/URU/bilag/141/664508.pdf"
+       ],
+       [
+        "Chambre, note de politique générale (DOC 52 2225/021)",
+        "https://www.lachambre.be/FLWB/PDF/52/2225/52K2225021.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Augmenter de 2 % au 1er septembre 2008 les pensions ayant pris cours de 1988 à 2002 ; réduire la cotisation de solidarité ; relever les limites de cumul.",
+      "p": "6, 26",
+      "constat": "« Depuis le 1er septembre 2008, les pensions pour les travailleurs salariés et indépendants sont majorées de 2 % » (pensions ayant pris cours de 1988 à 2003) ; cotisation de solidarité supprimée pour les pensions les plus basses au 1er juillet 2008 ; revenus autorisés relevés de 25 %.",
+      "src": [
+       [
+        "Conseil des ministres du 5 septembre 2008",
+        "https://news.belgium.be/fr/node/8826/pdf"
+       ],
+       [
+        "Conseil des ministres du 23 mai 2008 (cotisation de solidarité)",
+        "https://news.belgium.be/fr/cotisation-de-solidarite"
+       ],
+       [
+        "Conseil des ministres du 23 mai 2008 (activité autorisée)",
+        "https://news.belgium.be/fr/node/11175/pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Relever la quotité exemptée d’impôt et le bonus à l’emploi.",
+      "p": "6",
+      "constat": "Quotité exemptée majorée de 165 € pour les revenus 2008 (loi-programme du 8 juin 2008) ; bonus à l’emploi porté de 143 à 175 € au 1er octobre 2008.",
+      "src": [
+       [
+        "Chambre, rapport de la commission des Finances (DOC 52 1011/017)",
+        "https://www.lachambre.be/FLWB/pdf/52/1011/52K1011017.pdf"
+       ],
+       [
+        "SPF Emploi, 14 juillet 2008",
+        "https://emploi.belgique.be/fr/actualites/bonus-lemploi-moins-175-euros-de-cotisations-personnelles-pour-le-1er-octobre-2008?id=19240"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Verser en août un « treizième mois » d’allocations familiales.",
+      "p": "6",
+      "constat": "Loi-programme du 8 juin 2008 : supplément d’âge annuel de 25 à 74,29 € selon l’âge, payé en août. Ce n’est pas un mois complet ; en octobre 2008, le gouvernement annonce encore une réforme « pour aboutir à un treizième mois ».",
+      "src": [
+       [
+        "Chambre, dossier DOC 52 1011",
+        "https://www.dekamer.be/FLWB/html/52/F/52K1011.html"
+       ],
+       [
+        "Conseil des ministres du 20 mars 2008",
+        "https://news.belgium.be/fr/loi-programme"
+       ],
+       [
+        "Déclaration du gouvernement du 14 octobre 2008",
+        "https://www.lachambre.be/kvvcr/pdf_sections/pri/dossiers/declaration_gouvernement_141008.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Accorder une attention particulière aux patients atteints d’un cancer.",
+      "p": "8, 28",
+      "constat": "Plan cancer de 35 actions, « lancé le 10 mars 2008 », dix jours avant l’entrée en fonction du gouvernement, avec un budget pluriannuel de 380 millions d’euros, poursuivi pendant le mandat.",
+      "src": [
+       [
+        "SPF Santé publique, plan cancer",
+        "https://www.health.belgium.be/fr/cancer"
+       ],
+       [
+        "Sciensano, état des lieux du plan cancer (2011)",
+        "https://sciensano.be/sites/default/files/doc25_plan_cancer_etats_des_lieux_sciensano_2011_fr.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "abandon",
+      "eng": "Fixer les critères de régularisation, dont la longue procédure d’asile.",
+      "p": "10-11",
+      "constat": "Pas de décision sous Leterme I : l’instruction de régularisation date de juillet 2009, sous Van Rompuy, et est annulée par le Conseil d’État le 9 décembre 2009.",
+      "src": [
+       [
+        "Conseil d’État, arrêt n° 198.769",
+        "http://www.raadvst-consetat.be/arr.php?nr=198769"
+       ]
+      ]
+     },
+     {
+      "statut": "abandon",
+      "eng": "Ouvrir l’accès au travail aux demandeurs d’asile six mois après leur demande.",
+      "p": "48",
+      "constat": "Décidé le 3 avril 2009, sous Van Rompuy : permis de travail C « six mois après leur demande d’asile ».",
+      "src": [
+       [
+        "Conseil des ministres du 3 avril 2009",
+        "https://news.belgium.be/fr/node/10172/pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "abandon",
+      "eng": "Subordonner la naturalisation à cinq ans de séjour légal.",
+      "p": "10, 50",
+      "constat": "Réforme de la nationalité adoptée seulement par la loi du 4 décembre 2012, sous Di Rupo.",
+      "src": [
+       [
+        "Chambre, dossier DOC 53 0476",
+        "https://www.dekamer.be/FLWB/html/53/F/53K0476.html"
+       ]
+      ]
+     },
+     {
+      "statut": "abandon",
+      "eng": "Imposer une partie minimale de la peine à purger pour les infractions très graves.",
+      "p": "10, 38-47",
+      "constat": "Adopté seulement par la loi du 17 mars 2013, sous Di Rupo.",
+      "src": [
+       [
+        "Chambre, dossier DOC 53 2604",
+        "https://www.dekamer.be/FLWB/html/53/F/53K2604.html"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Confier à un groupe d’experts l’étude du mix énergétique.",
+      "p": "35",
+      "constat": "Groupe GEMIX institué par le gouvernement le 14 novembre 2008 ; son rapport date d’octobre 2009.",
+      "src": [
+       [
+        "Conseil des ministres du 14 novembre 2008",
+        "https://news.belgium.be/fr/node/8527/pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "abandon",
+      "eng": "Déposer d’ici la mi-juillet 2008 un deuxième paquet de réforme de l’État.",
+      "p": "4",
+      "constat": "Pas de dépôt. Le 23 juillet 2008, à la Chambre, la réforme est confiée à trois médiateurs et l’opposition rappelle que la démission du gouvernement a été refusée.",
+      "src": [
+       [
+        "Chambre, compte rendu du 23 juillet 2008 (CRIV 52 PLEN 052)",
+        "https://www.lachambre.be/doc/PCRI/html/52/ip052x.html"
+       ]
+      ]
+     }
+    ],
+    "hors": [
+     [
+      "Sauvetages bancaires (automne 2008)",
+      "Fortis, Dexia, KBC et Ethias, avec des apports publics de plusieurs milliards d’euros.",
+      "Sauvetage de Fortis"
+     ],
+     [
+      "Loi sur la stabilité financière (octobre 2008)",
+      "garanties d’État et garantie des dépôts portée à 100 000 €.",
+      "Loi sur la stabilité financière et garantie des dépôts"
+     ]
+    ]
+   }
   },
   {
    "id": "van-rompuy",
@@ -1505,7 +1788,7 @@
     "cdH"
    ],
    "sieges": 96,
-   "sieges_note": "CD&V-N-VA 30, MR 23, PS 20, Open VLD 18, cdH 10 aux élections du 10 juin 2007. Le cartel CD&V-N-VA compte 30 élus ; sans les élus N-VA, qui ne participent pas au gouvernement, la coalition compte 96 sièges.",
+   "sieges_note": "CD&V-N-VA 30, MR 23, PS 20, Open VLD 18, cdH 10 aux élections du 10 juin 2007. Le cartel CD&V-N-VA compte 30 élus ; sans les élus N-VA, qui ne participent pas au gouvernement, la coalition compte 96 sièges. Confiance votée le 2 janvier 2009 par 88 voix contre 45.",
    "election": "2007-06-10",
    "accord": {
     "titre": "Pas de nouvel accord : déclaration « Œuvrer à la confiance »",
@@ -1601,6 +1884,10 @@
     [
      "Chambre, liste des membres (DOC 52 0001/001)",
      "https://www.dekamer.be/FLWB/PDF/52/0001/52K0001001.pdf"
+    ],
+    [
+     "Chambre, compte rendu du 2 janvier 2009 (CRIV 52 PLEN 074)",
+     "https://www.dekamer.be/doc/PCRI/pdf/52/ip074.pdf"
     ]
    ],
    "fin_src": [
@@ -1608,7 +1895,103 @@
      "Conseil de l’Union européenne, communiqué du 19 novembre 2009",
      "https://www.consilium.europa.eu/uedocs/cms_data/docs/pressdata/en/ec/111343.pdf"
     ]
-   ]
+   ],
+   "compare": {
+    "intro": "Le gouvernement Van Rompuy reprend la coalition et l’accord de Leterme I, en pleine récession. Il gouverne onze mois, jusqu’à la désignation d’Herman Van Rompuy à la tête du Conseil européen.",
+    "items": [
+     {
+      "statut": "chiffre",
+      "eng": "Préparer un plan pour résorber le déficit budgétaire structurel.",
+      "p": "2",
+      "constat": "Solde public selon les chiffres actuels d’Eurostat : −5,4 % du PIB en 2009, au plus fort de la récession.",
+      "src": [
+       [
+        "Eurostat, déficit public (gov_10dd_edpt1)",
+        "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Exécuter au plus vite le plan de relance et l’accord interprofessionnel.",
+      "p": "1-2",
+      "constat": "Loi de relance économique du 27 mars 2009 : elle reprend « le plan de relance présenté par le gouvernement le 11 décembre 2008 » et des mesures de l’accord interprofessionnel 2009-2010.",
+      "src": [
+       [
+        "Chambre, dossier DOC 52 1788",
+        "https://www.dekamer.be/FLWB/html/52/F/52K1788.html"
+       ],
+       [
+        "Chambre, exposé des motifs (DOC 52 1788/001)",
+        "https://www.dekamer.be/FLWB/Pdf/52/1788/52K1788001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Faire de l’emploi l’objectif premier du gouvernement.",
+      "p": "1-2",
+      "constat": "Loi du 19 juin 2009 sur l’emploi pendant la crise (chômage temporaire des employés, crédit-temps de crise).",
+      "mesure": "Mesures de crise pour l’emploi"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Mettre en place une commission d’enquête parlementaire sur la séparation des pouvoirs.",
+      "p": "3",
+      "constat": "Commission instituée en janvier 2009 ; rapport du 18 mars 2009 et motion adoptée le 19 mars.",
+      "src": [
+       [
+        "Chambre, dossier DOC 52 1711",
+        "https://www.dekamer.be/FLWB/html/52/F/52K1711.html"
+       ],
+       [
+        "Chambre, rapport (DOC 52 1711/007)",
+        "https://www.dekamer.be/FLWB/pdf/52/1711/52K1711007.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Obtenir les propositions du groupe Lamfalussy sur la structure financière.",
+      "p": "2",
+      "constat": "Rapport final du 16 juin 2009 ; la réforme du contrôle financier qui en découle est adoptée sous Leterme II.",
+      "src": [
+       [
+        "Conseil des ministres du 10 décembre 2008",
+        "https://news.belgium.be/fr/node/13330/pdf"
+       ],
+       [
+        "Comité Lamfalussy, rapport final (hébergé par la Chambre)",
+        "https://www.lachambre.be/kvvcr/pdf_sections/comm/common/rapport_final_FR.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Mener la Conférence nationale des pensions.",
+      "p": "2",
+      "constat": "En cours fin 2009 : « Depuis bientôt un an, elle réunit des spécialistes » ; un rapport intermédiaire est en préparation.",
+      "src": [
+       [
+        "Chambre, DOC 52 2315/001",
+        "https://www.dekamer.be/FLWB/Pdf/52/2315/52K2315001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Créer un groupe de travail sur Bruxelles-Hal-Vilvorde, avec des conclusions dès l’été 2009.",
+      "p": "3",
+      "constat": "Le Comité de concertation acte la création du groupe le 16 janvier 2009 ; aucune conclusion officielle n’a été trouvée.",
+      "src": [
+       [
+        "Chambre, notification du Comité de concertation (DOC 52 0037/016)",
+        "https://www.dekamer.be/FLWB/pdf/52/0037/52K0037016.pdf"
+       ]
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "leterme-2",
