@@ -72,13 +72,14 @@ dr = [
        'La loi du 18 décembre 2013 permet à Tihange 1 de fonctionner dix ans de plus que la loi de 2003. L’accord prévoyait lui-même d’adapter le calendrier selon les capacités disponibles.',
        mesure='Prolongation de Tihange 1'),
     it('non', 'Limiter la croissance du budget des soins de santé à 2 % en 2013 et 3 % en 2014, plus l’indexation.', '109',
-       'Les objectifs budgétaires sont fixés en montants : 26 676 586 000 € pour 2013 (Conseil des ministres du 30 novembre 2012), 27 861 560 000 € pour 2014. Aucun texte trouvé n’énonce les pourcentages de l’accord.',
+       'Les objectifs budgétaires sont fixés en montants : 26 676 586 000 € pour 2013 (Conseil des ministres du 30 novembre 2012), 27 861 560 000 € pour 2014. Une référence transmise situe ces normes à l’article 122 de la loi-programme du 22 juin 2012 ; le document qui l’accompagnait ne le contient pas : à vérifier dans la loi.',
        src=[['Conseil des ministres du 30 novembre 2012', 'https://news.belgium.be/fr/node/15181/pdf'], ['Chambre, note de politique (DOC 53 3096/006)', 'https://www.dekamer.be/FLWB/PDF/53/3096/53K3096006.pdf']]),
     it('adopte', 'Réduire d’au moins la moitié le nombre d’arrondissements judiciaires.', '137',
        'Loi du 1er décembre 2013 : « Le présent projet de loi crée 12 arrondissements au travers d’une fusion des 27 arrondissements existants. »',
        src=[['Chambre, dossier DOC 53 2858', 'https://www.dekamer.be/FLWB/html/53/F/53K2858.html'], ['Chambre, projet de loi (DOC 53 2858/001)', 'https://www.dekamer.be/FLWB/pdf/53/2858/53K2858001.pdf']]),
     it('non', 'Donner une réponse définitive aux demandes d’asile dans les six mois.', '130',
-       'Délai non mesuré ici. La loi de janvier 2012 restreint l’accueil (voir les mesures), mais elle ne porte pas sur ce délai.'),
+       'Résultat non établi. Le rapport 2013 du CGRA indique 81 jours en moyenne entre la transmission du dossier par l’Office des étrangers et la décision, pour les demandes de 2013 : ce délai ne couvre ni l’étape préalable ni les recours, et ne mesure donc pas l’engagement (passage relevé dans un résumé, à relire mot à mot).',
+       src=[['CGRA, rapport annuel 2013', 'https://www.cgra.be/sites/default/files/jaaverslagen/ra2013_cgra_fr.pdf'], ['CGRA, rapport annuel 2014', 'https://www.cgra.be/sites/default/files/jaaverslagen/rapportannuel_cgra_2014_1.pdf']]),
 ]
 check('di-rupo', dr)
 G['di-rupo']['compare'] = {
@@ -104,12 +105,14 @@ mi = [
     it('adopte', 'Appliquer un saut d’index en 2015.', '21',
        'Loi du 23 avril 2015.', mesure='Saut d’index'),
     it('adopte', 'Ramener les cotisations patronales de 33 % à 25 %, avec un ancrage légal.', '5',
-       'Prévu par la loi du 26 décembre 2015 (« tax shift »), avec un taux ramené vers 25 % en 2018. Détail à confirmer dans le texte de la loi (voir la mesure).',
+       'Loi du 26 décembre 2015, article 24 : la cotisation patronale de base des employeurs du secteur marchand (catégorie 1) est « plafonnée à 19,88 % à partir du 1er janvier 2018 ». Le taux global de 25 % annoncé y ajoute d’autres cotisations, dont la modération salariale : décomposition à confirmer auprès de l’ONSS.',
+       src=[['Loi du 26 décembre 2015, numac 2015206007 (texte reproduit par OpenJustice)', 'https://etaamb.openjustice.be/fr/loi-du-26-decembre-2015_n2015206007']],
        mesure='« Tax shift »'),
     it('adopte', 'Alléger l’impôt sur le travail par un « tax shift », en relevant notamment les frais professionnels forfaitaires.', '92, 96',
        'Loi du 26 décembre 2015, financée notamment par les accises et le précompte mobilier.', mesure='« Tax shift »'),
     it('adopte', 'Créer un impôt de transparence sur les trusts et autres constructions juridiques.', '95',
-       '« Taxe Caïman » dans la loi-programme du 10 août 2015 (contenu à confirmer dans le texte, voir la mesure).', mesure='Loi-programme de juillet 2015'),
+       '« Taxe Caïman » : la Cour constitutionnelle rappelle que les articles 5/1 et 220/1 du Code des impôts sur les revenus ont été « insérés par les articles 39 et 42 de la loi-programme du 10 août 2015 ».', mesure='Loi-programme de juillet 2015',
+       src=[['Cour constitutionnelle, arrêt n° 12/2021', 'https://www.const-court.be/public/f/2021/2021-012f.pdf']]),
     it('adopte', 'Horeca : permettre aux travailleurs occupés au moins à 4/5 ailleurs de travailler dans le secteur pour le salaire net plus 25 % de cotisations patronales.', '34',
        'Flexi-jobs créés par la loi du 16 novembre 2015.', mesure='Création des flexi-jobs'),
     it('adopte', 'Assouplir l’organisation du temps de travail, par exemple par l’annualisation, après avis des partenaires sociaux.', '24',
@@ -126,14 +129,14 @@ mi = [
     it('adopte', 'Prolonger Doel 1 et Doel 2, sans dépasser 2025.', '8, 109',
        'Loi du 28 juin 2015.', mesure='Prolongation de Doel 1 et Doel 2'),
     it('abandon', 'Mettre en place un système de pension à points au plus tard en 2030.', '42',
-       'Un Comité national des pensions est créé en 2015 pour le préparer, mais aucun projet de loi n’est déposé. En commission, en décembre 2018 : « Le ministre confirme que le gouvernement ne mettra pas en œuvre cette réforme ».',
+       'Un Comité national des pensions est créé en 2015 pour le préparer, mais aucun projet de loi n’est déposé. En commission, en décembre 2018, la mise en œuvre est renvoyée au gouvernement suivant. Réforme non mise en œuvre sous Michel I, donc reportée plutôt qu’abandonnée.',
        src=[['Conseil des ministres (Comité national des pensions)', 'https://news.belgium.be/fr/node/18401/pdf'], ['Chambre, rapport de commission (DOC 54 3294/026)', 'https://www.dekamer.be/FLWB/pdf/54/3294/54K3294026.pdf']]),
     it('adopte', 'Supprimer le bonus de pension à partir de 2015.', '47',
        'Supprimé au 1er janvier 2015 pour les salariés (loi-programme du 19 décembre 2014) et pour le secteur public (loi du 28 avril 2015), en le maintenant pour ceux qui remplissaient déjà les conditions de la pension anticipée.',
        src=[['Chambre, dossier DOC 54 0672', 'https://www.dekamer.be/FLWB/html/54/F/54K0672.html'], ['Chambre, dossier DOC 54 0922', 'https://www.dekamer.be/FLWB/html/54/F/54K0922.html'], ['Conseil des ministres du 13 février 2015', 'https://news.belgium.be/fr/node/17848/pdf']]),
     it('adopte', 'Relever l’âge du régime de chômage avec complément d’entreprise (prépension) de 60 à 62 ans.', '27',
-       'Arrêté royal du 30 décembre 2014, avec des régimes de transition ; l’ONEM indique un régime général à 62 ans avec 40 ans de carrière. La date d’entrée en vigueur n’a pas été lue dans une source officielle.',
-       src=[['Conseil des ministres du 8 mai 2015 (cite l’arrêté)', 'https://news.belgium.be/fr/node/18179/pdf'], ['ONEM, conditions du RCC', 'https://www.onem.be/citoyens/chomage-avec-complement-d-entreprise-prepension/quelles-sont-les-conditions-pour-beneficier-du-regime-de-chomage-avec-complement-d-entreprise-rcc-']]),
+       'Arrêté royal du 30 décembre 2014 (numac 2014012252), article 1er : l’âge « wordt vanaf 1 januari 2015 op 62 jaar gebracht » ; entrée en vigueur le 1er janvier 2015 (article 16), avec des règles transitoires, notamment pour les travailleurs licenciés avant cette date.',
+       src=[['Arrêté royal du 30 décembre 2014 (texte reproduit par OpenJustice, non officiel)', 'https://etaamb.openjustice.be/nl/koninklijk-besluit-van-30-december-2014_n2014012252.html'], ['Conseil des ministres du 8 mai 2015 (cite l’arrêté)', 'https://news.belgium.be/fr/node/18179/pdf'], ['ONEM, conditions du RCC', 'https://www.onem.be/citoyens/chomage-avec-complement-d-entreprise-prepension/quelles-sont-les-conditions-pour-beneficier-du-regime-de-chomage-avec-complement-d-entreprise-rcc-']]),
     it('partiel', 'Porter les allocations minimales au seuil de pauvreté européen ; affecter les enveloppes « bien-être » à 100 % ou plus.', '8, 62',
        'Enveloppe 2015-2016 fixée à 319,5 millions d’euros en 2015 et 627,2 millions en 2016. Le 20 octobre 2016, le gouvernement décide « de réduire l’enveloppe totale destinée aux adaptations au bien-être […] de 161 millions d’euros » en 2017, puis à nouveau en 2018 (avis du Conseil central de l’économie et du Conseil national du travail). L’écart restant avec le seuil de pauvreté n’est pas mesuré ici.',
        src=[['Premier ministre, décision du 15 janvier 2015', 'https://archive.premier.be/fr/printpdf/3036'], ['Conseil central de l’économie, avis du 22 mars 2017', 'https://ccecrb.fgov.be/dpics/fichiers/fr/doc17-708.pdf']]),
@@ -157,6 +160,21 @@ for m in G['michel-1']['mesures']:
         m['v'] = 'officiel'; m.pop('verif', None)
         u = 'https://www.inami.fgov.be/SiteCollectionDocuments/bi2015_1_legislation_evolution.pdf'
         if not any(x[1] == u for x in m['src']): m['src'].append(['INAMI, bulletin d’information 2015/1', u])
+
+ONEM_D = ['ONEM, dix ans de dégressivité renforcée', 'https://www.onem.be/espace-presse/dix-ans-de-degressivite-renforcee-des-allocations-de-chomage']
+for m in G['di-rupo']['mesures']:
+    if m['titre'] == 'Dégressivité renforcée des allocations de chômage':
+        m['v'] = 'officiel'
+        if ONEM_D not in m['src']: m['src'].insert(0, ONEM_D)
+for m in G['michel-1']['mesures']:
+    if m['titre'] == 'Loi-programme de juillet 2015':
+        c = ['Cour constitutionnelle, arrêt n° 12/2021', 'https://www.const-court.be/public/f/2021/2021-012f.pdf']
+        if c not in m['src']: m['src'].append(c)
+        m['verif'] = 'Taxe Caïman confirmée (articles 39 et 42) ; hausse de la TVA sur l’électricité à confirmer dans le texte de la loi.'
+    if m['titre'] == '« Tax shift »':
+        m['verif'] = 'Article 24 confirmé (plafond de 19,88 % en 2018) ; autres montants à contrôler dans le texte de la loi.'
+    if m['titre'] == 'Travail « faisable et maniable » (loi Peeters)' and 'numac' not in m.get('ref', ''):
+        m['ref'] += ' ; numac 2017011012 (transmis, pas encore relu)'
 
 F.write_text(json.dumps(M, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 print('ok', len(dr), len(mi))
