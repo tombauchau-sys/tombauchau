@@ -149,7 +149,7 @@ def card(g, P, i, n, today):
     return ''.join(h) + '</article>'
 
 
-ST = {'adopte': 'Adopté comme annoncé', 'partiel': 'Adopté en partie ou modifié', 'abandon': 'Abandonné ou reporté', 'non': 'Non retrouvé', 'chiffre': 'Objectif chiffré'}
+ST = {'adopte': 'Adopté comme annoncé', 'partiel': 'Adopté en partie ou modifié', 'abandon': 'Abandonné ou reporté', 'encours': 'En cours', 'non': 'Non retrouvé', 'chiffre': 'Objectif chiffré'}
 
 
 def compare(cp, msrc=None):
@@ -279,7 +279,7 @@ b.off{background:#D6F0DA}b.rf{background:#E4E1F7}b.pr{background:#FBE3C6}b.av{ba
 .gv-chap{margin-top:16px;border:1.5px solid var(--rule);border-radius:12px;padding:10px 16px}.gv-chap summary{font:600 16px var(--sans);cursor:pointer}.gv-chap h4{font:600 17px var(--sans);margin:16px 0 4px}.gv-chap h4 small{font:500 13px var(--sans);color:var(--grey)}.gv-chap ul{padding-left:1.1em;margin:0;display:grid;gap:4px}.gv-chap li{font-size:16px!important}
 .gv-verif{font-size:14px!important;color:#9E2B1D;margin-top:4px!important}
 .gv-st{display:inline-block;font:600 12px var(--sans);letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 10px;border:1.5px solid var(--line)}
-.s-adopte{background:#D6F0DA}.s-partiel{background:#FBE3C6}.s-abandon{background:#F9C9C1}.s-non{background:#ECEAE4}.s-chiffre{background:#DCE8F7}
+.s-adopte{background:#D6F0DA}.s-partiel{background:#FBE3C6}.s-abandon{background:#F9C9C1}.s-non{background:#ECEAE4}.s-encours{background:#FFF3B8}.s-chiffre{background:#DCE8F7}
 .gv-arsum{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px!important}
 .gv-arl{list-style:none;padding:0;margin:14px 0 0}
 .gv-ari{border-left:3px solid var(--rule);padding:2px 0 2px 14px;margin:0 0 18px}
