@@ -4713,12 +4713,11 @@
    "contexte": [
     {
      "date": "6 novembre 2025",
-     "texte": "Faute d’accord sur le budget, le Premier ministre est reçu par le Roi ; au lieu de démissionner, il reporte l’échéance d’un accord budgétaire à Noël.",
-     "presse": true,
+     "texte": "Le Premier ministre fait part au Roi de « désaccords persistants » au sein du gouvernement sur le budget, les partenaires souhaitant « poursuivre le travail ». Le Roi demande « de doter le pays au plus vite d’une trajectoire budgétaire claire pour les années à venir ».",
      "src": [
       [
-       "Belga News Agency",
-       "https://www.belganewsagency.eu/de-wever-moves-budget-deadline-to-christmas-after-meeting-with-king-philippe"
+       "Palais royal, audience du 6 novembre 2025",
+       "https://www.monarchie.be/fr/agenda/audience-premier-ministre"
       ]
      ]
     },
@@ -4743,17 +4742,16 @@
      ]
     },
     {
-     "date": "1er-2 novembre 2026",
-     "texte": "Pas d’accord sur le budget 2027 au comité ministériel restreint. Le 2 novembre, le Premier ministre présente au Roi la démission du gouvernement. Selon le communiqué du Palais cité par la presse, le Roi « tient sa décision en suspens », consulte les présidents des partis de la majorité et recevra à nouveau le Premier ministre le vendredi 6 novembre.",
-     "presse": true,
+     "date": "2 novembre 2026",
+     "texte": "Le Premier ministre remet la démission du gouvernement au Roi « suite à l’échec des négociations budgétaires ». Le Roi « déplore l’absence d’accord visant à doter le pays d’un budget crédible » et tient sa décision en suspens ; il reçoit les présidents de parti dès le 3 novembre.",
      "src": [
       [
-       "L’Avenir, 2 novembre 2026, 11 h 39",
-       "https://www.lavenir.net/actu/belgique/politique/2026/11/02/la-demission-de-bart-de-wever-mise-en-suspens-par-le-roi-pourquoi-larizona-na-pas-encore-pousse-son-dernier-soupir-U2YWRIR2TZF6PHZYFSOC2GM62U/"
+       "Palais royal, audience du 2 novembre 2026",
+       "https://www.monarchie.be/fr/agenda/audience-du-premier-ministre-57"
       ],
       [
-       "AFP via DH, 2 novembre 2026",
-       "https://www.dhnet.be/dernieres-depeches/2026/11/02/blocage-budgetaire-en-belgique-la-demission-du-premier-ministre-en-suspens-TPARIFDB2JFZNJNK7YMWVI5P6Y/"
+       "Palais royal, audience du 3 novembre 2026",
+       "https://www.monarchie.be/fr/agenda/audience-1159"
       ]
      ]
     }
@@ -4910,13 +4908,22 @@
     },
     {
      "date": "2026-03-01",
-     "date_txt": "1er mars 2026",
+     "date_txt": "Mars 2026",
      "d": "eco",
      "titre": "Hausses de TVA ciblées",
-     "texte": "TVA portée de 6 % à 12 % sur l’hébergement et le camping, et de 12 % à 21 % sur les pesticides.",
-     "src": [],
-     "v": "a-verifier",
-     "verif": "Source : FAQ du SPF Finances du 17 février 2026, citée par un tiers ; base juridique (arrêté royal) et Moniteur belge non trouvés."
+     "texte": "Arrêté royal modifiant l’arrêté royal n° 20 sur les taux de TVA : de 6 % à 12 % pour la fourniture de logements meublés et les emplacements de camping, de 12 % à 21 % pour les pesticides.",
+     "src": [
+      [
+       "Conseil des ministres du 23 décembre 2025",
+       "https://news.belgium.be/fr/node/42538/pdf"
+      ],
+      [
+       "Conseil des ministres du 13 février 2026 (deuxième lecture)",
+       "https://news.belgium.be/fr/node/42960/pdf"
+      ]
+     ],
+     "v": "officiel",
+     "verif": "Date de l’arrêté royal, publication au Moniteur et entrée en vigueur au 1er mars 2026 non relues dans une source officielle."
     },
     {
      "date": "2026-04-21",
@@ -5109,22 +5116,25 @@
      "v": "officiel"
     },
     {
-     "date": "2025-06-30",
+     "date": "2025-06-06",
      "date_txt": "Juin 2025",
      "d": "eco",
-     "titre": "Île énergétique Princesse Élisabeth en partie suspendue",
-     "texte": "Pour réduire les coûts, le gouvernement suspend la partie du projet d’île énergétique en mer du Nord qui devait la relier aux réseaux des pays voisins et aux parcs éoliens.",
+     "titre": "Île énergétique : partie en courant continu suspendue",
+     "texte": "Le ministre de l’Énergie explique à la Chambre : « Le gouvernement a décidé de suspendre la partie en courant continu prévue sur cette île », « afin de ne pas exposer 3 milliards d’euros supplémentaires ». La construction de l’île et de l’infrastructure en courant alternatif se poursuit.",
      "src": [
       [
-       "CRISP, Le secteur de l’éolien offshore en Belgique (2025)",
-       "https://www.crisp.be/fr/catalogue/2154-le-secteur-de-leolien-ioffshorei-en-belgique.html"
+       "Chambre, commission Énergie du 1er juillet 2025 (CRIV 56 COM 153)",
+       "https://www.dekamer.be/doc/CCRI/pdf/56/ic153.pdf"
+      ],
+      [
+       "Elia (gestionnaire de réseau), communiqué du 6 juin 2025",
+       "https://www.elia.be/press/2025/06/20250605_optimisation-of-the-offshore-energy-hub"
       ]
      ],
-     "v": "reference",
-     "verif": "Décision du Conseil des ministres à retrouver (date exacte)."
+     "v": "officiel"
     }
    ],
-   "fin_txt": "Démission présentée au Roi le 2 novembre 2026 ; le Roi tient sa décision en suspens (nouvelle audience prévue le 6 novembre). Le gouvernement reste en fonction.",
+   "fin_txt": "Le 2 novembre 2026, le Premier ministre remet au Roi la démission du gouvernement « suite à l’échec des négociations budgétaires ». Le Roi « tient sa décision en suspens », consulte les présidents des partis de la majorité et recevra à nouveau le Premier ministre le 6 novembre 2026. Le gouvernement reste en fonction.",
    "complet": true,
    "bilan": {
     "debut": 2024,
@@ -5151,7 +5161,19 @@
     ],
     "note": "Dernière année avant le mandat et première année complète. Une seule année ne permet pas de juger une législature ; ces chiffres dépendent aussi de la conjoncture et des autres niveaux de pouvoir. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
    },
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/De_Wever-25-.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/De_Wever-25-.pdf",
+   "sieges_src": [
+    [
+     "Chambre, résultats des élections du 9 juin 2024",
+     "https://www.dekamer.be/pdf_sections/pri/fiche/fr_09_02.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "Palais royal, audience du 2 novembre 2026",
+     "https://www.monarchie.be/fr/agenda/audience-du-premier-ministre-57"
+    ]
+   ]
   }
  ]
 }
