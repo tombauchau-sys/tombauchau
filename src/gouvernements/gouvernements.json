@@ -107,7 +107,7 @@
     "Agalev"
    ],
    "sieges": 94,
-   "sieges_note": "Somme des élus des six partis aux élections du 13 juin 1999.",
+   "sieges_note": "VLD 23, PS 19, PRL-FDF 18, SP 14, Ecolo 11, Agalev 9 : somme des élus des six partis aux élections du 13 juin 1999.",
    "election": "1999-06-13",
    "accord": {
     "titre": "La voie vers le XXIe siècle",
@@ -218,8 +218,7 @@
      ]
     ]
    },
-   "statut_note": "Les ministres Ecolo quittent le gouvernement le 5 mai 2003, quelques jours avant les élections.",
-   "fin_txt": "Fin de législature : élections du 18 mai 2003, puis affaires courantes jusqu’au gouvernement suivant.",
+   "fin_txt": "Fin de législature : élections du 18 mai 2003, puis affaires courantes jusqu’au gouvernement Verhofstadt II.",
    "mesures": [
     {
      "date": "2000-01-10",
@@ -425,7 +424,262 @@
     ],
     "note": "Série d’emploi d’Eurostat rompue en 2001 : la comparaison 1999-2003 est approximative. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
    },
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_99-03.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_99-03.pdf",
+   "sieges_src": [
+    [
+     "Chambre, liste des membres (DOC 50 0001/001)",
+     "https://www.dekamer.be/FLWB/PDF/50/0001/50K0001001.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "La Chambre, magazine n° 2",
+     "https://www.dekamer.be/pdf_sections/pri/magazine/mag002F.pdf"
+    ]
+   ],
+   "compare": {
+    "intro": "Le gouvernement Verhofstadt I gouverne quatre ans. Il prête serment juste après la crise de la dioxine, à laquelle l’accord consacre son dernier chapitre.",
+    "items": [
+     {
+      "statut": "chiffre",
+      "eng": "Un budget « en équilibre en 2002 », dans le respect du pacte de stabilité européen.",
+      "p": "10",
+      "constat": "Objectif atteint selon les chiffres actuels d’Eurostat : solde public de 0,0 % du PIB en 2002 (−0,6 % en 1999, 0,2 % en 2001).",
+      "src": [
+       [
+        "Eurostat, déficit public (gov_10dd_edpt1)",
+        "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr"
+       ]
+      ]
+     },
+     {
+      "statut": "chiffre",
+      "eng": "Inverser la tendance de l’aide au développement et « tendre à nouveau vers 0,7 % du PNB ».",
+      "p": "44",
+      "constat": "Hausse sans atteindre 0,7 % : 0,36 % du revenu national brut en 2000, 0,37 % en 2001, 0,43 % en 2002, 0,60 % en 2003 (année en partie postérieure au mandat). Le chiffre de 1999 n’a pas été trouvé dans une source officielle.",
+      "src": [
+       [
+        "SPF Affaires étrangères, rapport au Parlement sur les Objectifs du Millénaire 2008, tableau 3.6.2",
+        "https://www.dekamer.be/kvvcr/pdf_sections/comm/committee/mdg2008_fr.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Créer une agence fédérale pour la sécurité alimentaire, opérationnelle avant le 1er janvier 2000.",
+      "p": "9, 47",
+      "constat": "Loi du 4 février 2000. L’agence se met en place progressivement : une cellule provisoire est créée en 2002 et le personnel de l’ancienne administration lui est transféré en 2003.",
+      "src": [
+       [
+        "Chambre, dossier DOC 50 0232",
+        "https://www.dekamer.be/FLWB/html/50/F/50K0232.html"
+       ],
+       [
+        "Conseil des ministres du 30 août 2002",
+        "https://news.belgium.be/fr/creation-dune-cellule-provisoire-lafsca"
+       ],
+       [
+        "Conseil des ministres du 9 mai 2003",
+        "https://news.belgium.be/fr/transfert-du-personnel-de-lacsa"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Mettre en œuvre la réforme des polices pour le 31 mars 2001.",
+      "p": "18",
+      "constat": "Loi du 7 décembre 1998 (accords Octopus). La police fédérale est en place le 1er avril 2001, la police locale seulement le 1er janvier 2002.",
+      "src": [
+       [
+        "Police intégrée, historique de la réforme",
+        "https://www.police.be/5338/a-propos/la-police-locale-5338-germinalt/historique-de-la-zone"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Rendre la naturalisation gratuite et réduire à un mois le délai d’avis du parquet.",
+      "p": "22",
+      "constat": "Loi du 1er mars 2000 : « Le délai imparti au parquet pour rendre son avis est réduit uniformément à un mois » ; « la procédure de naturalisation sera gratuite ».",
+      "src": [
+       [
+        "Chambre, dossier DOC 50 0292",
+        "https://www.dekamer.be/FLWB/html/50/F/50K0292.html"
+       ],
+       [
+        "Chambre, rapport (DOC 50 0292/007)",
+        "https://www.dekamer.be/FLWB/pdf/50/0292/50K0292007.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Régulariser au cas par cas, selon des critères stricts, notamment les demandeurs d’asile en procédure depuis quatre ans (trois avec enfants scolarisés).",
+      "p": "23",
+      "constat": "Loi du 22 décembre 1999.",
+      "mesure": "Régularisation de certaines catégories d’étrangers"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Mettre en œuvre la loi du 23 novembre 1998 sur la cohabitation légale.",
+      "p": "24",
+      "constat": "Entrée en vigueur le 1er janvier 2000.",
+      "src": [
+       [
+        "Chambre, DOC 51 2514/001",
+        "https://www.lachambre.be/FLWB/pdf/51/2514/51K2514001.pdf"
+       ],
+       [
+        "Registre national, instruction TI 123",
+        "https://www.ibz.rrn.fgov.be/sites/default/files/documents/fr/registre-national/instructions/liste-TI/TI123_Cohabitation_legale_20200128.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Déposer une loi générale contre les discriminations.",
+      "p": "24",
+      "constat": "Loi du 25 février 2003, adoptée en fin de mandat.",
+      "src": [
+       [
+        "Chambre, dossier DOC 50 1578",
+        "https://www.dekamer.be/FLWB/html/50/F/50K1578.html"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Réduire de moitié l’effet du vote en case de tête et supprimer les suppléants.",
+      "p": "14",
+      "constat": "Effet de la case de tête réduit de moitié par des lois de 2000 à 2002, qui suppriment aussi les suppléants. Ceux-ci sont rétablis par la loi du 13 décembre 2002 : « Le cinquième volet est le retour des suppléants. »",
+      "src": [
+       [
+        "Chambre, dossier DOC 50 0666",
+        "https://www.dekamer.be/FLWB/html/50/F/50K0666.html"
+       ],
+       [
+        "Chambre, dossier DOC 50 0667",
+        "https://www.dekamer.be/FLWB/html/50/F/50K0667.html"
+       ],
+       [
+        "Chambre, dossier DOC 50 1051",
+        "https://www.dekamer.be/FLWB/html/50/F/50K1051.html"
+       ],
+       [
+        "Chambre, dossier DOC 50 1806",
+        "https://www.dekamer.be/FLWB/html/50/F/50K1806.html"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Porter la norme de croissance des soins de santé de 1,5 % à 2,5 %.",
+      "p": "34",
+      "constat": "Loi du 24 décembre 1999 : « A partir de l’année 2001, ce montant sera augmenté annuellement d’une norme de croissance réelle maximale de 2,5 p.c. » ; montant fixe pour 2000. Le dossier de la Chambre n’a pas été retrouvé.",
+      "src": [
+       [
+        "INAMI, loi coordonnée du 14 juillet 1994, article 40",
+        "https://www.inami.fgov.be/SiteCollectionDocuments/Loi19940714-titre-III.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Réduire les cotisations patronales d’environ 32 000 francs belges par travailleur et par an à partir du deuxième trimestre 2000.",
+      "p": "26",
+      "constat": "Loi du 24 décembre 1999 : réduction structurelle « renforcée à partir du 1er avril 2000 », « d’environ 32 000 francs belges en moyenne par travailleur par an ».",
+      "src": [
+       [
+        "Chambre, dossier DOC 50 0286",
+        "https://www.dekamer.be/FLWB/html/50/F/50K0286.html"
+       ],
+       [
+        "Chambre, exposé des motifs (DOC 50 0286/001)",
+        "https://www.lachambre.be/FLWB/pdf/50/0286/50K0286001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Permettre à chaque jeune d’entrer sur le marché de l’emploi dans les six mois après l’école.",
+      "p": "26",
+      "constat": "Même loi (plan dit « Rosetta ») : les employeurs d’au moins 50 travailleurs doivent occuper des jeunes « à raison de 3 % de leur effectif ». C’est une obligation d’embauche, pas une garantie individuelle ; aucun bilan officiel trouvé.",
+      "src": [
+       [
+        "Chambre, dossier DOC 50 0286",
+        "https://www.dekamer.be/FLWB/html/50/F/50K0286.html"
+       ],
+       [
+        "Chambre, exposé des motifs (DOC 50 0286/001)",
+        "https://www.lachambre.be/FLWB/pdf/50/0286/50K0286001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Généraliser l’interruption de carrière d’un cinquième, au service de la semaine de quatre jours.",
+      "p": "28",
+      "constat": "Crédit-temps en vigueur le 1er janvier 2002 (convention collective et arrêté royal).",
+      "mesure": "Crédit-temps"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Stimuler le deuxième pilier de pension.",
+      "p": "29",
+      "constat": "Loi du 28 avril 2003 sur les pensions complémentaires.",
+      "mesure": "Pensions complémentaires (deuxième pilier)"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Réformer et alléger l’impôt des personnes physiques.",
+      "p": "30",
+      "constat": "Loi du 10 août 2001.",
+      "mesure": "Réforme de l’impôt des personnes physiques"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Désactiver les centrales nucléaires dès qu’elles atteignent 40 ans.",
+      "p": "39",
+      "constat": "Loi du 31 janvier 2003.",
+      "mesure": "Sortie progressive du nucléaire"
+     },
+     {
+      "statut": "abandon",
+      "eng": "Créer des tribunaux de l’application des peines.",
+      "p": "20",
+      "constat": "Une commission d’étude est créée en 2000 ; son rapport final date de mai 2003. Les tribunaux de l’application des peines n’existent que depuis le 1er février 2007.",
+      "src": [
+       [
+        "Chambre, bibliothèque, dossier n° 90",
+        "https://www.lachambre.be/kvvcr/pdf_sections/biblio/dossier90F.pdf"
+       ],
+       [
+        "Cours et tribunaux, tribunal de première instance",
+        "https://www.tribunaux-rechtbanken.be/fr/le-systeme-judiciaire-belge/tribunal-de-premiere-instance"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Laisser le Parlement trancher les questions éthiques comme l’euthanasie, selon la conscience de chacun.",
+      "p": "46",
+      "constat": "Loi du 28 mai 2002 relative à l’euthanasie, issue d’une proposition déposée au Sénat.",
+      "src": [
+       [
+        "Chambre, dossier DOC 50 1488",
+        "https://www.dekamer.be/FLWB/html/50/F/50K1488.html"
+       ]
+      ]
+     }
+    ],
+    "hors": [
+     [
+      "Titres-services (2001)",
+      "titre subventionné pour des services ménagers ; absent de l’accord.",
+      "Titres-services"
+     ]
+    ]
+   }
   },
   {
    "id": "verhofstadt-2",
@@ -542,7 +796,7 @@
      ]
     ]
    },
-   "fin_txt": "Défaite de la coalition aux élections du 10 juin 2007, puis affaires courantes jusqu’au gouvernement intérimaire.",
+   "fin_txt": "Élections du 10 juin 2007, puis affaires courantes jusqu’au gouvernement intérimaire Verhofstadt III.",
    "mesures": [
     {
      "date": "2004-01-06",
@@ -569,16 +823,19 @@
      "date_txt": "Juillet 2004",
      "d": "social",
      "titre": "Activation du comportement de recherche d’emploi",
-     "texte": "Les chômeurs sont convoqués à des entretiens de suivi ; en cas d’efforts jugés insuffisants, l’allocation peut être réduite puis supprimée. Application en juillet 2004 aux moins de 30 ans, en 2005 aux 30-39 ans, en 2006 aux 40-49 ans.",
+     "texte": "Les chômeurs sont convoqués à des entretiens de suivi ; en cas d’efforts jugés insuffisants, l’allocation peut être réduite puis supprimée. Application par phases : jusqu’à 30 ans à partir de juillet 2004, jusqu’à 40 ans à partir de juillet 2005, jusqu’à 50 ans à partir de juillet 2006.",
      "src": [
       [
-       "Regards économiques n° 112 (UCL, 2014)",
-       "https://www.regards-economiques.be/images/reco-pdf/reco_142.pdf"
+       "Chambre, évaluation du plan d’activation (DOC 51 2195/001)",
+       "https://www.dekamer.be/FLWB/PDF/51/2195/51K2195001.pdf"
+      ],
+      [
+       "Banque-Carrefour de la sécurité sociale, délibération 04/021",
+       "https://ksz.fgov.be/sites/default/files/assets/securite_et_vie_privee/deliberation/04_021_f81_onem.pdf"
       ]
      ],
-     "v": "reference",
-     "ref": "Accord de coopération du 30 avril 2004 entre l’État fédéral, les Régions et les Communautés",
-     "verif": "Arrêté royal modifiant la réglementation du chômage : date et Moniteur à relever."
+     "v": "officiel",
+     "ref": "Accord de coopération du 30 avril 2004 entre l’État fédéral, les Régions et les Communautés"
     },
     {
      "date": "2005-01-01",
@@ -677,7 +934,13 @@
     ],
     "note": "Série d’emploi d’Eurostat rompue en 2005. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
    },
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_03-07.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_03-07.pdf",
+   "fin_src": [
+    [
+     "Chambre, liste des membres (DOC 52 0001/001)",
+     "https://www.dekamer.be/FLWB/PDF/52/0001/52K0001001.pdf"
+    ]
+   ]
   },
   {
    "id": "verhofstadt-3",
@@ -696,7 +959,7 @@
     "cdH"
    ],
    "sieges": 96,
-   "sieges_note": "Somme des élus des cinq partis aux élections du 10 juin 2007 (101 avec les élus N-VA du cartel CD&V/N-VA, qui soutient le gouvernement sans y entrer).",
+   "sieges_note": "CD&V-N-VA 30, MR 23, PS 20, Open VLD 18, cdH 10 aux élections du 10 juin 2007. Le cartel CD&V-N-VA compte 30 élus ; sans les élus N-VA, qui ne participent pas au gouvernement, la coalition compte 96 sièges.",
    "election": "2007-06-10",
    "accord": {
     "titre": "Pas d’accord de coalition : programme en dix points d’un gouvernement « limité dans le temps »",
@@ -718,11 +981,29 @@
      ]
     ]
    },
-   "statut_note": "Gouvernement intérimaire de plein exercice, prévu dès le départ pour passer la main à Yves Leterme.",
-   "fin_txt": "Fin prévue de l’intérim : remplacé par le gouvernement Leterme I.",
+   "statut_note": "Gouvernement intérimaire « limité dans le temps », prévu dès le départ pour passer la main à Yves Leterme.",
+   "fin_txt": "Fin prévue de l’intérim : remplacé par le gouvernement Leterme I le 20 mars 2008.",
    "mesures": [],
    "complet": false,
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_07-08.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Verhofstadt_07-08.pdf",
+   "sieges_src": [
+    [
+     "Chambre, liste des membres (DOC 52 0001/001)",
+     "https://www.dekamer.be/FLWB/PDF/52/0001/52K0001001.pdf"
+    ]
+   ],
+   "statut_src": [
+    [
+     "Déclaration du 21 décembre 2007 (DOC 52 0020/001)",
+     "https://www.lachambre.be/FLWB/PDF/52/0020/52K0020001.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "Déclaration du 20 mars 2008 (DOC 52 0020/002)",
+     "https://www.lachambre.be/FLWB/PDF/52/0020/52K0020002.pdf"
+    ]
+   ]
   },
   {
    "id": "leterme-1",
@@ -746,7 +1027,7 @@
     "cdH"
    ],
    "sieges": 96,
-   "sieges_note": "Même coalition que Verhofstadt III, avec au départ le soutien de la N-VA.",
+   "sieges_note": "CD&V-N-VA 30, MR 23, PS 20, Open VLD 18, cdH 10 aux élections du 10 juin 2007. Le cartel CD&V-N-VA compte 30 élus ; sans les élus N-VA, qui ne participent pas au gouvernement, la coalition compte 96 sièges.",
    "election": "2007-06-10",
    "accord": {
     "titre": "Accord de gouvernement",
@@ -815,8 +1096,8 @@
      ]
     ]
    },
-   "statut_note": "Une première démission, présentée en juillet 2008, est refusée par le Roi.",
-   "fin_txt": "Démission présentée le 19 décembre 2008 dans le dossier Fortis, acceptée le 22 décembre.",
+   "statut_note": "Une première démission, présentée au Roi le 14 juillet 2008, est refusée.",
+   "fin_txt": "Démission présentée le 19 décembre 2008, acceptée trois jours plus tard ; l’arrêté royal de démission et de nomination du gouvernement suivant date du 30 décembre 2008.",
    "mesures": [
     {
      "date": "2008-10-05",
@@ -902,10 +1183,38 @@
    "contexte": [
     {
      "date": "Septembre-octobre 2008",
-     "texte": "Crise financière mondiale : l’État intervient dans Fortis, Dexia, KBC et Ethias."
+     "texte": "Crise financière mondiale : l’État intervient dans Fortis, Dexia, KBC et Ethias (voir les mesures).",
+     "src": [
+      [
+       "Chambre, audition de Didier Reynders, commission spéciale Dexia (25 janvier 2012)",
+       "https://www.diekammer.be/kvvcr/pdf_sections/comm/dexia/N031_20120125reynders.pdf"
+      ]
+     ]
     }
    ],
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Leterme_08-08.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Leterme_08-08.pdf",
+   "sieges_src": [
+    [
+     "Chambre, liste des membres (DOC 52 0001/001)",
+     "https://www.dekamer.be/FLWB/PDF/52/0001/52K0001001.pdf"
+    ]
+   ],
+   "statut_src": [
+    [
+     "La Chambre, magazine n° 9 (2008)",
+     "https://www.dekamer.be/pdf_sections/pri/magazine/MAG_009_NL.indd.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "La Chambre, magazine n° 10 (2009)",
+     "https://www.dekamer.be/kvvcr/pdf_sections/pri/magazine/MAG_010_NL_WEB.pdf"
+    ],
+    [
+     "Chambre, compte rendu du 31 décembre 2008 (CRIV 52 PLEN 072)",
+     "https://www.diekammer.be/doc/PCRI/pdf/52/ip072.pdf"
+    ]
+   ]
   },
   {
    "id": "van-rompuy",
@@ -924,7 +1233,7 @@
     "cdH"
    ],
    "sieges": 96,
-   "sieges_note": "Même coalition que Leterme I.",
+   "sieges_note": "CD&V-N-VA 30, MR 23, PS 20, Open VLD 18, cdH 10 aux élections du 10 juin 2007. Le cartel CD&V-N-VA compte 30 élus ; sans les élus N-VA, qui ne participent pas au gouvernement, la coalition compte 96 sièges.",
    "election": "2007-06-10",
    "accord": {
     "titre": "Pas de nouvel accord : déclaration « Œuvrer à la confiance »",
@@ -948,7 +1257,7 @@
      ]
     ]
    },
-   "fin_txt": "Herman Van Rompuy est désigné premier président permanent du Conseil européen ; Yves Leterme lui succède.",
+   "fin_txt": "Herman Van Rompuy est désigné le 19 novembre 2009 premier président à temps plein du Conseil européen ; Yves Leterme lui succède.",
    "mesures": [
     {
      "date": "2009-06-25",
@@ -971,21 +1280,21 @@
    "contexte": [
     {
      "date": "19 juillet 2009",
-     "texte": "Instruction gouvernementale sur la régularisation de séjour : demandes recevables du 15 septembre au 15 décembre 2009. Le Conseil d’État l’annule en décembre 2009 (les dates citées divergent).",
+     "texte": "Instruction gouvernementale sur la régularisation de séjour, annoncée le 19 juillet 2009 : demandes recevables pendant trois mois à partir du 15 septembre 2009. Le Conseil d’État l’annule le 9 décembre 2009 (arrêt n° 198.769).",
      "src": [
       [
-       "Association pour le droit des étrangers (ADDE)",
-       "https://www.adde.be/docman/formations-et-colloques-1/formations-2012-1/fde-2012-1/module-1-1/1510-regularisation-2009-c-hublau-1/file.html"
+       "Conseil d’État, arrêt n° 198.769 du 9 décembre 2009",
+       "http://www.raadvst-consetat.be/arr.php?nr=198769"
       ]
      ]
     },
     {
-     "date": "22 octobre 2009",
-     "texte": "Accord avec l’exploitant pour prolonger de dix ans Doel 1, Doel 2 et Tihange 1, « jusqu’en 2025 », contre une contribution de 215 à 245 millions d’euros au total pour 2010-2014. Aucune loi n’est votée à ce moment.",
+     "date": "Octobre 2009",
+     "texte": "Le gouvernement annonce la prolongation de trois réacteurs nucléaires (Doel 1, Doel 2 et Tihange 1) pour dix ans, puis conclut un accord avec l’exploitant ; aucune loi n’est votée pendant le mandat.",
      "src": [
       [
-       "Communiqué de GDF Suez (22 octobre 2009)",
-       "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2009/10/FCECO013556_20091022.pdf"
+       "Chambre, compte rendu du 14 octobre 2009 (ministre de l’Énergie)",
+       "https://www.dekamer.be/doc/PCRA/html/52/ap115.html"
       ]
      ]
     }
@@ -1015,7 +1324,19 @@
     ],
     "note": "Mandat de onze mois en pleine crise financière. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
    },
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Van_Rompuy_08-09.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Van_Rompuy_08-09.pdf",
+   "sieges_src": [
+    [
+     "Chambre, liste des membres (DOC 52 0001/001)",
+     "https://www.dekamer.be/FLWB/PDF/52/0001/52K0001001.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "Conseil de l’Union européenne, communiqué du 19 novembre 2009",
+     "https://www.consilium.europa.eu/uedocs/cms_data/docs/pressdata/en/ec/111343.pdf"
+    ]
+   ]
   },
   {
    "id": "leterme-2",
@@ -1039,29 +1360,26 @@
     "cdH"
    ],
    "sieges": 96,
-   "sieges_note": "Même coalition que Van Rompuy.",
+   "sieges_note": "CD&V-N-VA 30, MR 23, PS 20, Open VLD 18, cdH 10 aux élections du 10 juin 2007. Le cartel CD&V-N-VA compte 30 élus ; sans les élus N-VA, qui ne participent pas au gouvernement, la coalition compte 96 sièges.",
    "election": "2007-06-10",
    "accord": {
-    "titre": "Pas de nouvel accord : déclaration du gouvernement",
+    "titre": "Pas de nouvel accord : déclaration du gouvernement du 25 novembre 2009 (texte à relire)",
     "date": "25 novembre 2009",
     "doc": "",
     "url": "",
-    "resume": [
-     "Continuité avec le gouvernement précédent.",
-     "Lutte contre la crise : protection de l’emploi et du pouvoir d’achat, soutien à la compétitivité, assainissement des finances publiques.",
-     "Réforme du contrôle financier et modernisation des institutions."
-    ],
-    "note": "Résumé transmis d’après le CRISP : le texte de la déclaration n’a pas encore été relu ici.",
+    "resume": [],
+    "note": "",
     "liens": [
      [
       "Déclaration lue à la Chambre (archives du CRISP)",
       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/DG_Leterme_II_25-11-09.pdf"
      ]
     ],
-    "k": "Ce que le gouvernement annonce"
+    "k": "Ce que le gouvernement annonce",
+    "lecture": ""
    },
-   "statut_note": "En affaires courantes pendant plus d’un an et demi.",
-   "fin_txt": "L’Open VLD quitte la coalition sur le dossier Bruxelles-Hal-Vilvorde (avril 2010) ; élections anticipées le 13 juin 2010, puis 541 jours sans nouveau gouvernement.",
+   "statut_note": "Démissionnaire et chargé des affaires courantes à partir d’avril 2010, jusqu’au gouvernement Di Rupo en décembre 2011.",
+   "fin_txt": "Le gouvernement démissionne en avril 2010 ; le Parlement est dissous le 7 mai 2010 ; élections anticipées le 13 juin 2010, puis 541 jours sans nouveau gouvernement.",
    "mesures": [
     {
      "date": "2009-12-31",
@@ -1142,7 +1460,33 @@
     ],
     "note": "Dont un an et demi d’affaires courantes. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
    },
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Leterme_09-10.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Leterme_09-10.pdf",
+   "sieges_src": [
+    [
+     "Chambre, liste des membres (DOC 52 0001/001)",
+     "https://www.dekamer.be/FLWB/PDF/52/0001/52K0001001.pdf"
+    ]
+   ],
+   "statut_src": [
+    [
+     "Sénat, séance du 6 mai 2010",
+     "https://senate.be/www/?MIcolObj=pdf&MInamObj=pdfid&MItabObj=pdf&MItypeObj=application%2Fpdf&MIvalObj=67112088"
+    ]
+   ],
+   "fin_src": [
+    [
+     "Sénat, séance du 6 mai 2010",
+     "https://senate.be/www/?MIcolObj=pdf&MInamObj=pdfid&MItabObj=pdf&MItypeObj=application%2Fpdf&MIvalObj=67112088"
+    ],
+    [
+     "Chambre, rapport annuel 2009-2010",
+     "https://www.dekamer.be/pdf_sections/publications/annualreport/jaarverslag2009-2010.pdf"
+    ],
+    [
+     "Chambre, résultats des élections du 13 juin 2010",
+     "https://www.dekamer.be/kvvcr/pdf_sections/archive/2010.pdf"
+    ]
+   ]
   },
   {
    "id": "di-rupo",
@@ -2829,7 +3173,7 @@
     "Open VLD"
    ],
    "sieges": 52,
-   "sieges_note": "Gouvernement minoritaire : 52 sièges sur 150.",
+   "sieges_note": "Gouvernement minoritaire : MR 20, CD&V 18 et Open VLD 14 aux élections du 25 mai 2014, soit 52 sièges sur 150.",
    "election": "2014-05-25",
    "accord": {
     "titre": "Pas de déclaration gouvernementale ni de vote de confiance",
@@ -2837,11 +3181,10 @@
     "doc": "",
     "url": "",
     "resume": [
-     "Le Premier ministre présente sa coalition remaniée comme une « Orange bleue », avec ces « défis prioritaires » : « Pouvoir d’achat, développement économique et social, soutien aux investissements… ; sécurité & justice ; focus sur politique climatique ».",
      "Le 18 décembre 2018, à la Chambre, il répond à la « main tendue » de groupes d’opposition : « nous proposons de prendre la main qui a été tendue par quelques-uns ». Puis : « Je dois bien constater que cet appel n’a pas convaincu », et il annonce sa démission."
     ],
-    "k": "Priorités annoncées à la presse",
-    "lecture": "D’après la fiche de contextualisation du CRISP (lien ci-dessus) : malgré les demandes de l’opposition, le gouvernement n’a ni présenté de déclaration au Parlement ni demandé la confiance.",
+    "k": "Ce que le Premier ministre propose à la Chambre",
+    "lecture": "Le gouvernement n’a ni présenté de déclaration au Parlement ni demandé la confiance.",
     "liens": [
      [
       "Fiche de contextualisation du CRISP",
@@ -2853,7 +3196,7 @@
      ]
     ]
    },
-   "fin_txt": "Démission présentée le 18 décembre 2018, acceptée le 21 décembre ; affaires courantes, prolongées après les élections du 26 mai 2019, jusqu’au départ de Charles Michel pour la présidence du Conseil européen.",
+   "fin_txt": "Démission présentée à la Chambre le 18 décembre 2018 ; affaires courantes, prolongées après les élections du 26 mai 2019, jusqu’au départ de Charles Michel pour la présidence du Conseil européen.",
    "mesures": [],
    "complet": false,
    "bilan": {
@@ -2884,12 +3227,8 @@
    "contexte": [
     {
      "date": "27 septembre 2018",
-     "texte": "À l’Assemblée générale de l’ONU, Charles Michel soutient le Pacte mondial pour des migrations sûres, ordonnées et régulières ; selon une proposition de résolution déposée à la Chambre, il déclare : « Mon pays signera en décembre le Pacte mondial sur les migrations à Marrakech. » La N-VA s’y oppose à partir de fin octobre.",
+     "texte": "À l’Assemblée générale de l’ONU, Charles Michel soutient le Pacte mondial pour des migrations sûres, ordonnées et régulières ; selon une proposition de résolution déposée à la Chambre, il déclare : « Mon pays signera en décembre le Pacte mondial sur les migrations à Marrakech. »",
      "src": [
-      [
-       "CRISP, contextualisation Michel II",
-       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Michel_II_18-12-18.pdf"
-      ],
       [
        "ONU, débat général, Belgique (27 septembre 2018)",
        "https://gadebate.un.org/en/73/belgium"
@@ -2902,26 +3241,22 @@
     },
     {
      "date": "9 décembre 2018",
-     "texte": "Les trois ministres et deux secrétaires d’État N-VA démissionnent. MR, CD&V et Open VLD gouvernent seuls avec 52 sièges sur 150. Le lendemain, à Marrakech, Charles Michel confirme l’appui de la Belgique au pacte.",
+     "texte": "Les trois ministres et deux secrétaires d’État N-VA démissionnent ; MR, CD&V et Open VLD gouvernent seuls. Le lendemain, à Marrakech, Charles Michel déclare : « Mon pays sera du bon côté de l’histoire avec le Pacte mondial pour des migrations sûres, ordonnées et régulières. »",
      "src": [
-      [
-       "CRISP, contextualisation Michel II",
-       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Michel_II_18-12-18.pdf"
-      ],
       [
        "Conseil des ministres, communiqué du 9 décembre 2018",
        "https://news.belgium.be/fr/node/22506/pdf"
+      ],
+      [
+       "Premier ministre, discours de Marrakech (10 décembre 2018)",
+       "https://archive.premier.be/fr/printpdf/13611"
       ]
      ]
     },
     {
-     "date": "18-21 décembre 2018",
-     "texte": "Faute d’accord avec l’opposition, Charles Michel présente la démission du gouvernement le 18 décembre ; le Roi l’accepte le 21 et le charge des affaires courantes jusqu’aux élections du 26 mai 2019.",
+     "date": "18 décembre 2018",
+     "texte": "Charles Michel constate devant la Chambre : « cet appel n’a pas convaincu », et annonce : « Je prends dès lors la décision de présenter ma démission ».",
      "src": [
-      [
-       "CRISP, contextualisation Wilmès",
-       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
-      ],
       [
        "Chambre, compte rendu du 18 décembre 2018 (CRIV 54 PLEN 263)",
        "https://www.dekamer.be/doc/PCRI/pdf/54/ip263.pdf"
@@ -2933,17 +3268,29 @@
      "texte": "Le Conseil européen choisit Charles Michel comme président à partir du 1er décembre 2019.",
      "src": [
       [
-       "CRISP, contextualisation Wilmès",
-       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
-      ],
-      [
        "Conseil européen, conclusions du 2 juillet 2019",
        "https://data.consilium.europa.eu/doc/document/ST-18-2019-INIT/fr/pdf"
       ]
      ]
     }
    ],
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Michel-II-18-18.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Michel-II-18-18.pdf",
+   "sieges_src": [
+    [
+     "SPF Intérieur, résultats des élections du 25 mai 2014 (hébergés par la Chambre)",
+     "https://www.dekamer.be/kvvcr/pdf_sections/archive/2014.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "Chambre, compte rendu du 18 décembre 2018 (CRIV 54 PLEN 263)",
+     "https://www.dekamer.be/doc/PCRI/pdf/54/ip263.pdf"
+    ],
+    [
+     "Conseil européen, conclusions du 2 juillet 2019",
+     "https://data.consilium.europa.eu/doc/document/ST-18-2019-INIT/fr/pdf"
+    ]
+   ]
   },
   {
    "id": "wilmes-1",
@@ -2973,7 +3320,7 @@
     "doc": "",
     "url": "",
     "resume": [],
-    "lecture": "D’après la fiche de contextualisation du CRISP : gouvernement chargé des affaires courantes, sans déclaration ni vote de confiance.",
+    "lecture": "",
     "liens": [
      [
       "Fiche de contextualisation du CRISP",
@@ -2981,8 +3328,8 @@
      ]
     ]
    },
-   "statut_note": "Suite du gouvernement démissionnaire, sans vote de confiance : certains historiens ne le comptent pas comme un gouvernement distinct.",
-   "fin_txt": "Remplacé, au début de la crise du Covid-19, par un gouvernement de plein exercice (Wilmès II).",
+   "statut_note": "Nommée par arrêté royal du 27 octobre 2019, la Première ministre annonce qu’elle restera « dans le cadre strict des affaires courantes ».",
+   "fin_txt": "Remplacé, au début de la crise du Covid-19, par un gouvernement de plein exercice (Wilmès II), qui prête serment le 17 mars 2020.",
    "mesures": [
     {
      "date": "2019-11-14",
@@ -3002,19 +3349,30 @@
     }
    ],
    "complet": false,
-   "contexte": [
-    {
-     "date": "27 octobre 2019",
-     "texte": "Sophie Wilmès, ministre du Budget, devient la première femme Première ministre de Belgique. Elle confirme la démission du gouvernement, est chargée « de la poursuite de l’expédition des affaires courantes » et ne demande pas la confiance de la Chambre.",
-     "src": [
-      [
-       "CRISP, contextualisation Wilmès",
-       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
-      ]
-     ]
-    }
+   "contexte": [],
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Wilmes-I-19-19.pdf",
+   "sieges_src": [
+    [
+     "Chambre, rapport annuel 2019-2020 (résultats des élections)",
+     "https://www.dekamer.be/pdf_sections/publications/annualreport/rappannuel2019-2020.pdf"
+    ]
    ],
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Wilmes-I-19-19.pdf"
+   "statut_src": [
+    [
+     "Chambre, ordre de préséance du gouvernement (DOC 55 0019/003)",
+     "https://www.lachambre.be/doc/flwb/pdf/55/0019/55K0019003.pdf"
+    ],
+    [
+     "Premier ministre, entretien du 2 novembre 2019",
+     "https://archive.premier.be/fr/printpdf/15821"
+    ]
+   ],
+   "fin_src": [
+    [
+     "Chambre, compte rendu analytique du 17 mars 2020 (CRABV 55 PLEN 029)",
+     "https://www.lachambre.be/doc/PCRA/pdf/55/ap029.pdf"
+    ]
+   ]
   },
   {
    "id": "wilmes-2",
@@ -3031,7 +3389,7 @@
     "Open VLD"
    ],
    "sieges": 38,
-   "sieges_note": "Gouvernement minoritaire soutenu de l’extérieur, pour la crise sanitaire, par PS, sp.a, Ecolo, Groen, cdH et DéFI. Confiance votée le 19 mars 2020 par 82 voix contre 44.",
+   "sieges_note": "MR 14, CD&V 12, Open VLD 12 aux élections du 26 mai 2019. Gouvernement minoritaire, investi pour la crise sanitaire ; confiance votée le 19 mars 2020 par 82 voix contre 44.",
    "election": "2019-05-26",
    "accord": {
     "titre": "Pas d’accord de coalition : mandat limité à la crise du Covid-19",
@@ -3057,7 +3415,7 @@
     ]
    },
    "statut_note": "Pouvoirs spéciaux accordés par les lois du 27 mars 2020 ; pour le reste, le gouvernement agit comme en affaires courantes.",
-   "fin_txt": "La confiance, limitée dans le temps, prend fin avec la formation du gouvernement De Croo.",
+   "fin_txt": "La confiance était limitée dans le temps : la Première ministre s’était engagée à la redemander « au plus tard dans six mois ». Elle prend fin avec la formation du gouvernement De Croo.",
    "mesures": [
     {
      "date": "2020-03-24",
@@ -3125,8 +3483,14 @@
    ],
    "complet": false,
    "sieges_src": [
-    "Chambre, compte rendu analytique CRABV 55 PLEN 031",
-    "https://www.lachambre.be/doc/PCRA/pdf/55/ap031.pdf"
+    [
+     "Chambre, rapport annuel 2019-2020 (résultats des élections)",
+     "https://www.dekamer.be/pdf_sections/publications/annualreport/rappannuel2019-2020.pdf"
+    ],
+    [
+     "Chambre, compte rendu analytique CRABV 55 PLEN 031",
+     "https://www.lachambre.be/doc/PCRA/pdf/55/ap031.pdf"
+    ]
    ],
    "bilan": {
     "debut": 2019,
@@ -3153,7 +3517,27 @@
     ],
     "note": "2020 est l’année du choc du Covid-19. Ces chiffres décrivent la situation, ils ne mesurent pas l’effet du gouvernement. Sources : Eurostat (lfsi_emp_a, gov_10dd_edpt1)."
    },
-   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Wilmes-II-20-20.pdf"
+   "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Wilmes-II-20-20.pdf",
+   "statut_src": [
+    [
+     "Chambre, dossier DOC 55 1104",
+     "https://www.dekamer.be/FLWB/html/55/F/55K1104.html"
+    ],
+    [
+     "Chambre, compte rendu du 17 mars 2020 (CRIV 55 PLEN 029)",
+     "https://www.lachambre.be/doc/PCRI/pdf/55/ip029.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "Premier ministre, discours du 19 mars 2020",
+     "https://archive.premier.be/fr/printpdf/16486"
+    ],
+    [
+     "Chambre, motions du 17 septembre 2020 (MOT 55 25/001)",
+     "https://www.lachambre.be/doc/MOTI/pdf/55/55M00025001.pdf"
+    ]
+   ]
   },
   {
    "id": "de-croo",

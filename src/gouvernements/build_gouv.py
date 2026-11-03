@@ -78,7 +78,7 @@ def card(g, P, i, n, today):
              ((' Source : ' if not isinstance(g['sieges_src'][0], list) else ' Sources : ') + (ext(*g['sieges_src']) if not isinstance(g['sieges_src'][0], list) else ' · '.join(ext(*x) for x in g['sieges_src'])) if g.get('sieges_src') else '') + '</p>' +
              (f'<p class="gv-note">{ext("Composition détaillée des ministres (CRISP)", g["compo_url"])}</p>' if g.get('compo_url') else '') +
              (f'<p class="gv-note">Élections du {ftxt(g["election"])} · {form} jours entre le scrutin et la prestation de serment.</p>' if 20 < form < 600 else f'<p class="gv-note">Législature issue des élections du {ftxt(g["election"])}.</p>') +
-             (f'<p class="gv-note">{H.escape(g["statut_note"])}</p>' if g.get('statut_note') else '') + '</section>')
+             (f'<p class="gv-note">{H.escape(g["statut_note"])}' + (' Source : ' + ' · '.join(ext(*x) for x in g['statut_src']) if g.get('statut_src') else '') + '</p>' if g.get('statut_note') else '') + '</section>')
     # accord
     ac = g['accord']
     t = '<section class="gv-sec"><h3>Accord de gouvernement</h3>'
