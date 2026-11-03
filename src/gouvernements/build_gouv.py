@@ -149,7 +149,7 @@ def card(g, P, i, n, today):
     return ''.join(h) + '</article>'
 
 
-ST = {'adopte': 'Adopté comme annoncé', 'partiel': 'Adopté en partie ou modifié', 'abandon': 'Abandonné', 'non': 'Non retrouvé', 'chiffre': 'Objectif chiffré'}
+ST = {'adopte': 'Adopté comme annoncé', 'partiel': 'Adopté en partie ou modifié', 'abandon': 'Abandonné ou reporté', 'non': 'Non retrouvé', 'chiffre': 'Objectif chiffré'}
 
 
 def compare(cp):
@@ -173,7 +173,7 @@ def compare(cp):
     return (f'<section class="gv-sec gv-ar"><h3>Annoncé et réalisé</h3><p>{H.escape(cp["intro"])}</p>'
             f'<p class="gv-arsum">{summ}</p><ol class="gv-arl">{li}</ol>{hors}'
             '<p class="gv-note">Chaque engagement est cité d’après l’accord, page à l’appui, puis comparé aux textes adoptés pendant le mandat. '
-            '« Non retrouvé » signifie qu’aucun texte n’a été trouvé à ce stade : ce n’est pas la preuve d’un abandon. « Abandonné » n’est utilisé que si une source officielle le constate. '
+            '« Non retrouvé » signifie qu’aucun texte n’a été trouvé à ce stade : ce n’est pas la preuve d’un abandon. « Abandonné ou reporté » n’est utilisé que si une source officielle le constate. '
             'Les objectifs chiffrés sont comparés aux chiffres actuels d’Eurostat, révisés depuis l’époque ; un écart ne dit pas à lui seul ce qui l’a causé.</p></section>')
 
 
