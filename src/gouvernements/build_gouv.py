@@ -132,6 +132,9 @@ def card(g, P, i, n, today):
                  '<p class="gv-note">Mesures adoptées pendant le mandat (loi votée, publiée ou entrée en vigueur), choisies pour leur portée. La liste n’est pas exhaustive et ne juge pas leurs effets.</p></section>')
     else:
         h.append('<section class="gv-sec"><h3>Grandes mesures sociales et économiques</h3><p class="gv-todo">En préparation. Les dates et la composition de ce gouvernement sont vérifiées ; ses grandes mesures seront ajoutées une à une, chacune avec sa source officielle.</p></section>')
+    # annoncé et réalisé
+    if g.get('compare'):
+        h.append(compare(g['compare']))
     # repères chiffrés
     if g.get('bilan'):
         b_ = g['bilan']
@@ -144,6 +147,34 @@ def card(g, P, i, n, today):
              (f'<a href="#g-{PREV[g["id"]]}" data-go="{i - 1}">← Précédent</a>' if i else '<span></span>') +
              (f'<a href="#g-{NEXT[g["id"]]}" data-go="{i + 1}">Suivant →</a>' if i < n - 1 else '<span></span>') + '</nav>')
     return ''.join(h) + '</article>'
+
+
+ST = {'adopte': 'Adopté comme annoncé', 'partiel': 'Adopté en partie ou modifié', 'abandon': 'Abandonné', 'non': 'Non retrouvé', 'chiffre': 'Objectif chiffré'}
+
+
+def compare(cp):
+    """Engagements de l'accord comparés aux textes adoptés : statut factuel, jamais « tenu » ou « trahi »."""
+    its = cp['items']
+    cnt = {k: sum(1 for x in its if x['statut'] == k) for k in ST}
+    summ = ' · '.join(f'<span class="gv-st s-{k}">{v} : {cnt[k]}</span>' for k, v in ST.items() if cnt[k])
+    li = ''
+    for x in its:
+        src = (' · '.join(ext(*s_) for s_ in x['src'])) if x.get('src') else ''
+        mt = x.get('mesure', '')
+        mes = (f'<p class="gv-ref">Mesure correspondante : {H.escape(mt if mt.startswith("«") else "« " + mt + " »")} (ci-dessus)</p>') if mt else ''
+        ctx = f'<p class="gv-ref">Contexte : {H.escape(x["ctx"])}</p>' if x.get('ctx') else ''
+        li += (f'<li class="gv-ari"><p class="gv-ark"><span class="gv-st s-{x["statut"]}">{ST[x["statut"]]}</span> <small>Accord, p. {H.escape(x["p"])}</small></p>'
+               f'<p class="gv-eng">{H.escape(x["eng"])}</p><p>{H.escape(x["constat"])}</p>{mes}{ctx}'
+               + (f'<p class="gv-src">{src}</p>' if src else '') + '</li>')
+    hors = ''
+    if cp.get('hors'):
+        hors = ('<h4 class="gv-h4">Décidé sans figurer dans l’accord</h4><ul class="gv-hors">'
+                + ''.join(f'<li><b>{H.escape(t)}</b> : {H.escape(c)}</li>' for t, c in cp['hors']) + '</ul>')
+    return (f'<section class="gv-sec gv-ar"><h3>Annoncé et réalisé</h3><p>{H.escape(cp["intro"])}</p>'
+            f'<p class="gv-arsum">{summ}</p><ol class="gv-arl">{li}</ol>{hors}'
+            '<p class="gv-note">Chaque engagement est cité d’après l’accord, page à l’appui, puis comparé aux textes adoptés pendant le mandat. '
+            '« Non retrouvé » signifie qu’aucun texte n’a été trouvé à ce stade : ce n’est pas la preuve d’un abandon. « Abandonné » n’est utilisé que si une source officielle le constate. '
+            'Les objectifs chiffrés sont comparés aux chiffres actuels d’Eurostat, révisés depuis l’époque ; un écart ne dit pas à lui seul ce qui l’a causé.</p></section>')
 
 
 PREV, NEXT = {}, {}
@@ -246,6 +277,14 @@ b.off{background:#D6F0DA}b.rf{background:#E4E1F7}b.pr{background:#FBE3C6}b.av{ba
 .gv-tab{border-collapse:collapse;font:16px var(--sans);min-width:min(520px,100%)}.gv-tab th,.gv-tab td{border-bottom:1.5px solid var(--rule);padding:8px 14px 8px 0;text-align:left}.gv-tab td{font-variant-numeric:tabular-nums;font-weight:600}.gv-tab thead th{font:600 13px var(--sans);color:var(--grey)}.gv-tab a{color:var(--ink)}
 .gv-chap{margin-top:16px;border:1.5px solid var(--rule);border-radius:12px;padding:10px 16px}.gv-chap summary{font:600 16px var(--sans);cursor:pointer}.gv-chap h4{font:600 17px var(--sans);margin:16px 0 4px}.gv-chap h4 small{font:500 13px var(--sans);color:var(--grey)}.gv-chap ul{padding-left:1.1em;margin:0;display:grid;gap:4px}.gv-chap li{font-size:16px!important}
 .gv-verif{font-size:14px!important;color:#9E2B1D;margin-top:4px!important}
+.gv-st{display:inline-block;font:600 12px var(--sans);letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 10px;border:1.5px solid var(--line)}
+.s-adopte{background:#D6F0DA}.s-partiel{background:#FBE3C6}.s-abandon{background:#F9C9C1}.s-non{background:#ECEAE4}.s-chiffre{background:#DCE8F7}
+.gv-arsum{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px!important}
+.gv-arl{list-style:none;padding:0;margin:14px 0 0}
+.gv-ari{border-left:3px solid var(--rule);padding:2px 0 2px 14px;margin:0 0 18px}
+.gv-ark{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.gv-ark small{font:13px var(--sans);color:var(--grey)}
+.gv-eng{font-weight:600!important;margin:6px 0 2px!important}
+.gv-h4{font:600 16px var(--sans);margin:18px 0 8px}.gv-hors{padding-left:20px}
 .gv-pn{display:flex;justify-content:space-between;margin-top:26px;border-top:1.5px solid var(--rule);padding-top:16px}
 .gv-pn a{font:600 16px var(--sans);color:var(--ink)}
 .gv-how{margin-top:64px;max-width:80ch}.gv-how ul{font:17px/1.55 var(--sans);padding-left:1.2em;display:grid;gap:10px}.gv-how a{color:var(--ink)}
