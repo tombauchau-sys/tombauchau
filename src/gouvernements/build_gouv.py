@@ -164,7 +164,7 @@ def compare(cp, msrc=None):
         mt = x.get('mesure', '')
         mes = (f'<p class="gv-ref">Mesure correspondante : {H.escape(mt if mt.startswith("«") else "« " + mt + " »")} (ci-dessus)</p>') if mt else ''
         ctx = f'<p class="gv-ref">Contexte : {H.escape(x["ctx"])}</p>' if x.get('ctx') else ''
-        li += (f'<li class="gv-ari"><p class="gv-ark"><span class="gv-st s-{x["statut"]}">{ST[x["statut"]]}</span> <small>Accord, p. {H.escape(x["p"])}</small></p>'
+        li += (f'<li class="gv-ari"><p class="gv-ark"><span class="gv-st s-{x["statut"]}">{ST[x["statut"]]}</span> <small>{H.escape(cp.get("plabel", "Accord"))}, p. {H.escape(x["p"])}</small></p>'
                f'<p class="gv-eng">{H.escape(x["eng"])}</p><p>{H.escape(x["constat"])}</p>{mes}{ctx}'
                + (f'<p class="gv-src">{src}</p>' if src else '') + '</li>')
     hors = ''

@@ -1211,7 +1211,8 @@
       "réforme des fins de carrière ; la déclaration annonçait seulement des projets pilotes pour l’emploi des travailleurs âgés (p. 10).",
       "Pacte de solidarité entre les générations"
      ]
-    ]
+    ],
+    "plabel": "Déclaration"
    }
   },
   {
@@ -1367,7 +1368,8 @@
        ]
       ]
      }
-    ]
+    ],
+    "plabel": "Déclaration"
    }
   },
   {
@@ -1990,7 +1992,8 @@
        ]
       ]
      }
-    ]
+    ],
+    "plabel": "Déclaration"
    }
   },
   {
@@ -2275,7 +2278,8 @@
       "absente de la déclaration.",
       "TVA à 12 % dans la restauration"
      ]
-    ]
+    ],
+    "plabel": "Déclaration"
    }
   },
   {
@@ -4327,7 +4331,34 @@
      "Chambre, motions du 17 septembre 2020 (MOT 55 25/001)",
      "https://www.lachambre.be/doc/MOTI/pdf/55/55M00025001.pdf"
     ]
-   ]
+   ],
+   "compare": {
+    "intro": "Gouvernement minoritaire investi le 17 mars 2020 pour un mandat limité à la crise du Covid-19, sans accord de coalition. Sa déclaration fixe quelques engagements, comparés ici aux textes adoptés.",
+    "items": [
+     {
+      "statut": "partiel",
+      "eng": "Recourir aux pouvoirs spéciaux pendant six mois, avec une évaluation après trois mois, sous le contrôle de la Chambre.",
+      "p": "3",
+      "constat": "Lois du 27 mars 2020 : pouvoirs accordés pour trois mois, prorogeables une fois, et arrêtés à confirmer par une loi dans l’année.",
+      "mesure": "Pouvoirs spéciaux"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Alléger les problèmes socio-économiques des indépendants.",
+      "p": "3",
+      "constat": "Droit passerelle de crise : 415 985 indépendants aidés de mars à juillet 2020.",
+      "mesure": "Droit passerelle de crise pour les indépendants"
+     },
+     {
+      "statut": "adopte",
+      "eng": "Alléger les problèmes socio-économiques des salariés.",
+      "p": "3",
+      "constat": "Chômage temporaire pour force majeure ouvert largement, avec une allocation portée à 70 %.",
+      "mesure": "Chômage temporaire « corona »"
+     }
+    ],
+    "plabel": "Déclaration"
+   }
   },
   {
    "id": "de-croo",
