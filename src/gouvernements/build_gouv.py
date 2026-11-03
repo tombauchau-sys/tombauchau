@@ -75,7 +75,7 @@ def card(g, P, i, n, today):
          f'<div class="gv-badges">{"".join(badges)}</div></header>']
     # composition
     h.append('<section class="gv-sec"><h3>Composition</h3>' + chips(g, P) + seats(g) + f'<p class="gv-note">{H.escape(g["sieges_note"])}' +
-             (' Source : ' + ext(*g['sieges_src']) if g.get('sieges_src') else '') + '</p>' +
+             ((' Source : ' if not isinstance(g['sieges_src'][0], list) else ' Sources : ') + (ext(*g['sieges_src']) if not isinstance(g['sieges_src'][0], list) else ' · '.join(ext(*x) for x in g['sieges_src'])) if g.get('sieges_src') else '') + '</p>' +
              (f'<p class="gv-note">{ext("Composition détaillée des ministres (CRISP)", g["compo_url"])}</p>' if g.get('compo_url') else '') +
              (f'<p class="gv-note">Élections du {ftxt(g["election"])} · {form} jours entre le scrutin et la prestation de serment.</p>' if 20 < form < 600 else f'<p class="gv-note">Législature issue des élections du {ftxt(g["election"])}.</p>') +
              (f'<p class="gv-note">{H.escape(g["statut_note"])}</p>' if g.get('statut_note') else '') + '</section>')
@@ -134,7 +134,7 @@ def card(g, P, i, n, today):
         h.append('<section class="gv-sec"><h3>Grandes mesures sociales et économiques</h3><p class="gv-todo">En préparation. Les dates et la composition de ce gouvernement sont vérifiées ; ses grandes mesures seront ajoutées une à une, chacune avec sa source officielle.</p></section>')
     # annoncé et réalisé
     if g.get('compare'):
-        h.append(compare(g['compare']))
+        h.append(compare(g['compare'], {m['titre']: m['src'] for m in g['mesures']}))
     # repères chiffrés
     if g.get('bilan'):
         b_ = g['bilan']
@@ -152,7 +152,8 @@ def card(g, P, i, n, today):
 ST = {'adopte': 'Adopté comme annoncé', 'partiel': 'Adopté en partie ou modifié', 'abandon': 'Abandonné ou reporté', 'non': 'Non retrouvé', 'chiffre': 'Objectif chiffré'}
 
 
-def compare(cp):
+def compare(cp, msrc=None):
+    msrc = msrc or {}
     """Engagements de l'accord comparés aux textes adoptés : statut factuel, jamais « tenu » ou « trahi »."""
     its = cp['items']
     cnt = {k: sum(1 for x in its if x['statut'] == k) for k in ST}
@@ -169,7 +170,7 @@ def compare(cp):
     hors = ''
     if cp.get('hors'):
         hors = ('<h4 class="gv-h4">Décidé sans figurer dans l’accord</h4><ul class="gv-hors">'
-                + ''.join(f'<li><b>{H.escape(t)}</b> : {H.escape(c)}</li>' for t, c in cp['hors']) + '</ul>')
+                + ''.join(f'<li><b>{H.escape(h_[0])}</b> : {H.escape(h_[1])}' + (' ' + ' · '.join(ext(*x) for x in msrc.get(h_[2], [])) if len(h_) > 2 else '') + '</li>' for h_ in cp['hors']) + '</ul>')
     return (f'<section class="gv-sec gv-ar"><h3>Annoncé et réalisé</h3><p>{H.escape(cp["intro"])}</p>'
             f'<p class="gv-arsum">{summ}</p><ol class="gv-arl">{li}</ol>{hors}'
             '<p class="gv-note">Chaque engagement est cité d’après l’accord, page à l’appui, puis comparé aux textes adoptés pendant le mandat. '

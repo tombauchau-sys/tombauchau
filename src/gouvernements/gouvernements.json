@@ -1302,11 +1302,19 @@
       [
        "Chambre, dossier DOC 53 2264",
        "https://www.lachambre.be/FLWB/html/53/F/53K2264.html"
+      ],
+      [
+       "Chambre, amendements (DOC 53 1952/003)",
+       "https://www.dekamer.be/FLWB/PDF/53/1952/53K1952003.pdf"
+      ],
+      [
+       "Service fédéral des Pensions, brochure « Pensions de retraite du régime des fonctionnaires »",
+       "https://www.sfpd.fgov.be/files/1264/pensionderetraite.pdf"
       ]
      ],
      "v": "officiel",
      "ref": "Loi du 28 décembre 2011 portant des dispositions diverses (Moniteur belge du 30 décembre 2011) ; loi du 20 juillet 2012 (Moniteur belge du 14 août 2012)",
-     "verif": "Calendrier relevé dans une source juridique secondaire : à confirmer auprès du Service fédéral des Pensions."
+     "verif": "Calendrier confirmé par l’amendement n° 12 et le SFP pour le secteur public ; pour les salariés (amendement n° 32), le texte n’a été lu qu’en partie."
     },
     {
      "date": "2011-12-30",
@@ -1349,10 +1357,6 @@
       [
        "ONEM, la réforme des allocations d’insertion",
        "https://www.onem.be/espace-presse/la-reforme-du-systeme-des-allocations-dinsertion"
-      ],
-      [
-       "ULB, Dégressivité et standstill (étude)",
-       "https://droit-public.ulb.ac.be/wp-content/uploads/2013/12/D%C3%A9gressivit%C3%A9-et-standstill.pdf"
       ]
      ],
      "v": "officiel",
@@ -1366,13 +1370,20 @@
      "texte": "L’accueil est limité en cas de demandes multiples et un trajet de retour est instauré ; une loi du même jour introduit la notion de « pays d’origine sûr ».",
      "src": [
       [
-       "EMN Belgium",
-       "https://emnbelgium.be/news/law-modifying-asylum-seekers-reception-act-published"
+       "Chambre, dossier DOC 53 0813",
+       "https://www.dekamer.be/FLWB/html/53/F/53K0813.html"
+      ],
+      [
+       "Chambre, dossier DOC 53 1825",
+       "https://www.dekamer.be/FLWB/html/53/F/53K1825.html"
+      ],
+      [
+       "Cour constitutionnelle, arrêt n° 107/2013",
+       "https://fr.const-court.be/public/f/2013/2013-107f.pdf"
       ]
      ],
-     "v": "reference",
-     "ref": "Loi du 19 janvier 2012 ; Moniteur belge du 17 février 2012",
-     "verif": "Dossier de la Chambre à identifier."
+     "v": "officiel",
+     "ref": "Deux lois du 19 janvier 2012 ; Moniteur belge du 17 février 2012"
     },
     {
      "date": "2012-08-22",
@@ -1403,10 +1414,6 @@
       [
        "ONEM, dix ans de dégressivité renforcée",
        "https://www.onem.be/espace-presse/dix-ans-de-degressivite-renforcee-des-allocations-de-chomage"
-      ],
-      [
-       "ULB, Dégressivité et standstill (étude)",
-       "https://droit-public.ulb.ac.be/wp-content/uploads/2013/12/D%C3%A9gressivit%C3%A9-et-standstill.pdf"
       ]
      ],
      "v": "officiel",
@@ -1418,26 +1425,46 @@
      "date_txt": "Décembre 2012",
      "d": "eco",
      "titre": "Précompte mobilier unifié à 25 %",
-     "texte": "Le précompte mobilier passe de 21 % à 25 % et redevient libératoire ; la cotisation de 4 % est supprimée ; taxe de 0,412 % sur les plus-values d’actions des grandes sociétés.",
-     "src": [],
-     "v": "a-verifier",
-     "ref": "Loi-programme du 27 décembre 2012 ; Moniteur belge du 31 décembre 2012 ; numac 2012021152",
-     "verif": "Références de publication transmises, pas encore relues ; contenu relevé dans des sources secondaires, dossier de la Chambre non trouvé."
+     "texte": "Le précompte mobilier est porté « à 25 p.c., à partir du 1er janvier 2013 » et redevient libératoire ; la cotisation supplémentaire de 4 % est supprimée. Un amendement du gouvernement ajoute un impôt de 0,4 % sur les plus-values d’actions réalisées par les sociétés qui ne sont pas des PME.",
+     "src": [
+      [
+       "Chambre, dossier DOC 53 2561",
+       "https://www.dekamer.be/FLWB/html/53/F/53K2561.html"
+      ],
+      [
+       "Chambre, projet de loi-programme (DOC 53 2561/001)",
+       "https://www.lachambre.be/FLWB/pdf/53/2561/53K2561001.pdf"
+      ],
+      [
+       "Chambre, rapport de la commission des Finances (DOC 53 2561/006)",
+       "https://www.lachambre.be/FLWB/pdf/53/2561/53K2561006.pdf"
+      ]
+     ],
+     "v": "officiel",
+     "ref": "Loi-programme du 27 décembre 2012 ; Moniteur belge du 31 décembre 2012"
     },
     {
      "date": "2013-05-02",
-     "date_txt": "Avril 2013",
+     "date_txt": "Mars 2013",
      "d": "social",
      "titre": "Norme salariale de 0 % pour 2013-2014",
      "texte": "Hors indexation et augmentations barémiques, les salaires ne peuvent pas augmenter en 2013 et 2014.",
      "src": [
       [
-       "Cour constitutionnelle, arrêt 152/2016",
+       "SPF Emploi, norme salariale",
+       "https://emploi.belgique.be/fr/themes/remuneration/norme-salariale"
+      ],
+      [
+       "Sénat, question écrite n° 5-7257 (réponse du 6 juin 2013)",
+       "https://senate.be/www/?LANG=fr&LEG=5&MIval=Vragen%2FSVPrint&NR=7257"
+      ],
+      [
+       "Cour constitutionnelle, arrêt n° 152/2016",
        "https://fr.const-court.be/public/f/2016/2016-152f.pdf"
       ]
      ],
-     "v": "reference",
-     "ref": "Arrêté royal du 28 avril 2013 ; Moniteur belge du 2 mai 2013"
+     "v": "officiel",
+     "ref": "Arrêté royal du 28 mars 2013, pris faute d’accord entre partenaires sociaux ; Moniteur belge du 2 mai 2013"
     },
     {
      "date": "2013-08-01",
@@ -1543,11 +1570,27 @@
    "contexte": [
     {
      "date": "2010-2011",
-     "texte": "Le gouvernement est formé 541 jours après les élections du 13 juin 2010, en pleine crise de la dette dans la zone euro."
+     "texte": "Le gouvernement prête serment 541 jours après les élections du 13 juin 2010. La Belgique est alors soumise, « comme vingt-deux autres États européens », à la procédure européenne de déficit excessif ; l’accord s’engage sur la trajectoire du Programme de stabilité transmis à la Commission européenne.",
+     "src": [
+      [
+       "Chambre, liste des élus du 13 juin 2010",
+       "https://www.dekamer.be/pdf_sections/pri/elections/verkozenen%20%20en%20opvolgers%20F.pdf"
+      ],
+      [
+       "Accord de gouvernement, p. 76",
+       "https://www.lachambre.be/kvvcr/pdf_sections/searchlist/Accord_de_Gouvernement_1er_decembre_2011.pdf"
+      ]
+     ]
     },
     {
-     "date": "2012-2013",
-     "texte": "Effort budgétaire de 11,3 milliards d’euros en 2012, en application des engagements européens de la Belgique."
+     "date": "2012",
+     "texte": "Le budget 2012 prévoit « un effort budgétaire de l’ordre de 11,3 milliards EUR (y compris une série de corrections techniques) » pour le pouvoir fédéral et la sécurité sociale.",
+     "src": [
+      [
+       "Chambre, budget 2012, exposé général (DOC 53 1942/001)",
+       "https://www.dekamer.be/FLWB/Pdf/53/1942/53K1942001.pdf"
+      ]
+     ]
     }
    ],
    "bilan": {
@@ -1577,7 +1620,7 @@
    },
    "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Di_Rupo_11-14.pdf",
    "compare": {
-    "intro": "Le gouvernement Di Rupo est formé en décembre 2011, 541 jours après les élections, en pleine crise de la dette dans la zone euro. Il gouverne deux ans et demi, jusqu’aux élections de mai 2014.",
+    "intro": "Le gouvernement Di Rupo prête serment en décembre 2011, 541 jours après les élections, alors que la Belgique est soumise à la procédure européenne de déficit excessif. Il gouverne deux ans et demi, jusqu’aux élections de mai 2014.",
     "items": [
      {
       "statut": "chiffre",
@@ -1590,7 +1633,7 @@
         "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=fr"
        ]
       ],
-      "ctx": "crise de la dette dans la zone euro ; l’objectif reprend la trajectoire convenue avec l’Union européenne."
+      "ctx": "la Belgique est soumise à la procédure européenne de déficit excessif ; l’objectif reprend le Programme de stabilité transmis à la Commission européenne (accord, p. 76)."
      },
      {
       "statut": "chiffre",
@@ -1726,11 +1769,19 @@
       "statut": "adopte",
       "eng": "Limiter la croissance du budget des soins de santé à 2 % en 2013 et 3 % en 2014, plus l’indexation.",
       "p": "109",
-      "constat": "Inscrit dans la loi-programme du 22 juin 2012, article 122 : « Pour l’année 2013, ce montant est majoré d’une norme de croissance réelle de 2 % », plus l’indice santé et 40 millions d’euros ; « à partir de l’année 2014 », norme de 3 % plus l’indice santé. Cela confirme la norme légale, pas la croissance effective des dépenses : l’objectif 2013 est ensuite fixé à 26 676 586 000 €, avec des économies décidées par le Conseil des ministres.",
+      "constat": "Inscrit dans la loi-programme du 22 juin 2012 (Moniteur du 28 juin 2012), article 122 : « Pour l’année 2013, ce montant est majoré d’une norme de croissance réelle de 2 % », plus l’indice santé et 40 millions d’euros ; « à partir de l’année 2014 », norme de 3 % plus l’indice santé. Cela confirme la norme légale, pas la croissance effective des dépenses : l’objectif 2013 est ensuite fixé à 26 676 586 000 €, avec des économies décidées par le Conseil des ministres.",
       "src": [
        [
-        "Loi-programme du 22 juin 2012, numac 2012021092 (texte reproduit par OpenJustice)",
-        "https://etaamb.openjustice.be/fr/loiprogramme-du-22-juin-2012_n2012021092.html"
+        "Chambre, dossier DOC 53 2198",
+        "https://www.dekamer.be/FLWB/html/53/F/53K2198.html"
+       ],
+       [
+        "Chambre, texte adopté (DOC 53 2198/019), article 122",
+        "https://www.dekamer.be/FLWB/pdf/53/2198/53K2198019.pdf"
+       ],
+       [
+        "Moniteur belge (numac 2012021092)",
+        "https://www.ejustice.just.fgov.be/eli/loi/2012/06/22/2012021092/justel"
        ],
        [
         "Conseil des ministres du 30 novembre 2012",
@@ -1769,19 +1820,173 @@
         "https://www.cgra.be/sites/default/files/jaaverslagen/rapportannuel_cgra_2014_1.pdf"
        ]
       ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Calculer la pension du secteur public sur le traitement moyen des dix dernières années de carrière.",
+      "p": "103",
+      "constat": "Loi du 28 décembre 2011 : à partir du 1er janvier 2012, « traitement moyen des dix dernières années de la carrière ». La règle ne s’applique pas aux personnes qui avaient 50 ans au 1er janvier 2012.",
+      "src": [
+       [
+        "Chambre, dossier DOC 53 1952",
+        "https://www.dekamer.be/FLWB/html/53/F/53K1952.html"
+       ],
+       [
+        "Chambre, texte adopté (DOC 53 1952/018)",
+        "https://www.dekamer.be/FLWB/pdf/53/1952/53K1952018.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Relever les conditions de la prépension à 60 ans pour les nouvelles conventions à partir du 1er janvier 2012.",
+      "p": "92",
+      "constat": "Décidé par le Conseil des ministres du 16 décembre 2011 : « les conditions d’âge et d’ancienneté sont respectivement élevées à 60 ans et à 40 ans », dès 2015 pour les conventions prolongées. Arrêté royal non relu.",
+      "src": [
+       [
+        "Conseil des ministres du 16 décembre 2011",
+        "https://news.belgium.be/fr/node/14078/pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Limiter à un an le crédit-temps sans motif avec allocation.",
+      "p": "97",
+      "constat": "Arrêté royal du 28 décembre 2011 : l’allocation est limitée à « 12 mois » équivalent temps plein, le crédit-temps avec motif ramené de 60 à 36 mois et l’accès en fin de carrière porté de 51 à 55 ans. Le communiqué ne parle pas expressément de crédit-temps « sans motif ».",
+      "src": [
+       [
+        "ONEM, réglementations du crédit-temps",
+        "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive/le-credit-temps-reglementations-applicables"
+       ],
+       [
+        "Conseil des ministres du 16 décembre 2011",
+        "https://news.belgium.be/fr/node/14161/pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Porter de 25 à 60 km la distance d’un emploi jugé convenable pour un chômeur.",
+      "p": "91",
+      "constat": "Décidé le 16 décembre 2011 pour une application « à partir du 1er janvier 2012 », par arrêté ministériel (date et publication non relues).",
+      "src": [
+       [
+        "Conseil des ministres du 16 décembre 2011",
+        "https://news.belgium.be/fr/reglementation-du-chomage"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Soumettre à la TVA de 21 % les prestations des notaires et des huissiers de justice.",
+      "p": "81",
+      "constat": "Loi du 28 décembre 2011, article 53 : l’exemption de TVA des notaires et huissiers est supprimée au 1er janvier 2012, ce qui leur applique le taux normal.",
+      "src": [
+       [
+        "Chambre, dossier DOC 53 1952",
+        "https://www.dekamer.be/FLWB/html/53/F/53K1952.html"
+       ],
+       [
+        "Chambre, texte adopté (DOC 53 1952/018)",
+        "https://www.dekamer.be/FLWB/pdf/53/1952/53K1952018.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Remplacer, pour les plus jeunes, la pension de survie par une allocation de transition.",
+      "p": "105",
+      "constat": "Loi du 5 mai 2014 (salariés) : allocation de transition de 12 mois, ou 24 mois avec un enfant à charge. Elle entre en vigueur le 1er janvier 2015, après la fin du mandat ; une loi distincte du 25 avril 2014 vise les indépendants.",
+      "src": [
+       [
+        "Chambre, dossier DOC 53 3399",
+        "https://www.dekamer.be/FLWB/html/53/F/53K3399.html"
+       ],
+       [
+        "Chambre, texte adopté (DOC 53 3399/005)",
+        "https://www.dekamer.be/FLWB/pdf/53/3399/53K3399005.pdf"
+       ],
+       [
+        "Chambre, dossier DOC 53 3418",
+        "https://www.dekamer.be/FLWB/html/53/F/53K3418.html"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Créer un tribunal de la famille.",
+      "p": "137, 147",
+      "constat": "Loi du 30 juillet 2013, issue d’une proposition de loi déposée en 2010. La date d’entrée en vigueur n’a pas été relue dans une source officielle.",
+      "src": [
+       [
+        "Chambre, dossier DOC 53 0682",
+        "https://www.dekamer.be/FLWB/html/53/F/53K0682.html"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Porter au moins à la moitié de la peine le seuil de libération conditionnelle pour les faits les plus graves.",
+      "p": "140",
+      "constat": "Loi du 17 mars 2013 : « Les condamnés à de lourdes peines devront purger la moitié de leur peine au lieu d’un tiers », soit 15 ans pour une peine de 30 ans ou à perpétuité ; pour les récidivistes, le seuil passe à 19 ou 23 ans. Le relèvement ne vise que les peines de 30 ans ou à perpétuité.",
+      "src": [
+       [
+        "Chambre, dossier DOC 53 2604",
+        "https://www.dekamer.be/FLWB/html/53/F/53K2604.html"
+       ],
+       [
+        "Chambre, texte adopté (DOC 53 2604/008)",
+        "https://www.dekamer.be/FLWB/pdf/53/2604/53K2604008.pdf"
+       ],
+       [
+        "Chambre, rapport (DOC 53 2603/004)",
+        "https://www.dekamer.be/FLWB/pdf/53/2603/53K2603004.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "non",
+      "eng": "Diminuer de 5 % la rémunération des ministres ; geler deux ans le budget des cabinets et les dotations des Chambres et de la famille royale.",
+      "p": "12",
+      "constat": "Aucun texte trouvé pour la baisse de 5 % ni pour le gel des dotations. Le Conseil des ministres du 16 décembre 2011 limite l’enveloppe des cabinets (environ 9 millions d’euros en 2012, −15 % par rapport à 2010).",
+      "src": [
+       [
+        "Conseil des ministres du 16 décembre 2011",
+        "https://news.belgium.be/fr/budget-cellules-strategiques"
+       ]
+      ]
      }
     ],
     "hors": [
      [
       "Norme salariale de 0 % pour 2013-2014",
-      "fixée par arrêté royal en avril 2013 ; l’accord ne fixait pas de norme."
+      "fixée par arrêté royal du 28 mars 2013, faute d’accord entre partenaires sociaux ; l’accord de gouvernement ne fixait pas de norme.",
+      "Norme salariale de 0 % pour 2013-2014"
      ],
      [
       "« Fairness tax »",
-      "taxe de 5,15 % sur les dividendes des grandes sociétés qui paient peu d’impôt, adoptée en juillet 2013 ; l’accord n’en parle pas."
+      "taxe de 5,15 % sur les dividendes des grandes sociétés qui paient peu d’impôt, adoptée en juillet 2013 ; l’accord n’en parle pas.",
+      "« Fairness tax » et TVA sur les avocats"
      ]
     ]
-   }
+   },
+   "sieges_src": [
+    [
+     "Chambre, liste des élus du 13 juin 2010",
+     "https://www.dekamer.be/pdf_sections/pri/elections/verkozenen%20%20en%20opvolgers%20F.pdf"
+    ],
+    [
+     "Chambre, compte rendu du 10 décembre 2011 (CRIV 53 PLEN 060)",
+     "https://www.lachambre.be/doc/PCRI/pdf/53/ip060.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "SPF Intérieur, résultats des élections du 25 mai 2014 (hébergés par la Chambre)",
+     "https://www.dekamer.be/kvvcr/pdf_sections/archive/2014.pdf"
+    ]
+   ]
   },
   {
    "id": "michel-1",
@@ -1918,7 +2123,7 @@
      ]
     ]
    },
-   "fin_txt": "La N-VA quitte le gouvernement en désaccord sur le pacte mondial des Nations unies sur les migrations (dit de Marrakech).",
+   "fin_txt": "Le 9 décembre 2018, la démission des ministres et secrétaires d’État N-VA est acceptée par arrêté royal ; MR, CD&V et Open VLD poursuivent seuls (gouvernement Michel II).",
    "mesures": [
     {
      "date": "2014-12-29",
@@ -2023,6 +2228,10 @@
       [
        "Loi du 16 novembre 2015, numac 2015205102 (OpenJustice)",
        "https://etaamb.openjustice.be/fr/loi-du-16-novembre-2015_n2015205102.html"
+      ],
+      [
+       "Moniteur belge (numac 2015205102)",
+       "https://www.ejustice.just.fgov.be/eli/loi/2015/11/16/2015205102/justel"
       ]
      ],
      "v": "officiel",
@@ -2039,6 +2248,10 @@
       [
        "Chambre, dossier DOC 54 1520",
        "https://www.lachambre.be/FLWB/html/54/F/54K1520.html"
+      ],
+      [
+       "Moniteur belge (numac 2015206007)",
+       "https://www.ejustice.just.fgov.be/eli/loi/2015/12/26/2015206007/justel"
       ]
      ],
      "v": "officiel",
@@ -2059,6 +2272,10 @@
       [
        "Loi du 5 mars 2017, numac 2017011012 (OpenJustice)",
        "https://etaamb.openjustice.be/fr/loi-du-05-mars-2017_n2017011012.html"
+      ],
+      [
+       "Moniteur belge (numac 2017011012)",
+       "https://www.ejustice.just.fgov.be/eli/loi/2017/03/05/2017011012/justel"
       ]
      ],
      "v": "officiel",
@@ -2164,7 +2381,7 @@
    },
    "compo_url": "https://www.crisp.be/upload/docpol/gouvernements/federal/compositions/Michel-I-14-18.pdf",
    "compare": {
-    "intro": "Le gouvernement Michel I gouverne quatre ans, d’octobre 2014 à décembre 2018, date à laquelle la N-VA le quitte sur le Pacte de Marrakech. Deux événements absents de l’accord marquent la législature : le nombre record de demandes d’asile de 2015 et les attentats du 22 mars 2016 (voir le contexte). Leur effet sur les résultats ci-dessous n’est pas mesuré ici.",
+    "intro": "Le gouvernement Michel I gouverne quatre ans, d’octobre 2014 au 9 décembre 2018, date de la démission des ministres N-VA. Deux événements absents de l’accord marquent la législature : le nombre record de demandes d’asile de 2015 et les attentats du 22 mars 2016 (voir le contexte). Leur effet sur les résultats ci-dessous n’est pas mesuré ici.",
     "items": [
      {
       "statut": "chiffre",
@@ -2220,6 +2437,10 @@
       "constat": "Loi du 26 décembre 2015, article 24 : la cotisation patronale de base des employeurs du secteur marchand (catégorie 1) est « plafonnée à 19,88 % à partir du 1er janvier 2018 ». Le taux global de 25 % annoncé y ajoute d’autres cotisations, dont la modération salariale : décomposition à confirmer auprès de l’ONSS.",
       "mesure": "« Tax shift »",
       "src": [
+       [
+        "Moniteur belge (numac 2015206007)",
+        "https://www.ejustice.just.fgov.be/eli/loi/2015/12/26/2015206007/justel"
+       ],
        [
         "Loi du 26 décembre 2015, numac 2015206007 (texte reproduit par OpenJustice)",
         "https://etaamb.openjustice.be/fr/loi-du-26-decembre-2015_n2015206007"
@@ -2337,6 +2558,10 @@
       "constat": "Arrêté royal du 30 décembre 2014 (numac 2014012252), article 1er : l’âge « wordt vanaf 1 januari 2015 op 62 jaar gebracht » ; entrée en vigueur le 1er janvier 2015 (article 16), avec des règles transitoires, notamment pour les travailleurs licenciés avant cette date.",
       "src": [
        [
+        "Moniteur belge (numac 2014012252)",
+        "https://www.ejustice.just.fgov.be/eli/arrete/2014/12/30/2014012252/justel"
+       ],
+       [
         "Arrêté royal du 30 décembre 2014 (texte reproduit par OpenJustice, non officiel)",
         "https://etaamb.openjustice.be/nl/koninklijk-besluit-van-30-december-2014_n2014012252.html"
        ],
@@ -2381,20 +2606,171 @@
         "https://www.lachambre.be/doc/PCRI/pdf/54/ip252x.pdf"
        ]
       ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Instaurer un service garanti dans les chemins de fer en cas de grève.",
+      "p": "12, 137",
+      "constat": "Loi du 29 novembre 2017 : chaque agent concerné indique « au minimum 72 heures avant le début du jour de grève » s’il fera grève, et l’offre de trains est adaptée. « Le projet de loi ne prévoit aucune possibilité de réquisition » : ce n’est pas un service minimum garanti.",
+      "src": [
+       [
+        "Chambre, dossier DOC 54 2650",
+        "https://www.dekamer.be/FLWB/html/54/F/54K2650.html"
+       ],
+       [
+        "Chambre, projet de loi (DOC 54 2650/001)",
+        "https://www.dekamer.be/FLWB/pdf/54/2650/54K2650001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Créer une procédure de « plaider coupable ».",
+      "p": "9",
+      "constat": "Loi du 5 février 2016 (« pot-pourri II ») : « la procédure de la reconnaissance préalable de culpabilité (article 216 nouveau du Code d’instruction criminelle) ».",
+      "src": [
+       [
+        "Chambre, dossier DOC 54 1418",
+        "https://www.dekamer.be/FLWB/html/54/F/54K1418.html"
+       ],
+       [
+        "Chambre, projet de loi (DOC 54 1418/001)",
+        "https://www.dekamer.be/FLWB/pdf/54/1418/54K1418001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Étendre la déchéance de la nationalité en lien avec le terrorisme.",
+      "p": "170",
+      "constat": "Loi du 20 juillet 2015 visant à renforcer la lutte contre le terrorisme : « Le projet étend également les possibilités de retrait de la nationalité. » Elle crée aussi l’infraction de voyage à des fins terroristes.",
+      "src": [
+       [
+        "Chambre, dossier DOC 54 1198",
+        "https://www.dekamer.be/FLWB/html/54/F/54K1198.html"
+       ],
+       [
+        "Chambre, projet de loi (DOC 54 1198/001)",
+        "https://www.dekamer.be/FLWB/pdf/54/1198/54K1198001.pdf"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Permettre le déploiement de l’armée en appui de la police à partir du niveau de menace 3.",
+      "p": "152",
+      "constat": "Décision gouvernementale de janvier 2015 : « Le gouvernement a aussi décidé d’engager les militaires sur le territoire national en date du 17 janvier 2015. » Déploiement maintenu en octobre 2015 pour les sites « placés en niveau 3 ». Aucune loi ni arrêté royal trouvé comme base.",
+      "src": [
+       [
+        "Chambre, compte rendu de commission du 21 janvier 2015",
+        "https://www.dekamer.be/doc/CCRI/pdf/54/ic066x.pdf"
+       ],
+       [
+        "Conseil des ministres du 30 octobre 2015",
+        "https://news.belgium.be/fr/appui-de-la-defense-la-police-integree-en-vue-dassurer-des-missions-de-surveillance-5"
+       ]
+      ]
+     },
+     {
+      "statut": "partiel",
+      "eng": "Supprimer le crédit-temps sans motif.",
+      "p": "26",
+      "constat": "Ce sont les allocations qui sont supprimées : « Depuis le 01.01.2015, le crédit-temps sans motif est octroyé sans allocations de l’ONEM. » Le droit lui-même reste.",
+      "src": [
+       [
+        "ONEM, crédit-temps sans motif",
+        "https://www.onem.be/page/le-credit-temps-sans-motif-reglementation-en-vigueur-avant-le-01.04.2017"
+       ],
+       [
+        "SPF Emploi, 13 janvier 2015",
+        "https://emploi.belgique.be/fr/actualites/modification-de-la-reglementation-du-credit-temps"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Exiger que la demande d’allocations d’insertion soit introduite avant 25 ans.",
+      "p": "29",
+      "constat": "Arrêté royal du 30 décembre 2014 (Moniteur du 31 décembre 2014) : la demande « doit être introduite avant le 25ème anniversaire », avec des dérogations.",
+      "src": [
+       [
+        "SPF Emploi, 27 janvier 2015",
+        "https://emploi.belgique.be/fr/actualites/modifications-la-reglementation-du-chomage?id=42710"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Organiser la réinsertion des travailleurs en incapacité de travail.",
+      "p": "29",
+      "constat": "Deux arrêtés royaux (28 octobre et 8 novembre 2016), publiés au Moniteur du 24 novembre 2016 et en vigueur le 1er décembre 2016.",
+      "src": [
+       [
+        "SPF Emploi, trajet de réintégration",
+        "http://www.emploi.belgique.be/defaultNews.aspx?id=45447"
+       ],
+       [
+        "INAMI, rapport annuel 2016",
+        "https://www.inami.fgov.be/fr/publications/rapport-annuel-2016/themes/un-trajet-de-reinsertion-pour-les-travailleurs-salaries-et-les-chomeurs-en-incapacite-de-travail"
+       ]
+      ]
+     },
+     {
+      "statut": "non",
+      "eng": "Instaurer un service à la collectivité pour les chômeurs de longue durée.",
+      "p": "28",
+      "constat": "Aucun texte adopté. Une proposition de loi de la majorité, déposée en mai 2018, devient caduque à la fin de la législature.",
+      "src": [
+       [
+        "Chambre, dossier DOC 54 3066",
+        "https://www.dekamer.be/FLWB/html/54/F/54K3066.html"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Ratifier la convention d’Istanbul sur la violence à l’égard des femmes.",
+      "p": "239",
+      "constat": "Loi d’assentiment du 1er mars 2016 (Moniteur du 9 juin 2016).",
+      "src": [
+       [
+        "Chambre, dossier DOC 54 1436",
+        "https://www.dekamer.be/FLWB/html/54/F/54K1436.html"
+       ]
+      ]
+     },
+     {
+      "statut": "adopte",
+      "eng": "Instaurer une contribution des bénéficiaires de l’aide juridique (« ticket modérateur »).",
+      "p": "128",
+      "constat": "Loi du 6 juillet 2016 : contributions forfaitaires « à caractère symbolique ». La Cour constitutionnelle les annule en 2018, après la fin du mandat.",
+      "src": [
+       [
+        "Chambre, dossier DOC 54 1819",
+        "https://www.dekamer.be/FLWB/html/54/F/54K1819.html"
+       ],
+       [
+        "Cour constitutionnelle, arrêt n° 77/2018 (communiqué)",
+        "https://www.const-court.be/public/f/2018/2018-077f-info.pdf"
+       ]
+      ]
      }
     ],
     "hors": [
      [
       "Réforme de l’impôt des sociétés (2017)",
-      "taux de base ramené de 33 % à 29 % en 2018, puis 25 % en 2020 ; l’accord ne prévoyait qu’un « pacte fiscal » sans baisse de taux (p. 96)."
+      "taux de base ramené de 33 % à 29 % en 2018, puis 25 % en 2020 ; l’accord ne prévoyait qu’un « pacte fiscal » sans baisse de taux (p. 96).",
+      "Réforme de l’impôt des sociétés"
      ],
      [
       "Taxe sur les comptes-titres (2018)",
-      "0,15 % au-delà de 500 000 €, annulée par la Cour constitutionnelle en 2019 ; absente de l’accord."
+      "0,15 % au-delà de 500 000 €, annulée par la Cour constitutionnelle en 2019 ; absente de l’accord.",
+      "Première taxe sur les comptes-titres"
      ],
      [
       "Revenus complémentaires exonérés (2018)",
-      "jusqu’à 6 000 € par an pour le travail associatif et l’économie collaborative ; absents de l’accord."
+      "jusqu’à 6 000 € par an pour le travail associatif et l’économie collaborative ; absents de l’accord.",
+      "Revenus complémentaires exonérés (« travail associatif »)"
      ]
     ]
    },
@@ -2419,6 +2795,18 @@
       ]
      ]
     }
+   ],
+   "sieges_src": [
+    [
+     "SPF Intérieur, résultats des élections du 25 mai 2014 (hébergés par la Chambre)",
+     "https://www.dekamer.be/kvvcr/pdf_sections/archive/2014.pdf"
+    ]
+   ],
+   "fin_src": [
+    [
+     "Conseil des ministres, communiqué du 9 décembre 2018",
+     "https://news.belgium.be/fr/node/22506/pdf"
+    ]
    ]
   },
   {
@@ -2450,7 +2838,7 @@
     "url": "",
     "resume": [
      "Le Premier ministre présente sa coalition remaniée comme une « Orange bleue », avec ces « défis prioritaires » : « Pouvoir d’achat, développement économique et social, soutien aux investissements… ; sécurité & justice ; focus sur politique climatique ».",
-     "Le 18 décembre 2018, il propose à l’opposition une « main tendue » : utilisation à 100 % de l’enveloppe bien-être par les partenaires sociaux, TVA sur l’énergie revue pour alléger les factures, réflexion sur la criminalité et la migration, réponses aux revendications de la marche pour le climat du 2 décembre. L’opposition ne suit pas."
+     "Le 18 décembre 2018, à la Chambre, il répond à la « main tendue » de groupes d’opposition : « nous proposons de prendre la main qui a été tendue par quelques-uns ». Puis : « Je dois bien constater que cet appel n’a pas convaincu », et il annonce sa démission."
     ],
     "k": "Priorités annoncées à la presse",
     "lecture": "D’après la fiche de contextualisation du CRISP (lien ci-dessus) : malgré les demandes de l’opposition, le gouvernement n’a ni présenté de déclaration au Parlement ni demandé la confiance.",
@@ -2458,6 +2846,10 @@
      [
       "Fiche de contextualisation du CRISP",
       "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Michel_II_18-12-18.pdf"
+     ],
+     [
+      "Chambre, compte rendu du 18 décembre 2018",
+      "https://www.dekamer.be/doc/PCRI/pdf/54/ip263.pdf"
      ]
     ]
    },
@@ -2492,11 +2884,19 @@
    "contexte": [
     {
      "date": "27 septembre 2018",
-     "texte": "À l’ONU, Charles Michel annonce que la Belgique approuvera le Pacte mondial pour des migrations sûres, ordonnées et régulières (Pacte de Marrakech). La N-VA s’y oppose à partir de fin octobre.",
+     "texte": "À l’Assemblée générale de l’ONU, Charles Michel soutient le Pacte mondial pour des migrations sûres, ordonnées et régulières ; selon une proposition de résolution déposée à la Chambre, il déclare : « Mon pays signera en décembre le Pacte mondial sur les migrations à Marrakech. » La N-VA s’y oppose à partir de fin octobre.",
      "src": [
       [
        "CRISP, contextualisation Michel II",
        "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Michel_II_18-12-18.pdf"
+      ],
+      [
+       "ONU, débat général, Belgique (27 septembre 2018)",
+       "https://gadebate.un.org/en/73/belgium"
+      ],
+      [
+       "Chambre, DOC 54 3386/001",
+       "https://www.lachambre.be/FLWB/pdf/54/3386/54K3386001.pdf"
       ]
      ]
     },
@@ -2507,6 +2907,10 @@
       [
        "CRISP, contextualisation Michel II",
        "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Michel_II_18-12-18.pdf"
+      ],
+      [
+       "Conseil des ministres, communiqué du 9 décembre 2018",
+       "https://news.belgium.be/fr/node/22506/pdf"
       ]
      ]
     },
@@ -2517,6 +2921,10 @@
       [
        "CRISP, contextualisation Wilmès",
        "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
+      ],
+      [
+       "Chambre, compte rendu du 18 décembre 2018 (CRIV 54 PLEN 263)",
+       "https://www.dekamer.be/doc/PCRI/pdf/54/ip263.pdf"
       ]
      ]
     },
@@ -2527,6 +2935,10 @@
       [
        "CRISP, contextualisation Wilmès",
        "https://www.crisp.be/upload/docpol/gouvernements/federal/declarations/CTXT_Wilmes_27-10-19.pdf"
+      ],
+      [
+       "Conseil européen, conclusions du 2 juillet 2019",
+       "https://data.consilium.europa.eu/doc/document/ST-18-2019-INIT/fr/pdf"
       ]
      ]
     }
