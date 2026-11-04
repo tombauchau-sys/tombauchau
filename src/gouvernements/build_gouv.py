@@ -140,6 +140,12 @@ def card(g, P, i, n, today):
         b_ = g['bilan']
         rows = ''.join(f'<tr><th scope="row"><a href="{u}">{H.escape(n_)}</a></th><td>{x}</td><td>{y}</td></tr>' for n_, x, y, u in b_['lignes'])
         h.append(f'<section class="gv-sec"><h3>Repères chiffrés</h3><table class="gv-tab"><thead><tr><th></th><th>{b_["debut"]}</th><th>{b_["fin"]}</th></tr></thead><tbody>{rows}</tbody></table><p class="gv-note">{H.escape(b_["note"])}</p></section>')
+    # lectures
+    if g.get('lectures'):
+        li = ''.join(f'<li><b class="{"rf" if x["type"] == "recherche" else "pr"}">{"Recherche" if x["type"] == "recherche" else "Presse"}</b> {H.escape(x["ref"])} {ext("Lire la notice" if x.get("notice") else "Lire", x["url"])}'
+                     + (f'<br><small>{H.escape(x["note"])}</small>' if x.get('note') else '') + '</li>' for x in g['lectures'])
+        h.append(f'<section class="gv-sec"><h3>Pour aller plus loin</h3><ul class="gv-lect">{li}</ul>'
+                 '<p class="gv-note">Analyses et articles choisis pour le contexte et le débat. Ils ne servent pas de source aux faits de cette fiche, qui reposent sur des documents officiels ; leurs conclusions n’engagent que leurs auteurs.</p></section>')
     # fin
     fs = (' ' + ' · '.join(ext(*s) for s in g['fin_src'])) if g.get('fin_src') else ''
     h.append(f'<section class="gv-sec"><h3>{"Fin du gouvernement" if g["fin"] else "Situation"}</h3><p>{H.escape(g["fin_txt"])}{fs}</p></section>')
@@ -285,7 +291,7 @@ b.off{background:#D6F0DA}b.rf{background:#E4E1F7}b.pr{background:#FBE3C6}b.av{ba
 .gv-ari{border-left:3px solid var(--rule);padding:2px 0 2px 14px;margin:0 0 18px}
 .gv-ark{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.gv-ark small{font:13px var(--sans);color:var(--grey)}
 .gv-eng{font-weight:600!important;margin:6px 0 2px!important}
-.gv-h4{font:600 16px var(--sans);margin:18px 0 8px}.gv-hors{padding-left:20px}
+.gv-h4{font:600 16px var(--sans);margin:18px 0 8px}.gv-lect{padding-left:20px}.gv-lect li{margin:0 0 10px}.gv-lect small{color:var(--grey);font-size:14px}.gv-hors{padding-left:20px}
 .gv-pn{display:flex;justify-content:space-between;margin-top:26px;border-top:1.5px solid var(--rule);padding-top:16px}
 .gv-pn a{font:600 16px var(--sans);color:var(--ink)}
 .gv-how{margin-top:64px;max-width:80ch}.gv-how ul{font:17px/1.55 var(--sans);padding-left:1.2em;display:grid;gap:10px}.gv-how a{color:var(--ink)}

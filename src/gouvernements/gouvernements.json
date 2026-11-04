@@ -679,7 +679,15 @@
       "Titres-services"
      ]
     ]
-   }
+   },
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Decoster, A., Perelman, S., Vandelannoote, D., Vanheukelom, T. et Verbist, G. (2014), « Prélèvements fiscaux et prestations sociales en Belgique : l’impact de vingt années de réformes », Revue française d’économie, XXIX (4), p. 87-127.",
+     "url": "https://orbi.uliege.be/bitstream/2268/183151/1/2015%20Revue%20Fran%C3%A7aise%20d%27%C3%A9conomie%20Decoster%20et%20al%20RFE_144_0087.pdf",
+     "note": "Effets redistributifs des réformes fiscales et sociales de 1992 à 2012, par microsimulation."
+    }
+   ]
   },
   {
    "id": "verhofstadt-2",
@@ -1213,7 +1221,15 @@
      ]
     ],
     "plabel": "Déclaration"
-   }
+   },
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Decoster, A., Perelman, S., Vandelannoote, D., Vanheukelom, T. et Verbist, G. (2014), « Prélèvements fiscaux et prestations sociales en Belgique : l’impact de vingt années de réformes », Revue française d’économie, XXIX (4), p. 87-127.",
+     "url": "https://orbi.uliege.be/bitstream/2268/183151/1/2015%20Revue%20Fran%C3%A7aise%20d%27%C3%A9conomie%20Decoster%20et%20al%20RFE_144_0087.pdf",
+     "note": "Effets redistributifs des réformes fiscales et sociales de 1992 à 2012, par microsimulation."
+    }
+   ]
   },
   {
    "id": "verhofstadt-3",
@@ -1370,7 +1386,27 @@
      }
     ],
     "plabel": "Déclaration"
-   }
+   },
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Uyttendaele, M. (2011), « Chronique d’une législature maudite. Réflexions sur l’instabilité politique de la Belgique », Pouvoirs, 136, p. 51-69.",
+     "url": "https://doi.org/10.3917/pouv.136.0051",
+     "note": "Lecture juridique et institutionnelle des crises de 2007 à 2010."
+    },
+    {
+     "type": "recherche",
+     "ref": "Hooghe, M. (2012), « The Political Crisis in Belgium (2007–2011): A Federal System without Federal Loyalty », Representation, 48 (1), p. 131-138.",
+     "url": "https://doi.org/10.1080/00344893.2012.653250",
+     "note": "Blocages de coalition et tensions entre communautés."
+    },
+    {
+     "type": "recherche",
+     "ref": "Van Aelst, P. et Louwerse, T. (2014), « Parliament without Government: The Belgian Parliament and the Government Formation Processes of 2007–2011 », West European Politics, 37 (3), p. 475-496.",
+     "url": "https://doi.org/10.1080/01402382.2013.832953",
+     "note": "Le travail du Parlement pendant les longues périodes d’affaires courantes."
+    }
+   ]
   },
   {
    "id": "leterme-1",
@@ -1771,7 +1807,27 @@
       "Loi sur la stabilité financière et garantie des dépôts"
      ]
     ]
-   }
+   },
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Uyttendaele, M. (2011), « Chronique d’une législature maudite. Réflexions sur l’instabilité politique de la Belgique », Pouvoirs, 136, p. 51-69.",
+     "url": "https://doi.org/10.3917/pouv.136.0051",
+     "note": "Lecture juridique et institutionnelle des crises de 2007 à 2010."
+    },
+    {
+     "type": "recherche",
+     "ref": "Hooghe, M. (2012), « The Political Crisis in Belgium (2007–2011): A Federal System without Federal Loyalty », Representation, 48 (1), p. 131-138.",
+     "url": "https://doi.org/10.1080/00344893.2012.653250",
+     "note": "Blocages de coalition et tensions entre communautés."
+    },
+    {
+     "type": "recherche",
+     "ref": "Van Aelst, P. et Louwerse, T. (2014), « Parliament without Government: The Belgian Parliament and the Government Formation Processes of 2007–2011 », West European Politics, 37 (3), p. 475-496.",
+     "url": "https://doi.org/10.1080/01402382.2013.832953",
+     "note": "Le travail du Parlement pendant les longues périodes d’affaires courantes."
+    }
+   ]
   },
   {
    "id": "van-rompuy",
@@ -1994,7 +2050,27 @@
      }
     ],
     "plabel": "Déclaration"
-   }
+   },
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Uyttendaele, M. (2011), « Chronique d’une législature maudite. Réflexions sur l’instabilité politique de la Belgique », Pouvoirs, 136, p. 51-69.",
+     "url": "https://doi.org/10.3917/pouv.136.0051",
+     "note": "Lecture juridique et institutionnelle des crises de 2007 à 2010."
+    },
+    {
+     "type": "recherche",
+     "ref": "Hooghe, M. (2012), « The Political Crisis in Belgium (2007–2011): A Federal System without Federal Loyalty », Representation, 48 (1), p. 131-138.",
+     "url": "https://doi.org/10.1080/00344893.2012.653250",
+     "note": "Blocages de coalition et tensions entre communautés."
+    },
+    {
+     "type": "recherche",
+     "ref": "Van Aelst, P. et Louwerse, T. (2014), « Parliament without Government: The Belgian Parliament and the Government Formation Processes of 2007–2011 », West European Politics, 37 (3), p. 475-496.",
+     "url": "https://doi.org/10.1080/01402382.2013.832953",
+     "note": "Le travail du Parlement pendant les longues périodes d’affaires courantes."
+    }
+   ]
   },
   {
    "id": "leterme-2",
@@ -2280,7 +2356,27 @@
      ]
     ],
     "plabel": "Déclaration"
-   }
+   },
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Uyttendaele, M. (2011), « Chronique d’une législature maudite. Réflexions sur l’instabilité politique de la Belgique », Pouvoirs, 136, p. 51-69.",
+     "url": "https://doi.org/10.3917/pouv.136.0051",
+     "note": "Lecture juridique et institutionnelle des crises de 2007 à 2010."
+    },
+    {
+     "type": "recherche",
+     "ref": "Hooghe, M. (2012), « The Political Crisis in Belgium (2007–2011): A Federal System without Federal Loyalty », Representation, 48 (1), p. 131-138.",
+     "url": "https://doi.org/10.1080/00344893.2012.653250",
+     "note": "Blocages de coalition et tensions entre communautés."
+    },
+    {
+     "type": "recherche",
+     "ref": "Van Aelst, P. et Louwerse, T. (2014), « Parliament without Government: The Belgian Parliament and the Government Formation Processes of 2007–2011 », West European Politics, 37 (3), p. 475-496.",
+     "url": "https://doi.org/10.1080/01402382.2013.832953",
+     "note": "Le travail du Parlement pendant les longues périodes d’affaires courantes."
+    }
+   ]
   },
   {
    "id": "di-rupo",
@@ -3124,6 +3220,20 @@
      "SPF Intérieur, résultats des élections du 25 mai 2014 (hébergés par la Chambre)",
      "https://www.dekamer.be/kvvcr/pdf_sections/archive/2014.pdf"
     ]
+   ],
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Decoster, A., Perelman, S., Vandelannoote, D., Vanheukelom, T. et Verbist, G. (2014), « Prélèvements fiscaux et prestations sociales en Belgique : l’impact de vingt années de réformes », Revue française d’économie, XXIX (4), p. 87-127.",
+     "url": "https://orbi.uliege.be/bitstream/2268/183151/1/2015%20Revue%20Fran%C3%A7aise%20d%27%C3%A9conomie%20Decoster%20et%20al%20RFE_144_0087.pdf",
+     "note": "Effets redistributifs des réformes fiscales et sociales de 1992 à 2012, par microsimulation."
+    },
+    {
+     "type": "recherche",
+     "ref": "Hooghe, M. (2012), « The Political Crisis in Belgium (2007–2011): A Federal System without Federal Loyalty », Representation, 48 (1), p. 131-138.",
+     "url": "https://doi.org/10.1080/00344893.2012.653250",
+     "note": "Blocages de coalition et tensions entre communautés."
+    }
    ]
   },
   {
@@ -3945,6 +4055,22 @@
      "Conseil des ministres, communiqué du 9 décembre 2018",
      "https://news.belgium.be/fr/node/22506/pdf"
     ]
+   ],
+   "lectures": [
+    {
+     "type": "presse",
+     "ref": "« Alors, ce tax shift, quelle plus-value pour la Belgique ? », La Libre Belgique, 8 février 2020, p. 2.",
+     "url": "https://documentation.pfwb.be/index.php?id=189183&lvl=notice_display",
+     "notice": true,
+     "note": "Notice du centre de documentation du Parlement de la Fédération Wallonie-Bruxelles."
+    },
+    {
+     "type": "presse",
+     "ref": "« Le cdH relativise le bilan économique de Michel », L’Echo, 28 août 2018.",
+     "url": "https://documentation.pfwb.be/index.php?id=150914&lvl=notice_display",
+     "notice": true,
+     "note": "Présente l’étude d’un parti d’opposition : une argumentation politique, examinée par la presse."
+    }
    ]
   },
   {
@@ -4358,7 +4484,21 @@
      }
     ],
     "plabel": "Déclaration"
-   }
+   },
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Popelier, P. (2020), « COVID-19 legislation in Belgium at the crossroads of a political and a health crisis », The Theory and Practice of Legislation, 8 (1-2), p. 131-153.",
+     "url": "https://doi.org/10.1080/20508840.2020.1771884",
+     "note": "Gouvernement minoritaire, pouvoirs spéciaux et rôle du Parlement pendant la crise sanitaire."
+    },
+    {
+     "type": "recherche",
+     "ref": "Sinardet, D. et Pieters, J. (2021), « Nationalism and COVID in Belgium: A Surprisingly United Response in a Divided Federal Country », Nationalism and Ethnic Politics, 27 (3), p. 311-330.",
+     "url": "https://doi.org/10.1080/13537113.2021.1954299",
+     "note": "Coordination entre niveaux de pouvoir face à la pandémie."
+    }
+   ]
   },
   {
    "id": "de-croo",
@@ -5384,6 +5524,26 @@
      "Chambre, compte rendu du 3 octobre 2020 (CRIV 55 PLEN 061)",
      "https://www.dekamer.be/doc/PCRI/pdf/55/ip061.pdf"
     ]
+   ],
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Sinardet, D. et Pieters, J. (2021), « Nationalism and COVID in Belgium: A Surprisingly United Response in a Divided Federal Country », Nationalism and Ethnic Politics, 27 (3), p. 311-330.",
+     "url": "https://doi.org/10.1080/13537113.2021.1954299",
+     "note": "Coordination entre niveaux de pouvoir face à la pandémie."
+    },
+    {
+     "type": "recherche",
+     "ref": "Baudewyns, P., Vandeleene, A., De Winter, L. et Deruette, S. (2024), « Belgium: Political Developments and Data in 2023: The Autumn of the Vivaldi Government », Political Data Yearbook, 63 (1), p. 39-49.",
+     "url": "https://doi.org/10.1111/2047-8852.12465",
+     "note": "Chronique politique de l’année 2023."
+    },
+    {
+     "type": "recherche",
+     "ref": "Baudewyns, P., Vandeleene, A., De Winter, L. et Deruette, S. (2025), « Belgium: Political Developments and Data in 2024 », Political Data Yearbook, 64 (1), p. 44-63.",
+     "url": "https://doi.org/10.1111/2047-8852.70030",
+     "note": "Fin de la Vivaldi, élections de 2024 et négociations qui suivent ; ne couvre pas l’application des mesures du gouvernement De Wever."
+    }
    ]
   },
   {
@@ -6244,7 +6404,15 @@
      }
     ],
     "hors": []
-   }
+   },
+   "lectures": [
+    {
+     "type": "recherche",
+     "ref": "Baudewyns, P., Vandeleene, A., De Winter, L. et Deruette, S. (2025), « Belgium: Political Developments and Data in 2024 », Political Data Yearbook, 64 (1), p. 44-63.",
+     "url": "https://doi.org/10.1111/2047-8852.70030",
+     "note": "Fin de la Vivaldi, élections de 2024 et négociations qui suivent ; ne couvre pas l’application des mesures du gouvernement De Wever."
+    }
+   ]
   }
  ]
 }
